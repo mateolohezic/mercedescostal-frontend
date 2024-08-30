@@ -1,4 +1,8 @@
+'use client'
+
 import type { StaticImageData } from "next/image";
+import { useRef } from "react";
+import { GridCardCollectionStudio } from "./GridCardCollectionStudio";
 
 interface Collection {
     img: StaticImageData;
@@ -11,17 +15,33 @@ interface Props {
 }
 
 export const GridCollectionStudio = ({ collections }: Props) => {
+    const constraintsRef = useRef(null);
 
     return (
-        <div className="mt-12 w-full px-4 grid grid-cols-6 justify-center items-center gap-24 relative">
+        <div ref={constraintsRef} className="mt-12 w-full grow px-8 grid grid-cols-6 justify-start items-start gap-x-24 gap-y-2 overflow-hidden relative">
             {
-                collections.map(({ img, title, year }, i: number) => (
-                    <div key={i} className="w-full flex flex-col justify-center items-center group">
-                        <div className="w-full flex justify-start items-end">
-                            <span className="mr-2">{i+1}.</span><h3 className="text-base opacity-0 group-hover:opacity-100">{title}, {year}</h3>
-                        </div>
-                        <img src={img.src} alt={title} className="w-full" />
-                    </div>
+                collections.map((collection:Collection, i: number) => (
+                    <GridCardCollectionStudio collection={collection} i={i} key={i} constraintsRef={constraintsRef}/>
+                ))
+            }
+            {
+                collections.map((collection:Collection, i: number) => (
+                    <GridCardCollectionStudio collection={collection} i={i} key={i} constraintsRef={constraintsRef}/>
+                ))
+            }
+            {
+                collections.map((collection:Collection, i: number) => (
+                    <GridCardCollectionStudio collection={collection} i={i} key={i} constraintsRef={constraintsRef}/>
+                ))
+            }
+            {
+                collections.map((collection:Collection, i: number) => (
+                    <GridCardCollectionStudio collection={collection} i={i} key={i} constraintsRef={constraintsRef}/>
+                ))
+            }
+            {
+                collections.map((collection:Collection, i: number) => (
+                    <GridCardCollectionStudio collection={collection} i={i} key={i} constraintsRef={constraintsRef}/>
                 ))
             }
         </div>

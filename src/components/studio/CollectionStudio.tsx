@@ -46,7 +46,7 @@ export const CollectionStudio = () => {
     const [selectedLayout, setSelectedLayout] = useState<'cover'|'grid'|'list'|'scroll'>('cover')
 
     return (
-        <section className="w-full relative mt-24 flex flex-col justify-center items-center">
+        <section className="w-full grow relative mt-24 flex flex-col justify-start items-center">
             <SelectLayoutStudio options={options} selectedLayout={selectedLayout} setSelectedLayout={setSelectedLayout}/>
             { selectedLayout === 'list' && <ListCollectionStudio collections={collections}/> }
             { selectedLayout === 'grid' && <GridCollectionStudio collections={collections}/> }
