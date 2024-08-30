@@ -12,7 +12,7 @@ const config: Config = {
         'gill-sans': ['Gill Sans', 'sans-serif'],
       },
       colors:{
-        'base':{
+        'background':{
           DEFAULT: '#f3f3ee'
         },
         'invalid':{

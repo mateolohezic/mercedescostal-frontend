@@ -14,14 +14,14 @@ import foto4 from '@/assets/home/portada/portada_4.webp'
 import foto5 from '@/assets/home/portada/portada_5.webp'
 import foto6 from '@/assets/home/portada/portada_6.webp'
 import foto7 from '@/assets/home/portada/portada_7.webp'
-import Link from "next/link";
+// import Link from "next/link";
 
-interface Foto{
+interface Photo{
     img: StaticImageData;
     title: string
 }
 
-const fotos:Array<Foto> = [
+const photos:Array<Photo> = [
     { img: foto1, title: 'Colección Vivero' },
     { img: foto2, title: 'Blue Willow' },
     { img: foto3, title: 'Colección Basa Basa' },
@@ -59,7 +59,7 @@ export const PortadaHome = () => {
                 className="w-full min-h-svh"
             >
                 {
-                    fotos.map(({img, title}:Foto, i:number) => (
+                    photos.map(({img, title}:Photo, i:number) => (
                         <SwiperSlide key={i}>
                             {/* <Link href={'/'} aria-label={`Navegar a Colección`} className="group"> */}
                                 <div className="w-full min-h-svh flex justify-center items-end group">
@@ -70,7 +70,7 @@ export const PortadaHome = () => {
                                         <motion.div
                                             initial={{ opacity:0 }}
                                             whileInView={{ opacity: 1 }}
-                                            transition={{ opacity:{ delay:0.25, duration: 0.25 }}}
+                                            transition={{ opacity:{ delay: 1, duration: 0.25 }}}
                                             className="flex flex-col justify-center items-center lg:items-start"
                                         >
                                             <h2 className="w-full text-4xl lg:text-3xl text-start font-light bg-[rgba(255,255,255,0.5)] py-2 px-4">{title}</h2>

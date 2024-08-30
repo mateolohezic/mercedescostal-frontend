@@ -2,13 +2,9 @@ import Link from "next/link";
 import styles from '../styles/navbarHome.module.css';
 import Image from "next/image";
 import logo from '@/assets/logo.png'
+import { NavLinkHome } from "@/interface";
 
-interface LinkType{
-    title: string;
-    href: string
-};
-
-const links:Array<LinkType> = [
+const links:Array<NavLinkHome> = [
     {
         title:'Dirección creativa',
         href:'/a'
@@ -56,7 +52,7 @@ export const NavbarHome = () => {
                 </Link>
                 <ul className="mt-2 flex flex-col justify-start items-start gap-2">
                     {
-                        links.map(({title, href}:LinkType, i:number) => (
+                        links.map(({title, href}:NavLinkHome, i:number) => (
                             <Link key={i} aria-label={`Navegar a ${title}`} href={href} className={styles.link}>
                                 {title}
                             </Link>
