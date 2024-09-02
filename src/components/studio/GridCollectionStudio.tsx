@@ -1,7 +1,6 @@
 'use client'
 
 import type { StaticImageData } from "next/image";
-import { useRef } from "react";
 import { GridCardCollectionStudio } from "./GridCardCollectionStudio";
 
 interface Collection {
@@ -15,33 +14,12 @@ interface Props {
 }
 
 export const GridCollectionStudio = ({ collections }: Props) => {
-    const constraintsRef = useRef(null);
 
     return (
-        <div ref={constraintsRef} className="mt-12 w-full grow px-8 grid grid-cols-6 justify-start items-start gap-x-24 gap-y-2 overflow-hidden relative">
+        <div className="mt-12 w-full grow px-8 grid grid-cols-4 justify-start items-start gap-x-24 gap-y-2 overflow-hidden relative">
             {
                 collections.map((collection:Collection, i: number) => (
-                    <GridCardCollectionStudio collection={collection} i={i} key={i} constraintsRef={constraintsRef}/>
-                ))
-            }
-            {
-                collections.map((collection:Collection, i: number) => (
-                    <GridCardCollectionStudio collection={collection} i={i} key={i} constraintsRef={constraintsRef}/>
-                ))
-            }
-            {
-                collections.map((collection:Collection, i: number) => (
-                    <GridCardCollectionStudio collection={collection} i={i} key={i} constraintsRef={constraintsRef}/>
-                ))
-            }
-            {
-                collections.map((collection:Collection, i: number) => (
-                    <GridCardCollectionStudio collection={collection} i={i} key={i} constraintsRef={constraintsRef}/>
-                ))
-            }
-            {
-                collections.map((collection:Collection, i: number) => (
-                    <GridCardCollectionStudio collection={collection} i={i} key={i} constraintsRef={constraintsRef}/>
+                    <GridCardCollectionStudio collection={collection} i={i} key={i}/>
                 ))
             }
         </div>

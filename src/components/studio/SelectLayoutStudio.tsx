@@ -1,7 +1,5 @@
 'use client'
 
-import type { Dispatch, SetStateAction } from "react"
-
 interface Option{
     title: 'Covers'|'Grid'|'List'|'Scroll'
     value: 'cover'|'grid'|'list'|'scroll';
@@ -10,7 +8,7 @@ interface Option{
 interface Props{
     options: Array<Option>
     selectedLayout: 'cover'|'grid'|'list'|'scroll';
-    setSelectedLayout: Dispatch<SetStateAction<"cover" | "grid" | "list" | "scroll">>
+    setSelectedLayout: (layout: "cover" | "grid" | "list" | "scroll") => void
 }
 
 export const SelectLayoutStudio = ({options, selectedLayout, setSelectedLayout}:Props) => {

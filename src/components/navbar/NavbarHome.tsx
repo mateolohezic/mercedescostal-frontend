@@ -45,12 +45,12 @@ const links:Array<NavLinkHome> = [
 
 export const NavbarHome = () => {
     return (
-        <nav className="absolute top-8 left-8 z-50">
-            <div className="flex flex-col justify-start items-start gap-2">
+        <nav className="w-full px-4 absolute top-8 left-0 right-0 mx-auto z-50">
+            <div className="w-full flex justify-between items-start">
                 <Link href={'/'} aria-label="Inicio">
-                    <Image src={logo} alt='Logo Mercedes Costal' className="w-96 relative hover:translate-x-4 transition-all duration-200 ease-in-out"/>
+                    <Image src={logo} alt='Logo Mercedes Costal' className="w-full max-w-xl relative"/>
                 </Link>
-                <ul className="mt-2 flex flex-col justify-start items-start gap-2">
+                <ul className="flex justify-start items-cemter gap-4">
                     {
                         links.map(({title, href}:NavLinkHome, i:number) => (
                             <Link key={i} aria-label={`Navegar a ${title}`} href={href} className={styles.link}>
