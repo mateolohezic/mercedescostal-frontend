@@ -54,38 +54,3 @@ input[type=number] {
     display: none;
   }
 }
-
-@font-face {
-  font-family: 'Gill Sans';
-  src: url('../assets/fonts/Gill_Sans_Black.otf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gill Sans';
-  src: url('../assets/fonts/Gill_Sans_Bold.otf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gill Sans';
-  src: url('../assets/fonts/Gill_Sans_Light.otf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gill Sans';
-  src: url('../assets/fonts/Gill_Sans_Medium.otf') format('truetype');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Gill Sans';
-  src: url('../assets/fonts/Gill_Sans.otf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}

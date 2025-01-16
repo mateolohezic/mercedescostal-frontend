@@ -1,8 +1,3 @@
-export { PortadaProduct } from "./product/PortadaProduct";
+export { Navbar } from "./navbar/Navbar";
 
-export { CollectionStudio } from "./studio/CollectionStudio";
-export { GridCollectionStudio } from "./studio/GridCollectionStudio";
-
-export { NavbarHome } from "./navbar/NavbarHome";
-
-export { PortadaHome } from "./swiper/PortadaHome";
+export { VideoIntro } from "./VideoIntro";

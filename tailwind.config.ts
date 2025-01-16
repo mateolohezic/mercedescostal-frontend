@@ -8,9 +8,6 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        'gill-sans': ['Gill Sans', 'sans-serif'],
-      },
       colors:{
         'background':{
           DEFAULT: '#f3f3ee'
