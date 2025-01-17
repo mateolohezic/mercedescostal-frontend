@@ -1,10 +1,11 @@
 'use client'
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { NavLinkHome } from "@/interface";
-import logo from '@/assets/logo.png'
+import { MCLogo } from "@/components";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 const links:Array<NavLinkHome> = [
     {
@@ -31,11 +32,19 @@ const links:Array<NavLinkHome> = [
 
 export const Navbar = () => {
 
+    const pathname = usePathname();
+    const [isHome, setIsHome] = useState<boolean>(pathname === '/');
+
+    useEffect(() => {
+        setIsHome(pathname === '/');
+    }, [pathname])
+    
+
     return (
-        <nav className="w-full px-12 fixed top-12 left-0 right-0 mx-auto z-50 overflow-hidden">
+        <nav className="w-full px-12 h-40 flex justify-center items-center fixed top-0 left-0 right-0 z-50">
             <div className="w-full flex justify-between">
-                <Link href={'/'} aria-label="Inicio">
-                    <Image src={logo} alt='Logo Mercedes Costal' className="w-full max-w-xl relative"/>
+                <Link className="w-full max-w-xl" href={'/'} aria-label="Inicio">
+                    <MCLogo className={`${ isHome ? 'fill-white' : 'fill-black' } w-full`}/>
                 </Link>
                 <div className="w-full flex justify-end items-start">
                     <ul className="flex justify-start gap-8">
@@ -48,7 +57,7 @@ export const Navbar = () => {
                                     exit={{ x: -50, opacity: 0 }}
                                     transition={{ delay: i * 0.1 }}
                                 >
-                                    <Link aria-label={`Navegar a ${title}`} href={href} className="uppercase text-lg text-white/90 font-medium tracking-widest">
+                                    <Link aria-label={`Navegar a ${title}`} href={href} className={`${ isHome ? 'text-white/90' : 'text-black/90' } uppercase text-lg font-medium tracking-widest`}>
                                         {title}
                                     </Link>
                                 </motion.li>

@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily:{
+        typemachine: 'var(--typemachine)',
+        gillsans: 'var(--gillsans)'
+      },
       colors:{
         'background':{
           DEFAULT: '#f3f3ee'
