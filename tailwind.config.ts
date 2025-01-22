@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily:{
-        typemachine: 'var(--typemachine)',
+        truetypewritter: 'var(--truetypewritter)',
         gillsans: 'var(--gillsans)'
       },
       colors:{

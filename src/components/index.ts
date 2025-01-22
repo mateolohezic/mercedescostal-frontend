@@ -1,5 +1,7 @@
+export { MCLogo } from "./MCLogo";
+export { VideoIntro } from "./VideoIntro";
+
 export { Navbar } from "./navbar/Navbar";
 
-export { MCLogo } from "./MCLogo";
-export { Footer } from "./Footer";
-export { VideoIntro } from "./VideoIntro";
+export { Footer } from "./footer/Footer";
+export { FooterForm } from "./footer/FooterForm";

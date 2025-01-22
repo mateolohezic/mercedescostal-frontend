@@ -7,7 +7,7 @@ import { Footer } from "@/components";
 export default function CollectionPage() {
     return (
     <>
-        <main className="my-40 w-full flex flex-col items-center font-typemachine">
+        <main className="my-40 w-full flex flex-col items-center font-truetypewritter">
             <section className="w-full max-w-7xl px-4 xl:px-0 flex justify-between">
                 <h1 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase">1. Murales</h1>
                 <div className="w-full max-w-lg">

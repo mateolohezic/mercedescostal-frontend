@@ -39,16 +39,16 @@ const gillSans = localFont({
   variable: '--gillsans'
 });
 
-const typeMachine = localFont({
-  src: '../assets/fonts/Type_Machine.ttf',
+const truetypewritter = localFont({
+  src: '../assets/fonts/True_Typewritter.woff2',
   display: 'auto',
-  variable: '--typemachine'
+  variable: '--truetypewritter'
 })
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="es">
-      <body className={`${gillSans.className} ${gillSans.variable} ${typeMachine.variable} w-full min-h-svh flex flex-col items-center`}>
+      <body className={`${gillSans.className} ${gillSans.variable} ${truetypewritter.variable} w-full min-h-svh flex flex-col items-center`}>
         <Navbar/>
         {children}
       </body>
