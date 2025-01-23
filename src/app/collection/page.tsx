@@ -18,9 +18,54 @@ import woodland_04_mural from "@/assets/collections/basa_basa/woodland_04/woodla
 import woodland_04_montaje from "@/assets/collections/basa_basa/woodland_04/woodland_04_montaje.webp";
 import woodland_05_mural from "@/assets/collections/basa_basa/woodland_05/woodland_05_mural.webp";
 import woodland_05_montaje from "@/assets/collections/basa_basa/woodland_05/woodland_05_montaje.webp";
-import { Footer } from "@/components";
+import { Footer, MuralCard } from "@/components";
 
 export default function CollectionPage() {
+
+    const murales = [
+        {
+            title: 'Basa Basa',
+            montaje: basa_basa_montaje,
+            mural: basa_basa_mural,
+        },
+        {
+            title: 'Miombo',
+            montaje: miombo_montaje,
+            mural: miombo_mural,
+            wide: true,
+        },
+        {
+            title: 'Ñus',
+            montaje: ñus_montaje,
+            mural: ñus_mural,
+        },
+        {
+            title: 'Woodlands 01',
+            montaje: woodland_01_montaje,
+            mural: woodland_01_mural,
+        },
+        {
+            title: 'Woodlands 02',
+            montaje: woodland_02_montaje,
+            mural: woodland_02_mural,
+        },
+        {
+            title: 'Woodlands 03',
+            montaje: woodland_03_montaje,
+            mural: woodland_03_mural,
+        },
+        {
+            title: 'Woodlands 04',
+            montaje: woodland_04_montaje,
+            mural: woodland_04_mural,
+        },
+        {
+            title: 'Woodlands 05',
+            montaje: woodland_05_montaje,
+            mural: woodland_05_mural,
+        },
+    ]
+
     return (
     <>
         <main className="my-40 w-full flex flex-col items-center font-truetypewritter">
@@ -35,78 +80,7 @@ export default function CollectionPage() {
                 </div>
             </section>
             <section className="mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col justify-center items-center gap-24">
-                <div className="w-full flex flex-col gap-4">
-                    <h2 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase">Mural <b className="font-semibold">Basa Basa</b></h2>
-                    <div className="w-full">
-                        <Image src={basa_basa_montaje} alt="Basa Basa Montaje" className="w-full object-contain"/>
-                    </div>
-                    <div className="w-full">
-                        <Image src={basa_basa_mural} alt="Basa Basa Mural" className="h-72 w-auto object-contain"/>
-                    </div>
-                </div>
-                <div className="w-full flex flex-col gap-4">
-                    <h2 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase">Mural <b className="font-semibold">Miombo</b></h2>
-                    <div className="w-full">
-                        <Image src={miombo_montaje} alt="Miombo Montaje" className="w-full object-contain"/>
-                    </div>
-                    <div className="w-full">
-                        <Image src={miombo_mural} alt="Miombo Mural" className="w-full h-72 object-cover"/>
-                    </div>
-                </div>
-                <div className="w-full flex flex-col gap-4">
-                    <h2 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase">Mural <b className="font-semibold">Ñus</b></h2>
-                    <div className="w-full">
-                        <Image src={ñus_montaje} alt="Ñus Montaje" className="w-full object-contain"/>
-                    </div>
-                    <div className="w-full">
-                        <Image src={ñus_mural} alt="Ñus Mural" className="h-72 w-auto object-contain"/>
-                    </div>
-                </div>
-                <div className="w-full flex flex-col gap-4">
-                    <h2 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase">Mural <b className="font-semibold">Woodlands 01</b></h2>
-                    <div className="w-full">
-                        <Image src={woodland_01_montaje} alt="Woodlands 01 Montaje" className="w-full object-contain"/>
-                    </div>
-                    <div className="w-full">
-                        <Image src={woodland_01_mural} alt="Woodlands 01 Mural" className="h-72 w-auto object-contain"/>
-                    </div>
-                </div>
-                <div className="w-full flex flex-col gap-4">
-                    <h2 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase">Mural <b className="font-semibold">Woodlands 02</b></h2>
-                    <div className="w-full">
-                        <Image src={woodland_02_montaje} alt="Woodlands 02 Montaje" className="w-full object-contain"/>
-                    </div>
-                    <div className="w-full">
-                        <Image src={woodland_02_mural} alt="Woodlands 02 Mural" className="h-72 w-auto object-contain"/>
-                    </div>
-                </div>
-                <div className="w-full flex flex-col gap-4">
-                    <h2 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase">Mural <b className="font-semibold">Woodlands 03</b></h2>
-                    <div className="w-full">
-                        <Image src={woodland_03_montaje} alt="Woodlands 03 Montaje" className="w-full object-contain"/>
-                    </div>
-                    <div className="w-full">
-                        <Image src={woodland_03_mural} alt="Woodlands 03 Mural" className="h-72 w-auto object-contain"/>
-                    </div>
-                </div>
-                <div className="w-full flex flex-col gap-4">
-                    <h2 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase">Mural <b className="font-semibold">Woodlands 04</b></h2>
-                    <div className="w-full">
-                        <Image src={woodland_04_montaje} alt="Woodlands 04 Montaje" className="w-full object-contain"/>
-                    </div>
-                    <div className="w-full">
-                        <Image src={woodland_04_mural} alt="Woodlands 04 Mural" className="h-72 w-auto object-contain"/>
-                    </div>
-                </div>
-                <div className="w-full flex flex-col gap-4">
-                    <h2 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase">Mural <b className="font-semibold">Woodlands 05</b></h2>
-                    <div className="w-full">
-                        <Image src={woodland_05_montaje} alt="Woodlands 05 Montaje" className="w-full object-contain"/>
-                    </div>
-                    <div className="w-full">
-                        <Image src={woodland_05_mural} alt="Woodlands 05 Mural" className="h-72 w-auto object-contain"/>
-                    </div>
-                </div>
+                {murales.map( (mural, i:number) => <MuralCard {...mural} key={i}/> )}
             </section>
             <section className="mt-24 w-full max-w-7xl">
                 <h2 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase"><b className="font-semibold">Otras colecciones</b></h2>
