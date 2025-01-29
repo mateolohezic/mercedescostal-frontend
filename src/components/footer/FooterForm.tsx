@@ -44,7 +44,6 @@ export const FooterForm = () => {
                     {...register("email", { required: true, maxLength: 50 })}
                 />
             </div>
-            {/* <button type="submit" className="px-2 uppercase bg-yellow-300"> */}
             <button type="submit" disabled={isLoading} className="uppercase border border-transparent hover:border-b-black">
                 [ Submit ]
             </button>

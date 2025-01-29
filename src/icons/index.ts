@@ -10,3 +10,7 @@ export {
 export {
     GoChevronRight as ArrowRightIcon
 } from "react-icons/go";
+
+export {
+    LiaSpinnerSolid as SpinnerIcon
+} from "react-icons/lia";
