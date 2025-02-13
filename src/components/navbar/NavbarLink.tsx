@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { NavLinkHome } from "@/interface";
+import { NavLinkHome } from "@/interfaces";
 
 interface Props{
     navlink: NavLinkHome;

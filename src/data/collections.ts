@@ -1,5 +1,3 @@
-import { StaticImageData } from "next/image";
-
 // Basa Basa
 import basa_basa_montaje from "@/assets/collections/basa_basa/basa_basa/basa_basa_montaje.webp";
 import basa_basa_mural from "@/assets/collections/basa_basa/basa_basa/basa_basa_mural.webp";
@@ -521,7 +519,6 @@ import la_riviere_montaje_gray from "@/assets/collections/vuelta_al_mundo/la_riv
 import la_riviere_mural from "@/assets/collections/vuelta_al_mundo/la_riviere/la_riviere_mural.webp";
 import la_riviere_mural_gray from "@/assets/collections/vuelta_al_mundo/la_riviere/la_riviere_mural_gray.webp";
 
-
 import magnolia_real_icon_1 from "@/assets/collections/vuelta_al_mundo/magnolia_real/magnolia_real_icon_1.webp";
 import magnolia_real_icon_2 from "@/assets/collections/vuelta_al_mundo/magnolia_real/magnolia_real_icon_2.webp";
 import magnolia_real_montaje from "@/assets/collections/vuelta_al_mundo/magnolia_real/magnolia_real_montaje.webp";
@@ -556,37 +553,13 @@ import silvestre_montaje from "@/assets/collections/vuelta_al_mundo/silvestre/si
 import silvestre_montaje_2 from "@/assets/collections/vuelta_al_mundo/silvestre/silvestre_montaje_2.webp";
 import silvestre_mural from "@/assets/collections/vuelta_al_mundo/silvestre/silvestre_mural.webp";
 import silvestre_mural_gray from "@/assets/collections/vuelta_al_mundo/silvestre/silvestre_mural_gray.webp";
+import { Collection } from "@/interfaces";
 
 // import silvestre_mural_gray from "@/assets/collections/vuelta_al_mundo/vintage_map_VACIO";
 // import magnolia_real_mural_black from "@/assets/collections/vuelta_al_mundo/monos_colgantes_VACIO";
 // import la_riviere_mural_gray from "@/assets/collections/vuelta_al_mundo/land_VACIO";
 
-
-export interface MuralVariant {
-    colorName: string;
-    colorHex: string;
-    montaje: StaticImageData;
-    mural: StaticImageData;
-    base?: boolean;
-}
-
-export interface Mural {
-    id: string;
-    title: string;
-    collection: string;
-    icons: StaticImageData[];
-    keywords: string[];
-    variants: MuralVariant[];
-    href: string;
-}
-
-export interface Collection {
-    id: string;
-    title: string;
-    murales: Mural[];
-}
-
-export const collections: Collection[] = [
+export const collections: Array<Collection> = [
     {
         id: "basa-basa",
         title: "Basa Basa",
@@ -594,7 +567,8 @@ export const collections: Collection[] = [
             {
                 id: "basa-basa-basa-basa",
                 title: "Basa Basa",
-                collection: "Basa Basa",
+                collectionTitle: "Basa Basa",
+                collectionId: "basa-basa",
                 icons: [basa_basa_icon_1, basa_basa_icon_2],
                 keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
@@ -611,7 +585,8 @@ export const collections: Collection[] = [
             {
                 id: "miombo-basa-basa",
                 title: "Miombo",
-                collection: "Basa Basa",
+                collectionTitle: "Basa Basa",
+                collectionId: "basa-basa",
                 icons: [miombo_icon_1, miombo_icon_2],
                 keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
@@ -628,7 +603,8 @@ export const collections: Collection[] = [
             {
                 id: "ñus-basa-basa",
                 title: "Ñus",
-                collection: "Basa Basa",
+                collectionTitle: "Basa Basa",
+                collectionId: "basa-basa",
                 icons: [ñus_icon_1],
                 keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
@@ -645,7 +621,8 @@ export const collections: Collection[] = [
             {
                 id: "woodland-01-basa-basa",
                 title: "Woodland 01",
-                collection: "Basa Basa",
+                collectionTitle: "Basa Basa",
+                collectionId: "basa-basa",
                 icons: [woodland_01_icon_1],
                 keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
@@ -662,7 +639,8 @@ export const collections: Collection[] = [
             {
                 id: "woodland-02-basa-basa",
                 title: "Woodland 02",
-                collection: "Basa Basa",
+                collectionTitle: "Basa Basa",
+                collectionId: "basa-basa",
                 icons: [woodland_02_icon_1],
                 keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
@@ -679,7 +657,8 @@ export const collections: Collection[] = [
             {
                 id: "woodland-03-basa-basa",
                 title: "Woodland 03",
-                collection: "Basa Basa",
+                collectionTitle: "Basa Basa",
+                collectionId: "basa-basa",
                 icons: [woodland_03_icon_1],
                 keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
@@ -696,7 +675,8 @@ export const collections: Collection[] = [
             {
                 id: "woodland-04-basa-basa",
                 title: "Woodland 04",
-                collection: "Basa Basa",
+                collectionTitle: "Basa Basa",
+                collectionId: "basa-basa",
                 icons: [woodland_04_icon_1],
                 keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
@@ -713,7 +693,8 @@ export const collections: Collection[] = [
             {
                 id: "woodland-05-basa-basa",
                 title: "Woodland 05",
-                collection: "Basa Basa",
+                collectionTitle: "Basa Basa",
+                collectionId: "basa-basa",
                 icons: [woodland_05_icon_1],
                 keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
@@ -736,7 +717,8 @@ export const collections: Collection[] = [
             {
                 id: "bajo-el-mar-casamar",
                 title: "Bajo el Mar",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [bajo_el_mar_icon_1],
                 keywords: ["mar", "océano", "vida marina", "naturaleza"],
                 variants: [
@@ -753,7 +735,8 @@ export const collections: Collection[] = [
             {
                 id: "brush-casamar",
                 title: "Brush",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [brush_icon_1],
                 keywords: ["arte", "diseño", "abstracto"],
                 variants: [
@@ -805,7 +788,8 @@ export const collections: Collection[] = [
             {
                 id: "casamar-casamar",
                 title: "Casamar",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [casamar_icon_1, casamar_icon_2],
                 keywords: ["mar", "naturaleza", "paisaje"],
                 variants: [
@@ -822,7 +806,8 @@ export const collections: Collection[] = [
             {
                 id: "corals-casamar",
                 title: "Corals",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [corals_icon_1],
                 keywords: ["corales", "mar", "vida marina"],
                 variants: [
@@ -868,7 +853,8 @@ export const collections: Collection[] = [
             {
                 id: "degrade-texturado-casamar",
                 title: "Degradé Texturado",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [degrade_texturado_icon_1],
                 keywords: ["degradé", "textura", "abstracto"],
                 variants: [
@@ -885,7 +871,8 @@ export const collections: Collection[] = [
             {
                 id: "ethnic-casamar",
                 title: "Ethnic",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [ethnic_icon_1],
                 keywords: ["étnico", "cultural", "diseño"],
                 variants: [
@@ -937,7 +924,8 @@ export const collections: Collection[] = [
             {
                 id: "exotic-casamar",
                 title: "Exotic",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [exotic_icon_1, exotic_icon_2],
                 keywords: ["exótico", "naturaleza", "diseño"],
                 variants: [
@@ -990,7 +978,8 @@ export const collections: Collection[] = [
             {
                 id: "fish-casamar",
                 title: "Fish",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [fish_icon_1],
                 keywords: ["peces", "mar", "vida marina"],
                 variants: [
@@ -1042,7 +1031,8 @@ export const collections: Collection[] = [
             {
                 id: "morris-casamar",
                 title: "Morris",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [morris_icon_1],
                 keywords: ["diseño", "arte", "abstracto"],
                 variants: [
@@ -1094,7 +1084,8 @@ export const collections: Collection[] = [
             {
                 id: "mushrooms-casamar",
                 title: "Mushrooms",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [mushrooms_icon_1, mushrooms_icon_2],
                 keywords: ["hongos", "naturaleza", "bosque"],
                 variants: [
@@ -1111,7 +1102,8 @@ export const collections: Collection[] = [
             {
                 id: "palms-casamar",
                 title: "Palms",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [palms_icon_1],
                 keywords: ["palmeras", "naturaleza", "tropical"],
                 variants: [
@@ -1163,7 +1155,8 @@ export const collections: Collection[] = [
             {
                 id: "rainbow-casamar",
                 title: "Rainbow",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [rainbow_icon_1],
                 keywords: ["arcoíris", "color", "diseño"],
                 variants: [
@@ -1215,7 +1208,8 @@ export const collections: Collection[] = [
             {
                 id: "shibori-casamar",
                 title: "Shibori",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [shibori_icon_1],
                 keywords: ["shibori", "diseño", "arte"],
                 variants: [
@@ -1274,7 +1268,8 @@ export const collections: Collection[] = [
             {
                 id: "toile-tropical-casamar",
                 title: "Toile Tropical",
-                collection: "Casamar",
+                collectionTitle: "Casamar",
+                collectionId: "casamar",
                 icons: [toile_tropical_icon_1],
                 keywords: ["tropical", "diseño", "naturaleza"],
                 variants: [
@@ -1332,7 +1327,8 @@ export const collections: Collection[] = [
             {
                 id: "arabesco-landmark",
                 title: "Arabesco",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [arabesco_icon_1],
                 keywords: ["arte", "patrón", "clásico"],
                 variants: [
@@ -1349,7 +1345,8 @@ export const collections: Collection[] = [
             {
                 id: "bosque-de-los-magos-landmark",
                 title: "Bosque de los Magos",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [bosque_de_los_magos_icon_1, bosque_de_los_magos_icon_2, bosque_de_los_magos_icon_3],
                 keywords: ["bosque", "magia", "naturaleza"],
                 variants: [
@@ -1366,7 +1363,8 @@ export const collections: Collection[] = [
             {
                 id: "bulgaros-landmark",
                 title: "Búlgaros",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [bulgaros_icon_1],
                 keywords: ["tradicional", "floral", "ornamental"],
                 variants: [
@@ -1383,7 +1381,8 @@ export const collections: Collection[] = [
             {
                 id: "exotic-blue-landmark",
                 title: "Exotic Blue",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [exotic_blue_icon_1, exotic_blue_icon_2],
                 keywords: ["azul", "exótico", "abstracto"],
                 variants: [
@@ -1400,7 +1399,8 @@ export const collections: Collection[] = [
             {
                 id: "fairy-tale-landmark",
                 title: "Fairy Tale",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [fairy_tale_icon_1, fairy_tale_icon_2],
                 keywords: ["fantasía", "cuento", "mágico"],
                 variants: [
@@ -1417,7 +1417,8 @@ export const collections: Collection[] = [
             {
                 id: "flowers-dark-landmark",
                 title: "Flowers Dark",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [flowers_dark_icon_1],
                 keywords: ["flores", "oscuro", "elegante"],
                 variants: [
@@ -1434,7 +1435,8 @@ export const collections: Collection[] = [
             {
                 id: "geometric-golden-mist-landmark",
                 title: "Geometric Golden Mist",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [geometric_golden_mist_icon_1],
                 keywords: ["geométrico", "dorado", "abstracto"],
                 variants: [
@@ -1451,7 +1453,8 @@ export const collections: Collection[] = [
             {
                 id: "hanging-plants-landmark",
                 title: "Hanging Plants",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [hanging_plants_icon_1],
                 keywords: ["plantas", "colgantes", "verde"],
                 variants: [
@@ -1468,7 +1471,8 @@ export const collections: Collection[] = [
             {
                 id: "invernadero-landmark",
                 title: "Invernadero",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [invernadero_icon_1],
                 keywords: ["invernadero", "plantas", "naturaleza"],
                 variants: [
@@ -1485,7 +1489,8 @@ export const collections: Collection[] = [
             {
                 id: "liberty-golden-landmark",
                 title: "Liberty Golden",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [liberty_golden_icon_1],
                 keywords: ["dorado", "lujo", "arte"],
                 variants: [
@@ -1502,7 +1507,8 @@ export const collections: Collection[] = [
             {
                 id: "linen-stripes-landmark",
                 title: "Linen Stripes",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [linen_stripes_icon_1],
                 keywords: ["líneas", "textura", "elegante"],
                 variants: [
@@ -1519,7 +1525,8 @@ export const collections: Collection[] = [
             {
                 id: "loop-original-landmark",
                 title: "Loop Original",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [loop_original_icon_1, loop_original_icon_2, loop_original_icon_3, loop_original_icon_4],
                 keywords: ["patrón", "diseño", "geometría"],
                 variants: [
@@ -1536,7 +1543,8 @@ export const collections: Collection[] = [
             {
                 id: "midnight-garden-landmark",
                 title: "Midnight Garden",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [midnight_garden_icon_1, midnight_garden_icon_2, midnight_garden_icon_3],
                 keywords: ["jardín", "noche", "floral"],
                 variants: [
@@ -1553,7 +1561,8 @@ export const collections: Collection[] = [
             {
                 id: "monkeys-landmark",
                 title: "Monkeys",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [monkeys_icon_1],
                 keywords: ["monos", "selva", "naturaleza"],
                 variants: [
@@ -1570,7 +1579,8 @@ export const collections: Collection[] = [
             {
                 id: "mushrooms-landmark",
                 title: "Mushrooms",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [landmark_mushrooms_icon_1, landmark_mushrooms_icon_2],
                 keywords: ["hongos", "bosque", "naturaleza"],
                 variants: [
@@ -1587,7 +1597,8 @@ export const collections: Collection[] = [
             {
                 id: "palms-tree-landmark",
                 title: "Palms Tree",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [palms_tree_icon_1],
                 keywords: ["palmeras", "tropical", "naturaleza"],
                 variants: [
@@ -1604,7 +1615,8 @@ export const collections: Collection[] = [
             {
                 id: "rayas-taupe-landmark",
                 title: "Rayas Taupe",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [rayas_taupe_icon_1],
                 keywords: ["rayas", "diseño", "elegante"],
                 variants: [
@@ -1621,7 +1633,8 @@ export const collections: Collection[] = [
             {
                 id: "savage-landmark",
                 title: "Savage",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [savage_icon_1, savage_icon_2, savage_icon_3],
                 keywords: ["salvaje", "naturaleza", "exótico"],
                 variants: [
@@ -1638,7 +1651,8 @@ export const collections: Collection[] = [
             {
                 id: "shibori-landmark",
                 title: "Shibori",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [landmark_shibori_icon_1],
                 keywords: ["shibori", "patrón", "arte"],
                 variants: [
@@ -1655,7 +1669,8 @@ export const collections: Collection[] = [
             {
                 id: "tartan-landmark",
                 title: "Tartan",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [tartan_icon_1],
                 keywords: ["tartán", "cuadrícula", "tradicional"],
                 variants: [
@@ -1672,7 +1687,8 @@ export const collections: Collection[] = [
             {
                 id: "universe-landmark",
                 title: "Universe",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [universe_icon_1],
                 keywords: ["universo", "espacio", "galaxia"],
                 variants: [
@@ -1689,7 +1705,8 @@ export const collections: Collection[] = [
             {
                 id: "watercolor-stripes-landmark",
                 title: "Watercolor Stripes",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [watercolor_stripes_icon_1],
                 keywords: ["acuarela", "rayas", "arte"],
                 variants: [
@@ -1706,7 +1723,8 @@ export const collections: Collection[] = [
             {
                 id: "willow-dark-landmark",
                 title: "Willow Dark",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [willow_dark_icon_1],
                 keywords: ["sauce", "oscuro", "naturaleza"],
                 variants: [
@@ -1723,7 +1741,8 @@ export const collections: Collection[] = [
             {
                 id: "willow-white-landmark",
                 title: "Willow White",
-                collection: "Landmark",
+                collectionTitle: "Landmark",
+                collectionId: "landmark",
                 icons: [willow_white_icon_1],
                 keywords: ["sauce", "blanco", "naturaleza"],
                 variants: [
@@ -1746,7 +1765,8 @@ export const collections: Collection[] = [
             {
                 id: "artemis-claro-morris",
                 title: "Artemis Claro",
-                collection: "Morris",
+                collectionTitle: "Morris",
+                collectionId: "morris",
                 icons: [artemis_claro_icon_1],
                 keywords: ["arte", "floral", "clásico"],
                 variants: [
@@ -1763,7 +1783,8 @@ export const collections: Collection[] = [
             {
                 id: "artemis-textura-morris",
                 title: "Artemis Textura",
-                collection: "Morris",
+                collectionTitle: "Morris",
+                collectionId: "morris",
                 icons: [artemis_textura_icon_1],
                 keywords: ["arte", "textura", "elegante"],
                 variants: [
@@ -1780,7 +1801,8 @@ export const collections: Collection[] = [
             {
                 id: "flowers-light-morris",
                 title: "Flowers Light",
-                collection: "Morris",
+                collectionTitle: "Morris",
+                collectionId: "morris",
                 icons: [flowers_light_icon_1],
                 keywords: ["flores", "luminoso", "elegante"],
                 variants: [
@@ -1797,7 +1819,8 @@ export const collections: Collection[] = [
             {
                 id: "membrillos-claro-morris",
                 title: "Membrillos Claro",
-                collection: "Morris",
+                collectionTitle: "Morris",
+                collectionId: "morris",
                 icons: [membrillos_claro_icon_1],
                 keywords: ["frutas", "claro", "natural"],
                 variants: [
@@ -1814,7 +1837,8 @@ export const collections: Collection[] = [
             {
                 id: "membrillos-verde-seco-morris",
                 title: "Membrillos Verde Seco",
-                collection: "Morris",
+                collectionTitle: "Morris",
+                collectionId: "morris",
                 icons: [membrillos_verde_seco_icon_1],
                 keywords: ["frutas", "verde", "natural"],
                 variants: [
@@ -1831,7 +1855,8 @@ export const collections: Collection[] = [
             {
                 id: "tulip-dark-morris",
                 title: "Tulip Dark",
-                collection: "Morris",
+                collectionTitle: "Morris",
+                collectionId: "morris",
                 icons: [tulip_dark_icon_1],
                 keywords: ["tulipanes", "oscuro", "floral"],
                 variants: [
@@ -1848,7 +1873,8 @@ export const collections: Collection[] = [
             {
                 id: "tulip-light-morris",
                 title: "Tulip Light",
-                collection: "Morris",
+                collectionTitle: "Morris",
+                collectionId: "morris",
                 icons: [tulip_light_icon_1],
                 keywords: ["tulipanes", "claro", "floral"],
                 variants: [
@@ -1865,7 +1891,8 @@ export const collections: Collection[] = [
             {
                 id: "willow-morris",
                 title: "Willow",
-                collection: "Morris",
+                collectionTitle: "Morris",
+                collectionId: "morris",
                 icons: [willow_icon_1],
                 keywords: ["sauce", "verde", "naturaleza"],
                 variants: [
@@ -1882,7 +1909,8 @@ export const collections: Collection[] = [
             {
                 id: "willow-textura-morris",
                 title: "Willow Textura",
-                collection: "Morris",
+                collectionTitle: "Morris",
+                collectionId: "morris",
                 icons: [willow_textura_icon_1],
                 keywords: ["sauce", "textura", "naturaleza"],
                 variants: [
@@ -1905,7 +1933,8 @@ export const collections: Collection[] = [
             {
                 id: "acuarela-murales-sueltos",
                 title: "Acuarela",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [acuarela_icon_1],
                 keywords: ["acuarela", "arte", "colores"],
                 variants: [
@@ -1928,7 +1957,8 @@ export const collections: Collection[] = [
             {
                 id: "animal-parade-murales-sueltos",
                 title: "Animal Parade",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [animal_parade_icon_1],
                 keywords: ["animales", "diversión", "infantil"],
                 variants: [
@@ -1945,7 +1975,8 @@ export const collections: Collection[] = [
             {
                 id: "birds-of-paradise-murales-sueltos",
                 title: "Birds of Paradise",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [birds_of_paradise_icon_1],
                 keywords: ["aves", "paraíso", "naturaleza"],
                 variants: [
@@ -1974,7 +2005,8 @@ export const collections: Collection[] = [
             {
                 id: "constelaciones-murales-sueltos",
                 title: "Constelaciones",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [constelaciones_icon_1],
                 keywords: ["espacio", "constelaciones", "cielo"],
                 variants: [
@@ -1991,7 +2023,8 @@ export const collections: Collection[] = [
             {
                 id: "cortaderas-murales-sueltos",
                 title: "Cortaderas",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [cortaderas_icon_1],
                 keywords: ["naturaleza", "plantas", "cortaderas"],
                 variants: [
@@ -2008,7 +2041,8 @@ export const collections: Collection[] = [
             {
                 id: "costa-rica-murales-sueltos",
                 title: "Costa Rica",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [costa_rica_icon_1],
                 keywords: ["naturaleza", "tropical", "paisaje"],
                 variants: [
@@ -2031,7 +2065,8 @@ export const collections: Collection[] = [
             {
                 id: "dutch-flowers-murales-sueltos",
                 title: "Dutch Flowers",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [dutch_flowers_icon_1],
                 keywords: ["flores", "holanda", "elegante"],
                 variants: [
@@ -2048,7 +2083,8 @@ export const collections: Collection[] = [
             {
                 id: "el-banquete-murales-sueltos",
                 title: "El Banquete",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [el_banquete_icon_1],
                 keywords: ["banquete", "arte", "clásico"],
                 variants: [
@@ -2065,7 +2101,8 @@ export const collections: Collection[] = [
             {
                 id: "el-descanso-de-las-garzas-murales-sueltos",
                 title: "El Descanso de las Garzas",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [el_descanso_de_las_garzas_icon_1, el_descanso_de_las_garzas_icon_2, el_descanso_de_las_garzas_icon_3],
                 keywords: ["garzas", "descanso", "naturaleza"],
                 variants: [
@@ -2088,7 +2125,8 @@ export const collections: Collection[] = [
             {
                 id: "el-eden-murales-sueltos",
                 title: "El Edén",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [el_eden_icon_1],
                 keywords: ["jardín", "paraíso", "naturaleza"],
                 variants: [
@@ -2117,7 +2155,8 @@ export const collections: Collection[] = [
             {
                 id: "el-jardin-de-la-geisha-murales-sueltos",
                 title: "El Jardín de la Geisha",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [el_jardin_de_la_geisha_icon_1],
                 keywords: ["jardín", "geisha", "naturaleza"],
                 variants: [
@@ -2146,7 +2185,8 @@ export const collections: Collection[] = [
             {
                 id: "elena-murales-sueltos",
                 title: "Elena",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [elena_icon_1],
                 keywords: ["floral", "elegante", "diseño"],
                 variants: [
@@ -2163,7 +2203,8 @@ export const collections: Collection[] = [
             {
                 id: "en-las-nubes-murales-sueltos",
                 title: "En las Nubes",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [en_las_nubes_icon_1],
                 keywords: ["nubes", "cielo", "ligero"],
                 variants: [
@@ -2180,7 +2221,8 @@ export const collections: Collection[] = [
             {
                 id: "follaje-murales-sueltos",
                 title: "Follaje",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [follaje_icon_1],
                 keywords: ["hojas", "verde", "naturaleza"],
                 variants: [
@@ -2197,7 +2239,8 @@ export const collections: Collection[] = [
             {
                 id: "fractal-murales-sueltos",
                 title: "Fractal",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [fractal_icon_1],
                 keywords: ["geometría", "arte", "patrón"],
                 variants: [
@@ -2226,7 +2269,8 @@ export const collections: Collection[] = [
             {
                 id: "hanami-murales-sueltos",
                 title: "Hanami",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [hanami_icon_1],
                 keywords: ["sakura", "flores", "japonés"],
                 variants: [
@@ -2249,7 +2293,8 @@ export const collections: Collection[] = [
             {
                 id: "jardin-vertical-murales-sueltos",
                 title: "Jardín Vertical",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [jardin_vertical_icon_1],
                 keywords: ["jardín", "plantas", "verde"],
                 variants: [
@@ -2266,7 +2311,8 @@ export const collections: Collection[] = [
             {
                 id: "jardin-victoriano-murales-sueltos",
                 title: "Jardín Victoriano",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [jardin_victoriano_icon_1],
                 keywords: ["jardín", "victoriano", "clásico"],
                 variants: [
@@ -2289,7 +2335,8 @@ export const collections: Collection[] = [
             {
                 id: "jungla-en-tintas-murales-sueltos",
                 title: "Jungla en Tintas",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [jungla_en_tintas_icon_1],
                 keywords: ["jungla", "tintas", "naturaleza"],
                 variants: [
@@ -2306,7 +2353,8 @@ export const collections: Collection[] = [
             {
                 id: "laguna-sepia-murales-sueltos",
                 title: "Laguna Sepia",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [laguna_sepia_icon_1],
                 keywords: ["laguna", "sepia", "agua"],
                 variants: [
@@ -2329,7 +2377,8 @@ export const collections: Collection[] = [
             {
                 id: "pinceladas-murales-sueltos",
                 title: "Pinceladas",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [pinceladas_icon_1],
                 keywords: ["pinceladas", "arte", "abstracción"],
                 variants: [
@@ -2346,7 +2395,8 @@ export const collections: Collection[] = [
             {
                 id: "praderas-murales-sueltos",
                 title: "Praderas",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [praderas_icon_1],
                 keywords: ["praderas", "naturaleza", "verde"],
                 variants: [
@@ -2369,7 +2419,8 @@ export const collections: Collection[] = [
             {
                 id: "stadium-murales-sueltos",
                 title: "Stadium",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [stadium_icon_1],
                 keywords: ["estadio", "deporte", "arquitectura"],
                 variants: [
@@ -2386,7 +2437,8 @@ export const collections: Collection[] = [
             {
                 id: "utopia-murales-sueltos",
                 title: "Utopía",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [utopia_icon_1],
                 keywords: ["utopía", "fantasía", "paisaje"],
                 variants: [
@@ -2409,7 +2461,8 @@ export const collections: Collection[] = [
             {
                 id: "vuelo-de-mariposas-murales-sueltos",
                 title: "Vuelo de Mariposas",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [vuelo_de_mariposas_icon_1],
                 keywords: ["mariposas", "naturaleza", "ligereza"],
                 variants: [
@@ -2426,7 +2479,8 @@ export const collections: Collection[] = [
             {
                 id: "wild-circus-murales-sueltos",
                 title: "Wild Circus",
-                collection: "Murales Sueltos",
+                collectionTitle: "Murales Sueltos",
+                collectionId: "murales-sueltos",
                 icons: [wild_circus_icon_1],
                 keywords: ["circo", "fantasía", "colorido"],
                 variants: [
@@ -2455,7 +2509,8 @@ export const collections: Collection[] = [
             {
                 id: "avistaje-vivero",
                 title: "Avistaje",
-                collection: "Vivero",
+                collectionTitle: "Vivero",
+                collectionId: "vivero",
                 icons: [avistaje_icon_1],
                 keywords: ["naturaleza", "aves", "paisaje"],
                 variants: [
@@ -2472,7 +2527,8 @@ export const collections: Collection[] = [
             {
                 id: "la-campagne-vivero",
                 title: "La Campagne",
-                collection: "Vivero",
+                collectionTitle: "Vivero",
+                collectionId: "vivero",
                 icons: [la_campagne_icon_1, la_campagne_icon_2],
                 keywords: ["campo", "naturaleza", "paisaje"],
                 variants: [
@@ -2489,7 +2545,8 @@ export const collections: Collection[] = [
             {
                 id: "la-maison-vivero",
                 title: "La Maison",
-                collection: "Vivero",
+                collectionTitle: "Vivero",
+                collectionId: "vivero",
                 icons: [la_maison_icon_1, la_maison_icon_2, la_maison_icon_3],
                 keywords: ["hogar", "arquitectura", "elegante"],
                 variants: [
@@ -2506,7 +2563,8 @@ export const collections: Collection[] = [
             {
                 id: "reina-ana-vivero",
                 title: "Reina Ana",
-                collection: "Vivero",
+                collectionTitle: "Vivero",
+                collectionId: "vivero",
                 icons: [reina_ana_icon_1, reina_ana_icon_2, reina_ana_icon_3],
                 keywords: ["realeza", "clásico", "ornamental"],
                 variants: [
@@ -2535,7 +2593,8 @@ export const collections: Collection[] = [
             {
                 id: "alexandria-vuelta-al-mundo",
                 title: "Alexandria",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [alexandria_icon_1],
                 keywords: ["historia", "arquitectura", "antiguo"],
                 variants: [
@@ -2558,7 +2617,8 @@ export const collections: Collection[] = [
             {
                 id: "bindi-vuelta-al-mundo",
                 title: "Bindi",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [bindi_icon_1],
                 keywords: ["arte", "india", "cultural"],
                 variants: [
@@ -2581,7 +2641,8 @@ export const collections: Collection[] = [
             {
                 id: "cuerpos-celestes-vuelta-al-mundo",
                 title: "Cuerpos Celestes",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [cuerpos_celestes_icon_1],
                 keywords: ["espacio", "astronomía", "universo"],
                 variants: [
@@ -2610,7 +2671,8 @@ export const collections: Collection[] = [
             {
                 id: "encantado-vuelta-al-mundo",
                 title: "Encantado",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [encantado_icon_1],
                 keywords: ["fantasía", "misterio", "mágico"],
                 variants: [
@@ -2633,7 +2695,8 @@ export const collections: Collection[] = [
             {
                 id: "estuco-vuelta-al-mundo",
                 title: "Estuco",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [estuco_icon_1],
                 keywords: ["textura", "pared", "rústico"],
                 variants: [
@@ -2650,7 +2713,8 @@ export const collections: Collection[] = [
             {
                 id: "etnico-vuelta-al-mundo",
                 title: "Étnico",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [etnico_icon_1],
                 keywords: ["patrón", "cultural", "arte"],
                 variants: [
@@ -2673,7 +2737,8 @@ export const collections: Collection[] = [
             {
                 id: "golden-tanger-vuelta-al-mundo",
                 title: "Golden Tanger",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [golden_tanger_icon_1],
                 keywords: ["dorado", "exótico", "arte"],
                 variants: [
@@ -2696,7 +2761,8 @@ export const collections: Collection[] = [
             {
                 id: "ibiza-vuelta-al-mundo",
                 title: "Ibiza",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [ibiza_icon_1],
                 keywords: ["playa", "relajante", "blanco"],
                 variants: [
@@ -2719,7 +2785,8 @@ export const collections: Collection[] = [
             {
                 id: "jardin-colgante-vuelta-al-mundo",
                 title: "Jardín Colgante",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [jardin_colgante_icon_1],
                 keywords: ["naturaleza", "verde", "paisaje vertical"],
                 variants: [
@@ -2742,7 +2809,8 @@ export const collections: Collection[] = [
             {
                 id: "jardin-persa-vuelta-al-mundo",
                 title: "Jardín Persa",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [jardin_persa_icon_1],
                 keywords: ["exótico", "floral", "patrón persa"],
                 variants: [
@@ -2771,7 +2839,8 @@ export const collections: Collection[] = [
             {
                 id: "la-riviere-vuelta-al-mundo",
                 title: "La Riviere",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [la_riviere_icon_1],
                 keywords: ["río", "paisaje", "naturaleza"],
                 variants: [
@@ -2794,7 +2863,8 @@ export const collections: Collection[] = [
             {
                 id: "magnolia-real-vuelta-al-mundo",
                 title: "Magnolia Real",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [magnolia_real_icon_1, magnolia_real_icon_2],
                 keywords: ["floral", "naturaleza", "elegante"],
                 variants: [
@@ -2817,7 +2887,8 @@ export const collections: Collection[] = [
             {
                 id: "mundo-animal-vuelta-al-mundo",
                 title: "Mundo Animal",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [mundo_animal_icon_1],
                 keywords: ["fauna", "naturaleza", "animales"],
                 variants: [
@@ -2834,7 +2905,8 @@ export const collections: Collection[] = [
             {
                 id: "palmario-vuelta-al-mundo",
                 title: "Palmario",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [palmario_icon_1],
                 keywords: ["palmeras", "tropical", "naturaleza"],
                 variants: [
@@ -2857,7 +2929,8 @@ export const collections: Collection[] = [
             {
                 id: "patagonia-vuelta-al-mundo",
                 title: "Patagonia",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [patagonia_icon_1],
                 keywords: ["montañas", "paisaje", "naturaleza"],
                 variants: [
@@ -2880,7 +2953,8 @@ export const collections: Collection[] = [
             {
                 id: "praderas-tropical-vuelta-al-mundo",
                 title: "Praderas Tropical",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [praderas_tropical_icon_1],
                 keywords: ["praderas", "tropical", "naturaleza"],
                 variants: [
@@ -2903,7 +2977,8 @@ export const collections: Collection[] = [
             {
                 id: "rio-verde-vuelta-al-mundo",
                 title: "Río Verde",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [rio_verde_icon_1],
                 keywords: ["río", "verde", "naturaleza"],
                 variants: [
@@ -2920,7 +2995,8 @@ export const collections: Collection[] = [
             {
                 id: "silvestre-vuelta-al-mundo",
                 title: "Silvestre",
-                collection: "Vuelta al Mundo",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [silvestre_icon_1],
                 keywords: ["flora", "paisaje", "naturaleza"],
                 variants: [
@@ -2949,7 +3025,8 @@ export const collections: Collection[] = [
             {
                 id: "hikers-in-a-park-the-classics",
                 title: "Hikers in a Park",
-                collection: "The Classics",
+                collectionTitle: "The Classics",
+                collectionId: "the-classics",
                 icons: [hikers_in_a_park_icon_1],
                 keywords: ["paisaje", "naturaleza", "senderismo"],
                 variants: [
@@ -2966,7 +3043,8 @@ export const collections: Collection[] = [
             {
                 id: "italian-landscape-the-classics",
                 title: "Italian Landscape",
-                collection: "The Classics",
+                collectionTitle: "The Classics",
+                collectionId: "the-classics",
                 icons: [italian_landscape_icon_1],
                 keywords: ["paisaje", "Italia", "clásico"],
                 variants: [
@@ -2989,7 +3067,8 @@ export const collections: Collection[] = [
             {
                 id: "prince-of-udaipur-the-classics",
                 title: "Prince of Udaipur",
-                collection: "The Classics",
+                collectionTitle: "The Classics",
+                collectionId: "the-classics",
                 icons: [prince_of_udaipur_icon_1],
                 keywords: ["realeza", "historia", "arte clásico"],
                 variants: [
@@ -3006,7 +3085,8 @@ export const collections: Collection[] = [
             {
                 id: "tapestry-the-classics",
                 title: "Tapestry",
-                collection: "The Classics",
+                collectionTitle: "The Classics",
+                collectionId: "the-classics",
                 icons: [tapestry_icon_1],
                 keywords: ["tapiz", "historia", "clásico"],
                 variants: [
@@ -3023,7 +3103,8 @@ export const collections: Collection[] = [
             {
                 id: "the-emperors-journey-the-classics",
                 title: "The Emperor's Journey",
-                collection: "The Classics",
+                collectionTitle: "The Classics",
+                collectionId: "the-classics",
                 icons: [the_emperors_journey_icon_1],
                 keywords: ["historia", "emperador", "viaje"],
                 variants: [
@@ -3040,7 +3121,8 @@ export const collections: Collection[] = [
             {
                 id: "waterfall-the-classics",
                 title: "Waterfall",
-                collection: "The Classics",
+                collectionTitle: "The Classics",
+                collectionId: "the-classics",
                 icons: [waterfall_icon_1],
                 keywords: ["cascada", "agua", "naturaleza"],
                 variants: [

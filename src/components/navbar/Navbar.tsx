@@ -1,8 +1,8 @@
 'use client'
 
 import Link from "next/link";
-import { NavLinkHome } from "@/interface";
-import { MCLogo, NavbarLink } from "@/components";
+import { NavLinkHome } from "@/interfaces";
+import { MCLogo, NavbarLink, BuscadorNavbar } from "@/components";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -12,7 +12,7 @@ const links:Array<NavLinkHome> = [
         links: [
             {
                 title:'Murales',
-                href:'/'
+                href:'/murals'
             },
             {
                 title:'Patrones',
@@ -24,7 +24,7 @@ const links:Array<NavLinkHome> = [
             },
             {
                 title:'Cotizá',
-                href:'/'
+                href:'/quote'
             },
         ]
     },
@@ -97,6 +97,7 @@ export const Navbar = () => {
     const [menuExpanded, setMenuExpanded] = useState<'wallpapers'|'studio'|'highlights'|'mcuniverse'|'contact'|undefined>();
 
     useEffect(() => {
+        setMenuExpanded(undefined);
         setIsHome(pathname === '/');
     }, [pathname])
     
@@ -105,7 +106,7 @@ export const Navbar = () => {
     }
 
     return (
-        <nav className="w-full px-12 h-40 flex justify-center items-center fixed top-0 left-0 right-0 z-50">
+        <nav className={`w-full px-12 h-40 flex justify-center items-center fixed top-0 left-0 right-0 z-50 ${ isHome ? 'bg-transparent' : 'bg-gradient-to-b from-white via-white/75 to-transparent' }`}>
             <div className="w-full flex justify-between">
                 <Link className="w-full max-w-xl" href={'/'} aria-label="Inicio">
                     <MCLogo className={`${ isHome ? 'fill-white' : 'fill-black' } w-full`}/>
@@ -117,6 +118,7 @@ export const Navbar = () => {
                                 <NavbarLink navlink={navlink} index={i} isHome={isHome} menuExpanded={menuExpanded} toggleMenu={toggleMenu} key={i}/>
                             ))
                         }
+                        <BuscadorNavbar isHome={isHome}/>
                     </ul>
                 </div>
             </div>

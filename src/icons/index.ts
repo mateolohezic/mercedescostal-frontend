@@ -14,3 +14,7 @@ export {
 export {
     LiaSpinnerSolid as SpinnerIcon
 } from "react-icons/lia";
+
+export {
+    BsSearch as SearchIcon
+} from "react-icons/bs";

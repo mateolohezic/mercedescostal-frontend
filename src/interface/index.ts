@@ -1,1 +1,0 @@
-export type { NavLinkHome } from './NavLinkHome';
