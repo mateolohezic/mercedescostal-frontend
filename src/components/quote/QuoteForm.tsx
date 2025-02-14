@@ -26,6 +26,7 @@ interface Props {
 
 export const QuoteForm = ({ preselectedMuralId }: Props) => {
     const [isLoading, setIsLoading] = useState<boolean>(false);
+    const [isRendered, setIsRendered] = useState<boolean>(false);
 
     const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<Schema>({
         resolver: zodResolver(schema),
@@ -71,10 +72,19 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
             const preselectedMural = collections.flatMap(col => col.murales).find(m => m.id === preselectedMuralId);
             if (preselectedMural) {
                 setValue("collection", preselectedMural.collectionId);
-                setValue("mural", preselectedMural.id);
+                setIsRendered(true);
             }
         }
     }, [preselectedMuralId, setValue]);
+
+    useEffect(() => {
+        if (isRendered) {
+            const preselectedMural = collections.flatMap(col => col.murales).find(m => m.id === preselectedMuralId);
+            if (preselectedMural) {
+                setValue("mural", preselectedMural.id);
+            }
+        }
+    }, [preselectedMuralId, isRendered, setValue]);
 
     const onSubmit = async (data: Schema) => {
         setIsLoading(true);

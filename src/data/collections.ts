@@ -624,7 +624,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [woodland_01_icon_1],
-                keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["pattern", "patron", "patrón", "naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -642,7 +642,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [woodland_02_icon_1],
-                keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["pattern", "patron", "patrón", "naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -660,7 +660,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [woodland_03_icon_1],
-                keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["pattern", "patron", "patrón", "naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -678,7 +678,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [woodland_04_icon_1],
-                keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["pattern", "patron", "patrón", "naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -696,7 +696,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [woodland_05_icon_1],
-                keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["pattern", "patron", "patrón", "naturaleza", "animales", "paisaje", "flora", "fauna"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -738,7 +738,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [brush_icon_1],
-                keywords: ["arte", "diseño", "abstracto"],
+                keywords: ["pattern", "patron", "patrón", "arte", "diseño", "abstracto"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -809,7 +809,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [corals_icon_1],
-                keywords: ["corales", "mar", "vida marina"],
+                keywords: ["pattern", "patron", "patrón", "corales", "mar", "vida marina"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -874,7 +874,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [ethnic_icon_1],
-                keywords: ["étnico", "cultural", "diseño"],
+                keywords: ["pattern", "patron", "patrón", "étnico", "cultural", "diseño"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -927,7 +927,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [exotic_icon_1, exotic_icon_2],
-                keywords: ["exótico", "naturaleza", "diseño"],
+                keywords: ["pattern", "patron", "patrón", "exótico", "naturaleza", "diseño"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -981,7 +981,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [fish_icon_1],
-                keywords: ["peces", "mar", "vida marina"],
+                keywords: ["pattern", "patron", "patrón", "peces", "mar", "vida marina"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -1034,7 +1034,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [morris_icon_1],
-                keywords: ["diseño", "arte", "abstracto"],
+                keywords: ["pattern", "patron", "patrón", "diseño", "arte", "abstracto"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -1105,7 +1105,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [palms_icon_1],
-                keywords: ["palmeras", "naturaleza", "tropical"],
+                keywords: ["pattern", "patron", "patrón", "palmeras", "naturaleza", "tropical"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -1158,7 +1158,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [rainbow_icon_1],
-                keywords: ["arcoíris", "color", "diseño"],
+                keywords: ["pattern", "patron", "patrón", "arcoíris", "color", "diseño"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -1211,7 +1211,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [shibori_icon_1],
-                keywords: ["shibori", "diseño", "arte"],
+                keywords: ["pattern", "patron", "patrón", "shibori", "diseño", "arte"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1271,7 +1271,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [toile_tropical_icon_1],
-                keywords: ["tropical", "diseño", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "tropical", "diseño", "naturaleza"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -1330,7 +1330,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [arabesco_icon_1],
-                keywords: ["arte", "patrón", "clásico"],
+                keywords: ["pattern", "patron", "patrón", "arte", "patrón", "clásico"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1366,7 +1366,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [bulgaros_icon_1],
-                keywords: ["tradicional", "floral", "ornamental"],
+                keywords: ["pattern", "patron", "patrón", "tradicional", "floral", "ornamental"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1384,7 +1384,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [exotic_blue_icon_1, exotic_blue_icon_2],
-                keywords: ["azul", "exótico", "abstracto"],
+                keywords: ["pattern", "patron", "patrón", "azul", "exótico", "abstracto"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1402,7 +1402,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [fairy_tale_icon_1, fairy_tale_icon_2],
-                keywords: ["fantasía", "cuento", "mágico"],
+                keywords: ["pattern", "patron", "patrón", "fantasía", "cuento", "mágico"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1420,7 +1420,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [flowers_dark_icon_1],
-                keywords: ["flores", "oscuro", "elegante"],
+                keywords: ["pattern", "patron", "patrón", "flores", "oscuro", "elegante"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1438,7 +1438,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [geometric_golden_mist_icon_1],
-                keywords: ["geométrico", "dorado", "abstracto"],
+                keywords: ["pattern", "patron", "patrón", "geométrico", "dorado", "abstracto"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1456,7 +1456,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [hanging_plants_icon_1],
-                keywords: ["plantas", "colgantes", "verde"],
+                keywords: ["pattern", "patron", "patrón", "plantas", "colgantes", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1474,7 +1474,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [invernadero_icon_1],
-                keywords: ["invernadero", "plantas", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "invernadero", "plantas", "naturaleza"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1492,7 +1492,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [liberty_golden_icon_1],
-                keywords: ["dorado", "lujo", "arte"],
+                keywords: ["pattern", "patron", "patrón", "dorado", "lujo", "arte"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1510,7 +1510,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [linen_stripes_icon_1],
-                keywords: ["líneas", "textura", "elegante"],
+                keywords: ["pattern", "patron", "patrón", "líneas", "textura", "elegante"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1528,7 +1528,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [loop_original_icon_1, loop_original_icon_2, loop_original_icon_3, loop_original_icon_4],
-                keywords: ["patrón", "diseño", "geometría"],
+                keywords: ["pattern", "patron", "patrón", "diseño", "geometría"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1564,7 +1564,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [monkeys_icon_1],
-                keywords: ["monos", "selva", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "monos", "selva", "naturaleza"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1582,7 +1582,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [landmark_mushrooms_icon_1, landmark_mushrooms_icon_2],
-                keywords: ["hongos", "bosque", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "hongos", "bosque", "naturaleza"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1600,7 +1600,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [palms_tree_icon_1],
-                keywords: ["palmeras", "tropical", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "palmeras", "tropical", "naturaleza"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1618,7 +1618,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [rayas_taupe_icon_1],
-                keywords: ["rayas", "diseño", "elegante"],
+                keywords: ["pattern", "patron", "patrón", "rayas", "diseño", "elegante"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1654,7 +1654,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [landmark_shibori_icon_1],
-                keywords: ["shibori", "patrón", "arte"],
+                keywords: ["pattern", "patron", "patrón", "shibori", "patrón", "arte"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1672,7 +1672,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [tartan_icon_1],
-                keywords: ["tartán", "cuadrícula", "tradicional"],
+                keywords: ["pattern", "patron", "patrón", "tartán", "cuadrícula", "tradicional"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1690,7 +1690,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [universe_icon_1],
-                keywords: ["universo", "espacio", "galaxia"],
+                keywords: ["pattern", "patron", "patrón", "universo", "espacio", "galaxia"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1708,7 +1708,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [watercolor_stripes_icon_1],
-                keywords: ["acuarela", "rayas", "arte"],
+                keywords: ["pattern", "patron", "patrón", "acuarela", "rayas", "arte"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1726,7 +1726,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [willow_dark_icon_1],
-                keywords: ["sauce", "oscuro", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "sauce", "oscuro", "naturaleza"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1744,7 +1744,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [willow_white_icon_1],
-                keywords: ["sauce", "blanco", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "sauce", "blanco", "naturaleza"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1768,7 +1768,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [artemis_claro_icon_1],
-                keywords: ["arte", "floral", "clásico"],
+                keywords: ["pattern", "patron", "patrón", "arte", "floral", "clásico"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1786,7 +1786,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [artemis_textura_icon_1],
-                keywords: ["arte", "textura", "elegante"],
+                keywords: ["pattern", "patron", "patrón", "arte", "textura", "elegante"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1804,7 +1804,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [flowers_light_icon_1],
-                keywords: ["flores", "luminoso", "elegante"],
+                keywords: ["pattern", "patron", "patrón", "flores", "luminoso", "elegante"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1822,7 +1822,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [membrillos_claro_icon_1],
-                keywords: ["frutas", "claro", "natural"],
+                keywords: ["pattern", "patron", "patrón", "frutas", "claro", "natural"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1840,7 +1840,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [membrillos_verde_seco_icon_1],
-                keywords: ["frutas", "verde", "natural"],
+                keywords: ["pattern", "patron", "patrón", "frutas", "verde", "natural"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1858,7 +1858,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [tulip_dark_icon_1],
-                keywords: ["tulipanes", "oscuro", "floral"],
+                keywords: ["pattern", "patron", "patrón", "tulipanes", "oscuro", "floral"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1876,7 +1876,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [tulip_light_icon_1],
-                keywords: ["tulipanes", "claro", "floral"],
+                keywords: ["pattern", "patron", "patrón", "tulipanes", "claro", "floral"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1894,7 +1894,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [willow_icon_1],
-                keywords: ["sauce", "verde", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "sauce", "verde", "naturaleza"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1912,7 +1912,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [willow_textura_icon_1],
-                keywords: ["sauce", "textura", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "sauce", "textura", "naturaleza"],
                 variants: [
                     {
                         colorName: "Estándar",

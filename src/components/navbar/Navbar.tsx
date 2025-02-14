@@ -16,12 +16,12 @@ const links:Array<NavLinkHome> = [
             },
             {
                 title:'Patrones',
-                href:'/'
+                href:'/patterns'
             },
-            {
-                title:'New In',
-                href:'/'
-            },
+            // {
+            //     title:'New In',
+            //     href:'/'
+            // },
             {
                 title:'Cotizá',
                 href:'/quote'
