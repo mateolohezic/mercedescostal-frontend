@@ -21,7 +21,7 @@ export const VideoIntro = () => {
                 <button
                     type="button"
                     onClick={toggleMute}
-                    className="text-white opacity-75 hover:opacity-100 text-7xl absolute bottom-12 right-12 pointer-events-auto cursor-pointer z-50 transition-150"
+                    className="text-white opacity-75 hover:opacity-100 text-4xl lg:text-7xl absolute bottom-4 lg:bottom-12 right-4 lg:right-12 pointer-events-auto cursor-pointer z-50 transition-150"
                 >
                     {
                         isMuted ? <SoundOffIcon/> : <SoundOnIcon/>

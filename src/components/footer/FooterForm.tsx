@@ -27,8 +27,8 @@ export const FooterForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-xl flex justify-between items-center gap-4">
-            <div className="grow flex items-center gap-2">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-xl flex flex-col lg:flex-row justify-between items-center gap-6 lg:gap-4">
+            <div className="grow flex flex-col lg:flex-row items-center gap-2">
                 <label htmlFor="email" className="md:text-lg text-center md:text-start md:px-0 mb-2 md:mb-0">
                     Suscribe to our newsletter:
                 </label>
@@ -40,7 +40,7 @@ export const FooterForm = () => {
                     id="email"
                     autoComplete="email"
                     placeholder="Enter your email"
-                    className="grow font-semibold text-black placeholder:font-semibold placeholder:uppercase placeholder:text-black"
+                    className="grow border-b border-black lg:border-none font-semibold placeholder:font-semibold placeholder:uppercase placeholder:text-black text-center lg:text-start placeholder:text-center lg:placeholder:text-start"
                     {...register("email", { required: true, maxLength: 50 })}
                 />
             </div>

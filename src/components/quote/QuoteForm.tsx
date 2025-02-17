@@ -98,18 +98,18 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-4 w-full max-w-7xl">
+        <form onSubmit={handleSubmit(onSubmit)} className="mt-12 lg:mt-4 w-full max-w-7xl px-4 xl:px-0">
             <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="w-full">
                     <label className="md:text-lg">Forma del área</label>
-                    <select className="w-full p-2 border border-black" {...register("shape")}>
+                    <select className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("shape")}>
                         <option value="rectangular">Rectangular</option>
                         <option value="irregular">Forma inusual</option>
                     </select>
                 </div>
                 <div className="w-full">
                     <label className="md:text-lg">Unidad de medida</label>
-                    <select className="w-full p-2 border border-black" {...register("unit")}>
+                    <select className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("unit")}>
                         <option value="m">Metros</option>
                         <option value="ft">Pies</option>
                         <option value="in">Pulgadas</option>
@@ -117,21 +117,21 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                 </div>
                 <div className="w-full">
                     <label className="md:text-lg">Ancho del espacio</label>
-                    <input type="number" step="0.01" min="0.01" max="100000" className="w-full p-2 border border-black" {...register("width")} />
+                    <input type="number" step="0.01" min="0.01" max="100000" className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("width")} />
                     <FormErrorMessage condition={errors?.width} message={errors?.width?.message} />
                 </div>
                 <div className="w-full">
                     <label className="md:text-lg">Altura del espacio</label>
-                    <input type="number" step="0.01" min="0.01" max="100000" className="w-full p-2 border border-black" {...register("height")} />
+                    <input type="number" step="0.01" min="0.01" max="100000" className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("height")} />
                     <FormErrorMessage condition={errors?.height} message={errors?.height?.message} />
                 </div>
                 <div className="w-full">
                     <label className="md:text-lg">Área total ({unit}²)</label>
-                    <input type="number" step="0.01" min="0.01" max="10000000000" className="w-full p-2 border border-black" value={area || ""} onChange={handleAreaInput} />
+                    <input type="number" step="0.01" min="0.01" max="10000000000" className="w-full h-10 px-2 bg-white rounded-none border border-black" value={area || ""} onChange={handleAreaInput} />
                 </div>
                 <div className="w-full">
                     <label className="md:text-lg">Colección</label>
-                    <select className="w-full p-2 border border-black" {...register("collection")}>
+                    <select className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("collection")}>
                         <option value="">Selecciona una colección</option>
                         {collections.map(collection => (
                             <option key={collection.id} value={collection.id}>{collection.title}</option>
@@ -141,7 +141,7 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                 </div>
                 <div className="w-full">
                     <label className="md:text-lg">Mural</label>
-                    <select className="w-full p-2 border border-black" {...register("mural")}>
+                    <select className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("mural")}>
                         <option value="">Selecciona un mural</option>
                         { selectedCollection?.murales.map(mural => (
                             <option key={mural.id} value={mural.id}>{mural.title}</option>
@@ -149,7 +149,7 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                     </select>
                     <FormErrorMessage condition={errors?.mural} message={errors?.mural?.message} />
                 </div>
-                <div className="w-full flex justify-end items-end">
+                <div className="mt-4 lg:mt-0 w-full text-xl lg:text-base flex justify-center lg:justify-end items-center lg:items-end">
                     <SubmitButtonLoading isLoading={isLoading} text="Cotizar" className="w-20" />
                 </div>
             </div>

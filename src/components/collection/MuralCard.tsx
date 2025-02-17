@@ -1,11 +1,9 @@
 'use client'
 
-import { useState } from 'react';
+import Link from 'next/link';
 import Image from "next/image";
 import { motion } from 'framer-motion';
-import { TypeAnimation } from 'react-type-animation';
 import { Mural } from '@/interfaces';
-import Link from 'next/link';
 
 interface Props{
     mural:Mural;
@@ -14,62 +12,25 @@ interface Props{
 
 export const MuralCard = ({mural, showCollection}:Props) => {
 
-    const [muralWritted, setMuralWritted] = useState<boolean>(false);
-    const [muralTwoWritted, setMuralTwoWritted] = useState<boolean>(false);
-    const [startAnimation, setStartAnimation] = useState<boolean>(false);
-
     const baseVariant = mural.variants.find(v => v.base) || mural.variants[0];
 
     return (
-        <motion.div
-            onViewportEnter={() => setStartAnimation(true)}
-            className="w-full flex flex-col gap-4 overflow-x-hidden"
-        >
-            <h2 className="sr-only">Mural {mural.title}</h2>
-            <div className='w-fit h-6'>
-                { startAnimation &&
-                    <div className='flex items-center gap-3'>
-                        <TypeAnimation
-                            aria-label="Mural"
-                            role="title"
-                            sequence={[
-                                'Mural',
-                                () => setMuralWritted(true),
-                            ]}
-                            speed={30}
-                            cursor={false}
-                            className={'inline-block font-gillsans text-xl tracking-[0.5rem] uppercase'}
-                        />
-                        {
-                            muralWritted &&
-                            <TypeAnimation
-                                aria-label={mural.title}
-                                role="title"
-                                sequence={[
-                                    mural.title,
-                                    () => setMuralTwoWritted(true),
-                                ]}
-                                speed={20}
-                                cursor={false}
-                                className={'inline-block font-gillsans text-xl tracking-[0.5rem] uppercase font-semibold mr-4'}
-                            />
-                        }
-                        {
-                            muralTwoWritted && showCollection &&
-                            <TypeAnimation
-                                aria-label={mural.collectionTitle}
-                                role="title"
-                                sequence={[ 
-                                    "/ Colección " + mural.collectionTitle,
-                                ]}
-                                speed={20}
-                                cursor={false}
-                                className={'inline-block font-gillsans text-sm tracking-[0.5rem] uppercase'}
-                            />
-                        }
-                    </div>
+        <div className="w-full flex flex-col justify-center lg:justify-start items-center lg:items-stretch gap-4 overflow-x-hidden">
+            <h2 className="w-fit font-gillsans text-lg lg:text-xl text-center lg:text-start tracking-[0.5rem] uppercase relative overflow-hidden">
+                Mural
+                <b className='font-semibold'> {mural.title}</b>
+                { showCollection &&
+                    <span className='lg:ml-4 text-xs lg:text-sm block lg:inline-block'>
+                        <span className="hidden lg:inline">/ </span>Colección {mural.collectionTitle}
+                    </span>
                 }
-            </div>
+                <motion.div
+                    className='absolute top-0 left-0 h-full w-full bg-gradient-to-r from-transparent to-20% to-white'
+                    initial={{ x: '-20%', width: '125%' }}
+                    whileInView={{ x: "100%" }}
+                    transition={{ duration: 2, ease: "easeOut" }}
+                />
+            </h2>
             <motion.div
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
@@ -77,9 +38,9 @@ export const MuralCard = ({mural, showCollection}:Props) => {
                 viewport={{ amount: 0.5, once: true }}
                 className="w-full"
             >
-                <Image src={baseVariant.montaje} alt={`${mural.title} Montaje`} width={1500} height={1500} className="w-full object-contain"/>
+                <Image src={baseVariant.montaje} alt={`${mural.title} Montaje`} width={1280} height={1280} className="w-full object-contain"/>
             </motion.div>
-            <div className='w-full flex justify-between gap-4 flex-wrap items-start'>
+            <div className='w-full flex justify-center lg:justify-between items-center lg:items-start flex-wrap gap-4'>
                 <motion.div
                     initial={{ x: '-50%', opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
@@ -87,10 +48,10 @@ export const MuralCard = ({mural, showCollection}:Props) => {
                     viewport={{ amount: 0.5, once: true }}
                     className="grow"
                     >
-                    <Image src={baseVariant.mural} alt={`${mural.title} Mural`} width={1500} height={1500} className={`h-72 w-auto object-contain`}/>
+                    <Image src={baseVariant.mural} alt={`${mural.title} Mural`} width={1024} height={1024} className={`lg:h-72 w-full lg:w-auto object-contain`}/>
                 </motion.div>
                 <Link href={`/quote?mural=${mural.id}`} className='text-xl border-b border-b-black hover:opacity-75 transition-150'>Cotizar</Link>
             </div>
-        </motion.div>
+        </div>
     )
 }

@@ -18,3 +18,15 @@ export {
 export {
     BsSearch as SearchIcon
 } from "react-icons/bs";
+
+export {
+    TbWorld as WorldIcon
+} from "react-icons/tb";
+
+export {
+    CiMenuFries as MenuIcon
+} from "react-icons/ci";
+
+export {
+    RxCross1 as CrossIcon,
+} from "react-icons/rx";

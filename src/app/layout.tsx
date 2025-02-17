@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from 'next/font/local'
-import { Navbar } from "@/components";
+import { Collapse, Navbar } from "@/components";
 import "./globals.css";
+import { NavLinkHome } from "@/interfaces";
 
 export const metadata: Metadata = {
   title: "Mercedes Costal",
@@ -45,11 +46,92 @@ const truetypewritter = localFont({
   variable: '--truetypewritter'
 })
 
+const links:Array<NavLinkHome> = [
+  {
+      title:'Wallpapers',
+      links: [
+          {
+              title:'Murales',
+              href:'/murals'
+          },
+          {
+              title:'Patrones',
+              href:'/patterns'
+          },
+          {
+              title:'Cotizá',
+              href:'/quote'
+          },
+      ]
+  },
+  {
+      title:'Studio',
+      links: [
+          {
+              title:'Meet the makers',
+              href:'/'
+          },
+          {
+              title:'Puntos de venta',
+              href:'/'
+          },
+      ]
+  },
+  {
+      title:'Highlights',
+      links: [
+          {
+              title:'Buen diseño',
+              href:'/'
+          },
+          {
+              title:'Ateneo Splendid',
+              href:'/'
+          },
+          {
+              title:'UK',
+              href:'/'
+          },
+          {
+              title:'Manantiales Popup',
+              href:'/'
+          },
+      ]
+  },
+  {
+      title:'MC Universe',
+      links: [
+          {
+              title:'Fragances',
+              href:'/'
+          },
+          {
+              title:'Costal Café',
+              href:'/'
+          },
+      ]
+  },
+  {
+      title:'Contact',
+      links: [
+          {
+              title:'Trabaja con nosotros',
+              href:'/contact'
+          },
+          {
+              title:'Vende M.C.',
+              href:'/contact'
+          },
+      ]
+  },
+];
+
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="es">
       <body className={`${gillSans.className} ${gillSans.variable} ${truetypewritter.variable} w-full min-h-svh flex flex-col items-center`}>
-        <Navbar/>
+        <Navbar links={links}/>
+        <Collapse links={links}/>
         {children}
       </body>
     </html>

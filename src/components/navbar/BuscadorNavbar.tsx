@@ -16,10 +16,11 @@ const schema = z.object({
 type Schema = z.infer<typeof schema>;
 
 interface Props{
-    isHome: boolean;
+    isHome?: boolean;
+    insideCollapse?: boolean;
 }
 
-export const BuscadorNavbar = ({isHome}:Props) => {
+export const BuscadorNavbar = ({isHome, insideCollapse}:Props) => {
 
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
     const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -43,7 +44,43 @@ export const BuscadorNavbar = ({isHome}:Props) => {
     useEffect(() => {
         reset();
     }, [reset, isExpanded])
-    
+
+    if (insideCollapse) {
+        return (
+            <motion.form
+                initial={{ x: 50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: 50, opacity: 0 }}
+                transition={{ delay: 0.5 }}
+                onSubmit={handleSubmit(onSubmit)} className="w-full flex flex-col gap-2"
+            >
+                <label className="sr-only">Buscar</label>
+                <div className="relative w-full">
+                    <input
+                        type="text"
+                        enterKeyHint="search"
+                        minLength={2}
+                        maxLength={50}
+                        className="w-full h-10 px-3 pr-10 bg-white border border-black rounded-none outline-none"
+                        placeholder="Escribe tu búsqueda..."
+                        {...register("query", {
+                            required: "Este campo es obligatorio.",
+                            minLength: { value: 2, message: "Debe contener más de 2 caracteres." },
+                            maxLength: { value: 50, message: "Debe contener menos de 50 caracteres." }
+                        })}
+                    />
+                    <button
+                        type="submit"
+                        className="absolute right-2 top-1/2 transform -translate-y-1/2 p-1"
+                        aria-label="Buscar"
+                    >
+                        <SearchIcon className="size-5" />
+                    </button>
+                </div>
+                <FormErrorMessage condition={errors?.query} message={errors?.query?.message} />
+            </motion.form>
+        );
+    }
 
     return (
         <div className="relative">
@@ -70,7 +107,7 @@ export const BuscadorNavbar = ({isHome}:Props) => {
                                 type="text"
                                 enterKeyHint="search"
                                 minLength={2}
-                                maxLength={99}
+                                maxLength={50}
                                 className="mb-2 w-full h-10 px-3 bg-transparent border border-black outline-none caret-black"
                                 placeholder="Buscar..."
                                 {...register("query", {

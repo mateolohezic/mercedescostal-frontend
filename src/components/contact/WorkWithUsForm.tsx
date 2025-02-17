@@ -33,7 +33,7 @@ export const WorkWithUsForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-4 w-full max-w-7xl">
+        <form onSubmit={handleSubmit(onSubmit)} className="mt-4 w-full max-w-7xl px-4 xl:px-0">
             <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="w-full">
                     <div className='w-full flex flex-col gap-1'>
@@ -50,7 +50,7 @@ export const WorkWithUsForm = () => {
                                 id="fullName"
                                 autoComplete="name"
                                 autoCapitalize="words"
-                                className="w-full h-10 px-3 bg-transparent border-b border-black text-transparent outline-none caret-black"
+                                className="w-full h-10 px-3 bg-transparent border border-black text-transparent outline-none caret-black"
                                 {...register("fullName", {
                                     required: "Este campo es obligatorio.",
                                     minLength: { value: 2, message: "Debe contener más de 2 caracteres." },
@@ -77,7 +77,7 @@ export const WorkWithUsForm = () => {
                                 id="email"
                                 autoComplete="name"
                                 autoCapitalize="off"
-                                className="w-full h-10 px-3 bg-transparent border-b border-black text-transparent outline-none caret-black"
+                                className="w-full h-10 px-3 bg-transparent border border-black text-transparent outline-none caret-black"
                                 {...register("email", {
                                     required: "Este campo es obligatorio.",
                                     minLength: { value: 2, message: "Debe contener más de 2 caracteres." },
@@ -104,7 +104,7 @@ export const WorkWithUsForm = () => {
                                 id="phone"
                                 autoComplete="name"
                                 autoCapitalize="true"
-                                className="w-full h-10 px-3 bg-transparent border-b border-black text-transparent outline-none caret-black"
+                                className="w-full h-10 px-3 bg-transparent border border-black text-transparent outline-none caret-black"
                                 {...register("phone", {
                                     required: "Este campo es obligatorio.",
                                     minLength: { value: 2, message: "Debe contener más de 2 caracteres." },
@@ -130,7 +130,7 @@ export const WorkWithUsForm = () => {
                                 id="interestArea"
                                 autoComplete="name"
                                 autoCapitalize="true"
-                                className="w-full h-10 px-3 bg-transparent border-b border-black text-transparent outline-none caret-black"
+                                className="w-full h-10 px-3 bg-transparent border border-black text-transparent outline-none caret-black"
                                 {...register("interestArea", {
                                     required: "Este campo es obligatorio.",
                                     minLength: { value: 2, message: "Debe contener más de 2 caracteres." },

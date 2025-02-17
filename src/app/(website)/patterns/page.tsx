@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { collections } from "@/data/collections";
 import { MuralCard } from "@/components";
 import { Mural } from "@/interfaces";
+import Link from "next/link";
 
 const PATTERN_KEYWORDS = ["pattern", "patron", "patrón"];
 
@@ -44,16 +45,22 @@ export default function PatternMuralsPage() {
     }
 
     return (
-        <main className="my-40 w-full flex flex-col items-center font-truetypewritter">
-            <section className="w-full max-w-7xl px-4 xl:px-0 flex justify-between">
-                <h1 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase">2. Patrones</h1>
+        <main className="my-24 lg:my-40 w-full flex flex-col items-center font-truetypewritter">
+            <section className="w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
+                <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
+                    2. Patrones
+                </h1>
                 <div className="w-full max-w-lg">
-                    <p>Los patrones han sido una expresión artística universal desde tiempos inmemoriales.</p>
-                    <p>Descubre nuestra colección de murales con patrones, ideales para cualquier ambiente moderno y sofisticado.</p>
+                    <p>We create to make ourselves infinite. Our objects are like bees that cross-pollinate the gardens of the galaxy.</p>
+                    <p>You will witness the withering of the physical piece and you will appreciate the responsibility of the beauty of the finite. As long as this digital piece will never stop flourishing, wherever we decide to live.</p>
+                    <div className="mt-4 w-full flex justify-end lg:justify-start">
+                        <Link href={'/collection'} className="uppercase bg-yellow-300">
+                            PDF 2025 Download
+                        </Link>
+                    </div>
                 </div>
             </section>
-
-            <section className="mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col justify-center items-center gap-24">
+            <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col justify-center items-center gap-12 lg:gap-24">
                 {patternMurals.map((mural: Mural) => (
                     <MuralCard key={mural.id} mural={mural} showCollection />
                 ))}

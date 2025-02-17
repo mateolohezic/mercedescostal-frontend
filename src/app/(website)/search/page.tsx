@@ -14,9 +14,9 @@ export default function SearchResultsPage({ searchParams }: Props) {
     const results:Array<Mural> = useSearchMurals(searchQuery);
 
     return (
-        <main className="my-40 w-full flex flex-col items-center font-truetypewritter">
+        <main className="my-24 lg:my-40 w-full flex flex-col items-center justify-center lg:justify-start font-truetypewritter">
             <section className="w-full max-w-7xl px-4 xl:px-0">
-                <h1 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase">
+                <h1 className="w-full font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     {searchQuery.length < 3 ?
                         "No se encontraron resultados."
                     :
@@ -36,7 +36,7 @@ export default function SearchResultsPage({ searchParams }: Props) {
                         No se encontraron murales para {searchQuery}.
                     </p>
                 ) : (
-                    <div className="mt-8 w-full grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div className="mt-8 w-full grid grid-cols-1 lg:grid-cols-4 gap-8">
                         {results.map((mural) => (
                             <Link 
                                 key={mural.id} 
