@@ -1,3 +1,5 @@
+export { BuenDiseñoVideo } from "./highlights/BuenDiseñoVideo";
+
 export { MCLogo } from "./MCLogo";
 export { VideoIntro } from "./VideoIntro";
 export { Card } from "./Card";

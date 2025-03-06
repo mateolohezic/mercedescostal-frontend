@@ -82,7 +82,7 @@ const links:Array<NavLinkHome> = [
       links: [
           {
               title:'Buen diseño',
-              href:'/'
+              href:'/highlights/good-design'
           },
           {
               title:'Ateneo Splendid',
