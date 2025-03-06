@@ -4,6 +4,7 @@ export { MCLogo } from "./MCLogo";
 export { VideoIntro } from "./VideoIntro";
 export { Card } from "./Card";
 export { LanguageSelector } from "./LanguageSelector";
+export { MeetTheMakersVideo } from "./MeetTheMakersVideo";
 
 export { Navbar } from "./navbar/Navbar";
 export { NavbarLink } from "./navbar/NavbarLink";

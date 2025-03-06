@@ -69,7 +69,7 @@ const links:Array<NavLinkHome> = [
       links: [
           {
               title:'Meet the makers',
-              href:'/'
+              href:'/meet-the-makers'
           },
           {
               title:'Puntos de venta',
