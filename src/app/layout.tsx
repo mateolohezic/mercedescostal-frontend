@@ -86,7 +86,7 @@ const links:Array<NavLinkHome> = [
           },
           {
               title:'Ateneo Splendid',
-              href:'/'
+              href:'/highlights/ateneo-splendid'
           },
           {
               title:'UK',

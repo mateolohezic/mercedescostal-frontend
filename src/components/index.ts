@@ -1,4 +1,9 @@
 export { BuenDiseñoVideo } from "./highlights/BuenDiseñoVideo";
+export { SplendidVideoUno } from "./highlights/splendid/SplendidVideoUno";
+export { SplendidVideoDos } from "./highlights/splendid/SplendidVideoDos";
+export { SplendidVideoTres } from "./highlights/splendid/SplendidVideoTres";
+export { HabitatVideoUno } from "./highlights/habitat/HabitatVideoUno";
+export { HabitatVideoDos } from "./highlights/habitat/HabitatVideoDos";
 
 export { MCLogo } from "./MCLogo";
 export { VideoIntro } from "./VideoIntro";
