@@ -30,7 +30,7 @@ export default function AteneoSplendidPage() {
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col items-center gap-24">
                 <SplendidVideoUno/>
-                <p className="w-full max-w-4xl text-center text-xl tracking-widest">Partiendo de la obra "El Jardín de las Delicias" de El Bosco, Costal nos sumerge en un recorrido fascinante por los paisajes y personajes que definen nuestra esencia. Desde un &ldquo;Inicio&rdquo; cósmico que representa el origen de todo, hasta el norte argentino con sus cactus majestuosos, flamencos rosados, y la voz inmortal de Mercedes Sosa, la artista nos invita a conectar con la diversidad y riqueza de nuestro país.</p>
+                <p className="w-full max-w-4xl text-center text-xl tracking-widest">Partiendo de la obra &ldquo;El Jardín de las Delicias&rdquo; de El Bosco, Costal nos sumerge en un recorrido fascinante por los paisajes y personajes que definen nuestra esencia. Desde un &ldquo;Inicio&rdquo; cósmico que representa el origen de todo, hasta el norte argentino con sus cactus majestuosos, flamencos rosados, y la voz inmortal de Mercedes Sosa, la artista nos invita a conectar con la diversidad y riqueza de nuestro país.</p>
             </section>
             <section className="mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-8 lg:gap-4">
                 <SplendidVideoDos/>

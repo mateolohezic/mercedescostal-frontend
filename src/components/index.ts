@@ -1,4 +1,5 @@
 export { BuenDiseñoVideo } from "./highlights/BuenDiseñoVideo";
+export { LondonFestivalVideo } from "./highlights/LondonFestivalVideo";
 export { SplendidVideoUno } from "./highlights/splendid/SplendidVideoUno";
 export { SplendidVideoDos } from "./highlights/splendid/SplendidVideoDos";
 export { SplendidVideoTres } from "./highlights/splendid/SplendidVideoTres";
@@ -10,6 +11,7 @@ export { VideoIntro } from "./VideoIntro";
 export { Card } from "./Card";
 export { LanguageSelector } from "./LanguageSelector";
 export { MeetTheMakersVideo } from "./MeetTheMakersVideo";
+export { BookVideo } from "./BookVideo";
 
 export { Navbar } from "./navbar/Navbar";
 export { NavbarLink } from "./navbar/NavbarLink";

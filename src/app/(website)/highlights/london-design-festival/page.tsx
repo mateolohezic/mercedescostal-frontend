@@ -1,13 +1,17 @@
 import Image from "next/image";
-import portada from "@/assets/highlights/ateneo-splendid/portada.webp";
-import ateneo_splendid_1 from "@/assets/highlights/ateneo-splendid/splendid_1.webp";
-import ateneo_splendid_2 from "@/assets/highlights/ateneo-splendid/splendid_2.webp";
-import ateneo_splendid_3 from "@/assets/highlights/ateneo-splendid/splendid_3.webp";
-import ateneo_splendid_4 from "@/assets/highlights/ateneo-splendid/splendid_4.webp";
-import ateneo_splendid_5 from "@/assets/highlights/ateneo-splendid/splendid_5.webp";
-import ateneo_splendid_6 from "@/assets/highlights/ateneo-splendid/splendid_6.webp";
-import ateneo_splendid_7 from "@/assets/highlights/ateneo-splendid/splendid_7.webp";
-import ateneo_splendid_8 from "@/assets/highlights/ateneo-splendid/splendid_8.webp";
+import london_festival_1 from "@/assets/highlights/london-design-festival/london_festival_1.webp";
+import london_festival_2 from "@/assets/highlights/london-design-festival/london_festival_2.webp";
+import london_festival_3 from "@/assets/highlights/london-design-festival/london_festival_2.webp";
+import london_festival_4 from "@/assets/highlights/london-design-festival/london_festival_4.webp";
+import london_festival_5 from "@/assets/highlights/london-design-festival/london_festival_5.webp";
+import london_festival_6 from "@/assets/highlights/london-design-festival/london_festival_6.webp";
+import london_festival_7 from "@/assets/highlights/london-design-festival/london_festival_7.webp";
+import london_festival_8 from "@/assets/highlights/london-design-festival/london_festival_8.webp";
+import london_festival_9 from "@/assets/highlights/london-design-festival/london_festival_9.webp";
+import london_festival_10 from "@/assets/highlights/london-design-festival/london_festival_10.webp";
+import london_festival_11 from "@/assets/highlights/london-design-festival/london_festival_11.webp";
+import london_festival_12 from "@/assets/highlights/london-design-festival/london_festival_12.webp";
+import { LondonFestivalVideo } from "@/components";
 
 export default function LondonDesignFestivalPage() {
     return (
@@ -16,7 +20,7 @@ export default function LondonDesignFestivalPage() {
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Highlights
                 </h1>
-                <Image src={portada} alt="Portada Buen Diseño Mercedes Costal" className="h-96 object-cover"/>
+                <Image src={london_festival_1} alt="Portada Buen Diseño Mercedes Costal" className="w-full h-96 object-cover"/>
             </section>
             <section className="mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
@@ -28,17 +32,27 @@ export default function LondonDesignFestivalPage() {
                 </div>
             </section>
             <section className="mt-12 lg:mt-48 w-full max-w-7xl px-4 xl:px-0">
-                <Image src={ateneo_splendid_8} alt="Portada Buen Diseño Mercedes Costal" className="w-full object-contain"/>
+                <Image src={london_festival_2} alt="Portada Buen Diseño Mercedes Costal" className="w-full object-contain"/>
             </section>
-            <section className="mt-12 lg:mt-24 w-full max-w-3xl flex flex-col justify-center items-center gap-4 px-4 md:px-0">
-                <Image src={ateneo_splendid_1} alt="Portada Buen Diseño Mercedes Costal" className="w-full h-auto object-contain"/>
-                <div className="w-full grid grid-cols-6 gap-4">
-                    <Image src={ateneo_splendid_2} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={ateneo_splendid_3} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={ateneo_splendid_4} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={ateneo_splendid_5} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={ateneo_splendid_6} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={ateneo_splendid_7} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+            <section className="mt-4 lg:mt-12 w-full max-w-7xl flex justify-end px-4 xl:px-0">
+                <Image src={london_festival_3} alt="Portada Buen Diseño Mercedes Costal" className="w-full max-w-xl object-contain"/>
+            </section>
+            <section className="mt-4 lg:mt-12 w-full max-w-7xl flex justify-start px-4 xl:px-0">
+                <Image src={london_festival_4} alt="Portada Buen Diseño Mercedes Costal" className="w-full max-w-2xl object-contain"/>
+            </section>
+            <section className="mt-4 lg:mt-12 w-full max-w-7xl flex justify-end px-4 xl:px-0 overflow-x-hidden">
+                <LondonFestivalVideo/>
+            </section>
+            <section className="mt-12 lg:mt-24 w-full max-w-7xl flex flex-col justify-center items-center gap-4 px-4 md:px-0">
+                <Image src={london_festival_5} alt="Portada Buen Diseño Mercedes Costal" className="w-full h-auto object-contain"/>
+                <div className="w-full grid grid-cols-7 gap-4">
+                    <Image src={london_festival_6} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+                    <Image src={london_festival_7} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+                    <Image src={london_festival_8} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+                    <Image src={london_festival_9} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+                    <Image src={london_festival_10} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+                    <Image src={london_festival_11} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+                    <Image src={london_festival_12} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
                 </div>
             </section>
         </main>

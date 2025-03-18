@@ -21,7 +21,7 @@ export default function ManantialesPopupPage() {
                 </h1>
                 <div className="w-full max-w-lg">
                     <p>Durante el verano 2019 y 2020 nuestro equipo se mudó a Uruguay, a un pequeño pueblo etéreo y lleno de magia, justo donde el mar se encuentra con los pastizales y el blanco se funde con el cielo: Manantiales.</p>
-                    <p className="mt-8">Allí abrimos nuestra primera tienda PopUp, al son del viento y el agua salada adonde también presentamos nuestra colección de murales y empapelados "Casamar".</p>
+                    <p className="mt-8">Allí abrimos nuestra primera tienda PopUp, al son del viento y el agua salada adonde también presentamos nuestra colección de murales y empapelados &ldquo;Casamar&rdquo;.</p>
                     <p className="mt-8">Con un Azul Navegante como rector, inspirado en el fondo del mar y los viajes que uno emprende cuando se acerca a esta inmensidad.</p>
                     <p className="mt-8">Esta colección representa una ínfima proción de la vida marina con sus formas y texturas que tanto nos maravillan.</p>
                 </div>
