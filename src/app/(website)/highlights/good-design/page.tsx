@@ -12,9 +12,9 @@ export default function BuenDiseñoPage() {
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Highlights
                 </h1>
-                <Image src={portada} alt="Portada Buen Diseño Mercedes Costal" className="h-96 object-cover"/>
+                <Image src={portada} alt="Portada Buen Diseño Mercedes Costal" className="w-full lg:w-auto lg:h-96 object-cover"/>
             </section>
-            <section className="mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
+            <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Sello <b className="font-semibold block">Buen</b> Diseño
                 </h1>
@@ -25,15 +25,15 @@ export default function BuenDiseñoPage() {
                 </div>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0">
-                <Image src={buen_diseño_1} alt="Portada Buen Diseño Mercedes Costal" className="w-full lg:w-1/2 object-contain"/>
+                <Image src={buen_diseño_1} alt="Buen Diseño Mercedes Costal" className="w-full lg:w-1/2 object-contain"/>
             </section>
             <section className="mt-12 lg:mt-48 w-full max-w-lg flex flex-col justify-center items-center px-4 xl:px-0">
                 <BuenDiseñoVideo/>
                 <p className="w-full text-start p-2">Animación del Mural El Edén, 2021.</p>
             </section>
-            <section className="mt-12 lg:mt-24 w-full max-w-sm flex flex-col justify-center items-center gap-8 px-4 xl:px-0">
-                <Image src={buen_diseño_2} alt="Portada Buen Diseño Mercedes Costal" className="w-full h-auto object-contain"/>
-                <Image src={buen_diseño_3} alt="Portada Buen Diseño Mercedes Costal" className="w-full h-auto object-contain"/>
+            <section className="mt-12 lg:mt-24 w-full max-w-sm flex flex-col justify-center items-center gap-4 lg:gap-8 px-4 xl:px-0">
+                <Image src={buen_diseño_2} alt="Buen Diseño Mercedes Costal" className="w-full h-auto object-contain"/>
+                <Image src={buen_diseño_3} alt="Buen Diseño Mercedes Costal" className="w-full h-auto object-contain"/>
             </section>
         </main>
     );

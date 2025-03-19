@@ -1,7 +1,7 @@
 import Image from "next/image";
 import london_festival_1 from "@/assets/highlights/london-design-festival/london_festival_1.webp";
 import london_festival_2 from "@/assets/highlights/london-design-festival/london_festival_2.webp";
-import london_festival_3 from "@/assets/highlights/london-design-festival/london_festival_2.webp";
+import london_festival_3 from "@/assets/highlights/london-design-festival/london_festival_3.webp";
 import london_festival_4 from "@/assets/highlights/london-design-festival/london_festival_4.webp";
 import london_festival_5 from "@/assets/highlights/london-design-festival/london_festival_5.webp";
 import london_festival_6 from "@/assets/highlights/london-design-festival/london_festival_6.webp";
@@ -20,9 +20,9 @@ export default function LondonDesignFestivalPage() {
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Highlights
                 </h1>
-                <Image src={london_festival_1} alt="Portada Buen Diseño Mercedes Costal" className="w-full h-96 object-cover"/>
+                <Image src={london_festival_1} alt="Portada London Design Festival Mercedes Costal" className="w-full lg:h-96 object-cover"/>
             </section>
-            <section className="mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
+            <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     <b className="font-semibold block">London</b> <span className="block">Design</span> Festival
                 </h1>
@@ -32,27 +32,27 @@ export default function LondonDesignFestivalPage() {
                 </div>
             </section>
             <section className="mt-12 lg:mt-48 w-full max-w-7xl px-4 xl:px-0">
-                <Image src={london_festival_2} alt="Portada Buen Diseño Mercedes Costal" className="w-full object-contain"/>
+                <Image src={london_festival_2} alt="London Design Festival Mercedes Costal" className="w-full object-contain"/>
             </section>
             <section className="mt-4 lg:mt-12 w-full max-w-7xl flex justify-end px-4 xl:px-0">
-                <Image src={london_festival_3} alt="Portada Buen Diseño Mercedes Costal" className="w-full max-w-xl object-contain"/>
+                <Image src={london_festival_3} alt="London Design Festival Mercedes Costal" className="w-full max-w-xl object-contain"/>
             </section>
             <section className="mt-4 lg:mt-12 w-full max-w-7xl flex justify-start px-4 xl:px-0">
-                <Image src={london_festival_4} alt="Portada Buen Diseño Mercedes Costal" className="w-full max-w-2xl object-contain"/>
+                <Image src={london_festival_4} alt="London Design Festival Mercedes Costal" className="w-full max-w-2xl object-contain"/>
             </section>
-            <section className="mt-4 lg:mt-12 w-full max-w-7xl flex justify-end px-4 xl:px-0 overflow-x-hidden">
+            <section className="mt-24 lg:mt-12 w-full max-w-7xl flex justify-start lg:justify-end px-4 xl:px-0 overflow-x-hidden">
                 <LondonFestivalVideo/>
             </section>
-            <section className="mt-12 lg:mt-24 w-full max-w-7xl flex flex-col justify-center items-center gap-4 px-4 md:px-0">
-                <Image src={london_festival_5} alt="Portada Buen Diseño Mercedes Costal" className="w-full h-auto object-contain"/>
-                <div className="w-full grid grid-cols-7 gap-4">
-                    <Image src={london_festival_6} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={london_festival_7} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={london_festival_8} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={london_festival_9} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={london_festival_10} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={london_festival_11} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={london_festival_12} alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+            <section className="mt-24 w-full max-w-7xl flex flex-col justify-center items-center gap-1 lg:gap-4 px-4 md:px-0">
+                <Image src={london_festival_5} alt="London Design Festival Mercedes Costal" className="w-full h-auto object-contain"/>
+                <div className="w-full grid grid-cols-3 lg:grid-cols-7 gap-1 lg:gap-4">
+                    <Image src={london_festival_6} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+                    <Image src={london_festival_7} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+                    <Image src={london_festival_8} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+                    <Image src={london_festival_9} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+                    <Image src={london_festival_10} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+                    <Image src={london_festival_11} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
+                    <Image src={london_festival_12} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover hidden lg:block"/>
                 </div>
             </section>
         </main>

@@ -90,11 +90,15 @@ const links:Array<NavLinkHome> = [
           },
           {
               title:'UK',
-              href:'/'
+              href:'/highlights/london-design-festival'
           },
           {
               title:'Manantiales Popup',
-              href:'/'
+              href:'/highlights/manantiales-popup'
+          },
+          {
+              title:'Feria Habitat Valencia',
+              href:'/highlights/feria-habitat-valencia'
           },
       ]
   },
@@ -102,8 +106,12 @@ const links:Array<NavLinkHome> = [
       title:'MC Universe',
       links: [
           {
-              title:'Fragances',
-              href:'/'
+              title:'Fragrances',
+              href:'/mc-universe/fragrances'
+          },
+          {
+              title:'Our Book',
+              href:'/mc-universe/our-book'
           },
           {
               title:'Costal Café',

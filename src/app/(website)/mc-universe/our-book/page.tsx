@@ -15,13 +15,13 @@ export default function OurBookPage() {
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     MC Universe
                 </h1>
-                <Image src={portada} alt="Portada Buen Diseño Mercedes Costal" className="w-full h-96 object-cover"/>
+                <Image src={portada} alt="Portada Buen Diseño Mercedes Costal" className="w-full lg:h-96 lg:object-cover"/>
             </section>
-            <section className="mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
+            <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Our <b className="font-semibold">Book</b>
                 </h1>
-                <div className="w-full max-w-2xl">
+                <div className="w-full max-w-2xl text-center lg:text-start">
                     <p>Retrato de un atelier</p>
                     <p className="mt-8">Produced by <span className="block">Mercedes Costal Studio</span></p>
                     <p className="mt-8">Argentina, septiembre 2022</p>
@@ -31,13 +31,13 @@ export default function OurBookPage() {
             <section className="mt-12 lg:mt-24 w-full max-w-lg px-4 xl:px-0">
                 <BookVideo/>
             </section>
-            <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0">
+            <section className="mt-1 lg:mt-24 w-full max-w-7xl px-4 xl:px-0">
                 <Image src={book_1} alt="Meet the Makers Mercedes Costal" className="w-full max-w-lg object-contain"/>
             </section>
-            <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0 flex justify-end">
+            <section className="mt-1 lg:mt-24 w-full max-w-7xl px-4 xl:px-0 flex justify-end">
                 <Image src={book_2} alt="Meet the Makers Mercedes Costal" className="w-full max-w-xl object-contain"/>
             </section>
-            <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0 grid grid-cols-2 gap-4">
+            <section className="mt-1 lg:mt-24 w-full max-w-7xl px-4 xl:px-0 grid grid-cols-2 gap-1 lg:gap-4">
                 <Image src={book_3} alt="Meet the Makers Mercedes Costal" className="w-full object-contain"/>
                 <Image src={book_4} alt="Meet the Makers Mercedes Costal" className="w-full object-contain"/>
                 <Image src={book_5} alt="Meet the Makers Mercedes Costal" className="w-full object-contain col-span-2"/>

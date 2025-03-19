@@ -1,5 +1,6 @@
 export {
-    RiPlayFill as PlayIcon
+    RiPlayFill as PlayIcon,
+    RiPauseFill as PauseIcon
 } from "react-icons/ri";
 
 export {
