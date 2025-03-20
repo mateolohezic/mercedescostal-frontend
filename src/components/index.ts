@@ -12,6 +12,7 @@ export { Card } from "./Card";
 export { LanguageSelector } from "./LanguageSelector";
 export { MeetTheMakersVideo } from "./MeetTheMakersVideo";
 export { BookVideo } from "./BookVideo";
+export { CafeVideo } from "./CafeVideo";
 
 export { Navbar } from "./navbar/Navbar";
 export { NavbarLink } from "./navbar/NavbarLink";

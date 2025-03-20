@@ -3,7 +3,7 @@
 import { useRef, useState } from "react";
 import { SoundOnIcon, SoundOffIcon, PlayIcon, PauseIcon } from "@/icons";
 
-export const BuenDiseñoVideo = () => {
+export const CafeVideo = () => {
 
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isMuted, setIsMuted] = useState(true);
@@ -29,7 +29,7 @@ export const BuenDiseñoVideo = () => {
     };
 
     return (
-        <div className="size-full aspect-[3/4] relative">
+        <div className="size-full aspect-[3/4] max-w-xl relative">
             <div className="absolute bottom-4 right-4 flex gap-4 z-50">
                 <button
                     type="button"
@@ -55,7 +55,7 @@ export const BuenDiseñoVideo = () => {
                 loop
                 className="size-full object-cover pointer-events-none select-none"
             >
-                <source src="/assets/highlights/buen_diseño_video.mp4" type="video/mp4" />
+                <source src="/assets/mc-universe/cafe_video.mp4" type="video/mp4" />
                 Tu navegador no soporta este video.
             </video>
         </div>

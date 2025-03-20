@@ -29,7 +29,7 @@ export const SplendidVideoTres = () => {
     };
 
     return (
-        <div className="size-full aspect-[3/4] max-w-lg relative">
+        <div className="size-full aspect-[3/4] max-w-xl relative">
             <div className="absolute bottom-4 right-4 flex gap-4 z-50">
                 <button
                     type="button"

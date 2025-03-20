@@ -115,7 +115,7 @@ const links:Array<NavLinkHome> = [
           },
           {
               title:'Costal Café',
-              href:'/'
+              href:'/mc-universe/costal-coffee'
           },
       ]
   },

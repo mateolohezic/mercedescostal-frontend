@@ -29,7 +29,7 @@ export const LondonFestivalVideo = () => {
     };
 
     return (
-        <div className="size-full max-w-72 lg:max-w-md relative lg:left-9">
+        <div className="size-full max-w-72 lg:max-w-2xl relative lg:left-9">
             <div className="absolute top-4 left-4 flex gap-4 z-50">
                 <button
                     type="button"
