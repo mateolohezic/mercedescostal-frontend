@@ -1,3 +1,5 @@
+import { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import portada from "@/assets/mc-universe/fragrances/portada.webp";
 import fragrances_1 from "@/assets/mc-universe/fragrances/fragrances_1.webp";
@@ -14,7 +16,27 @@ import fragrances_11 from "@/assets/mc-universe/fragrances/fragrances_11.webp";
 import fragrances_12 from "@/assets/mc-universe/fragrances/fragrances_12.webp";
 import fragrances_13 from "@/assets/mc-universe/fragrances/fragrances_13.webp";
 import fragrances_14 from "@/assets/mc-universe/fragrances/fragrances_14.webp";
-import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: 'Fragrances',
+    description: "Fragrances Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'Fragrances | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/mc-universe/fragrances',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/mc-universe/fragrances',
+        creator: 'Mercedes Costal',
+        title: 'Fragrances | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
 
 export default function FragrancesPage() {
     return (

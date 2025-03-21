@@ -1,10 +1,32 @@
+import { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import portada from "@/assets/highlights/manantiales-popup/portada.webp";
 import manantiales_1 from "@/assets/highlights/manantiales-popup/manantiales_1.webp";
 import manantiales_2 from "@/assets/highlights/manantiales-popup/manantiales_2.webp";
 import manantiales_3 from "@/assets/highlights/manantiales-popup/manantiales_3.webp";
 import manantiales_4 from "@/assets/highlights/manantiales-popup/manantiales_4.webp";
-import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: 'Manantiales Pop Up',
+    description: "Manantiales Pop Up Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'Manantiales Pop Up | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/highlights/manantiales-popup',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/highlights/manantiales-popup',
+        creator: 'Mercedes Costal',
+        title: 'Manantiales Pop Up | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
 
 export default function ManantialesPopupPage() {
     return (

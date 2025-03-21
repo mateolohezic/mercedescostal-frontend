@@ -1,4 +1,6 @@
+import { Metadata } from "next";
 import Image from "next/image";
+import { SplendidVideoDos, SplendidVideoTres, SplendidVideoUno } from "@/components";
 import portada from "@/assets/highlights/ateneo-splendid/portada.webp";
 import ateneo_splendid_1 from "@/assets/highlights/ateneo-splendid/splendid_1.webp";
 import ateneo_splendid_2 from "@/assets/highlights/ateneo-splendid/splendid_2.webp";
@@ -8,7 +10,27 @@ import ateneo_splendid_5 from "@/assets/highlights/ateneo-splendid/splendid_5.we
 import ateneo_splendid_6 from "@/assets/highlights/ateneo-splendid/splendid_6.webp";
 import ateneo_splendid_7 from "@/assets/highlights/ateneo-splendid/splendid_7.webp";
 import ateneo_splendid_8 from "@/assets/highlights/ateneo-splendid/splendid_8.webp";
-import { SplendidVideoDos, SplendidVideoTres, SplendidVideoUno } from "@/components";
+
+export const metadata: Metadata = {
+    title: 'Ateneo Splendid',
+    description: "Ateneo Splendid Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'Ateneo Splendid | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/highlights/ateneo-splendid',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/highlights/ateneo-splendid',
+        creator: 'Mercedes Costal',
+        title: 'Ateneo Splendid | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
 
 export default function AteneoSplendidPage() {
     return (

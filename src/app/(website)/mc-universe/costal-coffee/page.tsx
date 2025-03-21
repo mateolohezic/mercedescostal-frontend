@@ -1,4 +1,7 @@
+import { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
+import { CafeVideo } from "@/components";
 import portada from "@/assets/mc-universe/cafe/portada.webp";
 import cafe_1 from "@/assets/mc-universe/cafe/cafe_1.webp";
 import cafe_2 from "@/assets/mc-universe/cafe/cafe_2.webp";
@@ -7,8 +10,27 @@ import cafe_4 from "@/assets/mc-universe/cafe/cafe_4.webp";
 import cafe_5 from "@/assets/mc-universe/cafe/cafe_5.webp";
 import cafe_6 from "@/assets/mc-universe/cafe/cafe_6.webp";
 import cafe_7 from "@/assets/mc-universe/cafe/cafe_7.webp";
-import Link from "next/link";
-import { CafeVideo } from "@/components";
+
+export const metadata: Metadata = {
+    title: 'Costal Café',
+    description: "Costal Café Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'Costal Café | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/mc-universe/costal-coffee',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/mc-universe/costal-coffee',
+        creator: 'Mercedes Costal',
+        title: 'Costal Café | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
 
 export default function CostalCafePage() {
     return (

@@ -1,4 +1,5 @@
 import { QuoteForm } from "@/components";
+import { Metadata } from "next";
 
 interface Props {
     searchParams: {
@@ -6,7 +7,28 @@ interface Props {
     };
 }
 
-export default function SearchResultsPage({ searchParams }: Props) {
+export const metadata: Metadata = {
+    title: 'Quote',
+    description: "Quote Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'Quote | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/quote',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/quote',
+        creator: 'Mercedes Costal',
+        title: 'Quote | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
+
+export default function QuotePage({ searchParams }: Props) {
     const preselectedMuralId  = searchParams?.mural?.trim() || "";
 
     return (

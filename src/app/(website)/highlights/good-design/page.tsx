@@ -1,9 +1,31 @@
+import { Metadata } from "next";
 import Image from "next/image";
+import { BuenDiseñoVideo } from "@/components";
 import portada from "@/assets/highlights/good-design/portada.webp";
 import buen_diseño_1 from "@/assets/highlights/good-design/buen_diseño_1.webp";
 import buen_diseño_2 from "@/assets/highlights/good-design/buen_diseño_2.webp";
 import buen_diseño_3 from "@/assets/highlights/good-design/buen_diseño_3.webp";
-import { BuenDiseñoVideo } from "@/components";
+
+export const metadata: Metadata = {
+    title: 'Buen Diseño',
+    description: "Buen Diseño Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'Buen Diseño | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/highlights/good-design',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/highlights/good-design',
+        creator: 'Mercedes Costal',
+        title: 'Buen Diseño | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
 
 export default function BuenDiseñoPage() {
     return (

@@ -1,11 +1,33 @@
+import { Metadata } from "next";
 import Image from "next/image";
+import { MeetTheMakersVideo } from "@/components";
 import portada from "@/assets/meet-the-makers/portada.webp";
 import meet_the_makers_1 from "@/assets/meet-the-makers/meet_the_makers_1.webp";
 import meet_the_makers_2 from "@/assets/meet-the-makers/meet_the_makers_2.webp";
 import meet_the_makers_3 from "@/assets/meet-the-makers/meet_the_makers_3.webp";
 import meet_the_makers_4 from "@/assets/meet-the-makers/meet_the_makers_4.webp";
 import meet_the_makers_5 from "@/assets/meet-the-makers/meet_the_makers_5.webp";
-import { MeetTheMakersVideo } from "@/components";
+
+export const metadata: Metadata = {
+    title: 'Meet The Makers',
+    description: "Meet The Makers Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'Meet The Makers | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/mc-universe/meet-the-makers',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/mc-universe/meet-the-makers',
+        creator: 'Mercedes Costal',
+        title: 'Meet The Makers | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
 
 export default function MeetTheMakersPage() {
     return (

@@ -1,4 +1,26 @@
+import { Metadata } from "next";
 import { WorkWithUsForm } from "@/components";
+
+export const metadata: Metadata = {
+    title: 'Contacto',
+    description: "Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'Contacto | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/contact',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/contact',
+        creator: 'Mercedes Costal',
+        title: 'Contacto | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
 
 export default function ContactPage() {
 

@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: `Murales de ${category}`,
         description: `Explora los murales en la categoría de ${category} y encuentra la mejor opción para tu espacio.`,
         openGraph: {
-            title: `Murales de ${category}`,
+            title: `Murales de ${category} | Mercedes Costal`,
             description: `Explora los murales en la categoría de ${category} y encuentra la mejor opción para tu espacio.`,
             url: `/categories/${category}`,
             siteName: "Murales Gallery",
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
         twitter: {
             card: "summary_large_image",
-            title: `Murales de ${category}`,
+            title: `Murales de ${category} | Mercedes Costal`,
             description: `Explora los murales en la categoría de ${category} y encuentra la mejor opción para tu espacio.`,
         },
     };

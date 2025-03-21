@@ -2,6 +2,28 @@ import Link from "next/link";
 import { useMuralsCategories } from "@/hooks";
 import { Card } from "@/components";
 import { collections } from "@/data/collections";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: 'Murals',
+    description: "Murals Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'Murals | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/murals',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/murals',
+        creator: 'Mercedes Costal',
+        title: 'Murals | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
 
 export default function CollectionsPage() {
 

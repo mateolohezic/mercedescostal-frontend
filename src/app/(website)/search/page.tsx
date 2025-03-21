@@ -2,12 +2,34 @@ import Link from "next/link";
 import Image from "next/image";
 import { Mural } from "@/interfaces";
 import { useSearchMurals } from "@/hooks";
+import { Metadata } from "next";
 
 interface Props {
     searchParams: {
         query?: string;
     };
 }
+
+export const metadata: Metadata = {
+    title: 'Search',
+    description: "Search Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'Search | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/search',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/search',
+        creator: 'Mercedes Costal',
+        title: 'Search | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
 
 export default function SearchResultsPage({ searchParams }: Props) {
     const searchQuery = searchParams?.query?.trim() || "";

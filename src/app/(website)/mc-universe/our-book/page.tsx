@@ -7,6 +7,28 @@ import book_4 from "@/assets/mc-universe/book/book_4.webp";
 import book_5 from "@/assets/mc-universe/book/book_5.webp";
 import book_6 from "@/assets/mc-universe/book/book_6.webp";
 import { BookVideo } from "@/components";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: 'Our Book',
+    description: "Our Book Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'Our Book | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/mc-universe/our-book',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/mc-universe/our-book',
+        creator: 'Mercedes Costal',
+        title: 'Our Book | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
 
 export default function OurBookPage() {
     return (

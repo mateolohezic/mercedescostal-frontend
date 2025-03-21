@@ -1,4 +1,6 @@
+import { Metadata } from "next";
 import Image from "next/image";
+import { LondonFestivalVideo } from "@/components";
 import london_festival_1 from "@/assets/highlights/london-design-festival/london_festival_1.webp";
 import london_festival_2 from "@/assets/highlights/london-design-festival/london_festival_2.webp";
 import london_festival_3 from "@/assets/highlights/london-design-festival/london_festival_3.webp";
@@ -11,7 +13,27 @@ import london_festival_9 from "@/assets/highlights/london-design-festival/london
 import london_festival_10 from "@/assets/highlights/london-design-festival/london_festival_10.webp";
 import london_festival_11 from "@/assets/highlights/london-design-festival/london_festival_11.webp";
 import london_festival_12 from "@/assets/highlights/london-design-festival/london_festival_12.webp";
-import { LondonFestivalVideo } from "@/components";
+
+export const metadata: Metadata = {
+    title: 'London Design Festival',
+    description: "London Design Festival Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'London Design Festival | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/highlights/london-design-festival',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/highlights/london-design-festival',
+        creator: 'Mercedes Costal',
+        title: 'London Design Festival | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
 
 export default function LondonDesignFestivalPage() {
     return (

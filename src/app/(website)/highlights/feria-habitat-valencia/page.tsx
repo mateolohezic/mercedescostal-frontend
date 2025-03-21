@@ -1,9 +1,31 @@
+import { Metadata } from "next";
 import Image from "next/image";
+import { HabitatVideoUno, HabitatVideoDos } from "@/components";
 import habitat_1 from "@/assets/highlights/habitat/habitat_1.webp";
 import habitat_2 from "@/assets/highlights/habitat/habitat_2.webp";
 import habitat_3 from "@/assets/highlights/habitat/habitat_3.webp";
 import habitat_4 from "@/assets/highlights/habitat/habitat_4.webp";
-import { HabitatVideoUno, HabitatVideoDos } from "@/components";
+
+export const metadata: Metadata = {
+    title: 'Feria Hábitat Valencia',
+    description: "Feria Hábitat Valencia Mercedes Costal.",
+    keywords: ['diseño', 'Mercedes Costal'],
+    openGraph: {
+        title: 'Feria Hábitat Valencia | Mercedes Costal',
+        description: 'Mercedes Costal.',
+        url: 'https://mercedescostal.com.ar/highlights/feria-habitat-valencia',
+        siteName: 'Mercedes Costal',
+        locale: 'es_AR',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        site: 'https://mercedescostal.com.ar/highlights/feria-habitat-valencia',
+        creator: 'Mercedes Costal',
+        title: 'Feria Hábitat Valencia | Mercedes Costal',
+        description: 'Mercedes Costal.',
+    },
+};
 
 export default function FeriaHabitatValenciaPage() {
     return (

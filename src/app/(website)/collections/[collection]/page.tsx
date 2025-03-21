@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         title: `Colección ${foundCollection.title}`,
         description: `Explora la colección ${foundCollection.title} y descubre increíbles murales.`,
         openGraph: {
-            title: `Colección ${foundCollection.title}`,
+            title: `Colección ${foundCollection.title} | Mercedes Costal`,
             description: `Explora la colección ${foundCollection.title} y descubre increíbles murales.`,
             url: `/collection/${collection}`,
             siteName: "Murales Gallery",
@@ -33,7 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
         },
         twitter: {
             card: "summary_large_image",
-            title: `Colección ${foundCollection.title}`,
+            title: `Colección ${foundCollection.title} | Mercedes Costal`,
             description: `Explora la colección ${foundCollection.title} y descubre increíbles murales.`,
         },
     };
