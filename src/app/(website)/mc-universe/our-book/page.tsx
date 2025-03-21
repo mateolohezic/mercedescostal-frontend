@@ -37,7 +37,7 @@ export default function OurBookPage() {
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     MC Universe
                 </h1>
-                <Image src={portada} alt="Portada Buen Diseño Mercedes Costal" className="w-full lg:h-96 lg:object-cover object-[50%_25%]"/>
+                <Image src={portada} priority alt="Portada Buen Diseño Mercedes Costal" className="w-full lg:h-96 lg:object-cover object-[50%_25%]"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">

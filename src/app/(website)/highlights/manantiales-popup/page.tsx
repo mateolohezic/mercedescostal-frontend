@@ -35,7 +35,7 @@ export default function ManantialesPopupPage() {
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Highlights
                 </h1>
-                <Image src={portada} alt="Portada Manantiales Pop Up Mercedes Costal" className="w-full lg:h-96 lg:object-cover lg:object-[50%_85%]"/>
+                <Image src={portada} priority alt="Portada Manantiales Pop Up Mercedes Costal" className="w-full lg:h-96 lg:object-cover lg:object-[50%_85%]"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">

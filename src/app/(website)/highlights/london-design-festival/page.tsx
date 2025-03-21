@@ -42,7 +42,7 @@ export default function LondonDesignFestivalPage() {
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Highlights
                 </h1>
-                <Image src={london_festival_1} alt="Portada London Design Festival Mercedes Costal" className="w-full lg:h-96 object-cover"/>
+                <Image src={london_festival_1} priority alt="Portada London Design Festival Mercedes Costal" className="w-full lg:h-96 object-cover"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">

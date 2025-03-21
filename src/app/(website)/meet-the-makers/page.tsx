@@ -38,7 +38,7 @@ export default function MeetTheMakersPage() {
                 </h1>
             </section>
             <section className="mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-8 lg:gap-4">
-                <Image src={portada} alt="Portada Meet the Makers Mercedes Costal" className="w-full max-w-lg object-contain"/>
+                <Image src={portada} priority alt="Portada Meet the Makers Mercedes Costal" className="w-full max-w-lg object-contain"/>
                 <div className="grow flex justify-center">
                     <p className="w-full text-center text-2xl tracking-widest">&ldquo;Creemos en el diseño<span className="block"></span> como un estilo de vida,<span className="block"></span> más que como una moda o<span className="block"></span> un objeto aislado.&rdquo;</p>
                 </div>
