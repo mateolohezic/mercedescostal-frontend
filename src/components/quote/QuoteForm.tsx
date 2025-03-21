@@ -116,12 +116,12 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                     </select>
                 </div>
                 <div className="w-full">
-                    <label className="md:text-lg">Ancho del espacio</label>
+                    <label className="md:text-lg">Ancho del espacio ({unit})</label>
                     <input type="number" step="0.01" min="0.01" max="100000" className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("width")} />
                     <FormErrorMessage condition={errors?.width} message={errors?.width?.message} />
                 </div>
                 <div className="w-full">
-                    <label className="md:text-lg">Altura del espacio</label>
+                    <label className="md:text-lg">Altura del espacio ({unit})</label>
                     <input type="number" step="0.01" min="0.01" max="100000" className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("height")} />
                     <FormErrorMessage condition={errors?.height} message={errors?.height?.message} />
                 </div>
