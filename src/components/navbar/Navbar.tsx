@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { NavLinkHome } from "@/interfaces";
-import { MCLogo, NavbarLink, BuscadorNavbar } from "@/components";
+import { MCLogo, NavbarLink, BuscadorNavbar, LanguageSelector } from "@/components";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -32,6 +32,7 @@ export const Navbar = ({links}:Props) => {
                     <MCLogo className={`${ isHome ? 'fill-white' : 'fill-black' } w-full`}/>
                 </Link>
                 <div className="w-full flex justify-end items-start">
+                    <LanguageSelector isHome={isHome}/>
                     <ul className="flex justify-start gap-4 xl:gap-8">
                         {
                             links.map((navlink:NavLinkHome, i:number) => (

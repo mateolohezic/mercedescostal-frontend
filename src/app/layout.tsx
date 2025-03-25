@@ -153,10 +153,6 @@ const links:Array<NavLinkHome> = [
               title:'Meet the makers',
               href:'/meet-the-makers'
           },
-          {
-              title:'Puntos de venta',
-              href:'/'
-          },
       ]
   },
   {

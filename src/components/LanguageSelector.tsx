@@ -1,49 +1,57 @@
 'use client'
 
-import { usePathname, useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { WorldIcon } from "@/icons";
+import { usePathname, useRouter } from 'next/navigation';
 
-export const LanguageSelector = () => {
+interface Props {
+    isHome: boolean;
+}
+
+export const LanguageSelector = ({isHome}:Props) => {
     const router = useRouter();
     const pathname = usePathname();
     const [language, setLanguage] = useState<'en' | 'es' | null>(null);
 
     useEffect(() => {
-        if (pathname.startsWith('/es')) {
-            setLanguage('es');
-        } else {
-            setLanguage('en');
-        }
+        setLanguage(pathname.startsWith('/es') ? 'es' : 'en');
     }, [pathname]);
 
     const changeLanguage = (lang: 'en' | 'es') => {
+        if (lang === language) return; // No hacemos nada si ya está seleccionado
+
         let newPathname = pathname;
+
         if (lang === 'es' && !pathname.startsWith('/es')) {
             newPathname = pathname === '/' ? '/es' : `/es${pathname}`;
         } else if (lang === 'en' && pathname.startsWith('/es')) {
             newPathname = pathname === '/es' ? '/' : pathname.replace(/^\/es/, '');
         }
+
         router.replace(newPathname, { scroll: false });
     };
 
     return (
-        <div className="flex justify-center items-center relative">
-            <div className='absolute bottom-0.5 left-0.5 pointer-events-none'>
-                <WorldIcon className='text-sm relative -top-[2px] text-neutral-600'/>
+        <div className="flex justify-center items-center mr-8">
+            <span className='sr-only'>Elegir Idioma | Select Language</span>
+            <div className='flex justity-center items-center gap-1'>
+                <button
+                    type="button"
+                    onClick={() => changeLanguage('en')}
+                    disabled={language === 'en'}
+                    className={`${isHome ? "text-white/90" : "text-black/90"} ${language === 'en' ? "opacity-100 cursor-default" : "opacity-50 hover:opacity-100 cursor-pointer"} lg:text-center uppercase text-lg font-medium tracking-widest transition-150`}
+                >
+                    EN <span className='sr-only'>English</span>
+                </button>
+                <span className={`mx-1 opacity-50 pointer-events-none ${isHome ? "text-white/90" : "text-black/90"}`}>/</span>
+                <button
+                    type="button"
+                    onClick={() => changeLanguage('es')}
+                    disabled={language === 'es'}
+                    className={`${isHome ? "text-white/90" : "text-black/90"} ${language === 'es' ? "opacity-100 cursor-default" : "opacity-50 hover:opacity-100 cursor-pointer"} lg:text-center uppercase text-lg font-medium tracking-widest transition-150`}
+                >
+                    ES <span className='sr-only'>Español</span>
+                </button>
             </div>
-            <label className='sr-only' htmlFor="language">Elegir Idioma | Select Language</label>
-            <select
-                className='w-[5.125rem] text-sm outline-none focus-visible:outline-none cursor-pointer pl-[18px] bg-white'
-                name="language"
-                id="language"
-                value={language || ''}
-                onChange={(e) => changeLanguage(e.target.value as 'en' | 'es')}
-            >
-                { !language && <option value=""></option> }
-                <option value="es">Español</option>
-                <option value="en">English</option>
-            </select>
         </div>
     )
 }

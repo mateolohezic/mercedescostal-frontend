@@ -39,3 +39,8 @@ export default function ContactPage() {
         </main>
     );
 }
+
+
+// Cambiar formulario por mensaje a correo.
+
+// nombre completo, telefono, email, direccion, pais, provincia, redes sociales, mensaje opcional.

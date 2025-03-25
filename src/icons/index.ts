@@ -21,10 +21,6 @@ export {
 } from "react-icons/bs";
 
 export {
-    TbWorld as WorldIcon
-} from "react-icons/tb";
-
-export {
     CiMenuFries as MenuIcon
 } from "react-icons/ci";
 
