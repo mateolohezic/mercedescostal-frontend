@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { motion } from 'framer-motion';
 
 interface Props {
-    isHome: boolean;
+    isHome?: boolean;
 }
 
 export const LanguageSelector = ({isHome}:Props) => {
@@ -13,45 +14,50 @@ export const LanguageSelector = ({isHome}:Props) => {
     const [language, setLanguage] = useState<'en' | 'es' | null>(null);
 
     useEffect(() => {
-        setLanguage(pathname.startsWith('/es') ? 'es' : 'en');
+        setLanguage(pathname.startsWith('/en') ? 'en' : 'es');
     }, [pathname]);
 
     const changeLanguage = (lang: 'en' | 'es') => {
-        if (lang === language) return; // No hacemos nada si ya está seleccionado
+        if (lang === language) return;
 
         let newPathname = pathname;
 
-        if (lang === 'es' && !pathname.startsWith('/es')) {
-            newPathname = pathname === '/' ? '/es' : `/es${pathname}`;
-        } else if (lang === 'en' && pathname.startsWith('/es')) {
-            newPathname = pathname === '/es' ? '/' : pathname.replace(/^\/es/, '');
+        if (lang === 'en' && !pathname.startsWith('/en')) {
+            newPathname = pathname === '/' ? '/en' : `/en${pathname}`;
+        } else if (lang === 'es' && pathname.startsWith('/en')) {
+            newPathname = pathname === '/en' ? '/' : pathname.replace(/^\/en/, '');
         }
 
         router.replace(newPathname, { scroll: false });
     };
 
     return (
-        <div className="flex justify-center items-center mr-8">
+        <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.75 }}
+            className="flex justify-center items-center mr-6"
+        >
             <span className='sr-only'>Elegir Idioma | Select Language</span>
             <div className='flex justity-center items-center gap-1'>
                 <button
                     type="button"
-                    onClick={() => changeLanguage('en')}
-                    disabled={language === 'en'}
-                    className={`${isHome ? "text-white/90" : "text-black/90"} ${language === 'en' ? "opacity-100 cursor-default" : "opacity-50 hover:opacity-100 cursor-pointer"} lg:text-center uppercase text-lg font-medium tracking-widest transition-150`}
-                >
-                    EN <span className='sr-only'>English</span>
-                </button>
-                <span className={`mx-1 opacity-50 pointer-events-none ${isHome ? "text-white/90" : "text-black/90"}`}>/</span>
-                <button
-                    type="button"
                     onClick={() => changeLanguage('es')}
                     disabled={language === 'es'}
-                    className={`${isHome ? "text-white/90" : "text-black/90"} ${language === 'es' ? "opacity-100 cursor-default" : "opacity-50 hover:opacity-100 cursor-pointer"} lg:text-center uppercase text-lg font-medium tracking-widest transition-150`}
+                    className={`${isHome ? "text-white/90" : "text-black/90"} ${language === 'es' ? "opacity-100 cursor-default" : "opacity-50 hover:opacity-100 cursor-pointer"} lg:text-center uppercase font-medium tracking-widest transition-150`}
                 >
                     ES <span className='sr-only'>Español</span>
                 </button>
+                <span className={`mx-0.5 text-sm opacity-50 pointer-events-none ${isHome ? "text-white/90" : "text-black/90"}`}>/</span>
+                <button
+                    type="button"
+                    onClick={() => changeLanguage('en')}
+                    disabled={language === 'en'}
+                    className={`${isHome ? "text-white/90" : "text-black/90"} ${language === 'en' ? "opacity-100 cursor-default" : "opacity-50 hover:opacity-100 cursor-pointer"} lg:text-center uppercase font-medium tracking-widest transition-150`}
+                >
+                    EN <span className='sr-only'>English</span>
+                </button>
             </div>
-        </div>
+        </motion.div>
     )
 }

@@ -88,11 +88,11 @@ export const BuscadorNavbar = ({isHome, insideCollapse}:Props) => {
                 initial={{ x: 50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="w-fit h-7 flex justify-center items-center"
+                className="w-fit h-6 flex justify-center items-center"
                 type="button"
                 onClick={() => setIsExpanded(!isExpanded)}
             >
-                <SearchIcon className={`size-4 ${isHome ? 'text-white/90' : 'text-black/90'}`} />
+                <SearchIcon className={`text-sm ${isHome ? 'text-white/90' : 'text-black/90'}`} />
             </motion.button>
             <AnimatePresence>
                 {isExpanded &&

@@ -33,7 +33,7 @@ export const NavbarLink = ({ navlink, index, isHome, menuExpanded, toggleMenu }:
                 type="button"
                 onClick={handleToggle}
                 aria-label={`Abrir menú ${title}`}
-                className={`w-fit lg:w-auto ${isHome ? "text-white/90" : "text-black/90"} ${ menuExpanded === title && !isMobile && (isHome ? "bg-white/25" : "bg-black/10") } text-left lg:text-center uppercase text-lg font-medium tracking-widest transition-150`}
+                className={`w-fit lg:w-auto ${isHome ? "text-white/90" : "text-black/90"} ${ menuExpanded === title && !isMobile && (isHome ? "bg-white/25" : "bg-black/10") } text-left lg:text-center uppercase font-medium tracking-widest transition-150`}
             >
                 {title}
             </button>

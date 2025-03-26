@@ -41,8 +41,7 @@ export default function FeriaHabitatValenciaPage() {
                     Feria <b className="font-semibold block">Hábitat</b> Valencia
                 </h1>
                 <div className="w-full max-w-2xl text-xl">
-                    <p>Nos sumergimos en nuestra primera experiencia inmersiva inaugurando así un nuevo mundo distópico, en un diálogo creativo entre el presente y el futuro: el Metaverso de Mercedes Costal.</p>
-                    <p className="mt-8">La pieza que elegimos para darle vida al relato, en el marco del London Design Festival, es nuestro Icónico Mural El Descanso de las Garzas, un recorte de los humedales del Litoral argentino. Premiado con el Sello al Buen Diseño, una escena de flora y fauna única que revivimos en las paredes del emblemático salón verde en Belgrave.</p>
+                    <p>En 2023, participamos en la prestigiosa Feria Haviat de Valencia, un evento clave en el mundo del diseño y la decoración. Esta plataforma internacional nos permitió presentar nuestras propuestas en el campo de los wallpapers murales, destacando una propuesta que mixa diseño y sostenibilidad. Durante este evento, Mercedes Costal se conectó con creativos, arquitectos y diseñadores de todo el mundo, consolidando su presencia en el mercado internacional y reforzando su compromiso con la excelencia en cada pieza.</p>
                 </div>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-7xl flex justify-center px-4 sm:px-0">

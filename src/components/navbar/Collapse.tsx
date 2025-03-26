@@ -5,7 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { NavLinkHome } from "@/interfaces";
-import { MCLogo, NavbarLink, BuscadorNavbar } from "@/components";
+import { MCLogo, NavbarLink, BuscadorNavbar, LanguageSelector } from "@/components";
 import { CrossIcon, MenuIcon } from "@/icons";
 
 interface Props {
@@ -74,6 +74,9 @@ export const Collapse = ({ links }: Props) => {
                         exit={{ x: "100%" }}
                         transition={{ type: "spring", bounce: 0, duration: 0.25 }}
                     >
+                        <div className="absolute top-4 left-4 z-50">
+                            <LanguageSelector/>
+                        </div>
                         <button
                             type="button"
                             onClick={() => setIsExpanded(false)}
@@ -82,7 +85,7 @@ export const Collapse = ({ links }: Props) => {
                         >
                             <CrossIcon className="size-4" />
                         </button>
-                        <ul className="w-full flex flex-col gap-4">
+                        <ul className="mt-12 w-full flex flex-col gap-4">
                             {links.map((navlink, i) => (
                                 <NavbarLink
                                     key={i}
