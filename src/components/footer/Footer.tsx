@@ -4,7 +4,7 @@ import { FooterForm, MCLogo } from "@/components"
 export const Footer = () => {
     return (
         <footer className="w-full px-4 xl:px-0 pb-24 flex flex-col justify-center items-center font-truetypewritter uppercase">
-            <div className="w-full max-w-7xl h-px bg-black"></div>
+            <div className="w-full max-w-5xl 2xl:max-w-7xl h-px bg-black"></div>
             <div className="mt-8 w-full lg:px-8 flex flex-col lg:flex-row justify-between items-center">
                 <FooterForm/>
                 <div className="mt-8 lg:mt-0 flex justify-center items-center gap-2">

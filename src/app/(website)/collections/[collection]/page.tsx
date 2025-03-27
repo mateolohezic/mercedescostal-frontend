@@ -49,8 +49,8 @@ export default function CollectionPage({ params }: Props) {
     }
 
     return (
-        <main className="my-24 lg:my-40 w-full flex flex-col items-center font-truetypewritter">
-            <section className="w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
+        <main className="my-24 lg:my-32 w-full flex flex-col items-center font-truetypewritter">
+            <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Colección <b className="block font-semibold">{foundCollection.title}</b>
                 </h1>
@@ -59,7 +59,7 @@ export default function CollectionPage({ params }: Props) {
                     <p>You will witness the withering of the physical piece and you will appreciate the responsibility of the beauty of the finite. As long as this digital piece will never stop flourishing, wherever we decide to live.</p>
                 </div>
             </section>
-            <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col justify-center items-center gap-24">
+            <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col justify-center items-center gap-24">
                 {foundCollection.murales.map((mural: Mural) => (
                     <MuralCard key={mural.id} mural={mural} />
                 ))}

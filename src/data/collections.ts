@@ -280,7 +280,7 @@ import willow_textura_icon_1 from "@/assets/collections/morris/willow_textura/wi
 import willow_textura_montaje from "@/assets/collections/morris/willow_textura/willow_textura_montaje.webp";
 import willow_textura_mural from "@/assets/collections/morris/willow_textura/willow_textura_mural.webp";
 
-// Murales Sueltos
+// Otros Murales
 
 import acuarela_icon_1 from "@/assets/collections/murales_sueltos/acuarela/acuarela_icon_1.webp";
 import acuarela_montaje from "@/assets/collections/murales_sueltos/acuarela/acuarela_montaje.webp";
@@ -745,6 +745,7 @@ export const collections: Array<Collection> = [
                         colorHex: "#00FF00",
                         montaje: brush_montaje,
                         mural: brush_mural_artful_green,
+                        base: true,
                     },
                     {
                         colorName: "Black",
@@ -1927,582 +1928,6 @@ export const collections: Array<Collection> = [
         ],
     },
     {
-        id: "murales-sueltos",
-        title: "Murales Sueltos",
-        murales: [
-            {
-                id: "acuarela-murales-sueltos",
-                title: "Acuarela",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [acuarela_icon_1],
-                keywords: ["acuarela", "arte", "colores"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#ADD8E6",
-                        montaje: acuarela_montaje,
-                        mural: acuarela_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Rose",
-                        colorHex: "#FFC0CB",
-                        montaje: acuarela_montaje,
-                        mural: acuarela_mural_rose,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "animal-parade-murales-sueltos",
-                title: "Animal Parade",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [animal_parade_icon_1],
-                keywords: ["animales", "diversión", "infantil"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#FFD700",
-                        montaje: animal_parade_montaje,
-                        mural: animal_parade_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "birds-of-paradise-murales-sueltos",
-                title: "Birds of Paradise",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [birds_of_paradise_icon_1],
-                keywords: ["aves", "paraíso", "naturaleza"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#FFA07A",
-                        montaje: birds_of_paradise_montaje,
-                        mural: birds_of_paradise_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Blue",
-                        colorHex: "#4682B4",
-                        montaje: birds_of_paradise_montaje,
-                        mural: birds_of_paradise_mural_blue,
-                    },
-                    {
-                        colorName: "Rose",
-                        colorHex: "#FFC0CB",
-                        montaje: birds_of_paradise_montaje,
-                        mural: birds_of_paradise_mural_rose,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "constelaciones-murales-sueltos",
-                title: "Constelaciones",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [constelaciones_icon_1],
-                keywords: ["espacio", "constelaciones", "cielo"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#1C1C1C",
-                        montaje: constelaciones_montaje,
-                        mural: constelaciones_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "cortaderas-murales-sueltos",
-                title: "Cortaderas",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [cortaderas_icon_1],
-                keywords: ["naturaleza", "plantas", "cortaderas"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#C2B280",
-                        montaje: cortaderas_montaje,
-                        mural: cortaderas_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "costa-rica-murales-sueltos",
-                title: "Costa Rica",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [costa_rica_icon_1],
-                keywords: ["naturaleza", "tropical", "paisaje"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#008000",
-                        montaje: costa_rica_montaje,
-                        mural: costa_rica_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Gray",
-                        colorHex: "#808080",
-                        montaje: costa_rica_montaje,
-                        mural: costa_rica_mural_gray,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "dutch-flowers-murales-sueltos",
-                title: "Dutch Flowers",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [dutch_flowers_icon_1],
-                keywords: ["flores", "holanda", "elegante"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#DDA0DD",
-                        montaje: dutch_flowers_montaje,
-                        mural: dutch_flowers_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "el-banquete-murales-sueltos",
-                title: "El Banquete",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [el_banquete_icon_1],
-                keywords: ["banquete", "arte", "clásico"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#B8860B",
-                        montaje: el_banquete_montaje,
-                        mural: el_banquete_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "el-descanso-de-las-garzas-murales-sueltos",
-                title: "El Descanso de las Garzas",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [el_descanso_de_las_garzas_icon_1, el_descanso_de_las_garzas_icon_2, el_descanso_de_las_garzas_icon_3],
-                keywords: ["garzas", "descanso", "naturaleza"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#C2B280",
-                        montaje: el_descanso_de_las_garzas_montaje,
-                        mural: el_descanso_de_las_garzas_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Sepia",
-                        colorHex: "#704214",
-                        montaje: el_descanso_de_las_garzas_montaje,
-                        mural: el_descanso_de_las_garzas_mural_sepia,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "el-eden-murales-sueltos",
-                title: "El Edén",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [el_eden_icon_1],
-                keywords: ["jardín", "paraíso", "naturaleza"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#32CD32",
-                        montaje: el_eden_montaje,
-                        mural: el_eden_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Natural",
-                        colorHex: "#556B2F",
-                        montaje: el_eden_montaje,
-                        mural: el_eden_mural_natural,
-                    },
-                    {
-                        colorName: "Rose",
-                        colorHex: "#FFC0CB",
-                        montaje: el_eden_montaje,
-                        mural: el_eden_mural_rose,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "el-jardin-de-la-geisha-murales-sueltos",
-                title: "El Jardín de la Geisha",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [el_jardin_de_la_geisha_icon_1],
-                keywords: ["jardín", "geisha", "naturaleza"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#B0C4DE",
-                        montaje: el_jardin_de_la_geisha_montaje,
-                        mural: el_jardin_de_la_geisha_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Acqua",
-                        colorHex: "#20B2AA",
-                        montaje: el_jardin_de_la_geisha_montaje,
-                        mural: el_jardin_de_la_geisha_mural_aqcua,
-                    },
-                    {
-                        colorName: "White",
-                        colorHex: "#FFFFFF",
-                        montaje: el_jardin_de_la_geisha_montaje,
-                        mural: el_jardin_de_la_geisha_mural_white,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "elena-murales-sueltos",
-                title: "Elena",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [elena_icon_1],
-                keywords: ["floral", "elegante", "diseño"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#F4A460",
-                        montaje: elena_montaje,
-                        mural: elena_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "en-las-nubes-murales-sueltos",
-                title: "En las Nubes",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [en_las_nubes_icon_1],
-                keywords: ["nubes", "cielo", "ligero"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#87CEEB",
-                        montaje: en_las_nubes_montaje,
-                        mural: en_las_nubes_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "follaje-murales-sueltos",
-                title: "Follaje",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [follaje_icon_1],
-                keywords: ["hojas", "verde", "naturaleza"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#228B22",
-                        montaje: follaje_montaje,
-                        mural: follaje_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "fractal-murales-sueltos",
-                title: "Fractal",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [fractal_icon_1],
-                keywords: ["geometría", "arte", "patrón"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#8B0000",
-                        montaje: fractal_montaje,
-                        mural: fractal_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Milan",
-                        colorHex: "#FFD700",
-                        montaje: fractal_montaje,
-                        mural: fractal_mural_milan,
-                    },
-                    {
-                        colorName: "Visón",
-                        colorHex: "#A9A9A9",
-                        montaje: fractal_montaje,
-                        mural: fractal_mural_vison,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "hanami-murales-sueltos",
-                title: "Hanami",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [hanami_icon_1],
-                keywords: ["sakura", "flores", "japonés"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#FFC0CB",
-                        montaje: hanami_montaje,
-                        mural: hanami_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "White",
-                        colorHex: "#FFFFFF",
-                        montaje: hanami_montaje,
-                        mural: hanami_mural_white,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "jardin-vertical-murales-sueltos",
-                title: "Jardín Vertical",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [jardin_vertical_icon_1],
-                keywords: ["jardín", "plantas", "verde"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#228B22",
-                        montaje: jardin_vertical_montaje,
-                        mural: jardin_vertical_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "jardin-victoriano-murales-sueltos",
-                title: "Jardín Victoriano",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [jardin_victoriano_icon_1],
-                keywords: ["jardín", "victoriano", "clásico"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#8B4513",
-                        montaje: jardin_victoriano_montaje,
-                        mural: jardin_victoriano_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Sepia",
-                        colorHex: "#704214",
-                        montaje: jardin_victoriano_montaje,
-                        mural: jardin_victoriano_mural_sepia,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "jungla-en-tintas-murales-sueltos",
-                title: "Jungla en Tintas",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [jungla_en_tintas_icon_1],
-                keywords: ["jungla", "tintas", "naturaleza"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#556B2F",
-                        montaje: jungla_en_tintas_montaje,
-                        mural: jungla_en_tintas_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "laguna-sepia-murales-sueltos",
-                title: "Laguna Sepia",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [laguna_sepia_icon_1],
-                keywords: ["laguna", "sepia", "agua"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#A0522D",
-                        montaje: laguna_sepia_montaje,
-                        mural: laguna_sepia_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Blue",
-                        colorHex: "#4682B4",
-                        montaje: laguna_sepia_montaje,
-                        mural: laguna_sepia_mural_blue,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "pinceladas-murales-sueltos",
-                title: "Pinceladas",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [pinceladas_icon_1],
-                keywords: ["pinceladas", "arte", "abstracción"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#DAA520",
-                        montaje: pinceladas_montaje,
-                        mural: pinceladas_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "praderas-murales-sueltos",
-                title: "Praderas",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [praderas_icon_1],
-                keywords: ["praderas", "naturaleza", "verde"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#6B8E23",
-                        montaje: praderas_montaje,
-                        mural: praderas_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Rose",
-                        colorHex: "#FFC0CB",
-                        montaje: praderas_montaje,
-                        mural: praderas_mural_rose,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "stadium-murales-sueltos",
-                title: "Stadium",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [stadium_icon_1],
-                keywords: ["estadio", "deporte", "arquitectura"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#708090",
-                        montaje: stadium_montaje,
-                        mural: stadium_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "utopia-murales-sueltos",
-                title: "Utopía",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [utopia_icon_1],
-                keywords: ["utopía", "fantasía", "paisaje"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#8A2BE2",
-                        montaje: utopia_montaje,
-                        mural: utopia_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Rose",
-                        colorHex: "#FFC0CB",
-                        montaje: utopia_montaje,
-                        mural: utopia_mural_rose,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "vuelo-de-mariposas-murales-sueltos",
-                title: "Vuelo de Mariposas",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [vuelo_de_mariposas_icon_1],
-                keywords: ["mariposas", "naturaleza", "ligereza"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#FFD700",
-                        montaje: vuelo_de_mariposas_montaje,
-                        mural: vuelo_de_mariposas_mural,
-                        base: true,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-            {
-                id: "wild-circus-murales-sueltos",
-                title: "Wild Circus",
-                collectionTitle: "Murales Sueltos",
-                collectionId: "murales-sueltos",
-                icons: [wild_circus_icon_1],
-                keywords: ["circo", "fantasía", "colorido"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#DC143C",
-                        montaje: wild_circus_montaje,
-                        mural: wild_circus_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Rose",
-                        colorHex: "#FFC0CB",
-                        montaje: wild_circus_montaje,
-                        mural: wild_circus_mural_rose,
-                    }
-                ],
-                href: "murales-sueltos",
-            },
-        ],
-    },
-    {
         id: "vivero",
         title: "Vivero",
         murales: [
@@ -3137,5 +2562,581 @@ export const collections: Array<Collection> = [
                 href: "the-classics",
             }
         ]
-    }
+    },
+    {
+        id: "otros-murales",
+        title: "Otros Murales",
+        murales: [
+            {
+                id: "acuarela-otros-murales",
+                title: "Acuarela",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [acuarela_icon_1],
+                keywords: ["acuarela", "arte", "colores"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#ADD8E6",
+                        montaje: acuarela_montaje,
+                        mural: acuarela_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Rose",
+                        colorHex: "#FFC0CB",
+                        montaje: acuarela_montaje,
+                        mural: acuarela_mural_rose,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "animal-parade-otros-murales",
+                title: "Animal Parade",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [animal_parade_icon_1],
+                keywords: ["animales", "diversión", "infantil"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#FFD700",
+                        montaje: animal_parade_montaje,
+                        mural: animal_parade_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "birds-of-paradise-otros-murales",
+                title: "Birds of Paradise",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [birds_of_paradise_icon_1],
+                keywords: ["aves", "paraíso", "naturaleza"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#FFA07A",
+                        montaje: birds_of_paradise_montaje,
+                        mural: birds_of_paradise_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Blue",
+                        colorHex: "#4682B4",
+                        montaje: birds_of_paradise_montaje,
+                        mural: birds_of_paradise_mural_blue,
+                    },
+                    {
+                        colorName: "Rose",
+                        colorHex: "#FFC0CB",
+                        montaje: birds_of_paradise_montaje,
+                        mural: birds_of_paradise_mural_rose,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "constelaciones-otros-murales",
+                title: "Constelaciones",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [constelaciones_icon_1],
+                keywords: ["espacio", "constelaciones", "cielo"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#1C1C1C",
+                        montaje: constelaciones_montaje,
+                        mural: constelaciones_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "cortaderas-otros-murales",
+                title: "Cortaderas",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [cortaderas_icon_1],
+                keywords: ["naturaleza", "plantas", "cortaderas"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#C2B280",
+                        montaje: cortaderas_montaje,
+                        mural: cortaderas_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "costa-rica-otros-murales",
+                title: "Costa Rica",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [costa_rica_icon_1],
+                keywords: ["naturaleza", "tropical", "paisaje"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#008000",
+                        montaje: costa_rica_montaje,
+                        mural: costa_rica_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Gray",
+                        colorHex: "#808080",
+                        montaje: costa_rica_montaje,
+                        mural: costa_rica_mural_gray,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "dutch-flowers-otros-murales",
+                title: "Dutch Flowers",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [dutch_flowers_icon_1],
+                keywords: ["flores", "holanda", "elegante"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#DDA0DD",
+                        montaje: dutch_flowers_montaje,
+                        mural: dutch_flowers_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "el-banquete-otros-murales",
+                title: "El Banquete",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [el_banquete_icon_1],
+                keywords: ["banquete", "arte", "clásico"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#B8860B",
+                        montaje: el_banquete_montaje,
+                        mural: el_banquete_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "el-descanso-de-las-garzas-otros-murales",
+                title: "El Descanso de las Garzas",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [el_descanso_de_las_garzas_icon_1, el_descanso_de_las_garzas_icon_2, el_descanso_de_las_garzas_icon_3],
+                keywords: ["garzas", "descanso", "naturaleza"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#C2B280",
+                        montaje: el_descanso_de_las_garzas_montaje,
+                        mural: el_descanso_de_las_garzas_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Sepia",
+                        colorHex: "#704214",
+                        montaje: el_descanso_de_las_garzas_montaje,
+                        mural: el_descanso_de_las_garzas_mural_sepia,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "el-eden-otros-murales",
+                title: "El Edén",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [el_eden_icon_1],
+                keywords: ["jardín", "paraíso", "naturaleza"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#32CD32",
+                        montaje: el_eden_montaje,
+                        mural: el_eden_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Natural",
+                        colorHex: "#556B2F",
+                        montaje: el_eden_montaje,
+                        mural: el_eden_mural_natural,
+                    },
+                    {
+                        colorName: "Rose",
+                        colorHex: "#FFC0CB",
+                        montaje: el_eden_montaje,
+                        mural: el_eden_mural_rose,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "el-jardin-de-la-geisha-otros-murales",
+                title: "El Jardín de la Geisha",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [el_jardin_de_la_geisha_icon_1],
+                keywords: ["jardín", "geisha", "naturaleza"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#B0C4DE",
+                        montaje: el_jardin_de_la_geisha_montaje,
+                        mural: el_jardin_de_la_geisha_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Acqua",
+                        colorHex: "#20B2AA",
+                        montaje: el_jardin_de_la_geisha_montaje,
+                        mural: el_jardin_de_la_geisha_mural_aqcua,
+                    },
+                    {
+                        colorName: "White",
+                        colorHex: "#FFFFFF",
+                        montaje: el_jardin_de_la_geisha_montaje,
+                        mural: el_jardin_de_la_geisha_mural_white,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "elena-otros-murales",
+                title: "Elena",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [elena_icon_1],
+                keywords: ["floral", "elegante", "diseño"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#F4A460",
+                        montaje: elena_montaje,
+                        mural: elena_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "en-las-nubes-otros-murales",
+                title: "En las Nubes",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [en_las_nubes_icon_1],
+                keywords: ["nubes", "cielo", "ligero"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#87CEEB",
+                        montaje: en_las_nubes_montaje,
+                        mural: en_las_nubes_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "follaje-otros-murales",
+                title: "Follaje",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [follaje_icon_1],
+                keywords: ["hojas", "verde", "naturaleza"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#228B22",
+                        montaje: follaje_montaje,
+                        mural: follaje_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "fractal-otros-murales",
+                title: "Fractal",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [fractal_icon_1],
+                keywords: ["geometría", "arte", "patrón"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#8B0000",
+                        montaje: fractal_montaje,
+                        mural: fractal_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Milan",
+                        colorHex: "#FFD700",
+                        montaje: fractal_montaje,
+                        mural: fractal_mural_milan,
+                    },
+                    {
+                        colorName: "Visón",
+                        colorHex: "#A9A9A9",
+                        montaje: fractal_montaje,
+                        mural: fractal_mural_vison,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "hanami-otros-murales",
+                title: "Hanami",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [hanami_icon_1],
+                keywords: ["sakura", "flores", "japonés"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#FFC0CB",
+                        montaje: hanami_montaje,
+                        mural: hanami_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "White",
+                        colorHex: "#FFFFFF",
+                        montaje: hanami_montaje,
+                        mural: hanami_mural_white,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "jardin-vertical-otros-murales",
+                title: "Jardín Vertical",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [jardin_vertical_icon_1],
+                keywords: ["jardín", "plantas", "verde"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#228B22",
+                        montaje: jardin_vertical_montaje,
+                        mural: jardin_vertical_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "jardin-victoriano-otros-murales",
+                title: "Jardín Victoriano",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [jardin_victoriano_icon_1],
+                keywords: ["jardín", "victoriano", "clásico"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#8B4513",
+                        montaje: jardin_victoriano_montaje,
+                        mural: jardin_victoriano_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Sepia",
+                        colorHex: "#704214",
+                        montaje: jardin_victoriano_montaje,
+                        mural: jardin_victoriano_mural_sepia,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "jungla-en-tintas-otros-murales",
+                title: "Jungla en Tintas",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [jungla_en_tintas_icon_1],
+                keywords: ["jungla", "tintas", "naturaleza"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#556B2F",
+                        montaje: jungla_en_tintas_montaje,
+                        mural: jungla_en_tintas_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "laguna-sepia-otros-murales",
+                title: "Laguna Sepia",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [laguna_sepia_icon_1],
+                keywords: ["laguna", "sepia", "agua"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#A0522D",
+                        montaje: laguna_sepia_montaje,
+                        mural: laguna_sepia_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Blue",
+                        colorHex: "#4682B4",
+                        montaje: laguna_sepia_montaje,
+                        mural: laguna_sepia_mural_blue,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "pinceladas-otros-murales",
+                title: "Pinceladas",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [pinceladas_icon_1],
+                keywords: ["pinceladas", "arte", "abstracción"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#DAA520",
+                        montaje: pinceladas_montaje,
+                        mural: pinceladas_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "praderas-otros-murales",
+                title: "Praderas",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [praderas_icon_1],
+                keywords: ["praderas", "naturaleza", "verde"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#6B8E23",
+                        montaje: praderas_montaje,
+                        mural: praderas_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Rose",
+                        colorHex: "#FFC0CB",
+                        montaje: praderas_montaje,
+                        mural: praderas_mural_rose,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "stadium-otros-murales",
+                title: "Stadium",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [stadium_icon_1],
+                keywords: ["estadio", "deporte", "arquitectura"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#708090",
+                        montaje: stadium_montaje,
+                        mural: stadium_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "utopia-otros-murales",
+                title: "Utopía",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [utopia_icon_1],
+                keywords: ["utopía", "fantasía", "paisaje"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#8A2BE2",
+                        montaje: utopia_montaje,
+                        mural: utopia_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Rose",
+                        colorHex: "#FFC0CB",
+                        montaje: utopia_montaje,
+                        mural: utopia_mural_rose,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "vuelo-de-mariposas-otros-murales",
+                title: "Vuelo de Mariposas",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [vuelo_de_mariposas_icon_1],
+                keywords: ["mariposas", "naturaleza", "ligereza"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#FFD700",
+                        montaje: vuelo_de_mariposas_montaje,
+                        mural: vuelo_de_mariposas_mural,
+                        base: true,
+                    }
+                ],
+                href: "otros-murales",
+            },
+            {
+                id: "wild-circus-otros-murales",
+                title: "Wild Circus",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
+                icons: [wild_circus_icon_1],
+                keywords: ["circo", "fantasía", "colorido"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        colorHex: "#DC143C",
+                        montaje: wild_circus_montaje,
+                        mural: wild_circus_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Rose",
+                        colorHex: "#FFC0CB",
+                        montaje: wild_circus_montaje,
+                        mural: wild_circus_mural_rose,
+                    }
+                ],
+                href: "otros-murales",
+            },
+        ],
+    },
 ];

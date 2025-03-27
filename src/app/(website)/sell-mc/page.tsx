@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     },
 };
 
-export default function ContactPage() {
+export default function SellMCPage() {
 
     return (
         <main className="my-24 lg:my-32 w-full flex flex-col items-center font-truetypewritter">
@@ -43,4 +43,3 @@ export default function ContactPage() {
 
 // Cambiar formulario por mensaje a correo.
 // +54 9 11 6020-8460
-// nombre completo, telefono, email, direccion, pais, provincia, redes sociales, mensaje opcional.

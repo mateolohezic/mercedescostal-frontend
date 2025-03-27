@@ -45,8 +45,8 @@ export default function PatternMuralsPage() {
     }
 
     return (
-        <main className="my-24 lg:my-40 w-full flex flex-col items-center font-truetypewritter">
-            <section className="w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
+        <main className="my-24 lg:my-32 w-full flex flex-col items-center font-truetypewritter">
+            <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     2. Patrones
                 </h1>
@@ -60,7 +60,7 @@ export default function PatternMuralsPage() {
                     </div>
                 </div>
             </section>
-            <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0 flex flex-col justify-center items-center gap-12 lg:gap-24">
+            <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col justify-center items-center gap-12 lg:gap-24">
                 {patternMurals.map((mural: Mural) => (
                     <MuralCard key={mural.id} mural={mural} showCollection />
                 ))}

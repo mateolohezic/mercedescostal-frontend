@@ -98,7 +98,7 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-12 lg:mt-4 w-full max-w-7xl px-4 xl:px-0">
+        <form onSubmit={handleSubmit(onSubmit)} className="mt-12 lg:mt-4 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
             <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="w-full">
                     <label className="md:text-lg">Forma del área</label>

@@ -35,7 +35,7 @@ export const MuralCard = ({mural, showCollection}:Props) => {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
-                viewport={{ amount: 0.5, once: true }}
+                viewport={{ once: true }}
                 className="w-full"
             >
                 <Image src={baseVariant.montaje} alt={`${mural.title} Montaje`} width={1280} height={1280} className="w-full object-contain"/>
@@ -45,7 +45,7 @@ export const MuralCard = ({mural, showCollection}:Props) => {
                     initial={{ x: '-50%', opacity: 0 }}
                     whileInView={{ x: 0, opacity: 1 }}
                     transition={{ type: "spring", bounce: 0, duration: 0.5 }}
-                    viewport={{ amount: 0.5, once: true }}
+                    viewport={{ once: true }}
                     className="grow"
                     >
                     <Image src={baseVariant.mural} alt={`${mural.title} Mural`} width={1024} height={1024} className={`lg:h-72 w-full lg:w-auto object-contain`}/>

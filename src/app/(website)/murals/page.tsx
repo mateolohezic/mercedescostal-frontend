@@ -40,8 +40,8 @@ export default function CollectionsPage() {
     // };
 
     return (
-        <main className="my-24 lg:my-40 w-full flex flex-col items-center font-truetypewritter">
-            <section className="w-full max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
+        <main className="my-24 lg:my-32 w-full flex flex-col items-center font-truetypewritter">
+            <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     1. Murales
                 </h1>
@@ -55,13 +55,13 @@ export default function CollectionsPage() {
                     </div>
                 </div>
             </section>
-            <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0">
+            <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
                 <h2 className="w-full text-center lg:text-start font-gillsans text-xl tracking-[0.5rem] uppercase">Por <b className="font-semibold">colecciones</b></h2>
                 <div className="mt-8 w-full grid grid-cols-1 lg:grid-cols-4 gap-8">
                     {collections.map((collection) => <Card href={`/collections/${collection.id}`} image={collection.murales[0].icons[0]} title={collection.title} key={collection.id} /> )}
                 </div>
             </section>
-            {/* <section className="mt-24 w-full max-w-7xl px-4 xl:px-0">
+            {/* <section className="mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
                 <h2 className="w-full text-center lg:text-start font-gillsans text-xl tracking-[0.5rem] uppercase">Por <b className="font-semibold">categorías</b></h2>
                 <div className="mt-8 w-full grid grid-cols-1 lg:grid-cols-4 gap-8">
                     {categories.map(category => {

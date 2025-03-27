@@ -206,7 +206,7 @@ const links:Array<NavLinkHome> = [
           },
           {
               title:'Vende M.C.',
-              href:'/contact'
+              href:'/sell-mc'
           },
       ]
   },
