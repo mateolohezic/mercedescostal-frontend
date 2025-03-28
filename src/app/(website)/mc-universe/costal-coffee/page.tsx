@@ -34,18 +34,18 @@ export const metadata: Metadata = {
 
 export default function CostalCafePage() {
     return (
-        <main className="my-24 lg:my-32 w-full flex flex-col items-center font-truetypewritter">
+        <main className="my-24 lg:my-32 w-full grow flex flex-col items-center font-truetypewritter">
             <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col gap-8">
-                <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
+                <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     MC Universe
                 </h1>
                 <Image src={portada} priority alt="Portada Buen Diseño Mercedes Costal" className="w-full lg:h-96 lg:object-cover"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
-                <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
+                <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Costal <b className="font-semibold">Café</b>
                 </h1>
-                <div className="w-full max-w-2xl text-xl text-center lg:text-start">
+                <div className="w-full max-w-2xl lg:text-xl text-center lg:text-start">
                     <p>Resignificar el café como un ritual, como una elección estética diaria, como una excusa de contemplación de sabores y postales visuales.</p>
                     <p className="mt-8">Nuestro café de especialidad se encuentra justo al pie de la montaña yerbabuenense, justo cuando las copas verdes de los árboles se comienzan a elevar hasta el cielo.</p>
                     <p className="mt-8">Además, tenemos en nuestra carta una selección de pastelería de autor.</p>

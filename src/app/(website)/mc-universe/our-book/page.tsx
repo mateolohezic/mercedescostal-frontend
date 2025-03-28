@@ -32,18 +32,18 @@ export const metadata: Metadata = {
 
 export default function OurBookPage() {
     return (
-        <main className="my-24 lg:my-32 w-full flex flex-col items-center font-truetypewritter">
+        <main className="my-24 lg:my-32 w-full grow flex flex-col items-center font-truetypewritter">
             <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col gap-8">
-                <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
+                <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     MC Universe
                 </h1>
                 <Image src={portada} priority alt="Portada Buen Diseño Mercedes Costal" className="w-full lg:h-96 lg:object-cover object-[50%_25%]"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
-                <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
+                <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Our <b className="font-semibold">Book</b>
                 </h1>
-                <div className="w-full max-w-2xl text-xl text-center lg:text-start">
+                <div className="w-full max-w-2xl lg:text-xl text-center lg:text-start">
                     <p>Retrato de un atelier</p>
                     <p className="mt-8">Produced by <span className="block">Mercedes Costal Studio</span></p>
                     <p className="mt-8">Argentina, septiembre 2022</p>

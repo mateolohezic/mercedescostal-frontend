@@ -5,13 +5,13 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { SubmitButtonLoading, FormErrorMessage } from "@/components";
+import { FormErrorMessage } from "@/components";
 import { collections } from "@/data/collections";
 
 const schema = z.object({
-    width: z.number().positive("Debe ser mayor a 0").max(10000, "Máximo permitido: 10000").optional(),
-    height: z.number().positive("Debe ser mayor a 0").max(10000, "Máximo permitido: 10000").optional(),
-    area: z.number().positive("Debe ser mayor a 0").max(100000, "Máximo permitido: 100000").optional(),
+    width: z.string().optional().refine(val => !val || (!isNaN(Number(val)) && Number(val) > 0 && Number(val) <= 10000), { message: "Debe ser mayor a 0 y menor o igual a 10000" }),
+    height: z.string().optional().refine(val => !val || (!isNaN(Number(val)) && Number(val) > 0 && Number(val) <= 10000), { message: "Debe ser mayor a 0 y menor o igual a 10000" }),
+    area: z.string().optional().refine(val => !val || (!isNaN(Number(val)) && Number(val) > 0 && Number(val) <= 100000), { message: "Debe ser mayor a 0 y menor o igual a 100000" }),
     unit: z.enum(["m", "ft", "in"]),
     shape: z.enum(["rectangular", "irregular"]),
     collection: z.string().nonempty("Selecciona una colección"),
@@ -25,7 +25,6 @@ interface Props {
 }
 
 export const QuoteForm = ({ preselectedMuralId }: Props) => {
-    const [isLoading, setIsLoading] = useState<boolean>(false);
     const [isRendered, setIsRendered] = useState<boolean>(false);
 
     const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<Schema>({
@@ -49,21 +48,21 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
 
     useEffect(() => {
         if (width && height) {
-            let calculatedArea = width * height;
-
-            if (unit === "ft") calculatedArea *= 0.092903;
-            if (unit === "in") calculatedArea *= 0.00064516;
-
-            setValue("area", parseFloat(calculatedArea.toFixed(2)));
+            const widthNum = parseFloat(width);
+            const heightNum = parseFloat(height);
+            if (!isNaN(widthNum) && !isNaN(heightNum)) {
+                let calculatedArea = widthNum * heightNum;
+                setValue("area", calculatedArea.toFixed(2));
+            }
         }
     }, [width, height, unit, setValue]);
-
+    
     const handleAreaInput = (event: React.ChangeEvent<HTMLInputElement>) => {
         const areaValue = parseFloat(event.target.value);
         if (!isNaN(areaValue)) {
-            setValue("area", areaValue);
-            setValue("width", undefined);
-            setValue("height", undefined);
+            setValue("area", areaValue.toString());
+            setValue("width", "");
+            setValue("height", "");
         }
     };
 
@@ -87,18 +86,27 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
     }, [preselectedMuralId, isRendered, setValue]);
 
     const onSubmit = async (data: Schema) => {
-        setIsLoading(true);
-        try {
-            console.log("Datos enviados:", data);
-        } catch (error) {
-            console.error("Error en la cotización:", error);
-        } finally {
-            setIsLoading(false);
+        const { mural, collection, area, width, height, unit, shape } = data;
+    
+        const collectionName = collections.find(c => c.id === collection)?.title || "";
+        const muralName = collections.flatMap(c => c.murales).find(m => m.id === mural)?.title || "";
+    
+        let message = `Hola! Estoy interesado en el mural ${muralName} de la colección ${collectionName}.%0A`;
+
+        if (area) message += `Área a cubrir: ${area} ${unit}%0A`;
+        if (width && height) {
+            message += `Largo: ${width} ${unit}%0A`;
+            message += `Ancho: ${height} ${unit}%0A`;
         }
+        
+        message += `Forma del área: ${shape === "rectangular" ? "Rectangular" : "Inusual"}`;
+        const phone = "5491160208460";
+        const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
+        window.open(whatsappUrl, "_blank");
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-12 lg:mt-4 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
+        <form onSubmit={handleSubmit(onSubmit)} className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
             <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="w-full">
                     <label className="md:text-lg">Forma del área</label>
@@ -133,7 +141,7 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                     <label className="md:text-lg">Colección</label>
                     <select className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("collection")}>
                         <option value="">Selecciona una colección</option>
-                        {collections.map(collection => (
+                        { collections.map(collection => (
                             <option key={collection.id} value={collection.id}>{collection.title}</option>
                         ))}
                     </select>
@@ -150,10 +158,12 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                     <FormErrorMessage condition={errors?.mural} message={errors?.mural?.message} />
                 </div>
                 <div className="mt-4 lg:mt-0 w-full text-xl lg:text-base flex justify-center lg:justify-end items-center lg:items-end">
-                    <SubmitButtonLoading isLoading={isLoading} text="Cotizar" className="w-20" />
+                    <button type="submit" className="w-20 uppercase border border-transparent hover:border-b-black disabled:hover:border-b-transparent">
+                        Cotizar
+                    </button>
                 </div>
             </div>
-            {selectedMural && (
+            { selectedMural && (
                 <div className="mt-12 flex flex-col items-center">
                     <h2 className="mb-4 w-full md:text-sm"><b className="mr-2 font-semibold text-xl">{selectedMural.title}</b>/ Previsualización</h2>
                     <Image src={selectedMural.variants[0].montaje} alt={`${selectedMural.title} Montaje`} width={1500} height={1500} className="w-full object-contain" />

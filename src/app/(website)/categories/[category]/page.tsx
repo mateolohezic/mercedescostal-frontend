@@ -50,7 +50,7 @@ export default function CategoriesPage({ params }: Props) {
     }
 
     return (
-        <main className="my-24 lg:my-32 w-full flex flex-col items-center font-truetypewritter">
+        <main className="my-24 lg:my-32 w-full grow flex flex-col items-center font-truetypewritter">
             <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="w-full font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Categoría <b className="block font-semibold">{category}</b>

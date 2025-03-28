@@ -30,18 +30,18 @@ export const metadata: Metadata = {
 
 export default function ManantialesPopupPage() {
     return (
-        <main className="my-24 lg:my-32 w-full flex flex-col items-center font-truetypewritter">
+        <main className="my-24 lg:my-32 w-full grow flex flex-col items-center font-truetypewritter">
             <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col gap-8">
-                <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
+                <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Highlights
                 </h1>
                 <Image src={portada} priority alt="Portada Manantiales Pop Up Mercedes Costal" className="w-full lg:h-96 lg:object-cover lg:object-[50%_85%]"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
-                <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
+                <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     <b className="font-semibold block">Manantiales</b><span className="block"> Pop</span> Up
                 </h1>
-                <div className="w-full max-w-2xl text-xl">
+                <div className="w-full max-w-2xl lg:text-xl">
                     <p>Durante el verano 2019 y 2020 nuestro equipo se mudó a Uruguay, a un pequeño pueblo etéreo y lleno de magia, justo donde el mar se encuentra con los pastizales y el blanco se funde con el cielo: Manantiales.</p>
                     <p className="mt-8">Allí abrimos nuestra primera tienda PopUp, al son del viento y el agua salada adonde también presentamos nuestra colección de murales y empapelados &ldquo;Casamar&rdquo;.</p>
                     <p className="mt-8">Con un Azul Navegante como rector, inspirado en el fondo del mar y los viajes que uno emprende cuando se acerca a esta inmensidad.</p>

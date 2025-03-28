@@ -36,7 +36,7 @@ export default function SearchResultsPage({ searchParams }: Props) {
     const results:Array<Mural> = useSearchMurals(searchQuery);
 
     return (
-        <main className="my-24 lg:my-32 w-full flex flex-col items-center justify-center lg:justify-start font-truetypewritter">
+        <main className="my-24 lg:my-32 w-full grow flex flex-col items-center justify-center lg:justify-start font-truetypewritter">
             <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
                 <h1 className="w-full font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     {searchQuery.length < 3 ?
@@ -74,7 +74,7 @@ export default function SearchResultsPage({ searchParams }: Props) {
                                         className="w-32 aspect-square object-contain"
                                     />
                                 </div>
-                                <h3 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase text-center">
+                                <h3 className="font-gillsans text-xl tracking-[0.5rem] uppercase text-center">
                                     {mural.title}
                                 </h3>
                             </Link>

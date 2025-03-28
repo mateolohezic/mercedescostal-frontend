@@ -202,7 +202,7 @@ const links:Array<NavLinkHome> = [
       links: [
           {
               title:'Trabaja con nosotros',
-              href:'/contact'
+              href:'/work-with-us'
           },
           {
               title:'Vende M.C.',

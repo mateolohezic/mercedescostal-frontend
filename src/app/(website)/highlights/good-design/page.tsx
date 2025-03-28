@@ -29,18 +29,18 @@ export const metadata: Metadata = {
 
 export default function BuenDiseñoPage() {
     return (
-        <main className="my-24 lg:my-32 w-full flex flex-col items-center font-truetypewritter">
+        <main className="my-24 lg:my-32 w-full grow flex flex-col items-center font-truetypewritter">
             <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col gap-8">
-                <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
+                <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Highlights
                 </h1>
                 <Image src={portada} priority alt="Portada Buen Diseño Mercedes Costal" className="w-full lg:w-auto lg:h-96 object-cover"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
-                <h1 className="w-fit font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
+                <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Sello <b className="font-semibold block">Buen</b> Diseño
                 </h1>
-                <div className="w-full max-w-2xl text-xl">
+                <div className="w-full max-w-2xl lg:text-xl">
                     <p>El Sello de Buen Diseño argentino (SBD) es una distinción que otorga el Estado a los productos de la industria nacional que se destacan por su innovación, participación en la producción local sustentable, posicionamiento en el mercado y calidad de diseño.</p>
                     <p className="mt-4">La evaluación está a cargo de un comité conformado por representantes de entidades públicas y privadas relacionadas con el diseño y los diversos sectores productivos.</p>
                     <p className="mt-8">Mercedes Costal recibió su primer distinción en Mayo del 2021.</p>

@@ -13,7 +13,7 @@ const schema = z.object({
     email: z.string().email("Debe ser un correo válido.").nonempty("Campo requerido."),
     address: z.string().min(5, "Debe contener al menos 5 caracteres.").max(100, "Debe contener hasta 100 caracteres.").optional(),
     country: z.string().nonempty("Campo requerido."),
-    region: z.string().nonempty("Campo requerido.").optional(),
+    region: z.string().optional(),
     instagram: z.string().min(2, "Debe contener más de 2 caracteres.").max(200, "Debe contener hasta 200 caracteres.").optional(),
     website: z.string().url("Debe ser una URL válida.").optional(),
     message: z.string().min(20, "Debe contener al menos 20 caracteres.").max(2000, "Debe contener hasta 2000 caracteres.").optional(),
@@ -53,7 +53,7 @@ export const WorkWithUsForm = () => {
             <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="w-full">
                     <div className='w-full flex flex-col gap-1'>
-                        <label htmlFor="fullName" className="md:text-lg">Nombre completo</label>
+                        <label htmlFor="fullName" className="md:text-lg">Nombre completo <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
                         <div className="relative w-full">
                             <div className="absolute inset-0 pointer-events-none px-2 py-1 flex items-center">
                                 { watch("fullName") && <span className="bg-yellow-300 h-fit">{watch("fullName")}</span> }
@@ -75,7 +75,7 @@ export const WorkWithUsForm = () => {
                 </div>
                 <div className="w-full">
                     <div className='w-full flex flex-col gap-1'>
-                        <label htmlFor="email" className="md:text-lg">Correo electrónico</label>
+                        <label htmlFor="email" className="md:text-lg">Correo electrónico <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
                         <div className="relative w-full">
                             <div className="absolute inset-0 pointer-events-none px-2 py-1 flex items-center">
                                 { watch("email") && <span className="bg-yellow-300 h-fit">{watch("email")}</span> }
@@ -143,7 +143,7 @@ export const WorkWithUsForm = () => {
                 </div>
                 <div className="w-full">
                     <div className='w-full flex flex-col gap-1'>
-                        <label htmlFor="name" className="md:text-lg">País</label>
+                        <label htmlFor="name" className="md:text-lg">País <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
                         <CountryDropdown
                             value={location.country}
                             onChange={handleCountryChange}

@@ -22,7 +22,7 @@ export const Card = ({ href, title, image }: CardProps) => {
                     className="w-32 aspect-square object-contain"
                 />
             </div>
-            <h3 className="w-fit font-gillsans text-xl tracking-[0.5rem] uppercase text-center">
+            <h3 className="font-gillsans text-xl tracking-[0.5rem] uppercase text-center">
                 {title}
             </h3>
         </Link>
