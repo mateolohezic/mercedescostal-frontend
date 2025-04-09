@@ -36,15 +36,15 @@ export const LanguageSelector = ({isHome}:Props) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.75 }}
-            className="flex justify-center items-center mr-6"
+            className="flex justify-center items-end"
         >
             <span className='sr-only'>Elegir Idioma | Select Language</span>
-            <div className='flex justity-center items-center gap-1'>
+            <div className='flex justity-center items-end gap-1'>
                 <button
                     type="button"
                     onClick={() => changeLanguage('es')}
                     disabled={language === 'es'}
-                    className={`${isHome ? "text-white/90" : "text-black/90"} ${language === 'es' ? "opacity-100 cursor-default" : "opacity-50 hover:opacity-100 cursor-pointer"} lg:text-center uppercase font-medium tracking-widest transition-150`}
+                    className={`${isHome ? "text-white/90" : "text-black/90"} ${language === 'es' ? "opacity-100 cursor-default" : "opacity-50 hover:opacity-100 cursor-pointer"} lg:text-center uppercase font-light tracking-widest leading-none transition-150`}
                 >
                     ES <span className='sr-only'>Español</span>
                 </button>
@@ -53,7 +53,7 @@ export const LanguageSelector = ({isHome}:Props) => {
                     type="button"
                     onClick={() => changeLanguage('en')}
                     disabled={language === 'en'}
-                    className={`${isHome ? "text-white/90" : "text-black/90"} ${language === 'en' ? "opacity-100 cursor-default" : "opacity-50 hover:opacity-100 cursor-pointer"} lg:text-center uppercase font-medium tracking-widest transition-150`}
+                    className={`${isHome ? "text-white/90" : "text-black/90"} ${language === 'en' ? "opacity-100 cursor-default" : "opacity-50 hover:opacity-100 cursor-pointer"} lg:text-center uppercase font-light tracking-widest leading-none transition-150`}
                 >
                     EN <span className='sr-only'>English</span>
                 </button>

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import portada from "@/assets/mc-universe/book/book_5.webp";
+import portada from "@/assets/mc-universe/book/portada.webp";
 import book_1 from "@/assets/mc-universe/book/book_1.webp";
 import book_2 from "@/assets/mc-universe/book/book_2.webp";
 import book_3 from "@/assets/mc-universe/book/book_3.webp";
@@ -32,12 +32,12 @@ export const metadata: Metadata = {
 
 export default function OurBookPage() {
     return (
-        <main className="my-24 lg:my-32 w-full grow flex flex-col items-center font-truetypewritter">
+        <main className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
             <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col gap-8">
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     MC Universe
                 </h1>
-                <Image src={portada} priority alt="Portada Buen Diseño Mercedes Costal" className="w-full lg:h-96 lg:object-cover object-[50%_25%]"/>
+                <Image src={portada} priority alt="Portada Buen Diseño Mercedes Costal" className="w-full lg:h-96 lg:object-cover object-[50%_70%]"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">

@@ -13,11 +13,12 @@ interface Props{
 export const MuralCard = ({mural, showCollection}:Props) => {
 
     const baseVariant = mural.variants.find(v => v.base) || mural.variants[0];
+    const isPattern = mural.keywords.some(k => ['patrón', 'patron', 'pattern'].includes(k.toLowerCase()));
 
     return (
         <div className="w-full flex flex-col justify-center lg:justify-start items-center lg:items-stretch gap-4 overflow-x-hidden">
             <h2 className="w-fit font-gillsans text-lg lg:text-xl text-center lg:text-start tracking-[0.5rem] uppercase relative overflow-hidden">
-                Mural
+                {isPattern ? 'Patrón' : 'Mural'}
                 <b className='font-semibold'> {mural.title}</b>
                 { showCollection &&
                     <span className='lg:ml-4 text-xs lg:text-sm block lg:inline-block'>

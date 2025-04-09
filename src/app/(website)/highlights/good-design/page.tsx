@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 export default function BuenDiseñoPage() {
     return (
-        <main className="my-24 lg:my-32 w-full grow flex flex-col items-center font-truetypewritter">
+        <main className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
             <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col gap-8">
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Highlights

@@ -875,7 +875,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [ethnic_icon_1],
-                keywords: ["pattern", "patron", "patrón", "étnico", "cultural", "diseño"],
+                keywords: ["étnico", "cultural", "diseño"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -2879,7 +2879,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [fractal_icon_1],
-                keywords: ["geometría", "arte", "patrón"],
+                keywords: ["geometría", "arte"],
                 variants: [
                     {
                         colorName: "Estándar",

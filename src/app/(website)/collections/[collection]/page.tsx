@@ -1,7 +1,9 @@
 import { Metadata } from "next";
 import { collections } from '@/data/collections';
-import { MuralCard } from '@/components';
-import { Mural } from '@/interfaces';
+import { CollectionVideo, MuralCardNew } from '@/components';
+// import { Mural } from '@/interfaces';
+// import Image from "next/image";
+// import foto from "@/assets/collections/basa_basa/basa_basa/basa_basa_mural.webp";
 
 interface Props {
     params: {
@@ -49,21 +51,29 @@ export default function CollectionPage({ params }: Props) {
     }
 
     return (
-        <main className="my-24 lg:my-32 w-full grow flex flex-col items-center font-truetypewritter">
-            <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
-                <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
-                    Colección <b className="block font-semibold">{foundCollection.title}</b>
-                </h1>
-                <div className="w-full max-w-lg">
-                    <p>We create to make ourselves infinite. Our objects are like bees that cross-pollinate the gardens of the galaxy.</p>
-                    <p>You will witness the withering of the physical piece and you will appreciate the responsibility of the beauty of the finite. As long as this digital piece will never stop flourishing, wherever we decide to live.</p>
+        <main className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
+            <h1 className="w-full max-w-7xl text-center lg:text-start font-gillsans font-light text-3xl uppercase"><span className="text-opacity-75">Colección</span> <b className="font-medium">Basa Basa</b></h1>
+            <section className="mt-8 w-full max-w-4xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col justify-center items-center gap-8 lg:gap-4">
+                <CollectionVideo/>
+                <div className="w-full flex flex-col justify-start items-start gap-1">
+                    <p><b className="uppercase">Artista:</b> The Wither</p>
+                    <p><b className="uppercase">Año:</b> Akram</p>
+                    <p><b className="uppercase">Tecnica:</b> 2021</p>
+                    <p><b className="uppercase">Description:</b> A flower is born, blooms, and fades.</p>
                 </div>
             </section>
-            <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col justify-center items-center gap-24">
+            <section className="mt-8 w-full max-w-4xl 2xl:max-w-7xl px-4 xl:px-0 grid grid-cols-2 gap-4">
+                <MuralCardNew/>
+                <MuralCardNew/>
+                <MuralCardNew/>
+                <MuralCardNew/>
+                <MuralCardNew/>
+            </section>
+            {/* <section className="mt-12 lg:mt-24 w-full max-w-4xl 2xl:max-w-5xl px-4 xl:px-0 flex flex-col justify-center items-center gap-24">
                 {foundCollection.murales.map((mural: Mural) => (
                     <MuralCard key={mural.id} mural={mural} />
                 ))}
-            </section>
+            </section> */}
         </main>
     );
 }

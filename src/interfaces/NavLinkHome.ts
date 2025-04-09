@@ -5,5 +5,7 @@ interface NavLinkOption{
 
 export interface NavLinkHome{
     title: string;
-    links: Array<NavLinkOption>;
+    href?: string;
+    menu?: boolean;
+    links?: Array<NavLinkOption>;
 }

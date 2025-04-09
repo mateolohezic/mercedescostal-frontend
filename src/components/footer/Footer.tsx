@@ -1,5 +1,7 @@
 import Link from "next/link"
-import { FooterForm, MCLogo } from "@/components"
+import { FooterForm } from "@/components"
+import firma from "@/assets/firma.webp";
+import Image from "next/image";
 
 export const Footer = () => {
     return (
@@ -14,7 +16,7 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="mt-24 lg:mt-4 w-full flex justify-center">
-                <MCLogo className="w-44 fill-black"/>
+                <Image src={firma} alt="Firma" className="w-48 lg:w-full max-w-sm" />
             </div>
         </footer>
     )

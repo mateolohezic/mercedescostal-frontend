@@ -38,10 +38,10 @@ export const Collapse = ({ links }: Props) => {
             <motion.div
                 animate={{ left: isExpanded ? -304 : 16 }}
                 transition={{ type: "spring", bounce: 0, duration: 0.25 }}
-                className="w-fit absolute top-4 left-4 z-50 bg-transparent"
+                className="w-fit h-6 flex justify-center items-center absolute top-3 left-3 z-50 bg-transparent"
             >
                 <Link href="/" aria-label="Inicio">
-                    <MCLogo className={`h-6 stroke-2 ${ isHome ? "fill-white/90" : "fill-black/90"}`} />
+                    <MCLogo className={`w-64 stroke-2 ${ isHome ? "fill-white/90" : "fill-black/90"}`} />
                 </Link>
             </motion.div>
             <motion.button

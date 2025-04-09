@@ -1,3 +1,4 @@
+
 export { BuenDiseñoVideo } from "./highlights/BuenDiseñoVideo";
 export { LondonFestivalVideo } from "./highlights/LondonFestivalVideo";
 export { SplendidVideoUno } from "./highlights/splendid/SplendidVideoUno";
@@ -23,6 +24,8 @@ export { Footer } from "./footer/Footer";
 export { FooterForm } from "./footer/FooterForm";
 
 export { MuralCard } from "./collection/MuralCard";
+export { CollectionVideo } from "./collection/CollectionVideo";
+export { MuralCardNew } from "./collection/MuralCardNew";
 
 export { WorkWithUsForm } from "./contact/WorkWithUsForm";
 

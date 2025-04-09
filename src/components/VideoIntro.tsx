@@ -49,7 +49,7 @@ export const VideoIntro = () => {
                         }
                     </button>
                 </div>
-                <div className="size-full bg-gradient-to-t from-black/75 to-transparent absolute top-0 left-0"></div>
+                <div className="size-full bg-black absolute top-0 left-0 z-0"></div>
                 <video
                     ref={videoRef}
                     controls={false}
@@ -57,7 +57,7 @@ export const VideoIntro = () => {
                     autoPlay
                     muted
                     loop
-                    className="size-full object-cover pointer-events-none select-none"
+                    className="size-full object-cover pointer-events-none select-none relative z-10 grayscale-[0.3]"
                 >
                     <source src="/assets/portada_video.mp4" type="video/mp4" />
                     Tu navegador no soporta este video.

@@ -123,7 +123,8 @@ const gillSans = localFont({
 });
 
 const truetypewritter = localFont({
-  src: '../assets/fonts/True_Typewritter.woff2',
+  // src: '../assets/fonts/True_Typewritter.woff2',
+  src: '../assets/fonts/True_Typewritter_2.ttf',
   display: 'auto',
   variable: '--truetypewritter'
 })
@@ -131,32 +132,25 @@ const truetypewritter = localFont({
 const links:Array<NavLinkHome> = [
   {
       title:'Wallpapers',
-      links: [
-          {
-              title:'Murales',
-              href:'/murals'
-          },
-          {
-              title:'Patrones',
-              href:'/patterns'
-          },
-          {
-              title:'Cotizá',
-              href:'/quote'
-          },
-      ]
+      href:'/collections',
   },
   {
       title:'Studio',
+      menu: true,
       links: [
           {
               title:'Meet the makers',
               href:'/meet-the-makers'
           },
+          {
+              title:'Press',
+              href:'/presss'
+          },
       ]
   },
   {
       title:'Highlights',
+      menu: true,
       links: [
           {
               title:'Buen diseño',
@@ -182,6 +176,7 @@ const links:Array<NavLinkHome> = [
   },
   {
       title:'MC Universe',
+      menu: true,
       links: [
           {
               title:'Fragrances',
@@ -199,6 +194,7 @@ const links:Array<NavLinkHome> = [
   },
   {
       title:'Contact',
+      menu: true,
       links: [
           {
               title:'Trabaja con nosotros',
