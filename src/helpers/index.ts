@@ -1,0 +1,1 @@
+export { sortMurales } from "./sortMurales";

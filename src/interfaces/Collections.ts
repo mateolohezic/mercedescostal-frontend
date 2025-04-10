@@ -23,5 +23,8 @@ export interface Collection {
     id: string;
     title: string;
     portrait: StaticImageData|string;
+    date: string;
+    technique: string;
+    description: string;
     murales: Array<Mural>;
 }

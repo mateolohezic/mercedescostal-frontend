@@ -106,8 +106,8 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
-            <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full flex items-start px-12">
+            <div className="w-full max-w-md grid grid-cols-1 md:grid-cols-1 gap-4">
                 <div className="w-full">
                     <label className="md:text-lg">Forma del área</label>
                     <select className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("shape")}>
@@ -158,16 +158,18 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                     <FormErrorMessage condition={errors?.mural} message={errors?.mural?.message} />
                 </div>
                 <div className="mt-4 lg:mt-0 w-full text-xl lg:text-base flex justify-center lg:justify-end items-center lg:items-end">
-                    <button type="submit" className="w-20 uppercase border border-transparent hover:border-b-black disabled:hover:border-b-transparent">
+                    <button type="submit" className="mt-4 px-4 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase">
                         Cotizar
                     </button>
                 </div>
             </div>
             { selectedMural && (
-                <div className="mt-12 flex flex-col items-center">
-                    <h2 className="mb-4 w-full md:text-sm"><b className="mr-2 font-semibold text-xl">{selectedMural.title}</b>/ Previsualización</h2>
-                    <Image src={selectedMural.variants[0].montaje} alt={`${selectedMural.title} Montaje`} width={1500} height={1500} className="w-full object-contain" />
-                    <Image src={selectedMural.variants[0].mural} alt={`${selectedMural.title} Mural`} width={1500} height={1500} className="w-full object-contain mt-4" />
+                <div className="pl-12 flex flex-col items-center gap-1S">
+                    <h2 className="w-full text-start font-gillsans font-light uppercase">
+                        <span className="text-black/75">Previsualización</span>{" "}
+                        <b className="font-medium">{selectedMural.title}</b>
+                    </h2>
+                    <Image src={selectedMural.variants[0].mural} alt={`${selectedMural.title} Mural`} width={1500} height={1500} className="w-full object-contain" />
                 </div>
             )}
         </form>

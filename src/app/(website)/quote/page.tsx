@@ -33,15 +33,7 @@ export default function QuotePage({ searchParams }: Props) {
 
     return (
         <main className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
-            <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
-                <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
-                    Cotiza tu <b className="block font-semibold">mural</b>
-                </h1>
-                <div className="w-full max-w-2xl lg:text-xl">
-                    <p>We create to make ourselves infinite. Our objects are like bees that cross-pollinate the gardens of the galaxy.</p>
-                    <p>You will witness the withering of the physical piece and you will appreciate the responsibility of the beauty of the finite. As long as this digital piece will never stop flourishing, wherever we decide to live.</p>
-                </div>
-            </section>
+            <h1 className="sr-only">Cotiza tu mural</h1>
             <QuoteForm preselectedMuralId={preselectedMuralId} />
         </main>
     );

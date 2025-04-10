@@ -234,11 +234,11 @@ import universe_mural from "@/assets/collections/landmark/universe/universe_mura
 import watercolor_stripes_icon_1 from "@/assets/collections/landmark/watercolor_stripes/watercolor_stripes_icon_1.webp";
 import watercolor_stripes_mural from "@/assets/collections/landmark/watercolor_stripes/watercolor_stripes_mural.webp";
 
-import willow_dark_icon_1 from "@/assets/collections/landmark/willow_dark/willow_dark_icon_1.webp";
-import willow_dark_mural from "@/assets/collections/landmark/willow_dark/willow_dark_mural.webp";
+// import willow_dark_icon_1 from "@/assets/collections/landmark/willow_dark/willow_dark_icon_1.webp";
+// import willow_dark_mural from "@/assets/collections/landmark/willow_dark/willow_dark_mural.webp";
 
-import willow_white_icon_1 from "@/assets/collections/landmark/willow_white/willow_white_icon_1.webp";
-import willow_white_mural from "@/assets/collections/landmark/willow_white/willow_white_mural.webp";
+// import willow_white_icon_1 from "@/assets/collections/landmark/willow_white/willow_white_icon_1.webp";
+// import willow_white_mural from "@/assets/collections/landmark/willow_white/willow_white_mural.webp";
 
 // Morris
 
@@ -572,6 +572,9 @@ export const collections: Array<Collection> = [
         id: "basa-basa",
         title: "Basa Basa",
         portrait: portada_basa_basa,
+        date: "2021",
+        technique: "Pintado a mano.",
+        description: "Descripción.",
         murales: [
             {
                 id: "basa-basa-basa-basa",
@@ -723,6 +726,9 @@ export const collections: Array<Collection> = [
         id: "casamar",
         title: "Casamar",
         portrait: portada_casamar,
+        date: "2020",
+        technique: "Digital y pintado a mano.",
+        description: "Descripcióñ.",
         murales: [
             {
                 id: "bajo-el-mar-casamar",
@@ -755,7 +761,6 @@ export const collections: Array<Collection> = [
                         colorHex: "#00FF00",
                         montaje: brush_montaje,
                         mural: brush_mural_artful_green,
-                        base: true,
                     },
                     {
                         colorName: "Black",
@@ -774,6 +779,7 @@ export const collections: Array<Collection> = [
                         colorHex: "#8B0000",
                         montaje: brush_montaje,
                         mural: brush_mural_st_201810,
+                        base: true,
                     },
                     {
                         colorName: "St 201915",
@@ -1335,6 +1341,9 @@ export const collections: Array<Collection> = [
         id: "landmark",
         title: "Landmark",
         portrait: portada_landmark,
+        date: "2022",
+        technique: "Pintado a mano.",
+        description: "Descripción.",
         murales: [
             {
                 id: "arabesco-landmark",
@@ -1731,42 +1740,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-            },
-            {
-                id: "willow-dark-landmark",
-                title: "Willow Dark",
-                collectionTitle: "Landmark",
-                collectionId: "landmark",
-                icons: [willow_dark_icon_1],
-                keywords: ["pattern", "patron", "patrón", "sauce", "oscuro", "naturaleza"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#4B3621",
-                        montaje: willow_dark_mural,
-                        mural: willow_dark_mural,
-                        base: true,
-                    },
-                ],
-                href: "landmark",
-            },
-            {
-                id: "willow-white-landmark",
-                title: "Willow White",
-                collectionTitle: "Landmark",
-                collectionId: "landmark",
-                icons: [willow_white_icon_1],
-                keywords: ["pattern", "patron", "patrón", "sauce", "blanco", "naturaleza"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        colorHex: "#FFFFFF",
-                        montaje: willow_white_mural,
-                        mural: willow_white_mural,
-                        base: true,
-                    },
-                ],
-                href: "landmark",
             }
         ],
     },
@@ -1774,6 +1747,9 @@ export const collections: Array<Collection> = [
         id: "morris",
         title: "Morris",
         portrait: portada_morris,
+        date: "2021",
+        technique: "Digital y pintado a mano.",
+        description: "Descripcióñ.",
         murales: [
             {
                 id: "artemis-claro-morris",
@@ -1943,6 +1919,9 @@ export const collections: Array<Collection> = [
         id: "vivero",
         title: "Vivero",
         portrait: portada_vivero,
+        date: "2022",
+        technique: "Digital y pintado a mano.",
+        description: "Descripcióñ.",
         murales: [
             {
                 id: "avistaje-vivero",
@@ -2028,6 +2007,9 @@ export const collections: Array<Collection> = [
         id: "vuelta-al-mundo",
         title: "Vuelta al Mundo",
         portrait: portada_vuelta_al_mundo,
+        date: "2016-2024",
+        technique: "Digital y pintado a mano.",
+        description: "Descripcióñ.",
         murales: [
             {
                 id: "alexandria-vuelta-al-mundo",
@@ -2461,6 +2443,9 @@ export const collections: Array<Collection> = [
         id: "the-classics",
         title: "The Classics",
         portrait: portada_the_classics,
+        date: "2024",
+        technique: "Digital y pintado a mano.",
+        description: "Descripcióñ.",
         murales: [
             {
                 id: "hikers-in-a-park-the-classics",
@@ -2582,6 +2567,9 @@ export const collections: Array<Collection> = [
         id: "otros-murales",
         title: "Otros Murales",
         portrait: portada_basa_basa,
+        date: "2016-2024",
+        technique: "Digital y pintado a mano.",
+        description: "Descripción.",
         murales: [
             {
                 id: "acuarela-otros-murales",
