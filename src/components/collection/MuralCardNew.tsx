@@ -1,28 +1,35 @@
 'use client'
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from 'framer-motion';
-import foto from "@/assets/collections/basa_basa/basa_basa/basa_basa_mural.webp";
-import foto2 from "@/assets/collections/basa_basa/basa_basa/basa_basa_montaje.webp";
-import { useState } from "react";
+import { Mural } from "@/interfaces";
 
-export const MuralCardNew = () => {
+interface Props {
+    mural: Mural;
+    index: number
+}
+
+export const MuralCardNew = ({ mural, index }: Props) => {
 
     const [isHovered, setIsHovered] = useState<boolean>(false)
+    const baseVariant = mural.variants.find(v => v.base) || mural.variants[0];
+    const isPattern = mural.keywords.some(k => ['patrón', 'patron', 'pattern'].includes(k.toLowerCase()));
+    const muralIndex = index + 1
 
     return (
         <div className="w-full flex flex-col">
-            <h2 className="font-gillsans text-xl uppercase"><b className="font-bold">01.</b> Mural Basa Basa</h2>
+            <h2 className="font-gillsans text-xl uppercase"><b className="font-bold">{ muralIndex > 9 ? muralIndex : `0${muralIndex}` }.</b> {isPattern ? 'Patrón' : 'Mural'} {mural.title}</h2>
             <motion.div
                 className="w-full aspect-video relative"
                 onHoverStart={() => setIsHovered(true)}
                 onHoverEnd={() => setIsHovered(false)}
             >
-                { isHovered ?
-                    <Image src={foto2} alt="" className="size-full object-cover absolute top-0 left-0"/>
-                :
-                    <Image src={foto} alt="" className="size-full object-cover absolute top-0 left-0"/>
-                }
+                <Image
+                    src={isHovered ? baseVariant.montaje : baseVariant.mural}
+                    alt={`${mural.title} ${isHovered ? 'montaje' : 'mural'}`}
+                    className="size-full object-cover absolute top-0 left-0"
+                />
             </motion.div>
         </div>
     )

@@ -559,10 +559,19 @@ import { Collection } from "@/interfaces";
 // import magnolia_real_mural_black from "@/assets/collections/vuelta_al_mundo/monos_colgantes_VACIO";
 // import la_riviere_mural_gray from "@/assets/collections/vuelta_al_mundo/land_VACIO";
 
+import portada_basa_basa from "@/assets/collections/basa_basa/basa_basa/basa_basa_montaje.webp";
+import portada_the_classics from "@/assets/collections/the_classics/italian_landscape/italian_landscape_montaje.webp";
+import portada_landmark from "@/assets/collections/landmark/bosque_de_los_magos/bosque_de_los_magos_montaje.webp";
+import portada_casamar from "@/assets/collections/casamar/casamar/casamar_montaje.webp";
+import portada_vivero from "@/assets/collections/vivero/reina_ana/reina_ana_montaje_2.webp";
+import portada_morris from "@/assets/collections/morris/willow/willow_montaje.webp";
+import portada_vuelta_al_mundo from "@/assets/collections/vuelta_al_mundo/la_riviere/la_riviere_montaje.webp";
+
 export const collections: Array<Collection> = [
     {
         id: "basa-basa",
         title: "Basa Basa",
+        portrait: portada_basa_basa,
         murales: [
             {
                 id: "basa-basa-basa-basa",
@@ -713,6 +722,7 @@ export const collections: Array<Collection> = [
     {
         id: "casamar",
         title: "Casamar",
+        portrait: portada_casamar,
         murales: [
             {
                 id: "bajo-el-mar-casamar",
@@ -1324,6 +1334,7 @@ export const collections: Array<Collection> = [
     {
         id: "landmark",
         title: "Landmark",
+        portrait: portada_landmark,
         murales: [
             {
                 id: "arabesco-landmark",
@@ -1762,6 +1773,7 @@ export const collections: Array<Collection> = [
     {
         id: "morris",
         title: "Morris",
+        portrait: portada_morris,
         murales: [
             {
                 id: "artemis-claro-morris",
@@ -1930,6 +1942,7 @@ export const collections: Array<Collection> = [
     {
         id: "vivero",
         title: "Vivero",
+        portrait: portada_vivero,
         murales: [
             {
                 id: "avistaje-vivero",
@@ -2014,6 +2027,7 @@ export const collections: Array<Collection> = [
     {
         id: "vuelta-al-mundo",
         title: "Vuelta al Mundo",
+        portrait: portada_vuelta_al_mundo,
         murales: [
             {
                 id: "alexandria-vuelta-al-mundo",
@@ -2446,6 +2460,7 @@ export const collections: Array<Collection> = [
     {
         id: "the-classics",
         title: "The Classics",
+        portrait: portada_the_classics,
         murales: [
             {
                 id: "hikers-in-a-park-the-classics",
@@ -2566,6 +2581,7 @@ export const collections: Array<Collection> = [
     {
         id: "otros-murales",
         title: "Otros Murales",
+        portrait: portada_basa_basa,
         murales: [
             {
                 id: "acuarela-otros-murales",

@@ -7,7 +7,7 @@ import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { AnimatePresence, motion } from "framer-motion";
 import { SearchIcon } from "@/icons";
-import { FormErrorMessage, SubmitButtonLoading } from "@/components";
+import { FormErrorMessage } from "@/components";
 
 const schema = z.object({
     query: z.string().nonempty("Ingresa un término de búsqueda.").trim().max(50, "Máximo 50 caracteres."),
@@ -23,7 +23,6 @@ interface Props{
 export const BuscadorNavbar = ({isHome, insideCollapse}:Props) => {
 
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
     const { register, handleSubmit, reset, formState: { errors } } = useForm<Schema>({
         resolver: zodResolver(schema)
     });
@@ -31,13 +30,12 @@ export const BuscadorNavbar = ({isHome, insideCollapse}:Props) => {
     const router = useRouter();
 
     const onSubmit: SubmitHandler<Schema> = async (data) => {
-        setIsLoading(true);
         try {
             router.push(`/search?query=${encodeURIComponent(data.query)}`);
         } catch (error) {
             console.error("Error en la búsqueda:", error);
         } finally {
-            setIsLoading(false);
+            setIsExpanded(false);
         }
     };
 
@@ -96,30 +94,32 @@ export const BuscadorNavbar = ({isHome, insideCollapse}:Props) => {
             </motion.button>
             <AnimatePresence>
                 {isExpanded &&
-                    <motion.div
+                    <motion.form
                         initial={{ opacity: 0, y: -10 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -10 }}
-                        className="absolute top-10 right-0 bg-white border border-black p-4 w-72"
+                        onSubmit={handleSubmit(onSubmit)}
+                        className="absolute top-10 right-0 bg-white border border-black w-72"
                     >
-                        <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
+                        <div className="w-full relative">
                             <input
                                 type="text"
                                 enterKeyHint="search"
                                 minLength={2}
                                 maxLength={50}
-                                className="mb-2 w-full h-10 px-3 bg-transparent border border-black outline-none caret-black"
+                                className="w-full h-10 ps-3 pe-11 bg-transparent border-none outline-none caret-black"
                                 placeholder="Buscar..."
                                 {...register("query", {
                                     required: "Este campo es obligatorio.",
                                     minLength: { value: 2, message: "Debe contener más de 2 caracteres." },
                                     maxLength: { value: 50, message: "Debe contener menos de 50 caracteres." }
                                 })}
-                            />
-                            <FormErrorMessage condition={errors?.query} message={errors?.query?.message}/>
-                            <SubmitButtonLoading isLoading={isLoading} text="Buscar" className="mt-2 w-full" />
-                        </form>
-                    </motion.div>
+                                />
+                            <button type="submit" className="w-11 h-10 flex justify-center items-center absolute top-0 right-0">
+                                <SearchIcon className="size-5" />
+                            </button>
+                        </div>
+                    </motion.form>
                 }
             </AnimatePresence>
         </div>

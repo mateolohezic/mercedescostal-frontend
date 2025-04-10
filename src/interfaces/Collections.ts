@@ -22,5 +22,6 @@ export interface Mural {
 export interface Collection {
     id: string;
     title: string;
+    portrait: StaticImageData|string;
     murales: Array<Mural>;
 }
