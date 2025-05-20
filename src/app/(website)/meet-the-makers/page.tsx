@@ -37,12 +37,13 @@ export default function MeetTheMakersPage() {
                     Meet the <b className="font-semibold">Makers</b>
                 </h1>
             </section>
-            <section className="mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-8 lg:gap-4">
-                <Image src={portada} priority alt="Portada Meet the Makers Mercedes Costal" className="w-full max-w-lg object-contain"/>
-                <div className="grow flex justify-center">
-                    <p className="w-full text-center text-2xl">&ldquo;Creemos en el diseño<span className="block"></span> como un estilo de vida,<span className="block"></span> más que como una moda o<span className="block"></span> un objeto aislado.&rdquo;</p>
-                </div>
+            <section className="w-full px-4 xl:px-12 flex flex-col gap-8">
+                <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
+                    Meet the makers
+                </h1>
+                <Image src={portada} priority alt="Portada Meet the makers Mercedes Costal" className="w-full aspect-video object-cover"/>
             </section>
+                    {/* <p className="w-full text-center text-2xl">&ldquo;Creemos en el diseño<span className="block"></span> como un estilo de vida,<span className="block"></span> más que como una moda o<span className="block"></span> un objeto aislado.&rdquo;</p> */}
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col items-center gap-24">
                 <Image src={meet_the_makers_1} alt="Meet the Makers Mercedes Costal" className="w-full max-w-md object-contain grayscale"/>
                 <p className="w-full max-w-4xl text-center lg:text-xl">En MERCEDES COSTAL logramos conectar a las personas con el mundo del diseño, el arte y la historia a través de la creación, producción y venta de wallpapers para generar una experiencia inmersiva en el observador.</p>

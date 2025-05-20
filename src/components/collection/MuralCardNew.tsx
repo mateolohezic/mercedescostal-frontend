@@ -42,7 +42,7 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                     src={isHovered ? baseVariant.mural : baseVariant.montaje}
                     alt={`${mural.title} ${isHovered ? 'montaje' : 'mural'}`}
                     className="size-full object-cover absolute top-0 left-0"
-                    />
+                />
             </motion.div>
         </div>
         <Modal

@@ -39,7 +39,6 @@ import bajo_el_mar_montaje from "@/assets/collections/casamar/bajo_el_mar/bajo_e
 import bajo_el_mar_mural from "@/assets/collections/casamar/bajo_el_mar/bajo_el_mar_mural.webp";
 import bajo_el_mar_icon_1 from "@/assets/collections/casamar/bajo_el_mar/bajo_el_mar_icon_1.webp";
 
-import brush_montaje from "@/assets/collections/casamar/brush/brush_montaje.webp";
 import brush_icon_1 from "@/assets/collections/casamar/brush/brush_icon_1.webp";
 import brush_mural_artful_green from "@/assets/collections/casamar/brush/brush_mural_artful_green.webp";
 import brush_mural_black from "@/assets/collections/casamar/brush/brush_mural_black.webp";
@@ -48,6 +47,7 @@ import brush_mural_st_201810 from "@/assets/collections/casamar/brush/brush_mura
 import brush_mural_st_201915 from "@/assets/collections/casamar/brush/brush_mural_st_201915.webp";
 import brush_mural_st_201820 from "@/assets/collections/casamar/brush/brush_mural_st_201820.webp";
 import brush_mural_tanger_tan from "@/assets/collections/casamar/brush/brush_mural_tanger_tan.webp";
+import brush_montaje from "@/assets/collections/casamar/brush/brush_montaje.webp";
 
 import casamar_montaje from "@/assets/collections/casamar/casamar/casamar_montaje.webp";
 import casamar_mural from "@/assets/collections/casamar/casamar/casamar_mural.webp";
@@ -61,6 +61,7 @@ import corals_mural_st_201645 from "@/assets/collections/casamar/corals/corals_m
 import corals_mural_st_201810 from "@/assets/collections/casamar/corals/corals_mural_st_201810.webp";
 import corals_mural_st_201820 from "@/assets/collections/casamar/corals/corals_mural_st_201820.webp";
 import corals_mural_st_201915 from "@/assets/collections/casamar/corals/corals_mural_st_201915.webp";
+import corals_montaje from "@/assets/collections/casamar/corals/corals_montaje.webp";
 
 import degrade_texturado_mural from "@/assets/collections/casamar/degrade_texturado/degrade_texturado_mural.webp";
 import degrade_texturado_icon_1 from "@/assets/collections/casamar/degrade_texturado/degrade_texturado_icon_1.webp";
@@ -73,6 +74,7 @@ import ethnic_mural_st_201810 from "@/assets/collections/casamar/ethinc/ethnic_m
 import ethnic_mural_st_201820 from "@/assets/collections/casamar/ethinc/ethnic_mural_st_201820.webp";
 import ethnic_mural_st_201915 from "@/assets/collections/casamar/ethinc/ethnic_mural_st_201915.webp";
 import ethnic_mural_tanger_tan from "@/assets/collections/casamar/ethinc/ethnic_mural_tanger_tan.webp";
+import ethnic_montaje from "@/assets/collections/casamar/ethinc/ethnic_montaje.webp";
 
 import exotic_montaje from "@/assets/collections/casamar/exotic/exotic_montaje.webp";
 import exotic_mural from "@/assets/collections/casamar/exotic/exotic_mural.webp";
@@ -85,6 +87,7 @@ import exotic_mural_tanger_tan from "@/assets/collections/casamar/exotic/exotic_
 import exotic_icon_1 from "@/assets/collections/casamar/exotic/exotic_icon_1.webp";
 import exotic_icon_2 from "@/assets/collections/casamar/exotic/exotic_icon_2.webp";
 
+import fish_icon_1 from "@/assets/collections/casamar/fish/fish_icon_1.webp";
 import fish_mural_artful_green from "@/assets/collections/casamar/fish/fish_mural_artful_green.webp";
 import fish_mural_st_201645 from "@/assets/collections/casamar/fish/fish_mural_st_201645.webp";
 import fish_mural_st_201810 from "@/assets/collections/casamar/fish/fish_mural_st_201810.webp";
@@ -92,7 +95,7 @@ import fish_mural_st_201820 from "@/assets/collections/casamar/fish/fish_mural_s
 import fish_mural_st_201915 from "@/assets/collections/casamar/fish/fish_mural_st_201915.webp";
 import fish_mural_tanger_tan from "@/assets/collections/casamar/fish/fish_mural_tanger_tan.webp";
 import fish_mural_white from "@/assets/collections/casamar/fish/fish_mural_white.webp";
-import fish_icon_1 from "@/assets/collections/casamar/fish/fish_icon_1.webp";
+import fish_montaje from "@/assets/collections/casamar/fish/fish_montaje.webp";
 
 import morris_icon_1 from "@/assets/collections/casamar/morris/morris_icon_1.webp";
 import morris_montaje from "@/assets/collections/casamar/morris/morris_montaje.webp";
@@ -117,6 +120,7 @@ import palms_mural_st_201810 from "@/assets/collections/casamar/palms/palms_mura
 import palms_mural_st_201820 from "@/assets/collections/casamar/palms/palms_mural_st_201820.webp";
 import palms_mural_st_201915 from "@/assets/collections/casamar/palms/palms_mural_st_201915.webp";
 import palms_mural_tanger_tan from "@/assets/collections/casamar/palms/palms_mural_tanger_tan.webp";
+import palms_montaje from "@/assets/collections/casamar/palms/palms_montaje.webp";
 
 import rainbow_icon_1 from "@/assets/collections/casamar/rainbow/rainbow_icon_1.webp";
 import rainbow_montaje from "@/assets/collections/casamar/rainbow/rainbow_montaje.webp";
@@ -146,11 +150,13 @@ import toile_tropical_mural_st_201810 from "@/assets/collections/casamar/toile_t
 import toile_tropical_mural_st_201820 from "@/assets/collections/casamar/toile_tropical/toile_tropical_mural_st_201820.webp";
 import toile_tropical_mural_st_201915 from "@/assets/collections/casamar/toile_tropical/toile_tropical_mural_st_201915.webp";
 import toile_tropical_mural_tanger_tan from "@/assets/collections/casamar/toile_tropical/toile_tropical_mural_tanger_tan.webp";
+import toile_tropical_montaje from "@/assets/collections/casamar/toile_tropical/toile_tropical_montaje.webp";
 
 // Landmark
 
 import arabesco_icon_1 from "@/assets/collections/landmark/arabesco/arabesco_icon_1.webp";
 import arabesco_mural from "@/assets/collections/landmark/arabesco/arabesco_mural.webp";
+import arabesco_montaje from "@/assets/collections/landmark/arabesco/arabesco_montaje.webp";
 
 import bosque_de_los_magos_icon_1 from "@/assets/collections/landmark/bosque_de_los_magos/bosque_de_los_magos_icon_1.webp";
 import bosque_de_los_magos_icon_2 from "@/assets/collections/landmark/bosque_de_los_magos/bosque_de_los_magos_icon_2.webp";
@@ -172,30 +178,36 @@ import fairy_tale_icon_2 from "@/assets/collections/landmark/fairy_tale/fairy_ta
 import fairy_tale_montaje from "@/assets/collections/landmark/fairy_tale/fairy_tale_montaje.webp";
 import fairy_tale_mural from "@/assets/collections/landmark/fairy_tale/fairy_tale_mural.webp";
 
-import flowers_dark_icon_1 from "@/assets/collections/landmark/flowers_dark/flowers_dark_icon_1.webp";
-import flowers_dark_montaje from "@/assets/collections/landmark/flowers_dark/flowers_dark_montaje.webp";
-import flowers_dark_mural from "@/assets/collections/landmark/flowers_dark/flowers_dark_mural.webp";
+import landmark_flowers_dark_icon_1 from "@/assets/collections/landmark/flowers_dark/flowers_dark_icon_1.webp";
+import landmark_flowers_dark_montaje from "@/assets/collections/landmark/flowers_dark/landmark_flowers_dark_montaje.webp";
+import landmark_flowers_dark_mural from "@/assets/collections/landmark/flowers_dark/flowers_dark_mural.webp";
 
 import geometric_golden_mist_icon_1 from "@/assets/collections/landmark/geometric/geometric_golden_mist_icon_1.webp";
 import geometric_golden_mist_mural from "@/assets/collections/landmark/geometric/geometric_golden_mist_mural.webp";
+import geometric_golden_mist_montaje from "@/assets/collections/landmark/geometric/geometric_golden_mist_montaje.webp";
 
 import hanging_plants_icon_1 from "@/assets/collections/landmark/hanging_plants/hanging_plants_icon_1.webp";
 import hanging_plants_mural from "@/assets/collections/landmark/hanging_plants/hanging_plants_mural.webp";
+import hanging_plants_montaje from "@/assets/collections/landmark/hanging_plants/hanging_plants_montaje.webp";
 
 import invernadero_icon_1 from "@/assets/collections/landmark/invernadero/invernadero_icon_1.webp";
 import invernadero_mural from "@/assets/collections/landmark/invernadero/invernadero_mural.webp";
+import invernadero_montaje from "@/assets/collections/landmark/invernadero/invernadero_montaje.webp";
 
 import liberty_golden_icon_1 from "@/assets/collections/landmark/liberty_golden/liberty_golden_icon_1.webp";
 import liberty_golden_mural from "@/assets/collections/landmark/liberty_golden/liberty_golden_mural.webp";
+import liberty_golden_montaje from "@/assets/collections/landmark/liberty_golden/liberty_golden_montaje.webp";
 
 import linen_stripes_icon_1 from "@/assets/collections/landmark/linen_stripes/linen_stripes_icon_1.webp";
 import linen_stripes_mural from "@/assets/collections/landmark/linen_stripes/linen_stripes_mural.webp";
+import linen_stripes_montaje from "@/assets/collections/landmark/linen_stripes/linen_stripes_montaje.webp";
 
 import loop_original_icon_1 from "@/assets/collections/landmark/loop_original/loop_original_icon_1.webp";
 import loop_original_icon_2 from "@/assets/collections/landmark/loop_original/loop_original_icon_2.webp";
 import loop_original_icon_3 from "@/assets/collections/landmark/loop_original/loop_original_icon_3.webp";
 import loop_original_icon_4 from "@/assets/collections/landmark/loop_original/loop_original_icon_4.webp";
 import loop_original_mural from "@/assets/collections/landmark/loop_original/loop_original_mural.webp";
+import loop_original_montaje from "@/assets/collections/landmark/loop_original/loop_original_montaje.webp";
 
 import midnight_garden_icon_1 from "@/assets/collections/landmark/midnight_garden/midnight_garden_icon_1.webp";
 import midnight_garden_icon_2 from "@/assets/collections/landmark/midnight_garden/midnight_garden_icon_2.webp";
@@ -205,16 +217,20 @@ import midnight_garden_mural from "@/assets/collections/landmark/midnight_garden
 
 import monkeys_icon_1 from "@/assets/collections/landmark/monkeys/monkeys_icon_1.webp";
 import monkeys_mural from "@/assets/collections/landmark/monkeys/monkeys_mural.webp";
+import monkeys_montaje from "@/assets/collections/landmark/monkeys/monkeys_montaje.webp";
 
 import landmark_mushrooms_icon_1 from "@/assets/collections/landmark/mushrooms/mushrooms_icon_1.webp";
 import landmark_mushrooms_icon_2 from "@/assets/collections/landmark/mushrooms/mushrooms_icon_2.webp";
 import landmark_mushrooms_mural from "@/assets/collections/landmark/mushrooms/mushrooms_mural.webp";
+import landmark_mushrooms_montaje from "@/assets/collections/landmark/mushrooms/landmark_mushrooms_montaje.webp";
 
 import palms_tree_icon_1 from "@/assets/collections/landmark/palms_tree/palms_tree_icon_1.webp";
 import palms_tree_mural from "@/assets/collections/landmark/palms_tree/palms_tree_mural.webp";
+import palms_tree_montaje from "@/assets/collections/landmark/palms_tree/palms_tree_montaje.webp";
 
 import rayas_taupe_icon_1 from "@/assets/collections/landmark/rayas_taupe/rayas_taupe_icon_1.webp";
 import rayas_taupe_mural from "@/assets/collections/landmark/rayas_taupe/rayas_taupe_mural.webp";
+import rayas_taupe_montaje from "@/assets/collections/landmark/rayas_taupe/rayas_taupe_montaje.webp";
 
 import savage_icon_1 from "@/assets/collections/landmark/savage/savage_icon_1.webp";
 import savage_icon_2 from "@/assets/collections/landmark/savage/savage_icon_2.webp";
@@ -224,15 +240,18 @@ import savage_mural from "@/assets/collections/landmark/savage/savage_mural.webp
 
 import landmark_shibori_icon_1 from "@/assets/collections/landmark/shibori/shibori_icon_1.webp";
 import landmark_shibori_mural from "@/assets/collections/landmark/shibori/shibori_mural.webp";
+import landmark_shibori_montaje from "@/assets/collections/landmark/shibori/landmark_shibori_montaje.webp";
 
 import tartan_icon_1 from "@/assets/collections/landmark/tartan/tartan_icon_1.webp";
 import tartan_mural from "@/assets/collections/landmark/tartan/tartan_mural.webp";
+import tartan_montaje from "@/assets/collections/landmark/tartan/tartan_montaje.webp";
 
 import universe_icon_1 from "@/assets/collections/landmark/universe/universe_icon_1.webp";
 import universe_mural from "@/assets/collections/landmark/universe/universe_mural.webp";
 
 import watercolor_stripes_icon_1 from "@/assets/collections/landmark/watercolor_stripes/watercolor_stripes_icon_1.webp";
 import watercolor_stripes_mural from "@/assets/collections/landmark/watercolor_stripes/watercolor_stripes_mural.webp";
+import watercolor_stripes_montaje from "@/assets/collections/landmark/watercolor_stripes/watercolor_stripes_montaje.webp";
 
 // import willow_dark_icon_1 from "@/assets/collections/landmark/willow_dark/willow_dark_icon_1.webp";
 // import willow_dark_mural from "@/assets/collections/landmark/willow_dark/willow_dark_mural.webp";
@@ -244,17 +263,19 @@ import watercolor_stripes_mural from "@/assets/collections/landmark/watercolor_s
 
 import artemis_claro_icon_1 from "@/assets/collections/morris/artemis_claro/artemis_claro_icon_1.webp";
 import artemis_claro_mural from "@/assets/collections/morris/artemis_claro/artemis_claro_mural.webp";
+import artemis_claro_montaje from "@/assets/collections/morris/artemis_claro/artemis_claro_montaje.webp";
 
 import artemis_textura_icon_1 from "@/assets/collections/morris/artemis_textura/artemis_textura_icon_1.webp";
 import artemis_textura_montaje from "@/assets/collections/morris/artemis_textura/artemis_textura_montaje.webp";
 import artemis_textura_mural from "@/assets/collections/morris/artemis_textura/artemis_textura_mural.webp";
 
-// import flowers_dark_icon_1 from "@/assets/collections/morris/flowers_dark/flowers_dark_icon_1.webp";
-// import flowers_dark_montaje from "@/assets/collections/morris/flowers_dark/flowers_dark_montaje.webp";
-// import flowers_dark_mural from "@/assets/collections/morris/flowers_dark/flowers_dark_mural.webp";
+import flowers_dark_icon_1 from "@/assets/collections/morris/flowers_dark/flowers_dark_icon_1.webp";
+import flowers_dark_montaje from "@/assets/collections/morris/flowers_dark/flowers_dark_montaje.webp";
+import flowers_dark_mural from "@/assets/collections/morris/flowers_dark/flowers_dark_mural.webp";
 
 import flowers_light_icon_1 from "@/assets/collections/morris/flowers_light/flowers_light_icon_1.webp";
 import flowers_light_mural from "@/assets/collections/morris/flowers_light/flowers_light_mural.webp";
+import flowers_light_montaje from "@/assets/collections/morris/flowers_light/flowers_light_montaje.webp";
 
 import membrillos_claro_icon_1 from "@/assets/collections/morris/membrillos_claro/membrillos_claro_icon_1.webp";
 import membrillos_claro_montaje from "@/assets/collections/morris/membrillos_claro/membrillos_claro_montaje.webp";
@@ -583,7 +604,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [basa_basa_icon_1, basa_basa_icon_2],
-                keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["botanico", "animales", "vison", "gris"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -600,7 +621,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [miombo_icon_1, miombo_icon_2],
-                keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["botanico", "vison"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -617,7 +638,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [ñus_icon_1],
-                keywords: ["naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["abstracto", "texturas", "gris"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -634,7 +655,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [woodland_01_icon_1],
-                keywords: ["pattern", "patron", "patrón", "naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["pattern", "patron", "patrón", "texturas", "rayas", "vison", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -651,7 +672,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [woodland_02_icon_1],
-                keywords: ["pattern", "patron", "patrón", "naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["pattern", "patron", "patrón", "texturas", "rayas", "negro", "oscuro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -668,7 +689,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [woodland_03_icon_1],
-                keywords: ["pattern", "patron", "patrón", "naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["pattern", "patron", "patrón", "abstracto", "texturas", "gris"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -685,7 +706,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [woodland_04_icon_1],
-                keywords: ["pattern", "patron", "patrón", "naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["pattern", "patron", "patrón", "abstracto", "texturas", "gris"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -702,7 +723,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Basa Basa",
                 collectionId: "basa-basa",
                 icons: [woodland_05_icon_1],
-                keywords: ["pattern", "patron", "patrón", "naturaleza", "animales", "paisaje", "flora", "fauna"],
+                keywords: ["pattern", "patron", "patrón", "abstracto", "texturas", "rayas", "gris"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -730,7 +751,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [bajo_el_mar_icon_1],
-                keywords: ["mar", "océano", "vida marina", "naturaleza"],
+                keywords: ["paisaje", "botanico", "azul", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -747,7 +768,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [brush_icon_1],
-                keywords: ["pattern", "patron", "patrón", "arte", "diseño", "abstracto"],
+                keywords: ["pattern", "patron", "patrón", "texturas", "rayas", "vison"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -801,7 +822,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [casamar_icon_1, casamar_icon_2],
-                keywords: ["mar", "naturaleza", "paisaje"],
+                keywords: ["paisaje", "azul", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -818,42 +839,42 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [corals_icon_1],
-                keywords: ["pattern", "patron", "patrón", "corales", "mar", "vida marina"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "abstracto", "vison", "claro", "blanco"],
                 variants: [
                     {
                         colorName: "Artful Green",
                         color: "bg-st-green",
-                        montaje: brush_montaje,
+                        montaje: corals_montaje,
                         mural: corals_mural_artful_green,
                     },
                     {
                         colorName: "Black",
                         color: "bg-st-black",
-                        montaje: brush_montaje,
+                        montaje: corals_montaje,
                         mural: corals_mural_black,
                     },
                     {
                         colorName: "St 201645",
                         color: "bg-st-201645",
-                        montaje: brush_montaje,
+                        montaje: corals_montaje,
                         mural: corals_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
                         color: "bg-st-201810",
-                        montaje: brush_montaje,
+                        montaje: corals_montaje,
                         mural: corals_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
                         color: "bg-st-201820",
-                        montaje: brush_montaje,
+                        montaje: corals_montaje,
                         mural: corals_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
                         color: "bg-st-201915",
-                        montaje: brush_montaje,
+                        montaje: corals_montaje,
                         mural: corals_mural_st_201915,
                     },
                 ],
@@ -865,11 +886,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [degrade_texturado_icon_1],
-                keywords: ["degradé", "textura", "abstracto"],
+                keywords: ["abstracto", "vison", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: brush_montaje,
+                        montaje: degrade_texturado_mural,
                         mural: degrade_texturado_mural,
                         base: true,
                     },
@@ -882,48 +903,48 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [ethnic_icon_1],
-                keywords: ["étnico", "cultural", "diseño"],
+                keywords: ["abstracto", "geometrico", "azul"],
                 variants: [
                     {
                         colorName: "Artful Green",
                         color: "bg-st-green",
-                        montaje: brush_montaje,
+                        montaje: ethnic_montaje,
                         mural: ethnic_mural_artful_green,
                     },
                     {
                         colorName: "Black",
                         color: "bg-st-black",
-                        montaje: brush_montaje,
+                        montaje: ethnic_montaje,
                         mural: ethnic_mural_black,
                     },
                     {
                         colorName: "St 201645",
                         color: "bg-st-201645",
-                        montaje: brush_montaje,
+                        montaje: ethnic_montaje,
                         mural: ethnic_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
                         color: "bg-st-201810",
-                        montaje: brush_montaje,
+                        montaje: ethnic_montaje,
                         mural: ethnic_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
                         color: "bg-st-201820",
-                        montaje: brush_montaje,
+                        montaje: ethnic_montaje,
                         mural: ethnic_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
                         color: "bg-st-201915",
-                        montaje: brush_montaje,
+                        montaje: ethnic_montaje,
                         mural: ethnic_mural_st_201915,
                     },
                     {
                         colorName: "Tanger Tan",
                         color: "bg-st-tanger",
-                        montaje: brush_montaje,
+                        montaje: ethnic_montaje,
                         mural: ethnic_mural_tanger_tan,
                     },
                 ],
@@ -935,7 +956,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [exotic_icon_1, exotic_icon_2],
-                keywords: ["pattern", "patron", "patrón", "exótico", "naturaleza", "diseño"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "animales", "azul", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -989,48 +1010,48 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [fish_icon_1],
-                keywords: ["pattern", "patron", "patrón", "peces", "mar", "vida marina"],
+                keywords: ["pattern", "patron", "patrón", "animales", "azul"],
                 variants: [
                     {
                         colorName: "Artful Green",
                         color: "bg-st-green",
-                        montaje: brush_montaje,
+                        montaje: fish_montaje,
                         mural: fish_mural_artful_green,
                     },
                     {
                         colorName: "St 201645",
                         color: "bg-st-201645",
-                        montaje: brush_montaje,
+                        montaje: fish_montaje,
                         mural: fish_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
                         color: "bg-st-201810",
-                        montaje: brush_montaje,
+                        montaje: fish_montaje,
                         mural: fish_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
                         color: "bg-st-201820",
-                        montaje: brush_montaje,
+                        montaje: fish_montaje,
                         mural: fish_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
                         color: "bg-st-201915",
-                        montaje: brush_montaje,
+                        montaje: fish_montaje,
                         mural: fish_mural_st_201915,
                     },
                     {
                         colorName: "Tanger Tan",
                         color: "bg-st-tanger",
-                        montaje: brush_montaje,
+                        montaje: fish_montaje,
                         mural: fish_mural_tanger_tan,
                     },
                     {
                         colorName: "White",
                         color: "bg-st-white",
-                        montaje: brush_montaje,
+                        montaje: fish_montaje,
                         mural: fish_mural_white,
                     },
                 ],
@@ -1042,7 +1063,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [morris_icon_1],
-                keywords: ["pattern", "patron", "patrón", "diseño", "arte", "abstracto"],
+                keywords: ["pattern", "patron", "patrón", "abstracto", "texturas", "azul", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -1095,7 +1116,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [mushrooms_icon_1, mushrooms_icon_2],
-                keywords: ["hongos", "naturaleza", "bosque"],
+                keywords: ["botanico", "rojo", "rosa", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1112,48 +1133,48 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [palms_icon_1],
-                keywords: ["pattern", "patron", "patrón", "palmeras", "naturaleza", "tropical"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "blanco", "claro", "negro", "oscuro"],
                 variants: [
                     {
                         colorName: "Artful Green",
                         color: "bg-st-green",
-                        montaje: brush_montaje,
+                        montaje: palms_montaje,
                         mural: palms_mural_artful_green,
                     },
                     {
                         colorName: "Black",
                         color: "bg-st-black",
-                        montaje: brush_montaje,
+                        montaje: palms_montaje,
                         mural: palms_mural_black,
                     },
                     {
                         colorName: "St 201645",
                         color: "bg-st-201645",
-                        montaje: brush_montaje,
+                        montaje: palms_montaje,
                         mural: palms_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
                         color: "bg-st-201810",
-                        montaje: brush_montaje,
+                        montaje: palms_montaje,
                         mural: palms_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
                         color: "bg-st-201820",
-                        montaje: brush_montaje,
+                        montaje: palms_montaje,
                         mural: palms_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
                         color: "bg-st-201915",
-                        montaje: brush_montaje,
+                        montaje: palms_montaje,
                         mural: palms_mural_st_201915,
                     },
                     {
                         colorName: "Tanger Tan",
                         color: "bg-st-tanger",
-                        montaje: brush_montaje,
+                        montaje: palms_montaje,
                         mural: palms_mural_tanger_tan,
                     },
                 ],
@@ -1165,7 +1186,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [rainbow_icon_1],
-                keywords: ["pattern", "patron", "patrón", "arcoíris", "color", "diseño"],
+                keywords: [],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -1218,13 +1239,13 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [shibori_icon_1],
-                keywords: ["pattern", "patron", "patrón", "shibori", "diseño", "arte"],
+                keywords: ["pattern", "patron", "patrón", "texturas", "geometrico", "abstracto", "negro", "oscuro", "azul"],
                 variants: [
                     {
-                        colorName: "Estándar",
-                        color: "bg-st-white",
+                        colorName: "Estandar",
+                        color: "bg-st-black",
                         montaje: shibori_montaje,
-                        mural: shibori_montaje,
+                        mural: shibori_mural_black,
                         base: true,
                     },
                     {
@@ -1232,12 +1253,6 @@ export const collections: Array<Collection> = [
                         color: "bg-st-green",
                         montaje: shibori_montaje,
                         mural: shibori_mural_artful_green,
-                    },
-                    {
-                        colorName: "Black",
-                        color: "bg-st-black",
-                        montaje: shibori_montaje,
-                        mural: shibori_mural_black,
                     },
                     {
                         colorName: "St 201645",
@@ -1278,48 +1293,49 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [toile_tropical_icon_1],
-                keywords: ["pattern", "patron", "patrón", "tropical", "diseño", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "verde"],
                 variants: [
-                    {
-                        colorName: "Artful Green",
-                        color: "bg-st-green",
-                        montaje: brush_montaje,
-                        mural: toile_tropical_mural_artful_green,
-                    },
                     {
                         colorName: "Black",
                         color: "bg-st-black",
-                        montaje: brush_montaje,
+                        montaje: toile_tropical_montaje,
                         mural: toile_tropical_mural_black,
+                        base: true,
+                    },
+                    {
+                        colorName: "Artful Green",
+                        color: "bg-st-green",
+                        montaje: toile_tropical_montaje,
+                        mural: toile_tropical_mural_artful_green,
                     },
                     {
                         colorName: "St 201645",
                         color: "bg-st-201645",
-                        montaje: brush_montaje,
+                        montaje: toile_tropical_montaje,
                         mural: toile_tropical_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
                         color: "bg-st-201810",
-                        montaje: brush_montaje,
+                        montaje: toile_tropical_montaje,
                         mural: toile_tropical_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
                         color: "bg-st-201820",
-                        montaje: brush_montaje,
+                        montaje: toile_tropical_montaje,
                         mural: toile_tropical_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
                         color: "bg-st-201915",
-                        montaje: brush_montaje,
+                        montaje: toile_tropical_montaje,
                         mural: toile_tropical_mural_st_201915,
                     },
                     {
                         colorName: "Tanger Tan",
                         color: "bg-st-tanger",
-                        montaje: brush_montaje,
+                        montaje: toile_tropical_montaje,
                         mural: toile_tropical_mural_tanger_tan,
                     },
                 ],
@@ -1342,11 +1358,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [arabesco_icon_1],
-                keywords: ["pattern", "patron", "patrón", "arte", "patrón", "clásico"],
+                keywords: ["pattern", "patron", "patrón", "abstracto", "geometrico", "negro", "oscuro", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: arabesco_mural,
+                        montaje: arabesco_montaje,
                         mural: arabesco_mural,
                         base: true,
                     },
@@ -1359,7 +1375,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [bosque_de_los_magos_icon_1, bosque_de_los_magos_icon_2, bosque_de_los_magos_icon_3],
-                keywords: ["bosque", "magia", "naturaleza"],
+                keywords: ["paisaje", "animales", "verde", "azul"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1376,7 +1392,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [bulgaros_icon_1],
-                keywords: ["pattern", "patron", "patrón", "tradicional", "floral", "ornamental"],
+                keywords: ["pattern", "patron", "patrón", "geometrico", "blanco", "claro", "vison"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1393,7 +1409,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [exotic_blue_icon_1, exotic_blue_icon_2],
-                keywords: ["pattern", "patron", "patrón", "azul", "exótico", "abstracto"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "animales", "azul"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1410,7 +1426,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [fairy_tale_icon_1, fairy_tale_icon_2],
-                keywords: ["pattern", "patron", "patrón", "fantasía", "cuento", "mágico"],
+                keywords: ["pattern", "patron", "patrón", "animales", "botanico", "negro", "oscuro", "rojo", "naranja", "marron"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1426,13 +1442,13 @@ export const collections: Array<Collection> = [
                 title: "Flowers Dark",
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
-                icons: [flowers_dark_icon_1],
-                keywords: ["pattern", "patron", "patrón", "flores", "oscuro", "elegante"],
+                icons: [landmark_flowers_dark_icon_1],
+                keywords: ["pattern", "patron", "patrón", "botanico", "negro", "oscuro", "rojo", "rosa", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: flowers_dark_montaje,
-                        mural: flowers_dark_mural,
+                        montaje: landmark_flowers_dark_montaje,
+                        mural: landmark_flowers_dark_mural,
                         base: true,
                     },
                 ],
@@ -1444,11 +1460,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [geometric_golden_mist_icon_1],
-                keywords: ["pattern", "patron", "patrón", "geométrico", "dorado", "abstracto"],
+                keywords: ["pattern", "patron", "patrón", "geometrico", "abstracto", "amarillo", "ocre"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: geometric_golden_mist_mural,
+                        montaje: geometric_golden_mist_montaje,
                         mural: geometric_golden_mist_mural,
                         base: true,
                     },
@@ -1461,11 +1477,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [hanging_plants_icon_1],
-                keywords: ["pattern", "patron", "patrón", "plantas", "colgantes", "verde"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "blanco", "claro", "rojo", "rosa", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: hanging_plants_mural,
+                        montaje: hanging_plants_montaje,
                         mural: hanging_plants_mural,
                         base: true,
                     },
@@ -1478,11 +1494,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [invernadero_icon_1],
-                keywords: ["pattern", "patron", "patrón", "invernadero", "plantas", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "animales", "negro", "oscuro", "rojo", "rosa", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: invernadero_mural,
+                        montaje: invernadero_montaje,
                         mural: invernadero_mural,
                         base: true,
                     },
@@ -1495,11 +1511,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [liberty_golden_icon_1],
-                keywords: ["pattern", "patron", "patrón", "dorado", "lujo", "arte"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "amarillo", "ocre"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: liberty_golden_mural,
+                        montaje: liberty_golden_montaje,
                         mural: liberty_golden_mural,
                         base: true,
                     },
@@ -1512,11 +1528,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [linen_stripes_icon_1],
-                keywords: ["pattern", "patron", "patrón", "líneas", "textura", "elegante"],
+                keywords: ["pattern", "patron", "patrón", "geometrico", "rayas", "texturas", "negro", "oscuro", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: linen_stripes_mural,
+                        montaje: linen_stripes_montaje,
                         mural: linen_stripes_mural,
                         base: true,
                     },
@@ -1529,11 +1545,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [loop_original_icon_1, loop_original_icon_2, loop_original_icon_3, loop_original_icon_4],
-                keywords: ["pattern", "patron", "patrón", "diseño", "geometría"],
+                keywords: ["pattern", "patron", "patrón", "azul", "abstracto", "geometrico", "texturas"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: loop_original_mural,
+                        montaje: loop_original_montaje,
                         mural: loop_original_mural,
                         base: true,
                     },
@@ -1546,7 +1562,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [midnight_garden_icon_1, midnight_garden_icon_2, midnight_garden_icon_3],
-                keywords: ["jardín", "noche", "floral"],
+                keywords: ["botanico", "negro", "oscuro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1563,11 +1579,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [monkeys_icon_1],
-                keywords: ["pattern", "patron", "patrón", "monos", "selva", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "animales", "verde", "negro", "oscuro"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: monkeys_mural,
+                        montaje: monkeys_montaje,
                         mural: monkeys_mural,
                         base: true,
                     },
@@ -1580,11 +1596,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [landmark_mushrooms_icon_1, landmark_mushrooms_icon_2],
-                keywords: ["pattern", "patron", "patrón", "hongos", "bosque", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "gris", "rojo", "rosa"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: landmark_mushrooms_mural,
+                        montaje: landmark_mushrooms_montaje,
                         mural: landmark_mushrooms_mural,
                         base: true,
                     },
@@ -1597,11 +1613,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [palms_tree_icon_1],
-                keywords: ["pattern", "patron", "patrón", "palmeras", "tropical", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "paisaje"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: palms_tree_mural,
+                        montaje: palms_tree_montaje,
                         mural: palms_tree_mural,
                         base: true,
                     },
@@ -1614,11 +1630,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [rayas_taupe_icon_1],
-                keywords: ["pattern", "patron", "patrón", "rayas", "diseño", "elegante"],
+                keywords: ["pattern", "patron", "patrón", "texturas", "rayas", "vison"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: rayas_taupe_mural,
+                        montaje: rayas_taupe_montaje,
                         mural: rayas_taupe_mural,
                         base: true,
                     },
@@ -1631,7 +1647,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [savage_icon_1, savage_icon_2, savage_icon_3],
-                keywords: ["salvaje", "naturaleza", "exótico"],
+                keywords: ["animales", "botanico", "negro", "oscuro", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1648,11 +1664,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [landmark_shibori_icon_1],
-                keywords: ["pattern", "patron", "patrón", "shibori", "patrón", "arte"],
+                keywords: ["pattern", "patron", "patrón", "abstracto", "geometrico", "negro", "oscuro", "verde", "texturas"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: landmark_shibori_mural,
+                        montaje: landmark_shibori_montaje,
                         mural: landmark_shibori_mural,
                         base: true,
                     },
@@ -1665,11 +1681,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [tartan_icon_1],
-                keywords: ["pattern", "patron", "patrón", "tartán", "cuadrícula", "tradicional"],
+                keywords: ["pattern", "patron", "patrón", "geometrico", "blanco", "claro", "negro", "oscuro"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: tartan_mural,
+                        montaje: tartan_montaje,
                         mural: tartan_mural,
                         base: true,
                     },
@@ -1682,7 +1698,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [universe_icon_1],
-                keywords: ["pattern", "patron", "patrón", "universo", "espacio", "galaxia"],
+                keywords: ["pattern", "patron", "patrón", "abstracto", "negro", "oscuro", "azul"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1699,11 +1715,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Landmark",
                 collectionId: "landmark",
                 icons: [watercolor_stripes_icon_1],
-                keywords: ["pattern", "patron", "patrón", "acuarela", "rayas", "arte"],
+                keywords: ["pattern", "patron", "patrón", "rayas", "texturas", "geometrico", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: watercolor_stripes_mural,
+                        montaje: watercolor_stripes_montaje,
                         mural: watercolor_stripes_mural,
                         base: true,
                     },
@@ -1727,11 +1743,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [artemis_claro_icon_1],
-                keywords: ["pattern", "patron", "patrón", "arte", "floral", "clásico"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "vison", "rojo", "rosa"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: artemis_claro_mural,
+                        montaje: artemis_claro_montaje,
                         mural: artemis_claro_mural,
                         base: true,
                     },
@@ -1744,7 +1760,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [artemis_textura_icon_1],
-                keywords: ["pattern", "patron", "patrón", "arte", "textura", "elegante"],
+                keywords: ["pattern", "patron", "patrón", "vison", "rojo", "rosa", "botanico"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1761,11 +1777,11 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [flowers_light_icon_1],
-                keywords: ["pattern", "patron", "patrón", "flores", "luminoso", "elegante"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "vison", "rojo", "rosa", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: flowers_light_mural,
+                        montaje: flowers_light_montaje,
                         mural: flowers_light_mural,
                         base: true,
                     },
@@ -1773,12 +1789,29 @@ export const collections: Array<Collection> = [
                 href: "morris",
             },
             {
+                id: "flowers-dark-morris",
+                title: "Flowers Dark",
+                collectionTitle: "Morris",
+                collectionId: "morris",
+                icons: [flowers_dark_icon_1],
+                keywords: ["pattern", "patron", "patrón", "botanico", "negro", "oscuro", "azul", "rojo", "rosa"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: flowers_dark_montaje,
+                        mural: flowers_dark_mural,
+                        base: true,
+                    },
+                ],
+                href: "landmark",
+            },
+            {
                 id: "membrillos-claro-morris",
                 title: "Membrillos Claro",
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [membrillos_claro_icon_1],
-                keywords: ["pattern", "patron", "patrón", "frutas", "claro", "natural"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1795,7 +1828,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [membrillos_verde_seco_icon_1],
-                keywords: ["pattern", "patron", "patrón", "frutas", "verde", "natural"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1812,7 +1845,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [tulip_dark_icon_1],
-                keywords: ["pattern", "patron", "patrón", "tulipanes", "oscuro", "floral"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "verde", "amarillo", "ocre"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1829,7 +1862,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [tulip_light_icon_1],
-                keywords: ["pattern", "patron", "patrón", "tulipanes", "claro", "floral"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "blanco", "claro", "verde", "amarillo", "ocre"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1846,7 +1879,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [willow_icon_1],
-                keywords: ["pattern", "patron", "patrón", "sauce", "verde", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "blanco", "claro", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1863,7 +1896,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Morris",
                 collectionId: "morris",
                 icons: [willow_textura_icon_1],
-                keywords: ["pattern", "patron", "patrón", "sauce", "textura", "naturaleza"],
+                keywords: ["pattern", "patron", "patrón", "botanico", "gris", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1891,7 +1924,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vivero",
                 collectionId: "vivero",
                 icons: [avistaje_icon_1],
-                keywords: ["naturaleza", "aves", "paisaje"],
+                keywords: ["botanico", "animales", "negro", "oscuro", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1908,7 +1941,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vivero",
                 collectionId: "vivero",
                 icons: [la_campagne_icon_1, la_campagne_icon_2],
-                keywords: ["campo", "naturaleza", "paisaje"],
+                keywords: ["paisaje", "arquitectura", "negro", "oscuro", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1925,7 +1958,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vivero",
                 collectionId: "vivero",
                 icons: [la_maison_icon_1, la_maison_icon_2, la_maison_icon_3],
-                keywords: ["hogar", "arquitectura", "elegante"],
+                keywords: ["arquitectura", "negro", "oscuro", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1942,7 +1975,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vivero",
                 collectionId: "vivero",
                 icons: [reina_ana_icon_1, reina_ana_icon_2, reina_ana_icon_3],
-                keywords: ["realeza", "clásico", "ornamental"],
+                keywords: ["chinoiserie", "botanico", "animales", "arquitectura", "rojo", "rosa"],
                 variants: [
                     {
                         colorName: "Variante 1",
@@ -1977,7 +2010,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [alexandria_icon_1],
-                keywords: ["historia", "arquitectura", "antiguo"],
+                keywords: ["paisaje", "blanco", "claro", "rojo", "rosa"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2001,7 +2034,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [bindi_icon_1],
-                keywords: ["arte", "india", "cultural"],
+                keywords: ["animales", "paisaje", "arquitectura", "verde", "luxury"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2025,7 +2058,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [cuerpos_celestes_icon_1],
-                keywords: ["espacio", "astronomía", "universo"],
+                keywords: ["geometrico", "texturas", "luxury", "gris"],
                 variants: [
                     {
                         colorName: "Gray Humo",
@@ -2055,7 +2088,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [encantado_icon_1],
-                keywords: ["fantasía", "misterio", "mágico"],
+                keywords: ["paisaje", "verde", "azul"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2096,7 +2129,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [etnico_icon_1],
-                keywords: ["patrón", "cultural", "arte"],
+                keywords: ["abstracto", "geometrico", "luxury", "naranja", "marron"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2144,7 +2177,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [ibiza_icon_1],
-                keywords: ["playa", "relajante", "blanco"],
+                keywords: ["botanico", "texturas", "rojo", "rosa"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2168,7 +2201,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [jardin_colgante_icon_1],
-                keywords: ["naturaleza", "verde", "paisaje vertical"],
+                keywords: ["botanico", "animales", "verde", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2192,7 +2225,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [jardin_persa_icon_1],
-                keywords: ["exótico", "floral", "patrón persa"],
+                keywords: ["botanico", "luxury", "negro", "oscuro", "verde"],
                 variants: [
                     {
                         colorName: "Black",
@@ -2246,7 +2279,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [magnolia_real_icon_1, magnolia_real_icon_2],
-                keywords: ["floral", "naturaleza", "elegante"],
+                keywords: ["botanico", "animales", "chinoiserie", "blanco", "claro", "vison"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2287,7 +2320,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [palmario_icon_1],
-                keywords: ["palmeras", "tropical", "naturaleza"],
+                keywords: ["botanico", "luxury", "blanco", "claro", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2311,7 +2344,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [patagonia_icon_1],
-                keywords: ["montañas", "paisaje", "naturaleza"],
+                keywords: ["geometrico", "abstracto", "negro", "oscuro", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2335,7 +2368,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [praderas_tropical_icon_1],
-                keywords: ["praderas", "tropical", "naturaleza"],
+                keywords: ["paisaje", "botanico", "luxury", "gris"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2359,7 +2392,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Vuelta al Mundo",
                 collectionId: "vuelta-al-mundo",
                 icons: [rio_verde_icon_1],
-                keywords: ["río", "verde", "naturaleza"],
+                keywords: ["paisaje", "luxury", "negro", "oscuro", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2411,7 +2444,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "The Classics",
                 collectionId: "the-classics",
                 icons: [hikers_in_a_park_icon_1],
-                keywords: ["paisaje", "naturaleza", "senderismo"],
+                keywords: ["paisaje", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2428,7 +2461,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "The Classics",
                 collectionId: "the-classics",
                 icons: [italian_landscape_icon_1],
-                keywords: ["paisaje", "Italia", "clásico"],
+                keywords: ["paisaje", "verde", "azul", "gris"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2452,7 +2485,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "The Classics",
                 collectionId: "the-classics",
                 icons: [prince_of_udaipur_icon_1],
-                keywords: ["realeza", "historia", "arte clásico"],
+                keywords: ["paisaje", "personas", "naranja", "marrón"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2469,7 +2502,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "The Classics",
                 collectionId: "the-classics",
                 icons: [tapestry_icon_1],
-                keywords: ["tapiz", "historia", "clásico"],
+                keywords: ["paisaje", "amarillo", "ocre", "azul", "verde", "senderismo", "chinoiserie"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2486,7 +2519,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "The Classics",
                 collectionId: "the-classics",
                 icons: [the_emperors_journey_icon_1],
-                keywords: ["historia", "emperador", "viaje"],
+                keywords: ["paisaje", "personas", "amarillo", "ocre", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2503,7 +2536,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "The Classics",
                 collectionId: "the-classics",
                 icons: [waterfall_icon_1],
-                keywords: ["cascada", "agua", "naturaleza"],
+                keywords: ["paisaje", "azul", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2531,7 +2564,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [acuarela_icon_1],
-                keywords: ["acuarela", "arte", "colores"],
+                keywords: ["abstracto", "texturas", "azul"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2555,7 +2588,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [animal_parade_icon_1],
-                keywords: ["animales", "diversión", "infantil"],
+                keywords: ["animales", "paisaje", "negro", "oscuro", "blanco", "claro", "amarillo", "ocre"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2572,7 +2605,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [birds_of_paradise_icon_1],
-                keywords: ["aves", "paraíso", "naturaleza"],
+                keywords: ["botanico", "animales", "amarillo", "ocre"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2602,7 +2635,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [constelaciones_icon_1],
-                keywords: ["espacio", "constelaciones", "cielo"],
+                keywords: ["texturas", "abstracto", "azul"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2619,7 +2652,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [cortaderas_icon_1],
-                keywords: ["naturaleza", "plantas", "cortaderas"],
+                keywords: ["paisaje", "amarillo", "ocre", "vison"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2636,7 +2669,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [costa_rica_icon_1],
-                keywords: ["naturaleza", "tropical", "paisaje"],
+                keywords: ["botanico", "animales", "verde", "rojo", "rosa"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2660,7 +2693,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [dutch_flowers_icon_1],
-                keywords: ["flores", "holanda", "elegante"],
+                keywords: ["botanico", "negro", "oscuro", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2677,7 +2710,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [el_banquete_icon_1],
-                keywords: ["banquete", "arte", "clásico"],
+                keywords: ["paisaje", "animales", "amarillo", "ocre", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2694,7 +2727,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [el_descanso_de_las_garzas_icon_1, el_descanso_de_las_garzas_icon_2, el_descanso_de_las_garzas_icon_3],
-                keywords: ["garzas", "descanso", "naturaleza"],
+                keywords: ["paisaje", "animales", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2718,7 +2751,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [el_eden_icon_1],
-                keywords: ["jardín", "paraíso", "naturaleza"],
+                keywords: ["animales", "botanico", "verde", "blanco", "claro", "chinoiserie"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2748,7 +2781,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [el_jardin_de_la_geisha_icon_1],
-                keywords: ["jardín", "geisha", "naturaleza"],
+                keywords: ["botanico", "chinoiserie", "rojo", "rosa", "paisaje", "personas"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2778,7 +2811,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [elena_icon_1],
-                keywords: ["floral", "elegante", "diseño"],
+                keywords: ["animales", "paisaje", "verde", "azul"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2795,7 +2828,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [en_las_nubes_icon_1],
-                keywords: ["nubes", "cielo", "ligero"],
+                keywords: ["paisaje", "azul", "gris"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2812,7 +2845,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [follaje_icon_1],
-                keywords: ["hojas", "verde", "naturaleza"],
+                keywords: ["botanico", "vison", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2829,7 +2862,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [fractal_icon_1],
-                keywords: ["geometría", "arte"],
+                keywords: ["geometrico", "abstracto", "blanco", "claro", "vison"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2859,7 +2892,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [hanami_icon_1],
-                keywords: ["sakura", "flores", "japonés"],
+                keywords: ["botanico", "blanco", "claro", "rojo", "rosa"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2883,7 +2916,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [jardin_vertical_icon_1],
-                keywords: ["jardín", "plantas", "verde"],
+                keywords: ["botanico", "animales", "azul", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2900,7 +2933,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [jardin_victoriano_icon_1],
-                keywords: ["jardín", "victoriano", "clásico"],
+                keywords: ["paisaje", "botanico", "arquitectura", "negro", "oscuro", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2924,7 +2957,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [jungla_en_tintas_icon_1],
-                keywords: ["jungla", "tintas", "naturaleza"],
+                keywords: ["paisaje", "animales", "negro", "oscuro", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2941,7 +2974,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [laguna_sepia_icon_1],
-                keywords: ["laguna", "sepia", "agua"],
+                keywords: ["paisaje", "verde", "vison"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2965,7 +2998,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [pinceladas_icon_1],
-                keywords: ["pinceladas", "arte", "abstracción"],
+                keywords: ["abstracto", "texturas", "vison"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2982,7 +3015,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [praderas_icon_1],
-                keywords: ["praderas", "naturaleza", "verde"],
+                keywords: ["vison", "paisaje"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3006,7 +3039,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [stadium_icon_1],
-                keywords: ["estadio", "deporte", "arquitectura"],
+                keywords: ["texturas", "arquitectura", "personas", "gris"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3023,7 +3056,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [utopia_icon_1],
-                keywords: ["utopía", "fantasía", "paisaje"],
+                keywords: ["paisaje", "azul"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3047,7 +3080,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [vuelo_de_mariposas_icon_1],
-                keywords: ["mariposas", "naturaleza", "ligereza"],
+                keywords: ["paisaje", "gris", "vison"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3064,7 +3097,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Otros Murales",
                 collectionId: "otros-murales",
                 icons: [wild_circus_icon_1],
-                keywords: ["circo", "fantasía", "colorido"],
+                keywords: ["paisaje", "animales", "azul", "verde"],
                 variants: [
                     {
                         colorName: "Estándar",
