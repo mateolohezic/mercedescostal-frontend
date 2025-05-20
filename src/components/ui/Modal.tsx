@@ -38,13 +38,13 @@ export const Modal = ({showModal, setShowModal, children, className}:Props) => {
         {
             showModal &&
             <div className='w-full h-dvh fixed top-0 left-0 z-[99999999] overflow-y-scroll'>
-                <div className={`w-full min-h-dvh px-24 pt-24 pb-24 flex justify-center items-center`}>
+                <div className={`w-full min-h-dvh px-4 lg:px-24 py-12 lg:py-24 flex justify-center items-center`}>
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         transition={{ duration: 0.125 }}
-                        className="w-full h-dvh bg-gradient-to-br from-black/50 to to-black fixed top-0 left-0 z-10"
+                        className="w-full h-dvh bg-gradient-to-br from-black/50 to to-black/90 fixed top-0 left-0 z-10"
                         onClick={ () => { setShowModal(false) }}
                     ></motion.div>
                     <motion.div
@@ -57,9 +57,9 @@ export const Modal = ({showModal, setShowModal, children, className}:Props) => {
                         }}
                         className={`w-full bg-white relative z-50 ${className}`}
                     >
-                        <button onClick={ () => { setShowModal(false) }} type={"button"} aria-label={'Cerrar'} className="size-12 text-black hover:text-black/75 flex justify-center items-center absolute top-6 right-6 z-[9999999999] transition-all duration-200 ease-in-out">
+                        <button onClick={ () => { setShowModal(false) }} type={"button"} aria-label={'Cerrar'} className="size-8 lg:size-12 text-black hover:text-black/75 flex justify-center items-center absolute top-2 lg:top-6 right-2 lg:right-6 z-[9999999999] transition-200">
                             <span className="sr-only">Cerrar</span>
-                            <CrossIcon className="size-8"/>
+                            <CrossIcon className="size-4 lg:size-8"/>
                         </button>
                         <div className="size-full overflow-hidden flex flex-col">
                             { children }

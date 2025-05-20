@@ -13,10 +13,10 @@ const config: Config = {
         gillsans: 'var(--gillsans)'
       },
       colors:{
-        'background':{
+        background:{
           DEFAULT: '#f3f3ee'
         },
-        'invalid':{
+        invalid:{
           DEFAULT: '#F45050'
         },
       }
@@ -24,4 +24,5 @@ const config: Config = {
   },
   plugins: [],
 };
+
 export default config;

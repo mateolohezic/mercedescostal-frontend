@@ -5,9 +5,10 @@ import { SoundOnIcon, SoundOffIcon, PlayIcon, PauseIcon } from "@/icons";
 
 interface Props{
     title: string;
+    video: string;
 }
 
-export const CollectionVideo = ({title}:Props) => {
+export const CollectionVideo = ({title, video}:Props) => {
 
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isMuted, setIsMuted] = useState(true);
@@ -62,7 +63,7 @@ export const CollectionVideo = ({title}:Props) => {
                 loop
                 className="size-full object-cover pointer-events-none select-none"
             >
-                <source src="/assets/portada_video.mp4" type="video/mp4" />
+                <source src={video} type="video/mp4" />
                 Tu navegador no soporta este video.
             </video>
         </div>

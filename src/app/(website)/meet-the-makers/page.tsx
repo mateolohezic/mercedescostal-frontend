@@ -44,7 +44,7 @@ export default function MeetTheMakersPage() {
                 </div>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col items-center gap-24">
-                <Image src={meet_the_makers_1} alt="Meet the Makers Mercedes Costal" className="w-full max-w-md object-contain"/>
+                <Image src={meet_the_makers_1} alt="Meet the Makers Mercedes Costal" className="w-full max-w-md object-contain grayscale"/>
                 <p className="w-full max-w-4xl text-center lg:text-xl">En MERCEDES COSTAL logramos conectar a las personas con el mundo del diseño, el arte y la historia a través de la creación, producción y venta de wallpapers para generar una experiencia inmersiva en el observador.</p>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-xl flex flex-col justify-center items-center px-4 xl:px-0">

@@ -57,7 +57,7 @@ export const VideoIntro = () => {
                     autoPlay
                     muted
                     loop
-                    className="size-full object-cover pointer-events-none select-none relative z-10 grayscale-[0.3]"
+                    className="size-full object-cover pointer-events-none select-none relative z-10"
                 >
                     <source src="/assets/portada_video.mp4" type="video/mp4" />
                     Tu navegador no soporta este video.

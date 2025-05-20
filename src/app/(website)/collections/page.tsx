@@ -45,9 +45,11 @@ export default function CollectionsPage() {
         <main className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
             <h1 className="sr-only">Wallpapers</h1>
             <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
-                <div className="w-full lg:text-xl text-center">
-                    <p>We create to make ourselves infinite. Our objects are like bees that cross-pollinate the gardens of the galaxy.</p>
-                    <p>You will witness the withering of the physical piece and you will appreciate the responsibility of the beauty of the finite. As long as this digital piece will never stop flourishing, wherever we decide to live.</p>
+                <div className="w-full lg:text-xl text-center flex flex-col gap-[1lh]">
+                    <p>No diseñamos papeles. <b className="font-semibold">Creamos atmósferas.</b></p>
+                    <p>En Mercedes Costal, entendemos el muro como un lienzo silencioso que transforma la manera en que habitamos un espacio. Nuestros wallpapers son el resultado de un proceso que une diseño contemporáneo, sensibilidad artística y una profunda investigación en color, textura y escala.</p>
+                    <p>Cada pieza nace de una idea: invitar a la contemplación. Trabajamos con materiales de alta calidad y tintas libres de solventes, garantizando durabilidad, respeto por el entorno y una experiencia visual envolvente. Las colecciones están pensadas para dialogar con la arquitectura, para acompañar sin invadir, para convertir lo cotidiano en algo sutilmente extraordinario.</p>
+                    <p>No seguimos tendencias. Creamos lenguaje. Porque creemos que el diseño no es decoración, sino una forma de pensamiento.</p>
                 </div>
             </section>
 
@@ -73,70 +75,6 @@ export default function CollectionsPage() {
                     </Link>
                 ))}
             </section>
-            {/* <section className="mt-24 w-full flex flex-col">
-                <Link href={"/collections/basa-basa"} className="w-full block aspect-video overflow-hidden relative group">
-                    <Image src={imagen} alt="Mural" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
-                    <div className="size-full bg-black/20  absolute top-0 left-0 z-10 transition-150"></div>
-                    <div className="size-full flex flex-col justify-center items-center relative z-20">
-                        <h3 className="font-gillsans font-light text-white text-3xl uppercase"><span className="text-white/75">Colección</span> <b className="font-medium">Basa Basa</b></h3>
-                    </div>
-                </Link>
-                <Link href={"/collections/basa-basa"} className="w-full block aspect-video overflow-hidden relative group">
-                    <Image src={imagen2} alt="Mural" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
-                    <div className="size-full bg-black/20  absolute top-0 left-0 z-10 transition-150"></div>
-                    <div className="size-full flex flex-col justify-center items-center relative z-20">
-                        <h3 className="font-gillsans font-light text-white text-3xl uppercase">Colección <b className="font-medium">The Classics</b></h3>
-                    </div>
-                </Link>
-                <Link href={"/collections/basa-basa"} className="w-full block aspect-video overflow-hidden relative group">
-                    <Image src={coleccion_landmark} alt="Mural" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
-                    <div className="size-full bg-black/20  absolute top-0 left-0 z-10 transition-150"></div>
-                    <div className="size-full flex flex-col justify-center items-center relative z-20">
-                        <h3 className="font-gillsans font-light text-white text-3xl uppercase">Colección <b className="font-medium">Landmark</b></h3>
-                    </div>
-                </Link>
-                <Link href={"/collections/basa-basa"} className="w-full block aspect-video overflow-hidden relative group">
-                    <Image src={coleccion_casamar} alt="Mural" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
-                    <div className="size-full bg-black/20  absolute top-0 left-0 z-10 transition-150"></div>
-                    <div className="size-full flex flex-col justify-center items-center relative z-20">
-                        <h3 className="font-gillsans font-light text-white text-3xl uppercase">Colección <b className="font-medium">Casamar</b></h3>
-                    </div>
-                </Link>
-                <Link href={"/collections/basa-basa"} className="w-full block aspect-video overflow-hidden relative group">
-                    <Image src={coleccion_vivero} alt="Mural" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
-                    <div className="size-full bg-black/20  absolute top-0 left-0 z-10 transition-150"></div>
-                    <div className="size-full flex flex-col justify-center items-center relative z-20">
-                        <h3 className="font-gillsans font-light text-white text-3xl uppercase">Colección <b className="font-medium">Vivero</b></h3>
-                    </div>
-                </Link>
-                <Link href={"/collections/basa-basa"} className="w-full block aspect-video overflow-hidden relative group">
-                    <Image src={coleccion_morris} alt="Mural" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
-                    <div className="size-full bg-black/20  absolute top-0 left-0 z-10 transition-150"></div>
-                    <div className="size-full flex flex-col justify-center items-center relative z-20">
-                        <h3 className="font-gillsans font-light text-white text-3xl uppercase">Colección <b className="font-medium">Morris</b></h3>
-                    </div>
-                </Link>
-                <Link href={"/collections/basa-basa"} className="w-full block aspect-video overflow-hidden relative group">
-                    <Image src={coleccion_vuelta_al_mundo} alt="Mural" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
-                    <div className="size-full bg-black/20  absolute top-0 left-0 z-10 transition-150"></div>
-                    <div className="size-full flex flex-col justify-center items-center relative z-20">
-                        <h3 className="font-gillsans font-light text-white text-3xl uppercase">Colección <b className="font-medium">Vuelta al mundo</b></h3>
-                    </div>
-                </Link>
-                <Link href={"/collections/basa-basa"} className="w-full block aspect-video overflow-hidden relative group">
-                    <Image src={imagen2} alt="Mural" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
-                    <div className="size-full bg-black/20  absolute top-0 left-0 z-10 transition-150"></div>
-                    <div className="size-full flex flex-col justify-center items-center relative z-20">
-                        <h3 className="font-gillsans font-light text-white text-3xl uppercase">Colección <b className="font-medium">Otros Murales</b></h3>
-                    </div>
-                </Link>
-            </section> */}
-            {/* <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
-                <h2 className="w-full text-center lg:text-start font-gillsans text-xl tracking-[0.5rem] uppercase">Colecciones</h2>
-                <div className="mt-8 w-full grid grid-cols-1 lg:grid-cols-4 gap-8">
-                    {collections.map((collection) => <Card href={`/collections/${collection.id}`} image={collection.murales[0].icons[0]} title={collection.title} key={collection.id} /> )}
-                </div>
-            </section> */}
             {/* <section className="mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
                 <h2 className="w-full text-center lg:text-start font-gillsans text-xl tracking-[0.5rem] uppercase">Por <b className="font-semibold">categorías</b></h2>
                 <div className="mt-8 w-full grid grid-cols-1 lg:grid-cols-4 gap-8">

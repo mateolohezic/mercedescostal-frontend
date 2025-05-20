@@ -16,6 +16,10 @@ import fragrances_11 from "@/assets/mc-universe/fragrances/fragrances_11.webp";
 import fragrances_12 from "@/assets/mc-universe/fragrances/fragrances_12.webp";
 import fragrances_13 from "@/assets/mc-universe/fragrances/fragrances_13.webp";
 import fragrances_14 from "@/assets/mc-universe/fragrances/fragrances_14.webp";
+import fragrances_15 from "@/assets/mc-universe/fragrances/fragrances_15.webp";
+import fragrances_16 from "@/assets/mc-universe/fragrances/fragrances_16.webp";
+import fragrances_17 from "@/assets/mc-universe/fragrances/fragrances_17.webp";
+import fragrances_18 from "@/assets/mc-universe/fragrances/fragrances_18.webp";
 
 export const metadata: Metadata = {
     title: 'Fragrances',
@@ -41,11 +45,11 @@ export const metadata: Metadata = {
 export default function FragrancesPage() {
     return (
         <main className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
-            <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col gap-8">
+            <section className="w-full px-4 xl:px-12 flex flex-col gap-8">
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     MC Universe
                 </h1>
-                <Image src={portada} priority alt="Portada Fragrances Mercedes Costal" className="w-full object-contain"/>
+                <Image src={portada} priority alt="Portada Fragrances Mercedes Costal" className="w-full aspect-video object-cover"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
@@ -61,6 +65,10 @@ export default function FragrancesPage() {
             </section>
             <section className="mt-8 lg:mt-12 w-full max-w-5xl 2xl:max-w-7xl px-4 md:px-0">
                 <div className="w-full grid grid-cols-2 lg:gap-8">
+                    <Image src={fragrances_16} alt="Fragrances Mercedes Costal" className="w-full"/>
+                    <Image src={fragrances_15} alt="Fragrances Mercedes Costal" className="w-full"/>
+                    <Image src={fragrances_18} alt="Fragrances Mercedes Costal" className="w-full"/>
+                    <Image src={fragrances_17} alt="Fragrances Mercedes Costal" className="w-full"/>
                     <Image src={fragrances_1} alt="Fragrances Mercedes Costal" className="size-full object-cover aspect-[3/4] object-[50%_90%]"/>
                     <Image src={fragrances_2} alt="Fragrances Mercedes Costal" className="size-full object-cover aspect-[3/4] object-[50%_100%]"/>
                     <Image src={fragrances_3} alt="Fragrances Mercedes Costal" className="size-full object-cover aspect-[3/4]"/>

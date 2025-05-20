@@ -2,7 +2,8 @@ import { StaticImageData } from "next/image";
 
 export interface MuralVariant {
     colorName: string;
-    colorHex: string;
+    color?: string;
+    colorHex?: string;
     montaje: StaticImageData|string;
     mural: StaticImageData|string;
     base?: boolean;
@@ -23,6 +24,7 @@ export interface Collection {
     id: string;
     title: string;
     portrait: StaticImageData|string;
+    video: string;
     date: string;
     technique: string;
     description: string;

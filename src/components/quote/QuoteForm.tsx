@@ -2,20 +2,26 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { useForm } from "react-hook-form";
+import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { FormErrorMessage } from "@/components";
 import { collections } from "@/data/collections";
+import { CrossIcon } from "@/icons";
+
+
+const spaceSchema = z.object({
+    largo: z.number({ invalid_type_error: "Debe ser un número." }).min(0.01, "Largo requerido"),
+    alto: z.number({ invalid_type_error: "Debe ser un número." }).min(0.01, "Alto requerido"),
+});
 
 const schema = z.object({
-    width: z.string().optional().refine(val => !val || (!isNaN(Number(val)) && Number(val) > 0 && Number(val) <= 10000), { message: "Debe ser mayor a 0 y menor o igual a 10000" }),
-    height: z.string().optional().refine(val => !val || (!isNaN(Number(val)) && Number(val) > 0 && Number(val) <= 10000), { message: "Debe ser mayor a 0 y menor o igual a 10000" }),
-    area: z.string().optional().refine(val => !val || (!isNaN(Number(val)) && Number(val) > 0 && Number(val) <= 100000), { message: "Debe ser mayor a 0 y menor o igual a 100000" }),
-    unit: z.enum(["m", "ft", "in"]),
-    shape: z.enum(["rectangular", "irregular"]),
+    name: z.string().min(2, "Nombre requerido"),
+    email: z.string().email("Email inválido"),
+    phone: z.string().min(6, "Teléfono inválido"),
     collection: z.string().nonempty("Selecciona una colección"),
     mural: z.string().nonempty("Selecciona un mural"),
+    spaces: z.array(spaceSchema).min(1, "Agrega al menos un muro"),
 });
 
 type Schema = z.infer<typeof schema>;
@@ -26,14 +32,9 @@ interface Props {
 
 export const QuoteForm = ({ preselectedMuralId }: Props) => {
     const [isRendered, setIsRendered] = useState<boolean>(false);
+    const { register, control, handleSubmit, watch, setValue, formState: { errors }, } = useForm<Schema>({ resolver: zodResolver(schema), defaultValues: { spaces: [{ largo: 0, alto: 0 }]}});
 
-    const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<Schema>({
-        resolver: zodResolver(schema),
-        defaultValues: {
-            unit: "m",
-            shape: "rectangular",
-        }
-    });
+    const { fields, append, remove } = useFieldArray({ control, name: "spaces" });
 
     const selectedCollectionId = watch("collection");
     const selectedMuralId = watch("mural");
@@ -41,101 +42,90 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
     const selectedMural = selectedCollection?.murales.find(m => m.id === selectedMuralId) ||
         collections.flatMap(col => col.murales).find(m => m.id === preselectedMuralId);
 
-    const width = watch("width");
-    const height = watch("height");
-    const area = watch("area");
-    const unit = watch("unit");
-
-    useEffect(() => {
-        if (width && height) {
-            const widthNum = parseFloat(width);
-            const heightNum = parseFloat(height);
-            if (!isNaN(widthNum) && !isNaN(heightNum)) {
-                let calculatedArea = widthNum * heightNum;
-                setValue("area", calculatedArea.toFixed(2));
-            }
-        }
-    }, [width, height, unit, setValue]);
-    
-    const handleAreaInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const areaValue = parseFloat(event.target.value);
-        if (!isNaN(areaValue)) {
-            setValue("area", areaValue.toString());
-            setValue("width", "");
-            setValue("height", "");
-        }
-    };
-
-    useEffect(() => {
-        if (preselectedMuralId) {
-            const preselectedMural = collections.flatMap(col => col.murales).find(m => m.id === preselectedMuralId);
-            if (preselectedMural) {
-                setValue("collection", preselectedMural.collectionId);
-                setIsRendered(true);
-            }
+      useEffect(() => {
+        const mural = collections.flatMap(col => col.murales).find(m => m.id === preselectedMuralId);
+        if (mural) {
+            setValue("collection", mural.collectionId);
+            setIsRendered(true);
         }
     }, [preselectedMuralId, setValue]);
 
     useEffect(() => {
         if (isRendered) {
-            const preselectedMural = collections.flatMap(col => col.murales).find(m => m.id === preselectedMuralId);
-            if (preselectedMural) {
-                setValue("mural", preselectedMural.id);
-            }
+        const mural = collections.flatMap(col => col.murales).find(m => m.id === preselectedMuralId);
+        if (mural) {
+            setValue("mural", mural.id);
         }
-    }, [preselectedMuralId, isRendered, setValue]);
+        }
+    }, [preselectedMuralId, setValue, isRendered]);
 
-    const onSubmit = async (data: Schema) => {
-        const { mural, collection, area, width, height, unit, shape } = data;
-    
+    const onSubmit = (data: Schema) => {
+        const { name, email, phone, collection, mural, spaces } = data;
+
         const collectionName = collections.find(c => c.id === collection)?.title || "";
         const muralName = collections.flatMap(c => c.murales).find(m => m.id === mural)?.title || "";
-    
-        let message = `Hola! Estoy interesado en el mural ${muralName} de la colección ${collectionName}.%0A`;
 
-        if (area) message += `Área a cubrir: ${area} ${unit}%0A`;
-        if (width && height) {
-            message += `Largo: ${width} ${unit}%0A`;
-            message += `Ancho: ${height} ${unit}%0A`;
-        }
-        
-        message += `Forma del área: ${shape === "rectangular" ? "Rectangular" : "Inusual"}`;
-        const phone = "5491160208460";
-        const whatsappUrl = `https://wa.me/${phone}?text=${message}`;
+        let message = `Hola! Soy ${name} y me gustaría cotizar el mural ${muralName} de la colección ${collectionName}.%0A%0A`;
+        message += `Email: ${email}%0A`;
+        message += `Teléfono: ${phone}%0A%0A`;
+
+        message += `Muros a cubrir:%0A`;
+        spaces.forEach((space, i) => {
+            message += `• Muro ${i + 1}: ${space.largo}m x ${space.alto}m%0A`;
+        });
+
+        const whatsappNumber = "5491160208460"; // número de destino
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
         window.open(whatsappUrl, "_blank");
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full flex items-start px-12">
+        <form onSubmit={handleSubmit(onSubmit)} className="w-full px-4 lg:px-12 flex flex-col lg:flex-row items-start gap-12 lg:gap-0">
             <div className="w-full max-w-md grid grid-cols-1 md:grid-cols-1 gap-4">
                 <div className="w-full">
-                    <label className="md:text-lg">Forma del área</label>
-                    <select className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("shape")}>
-                        <option value="rectangular">Rectangular</option>
-                        <option value="irregular">Forma inusual</option>
-                    </select>
+                    <label htmlFor="name" className="md:text-lg">Nombre</label>
+                    <input
+                        type='text'
+                        enterKeyHint="next"
+                        minLength={2}
+                        maxLength={50}
+                        id="name"
+                        autoComplete="given-name"
+                        autoCapitalize="words"
+                        className="w-full h-10 px-2 bg-white rounded-none border border-black"
+                        {...register("name")}
+                    />
+                    <FormErrorMessage condition={errors?.name} message={errors?.name?.message} />
                 </div>
                 <div className="w-full">
-                    <label className="md:text-lg">Unidad de medida</label>
-                    <select className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("unit")}>
-                        <option value="m">Metros</option>
-                        <option value="ft">Pies</option>
-                        <option value="in">Pulgadas</option>
-                    </select>
+                    <label htmlFor="email" className="md:text-lg">Correo electrónico</label>
+                    <input
+                        type='text'
+                        id="email"
+                        minLength={2}
+                        maxLength={50}
+                        enterKeyHint="next"
+                        autoComplete="email"
+                        inputMode="email"
+                        className="w-full h-10 px-2 bg-white rounded-none border border-black"
+                        {...register("email")}
+                    />
+                    <FormErrorMessage condition={errors?.email} message={errors?.email?.message} />
                 </div>
                 <div className="w-full">
-                    <label className="md:text-lg">Ancho del espacio ({unit})</label>
-                    <input type="number" step="0.01" min="0.01" max="100000" className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("width")} />
-                    <FormErrorMessage condition={errors?.width} message={errors?.width?.message} />
-                </div>
-                <div className="w-full">
-                    <label className="md:text-lg">Altura del espacio ({unit})</label>
-                    <input type="number" step="0.01" min="0.01" max="100000" className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("height")} />
-                    <FormErrorMessage condition={errors?.height} message={errors?.height?.message} />
-                </div>
-                <div className="w-full">
-                    <label className="md:text-lg">Área total ({unit}²)</label>
-                    <input type="number" step="0.01" min="0.01" max="10000000000" className="w-full h-10 px-2 bg-white rounded-none border border-black" value={area || ""} onChange={handleAreaInput} />
+                    <label htmlFor="phone" className="md:text-lg">Teléfono</label>
+                    <input
+                        id="phone"
+                        type='text'
+                        minLength={8}
+                        maxLength={20}
+                        enterKeyHint="next"
+                        autoComplete="tel"
+                        inputMode="tel"
+                        className="w-full h-10 px-2 bg-white rounded-none border border-black"
+                        {...register("phone")}
+                    />
+                    <FormErrorMessage condition={errors?.phone} message={errors?.phone?.message} />
                 </div>
                 <div className="w-full">
                     <label className="md:text-lg">Colección</label>
@@ -157,6 +147,42 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                     </select>
                     <FormErrorMessage condition={errors?.mural} message={errors?.mural?.message} />
                 </div>
+                <div className="w-full">
+                    <p className="md:text-lg">Espacios a cubrir</p>
+                    <div className="mt-2 text-xs w-full flex gap-2">
+                        <div className="grow">Largo (m)</div>
+                        <div className="grow">Alto (m)</div>
+                        <div className="w-4"></div>
+                    </div>
+                    <div className="w-[calc(100%+1rem)] max-h-48 pr-4 flex flex-col gap-2 overflow-y-auto">
+                        {fields.map((field, index) => (
+                            <div key={field.id} className="flex gap-2 items-center">
+                                <label className="sr-only" htmlFor={`spaces.${index}.largo`}>Largo</label>
+                                <input
+                                    type="number"
+                                    step="0.01"
+                                    placeholder="Largo"
+                                    className="w-full h-10 px-2 border border-black bg-white"
+                                    {...register(`spaces.${index}.largo`, { valueAsNumber: true })}
+                                />
+                                <label className="sr-only" htmlFor={`spaces.${index}.alto`}>Alto</label>
+                                <input
+                                    type="number"
+                                    step="0.01"
+                                    placeholder="Alto"
+                                    className="w-full h-10 px-2 border border-black bg-white"
+                                    {...register(`spaces.${index}.alto`, { valueAsNumber: true })}
+                                />
+                                <button type="button" disabled={fields.length <= 1} onClick={() => remove(index)} className="size-4 shrink-0">
+                                    <CrossIcon className={`size-4 ${ fields.length <= 1 && "opacity-50" }`}/>
+                                </button>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="mt-2 flex justify-center lg:justify-start">
+                        <button type="button" onClick={() => append({ largo: 0, alto: 0 })} className="text-sm text-black border border-black px-4 py-1">Agregar muro</button>
+                    </div>
+                </div>
                 <div className="mt-4 lg:mt-0 w-full text-xl lg:text-base flex justify-center lg:justify-end items-center lg:items-end">
                     <button type="submit" className="mt-4 px-4 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase">
                         Cotizar
@@ -164,7 +190,7 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                 </div>
             </div>
             { selectedMural && (
-                <div className="pl-12 flex flex-col items-center gap-1S">
+                <div className="lg:pl-12 flex flex-col items-center gap-1">
                     <h2 className="w-full text-start font-gillsans font-light uppercase">
                         <span className="text-black/75">Previsualización</span>{" "}
                         <b className="font-medium">{selectedMural.title}</b>

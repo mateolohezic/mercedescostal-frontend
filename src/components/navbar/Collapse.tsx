@@ -34,11 +34,11 @@ export const Collapse = ({ links }: Props) => {
 
     return (
         <div className="w-full lg:hidden flex items-center sticky top-0 z-50">
-            { !isHome && <div className={`w-full h-14 bg-gradient-to-b from-white via-white/75 to-transparent absolute top-0 left-0 z-0 pointer-events-none ${ isExpanded && "opacity-100"} transition-200`}/> }
+            { !isHome && <div className={`w-full h-14 bg-white absolute top-0 left-0 z-0 pointer-events-none ${ isExpanded && "opacity-100"} transition-200`}/> }
             <motion.div
                 animate={{ left: isExpanded ? -304 : 16 }}
                 transition={{ type: "spring", bounce: 0, duration: 0.25 }}
-                className="w-fit h-6 flex justify-center items-center absolute top-3 left-3 z-50 bg-transparent"
+                className="w-fit h-6 flex justify-center items-center absolute top-4 left-4 z-50 bg-transparent"
             >
                 <Link href="/" aria-label="Inicio">
                     <MCLogo className={`w-64 stroke-2 ${ isHome ? "fill-white/90" : "fill-black/90"}`} />
@@ -49,7 +49,7 @@ export const Collapse = ({ links }: Props) => {
                 onClick={() => setIsExpanded(!isExpanded)}
                 animate={{ right: isExpanded ? 296 : 8 }}
                 transition={{ type: "spring", bounce: 0, duration: 0.25 }}
-                className={`absolute top-2 right-2 z-50 p-1 rounded-lg ${ !isHome && isExpanded ? "bg-white/5" : "bg-transparent"}`}
+                className="h-14 absolute top-0 right-4 z-50"
                 aria-label="Abrir menú"
             >
                 <MenuIcon className={`size-6 ${ isHome ? "text-white/90" : "text-black/90"}`}/>

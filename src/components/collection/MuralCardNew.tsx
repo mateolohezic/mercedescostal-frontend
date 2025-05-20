@@ -12,6 +12,7 @@ import ejemplo3 from "@/assets/ejemplo/ejemplo3.webp";
 import ejemplo4 from "@/assets/ejemplo/ejemplo4.webp";
 import ejemplo5 from "@/assets/ejemplo/ejemplo5.webp";
 import ejemplo6 from "@/assets/ejemplo/ejemplo6.webp";
+
 interface Props {
     mural: Mural;
     index: number
@@ -31,7 +32,7 @@ export const MuralCardNew = ({ mural, index }: Props) => {
             className="w-full flex flex-col cursor-pointer"
             onClick={ () => setShowModal(true) }
         >
-            <h2 className="text-xl uppercase">{ muralIndex > 9 ? muralIndex : `0${muralIndex}` }. {isPattern ? 'Patrón' : 'Mural'} {mural.title}</h2>
+            <h2 className="grow text-xl uppercase">{ muralIndex > 9 ? muralIndex : `0${muralIndex}` }. {isPattern ? 'Patrón' : 'Mural'} {mural.title}</h2>
             <motion.div
                 className="w-full aspect-video relative"
                 onHoverStart={() => setIsHovered(true)}
@@ -45,14 +46,14 @@ export const MuralCardNew = ({ mural, index }: Props) => {
             </motion.div>
         </div>
         <Modal
-            className="w-full h-screen"
+            className="w-full min-h-screen lg:min-h-0"
             showModal={showModal}
             setShowModal={setShowModal}
         >
-            <div className="size-full flex justify-center items-stretch">
-                <div className="grow pr-12">
+            <div className="size-full flex flex-col-reverse lg:flex-row justify-center items-stretch">
+                <div className="w-full lg:w-auto lg:grow lg:pr-12">
                     <div className="size-full relative overflow-y-auto">
-                        <div className="size-full absolute top-0 left-0">
+                        <div className="size-full lg:absolute lg:top-0 lg:left-0">
                             <Image src={ejemplo1} alt="Ejemplo" className="w-full object-contain"/>
                             <div className="w-full grid grid-cols-2">
                                 <Image src={ejemplo2} alt="Ejemplo" className="w-full object-contain"/>
@@ -64,7 +65,7 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                         </div>
                     </div>
                 </div>
-                <div className="w-full max-w-xl pt-12 pb-4 px-4 flex flex-col">
+                <div className="w-full max-w-xl p-6 lg:p-4 lg:pt-12 flex flex-col">
                     <div className="w-full grow">
                         <p className="font-gillsans font-light text-sm text-black/50 uppercase tracking-widest">Colección {mural.collectionTitle}</p>
                         <h2 className="text-3xl font-gillsans font-medium uppercase">{mural.title}</h2>
@@ -85,8 +86,8 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                             </li>
                         </ul>
                     </div>
-                    <div className="w-full flex justify-end">
-                        <Link href={`/quote?mural=${mural.id}`} className="mt-8 block w-fit px-4 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase">Take it home</Link>
+                    <div className="mt-8 w-full flex justify-center lg:justify-end">
+                        <Link href={`/quote?mural=${mural.id}`} className="px-4 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase">Take it home</Link>
                     </div>
                 </div>
             </div>

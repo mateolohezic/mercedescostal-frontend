@@ -10,7 +10,6 @@ interface Props {
 export const metadata: Metadata = {
     title: 'Quote',
     description: "Quote Mercedes Costal.",
-    keywords: ['diseño', 'Mercedes Costal'],
     openGraph: {
         title: 'Quote | Mercedes Costal',
         description: 'Mercedes Costal.',

@@ -572,6 +572,7 @@ export const collections: Array<Collection> = [
         id: "basa-basa",
         title: "Basa Basa",
         portrait: portada_basa_basa,
+        video: "/assets/portada_basa_basa.mp4",
         date: "2021",
         technique: "Pintado a mano.",
         description: "Descripción.",
@@ -586,7 +587,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#F5F5DC",
                         montaje: basa_basa_montaje,
                         mural: basa_basa_mural,
                         base: true,
@@ -604,7 +604,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#F5F5DC",
                         montaje: miombo_montaje,
                         mural: miombo_mural,
                         base: true,
@@ -622,7 +621,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#F5F5DC",
                         montaje: ñus_montaje,
                         mural: ñus_mural,
                         base: true,
@@ -640,7 +638,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#F5F5DC",
                         montaje: woodland_01_montaje,
                         mural: woodland_01_mural,
                         base: true,
@@ -658,7 +655,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#F5F5DC",
                         montaje: woodland_02_montaje,
                         mural: woodland_02_mural,
                         base: true,
@@ -676,7 +672,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#F5F5DC",
                         montaje: woodland_03_montaje,
                         mural: woodland_03_mural,
                         base: true,
@@ -694,7 +689,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#F5F5DC",
                         montaje: woodland_04_montaje,
                         mural: woodland_04_mural,
                         base: true,
@@ -712,7 +706,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#F5F5DC",
                         montaje: woodland_05_montaje,
                         mural: woodland_05_mural,
                         base: true,
@@ -726,6 +719,7 @@ export const collections: Array<Collection> = [
         id: "casamar",
         title: "Casamar",
         portrait: portada_casamar,
+        video: "/assets/portada_casamar.mp4",
         date: "2020",
         technique: "Digital y pintado a mano.",
         description: "Descripcióñ.",
@@ -740,7 +734,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#ADD8E6",
                         montaje: bajo_el_mar_montaje,
                         mural: bajo_el_mar_mural,
                         base: true,
@@ -758,44 +751,44 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Artful Green",
-                        colorHex: "#00FF00",
+                        color: "bg-st-green",
                         montaje: brush_montaje,
                         mural: brush_mural_artful_green,
                     },
                     {
                         colorName: "Black",
-                        colorHex: "#000000",
+                        color: "bg-st-black",
                         montaje: brush_montaje,
                         mural: brush_mural_black,
                     },
                     {
                         colorName: "St 201645",
-                        colorHex: "#FF4500",
+                        color: "bg-st-201645",
                         montaje: brush_montaje,
                         mural: brush_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201810",
                         montaje: brush_montaje,
                         mural: brush_mural_st_201810,
                         base: true,
                     },
                     {
                         colorName: "St 201915",
-                        colorHex: "#FFD700",
+                        color: "bg-st-201915",
                         montaje: brush_montaje,
                         mural: brush_mural_st_201915,
                     },
                     {
                         colorName: "St 201820",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201820",
                         montaje: brush_montaje,
                         mural: brush_mural_st_201820,
                     },
                     {
                         colorName: "Tanger Tan",
-                        colorHex: "#FFA500",
+                        color: "bg-st-tanger",
                         montaje: brush_montaje,
                         mural: brush_mural_tanger_tan,
                     },
@@ -812,7 +805,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#ADD8E6",
                         montaje: casamar_montaje,
                         mural: casamar_mural,
                         base: true,
@@ -830,37 +822,37 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Artful Green",
-                        colorHex: "#00FF00",
+                        color: "bg-st-green",
                         montaje: brush_montaje,
                         mural: corals_mural_artful_green,
                     },
                     {
                         colorName: "Black",
-                        colorHex: "#000000",
+                        color: "bg-st-black",
                         montaje: brush_montaje,
                         mural: corals_mural_black,
                     },
                     {
                         colorName: "St 201645",
-                        colorHex: "#FF4500",
+                        color: "bg-st-201645",
                         montaje: brush_montaje,
                         mural: corals_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201810",
                         montaje: brush_montaje,
                         mural: corals_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201820",
                         montaje: brush_montaje,
                         mural: corals_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
-                        colorHex: "#FFD700",
+                        color: "bg-st-201915",
                         montaje: brush_montaje,
                         mural: corals_mural_st_201915,
                     },
@@ -877,7 +869,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#ADD8E6",
                         montaje: brush_montaje,
                         mural: degrade_texturado_mural,
                         base: true,
@@ -895,43 +886,43 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Artful Green",
-                        colorHex: "#00FF00",
+                        color: "bg-st-green",
                         montaje: brush_montaje,
                         mural: ethnic_mural_artful_green,
                     },
                     {
                         colorName: "Black",
-                        colorHex: "#000000",
+                        color: "bg-st-black",
                         montaje: brush_montaje,
                         mural: ethnic_mural_black,
                     },
                     {
                         colorName: "St 201645",
-                        colorHex: "#FF4500",
+                        color: "bg-st-201645",
                         montaje: brush_montaje,
                         mural: ethnic_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201810",
                         montaje: brush_montaje,
                         mural: ethnic_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201820",
                         montaje: brush_montaje,
                         mural: ethnic_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
-                        colorHex: "#FFD700",
+                        color: "bg-st-201915",
                         montaje: brush_montaje,
                         mural: ethnic_mural_st_201915,
                     },
                     {
                         colorName: "Tanger Tan",
-                        colorHex: "#FFA500",
+                        color: "bg-st-tanger",
                         montaje: brush_montaje,
                         mural: ethnic_mural_tanger_tan,
                     },
@@ -948,44 +939,44 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#ADD8E6",
+                        color: "bg-st-black",
                         montaje: exotic_montaje,
                         mural: exotic_mural,
                         base: true,
                     },
                     {
                         colorName: "Artful Green",
-                        colorHex: "#00FF00",
+                        color: "bg-st-green",
                         montaje: exotic_montaje,
                         mural: exotic_mural_artful_green,
                     },
                     {
                         colorName: "Black",
-                        colorHex: "#000000",
+                        color: "bg-st-black",
                         montaje: exotic_montaje,
                         mural: exotic_mural_black,
                     },
                     {
                         colorName: "St 201645",
-                        colorHex: "#FF4500",
+                        color: "bg-st-201645",
                         montaje: exotic_montaje,
                         mural: exotic_mural_st_201645,
                     },
                     {
                         colorName: "St 201820",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201820",
                         montaje: exotic_montaje,
                         mural: exotic_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
-                        colorHex: "#FFD700",
+                        color: "bg-st-201915",
                         montaje: exotic_montaje,
                         mural: exotic_mural_st_201915,
                     },
                     {
                         colorName: "Tanger Tan",
-                        colorHex: "#FFA500",
+                        color: "bg-st-tanger",
                         montaje: exotic_montaje,
                         mural: exotic_mural_tanger_tan,
                     },
@@ -1002,43 +993,43 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Artful Green",
-                        colorHex: "#00FF00",
+                        color: "bg-st-green",
                         montaje: brush_montaje,
                         mural: fish_mural_artful_green,
                     },
                     {
                         colorName: "St 201645",
-                        colorHex: "#FF4500",
+                        color: "bg-st-201645",
                         montaje: brush_montaje,
                         mural: fish_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201810",
                         montaje: brush_montaje,
                         mural: fish_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201820",
                         montaje: brush_montaje,
                         mural: fish_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
-                        colorHex: "#FFD700",
+                        color: "bg-st-201915",
                         montaje: brush_montaje,
                         mural: fish_mural_st_201915,
                     },
                     {
                         colorName: "Tanger Tan",
-                        colorHex: "#FFA500",
+                        color: "bg-st-tanger",
                         montaje: brush_montaje,
                         mural: fish_mural_tanger_tan,
                     },
                     {
                         colorName: "White",
-                        colorHex: "#FFFFFF",
+                        color: "bg-st-white",
                         montaje: brush_montaje,
                         mural: fish_mural_white,
                     },
@@ -1055,43 +1046,43 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Artful Green",
-                        colorHex: "#00FF00",
+                        color: "bg-st-green",
                         montaje: morris_montaje,
                         mural: morris_mural_artful_green,
                     },
                     {
                         colorName: "Black",
-                        colorHex: "#000000",
+                        color: "bg-st-black",
                         montaje: morris_montaje,
                         mural: morris_mural_black,
                     },
                     {
                         colorName: "St 201645",
-                        colorHex: "#FF4500",
+                        color: "bg-st-201645",
                         montaje: morris_montaje,
                         mural: morris_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201810",
                         montaje: morris_montaje,
                         mural: morris_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201820",
                         montaje: morris_montaje,
                         mural: morris_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
-                        colorHex: "#FFD700",
+                        color: "bg-st-201915",
                         montaje: morris_montaje,
                         mural: morris_mural_st_201915,
                     },
                     {
                         colorName: "Tanger Tan",
-                        colorHex: "#FFA500",
+                        color: "bg-st-tanger",
                         montaje: morris_montaje,
                         mural: morris_mural_tanger_tan,
                     },
@@ -1108,7 +1099,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#A0522D",
                         montaje: mushrooms_montaje,
                         mural: mushrooms_mural,
                         base: true,
@@ -1126,43 +1116,43 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Artful Green",
-                        colorHex: "#00FF00",
+                        color: "bg-st-green",
                         montaje: brush_montaje,
                         mural: palms_mural_artful_green,
                     },
                     {
                         colorName: "Black",
-                        colorHex: "#000000",
+                        color: "bg-st-black",
                         montaje: brush_montaje,
                         mural: palms_mural_black,
                     },
                     {
                         colorName: "St 201645",
-                        colorHex: "#FF4500",
+                        color: "bg-st-201645",
                         montaje: brush_montaje,
                         mural: palms_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201810",
                         montaje: brush_montaje,
                         mural: palms_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201820",
                         montaje: brush_montaje,
                         mural: palms_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
-                        colorHex: "#FFD700",
+                        color: "bg-st-201915",
                         montaje: brush_montaje,
                         mural: palms_mural_st_201915,
                     },
                     {
                         colorName: "Tanger Tan",
-                        colorHex: "#FFA500",
+                        color: "bg-st-tanger",
                         montaje: brush_montaje,
                         mural: palms_mural_tanger_tan,
                     },
@@ -1179,43 +1169,43 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Artful Green",
-                        colorHex: "#00FF00",
+                        color: "bg-st-green",
                         montaje: rainbow_montaje,
                         mural: rainbow_mural_artful_green,
                     },
                     {
                         colorName: "Black",
-                        colorHex: "#000000",
+                        color: "bg-st-black",
                         montaje: rainbow_montaje,
                         mural: rainbow_mural_black,
                     },
                     {
                         colorName: "St 2011645",
-                        colorHex: "#FF4500",
+                        color: "bg-st-201645",
                         montaje: rainbow_montaje,
                         mural: rainbow_mural_st_2011645,
                     },
                     {
                         colorName: "St 201810",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201810",
                         montaje: rainbow_montaje,
                         mural: rainbow_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201820",
                         montaje: rainbow_montaje,
                         mural: rainbow_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
-                        colorHex: "#FFD700",
+                        color: "bg-st-201915",
                         montaje: rainbow_montaje,
                         mural: rainbow_mural_st_201915,
                     },
                     {
                         colorName: "Tanger Tan",
-                        colorHex: "#FFA500",
+                        color: "bg-st-tanger",
                         montaje: rainbow_montaje,
                         mural: rainbow_mural_tanger_tan,
                     },
@@ -1232,50 +1222,50 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#A0522D",
+                        color: "bg-st-white",
                         montaje: shibori_montaje,
                         mural: shibori_montaje,
                         base: true,
                     },
                     {
                         colorName: "Artful Green",
-                        colorHex: "#00FF00",
+                        color: "bg-st-green",
                         montaje: shibori_montaje,
                         mural: shibori_mural_artful_green,
                     },
                     {
                         colorName: "Black",
-                        colorHex: "#000000",
+                        color: "bg-st-black",
                         montaje: shibori_montaje,
                         mural: shibori_mural_black,
                     },
                     {
                         colorName: "St 201645",
-                        colorHex: "#FF4500",
+                        color: "bg-st-201645",
                         montaje: shibori_montaje,
                         mural: shibori_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201810",
                         montaje: shibori_montaje,
                         mural: shibori_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201820",
                         montaje: shibori_montaje,
                         mural: shibori_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
-                        colorHex: "#FFD700",
+                        color: "bg-st-201915",
                         montaje: shibori_montaje,
                         mural: shibori_mural_st_201915,
                     },
                     {
                         colorName: "Tanger Tan",
-                        colorHex: "#FFA500",
+                        color: "bg-st-tanger",
                         montaje: shibori_montaje,
                         mural: shibori_mural_tanger_tan,
                     },
@@ -1292,43 +1282,43 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Artful Green",
-                        colorHex: "#00FF00",
+                        color: "bg-st-green",
                         montaje: brush_montaje,
                         mural: toile_tropical_mural_artful_green,
                     },
                     {
                         colorName: "Black",
-                        colorHex: "#000000",
+                        color: "bg-st-black",
                         montaje: brush_montaje,
                         mural: toile_tropical_mural_black,
                     },
                     {
                         colorName: "St 201645",
-                        colorHex: "#FF4500",
+                        color: "bg-st-201645",
                         montaje: brush_montaje,
                         mural: toile_tropical_mural_st_201645,
                     },
                     {
                         colorName: "St 201810",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201810",
                         montaje: brush_montaje,
                         mural: toile_tropical_mural_st_201810,
                     },
                     {
                         colorName: "St 201820",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201820",
                         montaje: brush_montaje,
                         mural: toile_tropical_mural_st_201820,
                     },
                     {
                         colorName: "St 201915",
-                        colorHex: "#8B0000",
+                        color: "bg-st-201915",
                         montaje: brush_montaje,
                         mural: toile_tropical_mural_st_201915,
                     },
                     {
                         colorName: "Tanger Tan",
-                        colorHex: "#FFA500",
+                        color: "bg-st-tanger",
                         montaje: brush_montaje,
                         mural: toile_tropical_mural_tanger_tan,
                     },
@@ -1341,6 +1331,7 @@ export const collections: Array<Collection> = [
         id: "landmark",
         title: "Landmark",
         portrait: portada_landmark,
+        video: "/assets/portada_landmark.mp4",
         date: "2022",
         technique: "Pintado a mano.",
         description: "Descripción.",
@@ -1355,7 +1346,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#E0CDA9",
                         montaje: arabesco_mural,
                         mural: arabesco_mural,
                         base: true,
@@ -1373,7 +1363,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#556B2F",
                         montaje: bosque_de_los_magos_montaje,
                         mural: bosque_de_los_magos_mural,
                         base: true,
@@ -1391,7 +1380,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#DAA520",
                         montaje: bulgaros_montaje,
                         mural: bulgaros_mural,
                         base: true,
@@ -1409,7 +1397,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#1E90FF",
                         montaje: exotic_blue_montaje,
                         mural: exotic_blue_mural,
                         base: true,
@@ -1427,7 +1414,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFC0CB",
                         montaje: fairy_tale_montaje,
                         mural: fairy_tale_mural,
                         base: true,
@@ -1445,7 +1431,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#4B0082",
                         montaje: flowers_dark_montaje,
                         mural: flowers_dark_mural,
                         base: true,
@@ -1463,7 +1448,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFD700",
                         montaje: geometric_golden_mist_mural,
                         mural: geometric_golden_mist_mural,
                         base: true,
@@ -1481,7 +1465,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#228B22",
                         montaje: hanging_plants_mural,
                         mural: hanging_plants_mural,
                         base: true,
@@ -1499,7 +1482,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#6B8E23",
                         montaje: invernadero_mural,
                         mural: invernadero_mural,
                         base: true,
@@ -1517,7 +1499,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFD700",
                         montaje: liberty_golden_mural,
                         mural: liberty_golden_mural,
                         base: true,
@@ -1535,7 +1516,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#D3D3D3",
                         montaje: linen_stripes_mural,
                         mural: linen_stripes_mural,
                         base: true,
@@ -1553,7 +1533,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#808080",
                         montaje: loop_original_mural,
                         mural: loop_original_mural,
                         base: true,
@@ -1571,7 +1550,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#2E2E2E",
                         montaje: midnight_garden_montaje,
                         mural: midnight_garden_mural,
                         base: true,
@@ -1589,7 +1567,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8B4513",
                         montaje: monkeys_mural,
                         mural: monkeys_mural,
                         base: true,
@@ -1607,7 +1584,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8F9779",
                         montaje: landmark_mushrooms_mural,
                         mural: landmark_mushrooms_mural,
                         base: true,
@@ -1625,7 +1601,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#228B22",
                         montaje: palms_tree_mural,
                         mural: palms_tree_mural,
                         base: true,
@@ -1643,7 +1618,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#A9A9A9",
                         montaje: rayas_taupe_mural,
                         mural: rayas_taupe_mural,
                         base: true,
@@ -1661,7 +1635,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8B4513",
                         montaje: savage_montaje,
                         mural: savage_mural,
                         base: true,
@@ -1679,7 +1652,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#1E3A5F",
                         montaje: landmark_shibori_mural,
                         mural: landmark_shibori_mural,
                         base: true,
@@ -1697,7 +1669,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8B0000",
                         montaje: tartan_mural,
                         mural: tartan_mural,
                         base: true,
@@ -1715,7 +1686,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#191970",
                         montaje: universe_mural,
                         mural: universe_mural,
                         base: true,
@@ -1733,7 +1703,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#4682B4",
                         montaje: watercolor_stripes_mural,
                         mural: watercolor_stripes_mural,
                         base: true,
@@ -1747,6 +1716,7 @@ export const collections: Array<Collection> = [
         id: "morris",
         title: "Morris",
         portrait: portada_morris,
+        video: "/assets/portada_morris.mp4",
         date: "2021",
         technique: "Digital y pintado a mano.",
         description: "Descripcióñ.",
@@ -1761,7 +1731,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#F5DEB3",
                         montaje: artemis_claro_mural,
                         mural: artemis_claro_mural,
                         base: true,
@@ -1779,7 +1748,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#D2B48C",
                         montaje: artemis_textura_montaje,
                         mural: artemis_textura_mural,
                         base: true,
@@ -1797,7 +1765,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#F8F4E3",
                         montaje: flowers_light_mural,
                         mural: flowers_light_mural,
                         base: true,
@@ -1815,7 +1782,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFE4B5",
                         montaje: membrillos_claro_montaje,
                         mural: membrillos_claro_mural,
                         base: true,
@@ -1833,7 +1799,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#A2C865",
                         montaje: membrillos_verde_seco_montaje,
                         mural: membrillos_verde_seco_mural,
                         base: true,
@@ -1851,7 +1816,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#800000",
                         montaje: tulip_dark_montaje,
                         mural: tulip_dark_mural,
                         base: true,
@@ -1869,7 +1833,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFDEAD",
                         montaje: tulip_light_montaje,
                         mural: tulip_light_mural,
                         base: true,
@@ -1887,7 +1850,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#6B8E23",
                         montaje: willow_montaje,
                         mural: willow_mural,
                         base: true,
@@ -1905,7 +1867,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8B5A2B",
                         montaje: willow_textura_montaje,
                         mural: willow_textura_mural,
                         base: true,
@@ -1919,6 +1880,7 @@ export const collections: Array<Collection> = [
         id: "vivero",
         title: "Vivero",
         portrait: portada_vivero,
+        video: "/assets/portada_vivero.mp4",
         date: "2022",
         technique: "Digital y pintado a mano.",
         description: "Descripcióñ.",
@@ -1933,7 +1895,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#4682B4",
                         montaje: avistaje_montaje,
                         mural: avistaje_mural,
                         base: true,
@@ -1951,7 +1912,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#A0522D",
                         montaje: la_campagne_montaje,
                         mural: la_campagne_mural,
                         base: true,
@@ -1969,7 +1929,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#D8BFD8",
                         montaje: la_maison_montaje,
                         mural: la_maison_mural,
                         base: true,
@@ -1987,14 +1946,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Variante 1",
-                        colorHex: "#BDB76B",
+                        color: "#BDB76B",
                         montaje: reina_ana_montaje_1,
                         mural: reina_ana_mural_1,
                         base: true,
                     },
                     {
                         colorName: "Variante 2",
-                        colorHex: "#8B4513",
+                        color: "#8B4513",
                         montaje: reina_ana_montaje_2,
                         mural: reina_ana_mural_2,
                     }
@@ -2007,6 +1966,7 @@ export const collections: Array<Collection> = [
         id: "vuelta-al-mundo",
         title: "Vuelta al Mundo",
         portrait: portada_vuelta_al_mundo,
+        video: "/assets/portada_vuelta_al_mundo.mp4",
         date: "2016-2024",
         technique: "Digital y pintado a mano.",
         description: "Descripcióñ.",
@@ -2021,14 +1981,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#C0C0C0",
+                        color: "#C0C0C0",
                         montaje: alexandria_montaje,
                         mural: alexandria_mural,
                         base: true,
                     },
                     {
                         colorName: "Variante 2",
-                        colorHex: "#8B0000",
+                        color: "#8B0000",
                         montaje: alexandria_montaje_2,
                         mural: alexandria_mural,
                     }
@@ -2045,14 +2005,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFD700",
+                        color: "bg-st-201915",
                         montaje: bindi_montaje,
                         mural: bindi_mural,
                         base: true,
                     },
                     {
                         colorName: "Variante 2",
-                        colorHex: "#800080",
+                        color: "#800080",
                         montaje: bindi_montaje_2,
                         mural: bindi_mural,
                     }
@@ -2069,20 +2029,20 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Gray Humo",
-                        colorHex: "#D3D3D3",
+                        color: "#D3D3D3",
                         montaje: cuerpos_celestes_montaje,
                         mural: cuerpos_celestes_mural_gray_humo,
                         base: true,
                     },
                     {
                         colorName: "Gray Mármol",
-                        colorHex: "#A9A9A9",
+                        color: "#A9A9A9",
                         montaje: cuerpos_celestes_montaje_2,
                         mural: cuerpos_celestes_mural_gray_marmol,
                     },
                     {
                         colorName: "Gray Plomo",
-                        colorHex: "#808080",
+                        color: "#808080",
                         montaje: cuerpos_celestes_montaje_3,
                         mural: cuerpos_celestes_mural_gray_plomo,
                     }
@@ -2099,14 +2059,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#9370DB",
+                        color: "#9370DB",
                         montaje: encantado_mural,
                         mural: encantado_mural,
                         base: true,
                     },
                     {
                         colorName: "Blue",
-                        colorHex: "#4682B4",
+                        color: "#4682B4",
                         montaje: encantado_mural,
                         mural: encantado_mural_blue,
                     }
@@ -2123,7 +2083,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#D2B48C",
                         montaje: estuco_montaje,
                         mural: estuco_mural,
                         base: true,
@@ -2141,14 +2100,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8B4513",
+                        color: "#8B4513",
                         montaje: etnico_montaje,
                         mural: etnico_mural,
                         base: true,
                     },
                     {
                         colorName: "Variante 2",
-                        colorHex: "#A0522D",
+                        color: "#A0522D",
                         montaje: etnico_montaje_2,
                         mural: etnico_mural,
                     }
@@ -2165,14 +2124,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFD700",
+                        color: "bg-st-201915",
                         montaje: golden_tanger_montaje,
                         mural: golden_tanger_mural,
                         base: true,
                     },
                     {
                         colorName: "Variante 2",
-                        colorHex: "#FFA500",
+                        color: "bg-st-tanger",
                         montaje: golden_tanger_montaje_2,
                         mural: golden_tanger_mural,
                     }
@@ -2189,14 +2148,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFFFFF",
+                        color: "#FFFFFF",
                         montaje: ibiza_montaje,
                         mural: ibiza_mural,
                         base: true,
                     },
                     {
                         colorName: "Variante 2",
-                        colorHex: "#E0E0E0",
+                        color: "#E0E0E0",
                         montaje: ibiza_montaje_2,
                         mural: ibiza_mural,
                     }
@@ -2213,14 +2172,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#228B22",
+                        color: "#228B22",
                         montaje: jardin_colgante_montaje,
                         mural: jardin_colgante_mural,
                         base: true,
                     },
                     {
                         colorName: "Variante 2",
-                        colorHex: "#6B8E23",
+                        color: "#6B8E23",
                         montaje: jardin_colgante_montaje_2,
                         mural: jardin_colgante_mural,
                     }
@@ -2237,20 +2196,20 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Black",
-                        colorHex: "#000000",
+                        color: "bg-st-black",
                         montaje: jardin_persa_montaje_black,
                         mural: jardin_persa_mural_black,
                         base: true,
                     },
                     {
                         colorName: "White",
-                        colorHex: "#FFFFFF",
+                        color: "#FFFFFF",
                         montaje: jardin_persa_montaje_white,
                         mural: jardin_persa_mural_white,
                     },
                     {
                         colorName: "Variante 2",
-                        colorHex: "#F5F5F5",
+                        color: "#F5F5F5",
                         montaje: jardin_persa_montaje_white_2,
                         mural: jardin_persa_mural_white,
                     }
@@ -2267,14 +2226,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#4682B4",
+                        color: "#4682B4",
                         montaje: la_riviere_montaje,
                         mural: la_riviere_mural,
                         base: true,
                     },
                     {
                         colorName: "Gray",
-                        colorHex: "#A9A9A9",
+                        color: "#A9A9A9",
                         montaje: la_riviere_montaje_gray,
                         mural: la_riviere_mural_gray,
                     }
@@ -2291,14 +2250,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFC0CB",
+                        color: "#FFC0CB",
                         montaje: magnolia_real_montaje,
                         mural: magnolia_real_mural,
                         base: true,
                     },
                     {
                         colorName: "Black",
-                        colorHex: "#000000",
+                        color: "bg-st-black",
                         montaje: magnolia_real_montaje,
                         mural: magnolia_real_mural_black,
                     }
@@ -2315,7 +2274,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8B4513",
                         montaje: mundo_animal_mural,
                         mural: mundo_animal_mural,
                         base: true,
@@ -2333,14 +2291,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#228B22",
+                        color: "#228B22",
                         montaje: palmario_montaje,
                         mural: palmario_mural,
                         base: true,
                     },
                     {
                         colorName: "Variante 2",
-                        colorHex: "#6B8E23",
+                        color: "#6B8E23",
                         montaje: palmario_montaje_2,
                         mural: palmario_mural,
                     }
@@ -2357,14 +2315,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8B4513",
+                        color: "#8B4513",
                         montaje: patagonia_montaje,
                         mural: patagonia_mural,
                         base: true,
                     },
                     {
                         colorName: "Variante 2",
-                        colorHex: "#A0522D",
+                        color: "#A0522D",
                         montaje: patagonia_montaje_2,
                         mural: patagonia_mural,
                     }
@@ -2381,14 +2339,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#32CD32",
+                        color: "#32CD32",
                         montaje: praderas_tropical_montaje_gray,
                         mural: praderas_tropical_mural,
                         base: true,
                     },
                     {
                         colorName: "Gray",
-                        colorHex: "#A9A9A9",
+                        color: "#A9A9A9",
                         montaje: praderas_tropical_montaje_gray_2,
                         mural: praderas_tropical_mural_gray,
                     }
@@ -2405,7 +2363,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#228B22",
                         montaje: rio_verde_montaje,
                         mural: rio_verde_mural,
                         base: true,
@@ -2423,14 +2380,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#556B2F",
+                        color: "#556B2F",
                         montaje: silvestre_montaje,
                         mural: silvestre_mural,
                         base: true,
                     },
                     {
                         colorName: "Gray",
-                        colorHex: "#A9A9A9",
+                        color: "#A9A9A9",
                         montaje: silvestre_montaje_2,
                         mural: silvestre_mural_gray,
                     }
@@ -2443,6 +2400,7 @@ export const collections: Array<Collection> = [
         id: "the-classics",
         title: "The Classics",
         portrait: portada_the_classics,
+        video: "/assets/portada_the_classics.mp4",
         date: "2024",
         technique: "Digital y pintado a mano.",
         description: "Descripcióñ.",
@@ -2457,7 +2415,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#556B2F",
                         montaje: hikers_in_a_park_montaje,
                         mural: hikers_in_a_park_mural,
                         base: true,
@@ -2475,14 +2432,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8B4513",
+                        color: "#8B4513",
                         montaje: italian_landscape_montaje,
                         mural: italian_landscape_mural,
                         base: true,
                     },
                     {
                         colorName: "Green",
-                        colorHex: "#6B8E23",
+                        color: "#6B8E23",
                         montaje: italian_landscape_montaje_green,
                         mural: italian_landscape_mural_green,
                     }
@@ -2499,7 +2456,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#DAA520",
                         montaje: prince_of_udaipur_montaje,
                         mural: prince_of_udaipur_mural,
                         base: true,
@@ -2517,7 +2473,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#B8860B",
                         montaje: tapestry_montaje,
                         mural: tapestry_mural,
                         base: true,
@@ -2535,7 +2490,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8B0000",
                         montaje: the_emperors_journey_montaje,
                         mural: the_emperors_journey_mural,
                         base: true,
@@ -2553,7 +2507,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#1E90FF",
                         montaje: waterfall_montaje,
                         mural: waterfall_mural,
                         base: true,
@@ -2567,6 +2520,7 @@ export const collections: Array<Collection> = [
         id: "otros-murales",
         title: "Otros Murales",
         portrait: portada_basa_basa,
+        video: "/assets/portada_otros_murales.mp4",
         date: "2016-2024",
         technique: "Digital y pintado a mano.",
         description: "Descripción.",
@@ -2581,14 +2535,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#ADD8E6",
+                        color: "#ADD8E6",
                         montaje: acuarela_montaje,
                         mural: acuarela_mural,
                         base: true,
                     },
                     {
                         colorName: "Rose",
-                        colorHex: "#FFC0CB",
+                        color: "#FFC0CB",
                         montaje: acuarela_montaje,
                         mural: acuarela_mural_rose,
                     }
@@ -2605,7 +2559,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFD700",
                         montaje: animal_parade_montaje,
                         mural: animal_parade_mural,
                         base: true,
@@ -2623,20 +2576,20 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFA07A",
+                        color: "#FFA07A",
                         montaje: birds_of_paradise_montaje,
                         mural: birds_of_paradise_mural,
                         base: true,
                     },
                     {
                         colorName: "Blue",
-                        colorHex: "#4682B4",
+                        color: "#4682B4",
                         montaje: birds_of_paradise_montaje,
                         mural: birds_of_paradise_mural_blue,
                     },
                     {
                         colorName: "Rose",
-                        colorHex: "#FFC0CB",
+                        color: "#FFC0CB",
                         montaje: birds_of_paradise_montaje,
                         mural: birds_of_paradise_mural_rose,
                     }
@@ -2653,7 +2606,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#1C1C1C",
                         montaje: constelaciones_montaje,
                         mural: constelaciones_mural,
                         base: true,
@@ -2671,7 +2623,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#C2B280",
                         montaje: cortaderas_montaje,
                         mural: cortaderas_mural,
                         base: true,
@@ -2689,14 +2640,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#008000",
+                        color: "#008000",
                         montaje: costa_rica_montaje,
                         mural: costa_rica_mural,
                         base: true,
                     },
                     {
                         colorName: "Gray",
-                        colorHex: "#808080",
+                        color: "#808080",
                         montaje: costa_rica_montaje,
                         mural: costa_rica_mural_gray,
                     }
@@ -2713,7 +2664,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#DDA0DD",
                         montaje: dutch_flowers_montaje,
                         mural: dutch_flowers_mural,
                         base: true,
@@ -2731,7 +2681,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#B8860B",
                         montaje: el_banquete_montaje,
                         mural: el_banquete_mural,
                         base: true,
@@ -2749,14 +2698,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#C2B280",
+                        color: "#C2B280",
                         montaje: el_descanso_de_las_garzas_montaje,
                         mural: el_descanso_de_las_garzas_mural,
                         base: true,
                     },
                     {
                         colorName: "Sepia",
-                        colorHex: "#704214",
+                        color: "#704214",
                         montaje: el_descanso_de_las_garzas_montaje,
                         mural: el_descanso_de_las_garzas_mural_sepia,
                     }
@@ -2773,20 +2722,20 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#32CD32",
+                        color: "#32CD32",
                         montaje: el_eden_montaje,
                         mural: el_eden_mural,
                         base: true,
                     },
                     {
                         colorName: "Natural",
-                        colorHex: "#556B2F",
+                        color: "#556B2F",
                         montaje: el_eden_montaje,
                         mural: el_eden_mural_natural,
                     },
                     {
                         colorName: "Rose",
-                        colorHex: "#FFC0CB",
+                        color: "#FFC0CB",
                         montaje: el_eden_montaje,
                         mural: el_eden_mural_rose,
                     }
@@ -2803,20 +2752,20 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#B0C4DE",
+                        color: "#B0C4DE",
                         montaje: el_jardin_de_la_geisha_montaje,
                         mural: el_jardin_de_la_geisha_mural,
                         base: true,
                     },
                     {
                         colorName: "Acqua",
-                        colorHex: "#20B2AA",
+                        color: "#20B2AA",
                         montaje: el_jardin_de_la_geisha_montaje,
                         mural: el_jardin_de_la_geisha_mural_aqcua,
                     },
                     {
                         colorName: "White",
-                        colorHex: "#FFFFFF",
+                        color: "#FFFFFF",
                         montaje: el_jardin_de_la_geisha_montaje,
                         mural: el_jardin_de_la_geisha_mural_white,
                     }
@@ -2833,7 +2782,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#F4A460",
                         montaje: elena_montaje,
                         mural: elena_mural,
                         base: true,
@@ -2851,7 +2799,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#87CEEB",
                         montaje: en_las_nubes_montaje,
                         mural: en_las_nubes_mural,
                         base: true,
@@ -2869,7 +2816,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#228B22",
                         montaje: follaje_montaje,
                         mural: follaje_mural,
                         base: true,
@@ -2887,20 +2833,20 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8B0000",
+                        color: "#8B0000",
                         montaje: fractal_montaje,
                         mural: fractal_mural,
                         base: true,
                     },
                     {
                         colorName: "Milan",
-                        colorHex: "#FFD700",
+                        color: "bg-st-201915",
                         montaje: fractal_montaje,
                         mural: fractal_mural_milan,
                     },
                     {
                         colorName: "Visón",
-                        colorHex: "#A9A9A9",
+                        color: "#A9A9A9",
                         montaje: fractal_montaje,
                         mural: fractal_mural_vison,
                     }
@@ -2917,14 +2863,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFC0CB",
+                        color: "#FFC0CB",
                         montaje: hanami_montaje,
                         mural: hanami_mural,
                         base: true,
                     },
                     {
                         colorName: "White",
-                        colorHex: "#FFFFFF",
+                        color: "#FFFFFF",
                         montaje: hanami_montaje,
                         mural: hanami_mural_white,
                     }
@@ -2941,7 +2887,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#228B22",
                         montaje: jardin_vertical_montaje,
                         mural: jardin_vertical_mural,
                         base: true,
@@ -2959,14 +2904,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8B4513",
+                        color: "#8B4513",
                         montaje: jardin_victoriano_montaje,
                         mural: jardin_victoriano_mural,
                         base: true,
                     },
                     {
                         colorName: "Sepia",
-                        colorHex: "#704214",
+                        color: "#704214",
                         montaje: jardin_victoriano_montaje,
                         mural: jardin_victoriano_mural_sepia,
                     }
@@ -2983,7 +2928,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#556B2F",
                         montaje: jungla_en_tintas_montaje,
                         mural: jungla_en_tintas_mural,
                         base: true,
@@ -3001,14 +2945,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#A0522D",
+                        color: "#A0522D",
                         montaje: laguna_sepia_montaje,
                         mural: laguna_sepia_mural,
                         base: true,
                     },
                     {
                         colorName: "Blue",
-                        colorHex: "#4682B4",
+                        color: "#4682B4",
                         montaje: laguna_sepia_montaje,
                         mural: laguna_sepia_mural_blue,
                     }
@@ -3025,7 +2969,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#DAA520",
                         montaje: pinceladas_montaje,
                         mural: pinceladas_mural,
                         base: true,
@@ -3043,14 +2986,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#6B8E23",
+                        color: "#6B8E23",
                         montaje: praderas_montaje,
                         mural: praderas_mural,
                         base: true,
                     },
                     {
                         colorName: "Rose",
-                        colorHex: "#FFC0CB",
+                        color: "#FFC0CB",
                         montaje: praderas_montaje,
                         mural: praderas_mural_rose,
                     }
@@ -3067,7 +3010,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#708090",
                         montaje: stadium_montaje,
                         mural: stadium_mural,
                         base: true,
@@ -3085,14 +3027,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#8A2BE2",
+                        color: "#8A2BE2",
                         montaje: utopia_montaje,
                         mural: utopia_mural,
                         base: true,
                     },
                     {
                         colorName: "Rose",
-                        colorHex: "#FFC0CB",
+                        color: "#FFC0CB",
                         montaje: utopia_montaje,
                         mural: utopia_mural_rose,
                     }
@@ -3109,7 +3051,6 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#FFD700",
                         montaje: vuelo_de_mariposas_montaje,
                         mural: vuelo_de_mariposas_mural,
                         base: true,
@@ -3127,14 +3068,14 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        colorHex: "#DC143C",
+                        color: "#DC143C",
                         montaje: wild_circus_montaje,
                         mural: wild_circus_mural,
                         base: true,
                     },
                     {
                         colorName: "Rose",
-                        colorHex: "#FFC0CB",
+                        color: "#FFC0CB",
                         montaje: wild_circus_montaje,
                         mural: wild_circus_mural_rose,
                     }

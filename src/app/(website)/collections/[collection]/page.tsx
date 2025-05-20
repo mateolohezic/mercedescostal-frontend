@@ -56,8 +56,8 @@ export default function CollectionPage({ params }: Props) {
     return (
         <main className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
             <h1 className="sr-only">Colección {foundCollection.title}</h1>
-            <section className="w-full px-12 flex flex-col justify-center items-center gap-8 lg:gap-4">
-                <CollectionVideo title={foundCollection.title}/>
+            <section className="w-full px-4 lg:px-12 flex flex-col justify-center items-center gap-8 lg:gap-4">
+                <CollectionVideo title={foundCollection.title} video={foundCollection.video}/>
                 <div className="w-full flex flex-col justify-start items-start gap-1">
                     <p><b className="uppercase">Artista:</b> Mercedes Costal prints & patterns.</p>
                     <p><b className="uppercase">Año:</b> {foundCollection.date}.</p>
@@ -65,7 +65,7 @@ export default function CollectionPage({ params }: Props) {
                     <p><b className="uppercase">Description:</b> {foundCollection.description}</p>
                 </div>
             </section>
-            <section className="mt-24 w-full px-12 grid grid-cols-2 gap-x-12 gap-y-16">
+            <section className="mt-24 w-full px-4 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-12 lg:gap-y-16">
                 { sortMurales(foundCollection.murales).map((mural, index) => (
                     <MuralCardNew mural={mural} index={index} key={mural.id} />
                 ))}
@@ -97,6 +97,16 @@ export default function CollectionPage({ params }: Props) {
                 <Image src={buen_diseño_2} alt="Buen Diseño Mercedes Costal" className="w-full h-auto object-contain"/>
                 <Image src={buen_diseño_3} alt="Buen Diseño Mercedes Costal" className="w-full h-auto object-contain"/>
             </section>
+            <div className="sr-only">
+                <div className="bg-st-201645"/>
+                <div className="bg-st-201810"/>
+                <div className="bg-st-201820"/>
+                <div className="bg-st-201915"/>
+                <div className="bg-st-green"/>
+                <div className="bg-st-tanger"/>
+                <div className="bg-st-black"/>
+                <div className="bg-st-white"/>
+            </div>
         </main>
     );
 }
