@@ -29,6 +29,7 @@ export const MuralCardNew = ({ mural, index }: Props) => {
     return (
         <>
         <div
+            id={mural.id}
             className="w-full flex flex-col cursor-pointer"
             onClick={ () => setShowModal(true) }
         >

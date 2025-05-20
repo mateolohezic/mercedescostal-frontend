@@ -32,7 +32,9 @@ export const metadata: Metadata = {
 };
 
 export default function SearchResultsPage({ searchParams }: Props) {
-    const searchQuery = searchParams?.query?.trim() || "";
+    const normalizeText = (text: string) => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    const searchQuery = normalizeText(searchParams?.query?.trim() || "");
+
     const results:Array<Mural> = useSearchMurals(searchQuery);
 
     return (
@@ -62,7 +64,7 @@ export default function SearchResultsPage({ searchParams }: Props) {
                         {results.map((mural) => (
                             <Link 
                                 key={mural.id} 
-                                href={`/collections/${mural.href}`} 
+                                href={`/collections/${mural.href}#${mural.id}`} 
                                 className="w-full flex flex-col justify-center items-center gap-4"
                             >
                                 <div className="w-full grow flex justify-center items-center">

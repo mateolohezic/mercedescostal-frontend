@@ -9,14 +9,11 @@ export const useSearchMurals = (query?: string): Array<Mural> => {
 
     const results = useMemo(() => {
         if (!query || query.trim().length < 2) return [];
-        const searchWords = query.toLowerCase().trim().split(/\s+/);
-        const filteredResults = murals.filter(mural =>
-            searchWords.every(word =>
-                mural.title.toLowerCase().includes(word) ||
-                mural.collectionTitle.toLowerCase().includes(word) ||
-                mural.keywords.some(keyword => keyword.toLowerCase().includes(word))
-            )
-        );
+        const normalize = (text: string) => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+        const searchWords = normalize(query).trim().split(/\s+/);
+        const filteredResults = murals.filter(mural => searchWords.every(word => normalize(mural.title).includes(word) || normalize(mural.collectionTitle).includes(word) || mural.keywords.some(keyword => normalize(keyword).includes(word))));
+
         return filteredResults;
     }, [query, murals]);
 
