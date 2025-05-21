@@ -1,4 +1,3 @@
-
 export { BuenDiseñoVideo } from "./highlights/BuenDiseñoVideo";
 export { LondonFestivalVideo } from "./highlights/LondonFestivalVideo";
 export { SplendidVideoUno } from "./highlights/splendid/SplendidVideoUno";
@@ -14,6 +13,7 @@ export { LanguageSelector } from "./LanguageSelector";
 export { MeetTheMakersVideo } from "./MeetTheMakersVideo";
 export { BookVideo } from "./BookVideo";
 export { CafeVideo } from "./CafeVideo";
+export { VideoProcesoCreativo } from "./VideoProcesoCreativo";
 
 export { Navbar } from "./navbar/Navbar";
 export { NavbarLink } from "./navbar/NavbarLink";
@@ -26,6 +26,7 @@ export { FooterForm } from "./footer/FooterForm";
 export { MuralCard } from "./collection/MuralCard";
 export { CollectionVideo } from "./collection/CollectionVideo";
 export { MuralCardNew } from "./collection/MuralCardNew";
+export { ProcesoCreativoClassics } from "./collection/proceso-creativo/ProcesoCreativoClassics";
 
 export { WorkWithUsForm } from "./contact/WorkWithUsForm";
 

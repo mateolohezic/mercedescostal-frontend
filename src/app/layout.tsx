@@ -123,7 +123,6 @@ const gillSans = localFont({
 });
 
 const truetypewritter = localFont({
-  // src: '../assets/fonts/True_Typewritter.woff2',
   src: '../assets/fonts/True_Typewritter_2.ttf',
   display: 'auto',
   variable: '--truetypewritter'
@@ -203,6 +202,10 @@ const links:Array<NavLinkHome> = [
           {
               title:'Vende M.C.',
               href:'/sell-mc'
+          },
+          {
+              title:'Cotizar',
+              href:'/quote'
           },
       ]
   },

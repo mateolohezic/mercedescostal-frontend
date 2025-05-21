@@ -1,8 +1,8 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Mural } from "@/interfaces";
-import { useSearchMurals } from "@/hooks";
 import { Metadata } from "next";
+import { useSearchMurals } from "@/hooks";
+import { sortMurales } from "@/helpers";
+import { Mural } from "@/interfaces";
+import { MuralCardNew } from "@/components";
 
 interface Props {
     searchParams: {
@@ -39,7 +39,7 @@ export default function SearchResultsPage({ searchParams }: Props) {
 
     return (
         <main className="my-24 lg:my-48 w-full grow flex flex-col items-center justify-center lg:justify-start font-truetypewritter">
-            <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
+            <section className="w-full px-4 xl:px-12">
                 <h1 className="w-full font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     {searchQuery.length < 3 ?
                         "No se encontraron resultados."
@@ -60,28 +60,11 @@ export default function SearchResultsPage({ searchParams }: Props) {
                         No se encontraron murales para {searchQuery}.
                     </p>
                 ) : (
-                    <div className="mt-8 w-full grid grid-cols-1 lg:grid-cols-4 gap-8">
-                        {results.map((mural) => (
-                            <Link 
-                                key={mural.id} 
-                                href={`/collections/${mural.href}#${mural.id}`} 
-                                className="w-full flex flex-col justify-center items-center gap-4"
-                            >
-                                <div className="w-full grow flex justify-center items-center">
-                                    <Image 
-                                        src={typeof mural.icons[0] === "string" ? mural.icons[0] : mural.icons[0].src} 
-                                        alt={`Mural ${mural.title}`} 
-                                        width={1920} 
-                                        height={1920} 
-                                        className="w-32 aspect-square object-contain"
-                                    />
-                                </div>
-                                <h3 className="font-gillsans text-xl tracking-[0.5rem] uppercase text-center">
-                                    {mural.title}
-                                </h3>
-                            </Link>
+                    <section className="mt-24 w-full grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-12 lg:gap-y-16">
+                        { sortMurales(results).map((mural, index) => (
+                            <MuralCardNew mural={mural} index={index} key={mural.id} />
                         ))}
-                    </div>
+                    </section>
                 )}
             </section>
         </main>
