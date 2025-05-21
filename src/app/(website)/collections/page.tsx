@@ -52,6 +52,7 @@ export default function CollectionsPage() {
                         className="w-full block aspect-video overflow-hidden relative group"
                     >
                         <Image
+                            priority
                             src={collection.portrait}
                             alt={`Portada de colección ${collection.title}`}
                             className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"
