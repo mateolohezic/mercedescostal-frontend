@@ -33,17 +33,23 @@ export const MuralCardNew = ({ mural, index }: Props) => {
             className="w-full flex flex-col cursor-pointer"
             onClick={ () => setShowModal(true) }
         >
-            <h2 className="grow text-xl uppercase">{ muralIndex > 9 ? muralIndex : `0${muralIndex}` }. {isPattern ? 'Patrón' : 'Mural'} {mural.title}</h2>
+            <h2 className="grow text-xl uppercase">{ muralIndex > 9 ? muralIndex : `0${muralIndex}` }. {isPattern ? 'Pattern' : 'Mural'} {mural.title}</h2>
             <motion.div
                 className="w-full aspect-video relative"
                 onHoverStart={() => setIsHovered(true)}
                 onHoverEnd={() => setIsHovered(false)}
                 >
-                <Image
-                    src={isHovered ? baseVariant.mural : baseVariant.montaje}
-                    alt={`${mural.title} ${isHovered ? 'montaje' : 'mural'}`}
-                    className="size-full object-cover absolute top-0 left-0"
-                />
+                    <Image
+                        priority
+                        src={baseVariant.montaje}
+                        alt={`Montaje ${mural.title}`}
+                        className="size-full object-cover absolute top-0 left-0 z-0"
+                    />
+                    <Image
+                        src={baseVariant.mural}
+                        alt={`Mural ${mural.title}`}
+                        className={`size-full object-cover absolute top-0 left-0 z-10 ${isHovered ? "opacity-100" : "opacity-0"}`}
+                    />
             </motion.div>
         </div>
         <Modal

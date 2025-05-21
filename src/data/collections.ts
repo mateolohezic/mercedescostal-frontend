@@ -585,7 +585,7 @@ import portada_the_classics from "@/assets/collections/the_classics/italian_land
 import portada_landmark from "@/assets/collections/landmark/bosque_de_los_magos/bosque_de_los_magos_montaje.webp";
 import portada_casamar from "@/assets/collections/casamar/casamar/casamar_montaje.webp";
 import portada_vivero from "@/assets/collections/vivero/reina_ana/reina_ana_montaje_2.webp";
-import portada_morris from "@/assets/collections/morris/willow/willow_montaje.webp";
+import portada_morris from "@/assets/collections/morris/tulip_dark/tulip_dark_montaje.webp";
 import portada_vuelta_al_mundo from "@/assets/collections/vuelta_al_mundo/la_riviere/la_riviere_montaje.webp";
 
 export const collections: Array<Collection> = [

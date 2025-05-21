@@ -42,18 +42,9 @@ export default function CollectionsPage() {
     // };
 
     return (
-        <main className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
+        <main className="my-24 lg:my-0 w-full grow flex flex-col items-center font-truetypewritter">
             <h1 className="sr-only">Wallpapers</h1>
-            <section className="w-full max-w-5xl 2xl:max-w-7xl px-4 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
-                <div className="w-full lg:text-xl text-center flex flex-col gap-[1lh]">
-                    <p>No diseñamos papeles. <b className="font-semibold">Creamos atmósferas.</b></p>
-                    <p>En Mercedes Costal, entendemos el muro como un lienzo silencioso que transforma la manera en que habitamos un espacio. Nuestros wallpapers son el resultado de un proceso que une diseño contemporáneo, sensibilidad artística y una profunda investigación en color, textura y escala.</p>
-                    <p>Cada pieza nace de una idea: invitar a la contemplación. Trabajamos con materiales de alta calidad y tintas libres de solventes, garantizando durabilidad, respeto por el entorno y una experiencia visual envolvente. Las colecciones están pensadas para dialogar con la arquitectura, para acompañar sin invadir, para convertir lo cotidiano en algo sutilmente extraordinario.</p>
-                    <p>No seguimos tendencias. Creamos lenguaje. Porque creemos que el diseño no es decoración, sino una forma de pensamiento.</p>
-                </div>
-            </section>
-
-            <section className="mt-24 w-full flex flex-col">
+            <section className="mt-24 w-full grid grid-cols-1 lg:grid-cols-2">
                 { collections.map((collection) => (
                     <Link
                         key={collection.id}
@@ -84,6 +75,14 @@ export default function CollectionsPage() {
                     })}
                 </div>
             </section> */}
+            <section className="my-24 lg:my-48 w-full max-w-5xl 2xl:max-w-7xl px-4 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
+                <div className="w-full lg:text-lg text-start flex flex-col gap-[1lh]">
+                    <p>No diseñamos papeles. Creamos atmósferas.</p>
+                    <p>En Mercedes Costal, entendemos el muro como un lienzo silencioso que transforma la manera en que habitamos un espacio. Nuestros wallpapers son el resultado de un proceso que une diseño contemporáneo, sensibilidad artística y una profunda investigación en color, textura y escala.</p>
+                    <p>Cada pieza nace de una idea: invitar a la contemplación. Trabajamos con materiales de alta calidad y tintas libres de solventes, garantizando durabilidad, respeto por el entorno y una experiencia visual envolvente. Las colecciones están pensadas para dialogar con la arquitectura, para acompañar sin invadir, para convertir lo cotidiano en algo sutilmente extraordinario.</p>
+                    <p>No seguimos tendencias. Creamos lenguaje. Porque creemos que el diseño no es decoración, sino una forma de pensamiento.</p>
+                </div>
+            </section>
         </main>
     );
 }
