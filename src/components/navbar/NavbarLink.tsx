@@ -56,7 +56,7 @@ export const NavbarLink = ({ navlink, index, isHome, menuExpanded, toggleMenu }:
                                 >
                                     <Link
                                         href={link.href}
-                                        className={`${isHome ? "text-white/90 hover:bg-white/25" : "text-black/90"} w-fit bg-white/50 uppercase font-light tracking-widest whitespace-nowrap transition-150 block`}
+                                        className={`${isHome ? "text-white/90 hover:bg-white/25" : "text-black/90 bg-white"} w-fit uppercase font-light tracking-widest whitespace-nowrap transition-150 block`}
                                     >
                                         {link.title}
                                     </Link>
