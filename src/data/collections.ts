@@ -70,6 +70,7 @@ import degrade_mural_st_201810 from "@/assets/collections/casamar/degrade/degrad
 import degrade_mural_st_201820 from "@/assets/collections/casamar/degrade/degrade_mural_st_201820.webp";
 import degrade_mural_st_201915 from "@/assets/collections/casamar/degrade/degrade_mural_st_201915.webp";
 import degrade_mural_tanger_tan from "@/assets/collections/casamar/degrade/degrade_mural_tanger_tan.webp";
+import degrade_montaje from "@/assets/collections/casamar/degrade/degrade_montaje.webp";
 
 import ethnic_icon_1 from "@/assets/collections/casamar/ethinc/ethnic_icon_1.webp";
 import ethnic_mural_artful_green from "@/assets/collections/casamar/ethinc/ethnic_mural_artful_green.webp";
@@ -99,7 +100,7 @@ import fish_mural_st_201810 from "@/assets/collections/casamar/fish/fish_mural_s
 import fish_mural_st_201820 from "@/assets/collections/casamar/fish/fish_mural_st_201820.webp";
 import fish_mural_st_201915 from "@/assets/collections/casamar/fish/fish_mural_st_201915.webp";
 import fish_mural_tanger_tan from "@/assets/collections/casamar/fish/fish_mural_tanger_tan.webp";
-import fish_mural_white from "@/assets/collections/casamar/fish/fish_mural_white.webp";
+// import fish_mural_white from "@/assets/collections/casamar/fish/fish_mural_white.webp";
 import fish_montaje from "@/assets/collections/casamar/fish/fish_montaje.webp";
 
 import morris_icon_1 from "@/assets/collections/casamar/morris/morris_icon_1.webp";
@@ -253,6 +254,7 @@ import tartan_montaje from "@/assets/collections/landmark/tartan/tartan_montaje.
 
 import universe_icon_1 from "@/assets/collections/landmark/universe/universe_icon_1.webp";
 import universe_mural from "@/assets/collections/landmark/universe/universe_mural.webp";
+import universe_montaje from "@/assets/collections/landmark/universe/universe_montaje.webp";
 
 import watercolor_stripes_icon_1 from "@/assets/collections/landmark/watercolor_stripes/watercolor_stripes_icon_1.webp";
 import watercolor_stripes_mural from "@/assets/collections/landmark/watercolor_stripes/watercolor_stripes_mural.webp";
@@ -552,6 +554,7 @@ import magnolia_real_mural_black from "@/assets/collections/vuelta_al_mundo/magn
 
 import mundo_animal_icon_1 from "@/assets/collections/vuelta_al_mundo/mundo_animal/mundo_animal_icon_1.webp";
 import mundo_animal_mural from "@/assets/collections/vuelta_al_mundo/mundo_animal/mundo_animal_mural.webp";
+import mundo_animal_montaje from "@/assets/collections/vuelta_al_mundo/mundo_animal/mundo_animal_montaje.webp";
 
 import palmario_icon_1 from "@/assets/collections/vuelta_al_mundo/palmario/palmario_icon_1.webp";
 import palmario_montaje from "@/assets/collections/vuelta_al_mundo/palmario/palmario_montaje.webp";
@@ -897,46 +900,46 @@ export const collections: Array<Collection> = [
                     {
                         colorName: "Artful Green",
                         color: "bg-st-green",
-                        montaje: degrade_mural_artful_green,
+                        montaje: degrade_montaje,
                         mural: degrade_mural_artful_green,
                     },
                     {
                         colorName: "Black",
                         color: "bg-st-black",
-                        montaje: degrade_mural_st_201820,
+                        montaje: degrade_montaje,
                         mural: degrade_mural_st_201820,
                     },
                     {
                         colorName: "St 201645",
                         color: "bg-st-201645",
-                        montaje: degrade_mural_st_201645,
+                        montaje: degrade_montaje,
                         mural: degrade_mural_st_201645,
                         base: true,
                     },
                     {
                         colorName: "St 201810",
                         color: "bg-st-201810",
-                        montaje: degrade_mural_st_201810,
+                        montaje: degrade_montaje,
                         mural: degrade_mural_st_201810,
                     },
                     {
                         colorName: "St 201915",
                         color: "bg-st-201915",
-                        montaje: degrade_mural_st_201915,
+                        montaje: degrade_montaje,
                         mural: degrade_mural_st_201915,
                         base: true,
                     },
                     {
                         colorName: "St 201820",
                         color: "bg-st-201820",
-                        montaje: degrade_mural_st_201820,
+                        montaje: degrade_montaje,
                         mural: degrade_mural_st_201820,
                         base: true,
                     },
                     {
                         colorName: "Tanger Tan",
                         color: "bg-st-tanger",
-                        montaje: degrade_mural_tanger_tan,
+                        montaje: degrade_montaje,
                         mural: degrade_mural_tanger_tan,
                     },
                 ],
@@ -1096,11 +1099,17 @@ export const collections: Array<Collection> = [
                         mural: fish_mural_tanger_tan,
                     },
                     {
-                        colorName: "White",
-                        color: "bg-st-white",
+                        colorName: "Black",
+                        color: "bg-st-black",
                         montaje: fish_montaje,
-                        mural: fish_mural_white,
+                        mural: fish_mural_st_201820,
                     },
+                    // {
+                    //     colorName: "White",
+                    //     color: "bg-st-white",
+                    //     montaje: fish_montaje,
+                    //     mural: fish_mural_white,
+                    // },
                 ],
                 href: "casamar",
             },
@@ -1752,7 +1761,7 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: universe_mural,
+                        montaje: universe_montaje,
                         mural: universe_mural,
                         base: true,
                     },
@@ -2359,22 +2368,11 @@ export const collections: Array<Collection> = [
                 ],
                 href: "vuelta-al-mundo",
             },
-
-
-
-
-
-
-
-
-
-
-
             {
-                id: "birds-of-paradise-otros-murales",
+                id: "birds-of-paradise-vuelta-al-mundo",
                 title: "Birds of Paradise",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [birds_of_paradise_icon_1],
                 keywords: ["botanico", "animales", "amarillo", "ocre"],
                 variants: [
@@ -2398,13 +2396,13 @@ export const collections: Array<Collection> = [
                         mural: birds_of_paradise_mural_rose,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "cortaderas-otros-murales",
+                id: "cortaderas-vuelta-al-mundo",
                 title: "Cortaderas",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [cortaderas_icon_1],
                 keywords: ["paisaje", "amarillo", "ocre", "vison"],
                 variants: [
@@ -2415,13 +2413,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "costa-rica-otros-murales",
+                id: "costa-rica-vuelta-al-mundo",
                 title: "Costa Rica",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [costa_rica_icon_1],
                 keywords: ["botanico", "animales", "verde", "rojo", "rosa"],
                 variants: [
@@ -2439,13 +2437,13 @@ export const collections: Array<Collection> = [
                         mural: costa_rica_mural_gray,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "dutch-flowers-otros-murales",
+                id: "dutch-flowers-vuelta-al-mundo",
                 title: "Dutch Flowers",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [dutch_flowers_icon_1],
                 keywords: ["botanico", "negro", "oscuro", "blanco", "claro"],
                 variants: [
@@ -2456,13 +2454,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "el-banquete-otros-murales",
+                id: "el-banquete-vuelta-al-mundo",
                 title: "El Banquete",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [el_banquete_icon_1],
                 keywords: ["paisaje", "animales", "amarillo", "ocre", "verde"],
                 variants: [
@@ -2473,13 +2471,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "el-descanso-de-las-garzas-otros-murales",
+                id: "el-descanso-de-las-garzas-vuelta-al-mundo",
                 title: "El Descanso de las Garzas",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [el_descanso_de_las_garzas_icon_1, el_descanso_de_las_garzas_icon_2, el_descanso_de_las_garzas_icon_3],
                 keywords: ["paisaje", "animales", "verde"],
                 variants: [
@@ -2497,13 +2495,13 @@ export const collections: Array<Collection> = [
                         mural: el_descanso_de_las_garzas_mural_sepia,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "el-eden-otros-murales",
+                id: "el-eden-vuelta-al-mundo",
                 title: "El Edén",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [el_eden_icon_1],
                 keywords: ["animales", "botanico", "verde", "blanco", "claro", "chinoiserie"],
                 variants: [
@@ -2527,13 +2525,13 @@ export const collections: Array<Collection> = [
                         mural: el_eden_mural_rose,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "el-jardin-de-la-geisha-otros-murales",
+                id: "el-jardin-de-la-geisha-vuelta-al-mundo",
                 title: "El Jardín de la Geisha",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [el_jardin_de_la_geisha_icon_1],
                 keywords: ["botanico", "chinoiserie", "rojo", "rosa", "paisaje", "personas"],
                 variants: [
@@ -2557,13 +2555,13 @@ export const collections: Array<Collection> = [
                         mural: el_jardin_de_la_geisha_mural_white,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "elena-otros-murales",
+                id: "elena-vuelta-al-mundo",
                 title: "Elena",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [elena_icon_1],
                 keywords: ["animales", "paisaje", "verde", "azul"],
                 variants: [
@@ -2574,13 +2572,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "follaje-otros-murales",
+                id: "follaje-vuelta-al-mundo",
                 title: "Follaje",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [follaje_icon_1],
                 keywords: ["botanico", "vison", "blanco", "claro"],
                 variants: [
@@ -2591,13 +2589,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "hanami-otros-murales",
+                id: "hanami-vuelta-al-mundo",
                 title: "Hanami",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [hanami_icon_1],
                 keywords: ["botanico", "blanco", "claro", "rojo", "rosa"],
                 variants: [
@@ -2615,13 +2613,13 @@ export const collections: Array<Collection> = [
                         mural: hanami_mural_white,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "jardin-vertical-otros-murales",
+                id: "jardin-vertical-vuelta-al-mundo",
                 title: "Jardín Vertical",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [jardin_vertical_icon_1],
                 keywords: ["botanico", "animales", "azul", "blanco", "claro"],
                 variants: [
@@ -2632,13 +2630,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "jardin-victoriano-otros-murales",
+                id: "jardin-victoriano-vuelta-al-mundo",
                 title: "Jardín Victoriano",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [jardin_victoriano_icon_1],
                 keywords: ["paisaje", "botanico", "arquitectura", "negro", "oscuro", "blanco", "claro"],
                 variants: [
@@ -2656,13 +2654,13 @@ export const collections: Array<Collection> = [
                         mural: jardin_victoriano_mural_sepia,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "jungla-en-tintas-otros-murales",
+                id: "jungla-en-tintas-vuelta-al-mundo",
                 title: "Jungla en Tintas",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [jungla_en_tintas_icon_1],
                 keywords: ["paisaje", "animales", "negro", "oscuro", "blanco", "claro"],
                 variants: [
@@ -2673,13 +2671,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "laguna-sepia-otros-murales",
+                id: "laguna-sepia-vuelta-al-mundo",
                 title: "Laguna Sepia",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [laguna_sepia_icon_1],
                 keywords: ["paisaje", "verde", "vison"],
                 variants: [
@@ -2697,13 +2695,13 @@ export const collections: Array<Collection> = [
                         mural: laguna_sepia_mural_blue,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "praderas-otros-murales",
+                id: "praderas-vuelta-al-mundo",
                 title: "Praderas",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [praderas_icon_1],
                 keywords: ["vison", "paisaje"],
                 variants: [
@@ -2721,13 +2719,13 @@ export const collections: Array<Collection> = [
                         mural: praderas_mural_rose,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
             {
-                id: "utopia-otros-murales",
+                id: "utopia-vuelta-al-mundo",
                 title: "Utopía",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Vuelta al Mundo",
+                collectionId: "vuelta-al-mundo",
                 icons: [utopia_icon_1],
                 keywords: ["paisaje", "azul"],
                 variants: [
@@ -2745,25 +2743,8 @@ export const collections: Array<Collection> = [
                         mural: utopia_mural_rose,
                     }
                 ],
-                href: "otros-murales",
+                href: "vuelta-al-mundo",
             },
-
-
-
-
-
-
-
-
-
-
-
-            
-
-
-
-
-
         ]
     },
     {
@@ -3075,19 +3056,11 @@ export const collections: Array<Collection> = [
                 ],
                 href: "otros-murales",
             },
-
-
-
-
-
-
-
-
             {
-                id: "cuerpos-celestes-vuelta-al-mundo",
+                id: "cuerpos-celestes-otros-murales",
                 title: "Cuerpos Celestes",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
                 icons: [cuerpos_celestes_icon_1],
                 keywords: ["geometrico", "texturas", "luxury", "gris"],
                 variants: [
@@ -3111,13 +3084,13 @@ export const collections: Array<Collection> = [
                         mural: cuerpos_celestes_mural_gray_plomo,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "otros-murales",
             },
             {
-                id: "estuco-vuelta-al-mundo",
+                id: "estuco-otros-murales",
                 title: "Estuco",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
                 icons: [estuco_icon_1],
                 keywords: ["textura", "pared", "rústico"],
                 variants: [
@@ -3128,13 +3101,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "otros-murales",
             },
             {
-                id: "etnico-vuelta-al-mundo",
+                id: "etnico-otros-murales",
                 title: "Étnico",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
                 icons: [etnico_icon_1],
                 keywords: ["abstracto", "geometrico", "luxury", "naranja", "marron"],
                 variants: [
@@ -3152,30 +3125,30 @@ export const collections: Array<Collection> = [
                         mural: etnico_mural,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "otros-murales",
             },
             {
-                id: "mundo-animal-vuelta-al-mundo",
+                id: "mundo-animal-otros-murales",
                 title: "Mundo Animal",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
                 icons: [mundo_animal_icon_1],
                 keywords: ["fauna", "naturaleza", "animales"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: mundo_animal_mural,
+                        montaje: mundo_animal_montaje,
                         mural: mundo_animal_mural,
                         base: true,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "otros-murales",
             },
             {
-                id: "patagonia-vuelta-al-mundo",
+                id: "patagonia-otros-murales",
                 title: "Patagonia",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Otros Murales",
+                collectionId: "otros-murales",
                 icons: [patagonia_icon_1],
                 keywords: ["geometrico", "abstracto", "negro", "oscuro", "blanco", "claro"],
                 variants: [
@@ -3193,19 +3166,8 @@ export const collections: Array<Collection> = [
                         mural: patagonia_mural,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "otros-murales",
             },
-
-
-
-
-
-
-
-
-
-
-
         ],
     },
 ];
