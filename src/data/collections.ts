@@ -63,8 +63,13 @@ import corals_mural_st_201820 from "@/assets/collections/casamar/corals/corals_m
 import corals_mural_st_201915 from "@/assets/collections/casamar/corals/corals_mural_st_201915.webp";
 import corals_montaje from "@/assets/collections/casamar/corals/corals_montaje.webp";
 
-import degrade_mural from "@/assets/collections/casamar/degrade/degrade_mural.webp";
 import degrade_icon_1 from "@/assets/collections/casamar/degrade/degrade_icon_1.webp";
+import degrade_mural_artful_green from "@/assets/collections/casamar/degrade/degrade_mural_artful_green.webp";
+import degrade_mural_st_201645 from "@/assets/collections/casamar/degrade/degrade_mural_st_201645.webp";
+import degrade_mural_st_201810 from "@/assets/collections/casamar/degrade/degrade_mural_st_201810.webp";
+import degrade_mural_st_201820 from "@/assets/collections/casamar/degrade/degrade_mural_st_201820.webp";
+import degrade_mural_st_201915 from "@/assets/collections/casamar/degrade/degrade_mural_st_201915.webp";
+import degrade_mural_tanger_tan from "@/assets/collections/casamar/degrade/degrade_mural_tanger_tan.webp";
 
 import ethnic_icon_1 from "@/assets/collections/casamar/ethinc/ethnic_icon_1.webp";
 import ethnic_mural_artful_green from "@/assets/collections/casamar/ethinc/ethnic_mural_artful_green.webp";
@@ -890,10 +895,49 @@ export const collections: Array<Collection> = [
                 keywords: ["abstracto", "vison", "blanco", "claro"],
                 variants: [
                     {
-                        colorName: "Estándar",
-                        montaje: degrade_mural,
-                        mural: degrade_mural,
+                        colorName: "Artful Green",
+                        color: "bg-st-green",
+                        montaje: degrade_mural_artful_green,
+                        mural: degrade_mural_artful_green,
+                    },
+                    {
+                        colorName: "Black",
+                        color: "bg-st-black",
+                        montaje: degrade_mural_st_201820,
+                        mural: degrade_mural_st_201820,
+                    },
+                    {
+                        colorName: "St 201645",
+                        color: "bg-st-201645",
+                        montaje: degrade_mural_st_201645,
+                        mural: degrade_mural_st_201645,
                         base: true,
+                    },
+                    {
+                        colorName: "St 201810",
+                        color: "bg-st-201810",
+                        montaje: degrade_mural_st_201810,
+                        mural: degrade_mural_st_201810,
+                    },
+                    {
+                        colorName: "St 201915",
+                        color: "bg-st-201915",
+                        montaje: degrade_mural_st_201915,
+                        mural: degrade_mural_st_201915,
+                        base: true,
+                    },
+                    {
+                        colorName: "St 201820",
+                        color: "bg-st-201820",
+                        montaje: degrade_mural_st_201820,
+                        mural: degrade_mural_st_201820,
+                        base: true,
+                    },
+                    {
+                        colorName: "Tanger Tan",
+                        color: "bg-st-tanger",
+                        montaje: degrade_mural_tanger_tan,
+                        mural: degrade_mural_tanger_tan,
                     },
                 ],
                 href: "casamar",

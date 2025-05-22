@@ -82,8 +82,13 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                                                 !isSelected && setSelectedVariant(variant);
                                             }}
                                             key={`${mural.id}-variant-${idx}`}
-                                            className={`relative size-8 lg:size-6 shrink-0 rounded-full border transition-150 ${variant.color ?? ''} ${isSelected ? "border-transparent" : "border-black/25"} hover:opacity-75 group`} 
+                                            className={`relative size-8 lg:size-6 shrink-0 rounded-full transition-150 ${variant.color ?? ''} hover:opacity-75 group`} 
                                         >
+                                            { !isSelected &&
+                                                <div className="size-full flex justify-center items-center absolute top-0 left-0">
+                                                    <div className="size-5 lg:size-4 rounded-full bg-white"/>
+                                                </div>
+                                            }
                                             <span className="sr-only">{variant.colorName}</span>
                                             <div className="hidden lg:block absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-black bg-white border border-black/10 px-2 py-0.5 rounded opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200">
                                                 {variant.colorName}
