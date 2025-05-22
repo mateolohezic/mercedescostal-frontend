@@ -482,7 +482,6 @@ import reina_ana_mural_2 from "@/assets/collections/vivero/reina_ana/reina_ana_m
 
 import alexandria_icon_1 from "@/assets/collections/vuelta_al_mundo/alexandria/alexandria_icon_1.webp";
 import alexandria_montaje from "@/assets/collections/vuelta_al_mundo/alexandria/alexandria_montaje.webp";
-import alexandria_montaje_2 from "@/assets/collections/vuelta_al_mundo/alexandria/alexandria_montaje_2.webp";
 import alexandria_mural from "@/assets/collections/vuelta_al_mundo/alexandria/alexandria_mural.webp";
 
 // import bindi_icon_1 from "@/assets/collections/vuelta_al_mundo/bindi/bindi_icon_1.webp";
@@ -962,8 +961,8 @@ export const collections: Array<Collection> = [
                 keywords: ["pattern", "patron", "patrón", "botanico", "animales", "azul", "blanco", "claro"],
                 variants: [
                     {
-                        colorName: "Estándar",
-                        color: "bg-st-black",
+                        colorName: "St 201810",
+                        color: "bg-st-201810",
                         montaje: exotic_montaje,
                         mural: exotic_mural,
                         base: true,
@@ -1249,7 +1248,7 @@ export const collections: Array<Collection> = [
                 keywords: ["pattern", "patron", "patrón", "texturas", "geometrico", "abstracto", "negro", "oscuro", "azul"],
                 variants: [
                     {
-                        colorName: "Estandar",
+                        colorName: "Black",
                         color: "bg-st-black",
                         montaje: shibori_montaje,
                         mural: shibori_mural_black,
@@ -2026,12 +2025,6 @@ export const collections: Array<Collection> = [
                         mural: alexandria_mural,
                         base: true,
                     },
-                    {
-                        colorName: "Variante 2",
-                        color: "#8B0000",
-                        montaje: alexandria_montaje_2,
-                        mural: alexandria_mural,
-                    }
                 ],
                 href: "vuelta-al-mundo",
             },

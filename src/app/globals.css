@@ -139,14 +139,35 @@
     display: none;
   }
 }
-/* 
-st:{
-  '201645': '#f1e8df',
-  '201810': '#536875',
-  '201820': '#cabeae',
-  '201915': '#dfba62',
-  'green': '#9ca797',
-  'tanger': '#e2bcaf',
-  'black': '#000000',
-  'white': '#ffffff',
-}, */
+
+.bg-st-201645{
+  background-color: #f1e8df;
+}
+
+.bg-st-201810{
+  background-color: #536875;
+}
+
+.bg-st-201820{
+  background-color: #f1e8df;
+}
+
+.bg-st-201915{
+  background-color: #dfba62;
+}
+
+.bg-st-green{
+  background-color: #9ca797;
+}
+
+.bg-st-tanger{
+  background-color: #e2bcaf;
+}
+
+.bg-st-black{
+  background-color: #000000;
+}
+
+.bg-st-white{
+  background-color: #ffffff;
+}
