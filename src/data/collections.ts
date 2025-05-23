@@ -282,6 +282,7 @@ import flowers_dark_mural from "@/assets/collections/morris/flowers_dark/flowers
 
 import flowers_light_icon_1 from "@/assets/collections/morris/flowers_light/flowers_light_icon_1.webp";
 import flowers_light_mural from "@/assets/collections/morris/flowers_light/flowers_light_mural.webp";
+import flowers_light_montaje from "@/assets/collections/morris/flowers_light/flowers_light_montaje.webp";
 
 import membrillos_claro_icon_1 from "@/assets/collections/morris/membrillos_claro/membrillos_claro_icon_1.webp";
 import membrillos_claro_montaje from "@/assets/collections/morris/membrillos_claro/membrillos_claro_montaje.webp";
@@ -1840,7 +1841,7 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: flowers_light_mural,
+                        montaje: flowers_light_montaje,
                         mural: flowers_light_mural,
                         base: true,
                     },
