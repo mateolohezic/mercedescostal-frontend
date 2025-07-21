@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { collections } from '@/data/collections';
 import { sortMurales } from "@/helpers";
-import { CollectionVideo, MuralCardNew, ProcesoCreativoClassics } from '@/components';
+import { CollectionVideo, MuralCardNew, ProcesoCreativoBasaBasa, ProcesoCreativoCasamar, ProcesoCreativoClassics, ProcesoCreativoLandmark, ProcesoCreativoMorris } from '@/components';
 
 interface Props {
     params: {
@@ -69,7 +69,11 @@ export default function CollectionPage({ params }: Props) {
                 ))}
             </section>
             {
-                foundCollection.id === "the-classics" && <ProcesoCreativoClassics collection={foundCollection} />
+                foundCollection.id === "the-classics" ? <ProcesoCreativoClassics/> :
+                foundCollection.id === "morris" ? <ProcesoCreativoMorris/> :
+                foundCollection.id === "basa-basa" ? <ProcesoCreativoBasaBasa/> :
+                foundCollection.id === "landmark" ? <ProcesoCreativoLandmark/> :
+                foundCollection.id === "casamar" && <ProcesoCreativoCasamar/>
             }
         </main>
     );

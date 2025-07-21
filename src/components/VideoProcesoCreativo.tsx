@@ -35,8 +35,8 @@ export const VideoProcesoCreativo = ({video, className, buttonClassName = "botto
     };
 
     return (
-        <div className={`size-full relative ${className}`}>
-            <div className={`absolute flex gap-4 z-50 ${buttonClassName}`}>
+        <div className={`size-full group relative ${className}`}>
+            <div className={`opacity-0 group-hover:opacity-100 absolute flex gap-4 z-50 transition-all duration-200 ${buttonClassName}`}>
                 <button
                     type="button"
                     onClick={togglePlayPause}

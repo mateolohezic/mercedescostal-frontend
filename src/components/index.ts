@@ -27,6 +27,10 @@ export { MuralCard } from "./collection/MuralCard";
 export { CollectionVideo } from "./collection/CollectionVideo";
 export { MuralCardNew } from "./collection/MuralCardNew";
 export { ProcesoCreativoClassics } from "./collection/proceso-creativo/ProcesoCreativoClassics";
+export { ProcesoCreativoCasamar } from "./collection/proceso-creativo/ProcesoCreativoCasamar";
+export { ProcesoCreativoMorris } from "./collection/proceso-creativo/ProcesoCreativoMorris";
+export { ProcesoCreativoBasaBasa } from "./collection/proceso-creativo/ProcesoCreativoBasaBasa";
+export { ProcesoCreativoLandmark } from "./collection/proceso-creativo/ProcesoCreativoLandmark";
 
 export { WorkWithUsForm } from "./contact/WorkWithUsForm";
 
