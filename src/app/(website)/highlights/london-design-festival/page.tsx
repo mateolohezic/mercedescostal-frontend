@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import { LondonFestivalVideo } from "@/components";
+import { Video } from "@/components";
 import london_festival_1 from "@/assets/highlights/london-design-festival/london_festival_1.webp";
 import london_festival_2 from "@/assets/highlights/london-design-festival/london_festival_2.webp";
 import london_festival_3 from "@/assets/highlights/london-design-festival/london_festival_3.webp";
@@ -63,7 +63,7 @@ export default function LondonDesignFestivalPage() {
                 <Image src={london_festival_4} alt="London Design Festival Mercedes Costal" className="w-full max-w-2xl object-contain"/>
             </section>
             <section className="mt-24 lg:mt-12 w-full max-w-5xl 2xl:max-w-7xl flex justify-start lg:justify-end px-4 xl:px-0 overflow-x-hidden">
-                <LondonFestivalVideo/>
+                <Video video={"/assets/highlights/london_festival_video.mp4"} className="max-w-72 lg:max-w-2xl relative lg:left-9" buttonClassName="top-4 left-4"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl flex flex-col justify-center items-center gap-1 lg:gap-4 px-4 md:px-0">
                 <Image src={london_festival_5} alt="London Design Festival Mercedes Costal" className="w-full h-auto object-contain"/>

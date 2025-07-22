@@ -6,13 +6,13 @@ import basa_basa_proceso_4 from "@/assets/proceso_creativo/basa_basa/basa_basa_p
 import basa_basa_proceso_5 from "@/assets/proceso_creativo/basa_basa/basa_basa_proceso_5.webp";
 import basa_basa_proceso_6 from "@/assets/proceso_creativo/basa_basa/basa_basa_proceso_6.webp";
 import basa_basa_proceso_7 from "@/assets/proceso_creativo/basa_basa/basa_basa_proceso_7.webp";
-import { VideoProcesoCreativo } from "@/components";
+import { Video } from "@/components";
 
 export const ProcesoCreativoBasaBasa = () => {
     return (
         <section className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
             <div className="w-full max-w-4xl flex items-center gap-12">
-                <VideoProcesoCreativo video={"/assets/proceso_creativo/basa_basa/basa_basa_proceso_1.mp4"} className="w-full max-w-xs shrink-0"/>
+                <Video video={"/assets/proceso_creativo/basa_basa/basa_basa_proceso_1.mp4"} className="w-full max-w-xs shrink-0"/>
                 <p className="grow text-lg text-justify">Trabajamos conjuntamente desde las diferentes áreas del diseño, para lograr, a través de nuestros empapelados y murales, un equilibrio entre el arte y el interiorismo, generando con ellos, espacios, donde los colores, las texturas y las formas se transforman en los protagonistas de los ambientes.”</p>
             </div>
             <div className="mt-48 w-full max-w-4xl flex flex-col gap-4">
@@ -31,7 +31,7 @@ export const ProcesoCreativoBasaBasa = () => {
                 <p className="text-lg">Titulo</p>
             </div>
             <div className="mt-48 w-full max-w-md">
-                <VideoProcesoCreativo video={"/assets/proceso_creativo/basa_basa/basa_basa_proceso_2.mp4"} className="w-full"/>
+                <Video video={"/assets/proceso_creativo/basa_basa/basa_basa_proceso_2.mp4"} className="w-full"/>
             </div>
             <div className="mt-48 w-full flex flex-col items-center gap-4">
                 <Image src={basa_basa_proceso_4} alt="Buen Diseño Mercedes Costal" className="w-full object-contain"/>

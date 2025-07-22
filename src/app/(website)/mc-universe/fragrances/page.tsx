@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import portada from "@/assets/mc-universe/fragrances/portada.webp";
 import fragrances_1 from "@/assets/mc-universe/fragrances/fragrances_1.webp";
@@ -58,9 +57,9 @@ export default function FragrancesPage() {
                 <div className="w-full max-w-2xl lg:text-xl">
                     <p>De la necesidad de resignificar nuestro universo inspiracional surge nuestra línea de fragancias inspirdas en lo más noble de la naturaleza.</p>
                     <p className="mt-8">Siete estilos diferentes que buscan despertar los sentidos y envolvernos en un único vínculo con los manjares de la tierra y sus esencias.</p>
-                    <p className="mt-8 text-center lg:text-start">
+                    {/* <p className="mt-8 text-center lg:text-start">
                         <Link href="https://wa.me/5491160208460?text=Hola!%20Estoy%20interesado%20en%20las%20fragancias%20de%20Mercedes%20Costal" target="_blank" className='border-b border-b-black hover:opacity-75 transition-150'>Pedílas aquí</Link>
-                    </p>
+                    </p> */}
                 </div>
             </section>
             <section className="mt-8 lg:mt-12 w-full max-w-5xl 2xl:max-w-7xl px-4 md:px-0">
@@ -84,9 +83,9 @@ export default function FragrancesPage() {
                     <Image src={fragrances_13} alt="Fragrances Mercedes Costal" className="size-full object-cover aspect-[3/4]"/>
                     <Image src={fragrances_14} alt="Fragrances Mercedes Costal" className="size-full object-cover aspect-[3/4]"/>
                 </div>
-                <p className="mt-12 text-center">
+                {/* <p className="mt-12 text-center">
                     <Link href="https://wa.me/5491160208460?text=Hola!%20Estoy%20interesado%20en%20las%20fragancias%20de%20Mercedes%20Costal" target="_blank" className='text-lg border-b border-b-black hover:opacity-75 transition-150'>Incorporalas a tu tienda.</Link>
-                </p>
+                </p> */}
             </section>
         </main>
     );

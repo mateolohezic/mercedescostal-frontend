@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import { BuenDiseñoVideo } from "@/components";
+import { Video } from "@/components";
 import portada from "@/assets/highlights/good-design/portada.webp";
 import buen_diseño_1 from "@/assets/highlights/good-design/buen_diseño_1.webp";
 import buen_diseño_2 from "@/assets/highlights/good-design/buen_diseño_2.webp";
@@ -50,7 +50,7 @@ export default function BuenDiseñoPage() {
                 <Image src={buen_diseño_1} alt="Buen Diseño Mercedes Costal" className="w-full object-contain"/>
             </section>
             <section className="mt-12 lg:mt-48 w-full max-w-2xl flex flex-col justify-center items-center px-4 xl:px-0">
-                <BuenDiseñoVideo/>
+                <Video video={"/assets/highlights/buen_diseño_video.mp4"} className="size-full aspect-[3/4]"/>
                 <p className="w-full text-start p-2">Animación del Mural El Edén, 2021.</p>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-md flex flex-col justify-center items-center gap-4 lg:gap-8 px-4 xl:px-0">

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { CafeVideo } from "@/components";
+import { Video } from "@/components";
 import portada from "@/assets/mc-universe/cafe/portada.webp";
 import cafe_1 from "@/assets/mc-universe/cafe/cafe_1.webp";
 import cafe_2 from "@/assets/mc-universe/cafe/cafe_2.webp";
@@ -59,7 +59,7 @@ export default function CostalCafePage() {
                 <Image src={cafe_1} alt="Meet the Makers Mercedes Costal" className="w-full lg:w-1/2 object-contain"/>
             </section>
             <section className="mt-1 lg:mt-0 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex justify-end">
-                <CafeVideo/>
+                <Video video={"/assets/mc-universe/cafe_video.mp4"} className="w-full max-w-xl aspect-[3/4]"/>
             </section>
             <section className="mt-1 lg:mt-12 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
                 <Image src={cafe_2} alt="Meet the Makers Mercedes Costal" className="w-full object-contain"/>

@@ -174,19 +174,19 @@ import bulgaros_icon_1 from "@/assets/collections/landmark/bulgaros/bulgaros_ico
 import bulgaros_montaje from "@/assets/collections/landmark/bulgaros/bulgaros_montaje.webp";
 import bulgaros_mural from "@/assets/collections/landmark/bulgaros/bulgaros_mural.webp";
 
-import exotic_blue_icon_1 from "@/assets/collections/landmark/exotic_blue/exotic_blue_icon_1.webp";
-import exotic_blue_icon_2 from "@/assets/collections/landmark/exotic_blue/exotic_blue_icon_2.webp";
-import exotic_blue_montaje from "@/assets/collections/landmark/exotic_blue/exotic_blue_montaje.webp";
-import exotic_blue_mural from "@/assets/collections/landmark/exotic_blue/exotic_blue_mural.webp";
+// import exotic_blue_icon_1 from "@/assets/collections/landmark/exotic_blue/exotic_blue_icon_1.webp";
+// import exotic_blue_icon_2 from "@/assets/collections/landmark/exotic_blue/exotic_blue_icon_2.webp";
+// import exotic_blue_montaje from "@/assets/collections/landmark/exotic_blue/exotic_blue_montaje.webp";
+// import exotic_blue_mural from "@/assets/collections/landmark/exotic_blue/exotic_blue_mural.webp";
 
 import fairy_tale_icon_1 from "@/assets/collections/landmark/fairy_tale/fairy_tale_icon_1.webp";
 import fairy_tale_icon_2 from "@/assets/collections/landmark/fairy_tale/fairy_tale_icon_2.webp";
 import fairy_tale_montaje from "@/assets/collections/landmark/fairy_tale/fairy_tale_montaje.webp";
 import fairy_tale_mural from "@/assets/collections/landmark/fairy_tale/fairy_tale_mural.webp";
 
-import landmark_flowers_dark_icon_1 from "@/assets/collections/landmark/flowers_dark/flowers_dark_icon_1.webp";
-import landmark_flowers_dark_montaje from "@/assets/collections/landmark/flowers_dark/landmark_flowers_dark_montaje.webp";
-import landmark_flowers_dark_mural from "@/assets/collections/landmark/flowers_dark/flowers_dark_mural.webp";
+// import landmark_flowers_dark_icon_1 from "@/assets/collections/landmark/flowers_dark/flowers_dark_icon_1.webp";
+// import landmark_flowers_dark_montaje from "@/assets/collections/landmark/flowers_dark/landmark_flowers_dark_montaje.webp";
+// import landmark_flowers_dark_mural from "@/assets/collections/landmark/flowers_dark/flowers_dark_mural.webp";
 
 import geometric_golden_mist_icon_1 from "@/assets/collections/landmark/geometric/geometric_golden_mist_icon_1.webp";
 import geometric_golden_mist_mural from "@/assets/collections/landmark/geometric/geometric_golden_mist_mural.webp";
@@ -244,9 +244,9 @@ import savage_icon_3 from "@/assets/collections/landmark/savage/savage_icon_3.we
 import savage_montaje from "@/assets/collections/landmark/savage/savage_montaje.webp";
 import savage_mural from "@/assets/collections/landmark/savage/savage_mural.webp";
 
-import landmark_shibori_icon_1 from "@/assets/collections/landmark/shibori/shibori_icon_1.webp";
-import landmark_shibori_mural from "@/assets/collections/landmark/shibori/shibori_mural.webp";
-import landmark_shibori_montaje from "@/assets/collections/landmark/shibori/landmark_shibori_montaje.webp";
+// import landmark_shibori_icon_1 from "@/assets/collections/landmark/shibori/shibori_icon_1.webp";
+// import landmark_shibori_mural from "@/assets/collections/landmark/shibori/shibori_mural.webp";
+// import landmark_shibori_montaje from "@/assets/collections/landmark/shibori/landmark_shibori_montaje.webp";
 
 import tartan_icon_1 from "@/assets/collections/landmark/tartan/tartan_icon_1.webp";
 import tartan_mural from "@/assets/collections/landmark/tartan/tartan_mural.webp";
@@ -1360,13 +1360,13 @@ export const collections: Array<Collection> = [
                         color: "bg-st-black",
                         montaje: toile_tropical_montaje,
                         mural: toile_tropical_mural_black,
-                        base: true,
                     },
                     {
                         colorName: "Artful Green",
                         color: "bg-st-green",
                         montaje: toile_tropical_montaje,
                         mural: toile_tropical_mural_artful_green,
+                        base: true,
                     },
                     {
                         colorName: "St 201645",
@@ -1463,23 +1463,23 @@ export const collections: Array<Collection> = [
                 ],
                 href: "landmark",
             },
-            {
-                id: "exotic-blue-landmark",
-                title: "Exotic Blue",
-                collectionTitle: "Landmark",
-                collectionId: "landmark",
-                icons: [exotic_blue_icon_1, exotic_blue_icon_2],
-                keywords: ["pattern", "patron", "patrón", "botanico", "animales", "azul"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        montaje: exotic_blue_montaje,
-                        mural: exotic_blue_mural,
-                        base: true,
-                    },
-                ],
-                href: "landmark",
-            },
+            // {
+            //     id: "exotic-blue-landmark",
+            //     title: "Exotic Blue",
+            //     collectionTitle: "Landmark",
+            //     collectionId: "landmark",
+            //     icons: [exotic_blue_icon_1, exotic_blue_icon_2],
+            //     keywords: ["pattern", "patron", "patrón", "botanico", "animales", "azul"],
+            //     variants: [
+            //         {
+            //             colorName: "Estándar",
+            //             montaje: exotic_blue_montaje,
+            //             mural: exotic_blue_mural,
+            //             base: true,
+            //         },
+            //     ],
+            //     href: "landmark",
+            // },
             {
                 id: "fairy-tale-landmark",
                 title: "Fairy Tale",
@@ -1497,23 +1497,23 @@ export const collections: Array<Collection> = [
                 ],
                 href: "landmark",
             },
-            {
-                id: "flowers-dark-landmark",
-                title: "Flowers Dark",
-                collectionTitle: "Landmark",
-                collectionId: "landmark",
-                icons: [landmark_flowers_dark_icon_1],
-                keywords: ["pattern", "patron", "patrón", "botanico", "negro", "oscuro", "rojo", "rosa", "verde"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        montaje: landmark_flowers_dark_montaje,
-                        mural: landmark_flowers_dark_mural,
-                        base: true,
-                    },
-                ],
-                href: "landmark",
-            },
+            // {
+            //     id: "flowers-dark-landmark",
+            //     title: "Flowers Dark",
+            //     collectionTitle: "Landmark",
+            //     collectionId: "landmark",
+            //     icons: [landmark_flowers_dark_icon_1],
+            //     keywords: ["pattern", "patron", "patrón", "botanico", "negro", "oscuro", "rojo", "rosa", "verde"],
+            //     variants: [
+            //         {
+            //             colorName: "Estándar",
+            //             montaje: landmark_flowers_dark_montaje,
+            //             mural: landmark_flowers_dark_mural,
+            //             base: true,
+            //         },
+            //     ],
+            //     href: "landmark",
+            // },
             {
                 id: "geometric-golden-mist-landmark",
                 title: "Geometric Golden Mist",
@@ -1718,23 +1718,23 @@ export const collections: Array<Collection> = [
                 ],
                 href: "landmark",
             },
-            {
-                id: "shibori-landmark",
-                title: "Shibori",
-                collectionTitle: "Landmark",
-                collectionId: "landmark",
-                icons: [landmark_shibori_icon_1],
-                keywords: ["pattern", "patron", "patrón", "abstracto", "geometrico", "negro", "oscuro", "verde", "texturas"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        montaje: landmark_shibori_montaje,
-                        mural: landmark_shibori_mural,
-                        base: true,
-                    },
-                ],
-                href: "landmark",
-            },
+            // {
+            //     id: "shibori-landmark",
+            //     title: "Shibori",
+            //     collectionTitle: "Landmark",
+            //     collectionId: "landmark",
+            //     icons: [landmark_shibori_icon_1],
+            //     keywords: ["pattern", "patron", "patrón", "abstracto", "geometrico", "negro", "oscuro", "verde", "texturas"],
+            //     variants: [
+            //         {
+            //             colorName: "Estándar",
+            //             montaje: landmark_shibori_montaje,
+            //             mural: landmark_shibori_mural,
+            //             base: true,
+            //         },
+            //     ],
+            //     href: "landmark",
+            // },
             {
                 id: "tartan-landmark",
                 title: "Tartan",

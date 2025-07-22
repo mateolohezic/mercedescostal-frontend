@@ -3,7 +3,13 @@
 import { useRef, useState } from "react";
 import { SoundOnIcon, SoundOffIcon, PlayIcon, PauseIcon } from "@/icons";
 
-export const SplendidVideoUno = () => {
+interface Props{
+    video: string;
+    className?: string;
+    buttonClassName?: string;
+}
+
+export const Video = ({video, className, buttonClassName = "bottom-4 right-4"}:Props) => {
 
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isMuted, setIsMuted] = useState(true);
@@ -29,8 +35,8 @@ export const SplendidVideoUno = () => {
     };
 
     return (
-        <div className="size-full max-w-3xl aspect-square rounded-full overflow-hidden relative">
-            <div className="absolute bottom-4 right-0 left-0 mx-auto flex justify-center gap-4 z-50">
+        <div className={`size-full group relative ${className}`}>
+            <div className={`opacity-0 group-hover:opacity-100 absolute flex gap-4 z-50 transition-all duration-200 ${buttonClassName}`}>
                 <button
                     type="button"
                     onClick={togglePlayPause}
@@ -53,9 +59,9 @@ export const SplendidVideoUno = () => {
                 autoPlay
                 muted
                 loop
-                className="size-full object-cover pointer-events-none select-none scale-125"
+                className="size-full object-contain pointer-events-none select-none"
             >
-                <source src="/assets/highlights/splendid/splendid_video_1.mp4" type="video/mp4" />
+                <source src={video} type="video/mp4" />
                 Tu navegador no soporta este video.
             </video>
         </div>

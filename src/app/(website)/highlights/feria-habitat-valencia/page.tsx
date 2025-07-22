@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import { HabitatVideoUno, HabitatVideoDos } from "@/components";
+import { Video } from "@/components";
 import habitat_1 from "@/assets/highlights/habitat/habitat_1.webp";
 import habitat_2 from "@/assets/highlights/habitat/habitat_2.webp";
 import habitat_3 from "@/assets/highlights/habitat/habitat_3.webp";
@@ -45,14 +45,14 @@ export default function FeriaHabitatValenciaPage() {
                 </div>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl flex justify-center px-4 sm:px-0">
-                <HabitatVideoUno/>
+                <Video video={"/assets/highlights/habitat/habitat_video_1.mp4"} className="aspect-video"/>
             </section>
             <section className="mt-1 lg:mt-4 w-full max-w-5xl 2xl:max-w-7xl grid grid-cols-2 gap-1 lg:gap-4 px-4 md:px-0">
                 <Image src={habitat_2} alt="Feria Hábitat de Valencia Mercedes Costal" className="w-full h-auto object-cover aspect-[9/16]"/>
                 <Image src={habitat_3} alt="Feria Hábitat de Valencia Mercedes Costal" className="w-full h-auto object-cover aspect-[9/16]"/>
             </section>
             <section className="mt-1 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-end">
-                <HabitatVideoDos/>
+                <Video video={"/assets/highlights/habitat/habitat_video_2.mp4"} className="max-w-2xl"/>
             </section>
             <section className="mt-1 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl flex justify-start px-4 md:px-0">
                 <Image src={habitat_4} alt="Feria Hábitat de Valencia Mercedes Costal" className="w-full max-w-lg h-auto object-contain"/>

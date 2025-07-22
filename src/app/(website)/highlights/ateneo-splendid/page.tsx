@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import { SplendidVideoDos, SplendidVideoTres, SplendidVideoUno } from "@/components";
+import { Video } from "@/components";
 // import portada from "@/assets/highlights/ateneo-splendid/portada.webp";
 import ateneo_splendid_1 from "@/assets/highlights/ateneo-splendid/splendid_1.webp";
 import ateneo_splendid_2 from "@/assets/highlights/ateneo-splendid/splendid_2.webp";
@@ -51,11 +51,11 @@ export default function AteneoSplendidPage() {
                 </div>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col items-center gap-24 lg:gap-48">
-                <SplendidVideoUno/>
+                <Video video={"/assets/highlights/splendid/splendid_video_1.mp4"} className="max-w-3xl aspect-square rounded-full overflow-hidden"/>
                 <p className="w-full max-w-4xl text-center lg:text-2xl">Partiendo de la obra &ldquo;El Jardín de las Delicias&rdquo; de El Bosco, Costal nos sumerge en un recorrido fascinante por los paisajes y personajes que definen nuestra esencia. Desde un &ldquo;Inicio&rdquo; cósmico que representa el origen de todo, hasta el norte argentino con sus cactus majestuosos, flamencos rosados, y la voz inmortal de Mercedes Sosa, la artista nos invita a conectar con la diversidad y riqueza de nuestro país.</p>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center gap-4">
-                <SplendidVideoDos/>
+                <Video video={"/assets/highlights/splendid/splendid_video_2.mp4"} className="max-w-xl"/>
                 <div className="grow flex justify-start">
                     <p className="w-full max-w-sm text-start lg:text-2xl">Recorriendo el mural digital con sus elementos.</p> 
                 </div>
@@ -64,7 +64,7 @@ export default function AteneoSplendidPage() {
                 <div className="grow flex justify-end items-end">
                     <p className="w-full max-w-sm text-end lg:text-2xl">Instalación animada en acción.</p>
                 </div>
-                <SplendidVideoTres/>
+                <Video video={"/assets/highlights/splendid/splendid_video_3.mp4"} className="aspect-[3/4] max-w-xl"/>
             </section>
             <section className="mt-48 lg:mt-64 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
                 <Image src={ateneo_splendid_8} alt="Ateneo Splendid Mercedes Costal" className="w-full object-contain"/>

@@ -6,7 +6,7 @@ import book_3 from "@/assets/mc-universe/book/book_3.webp";
 import book_4 from "@/assets/mc-universe/book/book_4.webp";
 import book_5 from "@/assets/mc-universe/book/book_5.webp";
 import book_6 from "@/assets/mc-universe/book/book_6.webp";
-import { BookVideo } from "@/components";
+import { Video } from "@/components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -51,7 +51,7 @@ export default function OurBookPage() {
                 </div>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-2xl px-4 xl:px-0">
-                <BookVideo/>
+                <Video video={"/assets/mc-universe/book_video.mp4"} className="w-full max-w-xl aspect-[3/4]"/>
             </section>
             <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
                 <Image src={book_1} alt="Meet the Makers Mercedes Costal" className="w-full max-w-3xl object-contain"/>

@@ -8,7 +8,7 @@ import casamar_proceso_6 from "@/assets/proceso_creativo/casamar/casamar_proceso
 import casamar_proceso_7 from "@/assets/proceso_creativo/casamar/casamar_proceso_7.webp";
 import casamar_proceso_8 from "@/assets/proceso_creativo/casamar/casamar_proceso_8.webp";
 import casamar_proceso_9 from "@/assets/proceso_creativo/casamar/casamar_proceso_9.webp";
-import { VideoProcesoCreativo } from "@/components";
+import { Video } from "@/components";
 
 export const ProcesoCreativoCasamar = () => {
     return (
@@ -19,7 +19,7 @@ export const ProcesoCreativoCasamar = () => {
             </div>
             <div className="mt-24 w-full max-w-3xl grid grid-cols-2 gap-24">
                 <Image src={casamar_proceso_2} alt="Buen Diseño Mercedes Costal" className="w-full object-contain"/>
-                <VideoProcesoCreativo video={"/assets/proceso_creativo/casamar/casamar_proceso_1.mp4"}/>
+                <Video video={"/assets/proceso_creativo/casamar/casamar_proceso_1.mp4"}/>
             </div>
             <div className="mt-8 w-full max-w-xl">
                 <Image src={casamar_proceso_3} alt="Buen Diseño Mercedes Costal" className="w-full object-contain"/>
@@ -42,7 +42,7 @@ export const ProcesoCreativoCasamar = () => {
                 </div>
             </div>
             <div className="mt-48 w-full flex justify-center">
-                <VideoProcesoCreativo video={"/assets/proceso_creativo/casamar/casamar_proceso_2.mp4"} className="max-w-md" buttonClassName="w-full justify-center bottom-4"/>
+                <Video video={"/assets/proceso_creativo/casamar/casamar_proceso_2.mp4"} className="max-w-md" buttonClassName="w-full justify-center bottom-4"/>
             </div>
         </section>
     )

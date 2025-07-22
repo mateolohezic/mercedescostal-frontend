@@ -1,19 +1,8 @@
-export { BuenDiseñoVideo } from "./highlights/BuenDiseñoVideo";
-export { LondonFestivalVideo } from "./highlights/LondonFestivalVideo";
-export { SplendidVideoUno } from "./highlights/splendid/SplendidVideoUno";
-export { SplendidVideoDos } from "./highlights/splendid/SplendidVideoDos";
-export { SplendidVideoTres } from "./highlights/splendid/SplendidVideoTres";
-export { HabitatVideoUno } from "./highlights/habitat/HabitatVideoUno";
-export { HabitatVideoDos } from "./highlights/habitat/HabitatVideoDos";
-
 export { MCLogo } from "./MCLogo";
 export { VideoIntro } from "./VideoIntro";
 export { Card } from "./Card";
 export { LanguageSelector } from "./LanguageSelector";
-export { MeetTheMakersVideo } from "./MeetTheMakersVideo";
-export { BookVideo } from "./BookVideo";
-export { CafeVideo } from "./CafeVideo";
-export { VideoProcesoCreativo } from "./VideoProcesoCreativo";
+export { Video } from "./Video";
 
 export { Navbar } from "./navbar/Navbar";
 export { NavbarLink } from "./navbar/NavbarLink";

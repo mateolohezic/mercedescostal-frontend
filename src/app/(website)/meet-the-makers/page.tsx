@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import { MeetTheMakersVideo } from "@/components";
+import { Video } from "@/components";
 import portada from "@/assets/meet-the-makers/portada.webp";
 import meet_the_makers_1 from "@/assets/meet-the-makers/meet_the_makers_1.webp";
 import meet_the_makers_2 from "@/assets/meet-the-makers/meet_the_makers_2.webp";
@@ -44,7 +44,7 @@ export default function MeetTheMakersPage() {
                 <p className="w-full max-w-4xl text-center lg:text-xl">En MERCEDES COSTAL logramos conectar a las personas con el mundo del diseño, el arte y la historia a través de la creación, producción y venta de wallpapers para generar una experiencia inmersiva en el observador.</p>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-xl flex flex-col justify-center items-center px-4 xl:px-0">
-                <MeetTheMakersVideo/>
+                <Video video={"/assets/highlights/meet_the_makers_video.mp4"} className="size-full"/>
             </section>
             <section className="my-24 lg:my-64 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-start gap-8 lg:gap-4">
                 <div className="grow max-w-2xl lg:text-xl flex flex-col justify-center items-center gap-8">

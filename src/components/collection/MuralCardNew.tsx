@@ -16,6 +16,7 @@ export const MuralCardNew = ({ mural, index }: Props) => {
 
     const [showModal, setShowModal] = useState<boolean>(false)
     const [isHovered, setIsHovered] = useState<boolean>(false)
+    const [isHoveredModal, setIsHoveredModal] = useState<boolean>(false)
     const baseVariant = mural.variants.find(v => v.base) || mural.variants[0];
     const [selectedVariant, setSelectedVariant] = useState<MuralVariant>(baseVariant)
     const isPattern = mural.keywords.some(k => ['patrón', 'patron', 'pattern'].includes(k.toLowerCase()));
@@ -55,12 +56,22 @@ export const MuralCardNew = ({ mural, index }: Props) => {
             <div className="size-full flex flex-col-reverse lg:flex-row justify-center items-stretch">
                 <div className="w-full lg:w-auto lg:grow lg:pr-12">
                     <div className="size-full relative overflow-y-auto">
-                        <div className="size-full lg:absolute lg:top-0 lg:left-0">
-                            <Image src={selectedVariant.mural} alt={`Mural ${mural.title} ${selectedVariant.colorName}`} className="hidden lg:block w-full object-contain"/>
-                            <div className="w-full grid grid-cols-2">
-                                <Image src={selectedVariant.montaje} alt={`Montaje ${mural.title} ${selectedVariant.colorName}`} className="w-full object-contain"/>
-                            </div>
-                        </div>
+                        <motion.div
+                            onHoverStart={() => setIsHoveredModal(true)}
+                            onHoverEnd={() => setIsHoveredModal(false)}
+                            className="size-full lg:absolute lg:top-0 lg:left-0"
+                        >
+                            <Image
+                                src={selectedVariant.mural}
+                                alt={`Mural ${selectedVariant.colorName} ${mural.title}`}
+                                className="hidden lg:block size-full lg:absolute lg:top-0 lg:left-0 object-cover z-0"
+                            />
+                            <Image
+                                src={selectedVariant.montaje}
+                                alt={`Montaje ${selectedVariant.colorName} ${mural.title}`}
+                                className={`hidden lg:block size-full lg:absolute lg:top-0 lg:left-0 object-cover z-10 ${isHoveredModal ? "opacity-100" : "opacity-0"}`}
+                            />
+                        </motion.div>
                     </div>
                 </div>
                 <div className="w-full max-w-xl lg:p-4 lg:pt-12 flex flex-col">

@@ -237,7 +237,7 @@ export const WorkWithUsForm = () => {
                 <FormErrorMessage condition={errors?.message} message={errors?.message?.message} className="mt-2"/>
             </div>
             <div className="mt-4 w-full flex justify-end">
-                <SubmitButtonLoading isLoading={isLoading} text="[ Submit ]" className="w-20"/>
+                <SubmitButtonLoading isLoading={isLoading} text="[ Submit ]" className="w-24"/>
             </div>
         </form>
     )
