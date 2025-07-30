@@ -20,6 +20,7 @@ export { ProcesoCreativoCasamar } from "./collection/proceso-creativo/ProcesoCre
 export { ProcesoCreativoMorris } from "./collection/proceso-creativo/ProcesoCreativoMorris";
 export { ProcesoCreativoBasaBasa } from "./collection/proceso-creativo/ProcesoCreativoBasaBasa";
 export { ProcesoCreativoLandmark } from "./collection/proceso-creativo/ProcesoCreativoLandmark";
+export { ProcesoCreativoVivero } from "./collection/proceso-creativo/ProcesoCreativoVivero";
 
 export { WorkWithUsForm } from "./contact/WorkWithUsForm";
 

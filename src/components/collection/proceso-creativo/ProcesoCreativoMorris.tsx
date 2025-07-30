@@ -12,8 +12,8 @@ import morris_proceso_10 from "@/assets/proceso_creativo/morris/morris_proceso_1
 
 export const ProcesoCreativoMorris = () => {
     return (
-        <section className="my-24 lg:my-24 w-full grow flex flex-col items-center font-truetypewritter">
-            <div className="mt-24 lg:mt-48 w-full max-w-3xl flex items-center">
+        <section className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
+            <div className="w-full max-w-3xl flex items-center">
                 <p className="w-2/5 shrink-0 text-base text-justify pr-8">Trabajamos conjuntamente desde las diferentes áreas del diseño, para lograr, a través de nuestros empapelados y murales, un equilibrio entre el arte y el interiorismo, generando con ellos, espacios, donde los colores, las texturas y las formas se transforman en los protagonistas de los ambientes.”</p>
                 <div className="w-3/5 shrink-0 pl-12">
                     <Image src={morris_proceso_1} alt="Buen Diseño Mercedes Costal" className="w-full object-contain"/>

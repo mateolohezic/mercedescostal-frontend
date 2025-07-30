@@ -8,8 +8,8 @@ import { Video } from "@/components";
 
 export const ProcesoCreativoClassics = () => {
     return (
-        <section className="my-24 lg:my-24 w-full grow flex flex-col items-center font-truetypewritter">
-            <div className="mt-24 lg:mt-48 px-4 flex justify-center">
+        <section className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
+            <div className="px-4 flex justify-center">
                 <Video video={"/assets/proceso_creativo/the_classics/the_classics_proceso_1.mp4"} className="max-w-lg aspect-square rounded-full overflow-hidden" buttonClassName="justify-center bottom-4 left-0 right-0 mx-auto"/>
             </div>
             <div className="mt-24 max-w-3xl flex items-start gap-12">
