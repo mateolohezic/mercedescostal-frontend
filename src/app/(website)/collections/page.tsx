@@ -5,6 +5,8 @@ import Image from "next/image";
 // import { collections } from "@/data/collections";
 import { Metadata } from "next";
 import { collections } from "@/data/collections";
+import { CollectionVideo } from "@/components";
+import { Fragment } from "react";
 
 export const metadata: Metadata = {
     title: 'Murals',
@@ -45,25 +47,34 @@ export default function CollectionsPage() {
         <main className="my-24 lg:my-0 w-full grow flex flex-col items-center font-truetypewritter">
             <h1 className="sr-only">Wallpapers</h1>
             <section className="mt-24 w-full grid grid-cols-1 lg:grid-cols-2">
-                { collections.map((collection) => (
+                { collections.map((collection, i) => (
                     <Link
                         key={collection.id}
                         href={`/collections/${collection.id}`}
-                        className="w-full block aspect-video overflow-hidden relative group"
+                        className="w-full block aspect-video overflow-hidden relative group first:col-span-2"
                     >
-                        <Image
-                            priority
-                            src={collection.portrait}
-                            alt={`Portada de colección ${collection.title}`}
-                            className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"
-                        />
-                        <div className="size-full bg-black/20 absolute top-0 left-0 z-10 transition-150"></div>
-                        <div className="size-full flex flex-col justify-center items-center relative z-20">
-                            <h3 className="font-gillsans font-light text-white text-3xl uppercase">
-                                <span className="text-white/75">Colección</span>{" "}
-                                <b className="font-medium">{collection.title}</b>
-                            </h3>
-                        </div>
+                        {
+                            i === 0 ?
+                                <div className="absolute top-0 left-0 z-0">
+                                    <CollectionVideo title={collection.title} video={collection.video}/>
+                                </div>
+                            :
+                            <Fragment>
+                                <Image
+                                    priority
+                                    src={collection.portrait}
+                                    alt={`Portada de colección ${collection.title}`}
+                                    className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"
+                                />
+                                <div className="size-full bg-black/20 absolute top-0 left-0 z-10 transition-150"></div>
+                                <div className="size-full flex flex-col justify-center items-center relative z-20">
+                                    <h3 className="font-gillsans font-light text-white text-3xl uppercase">
+                                        <span className="text-white/75">Colección</span>{" "}
+                                        <b className="font-medium">{collection.title}</b>
+                                    </h3>
+                                </div>
+                            </Fragment>
+                        }
                     </Link>
                 ))}
             </section>

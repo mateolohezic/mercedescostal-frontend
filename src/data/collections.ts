@@ -1,3 +1,40 @@
+// Artisan
+import abra_montaje from "@/assets/collections/artisan/abra/abra_montaje.webp";
+import abra_mural from "@/assets/collections/artisan/abra/abra_mural.webp";
+
+import anaquel_montaje from "@/assets/collections/artisan/anaquel/anaquel_montaje.webp";
+import anaquel_mural from "@/assets/collections/artisan/anaquel/anaquel_mural.webp";
+
+import cauce_montaje from "@/assets/collections/artisan/cauce/cauce_montaje.webp";
+import cauce_mural from "@/assets/collections/artisan/cauce/cauce_mural.webp";
+
+import ceren_montaje from "@/assets/collections/artisan/ceren/ceren_montaje.webp";
+import ceren_mural from "@/assets/collections/artisan/ceren/ceren_mural.webp";
+
+import coria_montaje from "@/assets/collections/artisan/coria/coria_montaje.webp";
+import coria_mural from "@/assets/collections/artisan/coria/coria_mural.webp";
+
+import hilado_montaje from "@/assets/collections/artisan/hilado/hilado_montaje.webp";
+import hilado_mural from "@/assets/collections/artisan/hilado/hilado_mural.webp";
+
+import madeja_montaje from "@/assets/collections/artisan/madeja/madeja_montaje.webp";
+import madeja_mural from "@/assets/collections/artisan/madeja/madeja_mural.webp";
+
+import pampa_montaje from "@/assets/collections/artisan/pampa/pampa_montaje.webp";
+import pampa_mural from "@/assets/collections/artisan/pampa/pampa_mural.webp";
+
+import randa_montaje from "@/assets/collections/artisan/randa/randa_montaje.webp";
+import randa_mural from "@/assets/collections/artisan/randa/randa_mural.webp";
+
+import risco_montaje from "@/assets/collections/artisan/risco/risco_montaje.webp";
+import risco_mural from "@/assets/collections/artisan/risco/risco_mural.webp";
+
+import ruma_montaje from "@/assets/collections/artisan/ruma/ruma_montaje.webp";
+import ruma_mural from "@/assets/collections/artisan/ruma/ruma_mural.webp";
+
+import telar_montaje from "@/assets/collections/artisan/telar/telar_montaje.webp";
+import telar_mural from "@/assets/collections/artisan/telar/telar_mural.webp";
+
 // Basa Basa
 import basa_basa_montaje from "@/assets/collections/basa_basa/basa_basa/basa_basa_montaje.webp";
 import basa_basa_mural from "@/assets/collections/basa_basa/basa_basa/basa_basa_mural.webp";
@@ -597,6 +634,221 @@ import portada_morris from "@/assets/collections/morris/tulip_dark/tulip_dark_mo
 import portada_vuelta_al_mundo from "@/assets/collections/vuelta_al_mundo/la_riviere/la_riviere_montaje.webp";
 
 export const collections: Array<Collection> = [
+    {
+        id: "artisan",
+        title: "Artisan",
+        portrait: portada_basa_basa,
+        video: "/assets/portada_basa_basa.mp4",
+        date: "2025",
+        technique: "Pintado a mano.",
+        description: "Descripción.",
+        murales: [
+            {
+                id: "abra-artisan",
+                title: "Abra",
+                collectionTitle: "Artisan",
+                collectionId: "artisan",
+                icons: [],
+                keywords: ["artisan"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: abra_montaje,
+                        mural: abra_mural,
+                        base: true,
+                    },
+                ],
+                href: "artisan",
+            },
+            {
+                id: "anaquel-artisan",
+                title: "Anaquel",
+                collectionTitle: "Artisan",
+                collectionId: "artisan",
+                icons: [],
+                keywords: ["artisan"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: anaquel_montaje,
+                        mural: anaquel_mural,
+                        base: true,
+                    },
+                ],
+                href: "artisan",
+            },
+            {
+                id: "cauce-artisan",
+                title: "Cauce",
+                collectionTitle: "Artisan",
+                collectionId: "artisan",
+                icons: [],
+                keywords: ["artisan"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: cauce_montaje,
+                        mural: cauce_mural,
+                        base: true,
+                    },
+                ],
+                href: "artisan",
+            },
+            {
+                id: "ceren-artisan",
+                title: "Ceren",
+                collectionTitle: "Artisan",
+                collectionId: "artisan",
+                icons: [],
+                keywords: ["artisan"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: ceren_montaje,
+                        mural: ceren_mural,
+                        base: true,
+                    },
+                ],
+                href: "artisan",
+            },
+            {
+                id: "coria-artisan",
+                title: "Coria",
+                collectionTitle: "Artisan",
+                collectionId: "artisan",
+                icons: [],
+                keywords: ["artisan"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: coria_montaje,
+                        mural: coria_mural,
+                        base: true,
+                    },
+                ],
+                href: "artisan",
+            },
+            {
+                id: "hilado-artisan",
+                title: "Hilado",
+                collectionTitle: "Artisan",
+                collectionId: "artisan",
+                icons: [],
+                keywords: ["artisan"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: hilado_montaje,
+                        mural: hilado_mural,
+                        base: true,
+                    },
+                ],
+                href: "artisan",
+            },
+            {
+                id: "madeja-artisan",
+                title: "Madeja",
+                collectionTitle: "Artisan",
+                collectionId: "artisan",
+                icons: [],
+                keywords: ["artisan"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: madeja_montaje,
+                        mural: madeja_mural,
+                        base: true,
+                    },
+                ],
+                href: "artisan",
+            },
+            {
+                id: "pampa-artisan",
+                title: "Pampa",
+                collectionTitle: "Artisan",
+                collectionId: "artisan",
+                icons: [],
+                keywords: ["artisan"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: pampa_montaje,
+                        mural: pampa_mural,
+                        base: true,
+                    },
+                ],
+                href: "artisan",
+            },
+            {
+                id: "randa-artisan",
+                title: "Randa",
+                collectionTitle: "Artisan",
+                collectionId: "artisan",
+                icons: [],
+                keywords: ["artisan"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: randa_montaje,
+                        mural: randa_mural,
+                        base: true,
+                    },
+                ],
+                href: "artisan",
+            },
+            {
+                id: "risco-artisan",
+                title: "Risco",
+                collectionTitle: "Artisan",
+                collectionId: "artisan",
+                icons: [],
+                keywords: ["artisan"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: risco_montaje,
+                        mural: risco_mural,
+                        base: true,
+                    },
+                ],
+                href: "artisan",
+            },
+            {
+                id: "ruma-artisan",
+                title: "Ruma",
+                collectionTitle: "Artisan",
+                collectionId: "artisan",
+                icons: [],
+                keywords: ["artisan"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: ruma_montaje,
+                        mural: ruma_mural,
+                        base: true,
+                    },
+                ],
+                href: "artisan",
+            },
+            {
+                id: "telar-artisan",
+                title: "Telar",
+                collectionTitle: "Artisan",
+                collectionId: "artisan",
+                icons: [],
+                keywords: ["artisan"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: telar_montaje,
+                        mural: telar_mural,
+                        base: true,
+                    },
+                ],
+                href: "artisan",
+            },
+        ],
+    },
     {
         id: "basa-basa",
         title: "Basa Basa",

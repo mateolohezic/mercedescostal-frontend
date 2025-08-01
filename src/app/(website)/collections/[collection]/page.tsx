@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { collections } from '@/data/collections';
 import { sortMurales } from "@/helpers";
-import { CollectionVideo, MuralCardNew, ProcesoCreativoBasaBasa, ProcesoCreativoCasamar, ProcesoCreativoClassics, ProcesoCreativoLandmark, ProcesoCreativoMorris, ProcesoCreativoVivero } from '@/components';
+import { CollectionVideo, MuralCardNew, ProcesoCreativoArtisan, ProcesoCreativoBasaBasa, ProcesoCreativoCasamar, ProcesoCreativoClassics, ProcesoCreativoLandmark, ProcesoCreativoMorris, ProcesoCreativoVivero } from '@/components';
 
 interface Props {
     params: {
@@ -74,6 +74,7 @@ export default function CollectionPage({ params }: Props) {
                 foundCollection.id === "basa-basa" ? <ProcesoCreativoBasaBasa/> :
                 foundCollection.id === "landmark" ? <ProcesoCreativoLandmark/> :
                 foundCollection.id === "vivero" ? <ProcesoCreativoVivero/> :
+                foundCollection.id === "artisan" ? <ProcesoCreativoArtisan/> :
                 foundCollection.id === "casamar" && <ProcesoCreativoCasamar/>
             }
         </main>
