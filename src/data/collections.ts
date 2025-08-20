@@ -638,7 +638,7 @@ export const collections: Array<Collection> = [
         id: "artisan",
         title: "Artisan",
         portrait: portada_basa_basa,
-        video: "/assets/portada_basa_basa.mp4",
+        video: "/assets/portada_artisan.mp4",
         date: "2025",
         technique: "Pintado a mano.",
         description: "Descripción.",

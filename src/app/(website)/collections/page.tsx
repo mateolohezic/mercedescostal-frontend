@@ -44,9 +44,9 @@ export default function CollectionsPage() {
     // };
 
     return (
-        <main className="my-24 lg:my-0 w-full grow flex flex-col items-center font-truetypewritter">
+        <main className="my-12 lg:my-0 w-full grow flex flex-col items-center font-truetypewritter">
             <h1 className="sr-only">Wallpapers</h1>
-            <section className="mt-24 w-full grid grid-cols-1 lg:grid-cols-2">
+            <section className="lg:mt-24 w-full grid grid-cols-2 lg:grid-cols-2">
                 { collections.map((collection, i) => (
                     <Link
                         key={collection.id}
@@ -68,9 +68,9 @@ export default function CollectionsPage() {
                                 />
                                 <div className="size-full bg-black/20 absolute top-0 left-0 z-10 transition-150"></div>
                                 <div className="size-full flex flex-col justify-center items-center relative z-20">
-                                    <h3 className="font-gillsans font-light text-white text-3xl uppercase">
+                                    <h3 className="font-gillsans font-light text-white text-center text-sm lg:text-3xl uppercase">
                                         <span className="text-white/75">Colección</span>{" "}
-                                        <b className="font-medium">{collection.title}</b>
+                                        <b className="font-medium block lg:inline">{collection.title}</b>
                                     </h3>
                                 </div>
                             </Fragment>
@@ -87,7 +87,7 @@ export default function CollectionsPage() {
                     })}
                 </div>
             </section> */}
-            <section className="my-24 lg:my-48 w-full max-w-5xl 2xl:max-w-7xl px-4 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
+            <section className="mt-12 lg:my-48 w-full max-w-5xl 2xl:max-w-7xl px-4 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <div className="w-full lg:text-lg text-start flex flex-col gap-[1lh]">
                     <p>No diseñamos papeles. Creamos atmósferas.</p>
                     <p>En Mercedes Costal, entendemos el muro como un lienzo silencioso que transforma la manera en que habitamos un espacio. Nuestros wallpapers son el resultado de un proceso que une diseño contemporáneo, sensibilidad artística y una profunda investigación en color, textura y escala.</p>

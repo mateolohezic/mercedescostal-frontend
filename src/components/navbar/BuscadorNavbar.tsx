@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { useForm, SubmitHandler } from "react-hook-form";
 import * as z from "zod";
@@ -18,9 +18,10 @@ type Schema = z.infer<typeof schema>;
 interface Props{
     isHome?: boolean;
     insideCollapse?: boolean;
+    setIsExpandedCollapse?: Dispatch<SetStateAction<boolean>>;
 }
 
-export const BuscadorNavbar = ({isHome, insideCollapse}:Props) => {
+export const BuscadorNavbar = ({isHome, insideCollapse, setIsExpandedCollapse}:Props) => {
 
     const [isExpanded, setIsExpanded] = useState<boolean>(false);
     const { register, handleSubmit, reset, formState: { errors } } = useForm<Schema>({
@@ -32,6 +33,7 @@ export const BuscadorNavbar = ({isHome, insideCollapse}:Props) => {
     const onSubmit: SubmitHandler<Schema> = async (data) => {
         try {
             router.push(`/search?query=${encodeURIComponent(data.query)}`);
+            setIsExpandedCollapse && setIsExpandedCollapse(false);
         } catch (error) {
             console.error("Error en la búsqueda:", error);
         } finally {

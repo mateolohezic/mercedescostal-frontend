@@ -124,7 +124,7 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                             </li>
                         </ul>
                     </div>
-                    <div className="mt-8 w-full p-6 lg:p-0 flex justify-center lg:justify-end">
+                    <div className="lg:mt-8 w-full p-6 lg:p-0 flex justify-center lg:justify-end">
                         <Link href={`/quote?mural=${mural.id}`} className="px-4 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase">Take it home</Link>
                     </div>
                 </div>

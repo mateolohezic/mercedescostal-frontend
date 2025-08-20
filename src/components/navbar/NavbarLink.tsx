@@ -28,7 +28,7 @@ export const NavbarLink = ({ navlink, index, isHome, menuExpanded, toggleMenu }:
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: 50, opacity: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="w-full lg:w-auto relative flex items-end"
+                className="w-full lg:w-auto relative flex flex-col lg:flex-row items-start lg:items-end"
             >
                 <button
                     type="button"

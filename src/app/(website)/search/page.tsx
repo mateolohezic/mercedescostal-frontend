@@ -60,7 +60,7 @@ export default function SearchResultsPage({ searchParams }: Props) {
                         No se encontraron murales para {searchQuery}.
                     </p>
                 ) : (
-                    <section className="mt-24 w-full grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-12 lg:gap-y-16">
+                    <section className="mt-12 lg:mt-24 w-full grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-6 lg:gap-y-16">
                         { sortMurales(results).map((mural, index) => (
                             <MuralCardNew mural={mural} index={index} key={mural.id} />
                         ))}

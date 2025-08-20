@@ -63,7 +63,7 @@ export default function CollectionPage({ params }: Props) {
                     </div>
                 }
             </section>
-            <section className="mt-24 w-full px-4 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-12 lg:gap-y-16">
+            <section className="mt-12 lg:mt-24 w-full px-4 lg:px-12 grid grid-cols-1 lg:grid-cols-2 gap-x-12 gap-6 lg:gap-y-16">
                 { sortMurales(foundCollection.murales).map((mural, index) => (
                     <MuralCardNew mural={mural} index={index} key={mural.id} />
                 ))}

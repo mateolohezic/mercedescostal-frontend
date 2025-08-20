@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import { Video } from "@/components";
-import habitat_1 from "@/assets/highlights/habitat/habitat_1.webp";
 import habitat_2 from "@/assets/highlights/habitat/habitat_2.webp";
 import habitat_3 from "@/assets/highlights/habitat/habitat_3.webp";
 import habitat_4 from "@/assets/highlights/habitat/habitat_4.webp";
@@ -34,7 +33,7 @@ export default function FeriaHabitatValenciaPage() {
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Highlights
                 </h1>
-                <Image src={habitat_1} priority alt="Portada Meet the makers Mercedes Costal" className="w-full aspect-video object-cover"/>
+                <Video video={"/assets/highlights/habitat/portada_feria_habitat.mp4"} className="w-full aspect-video"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">

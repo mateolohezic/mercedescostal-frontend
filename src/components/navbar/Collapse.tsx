@@ -85,7 +85,7 @@ export const Collapse = ({ links }: Props) => {
                         >
                             <CrossIcon className="size-4" />
                         </button>
-                        <ul className="mt-12 w-full flex flex-col gap-4">
+                        <ul className="mt-12 w-full flex flex-col gap-6">
                             {links.map((navlink, i) => (
                                 <NavbarLink
                                     key={i}
@@ -97,7 +97,7 @@ export const Collapse = ({ links }: Props) => {
                             ))}
                         </ul>
                         <div className="mt-6 w-full">
-                            <BuscadorNavbar insideCollapse/>
+                            <BuscadorNavbar insideCollapse setIsExpandedCollapse={setIsExpanded}/>
                         </div>
                         <div className="w-full grow flex justify-center items-end">
                             <Link href="/" aria-label="Inicio">

@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import { Video } from "@/components";
-// import portada from "@/assets/highlights/ateneo-splendid/portada.webp";
+import portada from "@/assets/highlights/ateneo-splendid/portada.webp";
 import ateneo_splendid_1 from "@/assets/highlights/ateneo-splendid/splendid_1.webp";
 import ateneo_splendid_2 from "@/assets/highlights/ateneo-splendid/splendid_2.webp";
 import ateneo_splendid_3 from "@/assets/highlights/ateneo-splendid/splendid_3.webp";
@@ -39,7 +39,7 @@ export default function AteneoSplendidPage() {
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Highlights
                 </h1>
-                {/* <Image src={portada} priority alt="Portada Meet the makers Mercedes Costal" className="w-full aspect-video object-cover"/> */}
+                <Image src={portada} priority alt="Portada Meet the makers Mercedes Costal" className="w-full aspect-video object-cover"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
