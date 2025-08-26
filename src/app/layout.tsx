@@ -178,8 +178,8 @@ const links:Array<NavLinkHome> = [
               href:'/mc-universe/fragrances'
           },
           {
-              title:'Our Book',
-              href:'/mc-universe/our-book'
+              title:'The Book',
+              href:'/mc-universe/the-book'
           },
           {
               title:'Costal Café',
@@ -199,11 +199,11 @@ const links:Array<NavLinkHome> = [
               title:'Vende M.C.',
               href:'/sell-mc'
           },
-          {
-              title:'Cotizar',
-              href:'/quote'
-          },
       ]
+  },
+  {
+      title:'Cotizar',
+      href:'/quote',
   },
 ];
 

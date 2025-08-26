@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { NavLinkHome } from "@/interfaces";
-import { MCLogo, NavbarLink, BuscadorNavbar, LanguageSelector } from "@/components";
+import { MCLogo, NavbarLink, BuscadorNavbar } from "@/components";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -39,7 +39,7 @@ export const Navbar = ({links}:Props) => {
                             ))
                         }
                         <BuscadorNavbar isHome={isHome}/>
-                        <LanguageSelector isHome={isHome}/>
+                        {/* <LanguageSelector isHome={isHome}/> */}
                     </ul>
                 </div>
             </div>

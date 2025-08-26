@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { collections } from '@/data/collections';
 import { sortMurales } from "@/helpers";
-import { CollectionVideo, MuralCardNew, ProcesoCreativoArtisan, ProcesoCreativoBasaBasa, ProcesoCreativoCasamar, ProcesoCreativoClassics, ProcesoCreativoLandmark, ProcesoCreativoMorris, ProcesoCreativoVivero } from '@/components';
+import { CollectionVideo, CTA, MuralCardNew, ProcesoCreativoArtisan, ProcesoCreativoBasaBasa, ProcesoCreativoCasamar, ProcesoCreativoClassics, ProcesoCreativoLandmark, ProcesoCreativoMorris, ProcesoCreativoVivero } from '@/components';
 
 interface Props {
     params: {
@@ -59,7 +59,7 @@ export default function CollectionPage({ params }: Props) {
                         <p><b className="uppercase">Artista:</b> Mercedes Costal prints & patterns.</p>
                         <p><b className="uppercase">Año:</b> {foundCollection.date}.</p>
                         <p><b className="uppercase">Tecnica:</b> {foundCollection.technique}</p>
-                        <p><b className="uppercase">Description:</b> {foundCollection.description}</p>
+                        {/* <p><b className="uppercase">Description:</b> {foundCollection.description}</p> */}
                     </div>
                 }
             </section>
@@ -77,6 +77,7 @@ export default function CollectionPage({ params }: Props) {
                 foundCollection.id === "artisan" ? <ProcesoCreativoArtisan/> :
                 foundCollection.id === "casamar" && <ProcesoCreativoCasamar/>
             }
+            <CTA/>
         </main>
     );
 }

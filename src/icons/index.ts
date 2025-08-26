@@ -27,3 +27,7 @@ export {
 export {
     RxCross1 as CrossIcon,
 } from "react-icons/rx";
+
+export {
+    FaWhatsapp as WhatsAppIcon
+} from "react-icons/fa6";

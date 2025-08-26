@@ -969,7 +969,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Artisan",
                 collectionId: "artisan",
                 icons: [],
-                keywords: ["artisan"],
+                keywords: ["pattern", "patron", "patrón", "artisan"],
                 variants: [
                     {
                         colorName: "Natural",
@@ -1023,7 +1023,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Artisan",
                 collectionId: "artisan",
                 icons: [],
-                keywords: ["artisan"],
+                keywords: ["pattern", "patron", "patrón", "artisan"],
                 variants: [
                     {
                         colorName: "Natural",

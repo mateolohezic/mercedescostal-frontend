@@ -1,4 +1,4 @@
-import { Footer } from "@/components";
+import { Footer, WhatsApp } from "@/components";
 import { Fragment } from "react";
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
@@ -6,6 +6,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
     <Fragment>
       {children}
       <Footer/>
+      <WhatsApp/>
     </Fragment>    
   );
 }

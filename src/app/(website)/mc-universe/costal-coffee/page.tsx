@@ -2,7 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import portada from "@/assets/mc-universe/cafe/portada.webp";
-import cafe_1 from "@/assets/mc-universe/cafe/cafe_1.webp";
+// import cafe_1 from "@/assets/mc-universe/cafe/cafe_1.webp";
+import cafe_1 from "@/assets/collections/the_classics/hikers_in_a_park/hikers_in_a_park_mural.webp";
 import cafe_2 from "@/assets/mc-universe/cafe/cafe_2.webp";
 import cafe_3 from "@/assets/mc-universe/cafe/cafe_3.webp";
 import cafe_4 from "@/assets/mc-universe/cafe/cafe_4.webp";
@@ -57,7 +58,7 @@ export default function CostalCafePage() {
             <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4">
                 <Image src={cafe_1} alt="Meet the Makers Mercedes Costal" className="w-full lg:w-1/2 lg:pr-2 object-contain"/>
             </section>
-            <section className="mt-1 lg:mt-0 w-full max-w-5xl 2xl:max-w-7xl px-4 flex justify-end">
+            <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 flex justify-end">
                 <Image src={cafe_2} alt="Meet the Makers Mercedes Costal" className="w-full lg:w-1/2 lg:pl-2 object-contain"/>
             </section>
             <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">

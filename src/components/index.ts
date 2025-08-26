@@ -3,6 +3,8 @@ export { VideoIntro } from "./VideoIntro";
 export { Card } from "./Card";
 export { LanguageSelector } from "./LanguageSelector";
 export { Video } from "./Video";
+export { CTA } from "./CTA";
+export { WhatsApp } from "./WhatsApp";
 
 export { PhotoSelector } from "./highlights/PhotoSelector";
 
