@@ -1,39 +1,114 @@
 // Artisan
 import abra_montaje from "@/assets/collections/artisan/abra/abra_montaje.webp";
-import abra_mural from "@/assets/collections/artisan/abra/abra_mural.webp";
+import abra_mural_black from "@/assets/collections/artisan/abra/abra_mural_black.webp";
+import abra_mural_dark_sky from "@/assets/collections/artisan/abra/abra_mural_dark_sky.webp";
+import abra_mural_fenland from "@/assets/collections/artisan/abra/abra_mural_fenland.webp";
+import abra_mural_mais from "@/assets/collections/artisan/abra/abra_mural_mais.webp";
+import abra_mural_natural from "@/assets/collections/artisan/abra/abra_mural_natural.webp";
+import abra_mural_oryza_grain from "@/assets/collections/artisan/abra/abra_mural_oryza_grain.webp";
+import abra_mural_terracotta from "@/assets/collections/artisan/abra/abra_mural_terracotta.webp";
+import abra_mural_vert_sec from "@/assets/collections/artisan/abra/abra_mural_vert_sec.webp";
 
 import anaquel_montaje from "@/assets/collections/artisan/anaquel/anaquel_montaje.webp";
 import anaquel_mural from "@/assets/collections/artisan/anaquel/anaquel_mural.webp";
 
 import cauce_montaje from "@/assets/collections/artisan/cauce/cauce_montaje.webp";
-import cauce_mural from "@/assets/collections/artisan/cauce/cauce_mural.webp";
+import cauce_mural_black from "@/assets/collections/artisan/cauce/cauce_mural_black.webp";
+import cauce_mural_dark_sky from "@/assets/collections/artisan/cauce/cauce_mural_dark_sky.webp";
+import cauce_mural_fenland from "@/assets/collections/artisan/cauce/cauce_mural_fenland.webp";
+import cauce_mural_mais from "@/assets/collections/artisan/cauce/cauce_mural_mais.webp";
+import cauce_mural_natural from "@/assets/collections/artisan/cauce/cauce_mural_natural.webp";
+import cauce_mural_oryza_grain from "@/assets/collections/artisan/cauce/cauce_mural_oryza_grain.webp";
+import cauce_mural_terracotta from "@/assets/collections/artisan/cauce/cauce_mural_terracotta.webp";
+import cauce_mural_vert_sec from "@/assets/collections/artisan/cauce/cauce_mural_vert_sec.webp";
 
 import ceren_montaje from "@/assets/collections/artisan/ceren/ceren_montaje.webp";
-import ceren_mural from "@/assets/collections/artisan/ceren/ceren_mural.webp";
+import ceren_mural_dark_sky from "@/assets/collections/artisan/ceren/ceren_mural_dark_sky.webp";
+import ceren_mural_fenland from "@/assets/collections/artisan/ceren/ceren_mural_fenland.webp";
+import ceren_mural_mais from "@/assets/collections/artisan/ceren/ceren_mural_mais.webp";
+import ceren_mural_oryza_grain from "@/assets/collections/artisan/ceren/ceren_mural_oryza_grain.webp";
+import ceren_mural_terracotta from "@/assets/collections/artisan/ceren/ceren_mural_terracotta.webp";
+import ceren_mural_vert_sec from "@/assets/collections/artisan/ceren/ceren_mural_vert_sec.webp";
 
 import coria_montaje from "@/assets/collections/artisan/coria/coria_montaje.webp";
-import coria_mural from "@/assets/collections/artisan/coria/coria_mural.webp";
+import coria_mural_black from "@/assets/collections/artisan/coria/coria_mural_black.webp";
+import coria_mural_dark_sky from "@/assets/collections/artisan/coria/coria_mural_dark_sky.webp";
+import coria_mural_fenland from "@/assets/collections/artisan/coria/coria_mural_fenland.webp";
+import coria_mural_mais from "@/assets/collections/artisan/coria/coria_mural_mais.webp";
+import coria_mural_natural from "@/assets/collections/artisan/coria/coria_mural_natural.webp";
+import coria_mural_oryza_grain from "@/assets/collections/artisan/coria/coria_mural_oryza_grain.webp";
+import coria_mural_terracotta from "@/assets/collections/artisan/coria/coria_mural_terracotta.webp";
+import coria_mural_vert_sec from "@/assets/collections/artisan/coria/coria_mural_vert_sec.webp";
 
 import hilado_montaje from "@/assets/collections/artisan/hilado/hilado_montaje.webp";
-import hilado_mural from "@/assets/collections/artisan/hilado/hilado_mural.webp";
+import hilado_mural_black from "@/assets/collections/artisan/hilado/hilado_mural_black.webp";
+import hilado_mural_dark_sky from "@/assets/collections/artisan/hilado/hilado_mural_dark_sky.webp";
+import hilado_mural_fenland from "@/assets/collections/artisan/hilado/hilado_mural_fenland.webp";
+import hilado_mural_mais from "@/assets/collections/artisan/hilado/hilado_mural_mais.webp";
+import hilado_mural_natural from "@/assets/collections/artisan/hilado/hilado_mural_natural.webp";
+// import hilado_mural_oryza_grain from "@/assets/collections/artisan/hilado/hilado_mural_oryza_grain.webp";
+import hilado_mural_terracotta from "@/assets/collections/artisan/hilado/hilado_mural_terracotta.webp";
+import hilado_mural_vert_sec from "@/assets/collections/artisan/hilado/hilado_mural_vert_sec.webp";
 
 import madeja_montaje from "@/assets/collections/artisan/madeja/madeja_montaje.webp";
-import madeja_mural from "@/assets/collections/artisan/madeja/madeja_mural.webp";
+import madeja_mural_black from "@/assets/collections/artisan/madeja/madeja_mural_black.webp";
+import madeja_mural_dark_sky from "@/assets/collections/artisan/madeja/madeja_mural_dark_sky.webp";
+import madeja_mural_fenland from "@/assets/collections/artisan/madeja/madeja_mural_fenland.webp";
+import madeja_mural_mais from "@/assets/collections/artisan/madeja/madeja_mural_mais.webp";
+import madeja_mural_natural from "@/assets/collections/artisan/madeja/madeja_mural_natural.webp";
+import madeja_mural_oryza_grain from "@/assets/collections/artisan/madeja/madeja_mural_oryza_grain.webp";
+import madeja_mural_terracotta from "@/assets/collections/artisan/madeja/madeja_mural_terracotta.webp";
+import madeja_mural_vert_sec from "@/assets/collections/artisan/madeja/madeja_mural_vert_sec.webp";
 
 import pampa_montaje from "@/assets/collections/artisan/pampa/pampa_montaje.webp";
-import pampa_mural from "@/assets/collections/artisan/pampa/pampa_mural.webp";
+import pampa_mural_black from "@/assets/collections/artisan/pampa/pampa_mural_black.webp";
+import pampa_mural_dark_sky from "@/assets/collections/artisan/pampa/pampa_mural_dark_sky.webp";
+import pampa_mural_fenland from "@/assets/collections/artisan/pampa/pampa_mural_fenland.webp";
+import pampa_mural_mais from "@/assets/collections/artisan/pampa/pampa_mural_mais.webp";
+import pampa_mural_natural from "@/assets/collections/artisan/pampa/pampa_mural_natural.webp";
+import pampa_mural_oryza_grain from "@/assets/collections/artisan/pampa/pampa_mural_oryza_grain.webp";
+import pampa_mural_terracotta from "@/assets/collections/artisan/pampa/pampa_mural_terracotta.webp";
+import pampa_mural_vert_sec from "@/assets/collections/artisan/pampa/pampa_mural_vert_sec.webp";
 
 import randa_montaje from "@/assets/collections/artisan/randa/randa_montaje.webp";
-import randa_mural from "@/assets/collections/artisan/randa/randa_mural.webp";
+import randa_mural_black from "@/assets/collections/artisan/randa/randa_mural_black.webp";
+import randa_mural_dark_sky from "@/assets/collections/artisan/randa/randa_mural_dark_sky.webp";
+import randa_mural_fenland from "@/assets/collections/artisan/randa/randa_mural_fenland.webp";
+import randa_mural_mais from "@/assets/collections/artisan/randa/randa_mural_mais.webp";
+import randa_mural_natural from "@/assets/collections/artisan/randa/randa_mural_natural.webp";
+import randa_mural_oryza_grain from "@/assets/collections/artisan/randa/randa_mural_oryza_grain.webp";
+import randa_mural_terracotta from "@/assets/collections/artisan/randa/randa_mural_terracotta.webp";
+import randa_mural_vert_sec from "@/assets/collections/artisan/randa/randa_mural_vert_sec.webp";
 
 import risco_montaje from "@/assets/collections/artisan/risco/risco_montaje.webp";
-import risco_mural from "@/assets/collections/artisan/risco/risco_mural.webp";
+import risco_mural_black from "@/assets/collections/artisan/risco/risco_mural_black.webp";
+import risco_mural_dark_sky from "@/assets/collections/artisan/risco/risco_mural_dark_sky.webp";
+import risco_mural_fenland from "@/assets/collections/artisan/risco/risco_mural_fenland.webp";
+import risco_mural_mais from "@/assets/collections/artisan/risco/risco_mural_mais.webp";
+import risco_mural_natural from "@/assets/collections/artisan/risco/risco_mural_natural.webp";
+import risco_mural_oryza_grain from "@/assets/collections/artisan/risco/risco_mural_oryza_grain.webp";
+import risco_mural_terracotta from "@/assets/collections/artisan/risco/risco_mural_terracotta.webp";
+import risco_mural_vert_sec from "@/assets/collections/artisan/risco/risco_mural_vert_sec.webp";
 
 import ruma_montaje from "@/assets/collections/artisan/ruma/ruma_montaje.webp";
-import ruma_mural from "@/assets/collections/artisan/ruma/ruma_mural.webp";
+import ruma_mural_black from "@/assets/collections/artisan/ruma/ruma_mural_black.webp";
+import ruma_mural_dark_sky from "@/assets/collections/artisan/ruma/ruma_mural_dark_sky.webp";
+import ruma_mural_fenland from "@/assets/collections/artisan/ruma/ruma_mural_fenland.webp";
+import ruma_mural_mais from "@/assets/collections/artisan/ruma/ruma_mural_mais.webp";
+import ruma_mural_natural from "@/assets/collections/artisan/ruma/ruma_mural_natural.webp";
+import ruma_mural_oryza_grain from "@/assets/collections/artisan/ruma/ruma_mural_oryza_grain.webp";
+import ruma_mural_terracotta from "@/assets/collections/artisan/ruma/ruma_mural_terracotta.webp";
+import ruma_mural_vert_sec from "@/assets/collections/artisan/ruma/ruma_mural_vert_sec.webp";
 
 import telar_montaje from "@/assets/collections/artisan/telar/telar_montaje.webp";
-import telar_mural from "@/assets/collections/artisan/telar/telar_mural.webp";
+import telar_mural_black from "@/assets/collections/artisan/telar/telar_mural_black.webp";
+import telar_mural_dark_sky from "@/assets/collections/artisan/telar/telar_mural_dark_sky.webp";
+import telar_mural_fenland from "@/assets/collections/artisan/telar/telar_mural_fenland.webp";
+import telar_mural_mais from "@/assets/collections/artisan/telar/telar_mural_mais.webp";
+import telar_mural_natural from "@/assets/collections/artisan/telar/telar_mural_natural.webp";
+import telar_mural_oryza_grain from "@/assets/collections/artisan/telar/telar_mural_oryza_grain.webp";
+import telar_mural_terracotta from "@/assets/collections/artisan/telar/telar_mural_terracotta.webp";
+import telar_mural_vert_sec from "@/assets/collections/artisan/telar/telar_mural_vert_sec.webp";
 
 // Basa Basa
 import basa_basa_montaje from "@/assets/collections/basa_basa/basa_basa/basa_basa_montaje.webp";
@@ -652,10 +727,53 @@ export const collections: Array<Collection> = [
                 keywords: ["artisan"],
                 variants: [
                     {
-                        colorName: "Estándar",
+                        colorName: "Natural",
+                        color: "bg-natural",
                         montaje: abra_montaje,
-                        mural: abra_mural,
+                        mural: abra_mural_natural,
                         base: true,
+                    },
+                    {
+                        colorName: "Fenland",
+                        color: "bg-fenland",
+                        montaje: abra_montaje,
+                        mural: abra_mural_fenland,
+                    },
+                    {
+                        colorName: "Oryza Grain",
+                        color: "bg-oryza-grain",
+                        montaje: abra_montaje,
+                        mural: abra_mural_oryza_grain,
+                    },
+                    {
+                        colorName: "Terracotta",
+                        color: "bg-terracotta",
+                        montaje: abra_montaje,
+                        mural: abra_mural_terracotta,
+                    },
+                    {
+                        colorName: "Dark Sky",
+                        color: "bg-dark-sky",
+                        montaje: abra_montaje,
+                        mural: abra_mural_dark_sky,
+                    },
+                    {
+                        colorName: "Vert Sec",
+                        color: "bg-vert-sec",
+                        montaje: abra_montaje,
+                        mural:  abra_mural_vert_sec,
+                    },
+                    {
+                        colorName: "Maïs",
+                        color: "bg-mais",
+                        montaje: abra_montaje,
+                        mural: abra_mural_mais,
+                    },
+                    {
+                        colorName: "Black",
+                        color: "bg-black",
+                        montaje: abra_montaje,
+                        mural: abra_mural_black,
                     },
                 ],
                 href: "artisan",
@@ -686,10 +804,53 @@ export const collections: Array<Collection> = [
                 keywords: ["artisan"],
                 variants: [
                     {
-                        colorName: "Estándar",
+                        colorName: "Natural",
+                        color: "bg-natural",
                         montaje: cauce_montaje,
-                        mural: cauce_mural,
+                        mural: cauce_mural_natural,
                         base: true,
+                    },
+                    {
+                        colorName: "Fenland",
+                        color: "bg-fenland",
+                        montaje: cauce_montaje,
+                        mural: cauce_mural_fenland,
+                    },
+                    {
+                        colorName: "Oryza Grain",
+                        color: "bg-oryza-grain",
+                        montaje: cauce_montaje,
+                        mural: cauce_mural_oryza_grain,
+                    },
+                    {
+                        colorName: "Terracotta",
+                        color: "bg-terracotta",
+                        montaje: cauce_montaje,
+                        mural: cauce_mural_terracotta,
+                    },
+                    {
+                        colorName: "Dark Sky",
+                        color: "bg-dark-sky",
+                        montaje: cauce_montaje,
+                        mural: cauce_mural_dark_sky,
+                    },
+                    {
+                        colorName: "Vert Sec",
+                        color: "bg-vert-sec",
+                        montaje: cauce_montaje,
+                        mural: cauce_mural_vert_sec,
+                    },
+                    {
+                        colorName: "Maïs",
+                        color: "bg-mais",
+                        montaje: cauce_montaje,
+                        mural: cauce_mural_mais,
+                    },
+                    {
+                        colorName: "Black",
+                        color: "bg-black",
+                        montaje: cauce_montaje,
+                        mural: cauce_mural_black,
                     },
                 ],
                 href: "artisan",
@@ -703,10 +864,41 @@ export const collections: Array<Collection> = [
                 keywords: ["artisan"],
                 variants: [
                     {
-                        colorName: "Estándar",
+                        colorName: "Fenland",
+                        color: "bg-fenland",
                         montaje: ceren_montaje,
-                        mural: ceren_mural,
+                        mural: ceren_mural_fenland,
                         base: true,
+                    },
+                    {
+                        colorName: "Oryza Grain",
+                        color: "bg-oryza-grain",
+                        montaje: ceren_montaje,
+                        mural: ceren_mural_oryza_grain,
+                    },
+                    {
+                        colorName: "Terracotta",
+                        color: "bg-terracotta",
+                        montaje: ceren_montaje,
+                        mural: ceren_mural_terracotta,
+                    },
+                    {
+                        colorName: "Dark Sky",
+                        color: "bg-dark-sky",
+                        montaje: ceren_montaje,
+                        mural: ceren_mural_dark_sky,
+                    },
+                    {
+                        colorName: "Vert Sec",
+                        color: "bg-vert-sec",
+                        montaje: ceren_montaje,
+                        mural: ceren_mural_vert_sec,
+                    },
+                    {
+                        colorName: "Maïs",
+                        color: "bg-mais",
+                        montaje: ceren_montaje,
+                        mural: ceren_mural_mais,
                     },
                 ],
                 href: "artisan",
@@ -720,10 +912,53 @@ export const collections: Array<Collection> = [
                 keywords: ["artisan"],
                 variants: [
                     {
-                        colorName: "Estándar",
+                        colorName: "Natural",
+                        color: "bg-natural",
                         montaje: coria_montaje,
-                        mural: coria_mural,
+                        mural: coria_mural_natural,
                         base: true,
+                    },
+                    {
+                        colorName: "Fenland",
+                        color: "bg-fenland",
+                        montaje: coria_montaje,
+                        mural: coria_mural_fenland,
+                    },
+                    {
+                        colorName: "Oryza Grain",
+                        color: "bg-oryza-grain",
+                        montaje: coria_montaje,
+                        mural: coria_mural_oryza_grain,
+                    },
+                    {
+                        colorName: "Terracotta",
+                        color: "bg-terracotta",
+                        montaje: coria_montaje,
+                        mural: coria_mural_terracotta,
+                    },
+                    {
+                        colorName: "Dark Sky",
+                        color: "bg-dark-sky",
+                        montaje: coria_montaje,
+                        mural: coria_mural_dark_sky,
+                    },
+                    {
+                        colorName: "Vert Sec",
+                        color: "bg-vert-sec",
+                        montaje: coria_montaje,
+                        mural: coria_mural_vert_sec,
+                    },
+                    {
+                        colorName: "Maïs",
+                        color: "bg-mais",
+                        montaje: coria_montaje,
+                        mural: coria_mural_mais,
+                    },
+                    {
+                        colorName: "Black",
+                        color: "bg-black",
+                        montaje: coria_montaje,
+                        mural: coria_mural_black,
                     },
                 ],
                 href: "artisan",
@@ -737,10 +972,47 @@ export const collections: Array<Collection> = [
                 keywords: ["artisan"],
                 variants: [
                     {
-                        colorName: "Estándar",
+                        colorName: "Natural",
+                        color: "bg-natural",
                         montaje: hilado_montaje,
-                        mural: hilado_mural,
+                        mural: hilado_mural_natural,
                         base: true,
+                    },
+                    {
+                        colorName: "Fenland",
+                        color: "bg-fenland",
+                        montaje: hilado_montaje,
+                        mural: hilado_mural_fenland,
+                    },
+                    {
+                        colorName: "Terracotta",
+                        color: "bg-terracotta",
+                        montaje: hilado_montaje,
+                        mural: hilado_mural_terracotta,
+                    },
+                    {
+                        colorName: "Dark Sky",
+                        color: "bg-dark-sky",
+                        montaje: hilado_montaje,
+                        mural: hilado_mural_dark_sky,
+                    },
+                    {
+                        colorName: "Vert Sec",
+                        color: "bg-vert-sec",
+                        montaje: hilado_montaje,
+                        mural: hilado_mural_vert_sec,
+                    },
+                    {
+                        colorName: "Maïs",
+                        color: "bg-mais",
+                        montaje: hilado_montaje,
+                        mural: hilado_mural_mais,
+                    },
+                    {
+                        colorName: "Black",
+                        color: "bg-black",
+                        montaje: hilado_montaje,
+                        mural: hilado_mural_black,
                     },
                 ],
                 href: "artisan",
@@ -754,10 +1026,53 @@ export const collections: Array<Collection> = [
                 keywords: ["artisan"],
                 variants: [
                     {
-                        colorName: "Estándar",
+                        colorName: "Natural",
+                        color: "bg-natural",
                         montaje: madeja_montaje,
-                        mural: madeja_mural,
+                        mural: madeja_mural_natural,
                         base: true,
+                    },
+                    {
+                        colorName: "Fenland",
+                        color: "bg-fenland",
+                        montaje: madeja_montaje,
+                        mural: madeja_mural_fenland,
+                    },
+                    {
+                        colorName: "Oryza Grain",
+                        color: "bg-oryza-grain",
+                        montaje: madeja_montaje,
+                        mural: madeja_mural_oryza_grain,
+                    },
+                    {
+                        colorName: "Terracotta",
+                        color: "bg-terracotta",
+                        montaje: madeja_montaje,
+                        mural: madeja_mural_terracotta,
+                    },
+                    {
+                        colorName: "Dark Sky",
+                        color: "bg-dark-sky",
+                        montaje: madeja_montaje,
+                        mural: madeja_mural_dark_sky,
+                    },
+                    {
+                        colorName: "Vert Sec",
+                        color: "bg-vert-sec",
+                        montaje: madeja_montaje,
+                        mural: madeja_mural_vert_sec,
+                    },
+                    {
+                        colorName: "Maïs",
+                        color: "bg-mais",
+                        montaje: madeja_montaje,
+                        mural: madeja_mural_mais,
+                    },
+                    {
+                        colorName: "Black",
+                        color: "bg-black",
+                        montaje: madeja_montaje,
+                        mural: madeja_mural_black,
                     },
                 ],
                 href: "artisan",
@@ -771,10 +1086,53 @@ export const collections: Array<Collection> = [
                 keywords: ["artisan"],
                 variants: [
                     {
-                        colorName: "Estándar",
+                        colorName: "Natural",
+                        color: "bg-natural",
                         montaje: pampa_montaje,
-                        mural: pampa_mural,
+                        mural: pampa_mural_natural,
                         base: true,
+                    },
+                    {
+                        colorName: "Fenland",
+                        color: "bg-fenland",
+                        montaje: pampa_montaje,
+                        mural: pampa_mural_fenland,
+                    },
+                    {
+                        colorName: "Oryza Grain",
+                        color: "bg-oryza-grain",
+                        montaje: pampa_montaje,
+                        mural: pampa_mural_oryza_grain,
+                    },
+                    {
+                        colorName: "Terracotta",
+                        color: "bg-terracotta",
+                        montaje: pampa_montaje,
+                        mural: pampa_mural_terracotta,
+                    },
+                    {
+                        colorName: "Dark Sky",
+                        color: "bg-dark-sky",
+                        montaje: pampa_montaje,
+                        mural: pampa_mural_dark_sky,
+                    },
+                    {
+                        colorName: "Vert Sec",
+                        color: "bg-vert-sec",
+                        montaje: pampa_montaje,
+                        mural: pampa_mural_vert_sec,
+                    },
+                    {
+                        colorName: "Maïs",
+                        color: "bg-mais",
+                        montaje: pampa_montaje,
+                        mural: pampa_mural_mais,
+                    },
+                    {
+                        colorName: "Black",
+                        color: "bg-black",
+                        montaje: pampa_montaje,
+                        mural: pampa_mural_black,
                     },
                 ],
                 href: "artisan",
@@ -788,10 +1146,53 @@ export const collections: Array<Collection> = [
                 keywords: ["artisan"],
                 variants: [
                     {
-                        colorName: "Estándar",
+                        colorName: "Natural",
+                        color: "bg-natural",
                         montaje: randa_montaje,
-                        mural: randa_mural,
+                        mural: randa_mural_natural,
                         base: true,
+                    },
+                    {
+                        colorName: "Fenland",
+                        color: "bg-fenland",
+                        montaje: randa_montaje,
+                        mural: randa_mural_fenland,
+                    },
+                    {
+                        colorName: "Oryza Grain",
+                        color: "bg-oryza-grain",
+                        montaje: randa_montaje,
+                        mural: randa_mural_oryza_grain,
+                    },
+                    {
+                        colorName: "Terracotta",
+                        color: "bg-terracotta",
+                        montaje: randa_montaje,
+                        mural: randa_mural_terracotta,
+                    },
+                    {
+                        colorName: "Dark Sky",
+                        color: "bg-dark-sky",
+                        montaje: randa_montaje,
+                        mural: randa_mural_dark_sky,
+                    },
+                    {
+                        colorName: "Vert Sec",
+                        color: "bg-vert-sec",
+                        montaje: randa_montaje,
+                        mural: randa_mural_vert_sec,
+                    },
+                    {
+                        colorName: "Maïs",
+                        color: "bg-mais",
+                        montaje: randa_montaje,
+                        mural: randa_mural_mais,
+                    },
+                    {
+                        colorName: "Black",
+                        color: "bg-black",
+                        montaje: randa_montaje,
+                        mural: randa_mural_black,
                     },
                 ],
                 href: "artisan",
@@ -805,10 +1206,53 @@ export const collections: Array<Collection> = [
                 keywords: ["artisan"],
                 variants: [
                     {
-                        colorName: "Estándar",
+                        colorName: "Natural",
+                        color: "bg-natural",
                         montaje: risco_montaje,
-                        mural: risco_mural,
+                        mural: risco_mural_natural,
                         base: true,
+                    },
+                    {
+                        colorName: "Fenland",
+                        color: "bg-fenland",
+                        montaje: risco_montaje,
+                        mural: risco_mural_fenland,
+                    },
+                    {
+                        colorName: "Oryza Grain",
+                        color: "bg-oryza-grain",
+                        montaje: risco_montaje,
+                        mural: risco_mural_oryza_grain,
+                    },
+                    {
+                        colorName: "Terracotta",
+                        color: "bg-terracotta",
+                        montaje: risco_montaje,
+                        mural: risco_mural_terracotta,
+                    },
+                    {
+                        colorName: "Dark Sky",
+                        color: "bg-dark-sky",
+                        montaje: risco_montaje,
+                        mural: risco_mural_dark_sky,
+                    },
+                    {
+                        colorName: "Vert Sec",
+                        color: "bg-vert-sec",
+                        montaje: risco_montaje,
+                        mural: risco_mural_vert_sec,
+                    },
+                    {
+                        colorName: "Maïs",
+                        color: "bg-mais",
+                        montaje: risco_montaje,
+                        mural: risco_mural_mais,
+                    },
+                    {
+                        colorName: "Black",
+                        color: "bg-black",
+                        montaje: risco_montaje,
+                        mural: risco_mural_black,
                     },
                 ],
                 href: "artisan",
@@ -822,10 +1266,53 @@ export const collections: Array<Collection> = [
                 keywords: ["artisan"],
                 variants: [
                     {
-                        colorName: "Estándar",
+                        colorName: "Natural",
+                        color: "bg-natural",
                         montaje: ruma_montaje,
-                        mural: ruma_mural,
+                        mural: ruma_mural_natural,
                         base: true,
+                    },
+                    {
+                        colorName: "Fenland",
+                        color: "bg-fenland",
+                        montaje: ruma_montaje,
+                        mural: ruma_mural_fenland,
+                    },
+                    {
+                        colorName: "Oryza Grain",
+                        color: "bg-oryza-grain",
+                        montaje: ruma_montaje,
+                        mural: ruma_mural_oryza_grain,
+                    },
+                    {
+                        colorName: "Terracotta",
+                        color: "bg-terracotta",
+                        montaje: ruma_montaje,
+                        mural: ruma_mural_terracotta,
+                    },
+                    {
+                        colorName: "Dark Sky",
+                        color: "bg-dark-sky",
+                        montaje: ruma_montaje,
+                        mural: ruma_mural_dark_sky,
+                    },
+                    {
+                        colorName: "Vert Sec",
+                        color: "bg-vert-sec",
+                        montaje: ruma_montaje,
+                        mural: ruma_mural_vert_sec,
+                    },
+                    {
+                        colorName: "Maïs",
+                        color: "bg-mais",
+                        montaje: ruma_montaje,
+                        mural: ruma_mural_mais,
+                    },
+                    {
+                        colorName: "Black",
+                        color: "bg-black",
+                        montaje: ruma_montaje,
+                        mural: ruma_mural_black,
                     },
                 ],
                 href: "artisan",
@@ -839,10 +1326,53 @@ export const collections: Array<Collection> = [
                 keywords: ["artisan"],
                 variants: [
                     {
-                        colorName: "Estándar",
+                        colorName: "Natural",
+                        color: "bg-natural",
                         montaje: telar_montaje,
-                        mural: telar_mural,
+                        mural: telar_mural_natural,
                         base: true,
+                    },
+                    {
+                        colorName: "Fenland",
+                        color: "bg-fenland",
+                        montaje: telar_montaje,
+                        mural: telar_mural_fenland,
+                    },
+                    {
+                        colorName: "Oryza Grain",
+                        color: "bg-oryza-grain",
+                        montaje: telar_montaje,
+                        mural: telar_mural_oryza_grain,
+                    },
+                    {
+                        colorName: "Terracotta",
+                        color: "bg-terracotta",
+                        montaje: telar_montaje,
+                        mural: telar_mural_terracotta,
+                    },
+                    {
+                        colorName: "Dark Sky",
+                        color: "bg-dark-sky",
+                        montaje: telar_montaje,
+                        mural: telar_mural_dark_sky,
+                    },
+                    {
+                        colorName: "Vert Sec",
+                        color: "bg-vert-sec",
+                        montaje: telar_montaje,
+                        mural: telar_mural_vert_sec,
+                    },
+                    {
+                        colorName: "Maïs",
+                        color: "bg-mais",
+                        montaje: telar_montaje,
+                        mural: telar_mural_mais,
+                    },
+                    {
+                        colorName: "Black",
+                        color: "bg-black",
+                        montaje: telar_montaje,
+                        mural: telar_mural_black,
                     },
                 ],
                 href: "artisan",
