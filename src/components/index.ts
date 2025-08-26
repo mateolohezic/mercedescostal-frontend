@@ -4,6 +4,8 @@ export { Card } from "./Card";
 export { LanguageSelector } from "./LanguageSelector";
 export { Video } from "./Video";
 
+export { PhotoSelector } from "./highlights/PhotoSelector";
+
 export { Navbar } from "./navbar/Navbar";
 export { NavbarLink } from "./navbar/NavbarLink";
 export { BuscadorNavbar } from "./navbar/BuscadorNavbar";

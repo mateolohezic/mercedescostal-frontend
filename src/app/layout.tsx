@@ -140,11 +140,7 @@ const links:Array<NavLinkHome> = [
           {
               title:'Meet the makers',
               href:'/meet-the-makers'
-          },
-          {
-              title:'Press',
-              href:'/presss'
-          },
+          }
       ]
   },
   {

@@ -11,7 +11,15 @@ import casamar_proceso_9 from "@/assets/proceso_creativo/casamar/casamar_proceso
 import casamar_proceso_10 from "@/assets/proceso_creativo/casamar/casamar_proceso_10.webp";
 import casamar_proceso_11 from "@/assets/proceso_creativo/casamar/casamar_proceso_11.webp";
 import casamar_proceso_12 from "@/assets/proceso_creativo/casamar/casamar_proceso_12.webp";
-import { Video } from "@/components";
+import casamar_proceso_13 from "@/assets/proceso_creativo/casamar/casamar_proceso_13.webp";
+import casamar_proceso_14 from "@/assets/proceso_creativo/casamar/casamar_proceso_14.webp";
+import casamar_proceso_15 from "@/assets/proceso_creativo/casamar/casamar_proceso_15.webp";
+import casamar_proceso_16 from "@/assets/proceso_creativo/casamar/casamar_proceso_16.webp";
+import casamar_proceso_17 from "@/assets/proceso_creativo/casamar/casamar_proceso_17.webp";
+import casamar_proceso_18 from "@/assets/proceso_creativo/casamar/casamar_proceso_18.webp";
+import casamar_proceso_19 from "@/assets/proceso_creativo/casamar/casamar_proceso_19.webp";
+import casamar_proceso_20 from "@/assets/proceso_creativo/casamar/casamar_proceso_20.webp";
+import { PhotoSelector, Video } from "@/components";
 
 export const ProcesoCreativoCasamar = () => {
     return (
@@ -33,7 +41,7 @@ export const ProcesoCreativoCasamar = () => {
                 <p className="text-right relative">(Jacques-Yves Cousteau)</p>
             </div>
             <div className="mt-24 lg:mt-12 w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div className="w-full flex flex-col justify-between gap-8 lg:gap-24">
+                <div className="w-full flex flex-col justify-between items-center gap-8 lg:gap-24">
                     <Image src={casamar_proceso_4} alt="Buen Diseño Mercedes Costal" className="w-full object-contain"/>
                     <Image src={casamar_proceso_5} alt="Buen Diseño Mercedes Costal" className="w-64 object-contain"/>
                 </div>
@@ -53,14 +61,10 @@ export const ProcesoCreativoCasamar = () => {
                 </div>
                 <p className="mt-8 text-lg text-justify"><b className="underline uppercase">THE MAGIC MUSHROOMS:</b> Los hemos visto en infinidad de películas a lo largo de nuestra vida, probablemente los asociemos a la fantasía de nuestra niñez, por su forma, de capuchón, de persona con sombrero.<br /> La fantasía se hace realidad y se imprime. Queda registrada en nuestra retina y forma parte de nuestro entorno.</p>
             </div>
-            <Image src={casamar_proceso_10} alt="Buen Diseño Mercedes Costal" className="mt-24 w-full max-w-3xl object-contain"/>
-            <div className="mt-4 lg:mt-12 w-full max-w-3xl grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <Image src={casamar_proceso_11} alt="Buen Diseño Mercedes Costal" className="w-full object-contain"/>
-                <div className="hidden lg:block"></div>
-            </div>
+            <PhotoSelector images={[casamar_proceso_11, casamar_proceso_12, casamar_proceso_13, casamar_proceso_14, casamar_proceso_15, casamar_proceso_16, casamar_proceso_17, casamar_proceso_18, casamar_proceso_19, casamar_proceso_20]} photoClassName="w-full lg:w-1/2 object-contain" className="mt-12 lg:mt-24 w-full max-w-3xl flex flex-col-reverse justify-center items-start gap-4" gridClassName="w-full grid grid-cols-5 gap-1 lg:gap-4" />
             <div className="mt-4 lg:-mt-12 w-full max-w-3xl grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="hidden lg:block"></div>
-                <Image src={casamar_proceso_12} alt="Buen Diseño Mercedes Costal" className="w-full object-contain"/>
+                <Image src={casamar_proceso_10} alt="Buen Diseño Mercedes Costal" className="w-full object-contain"/>
             </div>
             <div className="mt-48 w-full flex justify-center">
                 <Video video={"/assets/proceso_creativo/casamar/casamar_proceso_2.mp4"} className="max-w-md" buttonClassName="w-full justify-center bottom-4"/>

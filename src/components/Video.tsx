@@ -6,10 +6,11 @@ import { SoundOnIcon, SoundOffIcon, PlayIcon, PauseIcon } from "@/icons";
 interface Props{
     video: string;
     className?: string;
+    videoClassName?: string;
     buttonClassName?: string;
 }
 
-export const Video = ({video, className, buttonClassName = "bottom-4 right-4"}:Props) => {
+export const Video = ({video, className, videoClassName = "", buttonClassName = "bottom-4 right-4"}:Props) => {
 
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isMuted, setIsMuted] = useState(true);
@@ -59,7 +60,7 @@ export const Video = ({video, className, buttonClassName = "bottom-4 right-4"}:P
                 autoPlay
                 muted
                 loop
-                className="size-full object-contain pointer-events-none select-none"
+                className={`size-full object-contain pointer-events-none select-none ${videoClassName}`}
             >
                 <source src={video} type="video/mp4" />
                 Tu navegador no soporta este video.

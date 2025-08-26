@@ -29,20 +29,20 @@ export const ProcesoCreativoMorris = () => {
                 <Image src={morris_proceso_4} alt="Buen Diseño Mercedes Costal" className="w-full object-contain"/>
                 <p className="mt-8 text-lg text-center">Sus diseños de papeles pintados, como &ldquo;Daisy&rdquo; y &ldquo;Pimpernel&rdquo;, presentan flores y plantas reconocibles, a menudo con un enfoque en especies menos conocidas</p>
             </div>
-            <div className="mt-24 w-full max-w-4xl flex flex-col lg:flex-row items-center lg:items-stretch gap-8 relative z-10">
+            <div className="mt-24 w-full max-w-7xl flex flex-col lg:flex-row items-center gap-8 relative z-10">
                 <Image src={morris_proceso_5} alt="Buen Diseño Mercedes Costal" className="w-full lg:w-[55%] object-contain"/>
                 <p className="grow lg:pt-12 text-lg text-justify">Morris estaba fascinado por la naturaleza, especialmente por las flores, plantas y patrones orgánicos que encontraba en jardines y en el campo inglés. <br />Estudió botánica y hacía bocetos directos del natural, lo que le permitió representar las plantas con gran fidelidad, pero también con un sentido decorativo muy estudiado. <br />Influido por el arte medieval, la ornamentación islámica y los tejidos y tapices renacentistas, creó un estilo donde las flores no eran solo adorno, sino parte de un sistema rítmico y repetitivo.</p>
             </div>
             <div className="mt-12 lg:-mt-24 w-full flex justify-end">
                 <Image src={morris_proceso_6} alt="Buen Diseño Mercedes Costal" className="w-full max-w-7xl object-contain relative left-4 lg:left-0"/>
             </div>
-            <div className="mt-12 lg:-mt-24 w-full max-w-4xl flex justify-start relative z-10">
-                <div className="w-full max-w-lg flex flex-col items-start gap-8">
-                    <p className="max-w-sm text-lg text-justify">Su enfoque en la naturaleza y las flores silvestres inspiró a otros artistas y diseñadores a seguir sus pasos, influyendo en el movimiento Arts and Crafts.</p>
-                    <Image src={morris_proceso_7} alt="Buen Diseño Mercedes Costal" className="w-full object-contain"/>
+            <div className="mt-12 lg:-mt-24 w-full max-w-6xl flex justify-start relative z-10">
+                <div className="w-full max-w-7xl flex items-center gap-8">
+                    <Image src={morris_proceso_7} alt="Buen Diseño Mercedes Costal" className="max-w-2xl object-contain"/>
+                    <p className="grow text-lg text-justify">Su enfoque en la naturaleza y las flores silvestres inspiró a otros artistas y diseñadores a seguir sus pasos, influyendo en el movimiento Arts and Crafts.</p>
                 </div>
             </div>
-            <div className="mt-24 w-full max-w-3xl grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div className="mt-24 w-full max-w-5xl grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <div className="w-full flex flex-col gap-8">
                     <Image src={morris_proceso_9} alt="Buen Diseño Mercedes Costal" className="w-full object-contain"/>
                     <p className="text-lg text-justify">Morris creía que el arte debía ser accesible para todos, no solo para una élite. Su elección de motivos florales comunes reflejaba esta creencia.</p>

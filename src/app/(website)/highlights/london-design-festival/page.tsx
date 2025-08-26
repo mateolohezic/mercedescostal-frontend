@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import { Video } from "@/components";
+import { PhotoSelector, Video } from "@/components";
 import london_festival_1 from "@/assets/highlights/london-design-festival/london_festival_1.webp";
 import london_festival_2 from "@/assets/highlights/london-design-festival/london_festival_2.webp";
 import london_festival_3 from "@/assets/highlights/london-design-festival/london_festival_3.webp";
@@ -13,6 +13,8 @@ import london_festival_9 from "@/assets/highlights/london-design-festival/london
 import london_festival_10 from "@/assets/highlights/london-design-festival/london_festival_10.webp";
 import london_festival_11 from "@/assets/highlights/london-design-festival/london_festival_11.webp";
 import london_festival_12 from "@/assets/highlights/london-design-festival/london_festival_12.webp";
+import london_festival_13 from "@/assets/highlights/london-design-festival/london_festival_13.webp";
+import london_festival_14 from "@/assets/highlights/london-design-festival/london_festival_14.webp";
 
 export const metadata: Metadata = {
     title: 'London Design Festival',
@@ -42,7 +44,7 @@ export default function LondonDesignFestivalPage() {
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     Highlights
                 </h1>
-                <Image src={london_festival_1} priority alt="Portada Meet the makers Mercedes Costal" className="w-full aspect-video object-cover"/>
+                <Image src={london_festival_1} priority alt="Portada Meet the makers Mercedes Costal" className="w-full object-contain"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
@@ -56,27 +58,20 @@ export default function LondonDesignFestivalPage() {
             <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
                 <Image src={london_festival_2} alt="London Design Festival Mercedes Costal" className="w-full object-contain"/>
             </section>
-            <section className="mt-4 lg:mt-12 w-full max-w-5xl 2xl:max-w-7xl flex justify-end px-4 xl:px-0">
-                <Image src={london_festival_3} alt="London Design Festival Mercedes Costal" className="w-full lg:w-1/2 object-contain"/>
-            </section>
-            <section className="mt-4 lg:mt-12 w-full max-w-5xl 2xl:max-w-7xl flex justify-start px-4 xl:px-0">
-                <Image src={london_festival_4} alt="London Design Festival Mercedes Costal" className="w-full max-w-2xl object-contain"/>
-            </section>
-            <section className="mt-24 lg:mt-12 w-full max-w-5xl 2xl:max-w-7xl flex justify-start lg:justify-end px-4 xl:px-0 overflow-x-hidden">
-                <Video video={"/assets/highlights/london_festival_video.mp4"} className="max-w-72 lg:max-w-2xl relative lg:left-9" buttonClassName="top-4 left-4"/>
-            </section>
-            <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl flex flex-col justify-center items-center gap-1 lg:gap-4 px-4 md:px-0">
-                <Image src={london_festival_5} alt="London Design Festival Mercedes Costal" className="w-full h-auto object-contain"/>
-                <div className="w-full grid grid-cols-3 lg:grid-cols-7 gap-1 lg:gap-4">
-                    <Image src={london_festival_6} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={london_festival_7} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={london_festival_8} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={london_festival_9} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={london_festival_10} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={london_festival_11} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover"/>
-                    <Image src={london_festival_12} alt="London Design Festival Mercedes Costal" className="w-full aspect-[3/4] object-cover hidden lg:block"/>
+            <section className="mt-4 lg:mt-12 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 grid grid-cols-2 gap-4">
+                <div className="w-full flex flex-col gap-4 lg:gap-12">
+                    <Image src={london_festival_13} alt="London Design Festival Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={london_festival_4} alt="London Design Festival Mercedes Costal" className="w-full object-contain"/>
+                </div>
+                <div className="w-full flex flex-col justify-between gap-4 lg:gap-12">
+                    <Image src={london_festival_3} alt="London Design Festival Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={london_festival_14} alt="London Design Festival Mercedes Costal" className="w-full object-contain"/>
                 </div>
             </section>
+            <section className="mt-24 lg:mt-12 w-full max-w-5xl 2xl:max-w-7xl flex justify-center px-4 xl:px-0 overflow-x-hidden">
+                <Video video={"/assets/highlights/london_festival_video.mp4"} className="max-w-72 lg:max-w-2xl relative lg:left-9" buttonClassName="top-4 left-4"/>
+            </section>
+            <PhotoSelector images={[london_festival_5, london_festival_6, london_festival_7, london_festival_8, london_festival_9, london_festival_10, london_festival_11, london_festival_12]} photoClassName="w-full object-contain" className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl flex flex-col justify-center items-center gap-1 lg:gap-4 px-4 md:px-0" gridClassName="w-full grid grid-cols-4 lg:grid-cols-8 gap-1 lg:gap-4" />
         </main>
     );
-}
+}   

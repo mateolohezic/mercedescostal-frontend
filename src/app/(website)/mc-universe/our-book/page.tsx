@@ -64,7 +64,7 @@ export default function OurBookPage() {
                 <Image src={book_4} alt="Meet the Makers Mercedes Costal" className="w-full object-contain"/>
                 <Image src={book_5} alt="Meet the Makers Mercedes Costal" className="w-full object-contain col-span-2"/>
             </section>
-            <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
+            <section className="mt-24 lg:mt-72 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
                 <Image src={book_6} alt="Meet the Makers Mercedes Costal" className="w-full max-w-md object-contain"/>
             </section>
         </main>

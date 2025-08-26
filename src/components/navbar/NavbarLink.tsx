@@ -45,7 +45,7 @@ export const NavbarLink = ({ navlink, index, isHome, menuExpanded, toggleMenu }:
                             animate={{ height: "auto", opacity: 1, marginTop: 8 }}
                             exit={{ height: 0, opacity: 0, marginTop: 0 }}
                             transition={{ duration: 0.25 }}
-                            className={`flex flex-col items-start lg:items-end gap-2 ${isHome && !isMobile && " bg-white p-4"} ${ isMobile ? "pl-4 border-l border-gray-300" : "absolute top-full right-0 text-end" }`}
+                            className={`flex flex-col items-start lg:items-end gap-2 ${!isHome && !isMobile && " bg-white p-4"} ${ isMobile ? "pl-4 border-l border-gray-300" : "absolute top-full right-0 text-end" }`}
                         >
                             {links.map((link, i) => (
                                 <motion.li

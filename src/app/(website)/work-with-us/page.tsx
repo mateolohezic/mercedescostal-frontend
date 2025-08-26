@@ -37,7 +37,7 @@ export default function WorkWithUsPage() {
                     </div>
                 </div>
                 <p className="mt-8 text-center lg:text-start">
-                    <Link href="/meet-the-makers" className='border-b border-b-black lg:text-xl hover:opacity-75 transition-150'>Conoce al equipo.</Link>
+                    <Link href="/meet-the-makers" className='border-b border-b-black lg:text-xl hover:opacity-75 transition-150'>Conocé al equipo.</Link>
                 </p>
             </section>
         </main>

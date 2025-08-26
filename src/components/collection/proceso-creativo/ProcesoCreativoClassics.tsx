@@ -9,7 +9,7 @@ import { Video } from "@/components";
 export const ProcesoCreativoClassics = () => {
     return (
         <section className="my-24 lg:my-48 w-full grow px-4 flex flex-col items-center font-truetypewritter">
-            <div className="max-w-3xl flex flex-col lg:flex-row items-center lg:items-start gap-12">
+            <div className="max-w-7xl flex flex-col lg:flex-row items-center lg:items-start gap-12">
                 <div className="w-full lg:w-[45%] shrink-0 flex flex-col gap-12">
                     <Video video={"/assets/proceso_creativo/the_classics/the_classics_proceso_1.mp4"} className="w-full aspect-square rounded-full overflow-hidden" buttonClassName="justify-center bottom-4 left-0 right-0 mx-auto"/>
                     <div className="lg:hidden">
@@ -39,7 +39,7 @@ export const ProcesoCreativoClassics = () => {
                     <Video video={"/assets/proceso_creativo/the_classics/the_classics_proceso_4.mp4"} className="mt-24 lg:mt-48"/>
                 </div>
             </div>
-            <div className="mt-12 lg:mt-24 max-w-4xl flex flex-col gap-4">
+            <div className="mt-12 lg:mt-24 max-w-7xl flex flex-col gap-4">
                 <Image src={the_classics_proceso_4} alt="Buen Diseño Mercedes Costal" className="w-full aspect-[2] object-cover"/>
                 <p className="text-lg">Los tonos cálidos y terrosos de Prince Of Udaipur, recrean la mística de las antiguas tradiciones indias. Entre escenas de batallas y procesiones se reviven relatos históricos con texturas visuales añejadas, una opción ideal para espacios que buscan transmitir tranquilidad visual y elegancia.</p>
             </div>

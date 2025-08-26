@@ -76,6 +76,7 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
 
         const whatsappNumber = "5491160208460"; // número de destino
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+        // const whatsappUrl = `https://web.whatsapp.com/send/?phone=${whatsappNumber}&text=${message}`;
         window.open(whatsappUrl, "_blank");
     };
 

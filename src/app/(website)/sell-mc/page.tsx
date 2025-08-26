@@ -32,7 +32,7 @@ export default function SellMCPage() {
                 </h1>
                 <div className="w-full max-w-2xl lg:text-xl">
                     <p>En Mercedes Costal buscamos personas apasionadas por el diseño y la decoración que quieran ser parte de nuestra red de revendedores.</p>
-                    <p className="mt-8">Si te interesa comercializar nuestros murales y formar parte de una marca en expansión, completá el formulario con tus datos y contanos por qué querés sumarte. Estamos emocionados por descubrir nuevos talentos que compartan nuestra visión y ganas de llevar el arte a cada espacio.</p>
+                    <p className="mt-8">Si te interesa comercializar nuestros murales y formar parte de una marca en expansión, completá el formulario con tus datos y contanos por qué querés sumarte.</p>
                 </div>
             </section>
             <WorkWithUsForm/>

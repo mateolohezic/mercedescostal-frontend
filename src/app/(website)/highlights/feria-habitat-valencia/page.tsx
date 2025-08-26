@@ -1,9 +1,12 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import { Video } from "@/components";
+import habitat_1 from "@/assets/highlights/habitat/habitat_1.webp";
 import habitat_2 from "@/assets/highlights/habitat/habitat_2.webp";
 import habitat_3 from "@/assets/highlights/habitat/habitat_3.webp";
 import habitat_4 from "@/assets/highlights/habitat/habitat_4.webp";
+import habitat_5 from "@/assets/highlights/habitat/habitat_5.webp";
+import habitat_6 from "@/assets/highlights/habitat/habitat_6.webp";
 
 export const metadata: Metadata = {
     title: 'Feria Hábitat Valencia',
@@ -40,21 +43,24 @@ export default function FeriaHabitatValenciaPage() {
                     Feria <b className="font-semibold block">Hábitat</b> Valencia
                 </h1>
                 <div className="w-full max-w-2xl lg:text-xl">
-                    <p>En 2023, participamos en la prestigiosa Feria Haviat de Valencia, un evento clave en el mundo del diseño y la decoración. Esta plataforma internacional nos permitió presentar nuestras propuestas en el campo de los wallpapers murales, destacando una propuesta que mixa diseño y sostenibilidad. Durante este evento, Mercedes Costal se conectó con creativos, arquitectos y diseñadores de todo el mundo, consolidando su presencia en el mercado internacional y reforzando su compromiso con la excelencia en cada pieza.</p>
+                    <p>En 2023, participamos en la prestigiosa Feria Hábitat de Valencia, un evento clave en el mundo del diseño y la decoración. Esta plataforma internacional nos permitió presentar nuestras propuestas en el campo de los wallpapers murales, destacando una propuesta que mixa diseño y sostenibilidad. Durante este evento, Mercedes Costal se conectó con creativos, arquitectos y diseñadores de todo el mundo, consolidando su presencia en el mercado internacional y reforzando su compromiso con la excelencia en cada pieza.</p>
                 </div>
             </section>
-            <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl flex justify-center px-4 sm:px-0">
-                <Video video={"/assets/highlights/habitat/habitat_video_1.mp4"} className="aspect-video"/>
+            <Image src={habitat_1} alt="Feria Hábitat de Valencia Mercedes Costal" className="mt-12 lg:mt-24 w-full max-w-2xl object-contain"/>
+            <section className="mt-4 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl flex justify-end px-4 md:px-0">
+                <Image src={habitat_5} alt="Feria Hábitat de Valencia Mercedes Costal" className="w-full max-w-2xl h-auto object-contain"/>
             </section>
-            <section className="mt-1 lg:mt-4 w-full max-w-5xl 2xl:max-w-7xl grid grid-cols-2 gap-1 lg:gap-4 px-4 md:px-0">
-                <Image src={habitat_2} alt="Feria Hábitat de Valencia Mercedes Costal" className="w-full h-auto object-cover aspect-[9/16]"/>
-                <Image src={habitat_3} alt="Feria Hábitat de Valencia Mercedes Costal" className="w-full h-auto object-cover aspect-[9/16]"/>
+            <section className="mt-4 lg:mt-12 w-full lg:max-w-4xl grid grid-cols-2 gap-4 lg:gap-12 px-4 md:px-0">
+                <div className="w-full flex flex-col gap-4 lg:gap-12">
+                    <Image src={habitat_2} alt="Feria Hábitat de Valencia Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={habitat_6} alt="Feria Hábitat de Valencia Mercedes Costal" className="w-full object-contain"/>
+                </div>
+                <div className="w-full flex items-center">
+                    <Image src={habitat_3} alt="Feria Hábitat de Valencia Mercedes Costal" className="w-full object-contain"/>
+                </div>
             </section>
-            <section className="mt-1 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-end">
-                <Video video={"/assets/highlights/habitat/habitat_video_2.mp4"} className="max-w-2xl"/>
-            </section>
-            <section className="mt-1 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl flex justify-start px-4 md:px-0">
-                <Image src={habitat_4} alt="Feria Hábitat de Valencia Mercedes Costal" className="w-full max-w-lg h-auto object-contain"/>
+            <section className="mt-4 lg:mt-24 w-full flex justify-center px-4">
+                <Image src={habitat_4} alt="Feria Hábitat de Valencia Mercedes Costal" className="w-full max-w-md object-contain"/>
             </section>
         </main>
     );

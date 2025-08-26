@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Video } from "@/components";
 import portada from "@/assets/mc-universe/cafe/portada.webp";
 import cafe_1 from "@/assets/mc-universe/cafe/cafe_1.webp";
 import cafe_2 from "@/assets/mc-universe/cafe/cafe_2.webp";
@@ -50,19 +49,16 @@ export default function CostalCafePage() {
                     <p className="mt-8">Nuestro café de especialidad se encuentra justo al pie de la montaña yerbabuenense, justo cuando las copas verdes de los árboles se comienzan a elevar hasta el cielo.</p>
                     <p className="mt-8">Además, tenemos en nuestra carta una selección de pastelería de autor.</p>
                     <p className="mt-8">
-                        <Link href="/collections/casamar" className='border-b border-b-black hover:opacity-75 transition-150'>Conocenos</Link>
+                        <Link href="https://www.instagram.com/cafecostal/" target="_blank" className='border-b border-b-black hover:opacity-75 transition-150'>Conócenos</Link>
                     </p>
                     <p className="mt-8">Costal coffe & other crafts.</p>
                 </div>
             </section>
-            <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
-                <Image src={cafe_1} alt="Meet the Makers Mercedes Costal" className="w-full lg:w-1/2 object-contain"/>
+            <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4">
+                <Image src={cafe_1} alt="Meet the Makers Mercedes Costal" className="w-full lg:w-1/2 lg:pr-2 object-contain"/>
             </section>
-            <section className="mt-1 lg:mt-0 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex justify-end">
-                <Video video={"/assets/mc-universe/cafe_video.mp4"} className="w-full max-w-xl aspect-[3/4]"/>
-            </section>
-            <section className="mt-1 lg:mt-12 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
-                <Image src={cafe_2} alt="Meet the Makers Mercedes Costal" className="w-full object-contain"/>
+            <section className="mt-1 lg:mt-0 w-full max-w-5xl 2xl:max-w-7xl px-4 flex justify-end">
+                <Image src={cafe_2} alt="Meet the Makers Mercedes Costal" className="w-full lg:w-1/2 lg:pl-2 object-contain"/>
             </section>
             <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
                 <Image src={cafe_3} alt="Meet the Makers Mercedes Costal" className="w-full max-w-3xl object-contain"/>
