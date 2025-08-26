@@ -116,7 +116,7 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                             <li><b className="uppercase block">Ancho de paño</b> 50cm / 100 cm</li>
                             <li><b className="uppercase block">Dimensiones</b> a medida (m²)</li>
                             <li><b className="uppercase block">Apto para</b> interiores, oficinas, hoteles, gimnasios, restaurantes, colegios, etc</li>
-                            <li><b className="uppercase block">Plazo de entrega</b> a partir de 15 días</li>
+                            <li><b className="uppercase block">Plazo de entrega</b> a partir de 10 días hábiles</li>
                             <li className="uppercase">Consultar posibilidad de personalización</li>
                             <li className="uppercase">Envío e instalación no incluidos</li>
                             <li>

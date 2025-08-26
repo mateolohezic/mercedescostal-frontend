@@ -9,7 +9,6 @@ import { FormErrorMessage } from "@/components";
 import { collections } from "@/data/collections";
 import { CrossIcon } from "@/icons";
 
-
 const spaceSchema = z.object({
     largo: z.number({ invalid_type_error: "Debe ser un número." }).min(0.01, "Largo requerido"),
     alto: z.number({ invalid_type_error: "Debe ser un número." }).min(0.01, "Alto requerido"),
@@ -17,7 +16,7 @@ const spaceSchema = z.object({
 
 const schema = z.object({
     name: z.string().min(2, "Nombre requerido"),
-    email: z.string().email("Email inválido"),
+    email: z.string().email("Correo electrónico inválido"),
     phone: z.string().min(6, "Teléfono inválido"),
     collection: z.string().nonempty("Selecciona una colección"),
     mural: z.string().nonempty("Selecciona un mural"),

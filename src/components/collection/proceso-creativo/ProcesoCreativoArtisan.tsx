@@ -21,8 +21,8 @@ export const ProcesoCreativoArtisan = () => {
                 </div>
                 <div className="pt-24 w-1/2 flex flex-col gap-24">
                     <p className="text-lg text-justify">Un tributo silencioso al gesto, al tiempo y a la tierra. <br />Artisans nace como un homenaje a la materia trabajada, al saber transmitido sin palabras, a las manos que tejen memoria. Inspirada en los oficios del norte argentino —sus telares de madera, sus urdimbres tensadas al sol, sus bordados que respiran herencia—, esta colección recorre el lenguaje profundo de lo hecho a mano, traduciéndolo en texturas que hablan de tierra y de tejido.</p>
-                    <div className="w-full px-12">
-                        <Video video={"/assets/proceso_creativo/artisan/artisan_proceso_1.mp4"}/>
+                    <div className="w-full">
+                        <Video video={"/assets/proceso_creativo/artisan/artisan_proceso_2.mp4"}/>
                     </div>
                 </div>
             </div>
@@ -40,7 +40,7 @@ export const ProcesoCreativoArtisan = () => {
                     </div>
                 </div>
                 <div className="pt-24 w-1/2 px-12 flex items-end">
-                    <Video video={"/assets/proceso_creativo/artisan/artisan_proceso_2.mp4"} className="w-full h-auto"/>
+                    <Video video={"/assets/proceso_creativo/artisan/artisan_proceso_3.mp4"} className="w-full h-auto"/>
                 </div>
             </div>
             <div className="mt-24 w-full max-w-3xl">
