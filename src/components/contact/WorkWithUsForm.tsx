@@ -5,6 +5,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import * as z from "zod";
 import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 import { zodResolver } from "@hookform/resolvers/zod";
+import emailjs from '@emailjs/browser';
 import { SubmitButtonLoading, FormErrorMessage } from "@/components";
 
 const schema = z.object({
@@ -24,7 +25,8 @@ type Schema = z.infer<typeof schema>;
 export const WorkWithUsForm = () => {
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
-    const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<Schema>({ resolver: zodResolver(schema) });
+    const [isSended, setIsSended] = useState<boolean>(false);
+    const { register, handleSubmit, watch, setValue, reset, formState: { errors } } = useForm<Schema>({ resolver: zodResolver(schema) });
     const [location, setLocation] = useState({ country: "", region: "" });
 
     const handleCountryChange = (val: string) => {
@@ -40,7 +42,25 @@ export const WorkWithUsForm = () => {
     const onSubmit: SubmitHandler<Schema> = async (data) => {
         setIsLoading(true);
         try {
-            console.log("Datos enviados:", data);
+            const templateParams = {
+                from_name: data.fullName,
+                phone: data.phonenumber,
+                from_email: data.email,
+                instagram: data.instagram,
+                country: data.country,
+                region: data.region,
+                address: data.address,
+                addressNumber: data.addressNumber,
+                message: data.message,
+            };
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+                templateParams,
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+            );
+            reset();
+            setIsSended(true);
         } catch (error) {
             console.error("Error al enviar el formulario:", error);
         } finally {
@@ -233,7 +253,8 @@ export const WorkWithUsForm = () => {
                 </div>
                 <FormErrorMessage condition={errors?.message} message={errors?.message?.message} className="mt-2"/>
             </div>
-            <div className="mt-4 w-full flex justify-end">
+            <div className="mt-4 w-full flex flex-col lg:flex-row lg:justify-between items-center gap-8">
+                {isSended ? <p className="bg-yellow-300 text-center lg:text-start">Gracias por tu consulta. Responderemos a la brevedad</p> : <p></p>}
                 <SubmitButtonLoading isLoading={isLoading} text="[ Enviar ]" className="w-24"/>
             </div>
         </form>

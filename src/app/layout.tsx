@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from 'next/font/local'
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Collapse, Navbar } from "@/components";
 import "./globals.css";
 import { NavLinkHome } from "@/interfaces";
@@ -214,6 +215,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
         <Navbar links={links}/>
         <Collapse links={links}/>
         {children}
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_G_A_ID || ""}/>
       </body>
     </html>
   );

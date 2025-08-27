@@ -56,7 +56,7 @@ export default function TheBookPage() {
             <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
                 <Image src={book_1} alt="Meet the Makers Mercedes Costal" className="w-full max-w-3xl object-contain"/>
             </section>
-            <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl flex gap-12 px-4 xl:px-0">
+            <section className="lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl flex flex-col lg:flex-row gap-4 lg:gap-12 px-4 xl:px-0">
                 <div className="grow flex items-center">
                     <Image src={book_6} alt="Meet the Makers Mercedes Costal" className="w-full object-contain"/>
                 </div>
