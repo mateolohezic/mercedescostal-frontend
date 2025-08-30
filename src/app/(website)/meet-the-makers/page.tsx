@@ -49,7 +49,7 @@ export default function MeetTheMakersPage() {
             <section className="my-24 lg:my-64 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-start gap-8 lg:gap-4">
                 <div className="grow max-w-2xl lg:text-xl flex flex-col justify-center items-center gap-8">
                     <p>&ldquo;Es un Estudio creativo conformado por un equipo de ilustradores, arquitectos y diseñadores.</p>
-                    <p>El equipo crea las ilustraciones con diferentes técnicas manuales y digitales que posteriormente son estampadas sobre sustrato papel para producir los wallpapers que se comercializan a través de medios digitales y puntos de venta en Argentina, Chile y Uruguay, y ventas a nivel global.</p>
+                    <p>El equipo crea las ilustraciones con diferentes técnicas manuales y digitales que posteriormente son estampadas sobre sustrato papel para producir los wallpapers que se comercializan a través de medios digitales y puntos de venta a nivel global.</p>
                     <p>Trabajamos conjuntamente desde las diferentes áreas del diseño, para lograr, a través de nuestros empapelados y murales, un equilibrio entre el arte y el interiorismo, generando con ellos, espacios, donde los colores, las texturas, y las formas se transforman en los protagonistas de los ambientes.&rdquo;</p>
                 </div>
                 <Image src={meet_the_makers_2} alt="Meet the Makers Mercedes Costal" className="w-full max-w-md object-cover"/>
