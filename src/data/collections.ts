@@ -638,7 +638,6 @@ import golden_tanger_mural from "@/assets/collections/vuelta_al_mundo/golden_tan
 
 import ibiza_icon_1 from "@/assets/collections/vuelta_al_mundo/ibiza/ibiza_icon_1.webp";
 import ibiza_montaje from "@/assets/collections/vuelta_al_mundo/ibiza/ibiza_montaje.webp";
-import ibiza_montaje_2 from "@/assets/collections/vuelta_al_mundo/ibiza/ibiza_montaje_2.webp";
 import ibiza_mural from "@/assets/collections/vuelta_al_mundo/ibiza/ibiza_mural.webp";
 
 import jardin_colgante_icon_1 from "@/assets/collections/vuelta_al_mundo/jardin_colgante/jardin_colgante_icon_1.webp";
@@ -2951,12 +2950,6 @@ export const collections: Array<Collection> = [
                         mural: ibiza_mural,
                         base: true,
                     },
-                    {
-                        colorName: "Variante 2",
-                        color: "#E0E0E0",
-                        montaje: ibiza_montaje_2,
-                        mural: ibiza_mural,
-                    }
                 ],
                 href: "vuelta-al-mundo",
             },
