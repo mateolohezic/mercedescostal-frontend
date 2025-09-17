@@ -79,8 +79,8 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                     <div className="w-full grow p-6 lg:p-0">
                         <p className="font-gillsans font-light text-sm text-black/50 uppercase tracking-widest">Colección {mural.collectionTitle}</p>
                         <h2 className="text-3xl font-gillsans font-medium uppercase">{mural.title}</h2>
-                        <p className="mt-4 text-xl leading-none">$ { isPattern ? "74.000" : "85.800"}</p>
-                        <p className="text-xs text-black/50 leading-none">Precio final por m²</p>
+                        {/* <p className="mt-4 text-xl leading-none">$ { isPattern ? "74.000" : "85.800"}</p>
+                        <p className="text-xs text-black/50 leading-none">Precio final por m²</p> */}
                         {(mural.collectionId === "casamar" || mural.collectionId === "artisan") && mural.variants.length > 1 && (
                             <div className="mt-4 flex items-center gap-2">
                                 {mural.variants.sort((a, b) => a.colorName.localeCompare(b.colorName)).map((variant, idx) => {
@@ -120,7 +120,12 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                             <li className="uppercase">Consultar posibilidad de personalización</li>
                             <li className="uppercase">Envío e instalación no incluidos</li>
                             <li>
-                                <Link href={"/"} className="w-fit border-b border-black">VER FICHA TÉCNICA</Link>
+                                <Link
+                                    href="/assets/ficha_tecnica_mercedes_costal.pdf" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="w-fit border-b border-black uppercase"
+                                >Ver ficha técnica</Link>
                             </li>
                         </ul>
                     </div>
