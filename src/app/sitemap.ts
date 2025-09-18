@@ -63,13 +63,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: 'https://mercedescostal.com.ar/murals',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/patterns',
+      url: 'https://mercedescostal.com.ar/collections',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 1,
@@ -135,7 +129,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: 'https://mercedescostal.com.ar/collections/vuelta-al-mundo',
+      url: 'https://mercedescostal.com.ar/collections/voyage',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
@@ -147,7 +141,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: 'https://mercedescostal.com.ar/collections/otros-murales',
+      url: 'https://mercedescostal.com.ar/collections/wonder',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.7,
+    },
+    {
+      url: 'https://mercedescostal.com.ar/collections/abstrac',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,

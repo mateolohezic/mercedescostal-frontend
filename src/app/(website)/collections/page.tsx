@@ -1,8 +1,5 @@
 import Link from "next/link";
-// import { useMuralsCategories } from "@/hooks";
 import Image from "next/image";
-// import { Card } from "@/components";
-// import { collections } from "@/data/collections";
 import { Metadata } from "next";
 import { collections } from "@/data/collections";
 import { CollectionVideo } from "@/components";
@@ -15,14 +12,14 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Murals | Mercedes Costal',
         description: 'Mercedes Costal.',
-        url: 'https://mercedescostal.com.ar/murals',
+        url: 'https://mercedescostal.com.ar/collections',
         siteName: 'Mercedes Costal',
         locale: 'es_AR',
         type: 'website',
     },
     twitter: {
         card: 'summary_large_image',
-        site: 'https://mercedescostal.com.ar/murals',
+        site: 'https://mercedescostal.com.ar/collections',
         creator: 'Mercedes Costal',
         title: 'Murals | Mercedes Costal',
         description: 'Mercedes Costal.',
@@ -30,19 +27,6 @@ export const metadata: Metadata = {
 };
 
 export default function CollectionsPage() {
-
-    // const categories = useMuralsCategories();
-    // const getCategoryImage = (category: string) => {
-    //     for (const collection of collections) {
-    //         for (const mural of collection.murales) {
-    //             if (mural.keywords.includes(category)) {
-    //                 return mural.icons[0];
-    //             }
-    //         }
-    //     }
-    //     return null;
-    // };
-
     return (
         <main className="my-12 lg:my-0 w-full grow flex flex-col items-center font-truetypewritter">
             <h1 className="sr-only">Wallpapers</h1>
@@ -56,7 +40,7 @@ export default function CollectionsPage() {
                         {
                             i === 0 ?
                                 <div className="absolute top-0 left-0 z-0">
-                                    <CollectionVideo title={collection.title} video={collection.video}/>
+                                    <CollectionVideo title={collection.title} video={collection.video||""}/>
                                 </div>
                             :
                             <Fragment>
@@ -78,15 +62,6 @@ export default function CollectionsPage() {
                     </Link>
                 ))}
             </section>
-            {/* <section className="mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
-                <h2 className="w-full text-center lg:text-start font-gillsans text-xl tracking-[0.5rem] uppercase">Por <b className="font-semibold">categorías</b></h2>
-                <div className="mt-8 w-full grid grid-cols-1 lg:grid-cols-4 gap-8">
-                    {categories.map(category => {
-                        const categoryImage = getCategoryImage(category);
-                        return <Card href={`/categories/${category}`}  image={categoryImage||""} title={category} key={category} />
-                    })}
-                </div>
-            </section> */}
             <section className="mt-12 lg:my-48 w-full max-w-5xl 2xl:max-w-7xl px-4 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <div className="w-full lg:text-lg text-start flex flex-col gap-[1lh]">
                     <p>No diseñamos papeles. Creamos atmósferas.</p>

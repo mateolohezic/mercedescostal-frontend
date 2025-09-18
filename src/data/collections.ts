@@ -604,10 +604,10 @@ import alexandria_icon_1 from "@/assets/collections/vuelta_al_mundo/alexandria/a
 import alexandria_montaje from "@/assets/collections/vuelta_al_mundo/alexandria/alexandria_montaje.webp";
 import alexandria_mural from "@/assets/collections/vuelta_al_mundo/alexandria/alexandria_mural.webp";
 
-// import bindi_icon_1 from "@/assets/collections/vuelta_al_mundo/bindi/bindi_icon_1.webp";
-// import bindi_montaje from "@/assets/collections/vuelta_al_mundo/bindi/bindi_montaje.webp";
-// import bindi_montaje_2 from "@/assets/collections/vuelta_al_mundo/bindi/bindi_montaje_2.webp";
-// import bindi_mural from "@/assets/collections/vuelta_al_mundo/bindi/bindi_mural.webp";
+import bindi_icon_1 from "@/assets/collections/vuelta_al_mundo/bindi/bindi_icon_1.webp";
+import bindi_montaje from "@/assets/collections/vuelta_al_mundo/bindi/bindi_montaje.webp";
+import bindi_montaje_2 from "@/assets/collections/vuelta_al_mundo/bindi/bindi_montaje_2.webp";
+import bindi_mural from "@/assets/collections/vuelta_al_mundo/bindi/bindi_mural.webp";
 
 import cuerpos_celestes_icon_1 from "@/assets/collections/vuelta_al_mundo/cuerpos_celestes/cuerpos_celestes_icon_1.webp";
 import cuerpos_celestes_montaje from "@/assets/collections/vuelta_al_mundo/cuerpos_celestes/cuerpos_celestes_montaje.webp";
@@ -2837,8 +2837,8 @@ export const collections: Array<Collection> = [
         ]
     },
     {
-        id: "vuelta-al-mundo",
-        title: "Vuelta al Mundo",
+        id: "voyage",
+        title: "Voyage",
         portrait: portada_vuelta_al_mundo,
         video: "/assets/portada_vuelta_al_mundo.mp4",
         date: "2016-2024",
@@ -2846,52 +2846,34 @@ export const collections: Array<Collection> = [
         description: "Descripcióñ.",
         murales: [
             {
-                id: "alexandria-vuelta-al-mundo",
-                title: "Alexandria",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
-                icons: [alexandria_icon_1],
-                keywords: ["paisaje", "blanco", "claro", "rojo", "rosa"],
+                id: "bindi-voyage",
+                title: "Bindi",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
+                icons: [bindi_icon_1],
+                keywords: ["animales", "paisaje", "arquitectura", "verde", "luxury"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        color: "#C0C0C0",
-                        montaje: alexandria_montaje,
-                        mural: alexandria_mural,
+                        color: "bg-st-201915",
+                        montaje: bindi_montaje,
+                        mural: bindi_mural,
                         base: true,
                     },
+                    {
+                        colorName: "Variante 2",
+                        color: "#800080",
+                        montaje: bindi_montaje_2,
+                        mural: bindi_mural,
+                    }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
-            // {
-            //     id: "bindi-vuelta-al-mundo",
-            //     title: "Bindi",
-            //     collectionTitle: "Vuelta al Mundo",
-            //     collectionId: "vuelta-al-mundo",
-            //     icons: [bindi_icon_1],
-            //     keywords: ["animales", "paisaje", "arquitectura", "verde", "luxury"],
-            //     variants: [
-            //         {
-            //             colorName: "Estándar",
-            //             color: "bg-st-201915",
-            //             montaje: bindi_montaje,
-            //             mural: bindi_mural,
-            //             base: true,
-            //         },
-            //         {
-            //             colorName: "Variante 2",
-            //             color: "#800080",
-            //             montaje: bindi_montaje_2,
-            //             mural: bindi_mural,
-            //         }
-            //     ],
-            //     href: "vuelta-al-mundo",
-            // },
             {
-                id: "encantado-vuelta-al-mundo",
+                id: "encantado-voyage",
                 title: "Encantado",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [encantado_icon_1],
                 keywords: ["paisaje", "verde", "azul"],
                 variants: [
@@ -2909,37 +2891,13 @@ export const collections: Array<Collection> = [
                         mural: encantado_mural_blue,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "golden-tanger-vuelta-al-mundo",
-                title: "Golden Tanger",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
-                icons: [golden_tanger_icon_1],
-                keywords: ["dorado", "exótico", "arte"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        color: "bg-st-201915",
-                        montaje: golden_tanger_montaje,
-                        mural: golden_tanger_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Variante 2",
-                        color: "bg-st-tanger",
-                        montaje: golden_tanger_montaje_2,
-                        mural: golden_tanger_mural,
-                    }
-                ],
-                href: "vuelta-al-mundo",
-            },
-            {
-                id: "ibiza-vuelta-al-mundo",
+                id: "ibiza-voyage",
                 title: "Ibiza",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [ibiza_icon_1],
                 keywords: ["botanico", "texturas", "rojo", "rosa"],
                 variants: [
@@ -2951,13 +2909,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     },
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "jardin-colgante-vuelta-al-mundo",
+                id: "jardin-colgante-voyage",
                 title: "Jardín Colgante",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [jardin_colgante_icon_1],
                 keywords: ["botanico", "animales", "verde", "blanco", "claro"],
                 variants: [
@@ -2975,13 +2933,13 @@ export const collections: Array<Collection> = [
                         mural: jardin_colgante_mural,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "jardin-persa-vuelta-al-mundo",
+                id: "jardin-persa-voyage",
                 title: "Jardín Persa",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [jardin_persa_icon_1],
                 keywords: ["botanico", "luxury", "negro", "oscuro", "verde"],
                 variants: [
@@ -3005,13 +2963,13 @@ export const collections: Array<Collection> = [
                         mural: jardin_persa_mural_white,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "la-riviere-vuelta-al-mundo",
+                id: "la-riviere-voyage",
                 title: "La Riviere",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [la_riviere_icon_1],
                 keywords: ["río", "paisaje", "naturaleza"],
                 variants: [
@@ -3029,37 +2987,13 @@ export const collections: Array<Collection> = [
                         mural: la_riviere_mural_gray,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "magnolia-real-vuelta-al-mundo",
-                title: "Magnolia Real",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
-                icons: [magnolia_real_icon_1, magnolia_real_icon_2],
-                keywords: ["botanico", "animales", "chinoiserie", "blanco", "claro", "vison"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        color: "#FFC0CB",
-                        montaje: magnolia_real_montaje,
-                        mural: magnolia_real_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Black",
-                        color: "bg-st-black",
-                        montaje: magnolia_real_montaje,
-                        mural: magnolia_real_mural_black,
-                    }
-                ],
-                href: "vuelta-al-mundo",
-            },
-            {
-                id: "palmario-vuelta-al-mundo",
+                id: "palmario-voyage",
                 title: "Palmario",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [palmario_icon_1],
                 keywords: ["botanico", "luxury", "blanco", "claro", "verde"],
                 variants: [
@@ -3077,13 +3011,13 @@ export const collections: Array<Collection> = [
                         mural: palmario_mural,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "praderas-tropical-vuelta-al-mundo",
+                id: "praderas-tropical-voyage",
                 title: "Praderas Tropical",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [praderas_tropical_icon_1],
                 keywords: ["paisaje", "botanico", "luxury", "gris"],
                 variants: [
@@ -3101,13 +3035,13 @@ export const collections: Array<Collection> = [
                         mural: praderas_tropical_mural_gray,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "rio-verde-vuelta-al-mundo",
+                id: "rio-verde-voyage",
                 title: "Río Verde",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [rio_verde_icon_1],
                 keywords: ["paisaje", "luxury", "negro", "oscuro", "verde"],
                 variants: [
@@ -3118,13 +3052,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "silvestre-vuelta-al-mundo",
+                id: "silvestre-voyage",
                 title: "Silvestre",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [silvestre_icon_1],
                 keywords: ["flora", "paisaje", "naturaleza"],
                 variants: [
@@ -3142,43 +3076,13 @@ export const collections: Array<Collection> = [
                         mural: silvestre_mural_gray,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "birds-of-paradise-vuelta-al-mundo",
-                title: "Birds of Paradise",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
-                icons: [birds_of_paradise_icon_1],
-                keywords: ["botanico", "animales", "amarillo", "ocre"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        color: "#FFA07A",
-                        montaje: birds_of_paradise_montaje,
-                        mural: birds_of_paradise_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Blue",
-                        color: "#4682B4",
-                        montaje: birds_of_paradise_montaje,
-                        mural: birds_of_paradise_mural_blue,
-                    },
-                    {
-                        colorName: "Rose",
-                        color: "#FFC0CB",
-                        montaje: birds_of_paradise_montaje,
-                        mural: birds_of_paradise_mural_rose,
-                    }
-                ],
-                href: "vuelta-al-mundo",
-            },
-            {
-                id: "cortaderas-vuelta-al-mundo",
+                id: "cortaderas-voyage",
                 title: "Cortaderas",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [cortaderas_icon_1],
                 keywords: ["paisaje", "amarillo", "ocre", "vison"],
                 variants: [
@@ -3189,13 +3093,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "costa-rica-vuelta-al-mundo",
+                id: "costa-rica-voyage",
                 title: "Costa Rica",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [costa_rica_icon_1],
                 keywords: ["botanico", "animales", "verde", "rojo", "rosa"],
                 variants: [
@@ -3213,30 +3117,13 @@ export const collections: Array<Collection> = [
                         mural: costa_rica_mural_gray,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "dutch-flowers-vuelta-al-mundo",
-                title: "Dutch Flowers",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
-                icons: [dutch_flowers_icon_1],
-                keywords: ["botanico", "negro", "oscuro", "blanco", "claro"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        montaje: dutch_flowers_montaje,
-                        mural: dutch_flowers_mural,
-                        base: true,
-                    }
-                ],
-                href: "vuelta-al-mundo",
-            },
-            {
-                id: "el-banquete-vuelta-al-mundo",
+                id: "el-banquete-voyage",
                 title: "El Banquete",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [el_banquete_icon_1],
                 keywords: ["paisaje", "animales", "amarillo", "ocre", "verde"],
                 variants: [
@@ -3247,13 +3134,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "el-descanso-de-las-garzas-vuelta-al-mundo",
+                id: "el-descanso-de-las-garzas-voyage",
                 title: "El Descanso de las Garzas",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [el_descanso_de_las_garzas_icon_1, el_descanso_de_las_garzas_icon_2, el_descanso_de_las_garzas_icon_3],
                 keywords: ["paisaje", "animales", "verde"],
                 variants: [
@@ -3271,43 +3158,13 @@ export const collections: Array<Collection> = [
                         mural: el_descanso_de_las_garzas_mural_sepia,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "el-eden-vuelta-al-mundo",
-                title: "El Edén",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
-                icons: [el_eden_icon_1],
-                keywords: ["animales", "botanico", "verde", "blanco", "claro", "chinoiserie"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        color: "#32CD32",
-                        montaje: el_eden_montaje,
-                        mural: el_eden_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Natural",
-                        color: "#556B2F",
-                        montaje: el_eden_montaje,
-                        mural: el_eden_mural_natural,
-                    },
-                    {
-                        colorName: "Rose",
-                        color: "#FFC0CB",
-                        montaje: el_eden_montaje,
-                        mural: el_eden_mural_rose,
-                    }
-                ],
-                href: "vuelta-al-mundo",
-            },
-            {
-                id: "el-jardin-de-la-geisha-vuelta-al-mundo",
+                id: "el-jardin-de-la-geisha-voyage",
                 title: "El Jardín de la Geisha",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [el_jardin_de_la_geisha_icon_1],
                 keywords: ["botanico", "chinoiserie", "rojo", "rosa", "paisaje", "personas"],
                 variants: [
@@ -3331,13 +3188,13 @@ export const collections: Array<Collection> = [
                         mural: el_jardin_de_la_geisha_mural_white,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "elena-vuelta-al-mundo",
+                id: "elena-voyage",
                 title: "Elena",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [elena_icon_1],
                 keywords: ["animales", "paisaje", "verde", "azul"],
                 variants: [
@@ -3348,71 +3205,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "follaje-vuelta-al-mundo",
-                title: "Follaje",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
-                icons: [follaje_icon_1],
-                keywords: ["botanico", "vison", "blanco", "claro"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        montaje: follaje_montaje,
-                        mural: follaje_mural,
-                        base: true,
-                    }
-                ],
-                href: "vuelta-al-mundo",
-            },
-            {
-                id: "hanami-vuelta-al-mundo",
-                title: "Hanami",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
-                icons: [hanami_icon_1],
-                keywords: ["botanico", "blanco", "claro", "rojo", "rosa"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        color: "#FFC0CB",
-                        montaje: hanami_montaje,
-                        mural: hanami_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "White",
-                        color: "#FFFFFF",
-                        montaje: hanami_montaje,
-                        mural: hanami_mural_white,
-                    }
-                ],
-                href: "vuelta-al-mundo",
-            },
-            {
-                id: "jardin-vertical-vuelta-al-mundo",
-                title: "Jardín Vertical",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
-                icons: [jardin_vertical_icon_1],
-                keywords: ["botanico", "animales", "azul", "blanco", "claro"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        montaje: jardin_vertical_montaje,
-                        mural: jardin_vertical_mural,
-                        base: true,
-                    }
-                ],
-                href: "vuelta-al-mundo",
-            },
-            {
-                id: "jardin-victoriano-vuelta-al-mundo",
+                id: "jardin-victoriano-voyage",
                 title: "Jardín Victoriano",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [jardin_victoriano_icon_1],
                 keywords: ["paisaje", "botanico", "arquitectura", "negro", "oscuro", "blanco", "claro"],
                 variants: [
@@ -3430,13 +3229,13 @@ export const collections: Array<Collection> = [
                         mural: jardin_victoriano_mural_sepia,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "jungla-en-tintas-vuelta-al-mundo",
+                id: "jungla-en-tintas-voyage",
                 title: "Jungla en Tintas",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [jungla_en_tintas_icon_1],
                 keywords: ["paisaje", "animales", "negro", "oscuro", "blanco", "claro"],
                 variants: [
@@ -3447,13 +3246,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "laguna-sepia-vuelta-al-mundo",
+                id: "laguna-sepia-voyage",
                 title: "Laguna Sepia",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [laguna_sepia_icon_1],
                 keywords: ["paisaje", "verde", "vison"],
                 variants: [
@@ -3471,13 +3270,13 @@ export const collections: Array<Collection> = [
                         mural: laguna_sepia_mural_blue,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "praderas-vuelta-al-mundo",
+                id: "praderas-voyage",
                 title: "Praderas",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [praderas_icon_1],
                 keywords: ["vison", "paisaje"],
                 variants: [
@@ -3495,13 +3294,13 @@ export const collections: Array<Collection> = [
                         mural: praderas_mural_rose,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
             {
-                id: "utopia-vuelta-al-mundo",
+                id: "utopia-voyage",
                 title: "Utopía",
-                collectionTitle: "Vuelta al Mundo",
-                collectionId: "vuelta-al-mundo",
+                collectionTitle: "Voyage",
+                collectionId: "voyage",
                 icons: [utopia_icon_1],
                 keywords: ["paisaje", "azul"],
                 variants: [
@@ -3519,7 +3318,7 @@ export const collections: Array<Collection> = [
                         mural: utopia_mural_rose,
                     }
                 ],
-                href: "vuelta-al-mundo",
+                href: "voyage",
             },
         ]
     },
@@ -3644,94 +3443,36 @@ export const collections: Array<Collection> = [
         ]
     },
     {
-        id: "otros-murales",
-        title: "Otros Murales",
-        portrait: portada_basa_basa,
-        video: "/assets/portada_otros_murales.mp4",
+        id: "abstrac",
+        title: "Abstrac",
+        portrait: golden_tanger_montaje,
+        // video: "/assets/portada_otros_murales.mp4",
         date: "2016-2024",
         technique: "Digital y pintado a mano.",
         description: "Descripción.",
         murales: [
             {
-                id: "acuarela-otros-murales",
-                title: "Acuarela",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
-                icons: [acuarela_icon_1],
-                keywords: ["abstracto", "texturas", "azul"],
+                id: "pinceladas-abstrac",
+                title: "Pinceladas",
+                collectionTitle: "Abstrac",
+                collectionId: "abstrac",
+                icons: [pinceladas_icon_1],
+                keywords: ["abstracto", "texturas", "vison"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        color: "#ADD8E6",
-                        montaje: acuarela_montaje,
-                        mural: acuarela_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Rose",
-                        color: "#FFC0CB",
-                        montaje: acuarela_montaje,
-                        mural: acuarela_mural_rose,
-                    }
-                ],
-                href: "otros-murales",
-            },
-            {
-                id: "animal-parade-otros-murales",
-                title: "Animal Parade",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
-                icons: [animal_parade_icon_1],
-                keywords: ["animales", "paisaje", "negro", "oscuro", "blanco", "claro", "amarillo", "ocre"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        montaje: animal_parade_montaje,
-                        mural: animal_parade_mural,
+                        montaje: pinceladas_montaje,
+                        mural: pinceladas_mural,
                         base: true,
                     }
                 ],
-                href: "otros-murales",
+                href: "abstrac",
             },
             {
-                id: "constelaciones-otros-murales",
-                title: "Constelaciones",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
-                icons: [constelaciones_icon_1],
-                keywords: ["texturas", "abstracto", "azul"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        montaje: constelaciones_montaje,
-                        mural: constelaciones_mural,
-                        base: true,
-                    }
-                ],
-                href: "otros-murales",
-            },
-            {
-                id: "en-las-nubes-otros-murales",
-                title: "En las Nubes",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
-                icons: [en_las_nubes_icon_1],
-                keywords: ["paisaje", "azul", "gris"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        montaje: en_las_nubes_montaje,
-                        mural: en_las_nubes_mural,
-                        base: true,
-                    }
-                ],
-                href: "otros-murales",
-            },
-            {
-                id: "fractal-otros-murales",
+                id: "fractal-abstrac",
                 title: "Fractal",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Abstrac",
+                collectionId: "abstrac",
                 icons: [fractal_icon_1],
                 keywords: ["geometrico", "abstracto", "blanco", "claro", "vison"],
                 variants: [
@@ -3755,30 +3496,54 @@ export const collections: Array<Collection> = [
                         mural: fractal_mural_vison,
                     }
                 ],
-                href: "otros-murales",
+                href: "abstrac",
             },
             {
-                id: "pinceladas-otros-murales",
-                title: "Pinceladas",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
-                icons: [pinceladas_icon_1],
-                keywords: ["abstracto", "texturas", "vison"],
+                id: "acuarela-abstrac",
+                title: "Acuarela",
+                collectionTitle: "Abstrac",
+                collectionId: "abstrac",
+                icons: [acuarela_icon_1],
+                keywords: ["abstracto", "texturas", "azul"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: pinceladas_montaje,
-                        mural: pinceladas_mural,
+                        color: "#ADD8E6",
+                        montaje: acuarela_montaje,
+                        mural: acuarela_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Rose",
+                        color: "#FFC0CB",
+                        montaje: acuarela_montaje,
+                        mural: acuarela_mural_rose,
+                    }
+                ],
+                href: "abstrac",
+            },
+            {
+                id: "constelaciones-abstrac",
+                title: "Constelaciones",
+                collectionTitle: "Abstrac",
+                collectionId: "abstrac",
+                icons: [constelaciones_icon_1],
+                keywords: ["texturas", "abstracto", "azul"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: constelaciones_montaje,
+                        mural: constelaciones_mural,
                         base: true,
                     }
                 ],
-                href: "otros-murales",
+                href: "abstrac",
             },
             {
-                id: "stadium-otros-murales",
+                id: "stadium-abstrac",
                 title: "Stadium",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Abstrac",
+                collectionId: "abstrac",
                 icons: [stadium_icon_1],
                 keywords: ["texturas", "arquitectura", "personas", "gris"],
                 variants: [
@@ -3789,54 +3554,37 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "otros-murales",
+                href: "abstrac",
             },
             {
-                id: "vuelo-de-mariposas-otros-murales",
-                title: "Vuelo de Mariposas",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
-                icons: [vuelo_de_mariposas_icon_1],
-                keywords: ["paisaje", "gris", "vison"],
+                id: "patagonia-abstrac",
+                title: "Patagonia",
+                collectionTitle: "Abstrac",
+                collectionId: "abstrac",
+                icons: [patagonia_icon_1],
+                keywords: ["geometrico", "abstracto", "negro", "oscuro", "blanco", "claro"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: vuelo_de_mariposas_montaje,
-                        mural: vuelo_de_mariposas_mural,
-                        base: true,
-                    }
-                ],
-                href: "otros-murales",
-            },
-            {
-                id: "wild-circus-otros-murales",
-                title: "Wild Circus",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
-                icons: [wild_circus_icon_1],
-                keywords: ["paisaje", "animales", "azul", "verde"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        color: "#DC143C",
-                        montaje: wild_circus_montaje,
-                        mural: wild_circus_mural,
+                        color: "#8B4513",
+                        montaje: patagonia_montaje,
+                        mural: patagonia_mural,
                         base: true,
                     },
                     {
-                        colorName: "Rose",
-                        color: "#FFC0CB",
-                        montaje: wild_circus_montaje,
-                        mural: wild_circus_mural_rose,
+                        colorName: "Variante 2",
+                        color: "#A0522D",
+                        montaje: patagonia_montaje_2,
+                        mural: patagonia_mural,
                     }
                 ],
-                href: "otros-murales",
+                href: "abstrac",
             },
             {
-                id: "cuerpos-celestes-otros-murales",
+                id: "cuerpos-celestes-abstrac",
                 title: "Cuerpos Celestes",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Abstrac",
+                collectionId: "abstrac",
                 icons: [cuerpos_celestes_icon_1],
                 keywords: ["geometrico", "texturas", "luxury", "gris"],
                 variants: [
@@ -3860,30 +3608,37 @@ export const collections: Array<Collection> = [
                         mural: cuerpos_celestes_mural_gray_plomo,
                     }
                 ],
-                href: "otros-murales",
+                href: "abstrac",
             },
             {
-                id: "estuco-otros-murales",
-                title: "Estuco",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
-                icons: [estuco_icon_1],
-                keywords: ["textura", "pared", "rústico"],
+                id: "golden-tanger-abstrac",
+                title: "Golden Tanger",
+                collectionTitle: "Abstrac",
+                collectionId: "abstrac",
+                icons: [golden_tanger_icon_1],
+                keywords: ["dorado", "exótico", "arte"],
                 variants: [
                     {
                         colorName: "Estándar",
-                        montaje: estuco_montaje,
-                        mural: estuco_mural,
+                        color: "bg-st-201915",
+                        montaje: golden_tanger_montaje,
+                        mural: golden_tanger_mural,
                         base: true,
+                    },
+                    {
+                        colorName: "Variante 2",
+                        color: "bg-st-tanger",
+                        montaje: golden_tanger_montaje_2,
+                        mural: golden_tanger_mural,
                     }
                 ],
-                href: "otros-murales",
+                href: "abstrac",
             },
             {
-                id: "etnico-otros-murales",
+                id: "etnico-abstrac",
                 title: "Étnico",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Abstrac",
+                collectionId: "abstrac",
                 icons: [etnico_icon_1],
                 keywords: ["abstracto", "geometrico", "luxury", "naranja", "marron"],
                 variants: [
@@ -3901,13 +3656,311 @@ export const collections: Array<Collection> = [
                         mural: etnico_mural,
                     }
                 ],
-                href: "otros-murales",
+                href: "abstrac",
             },
             {
-                id: "mundo-animal-otros-murales",
+                id: "estuco-abstrac",
+                title: "Estuco",
+                collectionTitle: "Abstrac",
+                collectionId: "abstrac",
+                icons: [estuco_icon_1],
+                keywords: ["textura", "pared", "rústico"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: estuco_montaje,
+                        mural: estuco_mural,
+                        base: true,
+                    }
+                ],
+                href: "abstrac",
+            },
+        ],
+    },
+    {
+        id: "wonder",
+        title: "Wonder",
+        portrait: magnolia_real_montaje,
+        // video: "/assets/portada_otros_murales.mp4",
+        date: "2016-2024",
+        technique: "Digital y pintado a mano.",
+        description: "Descripción.",
+        murales: [
+            {
+                id: "alexandria-wonder",
+                title: "Alexandria",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [alexandria_icon_1],
+                keywords: ["paisaje", "blanco", "claro", "rojo", "rosa"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        color: "#C0C0C0",
+                        montaje: alexandria_montaje,
+                        mural: alexandria_mural,
+                        base: true,
+                    },
+                ],
+                href: "wonder",
+            },
+            
+            {
+                id: "birds-of-paradise-wonder",
+                title: "Birds of Paradise",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [birds_of_paradise_icon_1],
+                keywords: ["botanico", "animales", "amarillo", "ocre"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        color: "#FFA07A",
+                        montaje: birds_of_paradise_montaje,
+                        mural: birds_of_paradise_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Blue",
+                        color: "#4682B4",
+                        montaje: birds_of_paradise_montaje,
+                        mural: birds_of_paradise_mural_blue,
+                    },
+                    {
+                        colorName: "Rose",
+                        color: "#FFC0CB",
+                        montaje: birds_of_paradise_montaje,
+                        mural: birds_of_paradise_mural_rose,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "magnolia-real-wonder",
+                title: "Magnolia Real",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [magnolia_real_icon_1, magnolia_real_icon_2],
+                keywords: ["botanico", "animales", "chinoiserie", "blanco", "claro", "vison"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        color: "#FFC0CB",
+                        montaje: magnolia_real_montaje,
+                        mural: magnolia_real_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Black",
+                        color: "bg-st-black",
+                        montaje: magnolia_real_montaje,
+                        mural: magnolia_real_mural_black,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "dutch-flowers-wonder",
+                title: "Dutch Flowers",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [dutch_flowers_icon_1],
+                keywords: ["botanico", "negro", "oscuro", "blanco", "claro"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: dutch_flowers_montaje,
+                        mural: dutch_flowers_mural,
+                        base: true,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "el-eden-wonder",
+                title: "El Edén",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [el_eden_icon_1],
+                keywords: ["animales", "botanico", "verde", "blanco", "claro", "chinoiserie"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        color: "#32CD32",
+                        montaje: el_eden_montaje,
+                        mural: el_eden_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Natural",
+                        color: "#556B2F",
+                        montaje: el_eden_montaje,
+                        mural: el_eden_mural_natural,
+                    },
+                    {
+                        colorName: "Rose",
+                        color: "#FFC0CB",
+                        montaje: el_eden_montaje,
+                        mural: el_eden_mural_rose,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "follaje-wonder",
+                title: "Follaje",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [follaje_icon_1],
+                keywords: ["botanico", "vison", "blanco", "claro"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: follaje_montaje,
+                        mural: follaje_mural,
+                        base: true,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "hanami-wonder",
+                title: "Hanami",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [hanami_icon_1],
+                keywords: ["botanico", "blanco", "claro", "rojo", "rosa"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        color: "#FFC0CB",
+                        montaje: hanami_montaje,
+                        mural: hanami_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "White",
+                        color: "#FFFFFF",
+                        montaje: hanami_montaje,
+                        mural: hanami_mural_white,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "jardin-vertical-wonder",
+                title: "Jardín Vertical",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [jardin_vertical_icon_1],
+                keywords: ["botanico", "animales", "azul", "blanco", "claro"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: jardin_vertical_montaje,
+                        mural: jardin_vertical_mural,
+                        base: true,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "vuelo-de-mariposas-wonder",
+                title: "Vuelo de Mariposas",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [vuelo_de_mariposas_icon_1],
+                keywords: ["paisaje", "gris", "vison"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: vuelo_de_mariposas_montaje,
+                        mural: vuelo_de_mariposas_mural,
+                        base: true,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "en-las-nubes-wonder",
+                title: "En las Nubes",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [en_las_nubes_icon_1],
+                keywords: ["paisaje", "azul", "gris"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: en_las_nubes_montaje,
+                        mural: en_las_nubes_mural,
+                        base: true,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "animal-parade-wonder",
+                title: "Animal Parade",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [animal_parade_icon_1],
+                keywords: ["animales", "paisaje", "negro", "oscuro", "blanco", "claro", "amarillo", "ocre"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: animal_parade_montaje,
+                        mural: animal_parade_mural,
+                        base: true,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "wild-circus-wonder",
+                title: "Wild Circus",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [wild_circus_icon_1],
+                keywords: ["paisaje", "animales", "azul", "verde"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        color: "#DC143C",
+                        montaje: wild_circus_montaje,
+                        mural: wild_circus_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Rose",
+                        color: "#FFC0CB",
+                        montaje: wild_circus_montaje,
+                        mural: wild_circus_mural_rose,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "jungla-en-tintas-wonder",
+                title: "Jungla en Tintas",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [jungla_en_tintas_icon_1],
+                keywords: ["paisaje", "animales", "negro", "oscuro", "blanco", "claro"],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: jungla_en_tintas_montaje,
+                        mural: jungla_en_tintas_mural,
+                        base: true,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "mundo-animal-wonder",
                 title: "Mundo Animal",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
                 icons: [mundo_animal_icon_1],
                 keywords: ["fauna", "naturaleza", "animales"],
                 variants: [
@@ -3918,31 +3971,7 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "otros-murales",
-            },
-            {
-                id: "patagonia-otros-murales",
-                title: "Patagonia",
-                collectionTitle: "Otros Murales",
-                collectionId: "otros-murales",
-                icons: [patagonia_icon_1],
-                keywords: ["geometrico", "abstracto", "negro", "oscuro", "blanco", "claro"],
-                variants: [
-                    {
-                        colorName: "Estándar",
-                        color: "#8B4513",
-                        montaje: patagonia_montaje,
-                        mural: patagonia_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Variante 2",
-                        color: "#A0522D",
-                        montaje: patagonia_montaje_2,
-                        mural: patagonia_mural,
-                    }
-                ],
-                href: "otros-murales",
+                href: "wonder",
             },
         ],
     },

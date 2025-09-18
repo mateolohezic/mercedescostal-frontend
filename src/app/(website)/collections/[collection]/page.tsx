@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { collections } from '@/data/collections';
 import { sortMurales } from "@/helpers";
 import { CollectionVideo, CTA, MuralCardNew, ProcesoCreativoArtisan, ProcesoCreativoBasaBasa, ProcesoCreativoCasamar, ProcesoCreativoClassics, ProcesoCreativoLandmark, ProcesoCreativoMorris, ProcesoCreativoVivero } from '@/components';
+import Image from "next/image";
 
 interface Props {
     params: {
@@ -52,7 +53,17 @@ export default function CollectionPage({ params }: Props) {
         <main className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
             <h1 className="sr-only">Colección {foundCollection.title}</h1>
             <section className="w-full px-4 lg:px-12 flex flex-col justify-center items-center gap-8 lg:gap-4">
-                <CollectionVideo title={foundCollection.title} video={foundCollection.video}/>
+                {
+                    foundCollection.video ?
+                        <CollectionVideo title={foundCollection.title} video={foundCollection.video}/>
+                    :
+                        <div className="w-full aspect-video relative">
+                            <div className="size-full flex justify-center items-center text-center absolute top-0 left-0 z-40">
+                                <span className="text-white font-gillsans font-light text-3xl uppercase"><span className="text-opacity-75">Colección</span> <b className="font-medium">{foundCollection.title}</b></span>
+                            </div>
+                            <Image priority src={foundCollection.portrait} alt={`Portada de colección ${foundCollection.title}`} className="w-full aspect-video"/>
+                        </div>
+                }
                 {
                     foundCollection.id !== "the-classics" &&
                     <div className="w-full flex flex-col justify-start items-start gap-1">
