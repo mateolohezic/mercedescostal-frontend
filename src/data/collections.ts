@@ -3443,8 +3443,8 @@ export const collections: Array<Collection> = [
         ]
     },
     {
-        id: "abstrac",
-        title: "Abstrac",
+        id: "abstract",
+        title: "Abstract",
         portrait: golden_tanger_montaje,
         // video: "/assets/portada_otros_murales.mp4",
         date: "2016-2024",
@@ -3452,10 +3452,10 @@ export const collections: Array<Collection> = [
         description: "Descripción.",
         murales: [
             {
-                id: "pinceladas-abstrac",
+                id: "pinceladas-abstract",
                 title: "Pinceladas",
-                collectionTitle: "Abstrac",
-                collectionId: "abstrac",
+                collectionTitle: "Abstract",
+                collectionId: "abstract",
                 icons: [pinceladas_icon_1],
                 keywords: ["abstracto", "texturas", "vison"],
                 variants: [
@@ -3466,13 +3466,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "abstrac",
+                href: "abstract",
             },
             {
-                id: "fractal-abstrac",
+                id: "fractal-abstract",
                 title: "Fractal",
-                collectionTitle: "Abstrac",
-                collectionId: "abstrac",
+                collectionTitle: "Abstract",
+                collectionId: "abstract",
                 icons: [fractal_icon_1],
                 keywords: ["geometrico", "abstracto", "blanco", "claro", "vison"],
                 variants: [
@@ -3496,13 +3496,13 @@ export const collections: Array<Collection> = [
                         mural: fractal_mural_vison,
                     }
                 ],
-                href: "abstrac",
+                href: "abstract",
             },
             {
-                id: "acuarela-abstrac",
+                id: "acuarela-abstract",
                 title: "Acuarela",
-                collectionTitle: "Abstrac",
-                collectionId: "abstrac",
+                collectionTitle: "Abstract",
+                collectionId: "abstract",
                 icons: [acuarela_icon_1],
                 keywords: ["abstracto", "texturas", "azul"],
                 variants: [
@@ -3520,13 +3520,13 @@ export const collections: Array<Collection> = [
                         mural: acuarela_mural_rose,
                     }
                 ],
-                href: "abstrac",
+                href: "abstract",
             },
             {
-                id: "constelaciones-abstrac",
+                id: "constelaciones-abstract",
                 title: "Constelaciones",
-                collectionTitle: "Abstrac",
-                collectionId: "abstrac",
+                collectionTitle: "Abstract",
+                collectionId: "abstract",
                 icons: [constelaciones_icon_1],
                 keywords: ["texturas", "abstracto", "azul"],
                 variants: [
@@ -3537,13 +3537,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "abstrac",
+                href: "abstract",
             },
             {
-                id: "stadium-abstrac",
+                id: "stadium-abstract",
                 title: "Stadium",
-                collectionTitle: "Abstrac",
-                collectionId: "abstrac",
+                collectionTitle: "Abstract",
+                collectionId: "abstract",
                 icons: [stadium_icon_1],
                 keywords: ["texturas", "arquitectura", "personas", "gris"],
                 variants: [
@@ -3554,13 +3554,13 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "abstrac",
+                href: "abstract",
             },
             {
-                id: "patagonia-abstrac",
+                id: "patagonia-abstract",
                 title: "Patagonia",
-                collectionTitle: "Abstrac",
-                collectionId: "abstrac",
+                collectionTitle: "Abstract",
+                collectionId: "abstract",
                 icons: [patagonia_icon_1],
                 keywords: ["geometrico", "abstracto", "negro", "oscuro", "blanco", "claro"],
                 variants: [
@@ -3578,13 +3578,13 @@ export const collections: Array<Collection> = [
                         mural: patagonia_mural,
                     }
                 ],
-                href: "abstrac",
+                href: "abstract",
             },
             {
-                id: "cuerpos-celestes-abstrac",
+                id: "cuerpos-celestes-abstract",
                 title: "Cuerpos Celestes",
-                collectionTitle: "Abstrac",
-                collectionId: "abstrac",
+                collectionTitle: "Abstract",
+                collectionId: "abstract",
                 icons: [cuerpos_celestes_icon_1],
                 keywords: ["geometrico", "texturas", "luxury", "gris"],
                 variants: [
@@ -3608,13 +3608,13 @@ export const collections: Array<Collection> = [
                         mural: cuerpos_celestes_mural_gray_plomo,
                     }
                 ],
-                href: "abstrac",
+                href: "abstract",
             },
             {
-                id: "golden-tanger-abstrac",
+                id: "golden-tanger-abstract",
                 title: "Golden Tanger",
-                collectionTitle: "Abstrac",
-                collectionId: "abstrac",
+                collectionTitle: "Abstract",
+                collectionId: "abstract",
                 icons: [golden_tanger_icon_1],
                 keywords: ["dorado", "exótico", "arte"],
                 variants: [
@@ -3632,13 +3632,13 @@ export const collections: Array<Collection> = [
                         mural: golden_tanger_mural,
                     }
                 ],
-                href: "abstrac",
+                href: "abstract",
             },
             {
-                id: "etnico-abstrac",
+                id: "etnico-abstract",
                 title: "Étnico",
-                collectionTitle: "Abstrac",
-                collectionId: "abstrac",
+                collectionTitle: "Abstract",
+                collectionId: "abstract",
                 icons: [etnico_icon_1],
                 keywords: ["abstracto", "geometrico", "luxury", "naranja", "marron"],
                 variants: [
@@ -3656,13 +3656,13 @@ export const collections: Array<Collection> = [
                         mural: etnico_mural,
                     }
                 ],
-                href: "abstrac",
+                href: "abstract",
             },
             {
-                id: "estuco-abstrac",
+                id: "estuco-abstract",
                 title: "Estuco",
-                collectionTitle: "Abstrac",
-                collectionId: "abstrac",
+                collectionTitle: "Abstract",
+                collectionId: "abstract",
                 icons: [estuco_icon_1],
                 keywords: ["textura", "pared", "rústico"],
                 variants: [
@@ -3673,7 +3673,7 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "abstrac",
+                href: "abstract",
             },
         ],
     },
