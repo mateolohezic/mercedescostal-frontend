@@ -147,7 +147,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     },
     {
-      url: 'https://mercedescostal.com.ar/collections/abstrac',
+      url: 'https://mercedescostal.com.ar/collections/abstract',
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.7,
