@@ -699,6 +699,9 @@ import { Collection } from "@/interfaces";
 // import magnolia_real_mural_black from "@/assets/collections/vuelta_al_mundo/monos_colgantes_VACIO";
 // import la_riviere_mural_gray from "@/assets/collections/vuelta_al_mundo/land_VACIO";
 
+import blue_willow_montaje from "@/assets/collections/murales_sueltos/blue_willow/blue_willow_montaje.webp";
+import blue_willow_mural from "@/assets/collections/murales_sueltos/blue_willow/blue_willow_mural.webp";
+
 import portada_basa_basa from "@/assets/collections/basa_basa/basa_basa/basa_basa_montaje.webp";
 import portada_the_classics from "@/assets/collections/the_classics/portada_the_classics.webp";
 import portada_landmark from "@/assets/collections/landmark/bosque_de_los_magos/bosque_de_los_magos_montaje.webp";
@@ -3968,6 +3971,23 @@ export const collections: Array<Collection> = [
                         colorName: "Estándar",
                         montaje: mundo_animal_montaje,
                         mural: mundo_animal_mural,
+                        base: true,
+                    }
+                ],
+                href: "wonder",
+            },
+            {
+                id: "blue-willow-wonder",
+                title: "Blue Willow",
+                collectionTitle: "Wonder",
+                collectionId: "wonder",
+                icons: [],
+                keywords: [],
+                variants: [
+                    {
+                        colorName: "Estándar",
+                        montaje: blue_willow_montaje,
+                        mural: blue_willow_mural,
                         base: true,
                     }
                 ],
