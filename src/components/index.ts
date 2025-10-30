@@ -5,6 +5,7 @@ export { LanguageSelector } from "./LanguageSelector";
 export { Video } from "./Video";
 export { CTA } from "./CTA";
 export { WhatsApp } from "./WhatsApp";
+export { ClarityTracker } from "./ClarityTracker";
 
 export { PhotoSelector } from "./highlights/PhotoSelector";
 
