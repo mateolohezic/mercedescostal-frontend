@@ -55,7 +55,7 @@ export const VideoIntro = () => {
                     autoPlay
                     muted
                     loop
-                    className="size-full object-cover pointer-events-none select-none relative z-10"
+                    className="size-full object-cover object-[50%_100%] pointer-events-none select-none relative z-10"
                 >
                     <source src="/assets/portada_navidad.mp4" type="video/mp4" />
                     Tu navegador no soporta este video.
