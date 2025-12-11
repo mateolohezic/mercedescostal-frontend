@@ -30,6 +30,8 @@ export { ProcesoCreativoArtisan } from "./collection/proceso-creativo/ProcesoCre
 
 export { WorkWithUsForm } from "./contact/WorkWithUsForm";
 
+export { ArtScreenQuoteForm } from "./collectibles/art-screen/ArtScreenQuoteForm";
+
 export { QuoteForm } from "./quote/QuoteForm";
 
 export { SubmitButtonLoading } from "./ui/SubmitButtonLoading";
