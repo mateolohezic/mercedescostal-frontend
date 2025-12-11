@@ -16,7 +16,7 @@ export default function HomePage() {
       <section className="w-full min-h-svh relative">
         <VideoIntro/>
       </section>
-      <section className="w-full grid grid-cols-2">
+      <section className="w-full grid grid-cols-1 md:grid-cols-2">
         <Image src={home_1} alt="Home Mercedes Costal" className="size-full object-cover aspect-[3/4] lg:aspect-auto lg:h-svh"/>
         <Image src={home_2} alt="Home Mercedes Costal" className="size-full object-cover aspect-[3/4] lg:aspect-auto lg:h-svh"/>
         <Image src={home_3} alt="Home Mercedes Costal" className="size-full object-cover aspect-[3/4] lg:aspect-auto lg:h-svh"/>
