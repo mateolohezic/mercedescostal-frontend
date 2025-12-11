@@ -43,10 +43,8 @@ export const VideoIntro = () => {
                         type="button"
                         onClick={toggleMute}
                         className="text-white opacity-75 hover:opacity-100 lg:text-2xl pointer-events-auto cursor-pointer transition-150"
-                        >
-                        {
-                            isMuted ? <SoundOffIcon/> : <SoundOnIcon/>
-                        }
+                    >
+                        { isMuted ? <SoundOffIcon/> : <SoundOnIcon/> }
                     </button>
                 </div>
                 <div className="size-full bg-black absolute top-0 left-0 z-0"></div>
@@ -57,9 +55,9 @@ export const VideoIntro = () => {
                     autoPlay
                     muted
                     loop
-                    className="size-full object-cover pointer-events-none select-none relative z-10"
+                    className="size-full object-cover object-[50%_100%] pointer-events-none select-none relative z-10"
                 >
-                    <source src="/assets/portada_video.mp4" type="video/mp4" />
+                    <source src="/assets/portada_navidad.mp4" type="video/mp4" />
                     Tu navegador no soporta este video.
                 </video>
             </div>
