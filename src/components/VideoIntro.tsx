@@ -1,13 +1,22 @@
 'use client'
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { SoundOnIcon, SoundOffIcon, PlayIcon, PauseIcon } from "@/icons";
 
-export const VideoIntro = () => {
+type DeviceType = "mobile" | "desktop" | null;
 
+export const VideoIntro = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isMuted, setIsMuted] = useState(true);
     const [isPlaying, setIsPlaying] = useState(true);
+    const [deviceType, setDeviceType] = useState<DeviceType>(null);
+
+    useEffect(() => {
+        const checkDevice = () => {
+            setDeviceType(window.innerWidth < 1024 ? "mobile" : "desktop");
+        };
+        checkDevice();
+    }, []);
   
     const toggleMute = () => {
         if (videoRef.current) {
@@ -28,6 +37,12 @@ export const VideoIntro = () => {
         }
     };
 
+    if (deviceType === null) {
+        return (
+            <div className="size-full absolute top-0 left-0 z-0 bg-black"/>
+        );
+    }
+    const videoSrc = deviceType === "mobile" ? "/assets/portada_navidad_mobile.mp4" : "/assets/portada_navidad.mp4";
     return (
         <div className="size-full absolute top-0 left-0 z-0">
             <div className="size-full relative">
@@ -47,8 +62,9 @@ export const VideoIntro = () => {
                         { isMuted ? <SoundOffIcon/> : <SoundOnIcon/> }
                     </button>
                 </div>
-                <div className="size-full bg-black absolute top-0 left-0 z-0"></div>
+                <div className="size-full bg-black absolute top-0 left-0 z-0"/>
                 <video
+                    key={videoSrc}
                     ref={videoRef}
                     controls={false}
                     playsInline
@@ -57,10 +73,10 @@ export const VideoIntro = () => {
                     loop
                     className="size-full object-cover object-[50%_100%] pointer-events-none select-none relative z-10"
                 >
-                    <source src="/assets/portada_navidad.mp4" type="video/mp4" />
+                    <source src={videoSrc} type="video/mp4" />
                     Tu navegador no soporta este video.
                 </video>
             </div>
         </div>
-    )
-}
+    );
+};
