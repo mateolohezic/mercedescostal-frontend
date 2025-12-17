@@ -28,6 +28,8 @@ export { ProcesoCreativoLandmark } from "./collection/proceso-creativo/ProcesoCr
 export { ProcesoCreativoVivero } from "./collection/proceso-creativo/ProcesoCreativoVivero";
 export { ProcesoCreativoArtisan } from "./collection/proceso-creativo/ProcesoCreativoArtisan";
 
+export { VisualizerForm } from "./visualizer/VisualizerForm";
+
 export { WorkWithUsForm } from "./contact/WorkWithUsForm";
 
 export { QuoteForm } from "./quote/QuoteForm";
