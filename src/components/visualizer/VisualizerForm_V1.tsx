@@ -23,15 +23,15 @@ interface Props {
     preselectedMuralId?: string;
 }
 
-type GenerationStatus = "idle" | "processing" | "completed" | "error" | "limit_reached";
+type GenerationStatus = "idle" | "uploading" | "processing" | "completed" | "error" | "limit_reached";
 
 export const VisualizerForm = ({ preselectedMuralId }: Props) => {
     const [isRendered, setIsRendered] = useState(false);
-    const [userDescription, setUserDescription] = useState("");
     const [roomImage, setRoomImage] = useState<File | null>(null);
     const [roomImagePreview, setRoomImagePreview] = useState<string | null>(null);
     const [status, setStatus] = useState<GenerationStatus>("idle");
     const [resultImage, setResultImage] = useState<string | null>(null);
+    const [completedTaskId, setCompletedTaskId] = useState<string | null>(null);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const [generationsRemaining, setGenerationsRemaining] = useState<number | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
@@ -117,7 +117,41 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
             if (muralSrc.startsWith("http")) return muralSrc;
             return `${window.location.origin}${muralSrc}`;
         }
+        
         return null;
+    };
+
+    const pollTaskStatus = async (taskId: string) => {
+        const maxAttempts = 60;
+        let attempts = 0;
+        const poll = async () => {
+            attempts++;
+            try {
+                const response = await fetch(`/api/visualizer/${taskId}`);
+                const data = await response.json();
+                if (data.status === "COMPLETED" && data.imageUrl) {
+                    setResultImage(data.imageUrl);
+                    setCompletedTaskId(data.taskId);
+                    setStatus("completed");
+                    return;
+                }
+                if (data.status === "FAILED") {
+                    setStatus("error");
+                    setErrorMessage("Error al generar la visualización. Intenta de nuevo.");
+                    return;
+                }
+                if (attempts >= maxAttempts) {
+                    setStatus("error");
+                    setErrorMessage("La generación está tardando demasiado. Intenta de nuevo.");
+                    return;
+                }
+                setTimeout(poll, 2000);
+            } catch {
+                setStatus("error");
+                setErrorMessage("Error de conexión. Intenta de nuevo.");
+            }
+        };
+        poll();
     };
 
     const submitLead = async () => {
@@ -152,25 +186,19 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
             setErrorMessage("Selecciona un mural");
             return;
         }
-
-        setStatus("processing");
+        setStatus("uploading");
         setErrorMessage(null);
-
         try {
             const isPattern = selectedMural?.keywords.some(k => ['patrón', 'patron', 'pattern'].includes(k.toLowerCase())) || false;
             const formData = new FormData();
-            formData.append("userDescription", userDescription);
             formData.append("roomImage", roomImage);
             formData.append("muralImageUrl", muralUrl);
             formData.append("isPattern", isPattern.toString());
-
             const response = await fetch("/api/visualizer", {
                 method: "POST",
                 body: formData,
             });
-
             const data = await response.json();
-
             if (!response.ok) {
                 if (data.error === "LEAD_REQUIRED") {
                     setStatus("idle");
@@ -181,19 +209,11 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                     setStatus("limit_reached");
                     return;
                 }
-                if (data.error === "SERVICE_OVERLOADED") {
-                    setStatus("error");
-                    setErrorMessage("El servicio está sobrecargado. Por favor intentá de nuevo en unos segundos.");
-                    return;
-                }
                 throw new Error(data.error || "Error al procesar la imagen");
             }
-
-            // Imagen viene en base64 directamente
-            setResultImage(`data:${data.mimeType};base64,${data.imageBase64}`);
             setGenerationsRemaining(data.generationsRemaining);
-            setStatus("completed");
-
+            setStatus("processing");
+            pollTaskStatus(data.taskId);
         } catch (error) {
             setStatus("error");
             setErrorMessage(error instanceof Error ? error.message : "Error al procesar la imagen");
@@ -240,15 +260,6 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                         />
                     </div>
                     <div className="w-full">
-                        <label className="md:text-lg">¿Dónde querés aplicar el mural?</label>
-                        <textarea
-                            value={userDescription}
-                            onChange={(e) => setUserDescription(e.target.value)}
-                            className="w-full h-24 p-2 bg-white border border-black resize-none"
-                            placeholder="Ej: En la pared del fondo, detrás del sillón. Que cubra toda la pared de piso a techo."
-                        />
-                    </div>
-                    <div className="w-full">
                         <label className="md:text-lg">Colección</label>
                         <select className="w-full h-10 px-2 bg-white rounded-none border border-black" {...register("collection")}>
                             <option value="">Selecciona una colección</option>
@@ -275,7 +286,8 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                     {errorMessage && <div className="w-full p-3 bg-red-50 border border-red-200 text-red-700 text-sm">{errorMessage}</div>}
                     {generationsRemaining !== null && status !== "limit_reached" && <p className="text-sm text-black/60">Visualizaciones restantes: <strong>{generationsRemaining}</strong></p>}
                     <div className="mt-4 lg:mt-0 w-full flex justify-center lg:justify-end">
-                        <button type="submit" disabled={status === "processing" || status === "limit_reached"} className="px-6 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase disabled:opacity-50 disabled:cursor-not-allowed">
+                        <button type="submit" disabled={status === "uploading" || status === "processing" || status === "limit_reached"} className="px-6 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase disabled:opacity-50 disabled:cursor-not-allowed">
+                            {status === "uploading" && "Subiendo..."}
                             {status === "processing" && "Generando..."}
                             {(status === "idle" || status === "completed" || status === "error") && "Visualizar"}
                             {status === "limit_reached" && "Límite alcanzado"}
@@ -296,7 +308,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                         <div className="w-full h-64 border border-black/20 flex flex-col items-center justify-center gap-4">
                             <div className="w-10 h-10 border-2 border-black/20 border-t-black rounded-full animate-spin"></div>
                             <p className="text-black/60">Generando visualización...</p>
-                            <p className="text-sm text-black/40">Esto puede tomar hasta 60 segundos</p>
+                            <p className="text-sm text-black/40">Esto puede tomar hasta 30 segundos</p>
                         </div>
                     )}
                     {status === "completed" && resultImage && (
@@ -306,11 +318,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                                 <b className="font-medium">{selectedMural?.title} - {selectedVariant?.colorName}</b>
                             </h2>
                             <img src={resultImage} alt="Visualización del mural" className="w-full object-contain border border-black" />
-                            <a 
-                                href={resultImage} 
-                                download={`visualizacion-${selectedMural?.title || "mural"}.jpg`} 
-                                className="mt-2 self-end px-4 py-2 border border-black font-gillsans text-sm uppercase hover:bg-black hover:text-white transition-colors"
-                            >
+                            <a href={`/api/visualizer/image/${completedTaskId}`} download={`visualizacion-${selectedMural?.title || "mural"}.jpg`} className="mt-2 self-end px-4 py-2 border border-black font-gillsans text-sm uppercase hover:bg-black hover:text-white transition-colors">
                                 Descargar imagen
                             </a>
                         </div>
