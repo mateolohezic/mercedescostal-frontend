@@ -4071,6 +4071,37 @@ export const collections: Array<Collection> = [
             },
         ],
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     {
         id: "mesopotamia",
         title: "Mesopotamia",
@@ -4089,26 +4120,26 @@ export const collections: Array<Collection> = [
                 variants: [
                     {
                         colorName: "White",
-                        color: "#FFFFFF",
+                        color: "bg-st-white",
                         montaje: japonica_montaje,
                         mural: japonica_mural_blanco,
                         base: true,
                     },
                     {
                         colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        color: "bg-sky-blue",
                         montaje: japonica_montaje,
                         mural: japonica_mural_celeste,
                     },
                     {
                         colorName: "Rose",
-                        color: "#FFC0CB",
+                        color: "bg-rose",
                         montaje: japonica_montaje,
                         mural: japonica_mural_rosa,
                     },
                     {
                         colorName: "Gray",
-                        color: "#FFC0CB",
+                        color: "bg-gray",
                         montaje: japonica_montaje,
                         mural: japonica_mural_gris,
                     }
@@ -4124,39 +4155,39 @@ export const collections: Array<Collection> = [
                 keywords: ["pattern", "patron", "patrón", "espigas", "mesopotamia", "colaboracion"],
                 variants: [
                     {
-                        colorName: "White",
-                        color: "#DC143C",
+                        colorName: "400",
+                        color: "bg-dark-sky",
                         montaje: espigas_montaje,
                         mural: espigas_mural_400,
                         base: true,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "401",
+                        color: "bg-rose",
                         montaje: espigas_montaje,
                         mural: espigas_mural_401,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "402",
+                        color: "bg-st-201810",
                         montaje: espigas_montaje,
                         mural: espigas_mural_402,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "403",
+                        color: "bg-st-green",
                         montaje: espigas_montaje,
                         mural: espigas_mural_403,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "404",
+                        color: "bg-fenland",
                         montaje: espigas_montaje,
                         mural: espigas_mural_404,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "405",
+                        color: "bg-vert-sec",
                         montaje: espigas_montaje,
                         mural: espigas_mural_405,
                     },
@@ -4172,57 +4203,57 @@ export const collections: Array<Collection> = [
                 keywords: ["pattern", "patron", "patrón", "mesopotamia", "colaboracion"],
                 variants: [
                     {
-                        colorName: "White",
-                        color: "#DC143C",
+                        colorName: "200",
+                        color: "bg-rose 1",
                         montaje: mesopotamia_montaje,
                         mural: mesopotamia_mural_200,
                         base: true,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "201",
+                        color: "bg-vert-sec 1",
                         montaje: mesopotamia_montaje,
                         mural: mesopotamia_mural_201,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "202",
+                        color: "bg-st-green 1",
                         montaje: mesopotamia_montaje,
                         mural: mesopotamia_mural_202,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "203",
+                        color: "bg-rose 2",
                         montaje: mesopotamia_montaje,
                         mural: mesopotamia_mural_203,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "204",
+                        color: "bg-vert-sec 2",
                         montaje: mesopotamia_montaje,
                         mural: mesopotamia_mural_204,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "205",
+                        color: "bg-st-green 2",
                         montaje: mesopotamia_montaje,
                         mural: mesopotamia_mural_205,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "206",
+                        color: "bg-gray 1",
                         montaje: mesopotamia_montaje,
                         mural: mesopotamia_mural_206,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "207",
+                        color: "bg-gray 2",
                         montaje: mesopotamia_montaje,
                         mural: mesopotamia_mural_207,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "208",
+                        color: "bg-rose 3",
                         montaje: mesopotamia_montaje,
                         mural: mesopotamia_mural_208,
                     },
@@ -4238,33 +4269,33 @@ export const collections: Array<Collection> = [
                 keywords: ["pattern", "patron", "patrón", "rio", "mesopotamia", "colaboracion"],
                 variants: [
                     {
-                        colorName: "White",
-                        color: "#DC143C",
+                        colorName: "300",
+                        color: "bg-dark-sky",
                         montaje: rio_montaje,
                         mural: rio_mural_300,
                         base: true,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "301",
+                        color: "bg-st-green",
                         montaje: rio_montaje,
                         mural: rio_mural_301,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "302",
+                        color: "bg-vert-sec",
                         montaje: rio_montaje,
                         mural: rio_mural_302,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "303",
+                        color: "bg-st-tanger",
                         montaje: rio_montaje,
                         mural: rio_mural_303,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "304",
+                        color: "bg-rose",
                         montaje: rio_montaje,
                         mural: rio_mural_304,
                     },
@@ -4309,21 +4340,21 @@ export const collections: Array<Collection> = [
                 keywords: ["pattern", "patron", "patrón", "hornero", "tienda marlo", "colaboracion", "aves"],
                 variants: [
                     {
-                        colorName: "White",
-                        color: "#DC143C",
+                        colorName: "Rosa",
+                        color: "bg-rose",
                         montaje: hornero_montaje_rosa,
                         mural: hornero_mural_rosa,
                         base: true,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "Azulino",
+                        color: "bg-st-201810",
                         montaje: hornero_montaje_azulino,
                         mural: hornero_mural_azulino,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "Menta",
+                        color: "bg-st-green",
                         montaje: hornero_montaje_menta,
                         mural: hornero_mural_menta,
                     },
@@ -4375,15 +4406,15 @@ export const collections: Array<Collection> = [
                 keywords: ["pattern", "patron", "patrón", "venado", "tienda marlo", "colaboracion", "animales"],
                 variants: [
                     {
-                        colorName: "White",
-                        color: "#DC143C",
+                        colorName: "Gray",
+                        color: "bg-gray",
                         montaje: venado_montaje,
                         mural: venado_mural,
                         base: true,
                     },
                     {
-                        colorName: "Sky Blue",
-                        color: "#FFC0CB",
+                        colorName: "Ocre",
+                        color: "bg-mais",
                         montaje: venado_montaje_ocre,
                         mural: venado_mural_ocre,
                     },
@@ -4490,7 +4521,7 @@ export const collections: Array<Collection> = [
                 collectionId: "carina-michelli",
                 collectionTitle: "Carina Michelli",
                 icons: [],
-                keywords: ["rita", "carina michelli", "colaboracion"],
+                keywords: ["pattern", "patron", "patrón", "rita", "carina michelli", "colaboracion"],
                 variants: [
                     {
                         colorName: "White",

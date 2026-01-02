@@ -169,7 +169,7 @@
 }
 
 .bg-st-white{
-  background-color: #ffffff;
+  background-color: #efefef;
 }
 
 .bg-natural{
@@ -198,4 +198,16 @@
 
 .bg-mais{
   background-color: #bfaa8b;
+}
+
+.bg-gray{
+  background-color: #b2b4af;
+}
+
+.bg-rose{
+  background-color: #efcec7;
+}
+
+.bg-sky-blue{
+  background-color: #c7d0d5;
 }

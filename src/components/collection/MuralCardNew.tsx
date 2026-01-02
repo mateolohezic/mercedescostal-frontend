@@ -22,65 +22,43 @@ export const MuralCardNew = ({ mural, index }: Props) => {
     const isPattern = mural.keywords.some(k => ['patrón', 'patron', 'pattern'].includes(k.toLowerCase()));
     const muralIndex = index + 1
 
-    return (
-        <>
-        <div
-            id={mural.id}
-            className="w-full flex flex-col cursor-pointer"
-            onClick={ () => setShowModal(true) }
-        >
+    return ( <>
+        <div id={mural.id} className="w-full flex flex-col cursor-pointer" onClick={ () => setShowModal(true) }>
             <h2 className="grow text-xl uppercase">{ muralIndex > 9 ? muralIndex : `0${muralIndex}` }. {isPattern ? 'Pattern' : 'Mural'} {mural.title}</h2>
             <motion.div
                 className="w-full aspect-video relative"
                 onHoverStart={() => setIsHovered(true)}
                 onHoverEnd={() => setIsHovered(false)}
                 >
-                    <Image
-                        priority
-                        src={baseVariant.montaje}
-                        alt={`Montaje ${mural.title}`}
-                        className="size-full object-cover absolute top-0 left-0 z-0"
-                    />
-                    <Image
-                        src={baseVariant.mural}
-                        alt={`Mural ${mural.title}`}
-                        className={`size-full object-cover absolute top-0 left-0 z-10 ${isHovered ? "opacity-100" : "opacity-0"}`}
-                    />
+                    <Image priority src={baseVariant.montaje} alt={`Montaje ${mural.title}`} className="size-full object-cover absolute top-0 left-0 z-0"/>
+                    <Image src={baseVariant.mural} alt={`Mural ${mural.title}`} className={`size-full object-cover absolute top-0 left-0 z-10 ${isHovered ? "opacity-100" : "opacity-0"}`}/>
             </motion.div>
         </div>
         <Modal
-            className="w-full min-h-screen lg:min-h-0"
+            className="w-full min-h-screen xl:min-h-0"
             showModal={showModal}
             setShowModal={setShowModal}
         >
-            <div className="size-full flex flex-col-reverse lg:flex-row justify-center items-stretch">
-                <div className="w-full lg:w-auto lg:grow lg:pr-12">
+            <div className="size-full flex flex-col-reverse xl:flex-row justify-center items-stretch">
+                <div className="w-full xl:w-auto xl:grow xl:pr-12">
                     <div className="size-full relative overflow-y-auto">
                         <motion.div
                             onHoverStart={() => setIsHoveredModal(true)}
                             onHoverEnd={() => setIsHoveredModal(false)}
-                            className="size-full lg:absolute lg:top-0 lg:left-0"
+                            className="size-full xl:absolute xl:top-0 xl:left-0"
                         >
-                            <Image
-                                src={selectedVariant.mural}
-                                alt={`Mural ${selectedVariant.colorName} ${mural.title}`}
-                                className="hidden lg:block size-full lg:absolute lg:top-0 lg:left-0 object-cover z-0"
-                            />
-                            <Image
-                                src={selectedVariant.montaje}
-                                alt={`Montaje ${selectedVariant.colorName} ${mural.title}`}
-                                className={`hidden lg:block size-full lg:absolute lg:top-0 lg:left-0 object-cover z-10 ${isHoveredModal ? "opacity-100" : "opacity-0"}`}
-                            />
+                            <Image src={selectedVariant.mural} alt={`Mural ${selectedVariant.colorName} ${mural.title}`} className="hidden xl:block size-full xl:absolute xl:top-0 xl:left-0 object-cover z-0"/>
+                            <Image src={selectedVariant.montaje} alt={`Montaje ${selectedVariant.colorName} ${mural.title}`} className={`hidden xl:block size-full xl:absolute xl:top-0 xl:left-0 object-cover z-10 ${isHoveredModal ? "opacity-100" : "opacity-0"}`}/>
                         </motion.div>
                     </div>
                 </div>
-                <div className="w-full max-w-xl lg:p-4 lg:pt-12 flex flex-col">
-                    <Image src={selectedVariant.mural} alt={`Mural ${mural.title} ${selectedVariant.colorName}`} className="lg:hidden w-full object-contain"/>
-                    <div className="w-full grow p-6 lg:p-0">
+                <div className="w-full xl:max-w-xl xl:p-4 xl:pt-12 flex flex-col">
+                    <Image src={selectedVariant.mural} alt={`Mural ${mural.title} ${selectedVariant.colorName}`} className="xl:hidden w-full object-contain"/>
+                    <div className="w-full grow p-6 xl:p-0">
                         <p className="font-gillsans font-light text-sm text-black/50 uppercase tracking-widest">Colección {mural.collectionTitle}</p>
                         <h2 className="text-3xl font-gillsans font-medium uppercase">{mural.title}</h2>
-                        {(mural.collectionId === "casamar" || mural.collectionId === "artisan") && mural.variants.length > 1 && (
-                            <div className="mt-4 flex items-center gap-2">
+                        {(mural.collectionId === "casamar" || mural.collectionId === "artisan" || mural.collectionId === "mesopotamia" || mural.collectionId === "tienda-marlo") && mural.variants.length > 1 && (
+                            <div className="mt-4 w-full flex items-center gap-2 overflow-x-auto">
                                 {mural.variants.sort((a, b) => a.colorName.localeCompare(b.colorName)).map((variant, idx) => {
                                     const isSelected = variant.color === selectedVariant.color;
                                     return (
@@ -91,15 +69,15 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                                                 !isSelected && setSelectedVariant(variant);
                                             }}
                                             key={`${mural.id}-variant-${idx}`}
-                                            className={`relative size-8 lg:size-6 shrink-0 rounded-full transition-150 ${variant.color ?? ''} hover:opacity-75 group`} 
+                                            className={`relative size-8 xl:size-6 shrink-0 rounded-full transition-150 ${variant.color ?? ''} hover:opacity-75 group`} 
                                         >
                                             { !isSelected &&
                                                 <div className="size-full flex justify-center items-center absolute top-0 left-0">
-                                                    <div className="size-5 lg:size-4 rounded-full bg-white"/>
+                                                    <div className="size-5 xl:size-4 rounded-full bg-white"/>
                                                 </div>
                                             }
                                             <span className="sr-only">{variant.colorName}</span>
-                                            <div className="hidden lg:block absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-black bg-white border border-black/10 px-2 py-0.5 rounded opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200">
+                                            <div className="hidden xl:block absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-black bg-white border border-black/10 px-2 py-0.5 rounded opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200">
                                                 {variant.colorName}
                                             </div>
                                         </button>
@@ -127,12 +105,11 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                             </li>
                         </ul>
                     </div>
-                    <div className="lg:mt-8 w-full p-6 lg:p-0 flex justify-center lg:justify-end">
+                    <div className="xl:mt-8 w-full p-6 xl:p-0 flex justify-center xl:justify-end">
                         <Link href={`/quote?mural=${mural.id}`} className="px-4 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase">Cotizar</Link>
                     </div>
                 </div>
             </div>
         </Modal>
-        </>
-    )
+    </> )
 }
