@@ -29,4 +29,5 @@ export interface Collection {
     technique: string;
     description: string;
     murales: Array<Mural>;
+    collaboration?: boolean;
 }

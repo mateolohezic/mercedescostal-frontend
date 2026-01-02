@@ -1,3 +1,5 @@
+import { Collection } from "@/interfaces";
+
 // Artisan
 import abra_montaje from "@/assets/collections/artisan/abra/abra_montaje.webp";
 import abra_mural_black from "@/assets/collections/artisan/abra/abra_mural_black.webp";
@@ -693,7 +695,6 @@ import silvestre_montaje from "@/assets/collections/vuelta_al_mundo/silvestre/si
 import silvestre_montaje_2 from "@/assets/collections/vuelta_al_mundo/silvestre/silvestre_montaje_2.webp";
 import silvestre_mural from "@/assets/collections/vuelta_al_mundo/silvestre/silvestre_mural.webp";
 import silvestre_mural_gray from "@/assets/collections/vuelta_al_mundo/silvestre/silvestre_mural_gray.webp";
-import { Collection } from "@/interfaces";
 
 // import silvestre_mural_gray from "@/assets/collections/vuelta_al_mundo/vintage_map_VACIO";
 // import magnolia_real_mural_black from "@/assets/collections/vuelta_al_mundo/monos_colgantes_VACIO";
@@ -709,6 +710,81 @@ import portada_casamar from "@/assets/collections/casamar/casamar/casamar_montaj
 import portada_vivero from "@/assets/collections/vivero/reina_ana/reina_ana_montaje_2.webp";
 import portada_morris from "@/assets/collections/morris/tulip_dark/tulip_dark_montaje.webp";
 import portada_vuelta_al_mundo from "@/assets/collections/vuelta_al_mundo/la_riviere/la_riviere_montaje.webp";
+
+// Colaboraciones
+
+import mesopotamia_portrait from "@/assets/collections/collaborations/mesopotamia/japonica/japonica_montaje.webp";
+import tienda_marlo_portrait from "@/assets/collections/collaborations/tienda_marlo/hornero/hornero_montaje_rosa.webp";
+import apatheia_portrait from "@/assets/collections/collaborations/apatheia/little_stars/little_stars_montaje.webp";
+import carina_michelli_portrait from "@/assets/collections/collaborations/carina_michelli/blackthorn/blackthorn_montaje.webp";
+
+import japonica_montaje from "@/assets/collections/collaborations/mesopotamia/japonica/japonica_montaje.webp";
+import japonica_mural_blanco from "@/assets/collections/collaborations/mesopotamia/japonica/japonica_mural_blanco.webp";
+import japonica_mural_celeste from "@/assets/collections/collaborations/mesopotamia/japonica/japonica_mural_celeste.webp";
+import japonica_mural_rosa from "@/assets/collections/collaborations/mesopotamia/japonica/japonica_mural_rosa.webp";
+import japonica_mural_gris from "@/assets/collections/collaborations/mesopotamia/japonica/japonica_mural_gris.webp";
+
+import espigas_montaje from "@/assets/collections/collaborations/mesopotamia/espigas/espigas_montaje.webp";
+import espigas_mural_400 from "@/assets/collections/collaborations/mesopotamia/espigas/espigas_mural_400.webp";
+import espigas_mural_401 from "@/assets/collections/collaborations/mesopotamia/espigas/espigas_mural_401.webp";
+import espigas_mural_402 from "@/assets/collections/collaborations/mesopotamia/espigas/espigas_mural_402.webp";
+import espigas_mural_403 from "@/assets/collections/collaborations/mesopotamia/espigas/espigas_mural_403.webp";
+import espigas_mural_404 from "@/assets/collections/collaborations/mesopotamia/espigas/espigas_mural_404.webp";
+import espigas_mural_405 from "@/assets/collections/collaborations/mesopotamia/espigas/espigas_mural_405.webp";
+
+import mesopotamia_montaje from "@/assets/collections/collaborations/mesopotamia/mesopotamia/mesopotamia_montaje.webp";
+import mesopotamia_mural_200 from "@/assets/collections/collaborations/mesopotamia/mesopotamia/mesopotamia_mural_200.webp";
+import mesopotamia_mural_201 from "@/assets/collections/collaborations/mesopotamia/mesopotamia/mesopotamia_mural_201.webp";
+import mesopotamia_mural_202 from "@/assets/collections/collaborations/mesopotamia/mesopotamia/mesopotamia_mural_202.webp";
+import mesopotamia_mural_203 from "@/assets/collections/collaborations/mesopotamia/mesopotamia/mesopotamia_mural_203.webp";
+import mesopotamia_mural_204 from "@/assets/collections/collaborations/mesopotamia/mesopotamia/mesopotamia_mural_204.webp";
+import mesopotamia_mural_205 from "@/assets/collections/collaborations/mesopotamia/mesopotamia/mesopotamia_mural_205.webp";
+import mesopotamia_mural_206 from "@/assets/collections/collaborations/mesopotamia/mesopotamia/mesopotamia_mural_206.webp";
+import mesopotamia_mural_207 from "@/assets/collections/collaborations/mesopotamia/mesopotamia/mesopotamia_mural_207.webp";
+import mesopotamia_mural_208 from "@/assets/collections/collaborations/mesopotamia/mesopotamia/mesopotamia_mural_208.webp";
+
+import rio_montaje from "@/assets/collections/collaborations/mesopotamia/rio/rio_montaje.webp";
+import rio_mural_300 from "@/assets/collections/collaborations/mesopotamia/rio/rio_mural_300.webp";
+import rio_mural_301 from "@/assets/collections/collaborations/mesopotamia/rio/rio_mural_301.webp";
+import rio_mural_302 from "@/assets/collections/collaborations/mesopotamia/rio/rio_mural_302.webp";
+import rio_mural_303 from "@/assets/collections/collaborations/mesopotamia/rio/rio_mural_303.webp";
+import rio_mural_304 from "@/assets/collections/collaborations/mesopotamia/rio/rio_mural_304.webp";
+
+import zorro_montaje from "@/assets/collections/collaborations/tienda_marlo/zorro/zorros_montaje.webp";
+import zorro_mural from "@/assets/collections/collaborations/tienda_marlo/zorro/zorros_mural.webp";
+
+import hornero_montaje_rosa from "@/assets/collections/collaborations/tienda_marlo/hornero/hornero_montaje_rosa.webp";
+import hornero_mural_rosa from "@/assets/collections/collaborations/tienda_marlo/hornero/hornero_mural_rosa.webp";
+import hornero_montaje_azulino from "@/assets/collections/collaborations/tienda_marlo/hornero/hornero_montaje_azulino.webp";
+import hornero_mural_azulino from "@/assets/collections/collaborations/tienda_marlo/hornero/hornero_mural_azulino.webp";
+import hornero_montaje_menta from "@/assets/collections/collaborations/tienda_marlo/hornero/hornero_montaje_menta.webp";
+import hornero_mural_menta from "@/assets/collections/collaborations/tienda_marlo/hornero/hornero_mural_menta.webp";
+
+import pinguinos_montaje from "@/assets/collections/collaborations/tienda_marlo/pinguinos/pinguinos_montaje.webp";
+import pinguinos_mural from "@/assets/collections/collaborations/tienda_marlo/pinguinos/pinguinos_mural.webp";
+
+import caballo_montaje from "@/assets/collections/collaborations/tienda_marlo/caballo/caballo_montaje.webp";
+import caballo_mural from "@/assets/collections/collaborations/tienda_marlo/caballo/caballo_mural.webp";
+
+import venado_montaje from "@/assets/collections/collaborations/tienda_marlo/venado/venado_montaje.webp";
+import venado_mural from "@/assets/collections/collaborations/tienda_marlo/venado/venado_mural.webp";
+import venado_montaje_ocre from "@/assets/collections/collaborations/tienda_marlo/venado/venado_montaje_ocre.webp";
+import venado_mural_ocre from "@/assets/collections/collaborations/tienda_marlo/venado/venado_mural_ocre.webp";
+
+import little_stars_montaje from "@/assets/collections/collaborations/apatheia/little_stars/little_stars_montaje.webp";
+import little_stars_mural from "@/assets/collections/collaborations/apatheia/little_stars/little_stars_mural.webp";
+
+import blackthorn_montaje from "@/assets/collections/collaborations/carina_michelli/blackthorn/blackthorn_montaje.webp";
+import blackthorn_mural from "@/assets/collections/collaborations/carina_michelli/blackthorn/blackthorn_mural.webp";
+
+import bluetapestry_montaje from "@/assets/collections/collaborations/carina_michelli/bluetapestry/bluetapestry_montaje.webp";
+import bluetapestry_mural from "@/assets/collections/collaborations/carina_michelli/bluetapestry/bluetapestry_mural.webp";
+
+import greenthorn_montaje from "@/assets/collections/collaborations/carina_michelli/greenthorn/greenthorn_montaje.webp";
+import greenthorn_mural from "@/assets/collections/collaborations/carina_michelli/greenthorn/greenthorn_mural.webp";
+
+import rita_montaje from "@/assets/collections/collaborations/carina_michelli/rita/rita_montaje.webp";
+import rita_mural from "@/assets/collections/collaborations/carina_michelli/rita/rita_mural.webp";
 
 export const collections: Array<Collection> = [
     {
@@ -3995,4 +4071,442 @@ export const collections: Array<Collection> = [
             },
         ],
     },
+    {
+        id: "mesopotamia",
+        title: "Mesopotamia",
+        portrait: mesopotamia_portrait,
+        date: "2020",
+        technique: "Digital y pintado a mano.",
+        description: "Descripción.",
+        murales: [
+            {
+                id: "japonica",
+                title: "Japónica",
+                collectionId: "mesopotamia",
+                collectionTitle: "Mesopotamia",
+                icons: [],
+                keywords: ["pattern", "patron", "patrón", "japonica", "mesopotamia", "colaboracion"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#FFFFFF",
+                        montaje: japonica_montaje,
+                        mural: japonica_mural_blanco,
+                        base: true,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: japonica_montaje,
+                        mural: japonica_mural_celeste,
+                    },
+                    {
+                        colorName: "Rose",
+                        color: "#FFC0CB",
+                        montaje: japonica_montaje,
+                        mural: japonica_mural_rosa,
+                    },
+                    {
+                        colorName: "Gray",
+                        color: "#FFC0CB",
+                        montaje: japonica_montaje,
+                        mural: japonica_mural_gris,
+                    }
+                ],
+                href: "/collections/collaborations/mesopotamia/japonica",
+            },
+            {
+                id: "espigas",
+                title: "Espigas",
+                collectionId: "mesopotamia",
+                collectionTitle: "Mesopotamia",
+                icons: [],
+                keywords: ["pattern", "patron", "patrón", "espigas", "mesopotamia", "colaboracion"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: espigas_montaje,
+                        mural: espigas_mural_400,
+                        base: true,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: espigas_montaje,
+                        mural: espigas_mural_401,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: espigas_montaje,
+                        mural: espigas_mural_402,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: espigas_montaje,
+                        mural: espigas_mural_403,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: espigas_montaje,
+                        mural: espigas_mural_404,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: espigas_montaje,
+                        mural: espigas_mural_405,
+                    },
+                ],
+                href: "/collections/collaborations/mesopotamia/espigas",
+            },
+            {
+                id: "mesopotamia-mural",
+                title: "Mesopotamia",
+                collectionId: "mesopotamia",
+                collectionTitle: "Mesopotamia",
+                icons: [],
+                keywords: ["pattern", "patron", "patrón", "mesopotamia", "colaboracion"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: mesopotamia_montaje,
+                        mural: mesopotamia_mural_200,
+                        base: true,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: mesopotamia_montaje,
+                        mural: mesopotamia_mural_201,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: mesopotamia_montaje,
+                        mural: mesopotamia_mural_202,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: mesopotamia_montaje,
+                        mural: mesopotamia_mural_203,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: mesopotamia_montaje,
+                        mural: mesopotamia_mural_204,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: mesopotamia_montaje,
+                        mural: mesopotamia_mural_205,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: mesopotamia_montaje,
+                        mural: mesopotamia_mural_206,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: mesopotamia_montaje,
+                        mural: mesopotamia_mural_207,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: mesopotamia_montaje,
+                        mural: mesopotamia_mural_208,
+                    },
+                ],
+                href: "/collections/collaborations/mesopotamia/mesopotamia-mural",
+            },
+            {
+                id: "rio",
+                title: "Río",
+                collectionId: "mesopotamia",
+                collectionTitle: "Mesopotamia",
+                icons: [],
+                keywords: ["pattern", "patron", "patrón", "rio", "mesopotamia", "colaboracion"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: rio_montaje,
+                        mural: rio_mural_300,
+                        base: true,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: rio_montaje,
+                        mural: rio_mural_301,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: rio_montaje,
+                        mural: rio_mural_302,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: rio_montaje,
+                        mural: rio_mural_303,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: rio_montaje,
+                        mural: rio_mural_304,
+                    },
+                ],
+                href: "/collections/collaborations/mesopotamia/rio",
+            },
+        ],
+        collaboration: true,
+    },
+    {
+        id: "tienda-marlo",
+        title: "Tienda Marlo",
+        portrait: tienda_marlo_portrait,
+        date: "2025",
+        technique: "Digital y pintado a mano.",
+        description: "Descripción.",
+        murales: [
+            {
+                id: "zorro",
+                title: "Zorro",
+                collectionId: "tienda-marlo",
+                collectionTitle: "Tienda Marlo",
+                icons: [],
+                keywords: ["pattern", "patron", "patrón", "zorro", "tienda marlo", "colaboracion", "animales"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: zorro_montaje,
+                        mural: zorro_mural,
+                        base: true,
+                    }
+                ],
+                href: "/collections/collaborations/tienda-marlo/zorro",
+            },
+            {
+                id: "hornero",
+                title: "Hornero",
+                collectionId: "tienda-marlo",
+                collectionTitle: "Tienda Marlo",
+                icons: [],
+                keywords: ["pattern", "patron", "patrón", "hornero", "tienda marlo", "colaboracion", "aves"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: hornero_montaje_rosa,
+                        mural: hornero_mural_rosa,
+                        base: true,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: hornero_montaje_azulino,
+                        mural: hornero_mural_azulino,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: hornero_montaje_menta,
+                        mural: hornero_mural_menta,
+                    },
+                ],
+                href: "/collections/collaborations/tienda-marlo/hornero",
+            },
+            {
+                id: "pinguinos",
+                title: "Pingüinos",
+                collectionId: "tienda-marlo",
+                collectionTitle: "Tienda Marlo",
+                icons: [],
+                keywords: ["pattern", "patron", "patrón", "pinguinos", "tienda marlo", "colaboracion", "animales"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: pinguinos_montaje,
+                        mural: pinguinos_mural,
+                        base: true,
+                    }
+                ],
+                href: "/collections/collaborations/tienda-marlo/pinguinos",
+            },
+            {
+                id: "caballo",
+                title: "Caballo",
+                collectionId: "tienda-marlo",
+                collectionTitle: "Tienda Marlo",
+                icons: [],
+                keywords: ["pattern", "patron", "patrón", "caballo", "tienda marlo", "colaboracion", "animales"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: caballo_montaje,
+                        mural: caballo_mural,
+                        base: true,
+                    }
+                ],
+                href: "/collections/collaborations/tienda-marlo/caballo",
+            },
+            {
+                id: "venado",
+                title: "Venado",
+                collectionId: "tienda-marlo",
+                collectionTitle: "Tienda Marlo",
+                icons: [],
+                keywords: ["pattern", "patron", "patrón", "venado", "tienda marlo", "colaboracion", "animales"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: venado_montaje,
+                        mural: venado_mural,
+                        base: true,
+                    },
+                    {
+                        colorName: "Sky Blue",
+                        color: "#FFC0CB",
+                        montaje: venado_montaje_ocre,
+                        mural: venado_mural_ocre,
+                    },
+                ],
+                href: "/collections/collaborations/tienda-marlo/venado",
+            },
+        ],
+        collaboration: true,
+    },
+    {
+        id: "apatheia",
+        title: "Apatheia",
+        portrait: apatheia_portrait,
+        date: "2024",
+        technique: "Digital y pintado a mano.",
+        description: "Descripción.",
+        murales: [
+            {
+                id: "little-stars",
+                title: "Little Stars",
+                collectionId: "apatheia",
+                collectionTitle: "Apatheia",
+                icons: [],
+                keywords: ["little stars", "estrellas", "apatheia", "colaboracion"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: little_stars_montaje,
+                        mural: little_stars_mural,
+                        base: true,
+                    }
+                ],
+                href: "/collections/collaborations/apatheia/little-stars",
+            },
+        ],
+        collaboration: true,
+    },
+    {
+        id: "carina-michelli",
+        title: "Carina Michelli",
+        portrait: carina_michelli_portrait,
+        date: "2023",
+        technique: "Digital y pintado a mano.",
+        description: "Descripción.",
+        murales: [
+            {
+                id: "blackthorn",
+                title: "Blackthorn",
+                collectionId: "carina-michelli",
+                collectionTitle: "Carina Michelli",
+                icons: [],
+                keywords: ["pattern", "patron", "patrón", "blackthorn", "carina michelli", "colaboracion"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: blackthorn_montaje,
+                        mural: blackthorn_mural,
+                        base: true,
+                    }
+                ],
+                href: "/collections/collaborations/carina-michelli/blackthorn",
+            },
+            {
+                id: "bluetapestry",
+                title: "Blue Tapestry",
+                collectionId: "carina-michelli",
+                collectionTitle: "Carina Michelli",
+                icons: [],
+                keywords: ["pattern", "patron", "patrón", "blue tapestry", "azul", "carina michelli", "colaboracion"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: bluetapestry_montaje,
+                        mural: bluetapestry_mural,
+                        base: true,
+                    }
+                ],
+                href: "/collections/collaborations/carina-michelli/bluetapestry",
+            },
+            {
+                id: "greenthorn",
+                title: "Greenthorn",
+                collectionId: "carina-michelli",
+                collectionTitle: "Carina Michelli",
+                icons: [],
+                keywords: ["pattern", "patron", "patrón", "greenthorn", "verde", "carina michelli", "colaboracion"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: greenthorn_montaje,
+                        mural: greenthorn_mural,
+                        base: true,
+                    }
+                ],
+                href: "/collections/collaborations/carina-michelli/greenthorn",
+            },
+            {
+                id: "rita",
+                title: "Rita",
+                collectionId: "carina-michelli",
+                collectionTitle: "Carina Michelli",
+                icons: [],
+                keywords: ["rita", "carina michelli", "colaboracion"],
+                variants: [
+                    {
+                        colorName: "White",
+                        color: "#DC143C",
+                        montaje: rita_montaje,
+                        mural: rita_mural,
+                        base: true,
+                    }
+                ],
+                href: "/collections/collaborations/carina-michelli/rita",
+            },
+        ],
+        collaboration: true,
+    },
 ];
+
+export const getCollections = () => collections.filter(c => !c.collaboration);
+export const getCollaborations = () => collections.filter(c => c.collaboration);
+export const getAllMurales = () => collections.flatMap(c => c.murales);

@@ -1,8 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
-import { collections } from "@/data/collections";
+import { getCollections } from "@/data/collections";
 import { CollectionVideo } from "@/components";
+import collaborations_portrait from "@/assets/collections/collaborations/carina_michelli/rita/rita_montaje.webp";
 
 export const metadata: Metadata = {
     title: 'Murals',
@@ -26,32 +27,39 @@ export const metadata: Metadata = {
 };
 
 export default function CollectionsPage() {
+    const collections = getCollections();
+
     return (
         <main className="my-12 lg:my-0 w-full grow flex flex-col items-center font-truetypewritter">
             <h1 className="sr-only">Wallpapers</h1>
             <section className="lg:mt-24 w-full grid grid-cols-2 lg:grid-cols-2">
-                <Link
-                    key={collections[0].id}
-                    href={`/collections/${collections[0].id}`}
-                    className="w-full block aspect-video overflow-hidden relative group first:col-span-2"
-                >
-                    <div className="absolute top-0 left-0 z-0">
-                        <CollectionVideo title={collections[0].title} video={collections[0].video||""}/>
-                    </div>
-                </Link>
-                { collections.map((collection) => (
-                    <Link
-                        key={collection.id}
-                        href={`/collections/${collection.id}`}
-                        className="w-full block aspect-video overflow-hidden relative group first:col-span-2"
-                    >
+                {collections[0] && (
+                    <Link key={collections[0].id} href={`/collections/${collections[0].id}`} className="w-full block aspect-video overflow-hidden relative group col-span-2">
+                        {collections[0].video ?
+                            <div className="absolute top-0 left-0 z-0 size-full">
+                                <CollectionVideo title={collections[0].title} video={collections[0].video} />
+                            </div>
+                        :
+                            <Image priority src={collections[0].portrait} alt={`Portada de colección ${collections[0].title}`} className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
+                        }
+                        <div className="size-full bg-black/20 absolute top-0 left-0 z-10 transition-150" />
+                        <div className="size-full flex flex-col justify-center items-center relative z-20">
+                            <h3 className="font-gillsans font-light text-white text-center text-sm lg:text-3xl uppercase">
+                                <span className="text-white/75">Colección</span>{" "}
+                                <b className="font-medium block lg:inline">{collections[0].title}</b>
+                            </h3>
+                        </div>
+                    </Link>
+                )}
+                {collections.slice(1).map((collection) => (
+                    <Link key={collection.id} href={`/collections/${collection.id}`} className="w-full block aspect-video overflow-hidden relative group">
                         <Image
                             priority
                             src={collection.portrait}
                             alt={`Portada de colección ${collection.title}`}
                             className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"
                         />
-                        <div className="size-full bg-black/20 absolute top-0 left-0 z-10 transition-150"></div>
+                        <div className="size-full bg-black/20 absolute top-0 left-0 z-10 transition-150" />
                         <div className="size-full flex flex-col justify-center items-center relative z-20">
                             <h3 className="font-gillsans font-light text-white text-center text-sm lg:text-3xl uppercase">
                                 <span className="text-white/75">Colección</span>{" "}
@@ -60,6 +68,15 @@ export default function CollectionsPage() {
                         </div>
                     </Link>
                 ))}
+                <Link href="/collections/collaborations" className="w-full block aspect-video overflow-hidden relative group">
+                    <Image src={collaborations_portrait} alt="Colaboraciones Mercedes Costal" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
+                    <div className="size-full bg-black/20 absolute top-0 left-0 z-10 transition-150" />
+                    <div className="size-full flex flex-col justify-center items-center relative z-20">
+                        <h3 className="font-gillsans font-light text-white text-center text-sm lg:text-3xl uppercase">
+                            <b className="font-medium">Colaboraciones</b>
+                        </h3>
+                    </div>
+                </Link>
             </section>
             <section className="mt-12 lg:my-48 w-full max-w-5xl 2xl:max-w-7xl px-4 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <div className="w-full lg:text-lg text-start flex flex-col gap-[1lh]">
