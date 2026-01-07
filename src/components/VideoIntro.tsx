@@ -42,7 +42,9 @@ export const VideoIntro = () => {
             <div className="size-full absolute top-0 left-0 z-0 bg-black"/>
         );
     }
-    const videoSrc = deviceType === "mobile" ? "/assets/portada_navidad_mobile.mp4" : "/assets/portada_navidad.mp4";
+
+    const videoSrc = deviceType === "mobile" ? "/assets/portada_winter_show_mobile.mp4" : "/assets/portada_winter_show.mp4";
+
     return (
         <div className="size-full absolute top-0 left-0 z-0">
             <div className="size-full relative">
