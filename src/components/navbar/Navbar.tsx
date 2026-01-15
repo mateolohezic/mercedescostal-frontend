@@ -2,23 +2,102 @@
 
 import Link from "next/link";
 import { NavLinkHome } from "@/interfaces";
-import { MCLogo, NavbarLink, BuscadorNavbar } from "@/components";
+import { MCLogo, NavbarLink, BuscadorNavbar, LanguageSelector } from "@/components";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useTranslations } from 'next-intl';
 
-interface Props {
-    links: Array<NavLinkHome>;
-}
+export const Navbar = () => {
+    const t = useTranslations('common.nav');
 
-export const Navbar = ({links}:Props) => {
+    const links:Array<NavLinkHome> = [
+        {
+            title: t('wallpapers'),
+            href:'/collections',
+        },
+        {
+            title: t('studio'),
+            menu: true,
+            links: [
+                {
+                    title: t('meetTheMakers'),
+                    href:'/meet-the-makers'
+                }
+            ]
+        },
+        {
+            title: t('highlights'),
+            menu: true,
+            links: [
+                {
+                    title: t('goodDesign'),
+                    href:'/highlights/good-design'
+                },
+                {
+                    title: t('ateneoSplendid'),
+                    href:'/highlights/ateneo-splendid'
+                },
+                {
+                    title: t('uk'),
+                    href:'/highlights/london-design-festival'
+                },
+                {
+                    title: t('manantiales'),
+                    href:'/highlights/manantiales-popup'
+                },
+                {
+                    title: t('valencia'),
+                    href:'/highlights/feria-habitat-valencia'
+                },
+            ]
+        },
+        {
+            title: t('mcUniverse'),
+            menu: true,
+            links: [
+                {
+                    title: t('fragrances'),
+                    href:'/mc-universe/fragrances'
+                },
+                {
+                    title: t('theBook'),
+                    href:'/mc-universe/the-book'
+                },
+                {
+                    title: t('costalCafe'),
+                    href:'/mc-universe/costal-coffee'
+                },
+            ]
+        },
+        {
+            title: t('contact'),
+            menu: true,
+            links: [
+                {
+                    title: t('workWithUs'),
+                    href:'/work-with-us'
+                },
+                {
+                    title: t('sellMc'),
+                    href:'/sell-mc'
+                },
+            ]
+        },
+        {
+            title: t('quote'),
+            href:'/quote',
+        },
+    ];
 
     const pathname = usePathname();
-    const [isHome, setIsHome] = useState<boolean>(pathname === '/');
+    // Check if we're on home page (/es, /en, etc.)
+    const checkIsHome = (path: string) => /^\/[a-z]{2}$/.test(path);
+    const [isHome, setIsHome] = useState<boolean>(checkIsHome(pathname));
     const [menuExpanded, setMenuExpanded] = useState<'wallpapers'|'studio'|'highlights'|'mcuniverse'|'contact'|undefined>();
 
     useEffect(() => {
         setMenuExpanded(undefined);
-        setIsHome(pathname === '/');
+        setIsHome(checkIsHome(pathname));
     }, [pathname])
     
     const toggleMenu = (menu: 'wallpapers'|'studio'|'highlights'|'mcuniverse'|'contact') => {
@@ -39,7 +118,7 @@ export const Navbar = ({links}:Props) => {
                             ))
                         }
                         <BuscadorNavbar isHome={isHome}/>
-                        {/* <LanguageSelector isHome={isHome}/> */}
+                        <LanguageSelector isHome={isHome}/>
                     </ul>
                 </div>
             </div>

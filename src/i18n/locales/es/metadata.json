@@ -1,0 +1,66 @@
+{
+  "home": {
+    "title": "Mercedes Costal",
+    "description": "Mercedes Costal Landing Page."
+  },
+  "collections": {
+    "title": "Murals",
+    "description": "Murals Mercedes Costal."
+  },
+  "quote": {
+    "title": "Cotizar",
+    "description": "Cotiza tu mural Mercedes Costal."
+  },
+  "search": {
+    "title": "Buscar",
+    "description": "Buscar murales Mercedes Costal."
+  },
+  "workWithUs": {
+    "title": "Trabaja con nosotros",
+    "description": "Trabaja con Mercedes Costal."
+  },
+  "sellMc": {
+    "title": "Vende M.C.",
+    "description": "Vende productos Mercedes Costal."
+  },
+  "meetTheMakers": {
+    "title": "Meet the makers",
+    "description": "Conoce al equipo de Mercedes Costal."
+  },
+  "collaborations": {
+    "title": "Colaboraciones",
+    "description": "Colaboraciones Mercedes Costal."
+  },
+  "theBook": {
+    "title": "El Libro",
+    "description": "El libro de Mercedes Costal."
+  },
+  "fragrances": {
+    "title": "Fragancias",
+    "description": "Fragancias Mercedes Costal."
+  },
+  "costalCoffee": {
+    "title": "Costal Café",
+    "description": "Costal Café por Mercedes Costal."
+  },
+  "goodDesign": {
+    "title": "Buen Diseño",
+    "description": "Buen Diseño - Mercedes Costal."
+  },
+  "ateneoSplendid": {
+    "title": "Ateneo Splendid",
+    "description": "Ateneo Splendid - Mercedes Costal."
+  },
+  "londonDesignFestival": {
+    "title": "London Design Festival",
+    "description": "London Design Festival - Mercedes Costal."
+  },
+  "manantialesPopup": {
+    "title": "Manantiales Popup",
+    "description": "Manantiales Popup - Mercedes Costal."
+  },
+  "feriaHabitatValencia": {
+    "title": "Feria Habitat Valencia",
+    "description": "Feria Habitat Valencia - Mercedes Costal."
+  }
+}

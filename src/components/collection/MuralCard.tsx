@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from "next/image";
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { Mural } from '@/interfaces';
 
 interface Props{
@@ -12,17 +13,18 @@ interface Props{
 
 export const MuralCard = ({mural, showCollection}:Props) => {
 
+    const t = useTranslations('common');
     const baseVariant = mural.variants.find(v => v.base) || mural.variants[0];
     const isPattern = mural.keywords.some(k => ['patrón', 'patron', 'pattern'].includes(k.toLowerCase()));
 
     return (
         <div className="w-full flex flex-col justify-center lg:justify-start items-center lg:items-stretch gap-4 overflow-x-hidden">
             <h2 className="w-fit font-gillsans text-lg lg:text-xl text-center lg:text-start tracking-[0.5rem] uppercase relative overflow-hidden">
-                {isPattern ? 'Patrón' : 'Mural'}
+                {isPattern ? t('pattern') : t('mural')}
                 <b className='font-semibold'> {mural.title}</b>
                 { showCollection &&
                     <span className='lg:ml-4 text-xs lg:text-sm block lg:inline-block'>
-                        <span className="hidden lg:inline">/ </span>Colección {mural.collectionTitle}
+                        <span className="hidden lg:inline">/ </span>{t('collection')} {mural.collectionTitle}
                     </span>
                 }
                 <motion.div
@@ -51,7 +53,7 @@ export const MuralCard = ({mural, showCollection}:Props) => {
                     >
                     <Image src={baseVariant.mural} alt={`${mural.title} Mural`} width={1024} height={1024} className={`lg:h-72 w-full lg:w-auto object-contain`}/>
                 </motion.div>
-                <Link href={`/quote?mural=${mural.id}`} className='text-xl border-b border-b-black hover:opacity-75 transition-150'>Cotizar</Link>
+                <Link href={`/quote?mural=${mural.id}`} className='text-xl border-b border-b-black hover:opacity-75 transition-150'>{t('quote')}</Link>
             </div>
         </div>
     )

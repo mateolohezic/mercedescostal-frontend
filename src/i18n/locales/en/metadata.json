@@ -1,0 +1,66 @@
+{
+  "home": {
+    "title": "Mercedes Costal",
+    "description": "Mercedes Costal Landing Page."
+  },
+  "collections": {
+    "title": "Murals",
+    "description": "Mercedes Costal Murals."
+  },
+  "quote": {
+    "title": "Get a Quote",
+    "description": "Get a quote for your Mercedes Costal mural."
+  },
+  "search": {
+    "title": "Search",
+    "description": "Search Mercedes Costal murals."
+  },
+  "workWithUs": {
+    "title": "Work with us",
+    "description": "Work with Mercedes Costal."
+  },
+  "sellMc": {
+    "title": "Sell M.C.",
+    "description": "Sell Mercedes Costal products."
+  },
+  "meetTheMakers": {
+    "title": "Meet the makers",
+    "description": "Meet the Mercedes Costal team."
+  },
+  "collaborations": {
+    "title": "Collabs",
+    "description": "Mercedes Costal Collabs."
+  },
+  "theBook": {
+    "title": "The Book",
+    "description": "The Mercedes Costal book."
+  },
+  "fragrances": {
+    "title": "Fragrances",
+    "description": "Mercedes Costal Fragrances."
+  },
+  "costalCoffee": {
+    "title": "Costal Café",
+    "description": "Costal Café by Mercedes Costal."
+  },
+  "goodDesign": {
+    "title": "Buen Diseño",
+    "description": "Buen Diseño - Mercedes Costal."
+  },
+  "ateneoSplendid": {
+    "title": "Ateneo Splendid",
+    "description": "Ateneo Splendid - Mercedes Costal."
+  },
+  "londonDesignFestival": {
+    "title": "London Design Festival",
+    "description": "London Design Festival - Mercedes Costal."
+  },
+  "manantialesPopup": {
+    "title": "Manantiales Popup",
+    "description": "Manantiales Popup - Mercedes Costal."
+  },
+  "feriaHabitatValencia": {
+    "title": "Feria Habitat Valencia",
+    "description": "Feria Habitat Valencia - Mercedes Costal."
+  }
+}

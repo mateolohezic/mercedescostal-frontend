@@ -803,6 +803,7 @@ export const collections: Array<Collection> = [
                 collectionId: "artisan",
                 icons: [],
                 keywords: ["artisan"],
+                keywordsEn: ["artisan"],
                 variants: [
                     {
                         colorName: "Natural",
@@ -855,6 +856,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "anaquel-artisan",
@@ -863,6 +865,7 @@ export const collections: Array<Collection> = [
                 collectionId: "artisan",
                 icons: [],
                 keywords: ["artisan"],
+                keywordsEn: ["artisan"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -872,6 +875,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "cauce-artisan",
@@ -880,6 +884,7 @@ export const collections: Array<Collection> = [
                 collectionId: "artisan",
                 icons: [],
                 keywords: ["artisan"],
+                keywordsEn: ["artisan"],
                 variants: [
                     {
                         colorName: "Natural",
@@ -932,6 +937,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "ceren-artisan",
@@ -940,6 +946,7 @@ export const collections: Array<Collection> = [
                 collectionId: "artisan",
                 icons: [],
                 keywords: ["artisan"],
+                keywordsEn: ["artisan"],
                 variants: [
                     {
                         colorName: "Fenland",
@@ -980,6 +987,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "coria-artisan",
@@ -988,6 +996,7 @@ export const collections: Array<Collection> = [
                 collectionId: "artisan",
                 icons: [],
                 keywords: ["artisan"],
+                keywordsEn: ["artisan"],
                 variants: [
                     {
                         colorName: "Natural",
@@ -1040,6 +1049,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "hilado-artisan",
@@ -1048,6 +1058,7 @@ export const collections: Array<Collection> = [
                 collectionId: "artisan",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "artisan"],
+                keywordsEn: ["pattern", "artisan"],
                 variants: [
                     {
                         colorName: "Natural",
@@ -1094,6 +1105,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "madeja-artisan",
@@ -1102,6 +1114,7 @@ export const collections: Array<Collection> = [
                 collectionId: "artisan",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "artisan"],
+                keywordsEn: ["pattern", "artisan"],
                 variants: [
                     {
                         colorName: "Natural",
@@ -1154,6 +1167,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "pampa-artisan",
@@ -1162,6 +1176,7 @@ export const collections: Array<Collection> = [
                 collectionId: "artisan",
                 icons: [],
                 keywords: ["artisan"],
+                keywordsEn: ["artisan"],
                 variants: [
                     {
                         colorName: "Natural",
@@ -1214,6 +1229,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "randa-artisan",
@@ -1222,6 +1238,7 @@ export const collections: Array<Collection> = [
                 collectionId: "artisan",
                 icons: [],
                 keywords: ["artisan"],
+                keywordsEn: ["artisan"],
                 variants: [
                     {
                         colorName: "Natural",
@@ -1274,6 +1291,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "risco-artisan",
@@ -1282,6 +1300,7 @@ export const collections: Array<Collection> = [
                 collectionId: "artisan",
                 icons: [],
                 keywords: ["artisan"],
+                keywordsEn: ["artisan"],
                 variants: [
                     {
                         colorName: "Natural",
@@ -1334,6 +1353,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "ruma-artisan",
@@ -1342,6 +1362,7 @@ export const collections: Array<Collection> = [
                 collectionId: "artisan",
                 icons: [],
                 keywords: ["artisan"],
+                keywordsEn: ["artisan"],
                 variants: [
                     {
                         colorName: "Natural",
@@ -1394,6 +1415,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "telar-artisan",
@@ -1402,6 +1424,7 @@ export const collections: Array<Collection> = [
                 collectionId: "artisan",
                 icons: [],
                 keywords: ["artisan"],
+                keywordsEn: ["artisan"],
                 variants: [
                     {
                         colorName: "Natural",
@@ -1454,6 +1477,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
+                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
     },
@@ -1473,6 +1497,7 @@ export const collections: Array<Collection> = [
                 collectionId: "basa-basa",
                 icons: [basa_basa_icon_1, basa_basa_icon_2],
                 keywords: ["botanico", "animales", "vison", "gris"],
+                keywordsEn: ["botanical", "animals", "mink", "gray"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1482,6 +1507,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "miombo-basa-basa",
@@ -1490,6 +1516,7 @@ export const collections: Array<Collection> = [
                 collectionId: "basa-basa",
                 icons: [miombo_icon_1, miombo_icon_2],
                 keywords: ["botanico", "vison"],
+                keywordsEn: ["botanical", "mink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1499,6 +1526,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "ñus-basa-basa",
@@ -1507,6 +1535,7 @@ export const collections: Array<Collection> = [
                 collectionId: "basa-basa",
                 icons: [ñus_icon_1],
                 keywords: ["abstracto", "texturas", "gris"],
+                keywordsEn: ["abstract", "textures", "gray"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1516,6 +1545,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "woodland-01-basa-basa",
@@ -1524,6 +1554,7 @@ export const collections: Array<Collection> = [
                 collectionId: "basa-basa",
                 icons: [woodland_01_icon_1],
                 keywords: ["pattern", "patron", "patrón", "texturas", "rayas", "vison", "blanco", "claro"],
+                keywordsEn: ["pattern", "textures", "stripes", "mink", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1533,6 +1564,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "woodland-02-basa-basa",
@@ -1541,6 +1573,7 @@ export const collections: Array<Collection> = [
                 collectionId: "basa-basa",
                 icons: [woodland_02_icon_1],
                 keywords: ["pattern", "patron", "patrón", "texturas", "rayas", "negro", "oscuro"],
+                keywordsEn: ["pattern", "textures", "stripes", "black", "dark"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1550,6 +1583,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "woodland-03-basa-basa",
@@ -1558,6 +1592,7 @@ export const collections: Array<Collection> = [
                 collectionId: "basa-basa",
                 icons: [woodland_03_icon_1],
                 keywords: ["pattern", "patron", "patrón", "abstracto", "texturas", "gris"],
+                keywordsEn: ["pattern", "abstract", "textures", "gray"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1567,6 +1602,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "woodland-04-basa-basa",
@@ -1575,6 +1611,7 @@ export const collections: Array<Collection> = [
                 collectionId: "basa-basa",
                 icons: [woodland_04_icon_1],
                 keywords: ["pattern", "patron", "patrón", "abstracto", "texturas", "gris"],
+                keywordsEn: ["pattern", "abstract", "textures", "gray"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1584,6 +1621,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "woodland-05-basa-basa",
@@ -1592,6 +1630,7 @@ export const collections: Array<Collection> = [
                 collectionId: "basa-basa",
                 icons: [woodland_05_icon_1],
                 keywords: ["pattern", "patron", "patrón", "abstracto", "texturas", "rayas", "gris"],
+                keywordsEn: ["pattern", "abstract", "textures", "stripes", "gray"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1601,6 +1640,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
+                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
     },
@@ -1620,6 +1660,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [bajo_el_mar_icon_1],
                 keywords: ["paisaje", "botanico", "azul", "blanco", "claro"],
+                keywordsEn: ["landscape", "botanical", "blue", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1629,6 +1670,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "brush-casamar",
@@ -1637,6 +1679,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [brush_icon_1],
                 keywords: ["pattern", "patron", "patrón", "texturas", "rayas", "vison"],
+                keywordsEn: ["pattern", "textures", "stripes", "mink"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -1684,6 +1727,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "casamar-casamar",
@@ -1692,6 +1736,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [casamar_icon_1, casamar_icon_2],
                 keywords: ["paisaje", "azul", "verde"],
+                keywordsEn: ["landscape", "blue", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -1701,6 +1746,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "corals-casamar",
@@ -1709,6 +1755,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [corals_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "abstracto", "vison", "claro", "blanco"],
+                keywordsEn: ["pattern", "botanical", "abstract", "mink", "light", "white"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -1749,6 +1796,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "degrade-casamar",
@@ -1757,6 +1805,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [degrade_icon_1],
                 keywords: ["abstracto", "vison", "blanco", "claro"],
+                keywordsEn: ["abstract", "mink", "white", "light"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -1805,6 +1854,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "ethnic-casamar",
@@ -1812,7 +1862,8 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [ethnic_icon_1],
-                keywords: ["abstracto", "geometrico", "azul"],
+                keywords: ["pattern", "patron", "patrón", "abstracto", "geometrico", "azul"],
+                keywordsEn: ["pattern", "abstract", "geometric", "blue"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -1859,6 +1910,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "exotic-casamar",
@@ -1867,6 +1919,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [exotic_icon_1, exotic_icon_2],
                 keywords: ["pattern", "patron", "patrón", "botanico", "animales", "azul", "blanco", "claro"],
+                keywordsEn: ["pattern", "botanical", "animals", "blue", "white", "light"],
                 variants: [
                     {
                         colorName: "St 201810",
@@ -1913,6 +1966,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "fish-casamar",
@@ -1921,6 +1975,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [fish_icon_1],
                 keywords: ["pattern", "patron", "patrón", "animales", "azul"],
+                keywordsEn: ["pattern", "animals", "blue"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -1973,6 +2028,7 @@ export const collections: Array<Collection> = [
                     // },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "morris-casamar",
@@ -1981,6 +2037,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [morris_icon_1],
                 keywords: ["pattern", "patron", "patrón", "abstracto", "texturas", "azul", "blanco", "claro"],
+                keywordsEn: ["pattern", "abstract", "textures", "blue", "white", "light"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -2027,6 +2084,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "mushrooms-casamar",
@@ -2035,6 +2093,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [mushrooms_icon_1, mushrooms_icon_2],
                 keywords: ["botanico", "rojo", "rosa", "blanco", "claro"],
+                keywordsEn: ["botanical", "red", "pink", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2044,6 +2103,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "palms-casamar",
@@ -2052,6 +2112,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [palms_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "blanco", "claro", "negro", "oscuro"],
+                keywordsEn: ["pattern", "botanical", "white", "light", "black", "dark"],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -2098,6 +2159,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "rainbow-casamar",
@@ -2106,6 +2168,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [rainbow_icon_1],
                 keywords: [],
+                keywordsEn: [],
                 variants: [
                     {
                         colorName: "Artful Green",
@@ -2152,6 +2215,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "shibori-casamar",
@@ -2160,6 +2224,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [shibori_icon_1],
                 keywords: ["pattern", "patron", "patrón", "texturas", "geometrico", "abstracto", "negro", "oscuro", "azul"],
+                keywordsEn: ["pattern", "textures", "geometric", "abstract", "black", "dark", "blue"],
                 variants: [
                     {
                         colorName: "Black",
@@ -2206,6 +2271,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "toile-tropical-casamar",
@@ -2214,6 +2280,7 @@ export const collections: Array<Collection> = [
                 collectionId: "casamar",
                 icons: [toile_tropical_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "verde"],
+                keywordsEn: ["pattern", "botanical", "green"],
                 variants: [
                     {
                         colorName: "Black",
@@ -2260,6 +2327,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
+                basePrice: { ARS: 92700, USD: 80 },
             },
         ]
     },
@@ -2279,6 +2347,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [arabesco_icon_1],
                 keywords: ["pattern", "patron", "patrón", "abstracto", "geometrico", "negro", "oscuro", "blanco", "claro"],
+                keywordsEn: ["pattern", "abstract", "geometric", "black", "dark", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2288,6 +2357,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "bosque-de-los-magos-landmark",
@@ -2296,6 +2366,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [bosque_de_los_magos_icon_1, bosque_de_los_magos_icon_2, bosque_de_los_magos_icon_3],
                 keywords: ["paisaje", "animales", "verde", "azul"],
+                keywordsEn: ["landscape", "animals", "green", "blue"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2305,6 +2376,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "bulgaros-landmark",
@@ -2313,6 +2385,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [bulgaros_icon_1],
                 keywords: ["pattern", "patron", "patrón", "geometrico", "blanco", "claro", "vison"],
+                keywordsEn: ["pattern", "geometric", "white", "light", "mink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2322,6 +2395,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             // {
             //     id: "exotic-blue-landmark",
@@ -2347,6 +2421,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [fairy_tale_icon_1, fairy_tale_icon_2],
                 keywords: ["pattern", "patron", "patrón", "animales", "botanico", "negro", "oscuro", "rojo", "naranja", "marron"],
+                keywordsEn: ["pattern", "animals", "botanical", "black", "dark", "red", "orange", "brown"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2356,6 +2431,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             // {
             //     id: "flowers-dark-landmark",
@@ -2381,6 +2457,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [geometric_golden_mist_icon_1],
                 keywords: ["pattern", "patron", "patrón", "geometrico", "abstracto", "amarillo", "ocre"],
+                keywordsEn: ["pattern", "geometric", "abstract", "yellow", "ochre"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2390,6 +2467,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "hanging-plants-landmark",
@@ -2398,6 +2476,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [hanging_plants_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "blanco", "claro", "rojo", "rosa", "verde"],
+                keywordsEn: ["pattern", "botanical", "white", "light", "red", "pink", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2407,6 +2486,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "invernadero-landmark",
@@ -2415,6 +2495,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [invernadero_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "animales", "negro", "oscuro", "rojo", "rosa", "verde"],
+                keywordsEn: ["pattern", "botanical", "animals", "black", "dark", "red", "pink", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2424,6 +2505,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "liberty-golden-landmark",
@@ -2432,6 +2514,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [liberty_golden_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "amarillo", "ocre"],
+                keywordsEn: ["pattern", "botanical", "yellow", "ochre"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2441,6 +2524,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "linen-stripes-landmark",
@@ -2449,6 +2533,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [linen_stripes_icon_1],
                 keywords: ["pattern", "patron", "patrón", "geometrico", "rayas", "texturas", "negro", "oscuro", "blanco", "claro"],
+                keywordsEn: ["pattern", "geometric", "stripes", "textures", "black", "dark", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2458,6 +2543,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "loop-original-landmark",
@@ -2466,6 +2552,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [loop_original_icon_1, loop_original_icon_2, loop_original_icon_3, loop_original_icon_4],
                 keywords: ["pattern", "patron", "patrón", "azul", "abstracto", "geometrico", "texturas"],
+                keywordsEn: ["pattern", "blue", "abstract", "geometric", "textures"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2475,6 +2562,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "midnight-garden-landmark",
@@ -2483,6 +2571,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [midnight_garden_icon_1, midnight_garden_icon_2, midnight_garden_icon_3],
                 keywords: ["botanico", "negro", "oscuro"],
+                keywordsEn: ["botanical", "black", "dark"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2492,6 +2581,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "monkeys-landmark",
@@ -2500,6 +2590,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [monkeys_icon_1],
                 keywords: ["pattern", "patron", "patrón", "animales", "verde", "negro", "oscuro"],
+                keywordsEn: ["pattern", "animals", "green", "black", "dark"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2509,6 +2600,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "mushrooms-landmark",
@@ -2517,6 +2609,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [landmark_mushrooms_icon_1, landmark_mushrooms_icon_2],
                 keywords: ["pattern", "patron", "patrón", "botanico", "gris", "rojo", "rosa"],
+                keywordsEn: ["pattern", "botanical", "gray", "red", "pink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2526,6 +2619,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "palms-tree-landmark",
@@ -2534,6 +2628,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [palms_tree_icon_1],
                 keywords: ["pattern", "patron", "patrón", "paisaje"],
+                keywordsEn: ["pattern", "landscape"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2543,6 +2638,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "rayas-taupe-landmark",
@@ -2551,6 +2647,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [rayas_taupe_icon_1],
                 keywords: ["pattern", "patron", "patrón", "texturas", "rayas", "vison"],
+                keywordsEn: ["pattern", "textures", "stripes", "mink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2560,6 +2657,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "savage-landmark",
@@ -2568,6 +2666,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [savage_icon_1, savage_icon_2, savage_icon_3],
                 keywords: ["animales", "botanico", "negro", "oscuro", "verde"],
+                keywordsEn: ["animals", "botanical", "black", "dark", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2577,6 +2676,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             // {
             //     id: "shibori-landmark",
@@ -2602,6 +2702,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [tartan_icon_1],
                 keywords: ["pattern", "patron", "patrón", "geometrico", "blanco", "claro", "negro", "oscuro"],
+                keywordsEn: ["pattern", "geometric", "white", "light", "black", "dark"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2611,6 +2712,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "universe-landmark",
@@ -2619,6 +2721,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [universe_icon_1],
                 keywords: ["pattern", "patron", "patrón", "abstracto", "negro", "oscuro", "azul"],
+                keywordsEn: ["pattern", "abstract", "black", "dark", "blue"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2628,6 +2731,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "watercolor-stripes-landmark",
@@ -2636,6 +2740,7 @@ export const collections: Array<Collection> = [
                 collectionId: "landmark",
                 icons: [watercolor_stripes_icon_1],
                 keywords: ["pattern", "patron", "patrón", "rayas", "texturas", "geometrico", "verde"],
+                keywordsEn: ["pattern", "stripes", "textures", "geometric", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2645,6 +2750,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             }
         ],
     },
@@ -2664,6 +2770,7 @@ export const collections: Array<Collection> = [
                 collectionId: "morris",
                 icons: [artemis_claro_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "vison", "rojo", "rosa"],
+                keywordsEn: ["pattern", "botanical", "mink", "red", "pink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2673,6 +2780,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "artemis-textura-morris",
@@ -2681,6 +2789,7 @@ export const collections: Array<Collection> = [
                 collectionId: "morris",
                 icons: [artemis_textura_icon_1],
                 keywords: ["pattern", "patron", "patrón", "vison", "rojo", "rosa", "botanico"],
+                keywordsEn: ["pattern", "mink", "red", "pink", "botanical"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2690,6 +2799,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "flowers-light-morris",
@@ -2698,6 +2808,7 @@ export const collections: Array<Collection> = [
                 collectionId: "morris",
                 icons: [flowers_light_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "vison", "rojo", "rosa", "verde"],
+                keywordsEn: ["pattern", "botanical", "mink", "red", "pink", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2707,6 +2818,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "flowers-dark-morris",
@@ -2715,6 +2827,7 @@ export const collections: Array<Collection> = [
                 collectionId: "morris",
                 icons: [flowers_dark_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "negro", "oscuro", "azul", "rojo", "rosa"],
+                keywordsEn: ["pattern", "botanical", "black", "dark", "blue", "red", "pink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2724,6 +2837,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "membrillos-claro-morris",
@@ -2732,6 +2846,7 @@ export const collections: Array<Collection> = [
                 collectionId: "morris",
                 icons: [membrillos_claro_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "blanco", "claro"],
+                keywordsEn: ["pattern", "botanical", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2741,6 +2856,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "membrillos-verde-seco-morris",
@@ -2749,6 +2865,7 @@ export const collections: Array<Collection> = [
                 collectionId: "morris",
                 icons: [membrillos_verde_seco_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "verde"],
+                keywordsEn: ["pattern", "botanical", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2758,6 +2875,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "tulip-dark-morris",
@@ -2766,6 +2884,7 @@ export const collections: Array<Collection> = [
                 collectionId: "morris",
                 icons: [tulip_dark_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "verde", "amarillo", "ocre"],
+                keywordsEn: ["pattern", "botanical", "green", "yellow", "ochre"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2775,6 +2894,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "tulip-light-morris",
@@ -2783,6 +2903,7 @@ export const collections: Array<Collection> = [
                 collectionId: "morris",
                 icons: [tulip_light_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "blanco", "claro", "verde", "amarillo", "ocre"],
+                keywordsEn: ["pattern", "botanical", "white", "light", "green", "yellow", "ochre"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2792,6 +2913,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "willow-morris",
@@ -2800,6 +2922,7 @@ export const collections: Array<Collection> = [
                 collectionId: "morris",
                 icons: [willow_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "blanco", "claro", "verde"],
+                keywordsEn: ["pattern", "botanical", "white", "light", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2809,6 +2932,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "willow-textura-morris",
@@ -2817,6 +2941,7 @@ export const collections: Array<Collection> = [
                 collectionId: "morris",
                 icons: [willow_textura_icon_1],
                 keywords: ["pattern", "patron", "patrón", "botanico", "gris", "blanco", "claro"],
+                keywordsEn: ["pattern", "botanical", "gray", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2826,6 +2951,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
+                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
     },
@@ -2845,6 +2971,7 @@ export const collections: Array<Collection> = [
                 collectionId: "vivero",
                 icons: [avistaje_icon_1],
                 keywords: ["botanico", "animales", "negro", "oscuro", "verde"],
+                keywordsEn: ["botanical", "animals", "black", "dark", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2854,6 +2981,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "vivero",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "la-campagne-vivero",
@@ -2862,6 +2990,7 @@ export const collections: Array<Collection> = [
                 collectionId: "vivero",
                 icons: [la_campagne_icon_1, la_campagne_icon_2],
                 keywords: ["paisaje", "arquitectura", "negro", "oscuro", "blanco", "claro"],
+                keywordsEn: ["landscape", "architecture", "black", "dark", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2871,6 +3000,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "vivero",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "la-maison-vivero",
@@ -2879,6 +3009,7 @@ export const collections: Array<Collection> = [
                 collectionId: "vivero",
                 icons: [la_maison_icon_1, la_maison_icon_2, la_maison_icon_3],
                 keywords: ["arquitectura", "negro", "oscuro", "blanco", "claro"],
+                keywordsEn: ["architecture", "black", "dark", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2888,6 +3019,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "vivero",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "reina-ana-vivero",
@@ -2896,6 +3028,7 @@ export const collections: Array<Collection> = [
                 collectionId: "vivero",
                 icons: [reina_ana_icon_1, reina_ana_icon_2, reina_ana_icon_3],
                 keywords: ["chinoiserie", "botanico", "animales", "arquitectura", "rojo", "rosa"],
+                keywordsEn: ["chinoiserie", "botanical", "animals", "architecture", "red", "pink"],
                 variants: [
                     {
                         colorName: "Variante 1",
@@ -2912,6 +3045,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "vivero",
+                basePrice: { ARS: 92700, USD: 80 },
             }
         ]
     },
@@ -2931,6 +3065,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [bindi_icon_1],
                 keywords: ["animales", "paisaje", "arquitectura", "verde", "luxury"],
+                keywordsEn: ["animals", "landscape", "architecture", "green", "luxury"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2947,6 +3082,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "encantado-voyage",
@@ -2955,6 +3091,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [encantado_icon_1],
                 keywords: ["paisaje", "verde", "azul"],
+                keywordsEn: ["landscape", "green", "blue"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2971,6 +3108,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "ibiza-voyage",
@@ -2979,6 +3117,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [ibiza_icon_1],
                 keywords: ["botanico", "texturas", "rojo", "rosa"],
+                keywordsEn: ["botanical", "textures", "red", "pink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -2989,6 +3128,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "jardin-colgante-voyage",
@@ -2997,6 +3137,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [jardin_colgante_icon_1],
                 keywords: ["botanico", "animales", "verde", "blanco", "claro"],
+                keywordsEn: ["botanical", "animals", "green", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3013,6 +3154,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "jardin-persa-voyage",
@@ -3021,6 +3163,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [jardin_persa_icon_1],
                 keywords: ["botanico", "luxury", "negro", "oscuro", "verde"],
+                keywordsEn: ["botanical", "luxury", "black", "dark", "green"],
                 variants: [
                     {
                         colorName: "Black",
@@ -3043,6 +3186,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "la-riviere-voyage",
@@ -3051,6 +3195,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [la_riviere_icon_1],
                 keywords: ["río", "paisaje", "naturaleza"],
+                keywordsEn: ["river", "landscape", "nature"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3067,6 +3212,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "palmario-voyage",
@@ -3075,6 +3221,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [palmario_icon_1],
                 keywords: ["botanico", "luxury", "blanco", "claro", "verde"],
+                keywordsEn: ["botanical", "luxury", "white", "light", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3091,6 +3238,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "praderas-tropical-voyage",
@@ -3099,6 +3247,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [praderas_tropical_icon_1],
                 keywords: ["paisaje", "botanico", "luxury", "gris"],
+                keywordsEn: ["landscape", "botanical", "luxury", "gray"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3115,6 +3264,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "rio-verde-voyage",
@@ -3123,6 +3273,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [rio_verde_icon_1],
                 keywords: ["paisaje", "luxury", "negro", "oscuro", "verde"],
+                keywordsEn: ["landscape", "luxury", "black", "dark", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3132,6 +3283,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "silvestre-voyage",
@@ -3140,6 +3292,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [silvestre_icon_1],
                 keywords: ["flora", "paisaje", "naturaleza"],
+                keywordsEn: ["flora", "landscape", "nature"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3156,6 +3309,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "cortaderas-voyage",
@@ -3164,6 +3318,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [cortaderas_icon_1],
                 keywords: ["paisaje", "amarillo", "ocre", "vison"],
+                keywordsEn: ["landscape", "yellow", "ochre", "mink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3173,6 +3328,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "costa-rica-voyage",
@@ -3181,6 +3337,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [costa_rica_icon_1],
                 keywords: ["botanico", "animales", "verde", "rojo", "rosa"],
+                keywordsEn: ["botanical", "animals", "green", "red", "pink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3197,6 +3354,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "el-banquete-voyage",
@@ -3205,6 +3363,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [el_banquete_icon_1],
                 keywords: ["paisaje", "animales", "amarillo", "ocre", "verde"],
+                keywordsEn: ["landscape", "animals", "yellow", "ochre", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3214,6 +3373,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "el-descanso-de-las-garzas-voyage",
@@ -3222,6 +3382,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [el_descanso_de_las_garzas_icon_1, el_descanso_de_las_garzas_icon_2, el_descanso_de_las_garzas_icon_3],
                 keywords: ["paisaje", "animales", "verde"],
+                keywordsEn: ["landscape", "animals", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3238,6 +3399,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "el-jardin-de-la-geisha-voyage",
@@ -3246,6 +3408,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [el_jardin_de_la_geisha_icon_1],
                 keywords: ["botanico", "chinoiserie", "rojo", "rosa", "paisaje", "personas"],
+                keywordsEn: ["botanical", "chinoiserie", "red", "pink", "landscape", "people"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3268,6 +3431,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "elena-voyage",
@@ -3276,6 +3440,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [elena_icon_1],
                 keywords: ["animales", "paisaje", "verde", "azul"],
+                keywordsEn: ["animals", "landscape", "green", "blue"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3285,6 +3450,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "jardin-victoriano-voyage",
@@ -3293,6 +3459,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [jardin_victoriano_icon_1],
                 keywords: ["paisaje", "botanico", "arquitectura", "negro", "oscuro", "blanco", "claro"],
+                keywordsEn: ["landscape", "botanical", "architecture", "black", "dark", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3309,6 +3476,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "jungla-en-tintas-voyage",
@@ -3317,6 +3485,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [jungla_en_tintas_icon_1],
                 keywords: ["paisaje", "animales", "negro", "oscuro", "blanco", "claro"],
+                keywordsEn: ["landscape", "animals", "black", "dark", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3326,6 +3495,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "laguna-sepia-voyage",
@@ -3334,6 +3504,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [laguna_sepia_icon_1],
                 keywords: ["paisaje", "verde", "vison"],
+                keywordsEn: ["landscape", "green", "mink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3350,6 +3521,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "praderas-voyage",
@@ -3358,6 +3530,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [praderas_icon_1],
                 keywords: ["vison", "paisaje"],
+                keywordsEn: ["mink", "landscape"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3374,6 +3547,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "utopia-voyage",
@@ -3382,6 +3556,7 @@ export const collections: Array<Collection> = [
                 collectionId: "voyage",
                 icons: [utopia_icon_1],
                 keywords: ["paisaje", "azul"],
+                keywordsEn: ["landscape", "blue"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3398,6 +3573,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
+                basePrice: { ARS: 92700, USD: 80 },
             },
         ]
     },
@@ -3417,6 +3593,7 @@ export const collections: Array<Collection> = [
                 collectionId: "the-classics",
                 icons: [hikers_in_a_park_icon_1],
                 keywords: ["paisaje", "verde"],
+                keywordsEn: ["landscape", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3426,6 +3603,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "the-classics",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "italian-landscape-the-classics",
@@ -3434,6 +3612,7 @@ export const collections: Array<Collection> = [
                 collectionId: "the-classics",
                 icons: [italian_landscape_icon_1],
                 keywords: ["paisaje", "verde", "azul", "gris"],
+                keywordsEn: ["landscape", "green", "blue", "gray"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3450,6 +3629,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "the-classics",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "prince-of-udaipur-the-classics",
@@ -3458,6 +3638,7 @@ export const collections: Array<Collection> = [
                 collectionId: "the-classics",
                 icons: [prince_of_udaipur_icon_1],
                 keywords: ["paisaje", "personas", "naranja", "marrón"],
+                keywordsEn: ["landscape", "people", "orange", "brown"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3467,6 +3648,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "the-classics",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "tapestry-the-classics",
@@ -3475,6 +3657,7 @@ export const collections: Array<Collection> = [
                 collectionId: "the-classics",
                 icons: [tapestry_icon_1],
                 keywords: ["paisaje", "amarillo", "ocre", "azul", "verde", "senderismo", "chinoiserie"],
+                keywordsEn: ["landscape", "yellow", "ochre", "blue", "green", "hiking", "chinoiserie"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3484,6 +3667,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "the-classics",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "the-emperors-journey-the-classics",
@@ -3492,6 +3676,7 @@ export const collections: Array<Collection> = [
                 collectionId: "the-classics",
                 icons: [the_emperors_journey_icon_1],
                 keywords: ["paisaje", "personas", "amarillo", "ocre", "verde"],
+                keywordsEn: ["landscape", "people", "yellow", "ochre", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3501,6 +3686,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "the-classics",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "waterfall-the-classics",
@@ -3509,6 +3695,7 @@ export const collections: Array<Collection> = [
                 collectionId: "the-classics",
                 icons: [waterfall_icon_1],
                 keywords: ["paisaje", "azul", "verde"],
+                keywordsEn: ["landscape", "blue", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3518,6 +3705,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "the-classics",
+                basePrice: { ARS: 92700, USD: 80 },
             }
         ]
     },
@@ -3537,6 +3725,7 @@ export const collections: Array<Collection> = [
                 collectionId: "abstract",
                 icons: [pinceladas_icon_1],
                 keywords: ["abstracto", "texturas", "vison"],
+                keywordsEn: ["abstract", "textures", "mink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3546,6 +3735,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "fractal-abstract",
@@ -3554,6 +3744,7 @@ export const collections: Array<Collection> = [
                 collectionId: "abstract",
                 icons: [fractal_icon_1],
                 keywords: ["geometrico", "abstracto", "blanco", "claro", "vison"],
+                keywordsEn: ["geometric", "abstract", "white", "light", "mink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3576,6 +3767,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "acuarela-abstract",
@@ -3584,6 +3776,7 @@ export const collections: Array<Collection> = [
                 collectionId: "abstract",
                 icons: [acuarela_icon_1],
                 keywords: ["abstracto", "texturas", "azul"],
+                keywordsEn: ["abstract", "textures", "blue"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3600,6 +3793,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "constelaciones-abstract",
@@ -3608,6 +3802,7 @@ export const collections: Array<Collection> = [
                 collectionId: "abstract",
                 icons: [constelaciones_icon_1],
                 keywords: ["texturas", "abstracto", "azul"],
+                keywordsEn: ["textures", "abstract", "blue"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3617,6 +3812,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "stadium-abstract",
@@ -3625,6 +3821,7 @@ export const collections: Array<Collection> = [
                 collectionId: "abstract",
                 icons: [stadium_icon_1],
                 keywords: ["texturas", "arquitectura", "personas", "gris"],
+                keywordsEn: ["textures", "architecture", "people", "gray"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3634,6 +3831,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "patagonia-abstract",
@@ -3642,6 +3840,7 @@ export const collections: Array<Collection> = [
                 collectionId: "abstract",
                 icons: [patagonia_icon_1],
                 keywords: ["geometrico", "abstracto", "negro", "oscuro", "blanco", "claro"],
+                keywordsEn: ["geometric", "abstract", "black", "dark", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3658,6 +3857,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "cuerpos-celestes-abstract",
@@ -3666,6 +3866,7 @@ export const collections: Array<Collection> = [
                 collectionId: "abstract",
                 icons: [cuerpos_celestes_icon_1],
                 keywords: ["geometrico", "texturas", "luxury", "gris"],
+                keywordsEn: ["geometric", "textures", "luxury", "gray"],
                 variants: [
                     {
                         colorName: "Gray Humo",
@@ -3688,6 +3889,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "golden-tanger-abstract",
@@ -3696,6 +3898,7 @@ export const collections: Array<Collection> = [
                 collectionId: "abstract",
                 icons: [golden_tanger_icon_1],
                 keywords: ["dorado", "exótico", "arte"],
+                keywordsEn: ["gold", "exotic", "art"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3712,6 +3915,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "etnico-abstract",
@@ -3720,6 +3924,7 @@ export const collections: Array<Collection> = [
                 collectionId: "abstract",
                 icons: [etnico_icon_1],
                 keywords: ["abstracto", "geometrico", "luxury", "naranja", "marron"],
+                keywordsEn: ["abstract", "geometric", "luxury", "orange", "brown"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3736,6 +3941,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "estuco-abstract",
@@ -3744,6 +3950,7 @@ export const collections: Array<Collection> = [
                 collectionId: "abstract",
                 icons: [estuco_icon_1],
                 keywords: ["textura", "pared", "rústico"],
+                keywordsEn: ["texture", "wall", "rustic"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3753,6 +3960,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
+                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
     },
@@ -3772,6 +3980,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [alexandria_icon_1],
                 keywords: ["paisaje", "blanco", "claro", "rojo", "rosa"],
+                keywordsEn: ["landscape", "white", "light", "red", "pink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3782,6 +3991,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             
             {
@@ -3791,6 +4001,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [birds_of_paradise_icon_1],
                 keywords: ["botanico", "animales", "amarillo", "ocre"],
+                keywordsEn: ["botanical", "animals", "yellow", "ochre"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3813,6 +4024,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "magnolia-real-wonder",
@@ -3821,6 +4033,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [magnolia_real_icon_1, magnolia_real_icon_2],
                 keywords: ["botanico", "animales", "chinoiserie", "blanco", "claro", "vison"],
+                keywordsEn: ["botanical", "animals", "chinoiserie", "white", "light", "mink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3837,6 +4050,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "dutch-flowers-wonder",
@@ -3845,6 +4059,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [dutch_flowers_icon_1],
                 keywords: ["botanico", "negro", "oscuro", "blanco", "claro"],
+                keywordsEn: ["botanical", "black", "dark", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3854,6 +4069,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "el-eden-wonder",
@@ -3862,6 +4078,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [el_eden_icon_1],
                 keywords: ["animales", "botanico", "verde", "blanco", "claro", "chinoiserie"],
+                keywordsEn: ["animals", "botanical", "green", "white", "light", "chinoiserie"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3884,6 +4101,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "follaje-wonder",
@@ -3892,6 +4110,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [follaje_icon_1],
                 keywords: ["botanico", "vison", "blanco", "claro"],
+                keywordsEn: ["botanical", "mink", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3901,6 +4120,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "hanami-wonder",
@@ -3909,6 +4129,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [hanami_icon_1],
                 keywords: ["botanico", "blanco", "claro", "rojo", "rosa"],
+                keywordsEn: ["botanical", "white", "light", "red", "pink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3925,6 +4146,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "jardin-vertical-wonder",
@@ -3933,6 +4155,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [jardin_vertical_icon_1],
                 keywords: ["botanico", "animales", "azul", "blanco", "claro"],
+                keywordsEn: ["botanical", "animals", "blue", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3942,6 +4165,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "vuelo-de-mariposas-wonder",
@@ -3950,6 +4174,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [vuelo_de_mariposas_icon_1],
                 keywords: ["paisaje", "gris", "vison"],
+                keywordsEn: ["landscape", "gray", "mink"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3959,6 +4184,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "en-las-nubes-wonder",
@@ -3967,6 +4193,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [en_las_nubes_icon_1],
                 keywords: ["paisaje", "azul", "gris"],
+                keywordsEn: ["landscape", "blue", "gray"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3976,6 +4203,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "animal-parade-wonder",
@@ -3984,6 +4212,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [animal_parade_icon_1],
                 keywords: ["animales", "paisaje", "negro", "oscuro", "blanco", "claro", "amarillo", "ocre"],
+                keywordsEn: ["animals", "landscape", "black", "dark", "white", "light", "yellow", "ochre"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -3993,6 +4222,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "wild-circus-wonder",
@@ -4001,6 +4231,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [wild_circus_icon_1],
                 keywords: ["paisaje", "animales", "azul", "verde"],
+                keywordsEn: ["landscape", "animals", "blue", "green"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -4017,6 +4248,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "jungla-en-tintas-wonder",
@@ -4025,6 +4257,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [jungla_en_tintas_icon_1],
                 keywords: ["paisaje", "animales", "negro", "oscuro", "blanco", "claro"],
+                keywordsEn: ["landscape", "animals", "black", "dark", "white", "light"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -4034,6 +4267,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "mundo-animal-wonder",
@@ -4042,6 +4276,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [mundo_animal_icon_1],
                 keywords: ["fauna", "naturaleza", "animales"],
+                keywordsEn: ["fauna", "nature", "animals"],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -4051,6 +4286,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "blue-willow-wonder",
@@ -4059,6 +4295,7 @@ export const collections: Array<Collection> = [
                 collectionId: "wonder",
                 icons: [],
                 keywords: [],
+                keywordsEn: [],
                 variants: [
                     {
                         colorName: "Estándar",
@@ -4068,6 +4305,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
+                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
     },
@@ -4117,6 +4355,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Mesopotamia",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "japonica", "mesopotamia", "colaboracion"],
+                keywordsEn: ["pattern", "japonica", "mesopotamia", "collaboration"],
                 variants: [
                     {
                         colorName: "White",
@@ -4145,6 +4384,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/mesopotamia/japonica",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "espigas",
@@ -4153,6 +4393,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Mesopotamia",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "espigas", "mesopotamia", "colaboracion"],
+                keywordsEn: ["pattern", "spikes", "mesopotamia", "collaboration"],
                 variants: [
                     {
                         colorName: "400",
@@ -4193,6 +4434,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "/collections/collaborations/mesopotamia/espigas",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "mesopotamia-mural",
@@ -4201,6 +4443,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Mesopotamia",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "mesopotamia", "colaboracion"],
+                keywordsEn: ["pattern", "mesopotamia", "collaboration"],
                 variants: [
                     {
                         colorName: "200",
@@ -4259,6 +4502,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "/collections/collaborations/mesopotamia/mesopotamia-mural",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "rio",
@@ -4267,6 +4511,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Mesopotamia",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "rio", "mesopotamia", "colaboracion"],
+                keywordsEn: ["pattern", "river", "mesopotamia", "collaboration"],
                 variants: [
                     {
                         colorName: "300",
@@ -4301,6 +4546,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "/collections/collaborations/mesopotamia/rio",
+                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
         collaboration: true,
@@ -4320,6 +4566,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Tienda Marlo",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "zorro", "tienda marlo", "colaboracion", "animales"],
+                keywordsEn: ["pattern", "fox", "tienda marlo", "collaboration", "animals"],
                 variants: [
                     {
                         colorName: "White",
@@ -4330,6 +4577,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/tienda-marlo/zorro",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "hornero",
@@ -4338,6 +4586,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Tienda Marlo",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "hornero", "tienda marlo", "colaboracion", "aves"],
+                keywordsEn: ["pattern", "hornero", "tienda marlo", "collaboration", "birds"],
                 variants: [
                     {
                         colorName: "Rosa",
@@ -4360,6 +4609,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "/collections/collaborations/tienda-marlo/hornero",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "pinguinos",
@@ -4368,6 +4618,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Tienda Marlo",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "pinguinos", "tienda marlo", "colaboracion", "animales"],
+                keywordsEn: ["pattern", "penguins", "tienda marlo", "collaboration", "animals"],
                 variants: [
                     {
                         colorName: "White",
@@ -4378,6 +4629,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/tienda-marlo/pinguinos",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "caballo",
@@ -4386,6 +4638,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Tienda Marlo",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "caballo", "tienda marlo", "colaboracion", "animales"],
+                keywordsEn: ["pattern", "horse", "tienda marlo", "collaboration", "animals"],
                 variants: [
                     {
                         colorName: "White",
@@ -4396,6 +4649,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/tienda-marlo/caballo",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "venado",
@@ -4404,6 +4658,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Tienda Marlo",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "venado", "tienda marlo", "colaboracion", "animales"],
+                keywordsEn: ["pattern", "deer", "tienda marlo", "collaboration", "animals"],
                 variants: [
                     {
                         colorName: "Gray",
@@ -4420,6 +4675,7 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "/collections/collaborations/tienda-marlo/venado",
+                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
         collaboration: true,
@@ -4439,6 +4695,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Apatheia",
                 icons: [],
                 keywords: ["little stars", "estrellas", "apatheia", "colaboracion"],
+                keywordsEn: ["little stars", "stars", "apatheia", "collaboration"],
                 variants: [
                     {
                         colorName: "White",
@@ -4449,6 +4706,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/apatheia/little-stars",
+                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
         collaboration: true,
@@ -4468,6 +4726,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Carina Michelli",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "blackthorn", "carina michelli", "colaboracion"],
+                keywordsEn: ["pattern", "blackthorn", "carina michelli", "collaboration"],
                 variants: [
                     {
                         colorName: "White",
@@ -4478,6 +4737,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/carina-michelli/blackthorn",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "bluetapestry",
@@ -4486,6 +4746,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Carina Michelli",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "blue tapestry", "azul", "carina michelli", "colaboracion"],
+                keywordsEn: ["pattern", "blue tapestry", "blue", "carina michelli", "collaboration"],
                 variants: [
                     {
                         colorName: "White",
@@ -4496,6 +4757,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/carina-michelli/bluetapestry",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "greenthorn",
@@ -4504,6 +4766,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Carina Michelli",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "greenthorn", "verde", "carina michelli", "colaboracion"],
+                keywordsEn: ["pattern", "greenthorn", "green", "carina michelli", "collaboration"],
                 variants: [
                     {
                         colorName: "White",
@@ -4514,6 +4777,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/carina-michelli/greenthorn",
+                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "rita",
@@ -4522,6 +4786,7 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Carina Michelli",
                 icons: [],
                 keywords: ["pattern", "patron", "patrón", "rita", "carina michelli", "colaboracion"],
+                keywordsEn: ["pattern", "rita", "carina michelli", "collaboration"],
                 variants: [
                     {
                         colorName: "White",
@@ -4532,6 +4797,7 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/carina-michelli/rita",
+                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
         collaboration: true,

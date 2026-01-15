@@ -4,15 +4,23 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from 'framer-motion';
-import { Mural, MuralVariant } from "@/interfaces";
+import { useLocale, useTranslations } from 'next-intl';
+import { usePricing } from '@/hooks/usePricing';
+import { Mural, MuralVariant, Collection } from "@/interfaces";
 import { Modal } from "@/components";
 
 interface Props {
     mural: Mural;
-    index: number
+    index: number;
+    collection: Collection;
 }
 
-export const MuralCardNew = ({ mural, index }: Props) => {
+export const MuralCardNew = ({ mural, index, collection }: Props) => {
+
+    const locale = useLocale();
+    const t = useTranslations('products');
+    const { getPrice, formatPrice, getCurrencyByLocale } = usePricing();
+    const currency = getCurrencyByLocale(locale);
 
     const [showModal, setShowModal] = useState<boolean>(false)
     const [isHovered, setIsHovered] = useState<boolean>(false)
@@ -21,6 +29,7 @@ export const MuralCardNew = ({ mural, index }: Props) => {
     const [selectedVariant, setSelectedVariant] = useState<MuralVariant>(baseVariant)
     const isPattern = mural.keywords.some(k => ['patrón', 'patron', 'pattern'].includes(k.toLowerCase()));
     const muralIndex = index + 1
+    const price = getPrice(selectedVariant, mural, collection, currency);
 
     return ( <>
         <div id={mural.id} className="w-full flex flex-col cursor-pointer" onClick={ () => setShowModal(true) }>
@@ -58,9 +67,9 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                         <p className="font-gillsans font-light text-sm text-black/50 uppercase tracking-widest">Colección {mural.collectionTitle}</p>
                         <h2 className="text-3xl font-gillsans font-medium uppercase">{mural.title}</h2>
                         {(mural.collectionId === "casamar" || mural.collectionId === "artisan" || mural.collectionId === "mesopotamia" || mural.collectionId === "tienda-marlo") && mural.variants.length > 1 && (
-                            <div className="mt-4 w-full flex items-center gap-2 overflow-x-auto">
+                            <div className="mt-4 w-full flex items-center gap-3 overflow-x-auto py-2">
                                 {mural.variants.sort((a, b) => a.colorName.localeCompare(b.colorName)).map((variant, idx) => {
-                                    const isSelected = variant.color === selectedVariant.color;
+                                    const isSelected = selectedVariant.colorName === variant.colorName;
                                     return (
                                         <button
                                             type="button"
@@ -69,15 +78,17 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                                                 !isSelected && setSelectedVariant(variant);
                                             }}
                                             key={`${mural.id}-variant-${idx}`}
-                                            className={`relative size-8 xl:size-6 shrink-0 rounded-full transition-150 ${variant.color ?? ''} hover:opacity-75 group`} 
+                                            className={`relative size-10 xl:size-8 shrink-0 rounded-full transition-150 hover:opacity-75 group border-2 ${isSelected ? 'border-black/50' : 'border-transparent'}`}
                                         >
-                                            { !isSelected &&
-                                                <div className="size-full flex justify-center items-center absolute top-0 left-0">
-                                                    <div className="size-5 xl:size-4 rounded-full bg-white"/>
-                                                </div>
-                                            }
+                                            <div className="size-full rounded-full overflow-hidden">
+                                                <Image
+                                                    src={variant.mural}
+                                                    alt={variant.colorName}
+                                                    className="size-full object-cover"
+                                                />
+                                            </div>
                                             <span className="sr-only">{variant.colorName}</span>
-                                            <div className="hidden xl:block absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-black bg-white border border-black/10 px-2 py-0.5 rounded opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200">
+                                            <div className="hidden xl:block absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-black bg-white border border-black/10 px-2 py-0.5 rounded opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 z-10">
                                                 {variant.colorName}
                                             </div>
                                         </button>
@@ -86,24 +97,39 @@ export const MuralCardNew = ({ mural, index }: Props) => {
                             </div>
                         )}
                         <ul className="mt-8 flex flex-col gap-4">
-                            <li><b className="uppercase block">Terminación</b> canvas simil lino</li>
-                            <li><b className="uppercase block">Tipo de sustrato</b> sustrato no tejido con recubrimiento de vinilo</li>
-                            <li><b className="uppercase block">Gramaje</b> 220 grs/m² según partida</li>
-                            <li><b className="uppercase block">Ancho de paño</b> 50cm / 100 cm</li>
-                            <li><b className="uppercase block">Dimensiones</b> a medida (m²)</li>
-                            <li><b className="uppercase block">Apto para</b> interiores, oficinas, hoteles, gimnasios, restaurantes, colegios, etc</li>
-                            <li><b className="uppercase block">Plazo de entrega</b> a partir de 10 días hábiles</li>
-                            <li className="uppercase">Consultar posibilidad de personalización</li>
-                            <li className="uppercase">Envío e instalación no incluidos</li>
+                            <li><b className="uppercase block">{t('specifications.finish')}</b> {t('specifications.finishValue')}</li>
+                            <li><b className="uppercase block">{t('specifications.substrate')}</b> {t('specifications.substrateValue')}</li>
+                            <li><b className="uppercase block">{t('specifications.weight')}</b> {t('specifications.weightValue')}</li>
+                            <li><b className="uppercase block">{t('specifications.width')}</b> {t('specifications.widthValue')}</li>
+                            <li><b className="uppercase block">{t('specifications.dimensions')}</b> {t('specifications.dimensionsValue')}</li>
+                            <li><b className="uppercase block">{t('specifications.suitableFor')}</b> {t('specifications.suitableForValue')}</li>
+                            <li><b className="uppercase block">{t('specifications.deliveryTime')}</b> {t('specifications.deliveryTimeValue')}</li>
+                            <li className="uppercase">{t('specifications.customization')}</li>
+                            <li className="uppercase">{t('specifications.shipping')}</li>
                             <li>
                                 <Link
-                                    href="/assets/ficha_tecnica_mercedes_costal.pdf" 
-                                    target="_blank" 
+                                    href="/assets/ficha_tecnica_mercedes_costal.pdf"
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                     className="w-fit border-b border-black uppercase"
-                                >Ver ficha técnica</Link>
+                                >{t('specifications.technicalSheet')}</Link>
                             </li>
                         </ul>
+                        {price && (
+                            <div className="mt-6 p-4 border border-black/10">
+                                <div className="flex justify-between items-center">
+                                    <span className="uppercase font-medium text-sm">
+                                        {t('pricing.pricePerSqm')}
+                                    </span>
+                                </div>
+                                <p className="mt-2 text-2xl font-medium">
+                                    {formatPrice(price, currency, locale)}
+                                </p>
+                                <p className="text-xs text-black/50 mt-1">
+                                    {t('pricing.indicativePrice')}
+                                </p>
+                            </div>
+                        )}
                     </div>
                     <div className="xl:mt-8 w-full p-6 xl:p-0 flex justify-center xl:justify-end">
                         <Link href={`/quote?mural=${mural.id}`} className="px-4 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase">Cotizar</Link>
