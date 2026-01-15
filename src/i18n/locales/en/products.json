@@ -1,0 +1,25 @@
+{
+  "specifications": {
+    "finish": "Finish",
+    "finishValue": "linen-like canvas",
+    "substrate": "Substrate Type",
+    "substrateValue": "non-woven substrate with vinyl coating",
+    "weight": "Weight",
+    "weightValue": "220 gsm per batch",
+    "width": "Panel Width",
+    "widthValue": "50cm / 100cm",
+    "dimensions": "Dimensions",
+    "dimensionsValue": "custom (m²)",
+    "suitableFor": "Suitable For",
+    "suitableForValue": "interiors, offices, hotels, gyms, restaurants, schools, etc.",
+    "deliveryTime": "Delivery Time",
+    "deliveryTimeValue": "from 10 business days",
+    "customization": "Contact us for customization options",
+    "shipping": "Shipping and installation not included",
+    "technicalSheet": "View technical sheet"
+  },
+  "pricing": {
+    "pricePerSqm": "Price per m²",
+    "indicativePrice": "*Indicative price. Request a quote for final price."
+  }
+}

@@ -5,16 +5,95 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { NavLinkHome } from "@/interfaces";
-import { MCLogo, NavbarLink, BuscadorNavbar } from "@/components";
+import { MCLogo, NavbarLink, BuscadorNavbar, LanguageSelector } from "@/components";
 import { CrossIcon, MenuIcon } from "@/icons";
+import { useTranslations } from 'next-intl';
 
-interface Props {
-    links: Array<NavLinkHome>;
-}
+export const Collapse = () => {
+    const t = useTranslations('common.nav');
 
-export const Collapse = ({ links }: Props) => {
+    const links:Array<NavLinkHome> = [
+        {
+            title: t('wallpapers'),
+            href:'/collections',
+        },
+        {
+            title: t('studio'),
+            menu: true,
+            links: [
+                {
+                    title: t('meetTheMakers'),
+                    href:'/meet-the-makers'
+                }
+            ]
+        },
+        {
+            title: t('highlights'),
+            menu: true,
+            links: [
+                {
+                    title: t('goodDesign'),
+                    href:'/highlights/good-design'
+                },
+                {
+                    title: t('ateneoSplendid'),
+                    href:'/highlights/ateneo-splendid'
+                },
+                {
+                    title: t('uk'),
+                    href:'/highlights/london-design-festival'
+                },
+                {
+                    title: t('manantiales'),
+                    href:'/highlights/manantiales-popup'
+                },
+                {
+                    title: t('valencia'),
+                    href:'/highlights/feria-habitat-valencia'
+                },
+            ]
+        },
+        {
+            title: t('mcUniverse'),
+            menu: true,
+            links: [
+                {
+                    title: t('fragrances'),
+                    href:'/mc-universe/fragrances'
+                },
+                {
+                    title: t('theBook'),
+                    href:'/mc-universe/the-book'
+                },
+                {
+                    title: t('costalCafe'),
+                    href:'/mc-universe/costal-coffee'
+                },
+            ]
+        },
+        {
+            title: t('contact'),
+            menu: true,
+            links: [
+                {
+                    title: t('workWithUs'),
+                    href:'/work-with-us'
+                },
+                {
+                    title: t('sellMc'),
+                    href:'/sell-mc'
+                },
+            ]
+        },
+        {
+            title: t('quote'),
+            href:'/quote',
+        },
+    ];
     const pathname = usePathname();
-    const [isHome, setIsHome] = useState<boolean>(pathname === '/');
+    // Check if we're on home page (/es, /en, etc.)
+    const checkIsHome = (path: string) => /^\/[a-z]{2}$/.test(path);
+    const [isHome, setIsHome] = useState<boolean>(checkIsHome(pathname));
     const [isExpanded, setIsExpanded] = useState(false);
     const [expandedSection, setExpandedSection] = useState<"wallpapers" | "studio" | "highlights" | "mcuniverse" | "contact" | undefined>(undefined);
     const [isDesktop, setIsDesktop] = useState(false);
@@ -27,7 +106,7 @@ export const Collapse = ({ links }: Props) => {
     useEffect(() => {
         setIsExpanded(false);
         setExpandedSection(undefined);
-        setIsHome(pathname === '/');
+        setIsHome(checkIsHome(pathname));
     }, [pathname]);
 
     if (isDesktop) return null;
@@ -74,9 +153,9 @@ export const Collapse = ({ links }: Props) => {
                         exit={{ x: "100%" }}
                         transition={{ type: "spring", bounce: 0, duration: 0.25 }}
                     >
-                        {/* <div className="absolute top-4 left-4 z-50">
+                        <div className="absolute top-4 left-4 z-50">
                             <LanguageSelector/>
-                        </div> */}
+                        </div>
                         <button
                             type="button"
                             onClick={() => setIsExpanded(false)}

@@ -1,0 +1,34 @@
+{
+  "nav": {
+    "wallpapers": "Wallpapers",
+    "studio": "Studio",
+    "meetTheMakers": "Meet the makers",
+    "highlights": "Highlights",
+    "goodDesign": "Buen diseño",
+    "ateneoSplendid": "Ateneo Splendid",
+    "uk": "UK",
+    "manantiales": "Manantiales Popup",
+    "valencia": "Feria Habitat Valencia",
+    "mcUniverse": "MC Universe",
+    "fragrances": "Fragrances",
+    "theBook": "The Book",
+    "costalCafe": "Costal Café",
+    "contact": "Contact",
+    "workWithUs": "Work with us",
+    "sellMc": "Sell M.C.",
+    "quote": "Get a Quote",
+    "search": "Search"
+  },
+  "footer": {
+    "rights": "Mercedes Costal - All rights reserved",
+    "location": "Tucumán, Argentina"
+  },
+  "collection": "Collection",
+  "pattern": "Pattern",
+  "mural": "Mural",
+  "quote": "Get a Quote",
+  "quoteNow": "Get a quote now",
+  "quoteYourMural": "Get a quote for your mural now",
+  "collaborations": "Collabs",
+  "collaboration": "Collaboration"
+}

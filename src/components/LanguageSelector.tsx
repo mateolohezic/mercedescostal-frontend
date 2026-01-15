@@ -20,13 +20,16 @@ export const LanguageSelector = ({isHome}:Props) => {
     const changeLanguage = (lang: 'en' | 'es') => {
         if (lang === language) return;
 
-        let newPathname = pathname;
-
-        if (lang === 'en' && !pathname.startsWith('/en')) {
-            newPathname = pathname === '/' ? '/en' : `/en${pathname}`;
-        } else if (lang === 'es' && pathname.startsWith('/en')) {
-            newPathname = pathname === '/en' ? '/' : pathname.replace(/^\/en/, '');
+        // Remove current locale prefix to get the base path
+        let basePath = pathname;
+        if (pathname.startsWith('/es')) {
+            basePath = pathname.replace(/^\/es/, '') || '/';
+        } else if (pathname.startsWith('/en')) {
+            basePath = pathname.replace(/^\/en/, '') || '/';
         }
+
+        // Add new locale prefix
+        const newPathname = `/${lang}${basePath === '/' ? '' : basePath}`;
 
         router.replace(newPathname, { scroll: false });
     };

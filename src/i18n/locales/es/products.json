@@ -1,0 +1,25 @@
+{
+  "specifications": {
+    "finish": "Terminación",
+    "finishValue": "canvas simil lino",
+    "substrate": "Tipo de sustrato",
+    "substrateValue": "sustrato no tejido con recubrimiento de vinilo",
+    "weight": "Gramaje",
+    "weightValue": "220 grs/m² según partida",
+    "width": "Ancho de paño",
+    "widthValue": "50cm / 100 cm",
+    "dimensions": "Dimensiones",
+    "dimensionsValue": "a medida (m²)",
+    "suitableFor": "Apto para",
+    "suitableForValue": "interiores, oficinas, hoteles, gimnasios, restaurantes, colegios, etc",
+    "deliveryTime": "Plazo de entrega",
+    "deliveryTimeValue": "a partir de 10 días hábiles",
+    "customization": "Consultar posibilidad de personalización",
+    "shipping": "Envío e instalación no incluidos",
+    "technicalSheet": "Ver ficha técnica"
+  },
+  "pricing": {
+    "pricePerSqm": "Precio por m²",
+    "indicativePrice": "*Precio orientativo. Cotizar para precio final."
+  }
+}
