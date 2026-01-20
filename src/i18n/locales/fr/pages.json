@@ -1,0 +1,200 @@
+{
+  "collections": {
+    "title": "Papiers Peints",
+    "collaborations": "Collabs",
+    "artist": "Artiste",
+    "year": "Année",
+    "technique": "Technique",
+    "notFound": "Collection non trouvée",
+    "philosophy": {
+      "line1": "Nous ne concevons pas des papiers. Nous créons des atmosphères.",
+      "line2": "Chez Mercedes Costal, nous comprenons le mur comme une toile silencieuse qui transforme notre façon d'habiter un espace. Chaque papier peint n'est pas seulement une ressource décorative : c'est une décision de design qui façonne l'expérience du lieu.",
+      "line3": "Chaque pièce naît d'une idée : inviter à la contemplation, générer un dialogue avec l'architecture, ou simplement faire de l'espace un endroit où l'on veut rester. Nous travaillons avec des matériaux nobles, des encres écologiques et des processus artisanaux car le design contemporain ne doit compromettre ni la qualité ni la planète.",
+      "line4": "Nous ne suivons pas les tendances. Nous créons un langage. Parce que nous croyons que le design n'est pas une décoration, mais une forme de pensée."
+    },
+    "artisan": {
+      "p1": "Chaque design est une empreinte ; une façon de nommer l'invisible : le rythme du métier à tisser, le vide contenu dans une dentelle, la géométrie symbolique des bordures qui traversent ponchos et horizons.",
+      "p2": "Comme un manteau qui abrite l'histoire, Artisans puise dans les savoirs anciens, mais projette sa silhouette vers une esthétique contemporaine, sobre, universelle.",
+      "p3": "Un hommage silencieux au geste, au temps et à la terre. Artisans naît comme un hommage à la matière travaillée, au savoir transmis sans mots, aux mains qui tissent la mémoire. Inspirée par les métiers du nord argentin—ses métiers à tisser en bois, ses chaînes tendues au soleil, ses broderies qui respirent l'héritage—cette collection parcourt le langage profond du fait main, le traduisant en textures qui parlent de terre et de tissu.",
+      "p4": "C'est une collection qui n'illustre pas, mais évoque.",
+      "p5": "Elle ne représente pas, mais interprète.",
+      "p6": "De la fibre au pigment, de la vaste pampa au silence d'un atelier, Artisans s'écrit en couches.",
+      "p7": "Dans chacune, un métier : une pause, un trait, une respiration.",
+      "p8": "Réinterprétation des trames, chaînes et textures. Du textile au tissu."
+    },
+    "casamar": {
+      "p1": "Casamar est née à l'été 2019 et est devenue une collection emblématique : la première avec un développement complet, de motifs et de muraux, un cadre de référence et une source d'inspiration. Elle a eu sa maison sur la côte uruguayenne, ayant ainsi également une approche avec le public à travers une boutique pop-up.",
+      "p2": "Illustrations à base d'aquarelles.",
+      "p3": "Mural dégradé bleu.",
+      "quote": "Après l'instant magique où mes yeux se sont ouverts dans la mer, il ne m'a plus été possible de voir, penser, vivre comme avant.",
+      "quoteAuthor": "(Jacques-Yves Cousteau)",
+      "p4": "Bleu Navigant, comme le fond de la mer et les voyages que l'on entreprend en approchant cette immensité. Ce mural représente une infime portion de la vie marine : avec ces formes et textures qui nous fascinent tant.",
+      "p5Title": "THE MAGIC MUSHROOMS :",
+      "p5": "Nous les avons vus dans d'innombrables films tout au long de notre vie, nous les associons probablement à la fantaisie de notre enfance, à cause de leur forme, comme un capuchon, comme une personne avec un chapeau. La fantaisie devient réalité et s'imprime. Elle est enregistrée dans notre rétine et fait partie de notre environnement."
+    },
+    "morris": {
+      "p1": "William Morris (1834-1896) était un designer, écrivain et activiste britannique qui est devenu l'une des figures les plus influentes du mouvement Arts and Crafts de la fin du XIXe siècle. Son travail avec les motifs floraux est peut-être la partie la plus reconnaissable de son héritage visuel, et il a un contexte assez riche.",
+      "p2": "William Morris avait une profonde fascination pour les fleurs, qui se reflétait dans son travail de designer, artiste et écrivain. Contrairement à la mode victorienne d'utiliser des fleurs exotiques dans les papiers peints, Morris préférait les fleurs sauvages et les plantes communes, ce qui reflétait ses idéaux socialistes de rendre l'art accessible à tous.",
+      "p3": "Ses designs de papiers peints, comme « Daisy » et « Pimpernel », présentent des fleurs et des plantes reconnaissables, se concentrant souvent sur des espèces moins connues.",
+      "p4": "Morris était fasciné par la nature, en particulier par les fleurs, les plantes et les motifs organiques qu'il trouvait dans les jardins et la campagne anglaise. Il a étudié la botanique et faisait des croquis directement d'après nature, ce qui lui a permis de représenter les plantes avec une grande fidélité, mais aussi avec un sens décoratif très étudié. Influencé par l'art médiéval, l'ornementation islamique et les textiles et tapisseries de la Renaissance, il a créé un style où les fleurs n'étaient pas seulement une décoration, mais partie d'un système rythmique et répétitif.",
+      "p5": "Son attention à la nature et aux fleurs sauvages a inspiré d'autres artistes et designers à suivre ses traces, influençant le mouvement Arts and Crafts.",
+      "p6": "Morris croyait que l'art devait être accessible à tous, pas seulement à une élite. Son choix de motifs floraux communs reflétait cette croyance.",
+      "p7": "Aujourd'hui, ses motifs restent actuels dans les papiers peints, les tissus et les produits contemporains, préservant cet équilibre entre nature et design."
+    },
+    "classics": {
+      "title": "The Classic: art for your walls*",
+      "p1": "\"Italian Landscape\"",
+      "p2": "L'imagerie du Hollandais Van Frijtom et sa dévotion pour la peinture monochrome l'ont conduit à composer cette œuvre bleutée inspirée d'un paysage italien typique. L'inspiration a peut-être jailli d'autres œuvres d'artistes contemporains puisque Frederik n'a jamais quitté son pays.",
+      "p3": "#05 Waterfall.",
+      "p4": "Inspiré par l'œuvre du peintre hollandais Charles William Meredith van de Velde, créée entre 1838 et 1898, ce mural présente un paysage de Java, un village d'Indonésie, avec une scène au bord de la rivière entourée de palmiers. Cette scène, ainsi que d'autres de The Classics, est disponible pour un devis dès aujourd'hui.",
+      "p5": "Mural The Emperor's Journey.",
+      "p6": "Les tons chauds et terreux de Prince Of Udaipur recréent la mystique des anciennes traditions indiennes. Entre scènes de batailles et processions, des récits historiques revivent avec des textures visuelles vieillies, une option idéale pour les espaces cherchant à transmettre tranquillité visuelle et élégance.",
+      "p7": "Tapestry: Birds in the Forest. Ce mural simule une texture visuelle de broderie, comme l'original, une tapisserie d'Alexander Baert confectionnée en 1700. On peut percevoir en détail les chaînes et le tissage particulier de ce type de travaux.",
+      "p8": "#02 Hikers in a Park.",
+      "p9": "La densité du parc représentée dans cette œuvre du paysagiste et poète hollandais est maintenant disponible pour tapisser vos murs."
+    },
+    "landmark": {
+      "p1": "SAVAGE est un écosystème vivant et diversifié, plein d'énergie et de mystère. Idéal pour des ambiances immersives qui cherchent à transporter le spectateur dans un environnement exotique et fantastique.",
+      "p2": "Pour ces muraux, intimement liés à la fantaisie tropicale, nous avons choisi le format audiovisuel pour recréer le mouvement et donner vie à chacun des personnages qui composent la scène.",
+      "p3": "Illustration plate avec un haut niveau de détail, sans ombres profondes, rappelant l'art décoratif et le naïf tropical. Couleurs saturées et bien définies, avec une prédominance de verts et d'accents chauds. Composition sans horizon visible, qui enveloppe le regard et transmet la sensation d'être immergé dans la jungle.",
+      "p4": "Là-bas va le caillou de lune volant, tandis que les lanternes éclairent la densité de cette forêt enchantée, remplie de magiciens, de sons étranges et drôles, de mystères résolus et d'autres encore à révéler. La Forêt des Magiciens est-elle peut-être l'endroit le plus enchanté de la terre ?",
+      "p5": "Croquis aquarellés peints à la main. Technique choisie en bleu profond pour donner vie à Casamar."
+    },
+    "vivero": {
+      "p1": "VIVERO se déploie comme une odyssée visuelle à travers les coins de la planète que la civilisation a touchés et, finalement, abandonnés. La main « humaine » dans ce site d'urgence perdure dans la forme des structures que nous construisons, et les accessoires et meubles que nous utilisons pour les décorer : vestiges d'une situation difficile vécue.",
+      "p2": "Cependant, ce que cette présentation cherche le plus à capturer, c'est ce qui se passe après l'abandon. Que se passe-t-il avec ces espaces des années après qu'il n'y a plus personne pour entretenir, tailler, préserver et soigner constamment ?",
+      "p3": "Cette collection semble trouver sa réponse dans la nature, imaginée comme une force qui conquiert tout, mais avec la douceur d'une étreinte caressante, par opposition à la férocité d'une inondation qui consume tout. La fin est un nouveau commencement ici.",
+      "p4": "\"La Campagne\" est le mural inaugural de la collection. Il prend comme point de départ un paysage de la campagne française. Il émule paix et tranquillité.",
+      "p5": "Croquis fait à la main.",
+      "p6": "Le style de dessin est celui des illustrateurs naturalistes français de l'époque. Les traits sont doux, le contraste est perçu ici comme quelque chose de paisible et très polyvalent. Les cimes des arbres enveloppent l'architecture typique de l'époque, les formes et les volumes lui donnent de la profondeur et nous invitent à naviguer une histoire sereine, élégante et classique.",
+      "p7": "Le processus de gestation prend des mois de recherche, de tests, d'échanges et ensuite, de définitions. Tel a été le processus de la collection.",
+      "avistaje": {
+        "title": "Mural \"Avistaje\"",
+        "p1": "De la nature, nous avons toujours été amoureux de son côté le plus énigmatique. Le suspense généré par la contemplation de la densité, juste là où les nuances se confondent et où l'on ne distingue plus les différentes espèces d'arbres, de feuilles, d'oiseaux et d'autres espèces qui habitent la verdure sauvage de notre monde.",
+        "p2": "Avistaje représente le moment exact où l'être humain entre en contact avec la nature. L'œil capture la scène et le reste se raconte en sensations."
+      },
+      "reinaAna": {
+        "title": "Mural \"Reina Ana\"",
+        "p1": "Un jardin à l'atmosphère fantastique et à l'émotion ludique sur un fond vieilli vert ou rose qui abrite des oiseaux, une végétation verticale, quelques espèces volantes et une atmosphère de loisir enfantin.",
+        "p2": "Chaque section de ce mural garde vivante la tradition chinoise ou son interprétation par l'Occident. C'est subtil, ses traits conservent l'élégance d'un moment historique et d'une culture qui a influencé toute une génération avec ses silhouettes."
+      },
+      "laMaison": {
+        "title": "Mural \"La Maison\"",
+        "p1": "Inspiré par les architectes emblématiques du XVIIe siècle, ce croquis, qui émule des traits constructifs, vise à impressionner par l'échelle de ses moulures et à créer une nouvelle réalité intérieure.",
+        "p2": "Dans La Maison convergent des éléments imaginaires, qui éveillent la sensation d'être au milieu d'une scène chargée d'élégance classique, d'une palette chromatique limitée et de traits qui mélangent le style de l'ancienne école avec les annotations d'un carnet de bord néoclassique.",
+        "p3": "Élégante, puissante, nette.",
+        "p4": "Son potentiel est immense et oscille entre les formes capricieuses de la boiserie, les courbes nettes de l'architecture ancienne et la carte postale d'un parc idyllique que l'on peut voir à travers certaines de ses fenêtres."
+      }
+    },
+    "basaBasa": {
+      "p1": "BASA BASA redéfinit le style ethnique en design d'intérieur : mélange d'objets et de références culturelles de différents endroits exotiques et éloignés, avec un accent sur l'Afrique, mais aussi l'Inde, l'Indonésie, la Thaïlande, le Maroc, l'île de Pâques, les peuples gitans et les cultures latino-américaines. Les designs partent de bases minimalistes, rustiques, antiques ou contemporaines, toujours enrichies par des pièces à forte identité culturelle.",
+      "p2": "Inspiration directe des tribus africaines et de leur mode de vie, vêtements, artisanat et connexion avec la nature. Exemple : Maasai (Kenya et Tanzanie), dont le nom en langue Maa signifie « je ne veux pas demander », connus pour leurs vêtements rouges, leurs perles et leurs maisons faites de matériaux naturels. Liste des tribus inspirantes : Bochimans, Hamer, Himba, Daasanach, Dinka, Karo, Mursi, Nyangatom, Nuba, Pygmées, Samburu, Surma, Touareg, Turkana, Zoulou, entre autres.",
+      "p3": "Éléments visuels clés : Textures, rayures, points comme représentation du monde païen et ésotérique. Motifs faisant allusion à la spiritualité et à la connexion avec le naturel. Imprimés inspirés par les tatouages, les vases, les objets rituels et les ornements corporels.",
+      "p4": "L'image représente un paysage illustré de la savane africaine, travaillé dans une palette monochrome en tons sépia et gris. Le style de dessin combine la ligne à main levée et l'ombrage délicat, évoquant les gravures anciennes ou les illustrations botaniques et zoologiques classiques, transmettant une sensation de calme et d'observation détaillée de l'environnement naturel africain.",
+      "p5": "Technique : dessin à main levée à l'encre ou au graphite, accompagné de lavis doux à l'aquarelle ou de glacis pour générer volume et profondeur. Palette : monochrome ou tons très réduits (sépias, gris), rappelant les carnets de terrain ou les gravures anciennes. Trait : lignes fines et précises pour définir les contours et les textures, avec des ombrages obtenus par des trames, des pointillés ou des hachures croisées."
+    }
+  },
+  "collaborations": {
+    "title": "Collabs",
+    "philosophy": {
+      "line1": "Des collaborations qui transcendent le design.",
+      "line2": "Chez Mercedes Costal, chaque collaboration est une rencontre d'univers créatifs. Nous travaillons avec des marques et des espaces qui partagent notre vision : transformer le quotidien en expériences visuelles mémorables.",
+      "line3": "Des muraux monumentaux aux interventions éphémères, chaque projet collaboratif naît du dialogue entre disciplines, matériaux et sensibilités différentes."
+    }
+  },
+  "search": {
+    "title": "Résultats pour",
+    "noResults": "Aucun résultat trouvé.",
+    "minChars": "Entrez au moins 3 caractères pour rechercher des muraux.",
+    "noMurals": "Aucun mural trouvé pour"
+  },
+  "meetTheMakers": {
+    "title": "Meet the makers",
+    "intro": "Chez MERCEDES COSTAL, nous connectons les gens avec le monde du design, de l'art et de l'histoire à travers la création, la production et la vente de papiers peints pour générer une expérience immersive pour l'observateur.",
+    "quote1": "C'est un Studio créatif composé d'une équipe d'illustrateurs, d'architectes et de designers.",
+    "quote2": "L'équipe crée des illustrations avec différentes techniques manuelles et numériques qui sont ensuite imprimées sur un support papier pour produire les papiers peints qui sont vendus via des médias numériques et des points de vente dans le monde entier.",
+    "quote3": "Nous travaillons ensemble depuis différents domaines du design pour atteindre, à travers nos papiers peints et muraux, un équilibre entre l'art et le design d'intérieur, créant avec eux des espaces où les couleurs, les textures et les formes deviennent les protagonistes des environnements."
+  },
+  "workWithUs": {
+    "title": "Travailler",
+    "titleBold": "avec nous",
+    "intro": "Chez Mercedes Costal, nous sommes toujours à la recherche de talents passionnés et dévoués qui souhaitent faire avancer leur carrière dans un environnement dynamique et enrichissant.",
+    "paragraph1": "Si vous souhaitez faire partie de notre équipe, envoyez-nous votre CV à <b>info@mercedescostal.com.ar</b>. Nous voulons connaître vos compétences, votre expérience et comment vous pouvez contribuer à notre croissance continue.",
+    "teamLink": "Rencontrez l'équipe."
+  },
+  "sellMc": {
+    "title": "Vendez",
+    "titleBold": "Mercedes Costal",
+    "intro": "Chez Mercedes Costal, nous recherchons des personnes passionnées par le design et la décoration qui souhaitent faire partie de notre réseau de revendeurs.",
+    "paragraph1": "Si vous êtes intéressé par la vente de nos muraux et faire partie d'une marque en expansion, remplissez le formulaire avec vos informations et dites-nous pourquoi vous souhaitez nous rejoindre."
+  },
+  "highlights": {
+    "sectionTitle": "Highlights",
+    "goodDesign": {
+      "title": "Sello",
+      "titleBold": "Buen",
+      "titleEnd": "Diseño",
+      "paragraph1": "Le Sello de Buen Diseño argentin (SBD) est une distinction accordée par l'État aux produits de l'industrie nationale qui se distinguent par leur innovation, leur participation à la production locale durable, leur positionnement sur le marché et leur qualité de design.",
+      "paragraph2": "L'évaluation est réalisée par un comité composé de représentants d'entités publiques et privées liées au design et aux différents secteurs productifs.",
+      "paragraph3": "Mercedes Costal a reçu sa première distinction en mai 2021.",
+      "videoCaption": "Animation du Mural El Edén, 2021."
+    },
+    "ateneoSplendid": {
+      "title": "Splendid",
+      "paragraph1": "Au cœur de Buenos Aires, dans l'emblématique bâtiment Grand Splendid, se trouve un chef-d'œuvre qui non seulement décore, mais nous emmène dans un voyage épique à travers l'identité argentine : le mural \"Aurora\" de Mercedes Costal pour Havanna",
+      "paragraph2": "Inspiré par l'œuvre d'El Bosco et le costumbrisme argentin.",
+      "description1": "Partant de \"El Jardín de las Delicias\" d'El Bosco, Costal nous plonge dans un voyage fascinant à travers les paysages et les personnages qui définissent notre essence. D'un \"Début\" cosmique qui représente l'origine de tout, au nord argentin avec ses cactus majestueux, ses flamants roses et la voix immortelle de Mercedes Sosa, l'artiste nous invite à nous connecter avec la diversité et la richesse de notre pays.",
+      "videoCaption1": "Exploration du mural numérique avec ses éléments.",
+      "videoCaption2": "Installation animée en action."
+    },
+    "londonDesignFestival": {
+      "title": "London",
+      "titleMiddle": "Design",
+      "titleEnd": "Festival",
+      "paragraph1": "Nous nous sommes plongés dans notre première expérience immersive, inaugurant ainsi un nouveau monde dystopique, dans un dialogue créatif entre le présent et le futur : le Métavers de Mercedes Costal.",
+      "paragraph2": "La pièce que nous avons choisie pour donner vie au récit, dans le cadre du London Design Festival, est notre emblématique Mural El Descanso de las Garzas, une section des zones humides du Litoral argentin. Récompensé par le Sello de Buen Diseño, une scène unique de flore et de faune que nous avons fait revivre sur les murs de l'emblématique salon vert de Belgrave."
+    },
+    "manantialesPopup": {
+      "title": "Manantiales",
+      "titleMiddle": "Pop",
+      "titleEnd": "Up",
+      "paragraph1": "Pendant l'été 2019 et 2020, notre équipe a déménagé en Uruguay, dans un petit village éthéré et plein de magie, juste là où la mer rencontre les prairies et où le blanc se fond avec le ciel : Manantiales.",
+      "paragraph2": "Là-bas, nous avons ouvert notre première boutique PopUp, au son du vent et de l'eau salée, où nous avons également présenté notre collection de muraux et papiers peints \"Casamar\".",
+      "description1": "Avec un Bleu Navigant comme principe directeur, inspiré par le fond de la mer et les voyages que l'on entreprend en approchant cette immensité.",
+      "description2": "Cette collection représente une infime portion de la vie marine avec ses formes et textures qui nous fascinent tant.",
+      "collectionLink": "Découvrez la Collection Casamar complète*"
+    },
+    "feriaHabitatValencia": {
+      "title": "Feria",
+      "titleBold": "Hábitat",
+      "titleEnd": "Valencia",
+      "paragraph1": "En 2023, nous avons participé à la prestigieuse Feria Hábitat de Valencia, un événement clé dans le monde du design et de la décoration. Cette plateforme internationale nous a permis de présenter nos propositions dans le domaine des papiers peints muraux, mettant en avant une proposition qui mélange design et durabilité. Pendant cet événement, Mercedes Costal s'est connecté avec des créatifs, des architectes et des designers du monde entier, consolidant sa présence sur le marché international et renforçant son engagement envers l'excellence dans chaque pièce."
+    }
+  },
+  "mcUniverse": {
+    "sectionTitle": "Univers MC",
+    "fragrances": {
+      "title": "Parfums",
+      "paragraph1": "Du besoin de redéfinir notre univers inspirationnel est née notre ligne de parfums inspirés par les éléments les plus nobles de la nature.",
+      "paragraph2": "Sept styles différents qui cherchent à éveiller les sens et à nous envelopper dans un lien unique avec les délices de la terre et ses essences."
+    },
+    "theBook": {
+      "title": "Notre",
+      "titleBold": "Livre",
+      "subtitle": "Portrait d'un atelier",
+      "producedBy": "Produit par",
+      "studio": "Mercedes Costal Studio",
+      "date": "Argentine, septembre 2022",
+      "printed": "Imprimé en Argentine"
+    },
+    "costalCafe": {
+      "title": "Costal",
+      "titleBold": "Café",
+      "paragraph1": "Redéfinir le café comme un rituel, comme un choix esthétique quotidien, comme une excuse pour contempler les saveurs et les cartes postales visuelles.",
+      "paragraph2": "Notre café de spécialité est situé juste au pied de la montagne de Yerba Buena, là où les cimes vertes des arbres commencent à s'élever vers le ciel.",
+      "paragraph3": "Nous avons également une sélection de pâtisseries artisanales à notre menu.",
+      "link": "Découvrez-nous",
+      "tagline": "Costal coffee & other crafts."
+    }
+  }
+}

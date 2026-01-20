@@ -90,7 +90,6 @@ export const Navbar = () => {
     ];
 
     const pathname = usePathname();
-    // Check if we're on home page (/es, /en, etc.)
     const checkIsHome = (path: string) => /^\/[a-z]{2}$/.test(path);
     const [isHome, setIsHome] = useState<boolean>(checkIsHome(pathname));
     const [menuExpanded, setMenuExpanded] = useState<'wallpapers'|'studio'|'highlights'|'mcuniverse'|'contact'|undefined>();
@@ -111,7 +110,7 @@ export const Navbar = () => {
                     <MCLogo className={`${ isHome ? 'fill-white' : 'fill-black' } w-full`}/>
                 </Link>
                 <div className="w-full flex justify-end items-end">
-                    <ul className="flex justify-start gap-4 xl:gap-6">
+                    <ul className="flex justify-start items-center gap-4 xl:gap-6">
                         {
                             links.map((navlink:NavLinkHome, i:number) => (
                                 <NavbarLink navlink={navlink} index={i} isHome={isHome} menuExpanded={menuExpanded} toggleMenu={toggleMenu} key={i}/>
