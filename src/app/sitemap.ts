@@ -46,7 +46,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const collections = getCollections();
   const collectionPages = collections.flatMap(col =>
     routing.locales.map(locale => ({
-      url: `${baseUrl}${locale === 'es' ? '' : `/${locale}`}/collections/${col.id}`,
+      url: `${baseUrl}/${locale}/collections/${col.id}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
@@ -54,7 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: Object.fromEntries(
           routing.locales.map(loc => [
             loc,
-            `${baseUrl}${loc === 'es' ? '' : `/${loc}`}/collections/${col.id}`
+            `${baseUrl}/${loc}/collections/${col.id}`
           ])
         )
       }
@@ -65,7 +65,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const collaborations = getCollaborations();
   const collaborationPages = collaborations.flatMap(col =>
     routing.locales.map(locale => ({
-      url: `${baseUrl}${locale === 'es' ? '' : `/${locale}`}/collections/collaborations/${col.id}`,
+      url: `${baseUrl}/${locale}/collections/collaborations/${col.id}`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
@@ -73,7 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: Object.fromEntries(
           routing.locales.map(loc => [
             loc,
-            `${baseUrl}${loc === 'es' ? '' : `/${loc}`}/collections/collaborations/${col.id}`
+            `${baseUrl}/${loc}/collections/collaborations/${col.id}`
           ])
         )
       }
