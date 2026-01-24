@@ -12,8 +12,7 @@ interface Props {
 
 const localeNames: Record<string, string> = {
     es: 'ES',
-    en: 'EN',
-    fr: 'FR'
+    en: 'EN'
 };
 
 export const LanguageSelector = ({isHome}:Props) => {
@@ -73,7 +72,7 @@ export const LanguageSelector = ({isHome}:Props) => {
                 type="button"
                 onClick={() => setIsOpen(!isOpen)}
                 className={`flex items-center justify-center gap-1.5 ${textColor} uppercase font-light tracking-widest cursor-pointer transition-opacity hover:opacity-70`}
-                aria-label="Elegir Idioma | Select Language | Choisir la langue"
+                aria-label="Elegir Idioma | Select Language"
             >
                 <GlobeIcon className="w-4 h-4" />
                 <span className="text-sm leading-none">{localeNames[language]}</span>
