@@ -15,7 +15,6 @@ export function generateStaticParams() {
     const params = [];
     const allKeywords = new Set<string>();
 
-    // Collect all unique keywords from murals
     collections.forEach(col => {
         col.murales.forEach(mural => {
             mural.keywords.forEach(keyword => allKeywords.add(keyword));

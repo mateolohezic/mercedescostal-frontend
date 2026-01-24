@@ -16,7 +16,6 @@ export const useSearchMurals = (query?: string): Array<Mural> => {
 
         const searchWords = normalize(query).trim().split(/\s+/);
         const filteredResults = murals.filter(mural => {
-            // Choose keywords based on locale
             const keywords = locale === 'es' ? mural.keywords : (mural.keywordsEn || mural.keywords);
 
             return searchWords.every(word =>

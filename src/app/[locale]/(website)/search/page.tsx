@@ -55,7 +55,6 @@ export default async function SearchResultsPage({ params, searchParams }: Props)
 
     const results:Array<Mural> = useSearchMurals(searchQuery);
 
-    // Get all collections to find the collection for each mural
     const allCollections = [...getCollections(), ...getCollaborations()];
 
     const findCollectionForMural = (mural: Mural) => {

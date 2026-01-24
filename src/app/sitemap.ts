@@ -5,7 +5,6 @@ import { getCollections, getCollaborations } from '@/data/collections';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://mercedescostal.com.ar';
 
-  // Rutas estáticas
   const routes = [
     '',
     '/collections',
@@ -42,7 +41,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  // Páginas de colecciones
   const collections = getCollections();
   const collectionPages = collections.flatMap(col =>
     routing.locales.map(locale => ({
@@ -61,7 +59,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  // Páginas de colaboraciones
   const collaborations = getCollaborations();
   const collaborationPages = collaborations.flatMap(col =>
     routing.locales.map(locale => ({

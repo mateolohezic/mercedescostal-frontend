@@ -135,13 +135,8 @@ export async function generateMetadata({params}: Omit<Props, 'children'>): Promi
 
 export default async function LocaleLayout({children, params}: Props) {
   const {locale} = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
 
-  // Ensure that the incoming `locale` is valid
-  if (!hasLocale(routing.locales, locale)) {
-    notFound();
-  }
-
-  // Enable static rendering
   setRequestLocale(locale);
 
   const messages = await getMessages();

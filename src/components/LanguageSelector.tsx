@@ -44,7 +44,6 @@ export const LanguageSelector = ({isHome}:Props) => {
             return;
         }
 
-        // Remove current locale prefix to get the base path
         let basePath = pathname;
         for (const locale of routing.locales) {
             if (pathname.startsWith(`/${locale}`)) {
@@ -53,7 +52,6 @@ export const LanguageSelector = ({isHome}:Props) => {
             }
         }
 
-        // Add new locale prefix
         const newPathname = `/${lang}${basePath === '/' ? '' : basePath}`;
 
         setIsOpen(false);

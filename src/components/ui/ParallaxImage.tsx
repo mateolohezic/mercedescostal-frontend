@@ -7,7 +7,7 @@ import Image, { StaticImageData } from "next/image";
 interface ParallaxImageProps {
   src: StaticImageData;
   alt: string;
-  speed?: number; // -0.5 a 0.5, negativo = más lento, positivo = más rápido
+  speed?: number;
 }
 
 export const ParallaxImage = ({ src, alt, speed = 0.1 }: ParallaxImageProps) => {

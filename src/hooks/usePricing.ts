@@ -3,7 +3,6 @@ import type { Collection, Mural, MuralVariant } from '@/interfaces';
 export type Currency = 'ARS' | 'USD';
 
 export const usePricing = () => {
-  // Determinar moneda basado en locale
   const getCurrencyByLocale = (locale: string): Currency => {
     return locale === 'es' ? 'ARS' : 'USD';
   };
@@ -14,7 +13,6 @@ export const usePricing = () => {
     collection: Collection,
     currency: Currency
   ): number | null => {
-    // Prioridad: variante > mural > colección
     const price = variant.price?.[currency]
       ?? mural.basePrice?.[currency]
       ?? collection.pricePerSqm?.[currency];

@@ -48,7 +48,6 @@ import hilado_mural_dark_sky from "@/assets/collections/artisan/hilado/hilado_mu
 import hilado_mural_fenland from "@/assets/collections/artisan/hilado/hilado_mural_fenland.webp";
 import hilado_mural_mais from "@/assets/collections/artisan/hilado/hilado_mural_mais.webp";
 import hilado_mural_natural from "@/assets/collections/artisan/hilado/hilado_mural_natural.webp";
-// import hilado_mural_oryza_grain from "@/assets/collections/artisan/hilado/hilado_mural_oryza_grain.webp";
 import hilado_mural_terracotta from "@/assets/collections/artisan/hilado/hilado_mural_terracotta.webp";
 import hilado_mural_vert_sec from "@/assets/collections/artisan/hilado/hilado_mural_vert_sec.webp";
 
@@ -214,7 +213,6 @@ import fish_mural_st_201810 from "@/assets/collections/casamar/fish/fish_mural_s
 import fish_mural_st_201820 from "@/assets/collections/casamar/fish/fish_mural_st_201820.webp";
 import fish_mural_st_201915 from "@/assets/collections/casamar/fish/fish_mural_st_201915.webp";
 import fish_mural_tanger_tan from "@/assets/collections/casamar/fish/fish_mural_tanger_tan.webp";
-// import fish_mural_white from "@/assets/collections/casamar/fish/fish_mural_white.webp";
 import fish_montaje from "@/assets/collections/casamar/fish/fish_montaje.webp";
 
 import morris_icon_1 from "@/assets/collections/casamar/morris/morris_icon_1.webp";
@@ -288,19 +286,10 @@ import bulgaros_icon_1 from "@/assets/collections/landmark/bulgaros/bulgaros_ico
 import bulgaros_montaje from "@/assets/collections/landmark/bulgaros/bulgaros_montaje.webp";
 import bulgaros_mural from "@/assets/collections/landmark/bulgaros/bulgaros_mural.webp";
 
-// import exotic_blue_icon_1 from "@/assets/collections/landmark/exotic_blue/exotic_blue_icon_1.webp";
-// import exotic_blue_icon_2 from "@/assets/collections/landmark/exotic_blue/exotic_blue_icon_2.webp";
-// import exotic_blue_montaje from "@/assets/collections/landmark/exotic_blue/exotic_blue_montaje.webp";
-// import exotic_blue_mural from "@/assets/collections/landmark/exotic_blue/exotic_blue_mural.webp";
-
 import fairy_tale_icon_1 from "@/assets/collections/landmark/fairy_tale/fairy_tale_icon_1.webp";
 import fairy_tale_icon_2 from "@/assets/collections/landmark/fairy_tale/fairy_tale_icon_2.webp";
 import fairy_tale_montaje from "@/assets/collections/landmark/fairy_tale/fairy_tale_montaje.webp";
 import fairy_tale_mural from "@/assets/collections/landmark/fairy_tale/fairy_tale_mural.webp";
-
-// import landmark_flowers_dark_icon_1 from "@/assets/collections/landmark/flowers_dark/flowers_dark_icon_1.webp";
-// import landmark_flowers_dark_montaje from "@/assets/collections/landmark/flowers_dark/landmark_flowers_dark_montaje.webp";
-// import landmark_flowers_dark_mural from "@/assets/collections/landmark/flowers_dark/flowers_dark_mural.webp";
 
 import geometric_golden_mist_icon_1 from "@/assets/collections/landmark/geometric/geometric_golden_mist_icon_1.webp";
 import geometric_golden_mist_mural from "@/assets/collections/landmark/geometric/geometric_golden_mist_mural.webp";
@@ -358,10 +347,6 @@ import savage_icon_3 from "@/assets/collections/landmark/savage/savage_icon_3.we
 import savage_montaje from "@/assets/collections/landmark/savage/savage_montaje.webp";
 import savage_mural from "@/assets/collections/landmark/savage/savage_mural.webp";
 
-// import landmark_shibori_icon_1 from "@/assets/collections/landmark/shibori/shibori_icon_1.webp";
-// import landmark_shibori_mural from "@/assets/collections/landmark/shibori/shibori_mural.webp";
-// import landmark_shibori_montaje from "@/assets/collections/landmark/shibori/landmark_shibori_montaje.webp";
-
 import tartan_icon_1 from "@/assets/collections/landmark/tartan/tartan_icon_1.webp";
 import tartan_mural from "@/assets/collections/landmark/tartan/tartan_mural.webp";
 import tartan_montaje from "@/assets/collections/landmark/tartan/tartan_montaje.webp";
@@ -373,12 +358,6 @@ import universe_montaje from "@/assets/collections/landmark/universe/universe_mo
 import watercolor_stripes_icon_1 from "@/assets/collections/landmark/watercolor_stripes/watercolor_stripes_icon_1.webp";
 import watercolor_stripes_mural from "@/assets/collections/landmark/watercolor_stripes/watercolor_stripes_mural.webp";
 import watercolor_stripes_montaje from "@/assets/collections/landmark/watercolor_stripes/watercolor_stripes_montaje.webp";
-
-// import willow_dark_icon_1 from "@/assets/collections/landmark/willow_dark/willow_dark_icon_1.webp";
-// import willow_dark_mural from "@/assets/collections/landmark/willow_dark/willow_dark_mural.webp";
-
-// import willow_white_icon_1 from "@/assets/collections/landmark/willow_white/willow_white_icon_1.webp";
-// import willow_white_mural from "@/assets/collections/landmark/willow_white/willow_white_mural.webp";
 
 // Morris
 
@@ -695,10 +674,6 @@ import silvestre_montaje from "@/assets/collections/vuelta_al_mundo/silvestre/si
 import silvestre_montaje_2 from "@/assets/collections/vuelta_al_mundo/silvestre/silvestre_montaje_2.webp";
 import silvestre_mural from "@/assets/collections/vuelta_al_mundo/silvestre/silvestre_mural.webp";
 import silvestre_mural_gray from "@/assets/collections/vuelta_al_mundo/silvestre/silvestre_mural_gray.webp";
-
-// import silvestre_mural_gray from "@/assets/collections/vuelta_al_mundo/vintage_map_VACIO";
-// import magnolia_real_mural_black from "@/assets/collections/vuelta_al_mundo/monos_colgantes_VACIO";
-// import la_riviere_mural_gray from "@/assets/collections/vuelta_al_mundo/land_VACIO";
 
 import blue_willow_montaje from "@/assets/collections/murales_sueltos/blue_willow/blue_willow_montaje.webp";
 import blue_willow_mural from "@/assets/collections/murales_sueltos/blue_willow/blue_willow_mural.webp";
@@ -2020,12 +1995,6 @@ export const collections: Array<Collection> = [
                         montaje: fish_montaje,
                         mural: fish_mural_st_201820,
                     },
-                    // {
-                    //     colorName: "White",
-                    //     color: "bg-st-white",
-                    //     montaje: fish_montaje,
-                    //     mural: fish_mural_white,
-                    // },
                 ],
                 href: "casamar",
                 basePrice: { ARS: 92700, USD: 80 },
@@ -2397,23 +2366,6 @@ export const collections: Array<Collection> = [
                 href: "landmark",
                 basePrice: { ARS: 92700, USD: 80 },
             },
-            // {
-            //     id: "exotic-blue-landmark",
-            //     title: "Exotic Blue",
-            //     collectionTitle: "Landmark",
-            //     collectionId: "landmark",
-            //     icons: [exotic_blue_icon_1, exotic_blue_icon_2],
-            //     keywords: ["pattern", "patron", "patrón", "botanico", "animales", "azul"],
-            //     variants: [
-            //         {
-            //             colorName: "Estándar",
-            //             montaje: exotic_blue_montaje,
-            //             mural: exotic_blue_mural,
-            //             base: true,
-            //         },
-            //     ],
-            //     href: "landmark",
-            // },
             {
                 id: "fairy-tale-landmark",
                 title: "Fairy Tale",
@@ -2433,23 +2385,6 @@ export const collections: Array<Collection> = [
                 href: "landmark",
                 basePrice: { ARS: 92700, USD: 80 },
             },
-            // {
-            //     id: "flowers-dark-landmark",
-            //     title: "Flowers Dark",
-            //     collectionTitle: "Landmark",
-            //     collectionId: "landmark",
-            //     icons: [landmark_flowers_dark_icon_1],
-            //     keywords: ["pattern", "patron", "patrón", "botanico", "negro", "oscuro", "rojo", "rosa", "verde"],
-            //     variants: [
-            //         {
-            //             colorName: "Estándar",
-            //             montaje: landmark_flowers_dark_montaje,
-            //             mural: landmark_flowers_dark_mural,
-            //             base: true,
-            //         },
-            //     ],
-            //     href: "landmark",
-            // },
             {
                 id: "geometric-golden-mist-landmark",
                 title: "Geometric Golden Mist",
@@ -2678,23 +2613,6 @@ export const collections: Array<Collection> = [
                 href: "landmark",
                 basePrice: { ARS: 92700, USD: 80 },
             },
-            // {
-            //     id: "shibori-landmark",
-            //     title: "Shibori",
-            //     collectionTitle: "Landmark",
-            //     collectionId: "landmark",
-            //     icons: [landmark_shibori_icon_1],
-            //     keywords: ["pattern", "patron", "patrón", "abstracto", "geometrico", "negro", "oscuro", "verde", "texturas"],
-            //     variants: [
-            //         {
-            //             colorName: "Estándar",
-            //             montaje: landmark_shibori_montaje,
-            //             mural: landmark_shibori_mural,
-            //             base: true,
-            //         },
-            //     ],
-            //     href: "landmark",
-            // },
             {
                 id: "tartan-landmark",
                 title: "Tartan",
@@ -3713,7 +3631,6 @@ export const collections: Array<Collection> = [
         id: "abstract",
         title: "Abstract",
         portrait: golden_tanger_montaje,
-        // video: "/assets/portada_otros_murales.mp4",
         date: "2016-2024",
         technique: "Digital y pintado a mano.",
         description: "Descripción.",
@@ -3968,7 +3885,6 @@ export const collections: Array<Collection> = [
         id: "wonder",
         title: "Wonder",
         portrait: magnolia_real_montaje,
-        // video: "/assets/portada_otros_murales.mp4",
         date: "2016-2024",
         technique: "Digital y pintado a mano.",
         description: "Descripción.",

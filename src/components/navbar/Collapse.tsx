@@ -91,7 +91,6 @@ export const Collapse = () => {
         },
     ];
     const pathname = usePathname();
-    // Check if we're on home page (/es, /en, etc.)
     const checkIsHome = (path: string) => /^\/[a-z]{2}$/.test(path);
     const [isHome, setIsHome] = useState<boolean>(checkIsHome(pathname));
     const [isExpanded, setIsExpanded] = useState(false);

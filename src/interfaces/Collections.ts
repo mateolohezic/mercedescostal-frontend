@@ -1,8 +1,8 @@
 import { StaticImageData } from "next/image";
 
 export interface Price {
-    ARS?: number;  // Precio en pesos argentinos
-    USD?: number;  // Precio en dólares
+    ARS?: number;
+    USD?: number;
 }
 
 export interface MuralVariant {
@@ -12,7 +12,7 @@ export interface MuralVariant {
     montaje: StaticImageData|string;
     mural: StaticImageData|string;
     base?: boolean;
-    price?: Price;  // NUEVO: Precio específico por variante (opcional)
+    price?: Price;
 }
 
 export interface Mural {
@@ -21,11 +21,11 @@ export interface Mural {
     collectionId: string;
     collectionTitle: string;
     icons: Array<StaticImageData|string>;
-    keywords: Array<string>;  // Keywords en español
-    keywordsEn?: Array<string>;  // NUEVO: Keywords en inglés para traducción
+    keywords: Array<string>;
+    keywordsEn?: Array<string>;
     variants: Array<MuralVariant>;
     href: string;
-    basePrice?: Price;  // NUEVO: Precio base del mural
+    basePrice?: Price;
 }
 
 export interface Collection {
@@ -38,5 +38,5 @@ export interface Collection {
     description: string;
     murales: Array<Mural>;
     collaboration?: boolean;
-    pricePerSqm?: Price;  // NUEVO: Precio por m² a nivel colección
+    pricePerSqm?: Price;
 }

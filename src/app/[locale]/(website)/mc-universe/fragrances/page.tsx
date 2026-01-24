@@ -102,9 +102,6 @@ export default async function FragrancesPage({ params }: { params: Promise<{ loc
                     <Image src={fragrances_13} alt="Fragrances Mercedes Costal" className="size-full object-cover aspect-[3/4]"/>
                     <Image src={fragrances_14} alt="Fragrances Mercedes Costal" className="size-full object-cover aspect-[3/4]"/>
                 </div>
-                {/* <p className="mt-12 text-center">
-                    <Link href="https://wa.me/5491160208460?text=Hola!%20Estoy%20interesado%20en%20las%20fragancias%20de%20Mercedes%20Costal" target="_blank" className='text-lg border-b border-b-black hover:opacity-75 transition-150'>Incorporalas a tu tienda.</Link>
-                </p> */}
             </section>
         </main>
     );

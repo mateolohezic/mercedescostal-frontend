@@ -3,7 +3,6 @@ import { routing } from "@/i18n/routing";
 import Link from "next/link";
 import Image from "next/image";
 import portada from "@/assets/mc-universe/cafe/portada.webp";
-// import cafe_1 from "@/assets/mc-universe/cafe/cafe_1.webp";
 import cafe_1 from "@/assets/collections/the_classics/hikers_in_a_park/hikers_in_a_park_mural.webp";
 import cafe_2 from "@/assets/mc-universe/cafe/cafe_2.webp";
 import cafe_3 from "@/assets/mc-universe/cafe/cafe_3.webp";

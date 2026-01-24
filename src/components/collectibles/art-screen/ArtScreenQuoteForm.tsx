@@ -83,13 +83,11 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
         window.open(whatsappUrl, "_blank");
     };
 
-    // Calcular dimensiones para preview
     const totalWidth = (sheets || 2) * 50;
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="w-full px-4 lg:px-12 flex flex-col lg:flex-row items-start gap-12 lg:gap-0">
             <div className="w-full max-w-md grid grid-cols-1 gap-4">
-                {/* Datos personales */}
                 <div className="w-full">
                     <label htmlFor="name" className="md:text-lg">Nombre</label>
                     <input
@@ -105,7 +103,6 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
                     />
                     <FormErrorMessage condition={errors?.name} message={errors?.name?.message} />
                 </div>
-                
                 <div className="w-full">
                     <label htmlFor="email" className="md:text-lg">Correo electrónico</label>
                     <input
@@ -121,7 +118,6 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
                     />
                     <FormErrorMessage condition={errors?.email} message={errors?.email?.message} />
                 </div>
-                
                 <div className="w-full">
                     <label htmlFor="phone" className="md:text-lg">Teléfono</label>
                     <input
@@ -137,8 +133,6 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
                     />
                     <FormErrorMessage condition={errors?.phone} message={errors?.phone?.message} />
                 </div>
-
-                {/* Selección de diseño */}
                 <div className="w-full">
                     <label className="md:text-lg">Colección</label>
                     <select 
@@ -152,7 +146,6 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
                     </select>
                     <FormErrorMessage condition={errors?.collection} message={errors?.collection?.message} />
                 </div>
-                
                 <div className="w-full">
                     <label className="md:text-lg">Diseño del mural</label>
                     <select 
@@ -166,8 +159,6 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
                     </select>
                     <FormErrorMessage condition={errors?.mural} message={errors?.mural?.message} />
                 </div>
-
-                {/* Configuración del biombo */}
                 <div className="w-full">
                     <label className="md:text-lg">Cantidad de hojas</label>
                     <select 
@@ -183,7 +174,6 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
                     <p className="mt-1 text-xs text-black/60">Cada hoja mide 50cm × 183cm de alto</p>
                     <FormErrorMessage condition={errors?.sheets} message={errors?.sheets?.message} />
                 </div>
-
                 <div className="w-full">
                     <label className="md:text-lg">Modelo</label>
                     <div className="mt-2 flex gap-4">
@@ -208,16 +198,12 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
                     </div>
                     <FormErrorMessage condition={errors?.model} message={errors?.model?.message} />
                 </div>
-
-                {/* Submit */}
                 <div className="mt-4 lg:mt-0 w-full text-xl lg:text-base flex justify-center lg:justify-end items-center lg:items-end">
                     <button type="submit" className="mt-4 px-4 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase">
                         Cotizar Art Screen
                     </button>
                 </div>
             </div>
-
-            {/* Preview */}
             {selectedMural && (
                 <div className="lg:pl-12 flex flex-col items-center gap-1">
                     <h2 className="w-full text-start font-gillsans font-light uppercase">
