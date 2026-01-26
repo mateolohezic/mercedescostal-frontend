@@ -9,6 +9,43 @@ import { usePricing } from '@/hooks/usePricing';
 import { Mural, MuralVariant, Collection } from "@/interfaces";
 import { Modal } from "@/components";
 
+const VariantButton = ({ variant, isSelected, onClick, muralId, idx }: {
+    variant: MuralVariant;
+    isSelected: boolean;
+    onClick: (e: React.MouseEvent) => void;
+    muralId: string;
+    idx: number;
+}) => {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    return (
+        <button
+            type="button"
+            onClick={onClick}
+            key={`${muralId}-variant-${idx}`}
+            className={`relative size-10 xl:size-8 shrink-0 rounded-full transition-150 hover:opacity-75 group border-2 ${isSelected ? 'border-black/50' : 'border-transparent'}`}
+        >
+            <div className="size-full rounded-full overflow-hidden">
+                {!isLoaded && (
+                    <div className="size-full rounded-full bg-gray-300 animate-pulse" />
+                )}
+                <Image
+                    src={variant.mural}
+                    alt={variant.colorName}
+                    width={40}
+                    height={40}
+                    className={`size-full object-cover ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                    onLoad={() => setIsLoaded(true)}
+                />
+            </div>
+            <span className="sr-only">{variant.colorName}</span>
+            <div className="hidden xl:block absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-black bg-white border border-black/10 px-2 py-0.5 rounded opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 z-10">
+                {variant.colorName}
+            </div>
+        </button>
+    );
+};
+
 interface Props {
     mural: Mural;
     index: number;
@@ -71,27 +108,17 @@ export const MuralCardNew = ({ mural, index, collection }: Props) => {
                                 {mural.variants.sort((a, b) => a.colorName.localeCompare(b.colorName)).map((variant, idx) => {
                                     const isSelected = selectedVariant.colorName === variant.colorName;
                                     return (
-                                        <button
-                                            type="button"
+                                        <VariantButton
+                                            key={`${mural.id}-variant-${idx}`}
+                                            variant={variant}
+                                            isSelected={isSelected}
+                                            muralId={mural.id}
+                                            idx={idx}
                                             onClick={(e) => {
                                                 e.stopPropagation();
                                                 !isSelected && setSelectedVariant(variant);
                                             }}
-                                            key={`${mural.id}-variant-${idx}`}
-                                            className={`relative size-10 xl:size-8 shrink-0 rounded-full transition-150 hover:opacity-75 group border-2 ${isSelected ? 'border-black/50' : 'border-transparent'}`}
-                                        >
-                                            <div className="size-full rounded-full overflow-hidden">
-                                                <Image
-                                                    src={variant.mural}
-                                                    alt={variant.colorName}
-                                                    className="size-full object-cover"
-                                                />
-                                            </div>
-                                            <span className="sr-only">{variant.colorName}</span>
-                                            <div className="hidden xl:block absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-black bg-white border border-black/10 px-2 py-0.5 rounded opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 z-10">
-                                                {variant.colorName}
-                                            </div>
-                                        </button>
+                                        />
                                     );
                                 })}
                             </div>
