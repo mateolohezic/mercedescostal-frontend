@@ -1,9 +1,8 @@
-import { useSearchMurals } from "@/hooks";
 import { sortMurales } from "@/helpers";
 import { Mural } from "@/interfaces";
 import { MuralCardNew } from "@/components";
 import { getTranslations } from "next-intl/server";
-import { getCollections, getCollaborations } from "@/data/collections";
+import { getCollections, getCollaborations, collections } from "@/data/collections";
 
 interface Props {
     params: Promise<{ locale: string }>;
@@ -53,7 +52,25 @@ export default async function SearchResultsPage({ params, searchParams }: Props)
     const normalizeText = (text: string) => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     const searchQuery = normalizeText(query?.trim() || "");
 
-    const results:Array<Mural> = useSearchMurals(searchQuery);
+    // Search logic (moved from useSearchMurals hook for server component compatibility)
+    const murals: Mural[] = collections.flatMap(collection => collection.murales);
+
+    const searchMurals = (q: string): Mural[] => {
+        if (!q || q.trim().length < 2) return [];
+        const normalize = (text: string) => text.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+        const searchWords = normalize(q).trim().split(/\s+/);
+
+        return murals.filter(mural => {
+            const keywords = locale === 'es' ? mural.keywords : (mural.keywordsEn || mural.keywords);
+            return searchWords.every(word =>
+                normalize(mural.title).includes(word) ||
+                normalize(mural.collectionTitle).includes(word) ||
+                keywords.some(keyword => normalize(keyword).includes(word))
+            );
+        });
+    };
+
+    const results: Array<Mural> = searchMurals(searchQuery);
 
     const allCollections = [...getCollections(), ...getCollaborations()];
 
