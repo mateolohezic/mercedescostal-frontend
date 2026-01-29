@@ -46,7 +46,7 @@ export const VideoIntro = () => {
     const videoSrc = deviceType === "mobile" ? "/assets/portada_winter_show_mobile.mp4" : "/assets/portada_winter_show.mp4";
 
     return (
-        <div className="size-full absolute top-0 left-0 z-0">
+        <div className="size-full bg-black absolute top-0 left-0 z-0">
             <div className="size-full relative">
                 <div className="flex justify-center items-center gap-4 absolute bottom-4 lg:bottom-12 right-4 lg:right-12 z-50">
                     <button
@@ -64,7 +64,6 @@ export const VideoIntro = () => {
                         { isMuted ? <SoundOffIcon/> : <SoundOnIcon/> }
                     </button>
                 </div>
-                <div className="size-full bg-black absolute top-0 left-0 z-0"/>
                 <video
                     key={videoSrc}
                     ref={videoRef}

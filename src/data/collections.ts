@@ -831,7 +831,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "anaquel-artisan",
@@ -850,7 +849,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "cauce-artisan",
@@ -912,7 +910,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "ceren-artisan",
@@ -962,7 +959,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "coria-artisan",
@@ -1024,7 +1020,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "hilado-artisan",
@@ -1080,7 +1075,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "madeja-artisan",
@@ -1142,7 +1136,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "pampa-artisan",
@@ -1204,7 +1197,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "randa-artisan",
@@ -1266,7 +1258,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "risco-artisan",
@@ -1328,7 +1319,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "ruma-artisan",
@@ -1390,7 +1380,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "telar-artisan",
@@ -1452,7 +1441,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "artisan",
-                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
     },
@@ -1482,7 +1470,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "miombo-basa-basa",
@@ -1501,7 +1488,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "ñus-basa-basa",
@@ -1520,7 +1506,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "woodland-01-basa-basa",
@@ -1539,7 +1524,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "woodland-02-basa-basa",
@@ -1558,7 +1542,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "woodland-03-basa-basa",
@@ -1577,7 +1560,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "woodland-04-basa-basa",
@@ -1596,7 +1578,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "woodland-05-basa-basa",
@@ -1615,7 +1596,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "basa-basa",
-                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
     },
@@ -1645,7 +1625,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "brush-casamar",
@@ -1702,7 +1681,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "casamar-casamar",
@@ -1721,7 +1699,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "corals-casamar",
@@ -1771,7 +1748,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "degrade-casamar",
@@ -1829,7 +1805,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "ethnic-casamar",
@@ -1885,7 +1860,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "exotic-casamar",
@@ -1941,7 +1915,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "fish-casamar",
@@ -1997,7 +1970,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "morris-casamar",
@@ -2053,7 +2025,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "mushrooms-casamar",
@@ -2072,7 +2043,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "palms-casamar",
@@ -2128,7 +2098,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "rainbow-casamar",
@@ -2184,7 +2153,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "shibori-casamar",
@@ -2240,7 +2208,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "toile-tropical-casamar",
@@ -2296,7 +2263,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "casamar",
-                basePrice: { ARS: 92700, USD: 80 },
             },
         ]
     },
@@ -2326,7 +2292,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "bosque-de-los-magos-landmark",
@@ -2345,7 +2310,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "bulgaros-landmark",
@@ -2364,7 +2328,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "fairy-tale-landmark",
@@ -2383,7 +2346,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "geometric-golden-mist-landmark",
@@ -2402,7 +2364,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "hanging-plants-landmark",
@@ -2421,7 +2382,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "invernadero-landmark",
@@ -2440,7 +2400,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "liberty-golden-landmark",
@@ -2459,7 +2418,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "linen-stripes-landmark",
@@ -2478,7 +2436,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "loop-original-landmark",
@@ -2497,7 +2454,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "midnight-garden-landmark",
@@ -2516,7 +2472,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "monkeys-landmark",
@@ -2535,7 +2490,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "mushrooms-landmark",
@@ -2554,7 +2508,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "palms-tree-landmark",
@@ -2573,7 +2526,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "rayas-taupe-landmark",
@@ -2592,7 +2544,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "savage-landmark",
@@ -2611,7 +2562,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "tartan-landmark",
@@ -2630,7 +2580,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "universe-landmark",
@@ -2649,7 +2598,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "watercolor-stripes-landmark",
@@ -2668,7 +2616,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             }
         ],
     },
@@ -2698,7 +2645,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "artemis-textura-morris",
@@ -2717,7 +2663,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "flowers-light-morris",
@@ -2736,7 +2681,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "flowers-dark-morris",
@@ -2755,7 +2699,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "landmark",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "membrillos-claro-morris",
@@ -2774,7 +2717,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "membrillos-verde-seco-morris",
@@ -2793,7 +2735,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "tulip-dark-morris",
@@ -2812,7 +2753,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "tulip-light-morris",
@@ -2831,7 +2771,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "willow-morris",
@@ -2850,7 +2789,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "willow-textura-morris",
@@ -2869,7 +2807,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "morris",
-                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
     },
@@ -2899,7 +2836,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "vivero",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "la-campagne-vivero",
@@ -2918,7 +2854,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "vivero",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "la-maison-vivero",
@@ -2937,7 +2872,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "vivero",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "reina-ana-vivero",
@@ -2963,7 +2897,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "vivero",
-                basePrice: { ARS: 92700, USD: 80 },
             }
         ]
     },
@@ -3000,7 +2933,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "encantado-voyage",
@@ -3026,7 +2958,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "ibiza-voyage",
@@ -3046,7 +2977,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "jardin-colgante-voyage",
@@ -3072,7 +3002,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "jardin-persa-voyage",
@@ -3104,7 +3033,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "la-riviere-voyage",
@@ -3130,7 +3058,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "palmario-voyage",
@@ -3156,7 +3083,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "praderas-tropical-voyage",
@@ -3182,7 +3108,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "rio-verde-voyage",
@@ -3201,7 +3126,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "silvestre-voyage",
@@ -3227,7 +3151,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "cortaderas-voyage",
@@ -3246,7 +3169,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "costa-rica-voyage",
@@ -3272,7 +3194,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "el-banquete-voyage",
@@ -3291,7 +3212,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "el-descanso-de-las-garzas-voyage",
@@ -3317,7 +3237,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "el-jardin-de-la-geisha-voyage",
@@ -3349,7 +3268,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "elena-voyage",
@@ -3368,7 +3286,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "jardin-victoriano-voyage",
@@ -3394,7 +3311,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "jungla-en-tintas-voyage",
@@ -3413,7 +3329,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "laguna-sepia-voyage",
@@ -3439,7 +3354,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "praderas-voyage",
@@ -3465,7 +3379,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "utopia-voyage",
@@ -3491,7 +3404,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "voyage",
-                basePrice: { ARS: 92700, USD: 80 },
             },
         ]
     },
@@ -3521,7 +3433,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "the-classics",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "italian-landscape-the-classics",
@@ -3547,7 +3458,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "the-classics",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "prince-of-udaipur-the-classics",
@@ -3566,7 +3476,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "the-classics",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "tapestry-the-classics",
@@ -3585,7 +3494,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "the-classics",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "the-emperors-journey-the-classics",
@@ -3604,7 +3512,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "the-classics",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "waterfall-the-classics",
@@ -3623,7 +3530,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "the-classics",
-                basePrice: { ARS: 92700, USD: 80 },
             }
         ]
     },
@@ -3652,7 +3558,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "fractal-abstract",
@@ -3684,7 +3589,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "acuarela-abstract",
@@ -3710,7 +3614,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "constelaciones-abstract",
@@ -3729,7 +3632,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "stadium-abstract",
@@ -3748,7 +3650,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "patagonia-abstract",
@@ -3774,7 +3675,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "cuerpos-celestes-abstract",
@@ -3806,7 +3706,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "golden-tanger-abstract",
@@ -3832,7 +3731,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "etnico-abstract",
@@ -3858,7 +3756,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "estuco-abstract",
@@ -3877,7 +3774,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "abstract",
-                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
     },
@@ -3907,7 +3803,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             
             {
@@ -3940,7 +3835,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "magnolia-real-wonder",
@@ -3966,7 +3860,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "dutch-flowers-wonder",
@@ -3985,7 +3878,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "el-eden-wonder",
@@ -4017,7 +3909,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "follaje-wonder",
@@ -4036,7 +3927,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "hanami-wonder",
@@ -4062,7 +3952,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "jardin-vertical-wonder",
@@ -4081,7 +3970,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "vuelo-de-mariposas-wonder",
@@ -4100,7 +3988,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "en-las-nubes-wonder",
@@ -4119,7 +4006,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "animal-parade-wonder",
@@ -4138,7 +4024,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "wild-circus-wonder",
@@ -4164,7 +4049,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "jungla-en-tintas-wonder",
@@ -4183,7 +4067,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "mundo-animal-wonder",
@@ -4202,7 +4085,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "blue-willow-wonder",
@@ -4221,7 +4103,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "wonder",
-                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
     },
@@ -4300,7 +4181,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/mesopotamia/japonica",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "espigas",
@@ -4350,7 +4230,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "/collections/collaborations/mesopotamia/espigas",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "mesopotamia-mural",
@@ -4418,7 +4297,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "/collections/collaborations/mesopotamia/mesopotamia-mural",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "rio",
@@ -4462,7 +4340,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "/collections/collaborations/mesopotamia/rio",
-                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
         collaboration: true,
@@ -4493,7 +4370,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/tienda-marlo/zorro",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "hornero",
@@ -4525,7 +4401,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "/collections/collaborations/tienda-marlo/hornero",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "pinguinos",
@@ -4545,7 +4420,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/tienda-marlo/pinguinos",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "caballo",
@@ -4565,7 +4439,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/tienda-marlo/caballo",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "venado",
@@ -4591,7 +4464,6 @@ export const collections: Array<Collection> = [
                     },
                 ],
                 href: "/collections/collaborations/tienda-marlo/venado",
-                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
         collaboration: true,
@@ -4622,7 +4494,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/apatheia/little-stars",
-                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
         collaboration: true,
@@ -4653,7 +4524,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/carina-michelli/blackthorn",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "bluetapestry",
@@ -4673,7 +4543,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/carina-michelli/bluetapestry",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "greenthorn",
@@ -4693,7 +4562,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/carina-michelli/greenthorn",
-                basePrice: { ARS: 92700, USD: 80 },
             },
             {
                 id: "rita",
@@ -4713,7 +4581,6 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/carina-michelli/rita",
-                basePrice: { ARS: 92700, USD: 80 },
             },
         ],
         collaboration: true,
