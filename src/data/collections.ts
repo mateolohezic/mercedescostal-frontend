@@ -549,6 +549,7 @@ import tapestry_mural from "@/assets/collections/the_classics/tapestry/tapestry_
 import the_emperors_journey_icon_1 from "@/assets/collections/the_classics/the_emperors_journey/the_emperors_journey_icon_1.webp";
 import the_emperors_journey_montaje from "@/assets/collections/the_classics/the_emperors_journey/the_emperors_journey_montaje.webp";
 import the_emperors_journey_mural from "@/assets/collections/the_classics/the_emperors_journey/the_emperors_journey_mural.webp";
+import the_emperors_journey_mural_coral_tide from "@/assets/collections/the_classics/the_emperors_journey/the_emperors_journey_mural_coral_tide.webp";
 
 import waterfall_icon_1 from "@/assets/collections/the_classics/waterfall/waterfall_icon_1.webp";
 import waterfall_montaje from "@/assets/collections/the_classics/waterfall/waterfall_montaje.webp";
@@ -3485,6 +3486,11 @@ export const collections: Array<Collection> = [
                         montaje: the_emperors_journey_montaje,
                         mural: the_emperors_journey_mural,
                         base: true,
+                    },
+                    {
+                        colorName: "Coral Tide",
+                        montaje: the_emperors_journey_montaje,
+                        mural: the_emperors_journey_mural_coral_tide,
                     }
                 ],
                 href: "the-classics",
