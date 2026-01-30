@@ -24,7 +24,7 @@ const VariantButton = ({ variant, isSelected, onClick }: {
         >
             <div className="size-full rounded-full overflow-hidden">
                 {!isLoaded && <div className="size-full rounded-full bg-gray-300 animate-pulse" />}
-                <Image src={variant.mural} alt={variant.colorName} width={44} height={44} className={`size-full object-cover ${isLoaded ? 'opacity-100' : 'opacity-0'}`} onLoad={() => setIsLoaded(true)}/>
+                <Image src={variant.mural} alt={variant.colorName} width={120} height={120} className={`size-full object-cover ${isLoaded ? 'opacity-100' : 'opacity-0'}`} onLoad={() => setIsLoaded(true)}/>
             </div>
             <span className="sr-only">{variant.colorName}</span>
             <div className="hidden lg:block absolute -top-8 left-1/2 -translate-x-1/2 whitespace-nowrap text-xs text-black bg-white border border-black/10 px-2 py-0.5 rounded opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-200 z-10">
@@ -75,7 +75,7 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
     const currentVariant = selectedVariant || baseVariant;
     const price = getPrice(currentVariant, mural, collection, currency);
 
-    const hasMultipleVariants = (collection.id === "casamar" || collection.id === "artisan" || collection.id === "mesopotamia" || collection.id === "tienda-marlo") && mural.variants.length > 1;
+    const hasMultipleVariants = mural.variants.length > 1;
 
     const images = [currentVariant.mural, currentVariant.montaje];
     const relatedMurals = collection.murales.filter(m => m.id !== mural.id).sort(() => Math.random() - 0.5).slice(0, 4);

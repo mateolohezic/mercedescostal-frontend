@@ -36,12 +36,12 @@ export const MuralCardNew = ({ mural, index, collection }: Props) => {
                     priority
                     src={baseVariant.montaje}
                     alt={`Montaje ${mural.title}`}
-                    className="size-full object-cover absolute top-0 left-0 z-0 group-hover:scale-105 transition-transform duration-300"
+                    className="size-full object-cover absolute top-0 left-0 z-0"
                 />
                 <Image
                     src={baseVariant.mural}
                     alt={`Mural ${mural.title}`}
-                    className={`size-full object-cover absolute top-0 left-0 z-10 transition-opacity duration-300 ${isHovered ? "opacity-100" : "opacity-0"}`}
+                    className={`size-full object-cover absolute top-0 left-0 z-10 ${isHovered ? "opacity-100" : "opacity-0"}`}
                 />
             </motion.div>
         </Link>

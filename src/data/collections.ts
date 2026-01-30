@@ -587,7 +587,7 @@ import alexandria_mural from "@/assets/collections/vuelta_al_mundo/alexandria/al
 
 import bindi_icon_1 from "@/assets/collections/vuelta_al_mundo/bindi/bindi_icon_1.webp";
 import bindi_montaje from "@/assets/collections/vuelta_al_mundo/bindi/bindi_montaje.webp";
-import bindi_montaje_2 from "@/assets/collections/vuelta_al_mundo/bindi/bindi_montaje_2.webp";
+// import bindi_montaje_2 from "@/assets/collections/vuelta_al_mundo/bindi/bindi_montaje_2.webp";
 import bindi_mural from "@/assets/collections/vuelta_al_mundo/bindi/bindi_mural.webp";
 
 import cuerpos_celestes_icon_1 from "@/assets/collections/vuelta_al_mundo/cuerpos_celestes/cuerpos_celestes_icon_1.webp";
@@ -609,7 +609,7 @@ import estuco_mural from "@/assets/collections/vuelta_al_mundo/estuco/estuco_mur
 
 import etnico_icon_1 from "@/assets/collections/vuelta_al_mundo/etnico/etnico_icon_1.webp";
 import etnico_montaje from "@/assets/collections/vuelta_al_mundo/etnico/etnico_montaje.webp";
-import etnico_montaje_2 from "@/assets/collections/vuelta_al_mundo/etnico/etnico_montaje_2.webp";
+// import etnico_montaje_2 from "@/assets/collections/vuelta_al_mundo/etnico/etnico_montaje_2.webp";
 import etnico_mural from "@/assets/collections/vuelta_al_mundo/etnico/etnico_mural.webp";
 
 import golden_tanger_icon_1 from "@/assets/collections/vuelta_al_mundo/golden_tanger/golden_tanger_icon_1.webp";
@@ -623,12 +623,12 @@ import ibiza_mural from "@/assets/collections/vuelta_al_mundo/ibiza/ibiza_mural.
 
 import jardin_colgante_icon_1 from "@/assets/collections/vuelta_al_mundo/jardin_colgante/jardin_colgante_icon_1.webp";
 import jardin_colgante_montaje from "@/assets/collections/vuelta_al_mundo/jardin_colgante/jardin_colgante_montaje.webp";
-import jardin_colgante_montaje_2 from "@/assets/collections/vuelta_al_mundo/jardin_colgante/jardin_colgante_montaje_2.webp";
+// import jardin_colgante_montaje_2 from "@/assets/collections/vuelta_al_mundo/jardin_colgante/jardin_colgante_montaje_2.webp";
 import jardin_colgante_mural from "@/assets/collections/vuelta_al_mundo/jardin_colgante/jardin_colgante_mural.webp";
 
 import jardin_persa_icon_1 from "@/assets/collections/vuelta_al_mundo/jardin_persa/jardin_persa_icon_1.webp";
 import jardin_persa_montaje_black from "@/assets/collections/vuelta_al_mundo/jardin_persa/jardin_persa_montaje_black.webp";
-import jardin_persa_montaje_white from "@/assets/collections/vuelta_al_mundo/jardin_persa/jardin_persa_montaje_white.webp";
+// import jardin_persa_montaje_white from "@/assets/collections/vuelta_al_mundo/jardin_persa/jardin_persa_montaje_white.webp";
 import jardin_persa_montaje_white_2 from "@/assets/collections/vuelta_al_mundo/jardin_persa/jardin_persa_montaje_white_2.webp";
 import jardin_persa_mural_black from "@/assets/collections/vuelta_al_mundo/jardin_persa/jardin_persa_mural_black.webp";
 import jardin_persa_mural_white from "@/assets/collections/vuelta_al_mundo/jardin_persa/jardin_persa_mural_white.webp";
@@ -651,12 +651,12 @@ import mundo_animal_montaje from "@/assets/collections/vuelta_al_mundo/mundo_ani
 
 import palmario_icon_1 from "@/assets/collections/vuelta_al_mundo/palmario/palmario_icon_1.webp";
 import palmario_montaje from "@/assets/collections/vuelta_al_mundo/palmario/palmario_montaje.webp";
-import palmario_montaje_2 from "@/assets/collections/vuelta_al_mundo/palmario/palmario_montaje_2.webp";
+// import palmario_montaje_2 from "@/assets/collections/vuelta_al_mundo/palmario/palmario_montaje_2.webp";
 import palmario_mural from "@/assets/collections/vuelta_al_mundo/palmario/palmario_mural.webp";
 
 import patagonia_icon_1 from "@/assets/collections/vuelta_al_mundo/patagonia/patagonia_icon_1.webp";
 import patagonia_montaje from "@/assets/collections/vuelta_al_mundo/patagonia/patagonia_montaje.webp";
-import patagonia_montaje_2 from "@/assets/collections/vuelta_al_mundo/patagonia/patagonia_montaje_2.webp";
+// import patagonia_montaje_2 from "@/assets/collections/vuelta_al_mundo/patagonia/patagonia_montaje_2.webp";
 import patagonia_mural from "@/assets/collections/vuelta_al_mundo/patagonia/patagonia_mural.webp";
 
 import praderas_tropical_icon_1 from "@/assets/collections/vuelta_al_mundo/praderas_tropical/praderas_tropical_icon_1.webp";
@@ -2883,14 +2883,14 @@ export const collections: Array<Collection> = [
                 keywordsEn: ["chinoiserie", "botanical", "animals", "architecture", "red", "pink"],
                 variants: [
                     {
-                        colorName: "Variante 1",
+                        colorName: "Rose",
                         color: "#BDB76B",
                         montaje: reina_ana_montaje_1,
                         mural: reina_ana_mural_1,
                         base: true,
                     },
                     {
-                        colorName: "Variante 2",
+                        colorName: "Green",
                         color: "#8B4513",
                         montaje: reina_ana_montaje_2,
                         mural: reina_ana_mural_2,
@@ -2925,12 +2925,6 @@ export const collections: Array<Collection> = [
                         mural: bindi_mural,
                         base: true,
                     },
-                    {
-                        colorName: "Variante 2",
-                        color: "#800080",
-                        montaje: bindi_montaje_2,
-                        mural: bindi_mural,
-                    }
                 ],
                 href: "voyage",
             },
@@ -2994,12 +2988,6 @@ export const collections: Array<Collection> = [
                         mural: jardin_colgante_mural,
                         base: true,
                     },
-                    {
-                        colorName: "Variante 2",
-                        color: "#6B8E23",
-                        montaje: jardin_colgante_montaje_2,
-                        mural: jardin_colgante_mural,
-                    }
                 ],
                 href: "voyage",
             },
@@ -3022,12 +3010,6 @@ export const collections: Array<Collection> = [
                     {
                         colorName: "White",
                         color: "#FFFFFF",
-                        montaje: jardin_persa_montaje_white,
-                        mural: jardin_persa_mural_white,
-                    },
-                    {
-                        colorName: "Variante 2",
-                        color: "#F5F5F5",
                         montaje: jardin_persa_montaje_white_2,
                         mural: jardin_persa_mural_white,
                     }
@@ -3075,12 +3057,6 @@ export const collections: Array<Collection> = [
                         mural: palmario_mural,
                         base: true,
                     },
-                    {
-                        colorName: "Variante 2",
-                        color: "#6B8E23",
-                        montaje: palmario_montaje_2,
-                        mural: palmario_mural,
-                    }
                 ],
                 href: "voyage",
             },
@@ -3667,12 +3643,6 @@ export const collections: Array<Collection> = [
                         mural: patagonia_mural,
                         base: true,
                     },
-                    {
-                        colorName: "Variante 2",
-                        color: "#A0522D",
-                        montaje: patagonia_montaje_2,
-                        mural: patagonia_mural,
-                    }
                 ],
                 href: "abstract",
             },
@@ -3719,15 +3689,9 @@ export const collections: Array<Collection> = [
                     {
                         colorName: "Estándar",
                         color: "bg-st-201915",
-                        montaje: golden_tanger_montaje,
-                        mural: golden_tanger_mural,
-                        base: true,
-                    },
-                    {
-                        colorName: "Variante 2",
-                        color: "bg-st-tanger",
                         montaje: golden_tanger_montaje_2,
                         mural: golden_tanger_mural,
+                        base: true,
                     }
                 ],
                 href: "abstract",
@@ -3748,12 +3712,6 @@ export const collections: Array<Collection> = [
                         mural: etnico_mural,
                         base: true,
                     },
-                    {
-                        colorName: "Variante 2",
-                        color: "#A0522D",
-                        montaje: etnico_montaje_2,
-                        mural: etnico_mural,
-                    }
                 ],
                 href: "abstract",
             },
