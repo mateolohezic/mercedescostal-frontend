@@ -195,6 +195,17 @@
       "paragraph3": "Además, tenemos en nuestra carta una selección de pastelería de autor.",
       "link": "Conócenos",
       "tagline": "Costal coffe & other crafts."
+    },
+    "landmark": {
+      "title": "Landmark",
+      "titleBold": "Tucumán",
+      "block1p1": "Landmark es una marca familiar argentina fundada en 1920. Lo que empezó como una casa de alfombras de oriente hoy es uno de los referentes en muebles de diseño, iluminación, textiles y objetos decorativos del país, con presencia en los principales puntos de Buenos Aires.",
+      "block1p2": "Nuestra sucursal en Tucumán es la primera franquicia de Landmark y su puerta de entrada al norte argentino. Acceso directo a su selección curada sin necesidad de viajar a la capital, con asesoramiento profesional y atención personalizada.",
+      "block2": "Cada pieza en Landmark es seleccionada con criterio profesional. No es un showroom convencional: es un espacio donde conviven estilos nórdico, provenzal, moderno, post-industrial y Mid Century, pensado para recorrer, tocar y elegir. Más de 100 años de historia respaldan la curaduría.",
+      "block3": "Muebles de diseño, iluminación, textiles y objetos decorativos que cruzan lo vintage con lo contemporáneo, lo artesanal con el diseño global. Cada elemento está pensado para definir un espacio.",
+      "block4": "Landmark Tucumán es también punto de venta oficial de empapelados de Mercedes Costal y de piezas cerámicas de Blau. Todo en un mismo lugar.",
+      "cta1": "Escribinos",
+      "cta2": "Cómo llegar"
     }
   }
 }

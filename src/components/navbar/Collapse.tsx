@@ -69,6 +69,10 @@ export const Collapse = () => {
                     title: t('costalCafe'),
                     href:'/mc-universe/costal-coffee'
                 },
+                {
+                    title: t('landmark'),
+                    href:'/mc-universe/landmark'
+                },
             ]
         },
         {
