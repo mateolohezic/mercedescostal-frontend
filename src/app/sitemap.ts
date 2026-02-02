@@ -22,6 +22,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/mc-universe/fragrances',
     '/mc-universe/the-book',
     '/mc-universe/costal-coffee',
+    '/mc-universe/landmark',
   ];
 
   const staticPages = routes.flatMap(route =>
