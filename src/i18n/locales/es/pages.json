@@ -207,5 +207,31 @@
       "cta1": "Escribinos",
       "cta2": "Cómo llegar"
     }
+  },
+  "artScreen": {
+    "heading": "Coleccionables",
+    "intro": "Los Art Screen en forma de biombo nacen como piezas que expanden el lenguaje de nuestros murales más allá del muro. Atmósferas que se despliegan en capas, donde el color y la textura convocan silencios, pausas y nuevas formas de mirar el espacio.",
+    "introLine2": "Cada biombo se construye como un objeto de contemplación.",
+    "block1p1": "Concebidos para dividir, proteger o sugerir, la arquitectura en movimiento se hace presente.",
+    "block1p2": "Dispositivos sensibles que crean escenarios, recortan la luz, acompañan rituales cotidianos y permiten reconfigurar un ambiente con un gesto mínimo.",
+    "block1p3": "Un objeto que no impone; propone.",
+    "block2p1": "Objetos que buscan abrir un espacio, el biombo —pieza ancestral, nómada y silenciosa— reaparece como un gesto de pausa: una arquitectura mínima capaz de redefinir límites, de insinuar refugios, de crear intimidad.",
+    "block2p2": "El biombo se vuelve un territorio portátil. Un fragmento de paisaje que puede moverse, transformarse, acompañar el ritmo de una vida en constante cambio.",
+    "block3p1": "Como parte de nuestra familia de objetos coleccionables, cada biombo se realiza con la misma dedicación material: sustratos nobles, tintas de base acuosa y una mirada contemporánea que privilegia lo esencial.",
+    "block3p2": "Creamos lenguaje y en ese lenguaje, el biombo se vuelve un puente entre arte, diseño y espacio vivido.",
+    "specsTitle": "Sobre la pieza",
+    "specDimension": "Dimensión por hoja",
+    "specDimensionValue": "50 cm × 183 cm",
+    "specConfiguration": "Configuración",
+    "specConfigurationValue": "2 a 6 hojas por biombo",
+    "specModels": "Modelos",
+    "specModelsValue": "Curvo / Recto",
+    "specFinish": "Terminación",
+    "specFinishValue": "Empapelado en ambas caras",
+    "specDesign": "Diseño",
+    "specDesignValue": "A elección del catálogo",
+    "ctaLine1": "Cada Art Screen se produce bajo pedido.",
+    "ctaLine2": "Consultá disponibilidad y opciones de diseño.",
+    "ctaButton": "Cotizar ahora →"
   }
 }

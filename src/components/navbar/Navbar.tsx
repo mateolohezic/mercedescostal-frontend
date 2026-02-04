@@ -16,6 +16,16 @@ export const Navbar = () => {
             href:'/collections',
         },
         {
+            title: t('collectibles'),
+            menu: true,
+            links: [
+                {
+                    title: t('artScreen'),
+                    href:'/collectibles/art-screen'
+                }
+            ]
+        },
+        {
             title: t('studio'),
             menu: true,
             links: [
@@ -98,7 +108,7 @@ export const Navbar = () => {
     const checkIsMuralDetail = (path: string) => /^\/[a-z]{2}\/collections\/[^/]+\/[^/]+$/.test(path);
     const [isHome, setIsHome] = useState<boolean>(checkIsHome(pathname));
     const [isTransparent, setIsTransparent] = useState<boolean>(checkIsHome(pathname) || checkIsMuralDetail(pathname));
-    const [menuExpanded, setMenuExpanded] = useState<'wallpapers'|'studio'|'highlights'|'mcuniverse'|'contact'|undefined>();
+    const [menuExpanded, setMenuExpanded] = useState<'wallpapers'|'collectibles'|'studio'|'highlights'|'mcuniverse'|'contact'|undefined>();
 
     useEffect(() => {
         setMenuExpanded(undefined);
@@ -106,7 +116,7 @@ export const Navbar = () => {
         setIsTransparent(checkIsHome(pathname) || checkIsMuralDetail(pathname));
     }, [pathname])
     
-    const toggleMenu = (menu: 'wallpapers'|'studio'|'highlights'|'mcuniverse'|'contact') => {
+    const toggleMenu = (menu: 'wallpapers'|'collectibles'|'studio'|'highlights'|'mcuniverse'|'contact') => {
         setMenuExpanded(menu === menuExpanded ? undefined : menu);
     }
 

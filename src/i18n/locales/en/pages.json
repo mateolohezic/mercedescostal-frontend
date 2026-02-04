@@ -207,5 +207,31 @@
       "cta1": "Contact us",
       "cta2": "Get directions"
     }
+  },
+  "artScreen": {
+    "heading": "Collectibles",
+    "intro": "Art Screens in the form of folding screens are born as pieces that expand the language of our murals beyond the wall. Atmospheres that unfold in layers, where color and texture summon silences, pauses, and new ways of seeing space.",
+    "introLine2": "Each folding screen is built as an object of contemplation.",
+    "block1p1": "Conceived to divide, protect, or suggest, architecture in motion becomes present.",
+    "block1p2": "Sensitive devices that create scenarios, trim the light, accompany daily rituals, and allow reconfiguring a space with a minimal gesture.",
+    "block1p3": "An object that does not impose; it proposes.",
+    "block2p1": "Objects that seek to open a space, the folding screen —an ancestral, nomadic, and silent piece— reappears as a gesture of pause: a minimal architecture capable of redefining boundaries, hinting at shelters, creating intimacy.",
+    "block2p2": "The folding screen becomes a portable territory. A fragment of landscape that can move, transform, accompany the rhythm of a life in constant change.",
+    "block3p1": "As part of our family of collectible objects, each folding screen is made with the same material dedication: noble substrates, water-based inks, and a contemporary vision that prioritizes the essential.",
+    "block3p2": "We create language and in that language, the folding screen becomes a bridge between art, design, and lived space.",
+    "specsTitle": "About the piece",
+    "specDimension": "Dimension per panel",
+    "specDimensionValue": "50 cm × 183 cm",
+    "specConfiguration": "Configuration",
+    "specConfigurationValue": "2 to 6 panels per screen",
+    "specModels": "Models",
+    "specModelsValue": "Curved / Straight",
+    "specFinish": "Finish",
+    "specFinishValue": "Wallpapered on both sides",
+    "specDesign": "Design",
+    "specDesignValue": "Choose from catalog",
+    "ctaLine1": "Each Art Screen is made to order.",
+    "ctaLine2": "Ask about availability and design options.",
+    "ctaButton": "Get a quote now →"
   }
 }

@@ -9,8 +9,8 @@ interface Props {
     navlink: NavLinkHome;
     index: number;
     isHome?: boolean;
-    menuExpanded: "wallpapers" | "studio" | "highlights" | "mcuniverse" | "contact" | undefined;
-    toggleMenu: (menu: "wallpapers" | "studio" | "highlights" | "mcuniverse" | "contact") => void;
+    menuExpanded: "wallpapers" | "collectibles" | "studio" | "highlights" | "mcuniverse" | "contact" | undefined;
+    toggleMenu: (menu: "wallpapers" | "collectibles" | "studio" | "highlights" | "mcuniverse" | "contact") => void;
 }
 
 export const NavbarLink = ({ navlink, index, isHome, menuExpanded, toggleMenu }: Props) => {
@@ -18,7 +18,7 @@ export const NavbarLink = ({ navlink, index, isHome, menuExpanded, toggleMenu }:
     const isMobile = useMediaQuery({ maxWidth: 1023 });
 
     const handleToggle = () => {
-        toggleMenu(title as "wallpapers" | "studio" | "highlights" | "mcuniverse" | "contact");
+        toggleMenu(title as "wallpapers" | "collectibles" | "studio" | "highlights" | "mcuniverse" | "contact");
     };
 
     if(menu && links){
