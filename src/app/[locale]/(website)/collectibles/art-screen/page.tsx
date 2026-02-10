@@ -96,9 +96,14 @@ export default async function ArtScreenPage({ params }: Props) {
                         {/* <p><span className="opacity-60">{t('specFinish')}</span><br/>{t('specFinishValue')}</p> */}
                         <p><span className="opacity-60">{t('specDesign')}</span><br/>{t('specDesignValue')}</p>
                     </div>
-                    <Link href="/quote/art-screen" className="inline-block mt-8 border-b border-black hover:opacity-75 transition-all duration-300 text-sm lg:text-base">
-                        {t('ctaButton')}
-                    </Link>
+                    <div className="mt-8 flex flex-col items-center lg:items-start gap-4">
+                        <Link href="/quote/art-screen" className="block text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150">
+                            {t('ctaButton')}
+                        </Link>
+                        <Link href="/assets/ficha_tecnica_art_screen_mercedes_costal.pdf" target="_blank" rel="noopener noreferrer" className="text-sm border-b border-black uppercase hover:opacity-70 transition-150">
+                            {t('datasheet')}
+                        </Link>
+                    </div>
                 </div>
                 <Image src={art_screen_3} alt="Art Screen Mercedes Costal" className="w-full lg:w-1/2 max-w-md object-contain order-1 lg:order-2"/>
             </section>
