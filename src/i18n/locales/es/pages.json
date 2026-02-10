@@ -210,15 +210,12 @@
   },
   "artScreen": {
     "heading": "Coleccionables",
-    "intro": "Los Art Screen en forma de biombo nacen como piezas que expanden el lenguaje de nuestros murales más allá del muro. Atmósferas que se despliegan en capas, donde el color y la textura convocan silencios, pausas y nuevas formas de mirar el espacio.",
-    "introLine2": "Cada biombo se construye como un objeto de contemplación.",
-    "block1p1": "Concebidos para dividir, proteger o sugerir, la arquitectura en movimiento se hace presente.",
-    "block1p2": "Dispositivos sensibles que crean escenarios, recortan la luz, acompañan rituales cotidianos y permiten reconfigurar un ambiente con un gesto mínimo.",
-    "block1p3": "Un objeto que no impone; propone.",
-    "block2p1": "Objetos que buscan abrir un espacio, el biombo —pieza ancestral, nómada y silenciosa— reaparece como un gesto de pausa: una arquitectura mínima capaz de redefinir límites, de insinuar refugios, de crear intimidad.",
-    "block2p2": "El biombo se vuelve un territorio portátil. Un fragmento de paisaje que puede moverse, transformarse, acompañar el ritmo de una vida en constante cambio.",
-    "block3p1": "Como parte de nuestra familia de objetos coleccionables, cada biombo se realiza con la misma dedicación material: sustratos nobles, tintas de base acuosa y una mirada contemporánea que privilegia lo esencial.",
-    "block3p2": "Creamos lenguaje y en ese lenguaje, el biombo se vuelve un puente entre arte, diseño y espacio vivido.",
+    "intro": "El Art Screen nace donde termina el muro. Es nuestro lenguaje de empapelados trasladado a un objeto autónomo: un biombo que lleva la atmósfera de nuestros murales a cualquier punto del espacio.",
+    "introLine2": "Un coleccionable que se contempla y se vive.",
+    "block2p1": "El biombo es una de las piezas más antiguas del diseño de interiores. Lo recuperamos como soporte de nuestro trabajo: cada hoja es una superficie empapelada a mano, con el mismo cuidado y los mismos materiales que ponemos en un mural.",
+    "block2p2": "Cada Art Screen es un trabajo artesanal: único, numerado y firmado.",
+    "block3p1": "Cada hoja es una superficie empapelada a mano en ambas caras, con sustratos nobles y tintas de base acuosa.",
+    "block3p2": "Producido íntegramente en nuestro taller.",
     "specsTitle": "Sobre la pieza",
     "specDimension": "Dimensión por hoja",
     "specDimensionValue": "50 cm × 183 cm",
@@ -230,8 +227,8 @@
     "specFinishValue": "Empapelado en ambas caras",
     "specDesign": "Diseño",
     "specDesignValue": "A elección del catálogo",
-    "ctaLine1": "Cada Art Screen se produce bajo pedido.",
-    "ctaLine2": "Consultá disponibilidad y opciones de diseño.",
+    "ctaLine1": "Cada Art Screen se produce por encargo en nuestro taller.",
+    "ctaLine2": "Elegí el diseño y la configuración.",
     "ctaButton": "Cotizar ahora →"
   }
 }

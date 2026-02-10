@@ -210,15 +210,12 @@
   },
   "artScreen": {
     "heading": "Collectibles",
-    "intro": "Art Screens in the form of folding screens are born as pieces that expand the language of our murals beyond the wall. Atmospheres that unfold in layers, where color and texture summon silences, pauses, and new ways of seeing space.",
-    "introLine2": "Each folding screen is built as an object of contemplation.",
-    "block1p1": "Conceived to divide, protect, or suggest, architecture in motion becomes present.",
-    "block1p2": "Sensitive devices that create scenarios, trim the light, accompany daily rituals, and allow reconfiguring a space with a minimal gesture.",
-    "block1p3": "An object that does not impose; it proposes.",
-    "block2p1": "Objects that seek to open a space, the folding screen —an ancestral, nomadic, and silent piece— reappears as a gesture of pause: a minimal architecture capable of redefining boundaries, hinting at shelters, creating intimacy.",
-    "block2p2": "The folding screen becomes a portable territory. A fragment of landscape that can move, transform, accompany the rhythm of a life in constant change.",
-    "block3p1": "As part of our family of collectible objects, each folding screen is made with the same material dedication: noble substrates, water-based inks, and a contemporary vision that prioritizes the essential.",
-    "block3p2": "We create language and in that language, the folding screen becomes a bridge between art, design, and lived space.",
+    "intro": "The Art Screen is born where the wall ends. It is our wallpaper language transferred to an autonomous object: a folding screen that brings the atmosphere of our murals to any point in space.",
+    "introLine2": "A collectible to be contemplated and lived.",
+    "block2p1": "The folding screen is one of the oldest pieces in interior design. We reclaim it as a canvas for our work: each panel is a surface wallpapered by hand, with the same care and materials we put into a mural.",
+    "block2p2": "Each Art Screen is a handcrafted work: unique, numbered and signed.",
+    "block3p1": "Each panel is a surface wallpapered by hand on both sides, with noble substrates and water-based inks.",
+    "block3p2": "Entirely produced in our workshop.",
     "specsTitle": "About the piece",
     "specDimension": "Dimension per panel",
     "specDimensionValue": "50 cm × 183 cm",
@@ -230,8 +227,8 @@
     "specFinishValue": "Wallpapered on both sides",
     "specDesign": "Design",
     "specDesignValue": "Choose from catalog",
-    "ctaLine1": "Each Art Screen is made to order.",
-    "ctaLine2": "Ask about availability and design options.",
+    "ctaLine1": "Each Art Screen is produced to order in our workshop.",
+    "ctaLine2": "Choose the design and configuration.",
     "ctaButton": "Get a quote now →"
   }
 }
