@@ -1,12 +1,13 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
 import { IoChevronBack, IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { usePricing } from "@/hooks/usePricing";
+import { Modal } from "@/components/ui/Modal";
 import { MuralVariant, Mural, Collection } from "@/interfaces";
 
 const VariantButton = ({ variant, isSelected, onClick }: {
@@ -70,6 +71,12 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
 
     const [selectedVariant, setSelectedVariant] = useState<MuralVariant | null>(null);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+    const [showPromo, setShowPromo] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => setShowPromo(true), 2000);
+        return () => clearTimeout(timer);
+    }, []);
 
     const baseVariant = mural.variants.find(v => v.base) || mural.variants[0];
     const currentVariant = selectedVariant || baseVariant;
@@ -78,7 +85,7 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
     const hasMultipleVariants = mural.variants.length > 1;
 
     const images = [currentVariant.mural, currentVariant.montaje];
-    const relatedMurals = collection.murales.filter(m => m.id !== mural.id).sort(() => Math.random() - 0.5).slice(0, 4);
+    const [relatedMurals] = useState(() => collection.murales.filter(m => m.id !== mural.id).sort(() => Math.random() - 0.5).slice(0, 4));
 
     return (
         <main className="w-full grow flex flex-col font-truetypewritter">
@@ -197,6 +204,11 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
                     </div>
                 </div>
             </section>
+            <Modal showModal={showPromo} setShowModal={setShowPromo} className="max-w-3xl rounded-lg overflow-hidden">
+                <video autoPlay loop muted playsInline className="w-full aspect-video object-cover">
+                    <source src="/assets/portada_cuotas.mp4" type="video/mp4" />
+                </video>
+            </Modal>
         </main>
     );
 };
