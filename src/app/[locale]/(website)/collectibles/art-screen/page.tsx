@@ -84,28 +84,29 @@ export default async function ArtScreenPage({ params }: Props) {
                     <p className="mt-8">{t('block2p2')}</p>
                 </div>
             </section>
-            <section className="mt-12 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8 lg:gap-12">
-                <div className="w-full lg:w-1/2 max-w-md text-center lg:text-start order-2 lg:order-1">
-                    <h2 className="font-gillsans text-lg tracking-[0.3rem] uppercase mb-8">
-                        {t('specsTitle')}
-                    </h2>
-                    <div className="space-y-4 text-sm lg:text-base">
-                        <p><span className="opacity-60">{t('specDimension')}</span><br/>{t('specDimensionValue')}</p>
-                        <p><span className="opacity-60">{t('specConfiguration')}</span><br/>{t('specConfigurationValue')}</p>
-                        {/* <p><span className="opacity-60">{t('specModels')}</span><br/>{t('specModelsValue')}</p> */}
-                        {/* <p><span className="opacity-60">{t('specFinish')}</span><br/>{t('specFinishValue')}</p> */}
-                        <p><span className="opacity-60">{t('specDesign')}</span><br/>{t('specDesignValue')}</p>
+            <section className="mt-12 lg:mt-48 w-full h-auto lg:h-screen flex flex-col lg:flex-row">
+                <div className="w-full lg:w-1/2 h-[60vh] lg:h-screen relative lg:sticky lg:top-0">
+                    <Image src={art_screen_3} alt="Art Screen Mercedes Costal" className="size-full object-cover"/>
+                </div>
+                <div className="w-full lg:w-1/2 flex flex-col">
+                    <div className="grow flex flex-col items-center justify-center px-6 lg:px-12 py-12 lg:py-0 text-center">
+                        <p className="font-gillsans font-light text-sm text-black/40 uppercase tracking-[0.2em]">{t('specsTitle')}</p>
+                        <h2 className="mt-3 text-4xl lg:text-5xl xl:text-6xl font-gillsans font-medium">Art Screen</h2>
                     </div>
-                    <div className="mt-8 flex flex-col items-center lg:items-start gap-4">
-                        <Link href="/quote/art-screen" className="block text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150">
+                    <div className="px-6 lg:px-12 pb-8 lg:pb-12 flex flex-col gap-6">
+                        <div className="space-y-4 text-sm lg:text-base">
+                            <p><span className="text-black/50 uppercase text-xs tracking-wider">{t('specDimension')}</span><br/>{t('specDimensionValue')}</p>
+                            <p><span className="text-black/50 uppercase text-xs tracking-wider">{t('specConfiguration')}</span><br/>{t('specConfigurationValue')}</p>
+                            <p><span className="text-black/50 uppercase text-xs tracking-wider">{t('specDesign')}</span><br/>{t('specDesignValue')}</p>
+                        </div>
+                        <Link href="/quote/art-screen" className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150">
                             {t('ctaButton')}
                         </Link>
-                        <Link href="/assets/ficha_tecnica_art_screen_mercedes_costal.pdf" target="_blank" rel="noopener noreferrer" className="text-sm border-b border-black uppercase hover:opacity-70 transition-150">
+                        <Link href="/assets/ficha_tecnica_art_screen_mercedes_costal.pdf" target="_blank" rel="noopener noreferrer" className="text-sm border-b border-black uppercase hover:opacity-70 transition-150 w-fit">
                             {t('datasheet')}
                         </Link>
                     </div>
                 </div>
-                <Image src={art_screen_3} alt="Art Screen Mercedes Costal" className="w-full lg:w-1/2 max-w-md object-contain order-1 lg:order-2"/>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex justify-center">
                 <Image src={art_screen_4} alt="Art Screen Mercedes Costal" className="w-full max-w-2xl object-contain"/>

@@ -43,8 +43,7 @@ export const VideoIntro = () => {
         );
     }
 
-    // const videoSrc = deviceType === "mobile" ? "/assets/portada_video.mp4" : "/assets/portada_video.mp4";
-    const videoSrc = "/assets/portada_video.mp4";
+    const videoSrc = deviceType === "mobile" ? "/assets/portada_cuotas_mobile.mp4" : "/assets/portada_cuotas.mp4";
 
     return (
         <div className="size-full bg-black absolute top-0 left-0 z-0">

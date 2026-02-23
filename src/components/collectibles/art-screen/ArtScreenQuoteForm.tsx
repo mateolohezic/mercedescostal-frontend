@@ -24,7 +24,6 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
         collection: z.string().nonempty(tv('collectionRequired')),
         mural: z.string().nonempty(tv('muralRequired')),
         sheets: z.number({ invalid_type_error: t('selectSheets') }).min(2).max(6),
-        model: z.enum(["recto", "curvo"], { required_error: t('selectModel') }),
     });
 
     type Schema = z.infer<typeof schema>;
@@ -35,14 +34,12 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
         resolver: zodResolver(schema),
         defaultValues: {
             sheets: 2,
-            model: undefined,
         }
     });
 
     const selectedCollectionId = watch("collection");
     const selectedMuralId = watch("mural");
     const sheets = watch("sheets");
-    const model = watch("model");
 
     const selectedCollection = collections.find(col => col.id === selectedCollectionId);
     const selectedMural = selectedCollection?.murales.find(m => m.id === selectedMuralId) ||
@@ -68,16 +65,14 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
     }, [preselectedMuralId, setValue, isRendered]);
 
     const onSubmit = (data: Schema) => {
-        const { name, email, phone, collection, mural, sheets, model } = data;
+        const { name, email, phone, collection, mural, sheets } = data;
 
         const collectionName = collections.find(c => c.id === collection)?.title || "";
         const muralName = collections.flatMap(c => c.murales).find(m => m.id === mural)?.title || "";
-        const modelName = model === "recto" ? t('modelStraight') : t('modelCurved');
 
         let message = `${t('whatsappGreeting', { name })}%0A%0A`;
         message += `*${t('whatsappDesign', { mural: muralName, collection: collectionName })}*%0A`;
         message += `*${t('whatsappSheets', { sheets: String(sheets) })}*%0A`;
-        message += `*${t('whatsappModel', { model: modelName })}*%0A`;
         message += `*${t('whatsappDimensions', { width: String(sheets * 50) })}*%0A%0A`;
         message += `${t('whatsappEmail', { email })}%0A`;
         message += `${t('whatsappPhone', { phone })}`;
@@ -179,30 +174,6 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
                     <p className="mt-1 text-xs text-black/60">{t('sheetsHelper')}</p>
                     <FormErrorMessage condition={errors?.sheets} message={errors?.sheets?.message} />
                 </div>
-                <div className="w-full">
-                    <label className="md:text-lg">{t('model')}</label>
-                    <div className="mt-2 flex gap-4">
-                        <label className="flex items-center gap-2 cursor-pointer">
-                            <input
-                                type="radio"
-                                value="recto"
-                                className="w-4 h-4 accent-black"
-                                {...register("model")}
-                            />
-                            <span>{t('modelStraight')}</span>
-                        </label>
-                        <label className="flex items-center gap-2 cursor-pointer">
-                            <input
-                                type="radio"
-                                value="curvo"
-                                className="w-4 h-4 accent-black"
-                                {...register("model")}
-                            />
-                            <span>{t('modelCurved')}</span>
-                        </label>
-                    </div>
-                    <FormErrorMessage condition={errors?.model} message={errors?.model?.message} />
-                </div>
                 <div className="mt-4 lg:mt-0 w-full text-xl lg:text-base flex justify-center lg:justify-end items-center lg:items-end">
                     <button type="submit" className="mt-4 px-4 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase">
                         {t('submit')}
@@ -223,7 +194,7 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
                         className="w-full object-contain"
                     />
                     <div className="mt-2 w-full text-sm text-black/60 font-gillsans">
-                        <p>{t('previewConfig', { sheets: String(sheets || 2) })} {model ? `• ${t('previewModel', { model: model === 'recto' ? t('modelStraight') : t('modelCurved') })}` : ""}</p>
+                        <p>{t('previewConfig', { sheets: String(sheets || 2) })}</p>
                         <p>{t('previewDimensions', { width: String(totalWidth) })}</p>
                     </div>
                 </div>
