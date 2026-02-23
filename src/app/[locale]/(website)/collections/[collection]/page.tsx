@@ -5,6 +5,7 @@ import { CollectionVideo, CTA, MuralCardNew, ProcesoCreativoArtisan, ProcesoCrea
 import Image from "next/image";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
 
 interface Props {
     params: Promise<{
@@ -75,9 +76,7 @@ export default async function CollectionPage({ params }: Props) {
     const tc = await getTranslations({ locale, namespace: 'pages.collections' });
     const foundCollection = collections.find(col => col.id === collection);
 
-    if (!foundCollection) {
-        return <div className="text-center text-red-500">{tc('notFound')}</div>;
-    }
+    if (!foundCollection) notFound();
 
     return (
         <main className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">

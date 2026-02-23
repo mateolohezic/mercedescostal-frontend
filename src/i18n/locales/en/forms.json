@@ -61,5 +61,29 @@
     "heightRequired": "Height required",
     "invalidNumber": "Must be a number",
     "messageRequired": "Message required"
+  },
+  "artScreenQuote": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "collection": "Collection",
+    "muralDesign": "Mural design",
+    "selectCollection": "Select a collection",
+    "selectDesign": "Select a design",
+    "sheets": "Number of panels",
+    "sheetsOption": "{count} panels ({width}cm wide)",
+    "sheetsHelper": "Each panel is 50cm × 183cm tall",
+    "submit": "Quote Art Screen",
+    "preview": "Preview",
+    "previewConfig": "Configuration: {sheets} panels",
+    "previewDimensions": "Dimensions: {width}cm × 183cm",
+    "selectSheets": "Select number of panels",
+    "whatsappGreeting": "Hi! I'm {name} and I'd like to get a quote for an Art Screen.",
+    "whatsappDesign": "Design: {mural} ({collection})",
+    "whatsappSheets": "Number of panels: {sheets} panels",
+    "whatsappDimensions": "Total dimensions: {width}cm x 183cm",
+    "whatsappEmail": "Email: {email}",
+    "whatsappPhone": "Phone: {phone}",
+    "srTitle": "Get a quote for your Art Screen"
   }
 }

@@ -66,5 +66,13 @@
   "landmark": {
     "title": "Landmark Tucumán",
     "description": "Landmark Tucumán — Único punto de venta oficial de Landmark fuera de Buenos Aires. Muebles de diseño, papeles decorativos Mercedes Costal y cerámicos Blau."
+  },
+  "artScreen": {
+    "title": "Art Screen",
+    "description": "Art Screen - Biombos de autor Mercedes Costal. Objetos coleccionables que expanden el lenguaje de nuestros murales más allá del muro."
+  },
+  "quoteArtScreen": {
+    "title": "Cotizar Art Screen",
+    "description": "Cotiza tu biombo Art Screen Mercedes Costal."
   }
 }

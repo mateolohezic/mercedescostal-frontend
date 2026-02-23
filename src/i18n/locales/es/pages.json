@@ -207,5 +207,27 @@
       "cta1": "Escribinos",
       "cta2": "Cómo llegar"
     }
+  },
+  "artScreen": {
+    "heading": "Coleccionables",
+    "intro": "Art Screen nace del cruce entre la ilustración, la arquitectura y el objeto. No cumple una función únicamente práctica: construye escena, genera atmósfera, delimita sin cerrar.",
+    "introLine2": "Donde el arte deja de ser pared y se vuelve presencia. Un biombo como soporte, un gesto curatorial, una pieza que transforma el espacio sin fijarlo. Un límite sensible.",
+    "block2p1": "Cada pieza es concebida como un plano pictórico desplegable. Un paisaje que se articula en el espacio.",
+    "block2p2": "Son piezas únicas, diseñadas a medida y que se producen bajo un proceso artesanal controlado.",
+    "block3p1": "Cada pieza se produce a pedido. Eso la convierte en un objeto coleccionable. No por escasez forzada, sino por intención.",
+    "block3p2": "Producido íntegramente en nuestro taller.",
+    "specsTitle": "Sobre la pieza",
+    "specDimension": "Dimensión por hoja",
+    "specDimensionValue": "50 cm × 183 cm",
+    "specConfiguration": "Configuración",
+    "specConfigurationValue": "2 a 6 hojas por biombo",
+    "specFinish": "Terminación",
+    "specFinishValue": "Empapelado en ambas caras",
+    "specDesign": "Diseño",
+    "specDesignValue": "A elección del catálogo",
+    "ctaLine1": "Cada Art Screen se produce por encargo en nuestro taller.",
+    "ctaLine2": "Elegí el diseño y la configuración.",
+    "ctaButton": "Cotizar ahora →",
+    "datasheet": "Ver ficha técnica →"
   }
 }

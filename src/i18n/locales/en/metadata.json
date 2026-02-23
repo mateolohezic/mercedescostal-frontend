@@ -66,5 +66,13 @@
   "landmark": {
     "title": "Landmark Tucumán",
     "description": "Landmark Tucumán — The only official Landmark point of sale outside Buenos Aires. Designer furniture, Mercedes Costal decorative wallpapers and Blau ceramics."
+  },
+  "artScreen": {
+    "title": "Art Screen",
+    "description": "Art Screen - Author folding screens by Mercedes Costal. Collectible objects that expand the language of our murals beyond the wall."
+  },
+  "quoteArtScreen": {
+    "title": "Quote Art Screen",
+    "description": "Get a quote for your Mercedes Costal Art Screen."
   }
 }

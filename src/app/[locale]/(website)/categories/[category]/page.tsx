@@ -3,6 +3,7 @@ import { collections } from '@/data/collections';
 import { MuralCard } from '@/components';
 import { Mural } from '@/interfaces';
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 interface Props {
     params: Promise<{
@@ -72,9 +73,7 @@ export default async function CategoriesPage({ params }: Props) {
     const { category } = await params;
     const categoryMurals = collections.flatMap(col => col.murales).filter(mural => mural.keywords.includes(category));
 
-    if (categoryMurals.length === 0) {
-        return <div className="text-center text-red-500 my-20 text-xl">No se encontraron murales en esta categoría.</div>;
-    }
+    if (categoryMurals.length === 0) notFound();
 
     return (
         <main className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">

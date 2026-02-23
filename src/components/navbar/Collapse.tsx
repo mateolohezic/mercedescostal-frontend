@@ -18,6 +18,16 @@ export const Collapse = () => {
             href:'/collections',
         },
         {
+            title: t('collectibles'),
+            menu: true,
+            links: [
+                {
+                    title: t('artScreen'),
+                    href:'/collectibles/art-screen'
+                }
+            ]
+        },
+        {
             title: t('studio'),
             menu: true,
             links: [
@@ -98,7 +108,7 @@ export const Collapse = () => {
     const checkIsHome = (path: string) => /^\/[a-z]{2}$/.test(path);
     const [isHome, setIsHome] = useState<boolean>(checkIsHome(pathname));
     const [isExpanded, setIsExpanded] = useState(false);
-    const [expandedSection, setExpandedSection] = useState<"wallpapers" | "studio" | "highlights" | "mcuniverse" | "contact" | undefined>(undefined);
+    const [expandedSection, setExpandedSection] = useState<"wallpapers" | "collectibles" | "studio" | "highlights" | "mcuniverse" | "contact" | undefined>(undefined);
     const [isDesktop, setIsDesktop] = useState(false);
 
     useEffect(() => {

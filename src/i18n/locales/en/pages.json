@@ -207,5 +207,27 @@
       "cta1": "Contact us",
       "cta2": "Get directions"
     }
+  },
+  "artScreen": {
+    "heading": "Collectibles",
+    "intro": "Art Screen is born from the intersection of illustration, architecture, and the object. It does not serve a purely practical function: it builds scene, generates atmosphere, delimits without closing.",
+    "introLine2": "Where art stops being wall and becomes presence. A folding screen as a canvas, a curatorial gesture, a piece that transforms the space without fixing it. A sensitive boundary.",
+    "block2p1": "Each piece is conceived as a deployable pictorial plane. A landscape that articulates itself in space.",
+    "block2p2": "They are unique pieces, custom-designed and produced under a controlled artisanal process.",
+    "block3p1": "Each piece is produced to order. That makes it a collectible object. Not by forced scarcity, but by intention.",
+    "block3p2": "Entirely produced in our workshop.",
+    "specsTitle": "About the piece",
+    "specDimension": "Dimension per panel",
+    "specDimensionValue": "50 cm × 183 cm",
+    "specConfiguration": "Configuration",
+    "specConfigurationValue": "2 to 6 panels per screen",
+    "specFinish": "Finish",
+    "specFinishValue": "Wallpapered on both sides",
+    "specDesign": "Design",
+    "specDesignValue": "Choose from catalog",
+    "ctaLine1": "Each Art Screen is produced to order in our workshop.",
+    "ctaLine2": "Choose the design and configuration.",
+    "ctaButton": "Get a quote now →",
+    "datasheet": "View datasheet →"
   }
 }
