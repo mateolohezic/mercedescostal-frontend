@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from "react";
 import { SoundOnIcon, SoundOffIcon, PlayIcon, PauseIcon } from "@/icons";
 
-type DeviceType = "mobile" | "desktop" | null;
+type DeviceType = "mobile" | "desktop" | "md" | null;
 
 export const VideoIntro = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -13,7 +13,13 @@ export const VideoIntro = () => {
 
     useEffect(() => {
         const checkDevice = () => {
-            setDeviceType(window.innerWidth < 1024 ? "mobile" : "desktop");
+            if (window.innerWidth < 1024) {
+                setDeviceType("mobile");
+            } else if (window.innerWidth < 1920) {
+                setDeviceType("md");
+            } else {
+                setDeviceType("desktop");
+            }
         };
         checkDevice();
     }, []);
@@ -43,7 +49,7 @@ export const VideoIntro = () => {
         );
     }
 
-    const videoSrc = deviceType === "mobile" ? "/assets/portada_cuotas_mobile.mp4" : "/assets/portada_cuotas.mp4";
+    const videoSrc = deviceType === "mobile" ? "/assets/portada_cuotas_mobile.mp4" : deviceType === "md" ? "/assets/portada_cuotas_md.mp4" : "/assets/portada_cuotas.mp4";
 
     return (
         <div className="size-full bg-black absolute top-0 left-0 z-0">
