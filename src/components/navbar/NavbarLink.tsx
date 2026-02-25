@@ -34,7 +34,7 @@ export const NavbarLink = ({ navlink, index, isHome, menuExpanded, toggleMenu }:
                     type="button"
                     onClick={handleToggle}
                     aria-label={`Abrir menú ${title}`}
-                    className={`w-fit lg:w-auto ${isHome ? "text-white/90" : "text-black/90"} ${ menuExpanded === title && !isMobile && (isHome ? "bg-white/25" : "bg-black/10") } leading-none text-left lg:text-center uppercase font-light tracking-widest transition-150`}
+                    className={`w-fit lg:w-auto ${isHome ? "text-white/90" : "text-black/90"} ${ menuExpanded === title && !isMobile && (isHome ? "bg-white/25" : "bg-black/10") } leading-none text-left lg:text-center uppercase font-light text-xs xl:text-sm tracking-wider xl:tracking-widest whitespace-nowrap transition-150`}
                 >
                     {title}
                 </button>
@@ -79,7 +79,7 @@ export const NavbarLink = ({ navlink, index, isHome, menuExpanded, toggleMenu }:
                 <Link
                     href={href||"/"}
                     aria-label={`Ir a ${title}`}
-                    className={`w-fit lg:w-auto ${isHome ? "text-white/90" : "text-black/90"} ${ menuExpanded === title && !isMobile && (isHome ? "bg-white/25" : "bg-black/10") } leading-none text-left lg:text-center uppercase font-light tracking-widest transition-150`}
+                    className={`w-fit lg:w-auto ${isHome ? "text-white/90" : "text-black/90"} ${ menuExpanded === title && !isMobile && (isHome ? "bg-white/25" : "bg-black/10") } leading-none text-left lg:text-center uppercase font-light text-xs xl:text-sm tracking-wider xl:tracking-widest whitespace-nowrap transition-150`}
                 >
                     {title}
                 </Link>

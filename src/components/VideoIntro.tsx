@@ -15,7 +15,7 @@ export const VideoIntro = () => {
         const checkDevice = () => {
             if (window.innerWidth < 1024) {
                 setDeviceType("mobile");
-            } else if (window.innerWidth < 1920) {
+            } else if (window.innerHeight < 914) {
                 setDeviceType("md");
             } else {
                 setDeviceType("desktop");
@@ -78,7 +78,7 @@ export const VideoIntro = () => {
                     autoPlay
                     muted
                     loop
-                    className="size-full object-cover object-[50%_100%] pointer-events-none select-none relative z-10"
+                    className="size-full object-cover object-left-bottom pointer-events-none select-none relative z-10"
                 >
                     <source src={videoSrc} type="video/mp4" />
                     Tu navegador no soporta este video.

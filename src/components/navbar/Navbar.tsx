@@ -123,11 +123,11 @@ export const Navbar = () => {
     return (
         <nav className={`hidden w-full px-12 h-24 xl:h-32 lg:flex justify-center items-center ${ isTransparent ? 'bg-transparent' : 'bg-white'} fixed top-0 left-0 right-0 z-50 content-visibility-hidden lg:content-visibility-visible`}>
             <div className="w-full flex justify-between relative">
-                <Link className="w-full lg:max-w-96 xl:max-w-sm 2xl:max-w-lg flex items-end" href={'/'} aria-label="Inicio">
+                <Link className="w-full lg:max-w-72 xl:max-w-sm 2xl:max-w-lg flex items-end" href={'/'} aria-label="Inicio">
                     <MCLogo className={`${ isHome ? 'fill-white' : 'fill-black' } w-full`}/>
                 </Link>
                 <div className="w-full flex justify-end items-end">
-                    <ul className="flex justify-start items-center gap-4 xl:gap-6">
+                    <ul className="flex justify-start items-center gap-2 xl:gap-4 2xl:gap-6">
                         {
                             links.map((navlink:NavLinkHome, i:number) => (
                                 <NavbarLink navlink={navlink} index={i} isHome={isHome} menuExpanded={menuExpanded} toggleMenu={toggleMenu} key={i}/>
