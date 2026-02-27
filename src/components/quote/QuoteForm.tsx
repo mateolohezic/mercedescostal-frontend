@@ -66,9 +66,12 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
         const { name, email, phone, collection, mural, spaces } = data;
 
         const collectionName = collections.find(c => c.id === collection)?.title || "";
-        const muralName = collections.flatMap(c => c.murales).find(m => m.id === mural)?.title || "";
+        const muralSelected = collections.flatMap(c => c.murales).find(m => m.id === mural);
+        if (!muralSelected) return;
+        const muralName = muralSelected.title;
+        const isPattern = muralSelected.keywords.some(k => ['patrón', 'patron', 'pattern'].includes(k.toLowerCase())) || false;
 
-        let message = t('whatsappGreeting', { name, mural: muralName, collection: collectionName }) + '%0A%0A';
+        let message = isPattern ? t('whatsappGreetingPattern', { name, mural: muralName, collection: collectionName }) : t('whatsappGreetingMural', { name, mural: muralName, collection: collectionName }) + '%0A%0A';
         message += t('whatsappEmail', { email }) + '%0A';
         message += t('whatsappPhone', { phone }) + '%0A%0A';
 
