@@ -1,0 +1,86 @@
+{
+  "title": "Comprar empapelado",
+  "subtitle": "Seleccioná tu mural, ingresá las medidas de tus paredes y pagá online.",
+  "steps": {
+    "product": "Producto y medidas",
+    "shipping": "Datos de envío",
+    "review": "Revisar y pagar"
+  },
+  "product": {
+    "collection": "Colección",
+    "selectCollection": "Seleccionar colección",
+    "mural": "Mural",
+    "selectMural": "Seleccionar mural",
+    "variant": "Color / Variante",
+    "wallMeasures": "Medidas de tus paredes",
+    "addWall": "+ Agregar otra pared",
+    "wall": "Pared",
+    "width": "Ancho (m)",
+    "height": "Alto (m)",
+    "panels": "paneles",
+    "continueShipping": "Continuar al envío"
+  },
+  "shipping": {
+    "recipientName": "Nombre del destinatario",
+    "street": "Calle",
+    "number": "Número",
+    "floor": "Piso (opcional)",
+    "apartment": "Depto (opcional)",
+    "city": "Ciudad",
+    "province": "Provincia",
+    "postalCode": "Código Postal",
+    "quoteShipping": "Cotizar envío",
+    "quoting": "Cotizando...",
+    "shippingCost": "Envío",
+    "estimatedDays": "Plazo estimado",
+    "reviewOrder": "Revisar pedido"
+  },
+  "review": {
+    "product": "Producto",
+    "walls": "Paredes",
+    "shippingAddress": "Dirección de envío",
+    "yourData": "Tus datos",
+    "name": "Nombre",
+    "email": "Email",
+    "phone": "Teléfono",
+    "subtotal": "Subtotal producto",
+    "shipping": "Envío (Andreani)",
+    "total": "Total",
+    "ivaIncluded": "IVA 21% incluido",
+    "payWithMP": "Pagar con Mercado Pago",
+    "processing": "Procesando...",
+    "productionTime": "Tiempo estimado de producción: 20 días hábiles aprox. desde el pago."
+  },
+  "simpleWalls": {
+    "title": "Compra online — Paredes simples",
+    "description": "Esta compra es para paredes rectangulares simples, sin aberturas complicadas ni techos inclinados.",
+    "complexWalls": "¿Tenés paredes con formas complejas, arcos o muchas aberturas?",
+    "contactSales": "Contactá a un vendedor"
+  },
+  "success": {
+    "confirmed": "¡Pago confirmado!",
+    "order": "Pedido",
+    "emailSent": "Recibiste un email de confirmación con todos los detalles.",
+    "willNotify": "Te notificaremos cuando tu pedido sea despachado.",
+    "viewStatus": "Ver estado del pedido",
+    "saveLink": "Guardá este link",
+    "verifying": "Verificando pago...",
+    "beingVerified": "Tu pago está siendo procesado. Recibirás un email de confirmación cuando se apruebe."
+  },
+  "failure": {
+    "title": "Error en el pago",
+    "description": "Hubo un problema al procesar tu pago. No se realizó ningún cobro.",
+    "retry": "Reintentar compra",
+    "contact": "Contactar soporte"
+  },
+  "status": {
+    "title": "Estado del pedido",
+    "paymentStatus": "Estado del pago",
+    "shippingStatus": "Estado del envío",
+    "trackingNumber": "Código de seguimiento Andreani",
+    "trackOnAndreani": "Rastrear en andreani.com",
+    "notFound": "Orden no encontrada",
+    "invalidLink": "El link puede haber expirado o ser inválido."
+  },
+  "back": "Volver"
+}

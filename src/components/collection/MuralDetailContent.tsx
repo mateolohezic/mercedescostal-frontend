@@ -135,9 +135,15 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
                                 })}
                             </div>
                         )}
-                        <Link href={`/quote?mural=${mural.id}`} className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150">
-                            {locale === 'es' ? 'Cotizar' : 'Get Quote'}
-                        </Link>
+                        {locale === 'es' ? (
+                            <Link href={`/buy?mural=${mural.id}`} className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150">
+                                Comprar
+                            </Link>
+                        ) : (
+                            <a href="https://wa.me/5491160208460" target="_blank" rel="noopener noreferrer" className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150">
+                                Contact Us
+                            </a>
+                        )}
                     </div>
                 </div>
             </section>

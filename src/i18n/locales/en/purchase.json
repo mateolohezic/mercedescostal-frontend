@@ -1,0 +1,86 @@
+{
+  "title": "Buy wallpaper",
+  "subtitle": "Select your mural, enter your wall measurements and pay online.",
+  "steps": {
+    "product": "Product & measurements",
+    "shipping": "Shipping details",
+    "review": "Review & pay"
+  },
+  "product": {
+    "collection": "Collection",
+    "selectCollection": "Select collection",
+    "mural": "Mural",
+    "selectMural": "Select mural",
+    "variant": "Color / Variant",
+    "wallMeasures": "Your wall measurements",
+    "addWall": "+ Add another wall",
+    "wall": "Wall",
+    "width": "Width (m)",
+    "height": "Height (m)",
+    "panels": "panels",
+    "continueShipping": "Continue to shipping"
+  },
+  "shipping": {
+    "recipientName": "Recipient name",
+    "street": "Street",
+    "number": "Number",
+    "floor": "Floor (optional)",
+    "apartment": "Apt (optional)",
+    "city": "City",
+    "province": "Province",
+    "postalCode": "Postal code",
+    "quoteShipping": "Get shipping quote",
+    "quoting": "Quoting...",
+    "shippingCost": "Shipping",
+    "estimatedDays": "Estimated delivery",
+    "reviewOrder": "Review order"
+  },
+  "review": {
+    "product": "Product",
+    "walls": "Walls",
+    "shippingAddress": "Shipping address",
+    "yourData": "Your details",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "subtotal": "Product subtotal",
+    "shipping": "Shipping (Andreani)",
+    "total": "Total",
+    "ivaIncluded": "21% VAT included",
+    "payWithMP": "Pay with Mercado Pago",
+    "processing": "Processing...",
+    "productionTime": "Estimated production time: approximately 20 business days from payment."
+  },
+  "simpleWalls": {
+    "title": "Online purchase — Simple walls",
+    "description": "This purchase is for simple rectangular walls, without complex openings or sloped ceilings.",
+    "complexWalls": "Have complex walls with arches or many openings?",
+    "contactSales": "Contact a sales rep"
+  },
+  "success": {
+    "confirmed": "Payment confirmed!",
+    "order": "Order",
+    "emailSent": "You received a confirmation email with all the details.",
+    "willNotify": "We will notify you when your order is shipped.",
+    "viewStatus": "View order status",
+    "saveLink": "Save this link",
+    "verifying": "Verifying payment...",
+    "beingVerified": "Your payment is being processed. You will receive a confirmation email when it is approved."
+  },
+  "failure": {
+    "title": "Payment error",
+    "description": "There was a problem processing your payment. No charges were made.",
+    "retry": "Retry purchase",
+    "contact": "Contact support"
+  },
+  "status": {
+    "title": "Order status",
+    "paymentStatus": "Payment status",
+    "shippingStatus": "Shipping status",
+    "trackingNumber": "Andreani tracking number",
+    "trackOnAndreani": "Track on andreani.com",
+    "notFound": "Order not found",
+    "invalidLink": "The link may have expired or is invalid."
+  },
+  "back": "Back"
+}
