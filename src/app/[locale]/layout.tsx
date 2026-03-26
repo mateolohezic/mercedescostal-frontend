@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import { notFound } from 'next/navigation';
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { ClarityTracker, Collapse, Navbar } from "@/components";
+import { ClarityTracker, Collapse, Navbar, PromoPopup } from "@/components";
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
@@ -147,6 +147,7 @@ export default async function LocaleLayout({children, params}: Props) {
         <NextIntlClientProvider messages={messages}>
           <Navbar/>
           <Collapse/>
+          <PromoPopup/>
           {children}
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_G_A_ID || ""}/>
           <ClarityTracker/>
