@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Modal } from '@/components/ui/Modal';
 import Image from 'next/image';
 import promoImage from '@/assets/preventa_art_screen.webp';
 
 export const PromoPopup = () => {
     const [show, setShow] = useState(false);
+    const wasShown = useRef(false);
 
     useEffect(() => {
         const dismissed = sessionStorage.getItem('promo-popup-dismissed');
@@ -14,18 +15,20 @@ export const PromoPopup = () => {
 
         const timer = setTimeout(() => {
             setShow(true);
+            wasShown.current = true;
         }, 4000);
 
         return () => clearTimeout(timer);
     }, []);
 
-    const handleClose = (value: boolean) => {
-        setShow(value);
-        if (!value) sessionStorage.setItem('promo-popup-dismissed', '1');
-    };
+    useEffect(() => {
+        if (wasShown.current && !show) {
+            sessionStorage.setItem('promo-popup-dismissed', '1');
+        }
+    }, [show]);
 
     return (
-        <Modal showModal={show} setShowModal={handleClose} className="max-w-3xl">
+        <Modal showModal={show} setShowModal={setShow} className="max-w-3xl">
             <Image
                 src={promoImage}
                 alt="Preventa Art Screen - 15% OFF Lanzamiento"
