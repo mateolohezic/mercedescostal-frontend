@@ -7,7 +7,13 @@ const ENTRY_EMAIL = "entry.1847391216";
 export async function POST(req: NextRequest) {
   try {
     const { nombre, email } = await req.json();
-    if (!nombre || !email) return NextResponse.json({ success: false, error: "Nombre y email son requeridos" }, { status: 400 });
+    if (!nombre || typeof nombre !== "string" || nombre.length > 200) {
+      return NextResponse.json({ success: false, error: "Por favor, ingresá tu nombre." }, { status: 400 });
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || typeof email !== "string" || !emailRegex.test(email)) {
+      return NextResponse.json({ success: false, error: "Por favor, ingresá un correo electrónico válido." }, { status: 400 });
+    }
 
     const formData = new URLSearchParams();
     formData.append(ENTRY_NOMBRE, nombre);
@@ -40,6 +46,6 @@ export async function POST(req: NextRequest) {
     return res;
 
   } catch (error) {
-    return NextResponse.json({ success: false, error: "Error guardando datos" }, { status: 500 });
+    return NextResponse.json({ success: false, error: "No pudimos guardar tus datos. Por favor, intentá de nuevo." }, { status: 500 });
   }
 }
