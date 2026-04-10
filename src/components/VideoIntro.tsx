@@ -1,22 +1,39 @@
 'use client'
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { SoundOnIcon, SoundOffIcon, PlayIcon, PauseIcon } from "@/icons";
 
-type DeviceType = "mobile" | "desktop" | null;
+// type DeviceType = "mobile" | "desktop" | "md" | null;
 
 export const VideoIntro = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isMuted, setIsMuted] = useState(true);
     const [isPlaying, setIsPlaying] = useState(true);
-    const [deviceType, setDeviceType] = useState<DeviceType>(null);
+    // const [deviceType, setDeviceType] = useState<DeviceType>(null);
 
-    useEffect(() => {
-        const checkDevice = () => {
-            setDeviceType(window.innerWidth < 1024 ? "mobile" : "desktop");
-        };
-        checkDevice();
-    }, []);
+    // useEffect(() => {
+    //     const checkDevice = () => {
+    //         if (window.innerWidth < 1024) {
+    //             setDeviceType("mobile");
+    //         } else if (window.innerHeight < 914) {
+    //             setDeviceType("md");
+    //         } else {
+    //             setDeviceType("desktop");
+    //         }
+    //     };
+    //     checkDevice();
+    // }, []);
+
+    // useEffect(() => {
+    //     const checkDevice = () => {
+    //         if (window.innerWidth < 1024) {
+    //             setDeviceType("mobile");
+    //         } else {
+    //             setDeviceType("desktop");
+    //         }
+    //     };
+    //     checkDevice();
+    // }, []);
   
     const toggleMute = () => {
         if (videoRef.current) {
@@ -37,14 +54,18 @@ export const VideoIntro = () => {
         }
     };
 
-    if (deviceType === null) {
-        return (
-            <div className="size-full absolute top-0 left-0 z-0 bg-black"/>
-        );
-    }
-    const videoSrc = deviceType === "mobile" ? "/assets/portada_navidad_mobile.mp4" : "/assets/portada_navidad.mp4";
+    // if (deviceType === null) {
+    //     return (
+    //         <div className="size-full absolute top-0 left-0 z-0 bg-black"/>
+    //     );
+    // }
+
+    // const videoSrc = deviceType === "mobile" ? "/assets/portada_cuotas_mobile.mp4" : deviceType === "md" ? "/assets/portada_cuotas_md.mp4" : "/assets/portada_cuotas.mp4";
+    // const videoSrc = deviceType === "mobile" ? "/assets/portada_cuotas_mobile.mp4" : "/assets/portada_cuotas.mp4";
+    const videoSrc = "/assets/portada_video.mp4";
+
     return (
-        <div className="size-full absolute top-0 left-0 z-0">
+        <div className="size-full bg-black absolute top-0 left-0 z-0">
             <div className="size-full relative">
                 <div className="flex justify-center items-center gap-4 absolute bottom-4 lg:bottom-12 right-4 lg:right-12 z-50">
                     <button
@@ -62,7 +83,6 @@ export const VideoIntro = () => {
                         { isMuted ? <SoundOffIcon/> : <SoundOnIcon/> }
                     </button>
                 </div>
-                <div className="size-full bg-black absolute top-0 left-0 z-0"/>
                 <video
                     key={videoSrc}
                     ref={videoRef}
@@ -71,7 +91,7 @@ export const VideoIntro = () => {
                     autoPlay
                     muted
                     loop
-                    className="size-full object-cover object-[50%_100%] pointer-events-none select-none relative z-10"
+                    className="size-full object-cover object-left-bottom pointer-events-none select-none relative z-10"
                 >
                     <source src={videoSrc} type="video/mp4" />
                     Tu navegador no soporta este video.

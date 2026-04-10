@@ -4,11 +4,10 @@ import { useRef, useState } from "react";
 import { SoundOnIcon, SoundOffIcon, PlayIcon, PauseIcon } from "@/icons";
 
 interface Props{
-    title: string;
     video: string;
 }
 
-export const CollectionVideo = ({title, video}:Props) => {
+export const CollectionVideo = ({video}:Props) => {
 
     const videoRef = useRef<HTMLVideoElement>(null);
     const [isMuted, setIsMuted] = useState(true);
@@ -35,9 +34,6 @@ export const CollectionVideo = ({title, video}:Props) => {
 
     return (
         <div className="w-full aspect-video relative">
-            <div className="size-full flex justify-center items-center text-center absolute top-0 left-0 z-40">
-                <span className="text-white font-gillsans font-light text-3xl uppercase"><span className="text-opacity-75">Colección</span> <b className="font-medium">{title}</b></span>
-            </div>
             <div className="absolute bottom-4 right-4 flex gap-4 z-50">
                 <button
                     type="button"

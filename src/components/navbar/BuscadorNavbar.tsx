@@ -88,7 +88,7 @@ export const BuscadorNavbar = ({isHome, insideCollapse, setIsExpandedCollapse}:P
                 initial={{ x: 50, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.5 }}
-                className="w-fit h-6 flex justify-center items-end"
+                className="w-fit h-6 flex justify-center items-center"
                 type="button"
                 onClick={() => setIsExpanded(!isExpanded)}
             >

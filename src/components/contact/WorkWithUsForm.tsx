@@ -6,23 +6,26 @@ import * as z from "zod";
 import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 import { zodResolver } from "@hookform/resolvers/zod";
 import emailjs from '@emailjs/browser';
+import { useTranslations } from 'next-intl';
 import { SubmitButtonLoading, FormErrorMessage } from "@/components";
 
-const schema = z.object({
-    fullName: z.string().min(2, "Debe contener más de 2 caracteres.").max(50, "Debe contener hasta 50 caracteres.").nonempty("Campo requerido."),
-    phonenumber: z.string().min(7, "Debe contener al menos 7 caracteres.").max(20, "Debe contener hasta 20 caracteres.").nonempty("Campo requerido."),
-    email: z.string().email("Debe ser un correo válido.").nonempty("Campo requerido."),
-    country: z.string().nonempty("Campo requerido."),
-    region: z.string().nonempty("Campo requerido."),
-    instagram: z.string().min(2, "Debe contener más de 2 caracteres.").max(200, "Debe contener hasta 200 caracteres.").nonempty("Campo requerido."),
-    address: z.string().min(5, "Debe contener al menos 5 caracteres.").max(100, "Debe contener hasta 100 caracteres.").optional(),
-    addressNumber: z.string().min(1, "Campo requerido.").max(25, "Debe contener hasta 25 caracteres.").optional(),
-    message: z.string().min(20, "Debe contener al menos 20 caracteres.").max(2000, "Debe contener hasta 2000 caracteres.").optional(),
-});
-
-type Schema = z.infer<typeof schema>;
-
 export const WorkWithUsForm = () => {
+    const t = useTranslations('forms.workWithUs');
+    const tv = useTranslations('forms.validation');
+
+    const schema = z.object({
+        fullName: z.string().min(2, tv('fullNameMin')).max(50, tv('fullNameMax')).nonempty(tv('required')),
+        phonenumber: z.string().min(7, tv('phoneMin')).max(20, tv('phoneMax')).nonempty(tv('required')),
+        email: z.string().email(tv('emailInvalid')).nonempty(tv('required')),
+        country: z.string().nonempty(tv('required')),
+        region: z.string().nonempty(tv('required')),
+        instagram: z.string().min(2, tv('instagramMin')).max(200, tv('instagramMax')).nonempty(tv('required')),
+        address: z.string().min(5, tv('addressMin')).max(100, tv('addressMax')).optional(),
+        addressNumber: z.string().min(1, tv('required')).max(25, tv('addressNumberMax')).optional(),
+        message: z.string().min(20, tv('messageMin')).max(2000, tv('messageMax')).optional(),
+    });
+
+    type Schema = z.infer<typeof schema>;
 
     const [isLoading, setIsLoading] = useState<boolean>(false);
     const [isSended, setIsSended] = useState<boolean>(false);
@@ -73,7 +76,7 @@ export const WorkWithUsForm = () => {
             <div className="w-full max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="w-full">
                     <div className='w-full flex flex-col gap-1'>
-                        <label htmlFor="fullName" className="md:text-lg">Nombre completo <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
+                        <label htmlFor="fullName" className="md:text-lg">{t('fullName')} <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
                         <div className="relative w-full">
                             <div className="absolute inset-0 pointer-events-none px-2 py-1 flex items-center">
                                 { watch("fullName") && <span className="bg-yellow-300 h-fit">{watch("fullName")}</span> }
@@ -95,7 +98,7 @@ export const WorkWithUsForm = () => {
                 </div>
                 <div className="w-full">
                     <div className='w-full flex flex-col gap-1'>
-                        <label htmlFor="email" className="md:text-lg">Correo electrónico <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
+                        <label htmlFor="email" className="md:text-lg">{t('email')} <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
                         <div className="relative w-full">
                             <div className="absolute inset-0 pointer-events-none px-2 py-1 flex items-center">
                                 { watch("email") && <span className="bg-yellow-300 h-fit">{watch("email")}</span> }
@@ -118,7 +121,7 @@ export const WorkWithUsForm = () => {
                 </div>
                 <div className="w-full">
                     <div className='w-full flex flex-col gap-1'>
-                        <label htmlFor="phonenumber" className="md:text-lg">Número de teléfono <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
+                        <label htmlFor="phonenumber" className="md:text-lg">{t('phone')} <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
                         <div className="relative w-full">
                             <div className="absolute inset-0 pointer-events-none px-2 py-1 flex items-center">
                                 { watch("phonenumber") && <span className="bg-yellow-300 h-fit">{watch("phonenumber")}</span> }
@@ -141,7 +144,7 @@ export const WorkWithUsForm = () => {
                 </div>
                 <div className="w-full">
                     <div className='w-full flex flex-col gap-1'>
-                        <label htmlFor="instagram" className="md:text-lg">Instagram <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
+                        <label htmlFor="instagram" className="md:text-lg">{t('instagram')} <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
                         <div className="relative w-full">
                             <div className="absolute inset-0 pointer-events-none px-2 py-1 flex items-center">
                                 { watch("instagram") && <span className="bg-yellow-300 h-fit">{watch("instagram")}</span> }
@@ -164,22 +167,22 @@ export const WorkWithUsForm = () => {
                 </div>
                 <div className="w-full">
                     <div className='w-full flex flex-col gap-1'>
-                        <label htmlFor="name" className="md:text-lg">País <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
+                        <label htmlFor="name" className="md:text-lg">{t('country')} <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
                         <CountryDropdown
                             value={location.country}
                             onChange={handleCountryChange}
                             name="country"
                             id="country"
-                            defaultOptionLabel="Seleccionar"
+                            defaultOptionLabel={t('selectCountry')}
                             disabled={isLoading}
                             className="w-full h-10 px-3 bg-transparent border border-black outline-none focus-visible:outline-none disabled:text-black/75 appearance-none transition-150"
                         />
                     </div>
-                    <FormErrorMessage condition={errors?.country} message="Campo requerido." className="mt-2"/>
+                    <FormErrorMessage condition={errors?.country} message={tv('required')} className="mt-2"/>
                 </div>
                 <div className="w-full">
                     <div className='w-full flex flex-col gap-1'>
-                        <label htmlFor="name" className="md:text-lg">Región/Provincia <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
+                        <label htmlFor="name" className="md:text-lg">{t('region')} <span className="text-invalid text-xs relative right-1.5 bottom-1.5">*</span></label>
                         <RegionDropdown
                             country={location.country}
                             value={location.region}
@@ -187,16 +190,16 @@ export const WorkWithUsForm = () => {
                             name="region"
                             id="region"
                             disableWhenEmpty={true}
-                            defaultOptionLabel="Seleccionar"
+                            defaultOptionLabel={t('selectRegion')}
                             disabled={isLoading}
                             className="w-full h-10 px-3 bg-transparent border border-black outline-none focus-visible:outline-none disabled:text-black/75 appearance-none transition-150"
                         />
                     </div>
-                    <FormErrorMessage condition={errors?.region} message="Campo requerido." className="mt-2"/>
+                    <FormErrorMessage condition={errors?.region} message={tv('required')} className="mt-2"/>
                 </div>
                 <div className="w-full">
                     <div className='w-full flex flex-col gap-1'>
-                        <label htmlFor="address" className="md:text-lg">Calle</label>
+                        <label htmlFor="address" className="md:text-lg">{t('street')}</label>
                         <div className="relative w-full">
                             <div className="absolute inset-0 pointer-events-none px-2 py-1 flex items-center">
                                 { watch("address") && <span className="bg-yellow-300 h-fit">{watch("address")}</span> }
@@ -218,7 +221,7 @@ export const WorkWithUsForm = () => {
                 </div>
                 <div className="w-full">
                     <div className='w-full flex flex-col gap-1'>
-                        <label htmlFor="addressNumber" className="md:text-lg">Altura</label>
+                        <label htmlFor="addressNumber" className="md:text-lg">{t('number')}</label>
                         <div className="relative w-full">
                             <div className="absolute inset-0 pointer-events-none px-2 py-1 flex items-center">
                                 { watch("addressNumber") && <span className="bg-yellow-300 h-fit">{watch("addressNumber")}</span> }
@@ -239,7 +242,7 @@ export const WorkWithUsForm = () => {
             </div>
             <div className="mt-4 w-full">
                 <div className='w-full flex flex-col gap-1'>
-                    <label htmlFor="message" className="md:text-lg">Mensaje</label>
+                    <label htmlFor="message" className="md:text-lg">{t('message')}</label>
                     <textarea
                         minLength={20}
                         maxLength={2000}
@@ -254,8 +257,8 @@ export const WorkWithUsForm = () => {
                 <FormErrorMessage condition={errors?.message} message={errors?.message?.message} className="mt-2"/>
             </div>
             <div className="mt-4 w-full flex flex-col lg:flex-row lg:justify-between items-center gap-8">
-                {isSended ? <p className="bg-yellow-300 text-center lg:text-start">Gracias por tu consulta. Responderemos a la brevedad</p> : <p></p>}
-                <SubmitButtonLoading isLoading={isLoading} text="[ Enviar ]" className="w-24"/>
+                {isSended ? <p className="bg-yellow-300 text-center lg:text-start">{t('success')}</p> : <p></p>}
+                <SubmitButtonLoading isLoading={isLoading} text={t('submit')} className="w-24"/>
             </div>
         </form>
     )

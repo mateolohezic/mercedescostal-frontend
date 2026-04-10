@@ -7,7 +7,7 @@ import Image, { StaticImageData } from "next/image";
 interface HorizontalScrollSectionProps {
   images: StaticImageData[];
   alt?: string;
-  scrollMultiplier?: number; // 1 = normal, 2 = más rápido, 0.5 = más lento
+  scrollMultiplier?: number;
 }
 
 export const HorizontalScrollSection = ({ 
@@ -31,7 +31,6 @@ export const HorizontalScrollSection = ({
     ["0%", `-${translateAmount}%`]
   );
 
-  // Altura del contenedor = controla cuánto scroll vertical necesitás
   const containerHeight = (images.length * 100) / scrollMultiplier;
 
   return (

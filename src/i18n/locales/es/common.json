@@ -1,0 +1,38 @@
+{
+  "nav": {
+    "wallpapers": "EMPAPELADOS",
+    "studio": "Estudio",
+    "meetTheMakers": "Meet the makers",
+    "highlights": "Highlights",
+    "goodDesign": "Buen diseño",
+    "ateneoSplendid": "Ateneo Splendid",
+    "uk": "UK",
+    "manantiales": "Manantiales Popup",
+    "valencia": "Feria Habitat Valencia",
+    "mcUniverse": "UNIVERSO MC",
+    "fragrances": "Fragancias",
+    "theBook": "El Libro",
+    "costalCafe": "Costal Café",
+    "landmark": "Landmark",
+    "contact": "Contacto",
+    "workWithUs": "Trabaja con nosotros",
+    "sellMc": "Vende M.C.",
+    "quote": "Cotizar",
+    "search": "Buscar",
+    "collectibles": "Coleccionables",
+    "artScreen": "Art Screen"
+  },
+  "footer": {
+    "rights": "Mercedes Costal - Todos los derechos reservados",
+    "location": "Tucumán, Argentina"
+  },
+  "collection": "Colección",
+  "pattern": "Pattern",
+  "mural": "Mural",
+  "quote": "Cotizar",
+  "quoteNow": "Cotizar ahora",
+  "quoteYourMural": "Cotizar ahora tu mural",
+  "collaborations": "Collabs",
+  "collaboration": "Colaboración",
+  "backToCollection": "Volver a"
+}

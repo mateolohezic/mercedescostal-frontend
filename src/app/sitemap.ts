@@ -1,156 +1,82 @@
-import { MetadataRoute } from 'next'
- 
+import { MetadataRoute } from 'next';
+import { routing } from '@/i18n/routing';
+import { getCollections, getCollaborations } from '@/data/collections';
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://mercedescostal.com.ar',
+  const baseUrl = 'https://mercedescostal.com.ar';
+
+  const routes = [
+    '',
+    '/collections',
+    '/collections/collaborations',
+    '/quote',
+    '/work-with-us',
+    '/sell-mc',
+    '/meet-the-makers',
+    '/search',
+    '/highlights/good-design',
+    '/highlights/ateneo-splendid',
+    '/highlights/london-design-festival',
+    '/highlights/manantiales-popup',
+    '/highlights/feria-habitat-valencia',
+    '/mc-universe/fragrances',
+    '/mc-universe/the-book',
+    '/mc-universe/costal-coffee',
+    '/mc-universe/landmark',
+  ];
+
+  const staticPages = routes.flatMap(route =>
+    routing.locales.map(locale => ({
+      url: `${baseUrl}/${locale}${route}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/highlights/good-design',
+      changeFrequency: 'monthly' as const,
+      priority: route === '' ? 1 : route === '/collections' || route === '/quote' ? 0.9 : 0.8,
+      alternates: {
+        languages: Object.fromEntries(
+          routing.locales.map(loc => [
+            loc,
+            `${baseUrl}/${loc}${route}`
+          ])
+        )
+      }
+    }))
+  );
+
+  const collections = getCollections();
+  const collectionPages = collections.flatMap(col =>
+    routing.locales.map(locale => ({
+      url: `${baseUrl}/${locale}/collections/${col.id}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/highlights/ateneo-splendid',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/highlights/london-design-festival',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/highlights/manantiales-popup',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/highlights/feria-habitat-valencia',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/mc-universe/costal-coffee',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/mc-universe/fragances',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/mc-universe/the-book',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/meet-the-makers',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/collections',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/quote',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/search',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.1,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/sell-mc',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/work-with-us',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.5,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/collections/artisan',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'monthly' as const,
       priority: 0.7,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/collections/basa-basa',
+      alternates: {
+        languages: Object.fromEntries(
+          routing.locales.map(loc => [
+            loc,
+            `${baseUrl}/${loc}/collections/${col.id}`
+          ])
+        )
+      }
+    }))
+  );
+
+  const collaborations = getCollaborations();
+  const collaborationPages = collaborations.flatMap(col =>
+    routing.locales.map(locale => ({
+      url: `${baseUrl}/${locale}/collections/collaborations/${col.id}`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/collections/casamar',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/collections/landmark',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/collections/morris',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/collections/vivero',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/collections/voyage',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/collections/the-classics',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/collections/wonder',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-    {
-      url: 'https://mercedescostal.com.ar/collections/abstract',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.7,
-    },
-  ]
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+      alternates: {
+        languages: Object.fromEntries(
+          routing.locales.map(loc => [
+            loc,
+            `${baseUrl}/${loc}/collections/collaborations/${col.id}`
+          ])
+        )
+      }
+    }))
+  );
+
+  return [...staticPages, ...collectionPages, ...collaborationPages];
 }

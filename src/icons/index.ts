@@ -31,3 +31,11 @@ export {
 export {
     FaWhatsapp as WhatsAppIcon
 } from "react-icons/fa6";
+
+export {
+    HiOutlineGlobeAlt as GlobeIcon
+} from "react-icons/hi";
+
+export {
+    IoChevronDown as ChevronDownIcon
+} from "react-icons/io5";

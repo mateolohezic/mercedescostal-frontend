@@ -1,5 +1,10 @@
 import { StaticImageData } from "next/image";
 
+export interface Price {
+    ARS?: number;
+    USD?: number;
+}
+
 export interface MuralVariant {
     colorName: string;
     color?: string;
@@ -7,6 +12,7 @@ export interface MuralVariant {
     montaje: StaticImageData|string;
     mural: StaticImageData|string;
     base?: boolean;
+    price?: Price;
 }
 
 export interface Mural {
@@ -16,8 +22,10 @@ export interface Mural {
     collectionTitle: string;
     icons: Array<StaticImageData|string>;
     keywords: Array<string>;
+    keywordsEn?: Array<string>;
     variants: Array<MuralVariant>;
     href: string;
+    basePrice?: Price;
 }
 
 export interface Collection {
@@ -29,4 +37,6 @@ export interface Collection {
     technique: string;
     description: string;
     murales: Array<Mural>;
+    collaboration?: boolean;
+    pricePerSqm?: Price;
 }
