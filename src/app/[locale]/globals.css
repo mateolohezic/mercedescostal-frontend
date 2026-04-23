@@ -19,7 +19,7 @@
 }
 
 .cta-video-appear {
-  animation: ctaVideoAppear 1s ease-out 2.5s both;
+  animation: ctaVideoAppear 1s ease-out 1s both;
 }
 
 @layer components {
