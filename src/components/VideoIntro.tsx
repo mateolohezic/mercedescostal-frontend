@@ -68,7 +68,7 @@ export const VideoIntro = () => {
     return (
         <div className="size-full bg-black absolute top-0 left-0 z-0">
             <div className="size-full relative">
-                <div className="absolute top-2/3 w-full flex justify-center z-50 cta-video-appear">
+                <div className="absolute inset-0 lg:inset-auto lg:top-2/3 w-full flex items-center lg:items-start justify-center z-50 cta-video-appear">
                     <Link
                         href="/collections"
                         className="group flex flex-col items-center gap-2 transition-all duration-500"
