@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState } from "react";
+import Link from "next/link";
 import { SoundOnIcon, SoundOffIcon, PlayIcon, PauseIcon } from "@/icons";
 
 // type DeviceType = "mobile" | "desktop" | "md" | null;
@@ -67,6 +68,17 @@ export const VideoIntro = () => {
     return (
         <div className="size-full bg-black absolute top-0 left-0 z-0">
             <div className="size-full relative">
+                <div className="absolute top-2/3 w-full flex justify-center z-50 cta-video-appear">
+                    <Link
+                        href="/collections"
+                        className="group flex flex-col items-center gap-2 transition-all duration-500"
+                    >
+                        <span className="text-white font-gillsans uppercase tracking-[0.5rem] text-xl lg:text-2xl transition-all duration-500 ease-out whitespace-nowrap [text-shadow:0_1px_4px_rgba(0,0,0,0.12)]">
+                            Explorar Wallpapers
+                        </span>
+                        <span className="h-px w-8 group-hover:w-full bg-white/70 group-hover:bg-white transition-all duration-700 ease-out [filter:drop-shadow(0_1px_4px_rgba(0,0,0,0.5))]" />
+                    </Link>
+                </div>
                 <div className="flex justify-center items-center gap-4 absolute bottom-4 lg:bottom-12 right-4 lg:right-12 z-50">
                     <button
                         type="button"
