@@ -73,7 +73,7 @@ export const VideoIntro = () => {
                         href="/collections"
                         className="group flex flex-col items-center gap-2 transition-all duration-500"
                     >
-                        <span className="text-white font-gillsans uppercase tracking-[0.5rem] text-xl lg:text-2xl transition-all duration-500 ease-out whitespace-nowrap [text-shadow:0_1px_4px_rgba(0,0,0,0.12)]">
+                        <span className="text-white font-gillsans uppercase tracking-[0.5rem] text-sm lg:text-2xl transition-all duration-500 ease-out whitespace-nowrap [text-shadow:0_1px_4px_rgba(0,0,0,0.12)]">
                             Explorar Wallpapers
                         </span>
                         <span className="h-px w-8 group-hover:w-full bg-white/70 group-hover:bg-white transition-all duration-700 ease-out [filter:drop-shadow(0_1px_4px_rgba(0,0,0,0.5))]" />
