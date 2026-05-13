@@ -147,7 +147,7 @@ export default async function LocaleLayout({children, params}: Props) {
         <NextIntlClientProvider messages={messages}>
           <Navbar/>
           <Collapse/>
-          {children}
+{children}
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_G_A_ID || ""}/>
           <ClarityTracker/>
         </NextIntlClientProvider>
