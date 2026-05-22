@@ -1,7 +1,7 @@
 'use client'
 
-import { useRef, useState } from "react";
 import { SoundOnIcon, SoundOffIcon, PlayIcon, PauseIcon } from "@/icons";
+import { useLazyVideo } from "@/hooks/useLazyVideo";
 
 interface Props{
     video: string;
@@ -11,32 +11,10 @@ interface Props{
 }
 
 export const Video = ({video, className, videoClassName = "", buttonClassName = "bottom-4 right-4"}:Props) => {
-
-    const videoRef = useRef<HTMLVideoElement>(null);
-    const [isMuted, setIsMuted] = useState(true);
-    const [isPlaying, setIsPlaying] = useState(true);
-  
-    const toggleMute = () => {
-        if (videoRef.current) {
-            videoRef.current.muted = !videoRef.current.muted;
-            setIsMuted(videoRef.current.muted);
-        }
-    };
-
-    const togglePlayPause = () => {
-        if (videoRef.current) {
-            if (videoRef.current.paused) {
-                videoRef.current.play();
-                setIsPlaying(true);
-            } else {
-                videoRef.current.pause();
-                setIsPlaying(false);
-            }
-        }
-    };
+    const { videoRef, containerRef, shouldLoad, isMuted, isPlaying, toggleMute, togglePlayPause } = useLazyVideo();
 
     return (
-        <div className={`size-full group relative ${className}`}>
+        <div ref={containerRef} className={`size-full group relative ${className}`}>
             <div className={`opacity-0 group-hover:opacity-100 absolute flex gap-4 z-50 transition-all duration-200 ${buttonClassName}`}>
                 <button
                     type="button"
@@ -60,9 +38,10 @@ export const Video = ({video, className, videoClassName = "", buttonClassName = 
                 autoPlay
                 muted
                 loop
-                className={`size-full object-contain pointer-events-none select-none ${videoClassName}`}
+                preload="none"
+                className={`size-full object-contain pointer-events-none select-none bg-black/5 ${videoClassName}`}
             >
-                <source src={video} type="video/mp4" />
+                { shouldLoad && <source src={video} type="video/mp4" /> }
                 Tu navegador no soporta este video.
             </video>
         </div>
