@@ -11,37 +11,38 @@ import './globals.css';
 const gillSans = localFont({
   src: [
     {
-      path: '../../assets/fonts/Gill_Sans_Light.otf',
+      path: '../../assets/fonts/Gill_Sans_Light.woff2',
       weight: '300',
       style: 'normal',
     },
     {
-      path: '../../assets/fonts/Gill_Sans.otf',
+      path: '../../assets/fonts/Gill_Sans.woff2',
       weight: '400',
       style: 'normal',
     },
     {
-      path: '../../assets/fonts/Gill_Sans_Medium.otf',
+      path: '../../assets/fonts/Gill_Sans_Medium.woff2',
       weight: '500',
       style: 'normal',
     },
     {
-      path: '../../assets/fonts/Gill_Sans_Bold.otf',
+      path: '../../assets/fonts/Gill_Sans_Bold.woff2',
       weight: '700',
       style: 'normal',
     },
     {
-      path: '../../assets/fonts/Gill_Sans_Heavy.otf',
+      path: '../../assets/fonts/Gill_Sans_Heavy.woff2',
       weight: '900',
       style: 'normal',
     },
   ],
+  display: 'swap',
   variable: '--gillsans'
 });
 
 const truetypewritter = localFont({
-  src: '../../assets/fonts/True_Typewritter_2.ttf',
-  display: 'auto',
+  src: '../../assets/fonts/True_Typewritter_2.woff2',
+  display: 'swap',
   variable: '--truetypewritter'
 });
 
