@@ -32,6 +32,10 @@ export const Navbar = () => {
                 {
                     title: t('meetTheMakers'),
                     href:'/meet-the-makers'
+                },
+                {
+                    title: t('press'),
+                    href:'/press'
                 }
             ]
         },
@@ -106,35 +110,48 @@ export const Navbar = () => {
     const pathname = usePathname();
     const checkIsHome = (path: string) => /^\/[a-z]{2}$/.test(path);
     const checkIsMuralDetail = (path: string) => /^\/[a-z]{2}\/collections\/[^/]+\/[^/]+$/.test(path);
-    const [isHome, setIsHome] = useState<boolean>(checkIsHome(pathname));
-    const [isTransparent, setIsTransparent] = useState<boolean>(checkIsHome(pathname) || checkIsMuralDetail(pathname));
+    // En home y detalle de mural, el navbar arranca transparente sobre el
+    // hero oscuro. Apenas el usuario empieza a scrollear (≥ 60% del primer
+    // viewport), pasa a fondo blanco sólido con texto/logo negros, así
+    // queda siempre legible sobre las secciones claras del scroll.
+    const [hasScrolledPastHero, setHasScrolledPastHero] = useState<boolean>(false);
+    const allowsTransparent = checkIsHome(pathname) || checkIsMuralDetail(pathname);
+    const onDark = allowsTransparent && !hasScrolledPastHero;
     const [menuExpanded, setMenuExpanded] = useState<'wallpapers'|'collectibles'|'studio'|'highlights'|'mcuniverse'|'contact'|undefined>();
 
     useEffect(() => {
         setMenuExpanded(undefined);
-        setIsHome(checkIsHome(pathname));
-        setIsTransparent(checkIsHome(pathname) || checkIsMuralDetail(pathname));
     }, [pathname])
-    
+
+    useEffect(() => {
+        // Si la ruta no admite transparencia, igual mantenemos el listener
+        // por consistencia (no causa renders innecesarios).
+        const threshold = () => Math.max(window.innerHeight * 0.6, 200);
+        const onScroll = () => setHasScrolledPastHero(window.scrollY > threshold());
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+        return () => window.removeEventListener('scroll', onScroll);
+    }, [pathname]);
+
     const toggleMenu = (menu: 'wallpapers'|'collectibles'|'studio'|'highlights'|'mcuniverse'|'contact') => {
         setMenuExpanded(menu === menuExpanded ? undefined : menu);
     }
 
     return (
-        <nav className={`hidden w-full px-12 h-24 xl:h-32 lg:flex justify-center items-center ${ isTransparent ? 'bg-transparent' : 'bg-white'} fixed top-0 left-0 right-0 z-50 content-visibility-hidden lg:content-visibility-visible`}>
+        <nav className={`hidden w-full px-12 h-24 xl:h-32 lg:flex justify-center items-center fixed top-0 left-0 right-0 z-50 content-visibility-hidden lg:content-visibility-visible bg-transparent`}>
             <div className="w-full flex justify-between relative">
                 <Link className="w-full lg:max-w-72 xl:max-w-sm 2xl:max-w-lg flex items-end" href={'/'} aria-label="Inicio">
-                    <MCLogo className={`${ isHome ? 'fill-white' : 'fill-black' } w-full`}/>
+                    <MCLogo className={`${ onDark ? 'fill-white' : 'fill-black' } w-full transition-colors duration-300 ease-out`}/>
                 </Link>
                 <div className="w-full flex justify-end items-end">
                     <ul className="flex justify-start items-center gap-2 xl:gap-4 2xl:gap-6">
                         {
                             links.map((navlink:NavLinkHome, i:number) => (
-                                <NavbarLink navlink={navlink} index={i} isHome={isHome} menuExpanded={menuExpanded} toggleMenu={toggleMenu} key={i}/>
+                                <NavbarLink navlink={navlink} index={i} isHome={onDark} menuExpanded={menuExpanded} toggleMenu={toggleMenu} key={i}/>
                             ))
                         }
-                        <BuscadorNavbar isHome={isHome}/>
-                        <LanguageSelector isHome={isHome}/>
+                        <BuscadorNavbar isHome={onDark}/>
+                        <LanguageSelector isHome={onDark}/>
                     </ul>
                 </div>
             </div>

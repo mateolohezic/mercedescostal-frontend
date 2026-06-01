@@ -1,8 +1,8 @@
 'use client';
 
 import { useState, useEffect, useCallback, useRef } from 'react';
+import { apiUrl } from '@/helpers/api';
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000';
 const POLL_INTERVAL = 3000;
 const MAX_ATTEMPTS = 20;
 
@@ -33,7 +33,7 @@ export function usePaymentPolling(magicToken: string | null) {
     if (!token) return;
 
     try {
-      const res = await fetch(`${API_BASE}/api/orders/${token}/payment-status`);
+      const res = await fetch(apiUrl(`/api/orders/${token}/payment-status`));
       const data = await res.json();
 
       if (data.success && data.data?.status) {

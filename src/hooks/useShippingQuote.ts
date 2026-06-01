@@ -5,7 +5,7 @@ import { apiGet } from '@/helpers/api';
 
 interface ShippingQuote {
   costARS: number;
-  estimatedDays?: string;
+  estimatedDays?: string | null;
 }
 
 export function useShippingQuote() {
@@ -15,10 +15,7 @@ export function useShippingQuote() {
 
   const fetchQuote = useCallback(async (
     postalCode: string,
-    weightGrams: number,
-    lengthCm: number,
-    widthCm: number,
-    heightCm: number,
+    totalAreaM2: number,
   ) => {
     setLoading(true);
     setError(null);
@@ -27,10 +24,7 @@ export function useShippingQuote() {
     try {
       const params = new URLSearchParams({
         postalCode,
-        weightGrams: String(weightGrams),
-        lengthCm: String(lengthCm),
-        widthCm: String(widthCm),
-        heightCm: String(heightCm),
+        totalAreaM2: String(totalAreaM2),
       });
 
       const data = await apiGet<ShippingQuote>(`/api/shipping/quote?${params}`);

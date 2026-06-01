@@ -13,6 +13,8 @@ export interface WallCalculation {
   panels: number;
   printAreaM2: number;
   priceARS: number;
+  horizontalExcessCm: number;
+  verticalExcessCm: number;
 }
 
 interface PricingConfig {
@@ -28,10 +30,13 @@ export function calculateWall(widthCm: number, heightCm: number, pricePerM2: num
     panels += 1;
   }
 
+  const horizontalExcessCm = panels * PANEL_WIDTH - widthCm;
+  const verticalExcessCm = VERTICAL_EXCESS;
+
   const printAreaM2 = Math.round((panels * PANEL_WIDTH * (heightCm + VERTICAL_EXCESS)) / 10000 * 10000) / 10000;
   const priceARS = Math.round(printAreaM2 * pricePerM2 * 100) / 100;
 
-  return { widthCm, heightCm, panels, printAreaM2, priceARS };
+  return { widthCm, heightCm, panels, printAreaM2, priceARS, horizontalExcessCm, verticalExcessCm };
 }
 
 // Fallback prices in case backend is not available

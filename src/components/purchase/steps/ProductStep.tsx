@@ -1,12 +1,12 @@
 'use client';
 
+import { useEffect, useRef } from 'react';
 import { UseFormReturn } from 'react-hook-form';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
 import { collections } from '@/data/collections';
-import { FormErrorMessage } from '@/components';
-import { ChevronDownIcon } from '@/icons';
 import { WallInput } from '../WallInput';
-
 import { OrderSummary } from '../OrderSummary';
 import type { PurchaseFormData } from '../PurchaseFlow';
 import type { WallCalculation } from '@/hooks/usePurchasePricing';
@@ -38,6 +38,7 @@ export const ProductStep = ({
   formatPrice,
   onNext,
 }: Props) => {
+  const t = useTranslations('purchase.product');
   const { register, watch, setValue, formState: { errors } } = form;
 
   const selectedCollectionId = watch('collectionId');
@@ -47,76 +48,151 @@ export const ProductStep = ({
   const selectedMural = selectedCollection?.murales.find(m => m.id === selectedMuralId);
   const currentVariant = selectedMural?.variants.find(v => v.colorName === selectedVariant);
 
+  const muralGridRef = useRef<HTMLDivElement>(null);
+
+  // Cuando el usuario elige colección (o si arranca preseleccionada y aún
+  // no hay mural), hacemos scroll suave al grid de murales — UX más fluida
+  // que un select desplegable.
+  const lastScrolledCollection = useRef<string>('');
+  useEffect(() => {
+    if (
+      selectedCollectionId &&
+      selectedCollectionId !== lastScrolledCollection.current &&
+      !selectedMuralId
+    ) {
+      lastScrolledCollection.current = selectedCollectionId;
+      requestAnimationFrame(() => {
+        muralGridRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  }, [selectedCollectionId, selectedMuralId]);
+
+  const handleSelectCollection = (id: string) => {
+    if (id === selectedCollectionId) return;
+    setValue('collectionId', id, { shouldValidate: true });
+    setValue('muralId', '');
+    setValue('variantColorName', '');
+  };
+
+  const handleSelectMural = (id: string) => {
+    setValue('muralId', id, { shouldValidate: true });
+    const mural = selectedCollection?.murales.find(m => m.id === id);
+    if (mural?.variants?.[0]) {
+      setValue('variantColorName', mural.variants[0].colorName, { shouldValidate: true });
+    }
+  };
+
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
       <div>
         <h2 className="font-gillsans text-2xl font-medium uppercase tracking-wider">
-          Producto y medidas
+          {t('title')}
         </h2>
-        <p className="text-sm text-black/40 mt-1">Elegí tu empapelado e ingresá las medidas de tus paredes</p>
+        <p className="text-sm text-black/40 mt-1">{t('subtitle')}</p>
       </div>
 
-      {/* Collection */}
-      <div className="space-y-1.5">
-        <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="collection-select">
-          Colección
+      {/* Collection — pill chips horizontales */}
+      <div className="space-y-3">
+        <label className="text-xs text-black/50 uppercase tracking-wider">
+          {t('collection')}
         </label>
-        <div className="relative">
-          <select
-            id="collection-select"
-            className="w-full h-12 px-4 pr-10 bg-white border border-black/20 appearance-none font-gillsans focus:border-black focus:outline-none transition-colors cursor-pointer"
-            {...register('collectionId')}
-            onChange={(e) => {
-              setValue('collectionId', e.target.value);
-              setValue('muralId', '');
-              setValue('variantColorName', '');
-            }}
-          >
-            <option value="">Seleccionar colección</option>
-            {collections.map(c => (
-              <option key={c.id} value={c.id}>{c.title}</option>
-            ))}
-          </select>
-          <ChevronDownIcon className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-black/30 pointer-events-none" />
+        <div className="-mx-4 px-4 overflow-x-auto scrollbar-hide">
+          <div className="flex gap-2 min-w-min">
+            {collections.map(c => {
+              const isSelected = c.id === selectedCollectionId;
+              return (
+                <button
+                  key={c.id}
+                  type="button"
+                  onClick={() => handleSelectCollection(c.id)}
+                  className={`shrink-0 px-4 h-10 font-gillsans text-sm uppercase tracking-wider border transition-all duration-150 ${
+                    isSelected
+                      ? 'bg-black text-white border-black'
+                      : 'bg-white text-black/70 border-black/15 hover:border-black/40 hover:text-black'
+                  }`}
+                >
+                  {c.title}
+                </button>
+              );
+            })}
+          </div>
         </div>
-        <FormErrorMessage condition={errors.collectionId} message={errors.collectionId?.message} />
+        {errors.collectionId && !selectedCollectionId && (
+          <p className="text-xs text-red-600/80">{t('selectCollection')}</p>
+        )}
       </div>
 
-      {/* Mural */}
-      {selectedCollection && (
-        <div className="space-y-1.5">
-          <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="mural-select">
-            Mural
+      {/* Mural — grid visual */}
+      <div ref={muralGridRef} className="space-y-3 scroll-mt-24">
+        <div className="flex items-baseline justify-between">
+          <label className="text-xs text-black/50 uppercase tracking-wider">
+            {t('mural')}
           </label>
-          <div className="relative">
-            <select
-              id="mural-select"
-              className="w-full h-12 px-4 pr-10 bg-white border border-black/20 appearance-none font-gillsans focus:border-black focus:outline-none transition-colors cursor-pointer"
-              {...register('muralId')}
-              onChange={(e) => {
-                setValue('muralId', e.target.value);
-                const mural = selectedCollection.murales.find(m => m.id === e.target.value);
-                if (mural?.variants?.[0]) {
-                  setValue('variantColorName', mural.variants[0].colorName);
-                }
-              }}
-            >
-              <option value="">Seleccionar mural</option>
-              {selectedCollection.murales.map(m => (
-                <option key={m.id} value={m.id}>{m.title}</option>
-              ))}
-            </select>
-            <ChevronDownIcon className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-black/30 pointer-events-none" />
-          </div>
-          <FormErrorMessage condition={errors.muralId} message={errors.muralId?.message} />
+          {selectedCollection && (
+            <span className="text-xs text-black/40">
+              {t('muralsCount', { count: selectedCollection.murales.length })}
+            </span>
+          )}
         </div>
-      )}
 
-      {/* Variant color buttons */}
+        {!selectedCollection ? (
+          <div className="border border-dashed border-black/10 py-10 px-4 text-center">
+            <p className="text-sm text-black/40">{t('chooseCollectionFirst')}</p>
+          </div>
+        ) : (
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={selectedCollection.id}
+              initial={{ opacity: 0, y: 8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 8 }}
+              transition={{ duration: 0.2 }}
+              className="grid grid-cols-2 md:grid-cols-3 gap-2.5"
+            >
+              {selectedCollection.murales.map(m => {
+                const isSelected = m.id === selectedMuralId;
+                const baseV = m.variants.find(v => v.base) || m.variants[0];
+                return (
+                  <button
+                    key={m.id}
+                    type="button"
+                    onClick={() => handleSelectMural(m.id)}
+                    className={`group relative aspect-[4/5] overflow-hidden bg-gray-50 transition-all duration-150 ${
+                      isSelected ? 'ring-2 ring-black ring-offset-2' : 'hover:opacity-90'
+                    }`}
+                    aria-pressed={isSelected}
+                  >
+                    <Image
+                      src={baseV.montaje}
+                      alt={m.title}
+                      fill
+                      sizes="(max-width: 768px) 50vw, 240px"
+                      className={`object-cover transition-transform duration-300 ${
+                        isSelected ? 'scale-105' : 'group-hover:scale-105'
+                      }`}
+                    />
+                    <div
+                      className={`absolute inset-x-0 bottom-0 px-2.5 py-2 text-left font-gillsans text-xs uppercase tracking-wider transition-colors ${
+                        isSelected
+                          ? 'bg-black text-white'
+                          : 'bg-gradient-to-t from-black/70 via-black/30 to-transparent text-white'
+                      }`}
+                    >
+                      {m.title}
+                    </div>
+                  </button>
+                );
+              })}
+            </motion.div>
+          </AnimatePresence>
+        )}
+      </div>
+
+      {/* Variant image selector */}
       {selectedMural && selectedMural.variants.length > 1 && (
-        <div className="space-y-2">
-          <label className="text-xs text-black/50 uppercase tracking-wider">Color / Variante</label>
-          <div className="flex flex-wrap gap-2">
+        <div className="space-y-2.5">
+          <label className="text-xs text-black/50 uppercase tracking-wider">{t('variant')}</label>
+          <div className="flex flex-wrap gap-2.5">
             {selectedMural.variants.map(v => {
               const isSelected = selectedVariant === v.colorName;
               return (
@@ -124,27 +200,32 @@ export const ProductStep = ({
                   key={v.colorName}
                   type="button"
                   onClick={() => setValue('variantColorName', v.colorName)}
-                  className={`group flex items-center gap-2 px-3 py-2 border text-sm transition-all duration-200 ${
-                    isSelected
-                      ? 'border-black bg-black text-white'
-                      : 'border-black/15 hover:border-black/40 text-black/70'
+                  title={v.colorName}
+                  className={`relative size-12 shrink-0 rounded-full transition-all duration-150 hover:opacity-80 border-2 ${
+                    isSelected ? 'border-black' : 'border-transparent hover:border-black/20'
                   }`}
                 >
-                  {v.colorHex && (
-                    <span
-                      className={`w-3 h-3 rounded-full border ${isSelected ? 'border-white/30' : 'border-black/10'}`}
-                      style={{ backgroundColor: v.colorHex }}
+                  <div className="size-full rounded-full overflow-hidden">
+                    <Image
+                      src={v.mural}
+                      alt={v.colorName}
+                      width={96}
+                      height={96}
+                      className="size-full object-cover"
                     />
-                  )}
-                  {v.colorName}
+                  </div>
+                  <span className="sr-only">{v.colorName}</span>
                 </button>
               );
             })}
           </div>
+          {currentVariant && (
+            <p className="text-xs text-black/50 tracking-wide">{currentVariant.colorName}</p>
+          )}
         </div>
       )}
 
-      {/* Mobile mural preview (shown only on mobile, between variant and walls) */}
+      {/* Mobile mural preview (entre variant y walls) */}
       {currentVariant && (
         <div className="lg:hidden relative aspect-[16/9] w-full overflow-hidden bg-gray-50">
           <Image
@@ -160,7 +241,7 @@ export const ProductStep = ({
       {/* Walls */}
       <div className="space-y-3">
         <label className="text-xs text-black/50 uppercase tracking-wider">
-          Medidas de tus paredes
+          {t('wallMeasures')}
         </label>
         {wallFields.map((field, index) => (
           <WallInput
@@ -181,7 +262,7 @@ export const ProductStep = ({
             onClick={appendWall}
             className="w-full py-3 border border-dashed border-black/15 text-sm text-black/40 hover:border-black/30 hover:text-black/60 transition-all duration-200"
           >
-            + Agregar otra pared
+            {t('addWall')}
           </button>
         )}
       </div>
@@ -203,7 +284,7 @@ export const ProductStep = ({
         disabled={!selectedMuralId || subtotal <= 0}
         className="w-full py-4 bg-black text-white font-gillsans font-medium text-lg uppercase tracking-wider hover:bg-black/85 transition-colors disabled:bg-black/15 disabled:text-black/30 disabled:cursor-not-allowed"
       >
-        Continuar al envío
+        {t('continueShipping')}
       </button>
     </div>
   );

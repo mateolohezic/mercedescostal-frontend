@@ -37,5 +37,8 @@ export {
 } from "react-icons/hi";
 
 export {
-    IoChevronDown as ChevronDownIcon
+    IoChevronDown as ChevronDownIcon,
+    IoCheckmark as CheckIcon,
+    IoClose as CloseIcon,
+    IoTimeOutline as ClockIcon,
 } from "react-icons/io5";

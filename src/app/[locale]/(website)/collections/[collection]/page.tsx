@@ -1,5 +1,5 @@
 import { routing } from "@/i18n/routing";
-import { collections } from '@/data/collections';
+import { collections, findCollectionById } from '@/data/collections';
 import { sortMurales } from "@/helpers";
 import { CollectionVideo, CTA, MuralCardNew, ProcesoCreativoArtisan, ProcesoCreativoBasaBasa, ProcesoCreativoCasamar, ProcesoCreativoClassics, ProcesoCreativoLandmark, ProcesoCreativoMorris, ProcesoCreativoVivero } from '@/components';
 import Image from "next/image";
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale, collection } = await params;
     const t = await getTranslations({ locale, namespace: 'common' });
     const tc = await getTranslations({ locale, namespace: 'pages.collections' });
-    const foundCollection = collections.find(col => col.id === collection);
+    const foundCollection = findCollectionById(collection);
 
     if (!foundCollection) {
         return {
@@ -74,7 +74,7 @@ export default async function CollectionPage({ params }: Props) {
     const { locale, collection } = await params;
     const t = await getTranslations({ locale, namespace: 'common' });
     const tc = await getTranslations({ locale, namespace: 'pages.collections' });
-    const foundCollection = collections.find(col => col.id === collection);
+    const foundCollection = findCollectionById(collection);
 
     if (!foundCollection) notFound();
 

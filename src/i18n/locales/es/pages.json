@@ -6,6 +6,12 @@
     "year": "Año",
     "technique": "Técnica",
     "notFound": "Colección no encontrada",
+    "categoryLabel": "Categoría",
+    "resultsCount": "{count, plural, =0 {Sin resultados} =1 {1 mural} other {# murales}}",
+    "categoryIntro": "Explorá los murales y patterns que se inscriben en este universo visual. Cada pieza es una pequeña arquitectura emocional pensada para habitar el muro como un lienzo silencioso.",
+    "emptyTitle": "No encontramos murales en esta categoría",
+    "emptyDesc": "Puede ser que la hayamos archivado o que aún esté por nacer. Mientras tanto, te invitamos a recorrer todas nuestras colecciones.",
+    "emptyCta": "Ver todas las colecciones",
     "philosophy": {
       "line1": "No diseñamos papeles. Creamos atmósferas.",
       "line2": "En Mercedes Costal, entendemos el muro como un lienzo silencioso que transforma la manera en que habitamos un espacio. Cada empapelado no es solo un recurso decorativo: es una decisión de diseño que da forma a la experiencia del lugar.",
@@ -114,6 +120,150 @@
     "quote1": "Es un Estudio creativo conformado por un equipo de ilustradores, arquitectos y diseñadores.",
     "quote2": "El equipo crea las ilustraciones con diferentes técnicas manuales y digitales que posteriormente son estampadas sobre sustrato papel para producir los wallpapers que se comercializan a través de medios digitales y puntos de venta a nivel global.",
     "quote3": "Trabajamos conjuntamente desde las diferentes áreas del diseño, para lograr, a través de nuestros empapelados y murales, un equilibrio entre el arte y el interiorismo, generando con ellos, espacios, donde los colores, las texturas, y las formas se transforman en los protagonistas de los ambientes."
+  },
+  "press": {
+    "sectionTitle": "Prensa",
+    "introEyebrow": "El estudio en los medios",
+    "introLine": "Cinco años de cobertura editorial. De Tucumán al mundo, con base en Argentina y Milán.",
+    "hero": {
+      "quote": "Permitimos que las personas se trasladen a otros escenarios, a veces reales y otras veces fantasiosos.",
+      "attribution": "Mercedes Costal en Marie Claire",
+      "year": "2022"
+    },
+    "presence": {
+      "label": "Presencia",
+      "cityBA": "Buenos Aires",
+      "cityTUC": "Tucumán",
+      "cityMIL": "Milán",
+      "cityNYC": "Nueva York",
+      "cityLDN": "Londres",
+      "cityMAD": "Madrid"
+    },
+    "stats": {
+      "yearsValue": "10",
+      "yearsLabel": "Años de estudio",
+      "mediaValue": "8+",
+      "mediaLabel": "Medios nacionales e internacionales",
+      "fairsValue": "6",
+      "fairsLabel": "Apariciones en ferias y festivales"
+    },
+    "readNote": "Leer la nota",
+    "externalLabel": "Sitio externo",
+    "yearsHeading": "Línea editorial",
+    "y2025": {
+      "label": "2025",
+      "headline": "El año de Milán y la consolidación europea.",
+      "e1": {
+        "medium": "Ohlalá",
+        "date": "Abril 2025",
+        "title": "Diseñadores argentinos en la Semana del Diseño de Milán",
+        "excerpt": "Mercedes Costal entre los estudios argentinos que exhibieron en la sede del Consulado Argentino durante la Milan Design Week.",
+        "author": "por Vivian Urfeig"
+      },
+      "e2": {
+        "medium": "La Nación · Revista Living",
+        "date": "Febrero 2025",
+        "title": "18 ejemplos de toilettes con empapelado",
+        "excerpt": "Proyectos donde los papeles de Mercedes Costal redefinen el rol del muro en el ambiente.",
+        "author": ""
+      },
+      "e3": {
+        "medium": "La Gaceta",
+        "date": "Noviembre 2025",
+        "title": "Elevate Tucumán: una red de emprendedores del norte",
+        "excerpt": "Mercedes Costal disertando como mentora en el Teatro Mercedes Sosa. «Se puede comenzar desde muy joven, con lo que uno tiene, sin esperar que todo esté perfecto.»",
+        "author": ""
+      }
+    },
+    "y2024": {
+      "label": "2024",
+      "headline": "Nueva York. Cinco diseñadoras argentinas en el Consulado.",
+      "e1": {
+        "medium": "Ohlalá",
+        "date": "Mayo 2024",
+        "title": "Diseñadoras argentinas en el festival NYCxDESIGN",
+        "excerpt": "Costal Prints & Patterns expuso murales escenográficos en la muestra «Visiones del Tiempo» en el Consulado Argentino en NY.",
+        "author": "por Vivian Urfeig"
+      }
+    },
+    "y2023": {
+      "label": "2023",
+      "headline": "Casa DAR. Diseño argentino premiado en Tucumán.",
+      "e1": {
+        "medium": "La Gaceta",
+        "date": "Septiembre 2023",
+        "title": "Casa DAR: los 7 espacios premiados",
+        "excerpt": "Segunda Mención en Casa DAR con el espacio «Gran Hall», junto a Popi López, Majo Balzaretti y el estudio Viejobueno.",
+        "author": ""
+      },
+      "e2": {
+        "medium": "La Gaceta",
+        "date": "Septiembre 2023",
+        "title": "Espacio DAR: muestra de diseño argentino en Tucumán",
+        "excerpt": "10ª edición de Espacio DAR. Mercedes Costal integra el equipo curatorial.",
+        "author": ""
+      }
+    },
+    "y2022": {
+      "label": "2022",
+      "headline": "Londres, metaverso y un sello al Buen Diseño.",
+      "pullQuote": "Permitimos que las personas se trasladen a otros escenarios.",
+      "pullQuoteSource": "Marie Claire",
+      "e1": {
+        "medium": "Forbes Argentina",
+        "date": "Noviembre 2022",
+        "title": "Cómo se crea un estudio de diseño en el metaverso",
+        "excerpt": "El estudio incursiona en NFTs tras su participación en el London Design Festival.",
+        "author": ""
+      },
+      "e2": {
+        "medium": "Marie Claire",
+        "date": "Junio 2022",
+        "title": "Costal, empapelados de Tucumán",
+        "excerpt": "Mercedes Costal define su trabajo como «arte inmersivo». 80 % del equipo está conformado por mujeres.",
+        "author": "por Mélanie Read"
+      },
+      "e3": {
+        "medium": "Infobae",
+        "date": "Octubre 2022",
+        "title": "Metaverso y realidad inmersiva: tecnología para el arte y el diseño",
+        "excerpt": "El estudio tucumano desarrolla una plataforma interactiva e ingresa al mercado de NFTs.",
+        "author": ""
+      }
+    },
+    "y2021": {
+      "label": "2021",
+      "headline": "Forbes: arte, historia y un equipo donde el 70 % son mujeres.",
+      "e1": {
+        "medium": "Forbes Argentina",
+        "date": "Noviembre 2021",
+        "title": "Murales: arte e historia",
+        "excerpt": "«Los valores principales son la creatividad e innovación.» Equipo de 15 personas, sede de 300 m² en Tucumán, producción de 3 000 m² mensuales.",
+        "author": ""
+      }
+    },
+    "y2020": {
+      "label": "2020",
+      "headline": "La esencia botánica llega a La Nación.",
+      "e1": {
+        "medium": "La Nación · Lifestyle",
+        "date": "Noviembre 2020",
+        "title": "Murales y papeles. Con esencia botánica",
+        "excerpt": "«Surgió en 2015 desde su búsqueda como diseñadora de interiores para aportar un guiño de personalidad a los espacios.»",
+        "author": "por Grisel Marino"
+      }
+    },
+    "award": {
+      "label": "Reconocimiento",
+      "title": "Sello al Buen Diseño",
+      "subtitle": "Mural «El Descanso de las Garzas»",
+      "year": "2022",
+      "issuer": "Otorgado por el Ministerio de Desarrollo Productivo de la Nación. Representación oficial de Argentina en el London Design Festival."
+    },
+    "closing": {
+      "line": "El estudio continúa desarrollando colecciones desde Tucumán hacia el mundo.",
+      "ctaLabel": "Conocé al equipo"
+    }
   },
   "workWithUs": {
     "title": "Trabaja con",
@@ -229,5 +379,62 @@
     "ctaLine2": "Elegí el diseño y la configuración.",
     "ctaButton": "Cotizar ahora →",
     "datasheet": "Ver ficha técnica →"
+  },
+  "home": {
+    "manifesto": {
+      "kicker": "Manifiesto",
+      "line1": "Una pared en blanco es una pregunta.",
+      "line2": "Cada mural, una respuesta.",
+      "line3": "Trabajamos el muro como un lienzo:\ncon la mano, con la tinta, con el tiempo.",
+      "line4": "Para que un espacio deje de ser un espacio\ny empiece a ser un lugar."
+    },
+    "studio": {
+      "kicker": "El estudio",
+      "body": "Un equipo tucumano de ilustradores, arquitectos y diseñadores.",
+      "body2": "Trabajamos entre el arte y el interiorismo.",
+      "meta": "Desde 2016 · Yerba Buena, Tucumán · Estudio, galería y café",
+      "quote": "Dibujar las cosas las hace más reales."
+    },
+    "process": {
+      "kicker": "El proceso",
+      "title": "Cada mural, una historia",
+      "step1": "Una historia",
+      "step1Desc": "Un bosque, un viaje, una cultura: todo mural empieza por un relato.",
+      "step2": "Un lenguaje",
+      "step2Desc": "Se traduce en trazo, color y textura, capa sobre capa.",
+      "step3": "Un lugar",
+      "step3Desc": "Se vuelve una pieza única que habita tu espacio."
+    },
+    "universe": {
+      "kicker": "El universo Mercedes Costal",
+      "quote": "Creemos en el diseño como un estilo de vida, más que una moda.",
+      "cafe": "Café",
+      "cafeDesc": "Café de especialidad en Yerba Buena.",
+      "fragrances": "Fragancias",
+      "fragrancesDesc": "Aromas de autor.",
+      "book": "El libro",
+      "bookDesc": "La obra del estudio, editada.",
+      "landmark": "Landmark",
+      "landmarkDesc": "Nuestro espacio en Buenos Aires."
+    },
+    "collections": {
+      "kicker": "Colecciones",
+      "title": "Universos para habitar",
+      "ctaAll": "Ver todas las colecciones"
+    },
+    "howWeWork": {
+      "kicker": "Cómo trabajamos",
+      "buy": "Comprar online",
+      "buyDesc": "Elegí tu mural, ingresá las medidas y pagá. Lo enviamos a todo el país.",
+      "quoteTitle": "Pedir cotización",
+      "quoteDesc": "¿Una pared distinta o un proyecto grande? Te cotizamos a medida.",
+      "custom": "Proyecto a medida",
+      "customDesc": "Diseñamos murales únicos para tu espacio, tu marca o tu obra."
+    },
+    "closing": {
+      "quote": "El camino es hacer lo que nos gusta; todo lo demás llega solo.",
+      "ctaShop": "Cotizar ahora",
+      "ctaCollections": "Explorar colecciones"
+    }
   }
 }

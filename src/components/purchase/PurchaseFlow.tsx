@@ -1,54 +1,78 @@
 'use client';
 
 import { useState, useMemo, useEffect, useCallback } from 'react';
+import { useParams } from 'next/navigation';
 import { useForm, useFieldArray } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { collections } from '@/data/collections';
+import { CheckIcon } from '@/icons';
 import { usePurchasePricing } from '@/hooks/usePurchasePricing';
 import { useShippingQuote } from '@/hooks/useShippingQuote';
-import { useCreateOrder } from '@/hooks/useCreateOrder';
+import { useCreateOrder, resetIdempotencyKey } from '@/hooks/useCreateOrder';
 import { ProductStep } from './steps/ProductStep';
 import { ShippingStep } from './steps/ShippingStep';
 import { ReviewStep } from './steps/ReviewStep';
 import { PurchaseDisclaimers } from './PurchaseDisclaimers';
 
+// Schema con mensajes de error como claves i18n. Los componentes que muestran los
+// errores (FormErrorMessage / inputs) reciben el mensaje crudo y lo traducen vía
+// useTranslations. Esto se hace pasando "errors.X" — Next-intl los resuelve dentro
+// del componente. Aquí guardamos solo la key.
 const schema = z.object({
-  collectionId: z.string().min(1, 'Seleccioná una colección'),
-  muralId: z.string().min(1, 'Seleccioná un mural'),
-  variantColorName: z.string().min(1, 'Seleccioná una variante'),
+  collectionId: z.string().min(1, 'errors.selectCollection'),
+  muralId: z.string().min(1, 'errors.selectMural'),
+  variantColorName: z.string().min(1, 'errors.selectVariant'),
   walls: z.array(z.object({
-    widthM: z.number({ invalid_type_error: 'Ingresá un número' })
-      .min(0.30, 'Mínimo 0.30m')
-      .max(50, 'Más de 50m: contactá a un vendedor'),
-    heightM: z.number({ invalid_type_error: 'Ingresá un número' })
-      .min(0.30, 'Mínimo 0.30m')
-      .max(10, 'Más de 10m: contactá a un vendedor'),
-  })).min(1, 'Agregá al menos una pared').max(10, 'Máximo 10 paredes'),
-  recipientName: z.string().min(2, 'Ingresá el nombre del destinatario'),
-  street: z.string().min(2, 'Ingresá la calle'),
-  streetNumber: z.string().min(1, 'Ingresá el número'),
+    widthCm: z.number({ invalid_type_error: 'errors.enterNumber' })
+      .min(30, 'errors.widthMin')
+      .max(5000, 'errors.widthMax'),
+    heightCm: z.number({ invalid_type_error: 'errors.enterNumber' })
+      .min(30, 'errors.heightMin')
+      .max(1000, 'errors.heightMax'),
+  })).min(1, 'errors.atLeastOneWall').max(10, 'errors.maxTenWalls'),
+  recipientName: z.string().min(2, 'errors.enterRecipientName'),
+  recipientDni: z.string().regex(/^[\d.\-\s]{7,15}$/, 'errors.invalidDni'),
+  street: z.string().min(2, 'errors.enterStreet'),
+  streetNumber: z.string().min(1, 'errors.enterStreetNumber'),
   floor: z.string().optional(),
   apartment: z.string().optional(),
-  city: z.string().min(2, 'Ingresá la ciudad'),
-  province: z.string().min(1, 'Seleccioná la provincia'),
-  postalCode: z.string().regex(/^\d{4}$/, 'Código postal: 4 dígitos'),
-  customerName: z.string().min(2, 'Ingresá tu nombre'),
-  customerEmail: z.string().email('Email inválido'),
-  customerPhone: z.string().min(6, 'Teléfono inválido'),
+  city: z.string().min(2, 'errors.enterCity'),
+  province: z.string().min(1, 'errors.selectProvince'),
+  postalCode: z.string().regex(/^\d{4}$/, 'errors.postalCode4'),
+  customerName: z.string().min(2, 'errors.enterCustomerName'),
+  customerEmail: z.string().email('errors.invalidEmail'),
+  customerPhone: z.string().min(6, 'errors.invalidPhone'),
 });
 
 export type PurchaseFormData = z.infer<typeof schema>;
 
-const STEP_LABELS = ['Producto', 'Envío', 'Pago'];
+// Whitelist de hosts válidos para el initPoint que devuelve MP. Si el back devuelve
+// algo distinto (URL maliciosa, javascript:, etc.) lo rechazamos antes del redirect.
+const MP_VALID_HOSTS = ['mercadopago.com.ar', 'mercadopago.com', 'mercadolibre.com.ar', 'mercadolibre.com'];
+function isValidMpInitPoint(url: string): boolean {
+  try {
+    const u = new URL(url);
+    if (u.protocol !== 'https:') return false;
+    return MP_VALID_HOSTS.some(h => u.hostname === h || u.hostname.endsWith(`.${h}`));
+  } catch {
+    return false;
+  }
+}
 
 interface Props {
   preselectedMuralId?: string;
 }
 
 export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
+  const routeParams = useParams();
+  const locale = (routeParams?.locale as string) || 'es';
+  const t = useTranslations('purchase');
+  // Traducciones de los step labels en orden.
+  const STEP_LABELS = [t('steps.product'), t('steps.shipping'), t('steps.payment')];
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(1); // 1 = forward, -1 = back
   const [submitted, setSubmitted] = useState(false);
@@ -62,8 +86,9 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
       collectionId: '',
       muralId: '',
       variantColorName: '',
-      walls: [{ widthM: '' as any, heightM: '' as any }],
+      walls: [{ widthCm: '' as any, heightCm: '' as any }],
       recipientName: '',
+      recipientDni: '',
       street: '',
       streetNumber: '',
       floor: '',
@@ -75,13 +100,25 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
       customerEmail: '',
       customerPhone: '',
     },
-    mode: 'onChange',
+    mode: 'onSubmit',
+    reValidateMode: 'onChange',
   });
 
   const { fields: wallFields, append: appendWall, remove: removeWall } = useFieldArray({
     control: form.control,
     name: 'walls',
   });
+
+  // Al montar el flujo: limpiamos cualquier idempotency key vieja de una compra previa
+  // (si el usuario terminó una compra anterior y vuelve a /buy, queremos una key nueva).
+  // Y limpiamos también los tokens stale que podrían confundir a OrderSuccessClient.
+  useEffect(() => {
+    resetIdempotencyKey();
+    if (typeof window !== 'undefined') {
+      sessionStorage.removeItem('mc_magic_token');
+      sessionStorage.removeItem('mc_order_number');
+    }
+  }, []);
 
   // Preselect mural from query param
   useEffect(() => {
@@ -123,8 +160,8 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
   // Calculate walls pricing
   const watchedWalls = form.watch('walls');
   const wallsInCm = (watchedWalls || []).map(w => ({
-    widthCm: Math.round((w.widthM || 0) * 100),
-    heightCm: Math.round((w.heightM || 0) * 100),
+    widthCm: Math.round(w.widthCm || 0),
+    heightCm: Math.round(w.heightCm || 0),
   }));
   const wallsKey = JSON.stringify(wallsInCm);
   const { walls: calculatedWalls, totalArea, subtotal } = useMemo(
@@ -133,13 +170,6 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
     [wallsKey, productType, calculateWalls]
   );
 
-  // Package dimensions
-  const packageInfo = useMemo(() => {
-    const weightGrams = Math.ceil(totalArea * 500) + 300;
-    const maxHeight = Math.max(...wallsInCm.map(w => w.heightCm + 10), 0);
-    return { weightGrams, lengthCm: Math.ceil(maxHeight), widthCm: 10, heightCm: 10 };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [wallsKey, totalArea]);
 
   // Step navigation
   const goToStep = useCallback((target: number) => {
@@ -157,7 +187,10 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
   };
 
   const goToStep3 = async () => {
-    const valid = await form.trigger(['recipientName', 'street', 'streetNumber', 'city', 'province', 'postalCode']);
+    const valid = await form.trigger([
+      'recipientName', 'recipientDni', 'street', 'streetNumber',
+      'city', 'province', 'postalCode',
+    ]);
     if (valid && quote) {
       goToStep(3);
     }
@@ -165,10 +198,10 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
 
   const handleFetchShipping = useCallback(() => {
     const postalCode = form.getValues('postalCode');
-    if (/^\d{4}$/.test(postalCode) && packageInfo.weightGrams > 0) {
-      fetchQuote(postalCode, packageInfo.weightGrams, packageInfo.lengthCm, packageInfo.widthCm, packageInfo.heightCm);
+    if (/^\d{4}$/.test(postalCode) && totalArea > 0) {
+      fetchQuote(postalCode, totalArea);
     }
-  }, [form, packageInfo, fetchQuote]);
+  }, [form, totalArea, fetchQuote]);
 
   const handleSubmit = async () => {
     if (submitted) return;
@@ -197,6 +230,7 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
       walls: wallsInCm,
       shipping: {
         recipientName: data.recipientName,
+        recipientDni: data.recipientDni,
         street: data.street,
         number: data.streetNumber,
         floor: data.floor || undefined,
@@ -205,10 +239,12 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
         city: data.city,
         province: data.province,
       },
-      locale: 'es',
+      locale,
     });
 
-    if (result?.initPoint) {
+    // Validamos que el initPoint sea una URL https de un host conocido de Mercado Pago
+    // antes de redirigir. Defensa contra response manipulado (ej. javascript: URL).
+    if (result?.initPoint && isValidMpInitPoint(result.initPoint)) {
       window.location.href = result.initPoint;
     } else {
       setSubmitted(false);
@@ -258,7 +294,7 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
                       ? 'bg-black/80 text-white'
                       : 'border border-black/20 text-black/30'
                 }`}>
-                  {isDone ? '✓' : s}
+                  {isDone ? <CheckIcon className="w-4 h-4" aria-hidden="true" /> : s}
                 </span>
                 <span className={`font-gillsans text-sm uppercase tracking-wider hidden sm:block transition-colors duration-300 ${
                   isActive ? 'text-black' : isDone ? 'text-black/60' : 'text-black/30'
@@ -295,7 +331,7 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
                   <ProductStep
                     form={form}
                     wallFields={wallFields}
-                    appendWall={() => appendWall({ widthM: '' as any, heightM: '' as any })}
+                    appendWall={() => appendWall({ widthCm: '' as any, heightCm: '' as any })}
                     removeWall={removeWall}
                     calculatedWalls={calculatedWalls}
                     subtotal={subtotal}
@@ -314,7 +350,7 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
                     shippingCost={quote?.costARS ?? null}
                     shippingLoading={shippingLoading}
                     shippingError={shippingError}
-                    shippingEstimatedDays={quote?.estimatedDays}
+                    shippingEstimatedDays={quote?.estimatedDays ?? undefined}
                     onFetchShipping={handleFetchShipping}
                     formatPrice={formatPrice}
                     onNext={goToStep3}

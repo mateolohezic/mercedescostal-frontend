@@ -4554,3 +4554,27 @@ export const collections: Array<Collection> = [
 export const getCollections = () => collections.filter(c => !c.collaboration);
 export const getCollaborations = () => collections.filter(c => c.collaboration);
 export const getAllMurales = () => collections.flatMap(c => c.murales);
+
+// Normaliza IDs/segments para que el lookup tolere:
+// - URL-encoding ("%C3%B1us" → "ñus")
+// - Diferencias Unicode NFC vs NFD ("ñ" 1 char vs "n" + combining tilde)
+// - Diferencias de mayúsculas
+// Crítico para murales con acentos / eñe (ej. "ñus-basa-basa") que en
+// el data file están en NFC pero pueden llegar del routing en otra forma.
+const norm = (s: string): string => {
+    try {
+        return decodeURIComponent(s).normalize('NFC').toLowerCase();
+    } catch {
+        return s.normalize?.('NFC').toLowerCase() ?? s.toLowerCase();
+    }
+};
+
+export const findCollectionById = (id: string) =>
+    collections.find(c => norm(c.id) === norm(id));
+
+export const findMuralInCollection = (collectionId: string, muralId: string) => {
+    const collection = findCollectionById(collectionId);
+    if (!collection) return { collection: undefined, mural: undefined };
+    const mural = collection.murales.find(m => norm(m.id) === norm(muralId));
+    return { collection, mural };
+};

@@ -1,27 +1,46 @@
 {
   "title": "Buy wallpaper",
   "subtitle": "Select your mural, enter your wall measurements and pay online.",
+  "back": "Back",
   "steps": {
-    "product": "Product & measurements",
-    "shipping": "Shipping details",
+    "product": "Product",
+    "shipping": "Shipping",
+    "payment": "Payment",
     "review": "Review & pay"
   },
   "product": {
+    "title": "Product & measurements",
+    "subtitle": "Choose your wallpaper and enter your wall measurements",
     "collection": "Collection",
     "selectCollection": "Select collection",
     "mural": "Mural",
     "selectMural": "Select mural",
+    "chooseCollectionFirst": "Choose a collection first to see its murals",
+    "muralsCount": "{count, plural, =1 {1 mural} other {# murals}}",
     "variant": "Color / Variant",
+    "wall": "Wall",
     "wallMeasures": "Your wall measurements",
     "addWall": "+ Add another wall",
-    "wall": "Wall",
-    "width": "Width (m)",
-    "height": "Height (m)",
-    "panels": "panels",
+    "width": "Width (cm)",
+    "height": "Height (cm)",
     "continueShipping": "Continue to shipping"
   },
+  "wall": {
+    "remove": "Remove wall",
+    "panel": "panel",
+    "panels": "panels",
+    "panelOf": "of 50cm",
+    "excessHeight": "+{v} cm height",
+    "excessWidth": "+{h} cm width",
+    "largeMeasureTitle": "Wall wider than 50 m",
+    "largeMeasureDesc": "For walls this size we provide personalized guidance to ensure the best result.",
+    "largeMeasureCta": "Contact via WhatsApp"
+  },
   "shipping": {
+    "subtitle": "Enter the address where you want to receive your order",
     "recipientName": "Recipient name",
+    "recipientDni": "ID number",
+    "recipientDniHint": "Andreani requires it to deliver the package",
     "street": "Street",
     "number": "Number",
     "floor": "Floor (optional)",
@@ -29,20 +48,36 @@
     "city": "City",
     "province": "Province",
     "postalCode": "Postal code",
+    "validatingPostal": "Validating...",
     "quoteShipping": "Get shipping quote",
-    "quoting": "Quoting...",
+    "quoting": "Quoting shipping...",
     "shippingCost": "Shipping",
+    "shippingByAndreani": "Shipping by Andreani",
+    "freeShipping": "Free shipping",
     "estimatedDays": "Estimated delivery",
-    "reviewOrder": "Review order"
+    "reviewOrder": "Review order",
+    "selectLocality": "Select locality",
+    "selectProvince": "Select",
+    "shippingProblems": "Shipping problems?",
+    "contactWhatsApp": "Contact us via WhatsApp"
   },
   "review": {
+    "subtitle": "Verify your order details before continuing",
     "product": "Product",
     "walls": "Walls",
+    "panel": "panel",
+    "panels": "panels",
+    "panelOf": "of 0.50m",
     "shippingAddress": "Shipping address",
     "yourData": "Your details",
     "name": "Name",
     "email": "Email",
     "phone": "Phone",
+    "emailHint": "We'll send the payment receipt and order updates to this email.",
+    "dni": "ID",
+    "floorLabel": "Floor",
+    "aptLabel": "Apt",
+    "postalCodeLabel": "Postal code",
     "subtotal": "Product subtotal",
     "shipping": "Shipping (Andreani)",
     "total": "Total",
@@ -51,21 +86,65 @@
     "processing": "Processing...",
     "productionTime": "Estimated production time: approximately 20 business days from payment."
   },
+  "summary": {
+    "subtotalProduct": "Product subtotal",
+    "shipping": "Shipping (Andreani)",
+    "total": "Total",
+    "ivaIncluded": "21% VAT included in all prices",
+    "typeMural": "Mural",
+    "typePattern": "Pattern",
+    "printAreaSuffix": "m² of print"
+  },
   "simpleWalls": {
-    "title": "Online purchase — Simple walls",
-    "description": "This purchase is for simple rectangular walls, without complex openings or sloped ceilings.",
+    "title": "Online purchase",
+    "description": "This purchase is for <strong>simple rectangular walls</strong>, without complex openings or sloped ceilings. Examples:",
+    "typeSimple": "Simple wall",
+    "typeWithDoor": "Wall with door",
+    "typeWithWindow": "Wall with window",
     "complexWalls": "Have complex walls with arches or many openings?",
     "contactSales": "Contact a sales rep"
   },
+  "disclaimers": {
+    "title": "Terms and conditions",
+    "general": {
+      "title": "General conditions",
+      "items": "The quote is calculated from the actual wall measurements, including a technical excess of 10 cm in height and the number of panels needed based on width.\nFor shipping or pickup, the balance must be paid in full.\nDelivery time: 20 business days from order confirmation, except for special agreements previously informed.\nThe quote does not include installation service.\nTones may show slight variations from the digital sample due to printing processes and screen settings. We do not work with tone references from other materials (paint, melamine, ceramics).\nOur products have an artisanal process and each piece is hand-trimmed. This may generate minor variations, characteristic of a product made with dedication and attention to detail.\nWe do not provide or coordinate installation service. We can suggest specialized professionals; however, their hiring and execution are independent of Mercedes Costal.\nAny discrepancy in the order (printing errors or joining issues) must be verified before installation and reported to Mercedes Costal. Once the wallpaper is installed, related claims will not be accepted."
+    },
+    "returns": {
+      "title": "Return / claims policy",
+      "items": "Claims may be made within 15 days after receiving the product.\nIt is essential to verify the material before installation. Once installed, we cannot process claims.\nMercedes Costal is not responsible for installation costs or inconveniences.\nFor approved returns, the amount will not be refunded in cash; an equivalent credit in m² will be granted to use in a future purchase."
+    },
+    "intellectualProperty": {
+      "title": "Intellectual property",
+      "items": "Designs are property of Mercedes Costal and are intended exclusively for decorative use. Reproduction or use for other purposes without written authorization is prohibited."
+    },
+    "shipping": {
+      "title": "Shipping",
+      "items": "Shipments are the exclusive responsibility of the customer and the contracted transport service."
+    },
+    "simpleWalls": {
+      "title": "Online purchase — Simple walls",
+      "items": "This purchase is for simple rectangular walls, without complex openings or sloped ceilings. If you have walls with complex shapes, arches or many openings, contact a sales rep."
+    }
+  },
   "success": {
-    "confirmed": "Payment confirmed!",
+    "processed": "Payment processed",
+    "checkEmail": "Check your email for your order status.",
+    "confirmed": "Payment confirmed",
     "order": "Order",
     "emailSent": "You received a confirmation email with all the details.",
     "willNotify": "We will notify you when your order is shipped.",
     "viewStatus": "View order status",
-    "saveLink": "Save this link",
+    "saveLink": "Save this link to check the status anytime:",
+    "trackingLink": "Your tracking link:",
     "verifying": "Verifying payment...",
-    "beingVerified": "Your payment is being processed. You will receive a confirmation email when it is approved."
+    "verifyingHint": "We're verifying your payment with Mercado Pago. This may take a few seconds.",
+    "inVerification": "Payment in verification",
+    "beingVerified": "Your payment is being processed. You'll receive a confirmation email when approved.",
+    "notApproved": "Payment not approved",
+    "wasRejected": "Your payment was rejected. No charge was made.",
+    "wasCancelled": "Your payment was cancelled. No charge was made.",
+    "retryPurchase": "Retry purchase"
   },
   "failure": {
     "title": "Payment error",
@@ -75,12 +154,82 @@
   },
   "status": {
     "title": "Order status",
+    "order": "Order",
     "paymentStatus": "Payment status",
     "shippingStatus": "Shipping status",
-    "trackingNumber": "Andreani tracking number",
+    "trackingNumber": "Tracking code",
     "trackOnAndreani": "Track on andreani.com",
+    "movements": "Movement details",
+    "branch": "Branch",
+    "estimatedDelivery": "Estimated delivery",
+    "lastChecked": "Last Andreani check",
+    "refresh": "Refresh",
     "notFound": "Order not found",
-    "invalidLink": "The link may have expired or is invalid."
+    "invalidLink": "The link may have expired or is invalid.",
+    "loadError": "Error loading order",
+    "helpQuestion": "Need help?",
+    "justNow": "Just now",
+    "minAgo": "{n} min ago",
+    "hourAgo": "{n}h ago",
+    "dayAgo": "{n} day(s) ago",
+    "paymentLabels": {
+      "pending": "Pending",
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "cancelled": "Cancelled",
+      "in_process": "In process",
+      "refunded": "Refunded"
+    },
+    "milestones": {
+      "paid": "Payment confirmed",
+      "preparing": "In production",
+      "admitted": "Received by Andreani",
+      "in_transit": "On the way",
+      "delivered": "Delivered"
+    },
+    "negative": {
+      "shipment_rejected": {
+        "label": "Pre-shipment rejected by Andreani",
+        "description": "We're reviewing the shipment data. We'll contact you shortly."
+      },
+      "cancelled": {
+        "label": "Shipment cancelled",
+        "description": "The shipment was cancelled. If you were expecting your order, contact us."
+      },
+      "delivery_failed": {
+        "label": "Could not be delivered",
+        "description": "Andreani could not deliver the shipment. Check the event details."
+      },
+      "returned": {
+        "label": "Being returned",
+        "description": "The shipment is being returned to sender. We'll contact you."
+      },
+      "incident": {
+        "label": "Shipment incident",
+        "description": "There was an incident. We're handling it."
+      }
+    }
   },
-  "back": "Back"
+  "errors": {
+    "selectCollection": "Select a collection",
+    "selectMural": "Select a mural",
+    "selectVariant": "Select a variant",
+    "enterNumber": "Enter a number",
+    "widthMin": "Minimum 30 cm",
+    "widthMax": "Too large for online purchase",
+    "heightMin": "Minimum 30 cm",
+    "heightMax": "Too large for online purchase",
+    "atLeastOneWall": "Add at least one wall",
+    "maxTenWalls": "Maximum 10 walls",
+    "enterRecipientName": "Enter the recipient name",
+    "invalidDni": "Invalid ID (7 to 9 digits)",
+    "enterStreet": "Enter the street",
+    "enterStreetNumber": "Enter the number",
+    "enterCity": "Enter the city",
+    "selectProvince": "Select the province",
+    "postalCode4": "Postal code: 4 digits",
+    "enterCustomerName": "Enter your name",
+    "invalidEmail": "Invalid email",
+    "invalidPhone": "Invalid phone"
+  }
 }

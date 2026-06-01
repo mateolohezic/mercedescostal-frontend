@@ -1,6 +1,7 @@
 'use client';
 
 import { UseFormReturn } from 'react-hook-form';
+import { useTranslations } from 'next-intl';
 import { FormErrorMessage } from '@/components';
 import { OrderSummary } from '../OrderSummary';
 import type { PurchaseFormData } from '../PurchaseFlow';
@@ -39,26 +40,28 @@ export const ReviewStep = ({
   muralTitle,
   variantColorName,
 }: Props) => {
+  const t = useTranslations('purchase.review');
+  const tCommon = useTranslations('purchase');
   const { register, formState: { errors }, watch } = form;
 
   return (
     <div className="space-y-8">
       <div>
         <h2 className="font-gillsans text-2xl font-medium uppercase tracking-wider">
-          Revisar y pagar
+          {tCommon('steps.review')}
         </h2>
-        <p className="text-sm text-black/40 mt-1">Verificá los datos de tu pedido antes de continuar</p>
+        <p className="text-sm text-black/40 mt-1">{t('subtitle')}</p>
       </div>
 
       {/* Product */}
       <section className="space-y-2">
-        <h3 className="text-xs text-black/40 uppercase tracking-widest">Producto</h3>
+        <h3 className="text-xs text-black/40 uppercase tracking-widest">{t('product')}</h3>
         <p className="font-gillsans font-medium">{muralTitle} <span className="text-black/40">—</span> {variantColorName}</p>
       </section>
 
       {/* Walls */}
       <section className="space-y-2">
-        <h3 className="text-xs text-black/40 uppercase tracking-widest">Paredes</h3>
+        <h3 className="text-xs text-black/40 uppercase tracking-widest">{t('walls')}</h3>
         <div className="border border-black/10 divide-y divide-black/5">
           {calculatedWalls.map((w, i) => (
             <div key={i} className="flex items-center justify-between px-4 py-2.5 text-sm">
@@ -67,7 +70,7 @@ export const ReviewStep = ({
                 <span>
                   {(w.widthCm / 100).toFixed(2)}m &times; {(w.heightCm / 100).toFixed(2)}m
                 </span>
-                <span className="text-xs text-black/30">{w.panels} {w.panels === 1 ? 'pan.' : 'pan.'} de 0.50m &middot; {w.printAreaM2.toFixed(2)} m²</span>
+                <span className="text-xs text-black/30">{w.panels} {w.panels === 1 ? t('panel') : t('panels')} {t('panelOf')} &middot; {w.printAreaM2.toFixed(2)} m²</span>
               </div>
               <span className="font-medium">{formatPrice(w.priceARS)}</span>
             </div>
@@ -77,25 +80,30 @@ export const ReviewStep = ({
 
       {/* Shipping address */}
       <section className="space-y-2">
-        <h3 className="text-xs text-black/40 uppercase tracking-widest">Dirección de envío</h3>
+        <h3 className="text-xs text-black/40 uppercase tracking-widest">{t('shippingAddress')}</h3>
         <div className="text-sm leading-relaxed text-black/70">
-          <p className="font-medium text-black">{watch('recipientName')}</p>
+          <p className="font-medium text-black">
+            {watch('recipientName')}
+            {watch('recipientDni') && (
+              <span className="text-black/40 font-normal ml-2">{t('dni')} {watch('recipientDni')}</span>
+            )}
+          </p>
           <p>
             {watch('street')} {watch('streetNumber')}
-            {watch('floor') ? `, Piso ${watch('floor')}` : ''}
-            {watch('apartment') ? `, Depto ${watch('apartment')}` : ''}
+            {watch('floor') ? `, ${t('floorLabel')} ${watch('floor')}` : ''}
+            {watch('apartment') ? `, ${t('aptLabel')} ${watch('apartment')}` : ''}
           </p>
           <p>{watch('city')}, {watch('province')}</p>
-          <p>CP {watch('postalCode')}</p>
+          <p>{t('postalCodeLabel')} {watch('postalCode')}</p>
         </div>
       </section>
 
       {/* Customer info */}
       <section className="space-y-4">
-        <h3 className="text-xs text-black/40 uppercase tracking-widest">Tus datos</h3>
+        <h3 className="text-xs text-black/40 uppercase tracking-widest">{t('yourData')}</h3>
         <div className="space-y-3">
           <div className="space-y-1">
-            <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="customer-name">Nombre</label>
+            <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="customer-name">{t('name')}</label>
             <input
               id="customer-name"
               type="text"
@@ -107,7 +115,7 @@ export const ReviewStep = ({
           </div>
           <div className="flex gap-3">
             <div className="flex-1 space-y-1">
-              <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="customer-email">Email</label>
+              <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="customer-email">{t('email')}</label>
               <input
                 id="customer-email"
                 type="email"
@@ -119,7 +127,7 @@ export const ReviewStep = ({
               <FormErrorMessage condition={errors.customerEmail} message={errors.customerEmail?.message} />
             </div>
             <div className="flex-1 space-y-1">
-              <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="customer-phone">Teléfono</label>
+              <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="customer-phone">{t('phone')}</label>
               <input
                 id="customer-phone"
                 type="tel"
@@ -132,9 +140,7 @@ export const ReviewStep = ({
             </div>
           </div>
         </div>
-        <p className="text-[11px] text-black/30">
-          Te enviaremos el comprobante de pago y las actualizaciones de tu pedido a este email.
-        </p>
+        <p className="text-[11px] text-black/30">{t('emailHint')}</p>
       </section>
 
       {/* Summary */}
@@ -162,7 +168,7 @@ export const ReviewStep = ({
           disabled={submitting}
           className="flex-1 py-4 border border-black/20 font-gillsans font-medium uppercase tracking-wider text-black/60 hover:border-black hover:text-black transition-all duration-200 disabled:opacity-40"
         >
-          Volver
+          {tCommon('back')}
         </button>
         <button
           type="button"
@@ -173,17 +179,15 @@ export const ReviewStep = ({
           {submitting ? (
             <>
               <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-              Procesando...
+              {t('processing')}
             </>
           ) : (
-            'Pagar con Mercado Pago'
+            t('payWithMP')
           )}
         </button>
       </div>
 
-      <p className="text-[11px] text-black/30 text-center">
-        Tiempo estimado de producción: 20 días hábiles aprox. desde el pago.
-      </p>
+      <p className="text-[11px] text-black/30 text-center">{t('productionTime')}</p>
     </div>
   );
 };

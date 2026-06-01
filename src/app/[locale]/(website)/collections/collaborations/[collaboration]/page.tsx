@@ -1,5 +1,5 @@
 import { routing } from "@/i18n/routing";
-import { collections, getCollaborations } from "@/data/collections";
+import { getCollaborations, findCollectionById } from "@/data/collections";
 import { sortMurales } from "@/helpers";
 import { CollectionVideo, CTA, MuralCardNew } from "@/components";
 import Image from "next/image";
@@ -27,7 +27,8 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
     const { locale, collaboration } = await params;
-    const found = collections.find(c => c.id === collaboration && c.collaboration);
+    const candidate = findCollectionById(collaboration);
+    const found = candidate?.collaboration ? candidate : undefined;
 
     if (!found) {
         return {
@@ -67,7 +68,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function CollaborationPage({ params }: Props) {
     const { locale, collaboration } = await params;
     const t = await getTranslations({ locale, namespace: 'common' });
-    const found = collections.find(c => c.id === collaboration && c.collaboration);
+    const candidate = findCollectionById(collaboration);
+    const found = candidate?.collaboration ? candidate : undefined;
     if (!found) notFound();
 
     return (

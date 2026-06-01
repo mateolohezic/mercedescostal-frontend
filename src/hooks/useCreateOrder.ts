@@ -20,6 +20,7 @@ interface CreateOrderData {
   walls: Array<{ widthCm: number; heightCm: number }>;
   shipping: {
     recipientName: string;
+    recipientDni: string;
     street: string;
     number: string;
     floor?: string;
@@ -37,20 +38,32 @@ interface CreateOrderResult {
   orderNumber: string;
 }
 
-function generateIdempotencyKey(data: CreateOrderData): string {
-  const hash = JSON.stringify({
-    muralId: data.product.muralId,
-    variant: data.product.variantColorName,
-    walls: data.walls,
-    postalCode: data.shipping.postalCode,
-    ts: Math.floor(Date.now() / 60000), // 1-minute window
-  });
-  // Simple hash for browser (no crypto.randomBytes)
-  let h = 0;
-  for (let i = 0; i < hash.length; i++) {
-    h = ((h << 5) - h + hash.charCodeAt(i)) | 0;
+const IDEMPOTENCY_KEY_STORAGE = 'mc_order_idempotency_key';
+
+// Devuelve un UUID v4 único por intento de compra. Se persiste en sessionStorage:
+// si el submit falla por red y el usuario reintenta, mandamos LA MISMA key (el back
+// devuelve la orden ya creada en lugar de duplicar). Se limpia al abrir nueva compra
+// (resetIdempotencyKey).
+function getOrCreateIdempotencyKey(): string {
+  if (typeof window === 'undefined') {
+    // SSR fallback (no debería llamarse en SSR pero por seguridad)
+    return `mc-${Math.random().toString(36).slice(2)}-${Date.now()}`;
   }
-  return `idem-${Math.abs(h).toString(36)}`;
+  const existing = sessionStorage.getItem(IDEMPOTENCY_KEY_STORAGE);
+  if (existing) return existing;
+  // crypto.randomUUID disponible en navegadores modernos. Fallback por si acaso.
+  const fresh = typeof crypto !== 'undefined' && crypto.randomUUID
+    ? `mc-${crypto.randomUUID()}`
+    : `mc-${Math.random().toString(36).slice(2)}-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  sessionStorage.setItem(IDEMPOTENCY_KEY_STORAGE, fresh);
+  return fresh;
+}
+
+// Limpia la idempotency key. Llamar cuando el usuario empieza un flujo nuevo
+// (mount inicial de PurchaseFlow después de un pago exitoso, por ejemplo).
+export function resetIdempotencyKey(): void {
+  if (typeof window === 'undefined') return;
+  sessionStorage.removeItem(IDEMPOTENCY_KEY_STORAGE);
 }
 
 export function useCreateOrder() {
@@ -62,17 +75,20 @@ export function useCreateOrder() {
     setError(null);
 
     try {
-      const idempotencyKey = generateIdempotencyKey(data);
+      const idempotencyKey = getOrCreateIdempotencyKey();
 
       const result = await apiPost<CreateOrderResult>('/api/orders', {
         ...data,
         idempotencyKey,
       });
 
-      // Store magic token for success page
+      // Guardamos token/orderNumber para que la página de success los lea aunque el
+      // usuario refresque o pierda el query param. Limpiamos también la idempotency
+      // key: ya cumplió, una próxima compra arranca con key nueva.
       if (typeof window !== 'undefined') {
         sessionStorage.setItem('mc_magic_token', result.magicToken);
         sessionStorage.setItem('mc_order_number', result.orderNumber);
+        sessionStorage.removeItem(IDEMPOTENCY_KEY_STORAGE);
       }
 
       return result;

@@ -3,35 +3,18 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import { usePaymentPolling } from '@/hooks/usePaymentPolling';
+import { CheckIcon, CloseIcon, ClockIcon } from '@/icons';
 
 interface Props {
   token: string;
 }
 
-const CheckIcon = () => (
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <polyline points="20 6 9 17 4 12" />
-  </svg>
-);
-
-const XIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="18" y1="6" x2="6" y2="18" />
-    <line x1="6" y1="6" x2="18" y2="18" />
-  </svg>
-);
-
-const ClockIcon = () => (
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <circle cx="12" cy="12" r="10" />
-    <polyline points="12 6 12 12 16 14" />
-  </svg>
-);
-
 export const OrderSuccessClient = ({ token }: Props) => {
   const params = useParams();
   const locale = (params?.locale as string) || 'es';
+  const t = useTranslations('purchase.success');
 
   const [magicToken, setMagicToken] = useState<string | null>(token || null);
   const [orderNumber, setOrderNumber] = useState<string | null>(null);
@@ -59,9 +42,9 @@ export const OrderSuccessClient = ({ token }: Props) => {
     return (
       <div className="text-center py-12">
         <h1 className="font-gillsans text-2xl font-medium uppercase tracking-wider mb-4">
-          Pago procesado
+          {t('processed')}
         </h1>
-        <p className="text-black/50">Revisá tu email para el estado de tu pedido.</p>
+        <p className="text-black/50">{t('checkEmail')}</p>
       </div>
     );
   }
@@ -71,32 +54,32 @@ export const OrderSuccessClient = ({ token }: Props) => {
     return (
       <div className="text-center py-12 max-w-md mx-auto">
         <div className="w-16 h-16 mx-auto mb-8 rounded-full border-2 border-black flex items-center justify-center">
-          <CheckIcon />
+          <CheckIcon className="w-8 h-8" />
         </div>
 
         <h1 className="font-gillsans text-2xl font-medium uppercase tracking-wider mb-2">
-          Pago confirmado
+          {t('confirmed')}
         </h1>
 
         {orderNumber && (
-          <p className="font-trueTypewriter text-sm text-black/40 mb-6">Pedido {orderNumber}</p>
+          <p className="font-trueTypewriter text-sm text-black/40 mb-6">{t('order')} {orderNumber}</p>
         )}
 
         <p className="text-sm text-black/50 mb-10 leading-relaxed">
-          Recibiste un email de confirmación con todos los detalles.
+          {t('emailSent')}
           <br />
-          Te notificaremos cuando tu pedido sea despachado.
+          {t('willNotify')}
         </p>
 
         <Link
           href={statusLink}
           className="block w-full py-4 bg-black text-white font-gillsans font-medium uppercase tracking-wider hover:bg-black/85 transition-colors text-center"
         >
-          Ver estado del pedido
+          {t('viewStatus')}
         </Link>
 
         <p className="text-[11px] text-black/25 mt-6 break-all leading-relaxed">
-          Guardá este link para consultar el estado en cualquier momento:
+          {t('saveLink')}
           <br />
           <span className="text-black/40">{typeof window !== 'undefined' ? window.location.origin : ''}{statusLink}</span>
         </p>
@@ -109,23 +92,22 @@ export const OrderSuccessClient = ({ token }: Props) => {
     return (
       <div className="text-center py-12 max-w-md mx-auto">
         <div className="w-16 h-16 mx-auto mb-8 rounded-full border-2 border-black/20 flex items-center justify-center text-black/40">
-          <XIcon />
+          <CloseIcon className="w-7 h-7" />
         </div>
 
         <h1 className="font-gillsans text-2xl font-medium uppercase tracking-wider mb-4">
-          Pago no aprobado
+          {t('notApproved')}
         </h1>
 
         <p className="text-sm text-black/50 mb-10">
-          Tu pago fue {status === 'rejected' ? 'rechazado' : 'cancelado'}.
-          No se realizó ningún cobro.
+          {status === 'rejected' ? t('wasRejected') : t('wasCancelled')}
         </p>
 
         <Link
           href={buyLink}
           className="block w-full py-4 bg-black text-white font-gillsans font-medium uppercase tracking-wider hover:bg-black/85 transition-colors text-center"
         >
-          Reintentar compra
+          {t('retryPurchase')}
         </Link>
       </div>
     );
@@ -138,19 +120,16 @@ export const OrderSuccessClient = ({ token }: Props) => {
         {loading ? (
           <div className="w-6 h-6 border-2 border-black/10 border-t-black/40 rounded-full animate-spin" />
         ) : (
-          <ClockIcon />
+          <ClockIcon className="w-7 h-7" />
         )}
       </div>
 
       <h1 className="font-gillsans text-2xl font-medium uppercase tracking-wider mb-4">
-        {exhausted ? 'Pago en verificación' : 'Verificando pago...'}
+        {exhausted ? t('inVerification') : t('verifying')}
       </h1>
 
       <p className="text-sm text-black/50 mb-10 leading-relaxed">
-        {exhausted
-          ? 'Tu pago está siendo procesado. Recibirás un email de confirmación cuando se apruebe.'
-          : 'Estamos verificando tu pago con Mercado Pago. Esto puede tardar unos segundos.'
-        }
+        {exhausted ? t('beingVerified') : t('verifyingHint')}
       </p>
 
       <div className="space-y-4">
@@ -158,11 +137,11 @@ export const OrderSuccessClient = ({ token }: Props) => {
           href={statusLink}
           className="block w-full py-4 bg-black text-white font-gillsans font-medium uppercase tracking-wider hover:bg-black/85 transition-colors text-center"
         >
-          Ver estado del pedido
+          {t('viewStatus')}
         </Link>
 
         <p className="text-[11px] text-black/25 break-all leading-relaxed">
-          Tu link de seguimiento:
+          {t('trackingLink')}
           <br />
           <span className="text-black/40">{typeof window !== 'undefined' ? window.location.origin : ''}{statusLink}</span>
         </p>

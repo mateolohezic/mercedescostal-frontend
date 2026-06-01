@@ -1,28 +1,32 @@
 'use client';
 
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 
 // Placeholder images — reemplazar con las fotos reales de tipos de pared
 import wallTypeA from '@/assets/collections/artisan/abra/abra_montaje.webp';
 import wallTypeB from '@/assets/collections/artisan/ceren/ceren_montaje.webp';
 import wallTypeC from '@/assets/collections/artisan/risco/risco_montaje.webp';
 
-const WALL_TYPES = [
-  { image: wallTypeA, label: 'Pared simple' },
-  { image: wallTypeB, label: 'Pared con puerta' },
-  { image: wallTypeC, label: 'Pared con ventana' },
-];
-
 export const SimpleWallsInfo = () => {
+  const t = useTranslations('purchase.simpleWalls');
+
+  const WALL_TYPES = [
+    { image: wallTypeA, label: t('typeSimple') },
+    { image: wallTypeB, label: t('typeWithDoor') },
+    { image: wallTypeC, label: t('typeWithWindow') },
+  ];
+
   return (
     <div className="border border-black/10 p-5 space-y-4">
       <p className="font-trueTypewriter text-xs uppercase tracking-widest text-black/40">
-        Compra online
+        {t('title')}
       </p>
 
       <p className="text-sm text-black/70 leading-relaxed">
-        Esta compra es para <strong className="text-black">paredes rectangulares simples</strong>,
-        sin aberturas complicadas ni techos inclinados. Ejemplos:
+        {t.rich('description', {
+          strong: (chunks) => <strong className="text-black">{chunks}</strong>,
+        })}
       </p>
 
       <div className="grid grid-cols-3 gap-3">
@@ -44,14 +48,14 @@ export const SimpleWallsInfo = () => {
 
       <div className="border-t border-black/5 pt-3">
         <p className="text-xs text-black/50">
-          ¿Tenés paredes con formas complejas, arcos o muchas aberturas?{' '}
+          {t('complexWalls')}{' '}
           <a
             href="https://wa.me/5491160208460"
             target="_blank"
             rel="noopener noreferrer"
             className="underline text-black font-medium hover:text-black/70 transition-colors"
           >
-            Contactá a un vendedor
+            {t('contactSales')}
           </a>
         </p>
       </div>

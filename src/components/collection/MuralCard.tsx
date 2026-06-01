@@ -39,7 +39,8 @@ export const MuralCard = ({mural, showCollection}:Props) => {
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
-                className="w-full"
+                className="w-full mural-hero"
+                style={{ ['--mural-vt-name' as string]: `mural-${mural.id}` }}
             >
                 <Image src={baseVariant.montaje} alt={`${mural.title} Montaje`} width={1280} height={1280} className="w-full object-contain"/>
             </motion.div>

@@ -1,4 +1,13 @@
+import type { Metadata } from 'next';
 import { OrderStatusView } from '@/components/order/OrderStatusView';
+
+// La URL contiene un magicToken que da acceso a datos del pedido — no indexable.
+// referrer: no-referrer evita que el token aparezca en el Referer cuando el usuario
+// hace click a Andreani u otros links externos desde esta página.
+export const metadata: Metadata = {
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
+  referrer: 'no-referrer',
+};
 
 interface Props {
   params: Promise<{ token: string }>;

@@ -34,6 +34,10 @@ export const Collapse = () => {
                 {
                     title: t('meetTheMakers'),
                     href:'/meet-the-makers'
+                },
+                {
+                    title: t('press'),
+                    href:'/press'
                 }
             ]
         },
