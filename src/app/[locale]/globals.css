@@ -22,6 +22,39 @@
   animation: ctaVideoAppear 1s ease-out 1s both;
 }
 
+/* View Transitions — fade default page-to-page. Solo se aplica cuando
+   ViewTransitionsRouter invoca document.startViewTransition() y el
+   browser soporta la API. En browsers sin soporte no se renderiza nada. */
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.35s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  ::view-transition-old(root) {
+    animation-name: mc-fade-out;
+  }
+  ::view-transition-new(root) {
+    animation-name: mc-fade-in;
+  }
+}
+@keyframes mc-fade-out {
+  to { opacity: 0; }
+}
+@keyframes mc-fade-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero transition por mural — thumbnail (MuralCard) ↔ imagen principal
+   (MuralDetailContent). El nombre único viene por --mural-vt-name
+   inline en cada uno. Cuando el browser detecta nombres coincidentes
+   antes y después de la navegación, anima la transformación. */
+.mural-hero {
+  view-transition-name: var(--mural-vt-name);
+}
+
+
 @layer components {
 
   .transition-100{

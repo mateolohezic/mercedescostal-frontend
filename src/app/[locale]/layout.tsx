@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import localFont from 'next/font/local';
 import { notFound } from 'next/navigation';
 import { GoogleAnalytics } from "@next/third-parties/google";
-import { ClarityTracker, Collapse, Navbar } from "@/components";
+import { ClarityTracker, Collapse, Navbar, ViewTransitionsRouter } from "@/components";
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
@@ -142,13 +142,65 @@ export default async function LocaleLayout({children, params}: Props) {
 
   const messages = await getMessages();
 
+  const orgSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Mercedes Costal',
+    alternateName: 'Mercedes Costal Prints & Patterns',
+    url: 'https://mercedescostal.com.ar',
+    logo: 'https://mercedescostal.com.ar/assets/logo.png',
+    description: locale === 'es'
+      ? 'Estudio creativo argentino especializado en murales y empapelados de autor. Hecho a medida con tintas ecológicas y procesos artesanales.'
+      : 'Argentine creative studio specialized in author murals and wallpapers. Made to order with eco-friendly inks and artisanal processes.',
+    foundingLocation: {
+      '@type': 'Place',
+      address: { '@type': 'PostalAddress', addressCountry: 'AR' },
+    },
+    sameAs: [
+      'https://www.instagram.com/mercedes.costal/',
+      'https://web.facebook.com/costal.mercedes/',
+    ],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+54-9-11-60208460',
+      contactType: 'customer service',
+      email: 'info@mercedescostal.com.ar',
+      availableLanguage: ['Spanish', 'English'],
+    },
+  };
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    url: 'https://mercedescostal.com.ar',
+    name: 'Mercedes Costal',
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: `https://mercedescostal.com.ar/${locale}/search?q={search_term_string}`,
+      'query-input': 'required name=search_term_string',
+    },
+  };
+
   return (
     <html lang={locale}>
       <body className={`${gillSans.className} ${gillSans.variable} ${truetypewritter.variable} w-full min-h-svh flex flex-col items-center`}>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <NextIntlClientProvider messages={messages}>
           <Navbar/>
           <Collapse/>
-{children}
+          {/* Intercepta clicks en <a> internos y envuelve la navegación
+              con document.startViewTransition() para activar el CSS de
+              ::view-transition-old/new. En browsers sin soporte es
+              no-op silencioso. */}
+          <ViewTransitionsRouter/>
+          {children}
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_G_A_ID || ""}/>
           <ClarityTracker/>
         </NextIntlClientProvider>

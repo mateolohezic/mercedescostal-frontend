@@ -78,12 +78,25 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
     const hasMultipleVariants = mural.variants.length > 1;
 
     const images = [currentVariant.mural, currentVariant.montaje];
-    const [relatedMurals] = useState(() => collection.murales.filter(m => m.id !== mural.id).sort(() => Math.random() - 0.5).slice(0, 4));
+    // Orden determinístico para evitar hydration mismatch (Math.random
+    // daba distinto en server y cliente y rompía el árbol en Next 16).
+    // Tomamos los 4 vecinos en el array a partir del mural actual,
+    // wrapeando al inicio — da variedad sin no-determinismo.
+    const relatedMurals = (() => {
+        const siblings = collection.murales.filter(m => m.id !== mural.id);
+        if (siblings.length <= 4) return siblings;
+        const idx = collection.murales.findIndex(m => m.id === mural.id);
+        const ring = [...collection.murales.slice(idx + 1), ...collection.murales.slice(0, idx)];
+        return ring.filter(m => m.id !== mural.id).slice(0, 4);
+    })();
 
     return (
         <main className="w-full grow flex flex-col font-truetypewritter">
             <section className="w-full min-h-screen flex flex-col lg:flex-row">
-                <div className="w-full lg:w-1/2 h-[60vh] lg:h-screen relative lg:sticky lg:top-0">
+                <div
+                    className="w-full lg:w-1/2 h-[60vh] lg:h-screen relative lg:sticky lg:top-0 mural-hero"
+                    style={{ ['--mural-vt-name' as string]: `mural-${mural.id}` }}
+                >
                     <Image src={images[selectedImageIndex]} alt={`${mural.title} ${currentVariant.colorName}`} className="size-full object-cover" priority/>
                     <p className="absolute bottom-4 left-4 text-xs text-white/80">
                         {selectedImageIndex + 1} / {images.length}
@@ -135,9 +148,15 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
                                 })}
                             </div>
                         )}
-                        <Link href={`/quote?mural=${mural.id}`} className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150">
-                            {locale === 'es' ? 'Cotizar' : 'Get Quote'}
-                        </Link>
+                        {locale === 'es' ? (
+                            <Link href={`/buy?mural=${mural.id}`} className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150">
+                                Comprar
+                            </Link>
+                        ) : (
+                            <a href="https://wa.me/5491160208460" target="_blank" rel="noopener noreferrer" className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150">
+                                Contact Us
+                            </a>
+                        )}
                     </div>
                 </div>
             </section>

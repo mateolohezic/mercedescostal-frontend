@@ -6,6 +6,12 @@
     "year": "Year",
     "technique": "Technique",
     "notFound": "Collection not found",
+    "categoryLabel": "Category",
+    "resultsCount": "{count, plural, =0 {No results} =1 {1 mural} other {# murals}}",
+    "categoryIntro": "Explore the murals and patterns within this visual universe. Each piece is a small emotional architecture, conceived to inhabit the wall as a silent canvas.",
+    "emptyTitle": "We couldn't find murals in this category",
+    "emptyDesc": "It might be archived, or perhaps still to be born. In the meantime, you're welcome to browse all of our collections.",
+    "emptyCta": "See all collections",
     "philosophy": {
       "line1": "We don't design papers. We create atmospheres.",
       "line2": "At Mercedes Costal, we understand the wall as a silent canvas that transforms the way we inhabit a space. Each wallpaper is not just a decorative resource: it's a design decision that shapes the experience of the place.",
@@ -114,6 +120,150 @@
     "quote1": "It is a creative Studio made up of a team of illustrators, architects, and designers.",
     "quote2": "The team creates illustrations with different manual and digital techniques that are subsequently printed on paper substrate to produce the wallpapers that are sold through digital media and points of sale globally.",
     "quote3": "We work together from different areas of design to achieve, through our wallpapers and murals, a balance between art and interior design, creating with them spaces where colors, textures, and shapes become the protagonists of the environments."
+  },
+  "press": {
+    "sectionTitle": "Press",
+    "introEyebrow": "The studio in the media",
+    "introLine": "Five years of editorial coverage. From Tucumán to the world, based in Argentina and Milan.",
+    "hero": {
+      "quote": "We allow people to travel to other scenarios, sometimes real and sometimes imagined.",
+      "attribution": "Mercedes Costal in Marie Claire",
+      "year": "2022"
+    },
+    "presence": {
+      "label": "Presence",
+      "cityBA": "Buenos Aires",
+      "cityTUC": "Tucumán",
+      "cityMIL": "Milan",
+      "cityNYC": "New York",
+      "cityLDN": "London",
+      "cityMAD": "Madrid"
+    },
+    "stats": {
+      "yearsValue": "10",
+      "yearsLabel": "Years of studio practice",
+      "mediaValue": "8+",
+      "mediaLabel": "National and international media",
+      "fairsValue": "6",
+      "fairsLabel": "Fairs and festivals"
+    },
+    "readNote": "Read the feature",
+    "externalLabel": "External site",
+    "yearsHeading": "Editorial timeline",
+    "y2025": {
+      "label": "2025",
+      "headline": "The year of Milan and European consolidation.",
+      "e1": {
+        "medium": "Ohlalá",
+        "date": "April 2025",
+        "title": "Argentine designers at Milan Design Week",
+        "excerpt": "Mercedes Costal among the Argentine studios exhibiting at the Argentine Consulate during Milan Design Week.",
+        "author": "by Vivian Urfeig"
+      },
+      "e2": {
+        "medium": "La Nación · Revista Living",
+        "date": "February 2025",
+        "title": "18 wallpapered powder rooms",
+        "excerpt": "Projects where Mercedes Costal wallpapers redefine the role of the wall in a space.",
+        "author": ""
+      },
+      "e3": {
+        "medium": "La Gaceta",
+        "date": "November 2025",
+        "title": "Elevate Tucumán: a network of entrepreneurs from the north",
+        "excerpt": "Mercedes Costal as a mentor at Teatro Mercedes Sosa. «You can start very young, with what you have, without waiting for everything to be perfect.»",
+        "author": ""
+      }
+    },
+    "y2024": {
+      "label": "2024",
+      "headline": "New York. Five Argentine designers at the Consulate.",
+      "e1": {
+        "medium": "Ohlalá",
+        "date": "May 2024",
+        "title": "Argentine designers at NYCxDESIGN festival",
+        "excerpt": "Costal Prints & Patterns exhibited scenographic murals at the «Visions of Time» show at the Argentine Consulate in NY.",
+        "author": "by Vivian Urfeig"
+      }
+    },
+    "y2023": {
+      "label": "2023",
+      "headline": "Casa DAR. Argentine design awarded in Tucumán.",
+      "e1": {
+        "medium": "La Gaceta",
+        "date": "September 2023",
+        "title": "Casa DAR: the 7 awarded spaces",
+        "excerpt": "Second Mention at Casa DAR with the «Gran Hall» space, alongside Popi López, Majo Balzaretti and the Viejobueno studio.",
+        "author": ""
+      },
+      "e2": {
+        "medium": "La Gaceta",
+        "date": "September 2023",
+        "title": "Espacio DAR: Argentine design exhibition in Tucumán",
+        "excerpt": "10th edition of Espacio DAR. Mercedes Costal joins the curatorial team.",
+        "author": ""
+      }
+    },
+    "y2022": {
+      "label": "2022",
+      "headline": "London, metaverse and a Buen Diseño seal.",
+      "pullQuote": "We allow people to travel to other scenarios.",
+      "pullQuoteSource": "Marie Claire",
+      "e1": {
+        "medium": "Forbes Argentina",
+        "date": "November 2022",
+        "title": "How to create a design studio in the metaverse",
+        "excerpt": "The studio steps into NFTs after its participation in the London Design Festival.",
+        "author": ""
+      },
+      "e2": {
+        "medium": "Marie Claire",
+        "date": "June 2022",
+        "title": "Costal, wallpapers from Tucumán",
+        "excerpt": "Mercedes Costal defines her work as «immersive art». 80 % of the team are women.",
+        "author": "by Mélanie Read"
+      },
+      "e3": {
+        "medium": "Infobae",
+        "date": "October 2022",
+        "title": "Metaverse and immersive reality: technology for art and design",
+        "excerpt": "The Tucumán studio develops an interactive platform and enters the NFT market.",
+        "author": ""
+      }
+    },
+    "y2021": {
+      "label": "2021",
+      "headline": "Forbes: art, history and a team that is 70 % women.",
+      "e1": {
+        "medium": "Forbes Argentina",
+        "date": "November 2021",
+        "title": "Murals: art and history",
+        "excerpt": "«The main values are creativity and innovation.» A team of 15, a 300 m² headquarters in Tucumán, producing 3,000 m² monthly.",
+        "author": ""
+      }
+    },
+    "y2020": {
+      "label": "2020",
+      "headline": "Botanical essence reaches La Nación.",
+      "e1": {
+        "medium": "La Nación · Lifestyle",
+        "date": "November 2020",
+        "title": "Murals and papers. With botanical essence",
+        "excerpt": "«It emerged in 2015 from her search as an interior designer to bring a touch of personality to spaces.»",
+        "author": "by Grisel Marino"
+      }
+    },
+    "award": {
+      "label": "Recognition",
+      "title": "Sello al Buen Diseño",
+      "subtitle": "Mural «El Descanso de las Garzas»",
+      "year": "2022",
+      "issuer": "Awarded by the National Ministry of Productive Development. Official representation of Argentina at the London Design Festival."
+    },
+    "closing": {
+      "line": "The studio continues to develop collections from Tucumán to the world.",
+      "ctaLabel": "Meet the team"
+    }
   },
   "workWithUs": {
     "title": "Work with",
@@ -229,5 +379,62 @@
     "ctaLine2": "Choose the design and configuration.",
     "ctaButton": "Get a quote now →",
     "datasheet": "View datasheet →"
+  },
+  "home": {
+    "manifesto": {
+      "kicker": "Manifesto",
+      "line1": "A blank wall is a question.",
+      "line2": "Every mural, an answer.",
+      "line3": "We work the wall like a canvas:\nby hand, with ink, with time.",
+      "line4": "So that a space stops being a space\nand becomes a place."
+    },
+    "studio": {
+      "kicker": "The studio",
+      "body": "A team of illustrators, architects and designers, born in Tucumán.",
+      "body2": "We work at the intersection of art and interior design.",
+      "meta": "Since 2016 · Yerba Buena, Tucumán · Studio, gallery and café",
+      "quote": "Drawing things makes them more real."
+    },
+    "process": {
+      "kicker": "The process",
+      "title": "Every mural, a story",
+      "step1": "A story",
+      "step1Desc": "A forest, a journey, a culture: every mural begins with a tale.",
+      "step2": "A language",
+      "step2Desc": "Translated into line, color and texture, layer over layer.",
+      "step3": "A place",
+      "step3Desc": "It becomes a unique piece that inhabits your space."
+    },
+    "universe": {
+      "kicker": "The Mercedes Costal universe",
+      "quote": "We believe in design as a way of life, not a passing trend.",
+      "cafe": "Café",
+      "cafeDesc": "Specialty coffee in Yerba Buena.",
+      "fragrances": "Fragrances",
+      "fragrancesDesc": "Author scents.",
+      "book": "The book",
+      "bookDesc": "The studio’s body of work, in print.",
+      "landmark": "Landmark",
+      "landmarkDesc": "Our space in Buenos Aires."
+    },
+    "collections": {
+      "kicker": "Collections",
+      "title": "Worlds to inhabit",
+      "ctaAll": "See all collections"
+    },
+    "howWeWork": {
+      "kicker": "How we work",
+      "buy": "Buy online",
+      "buyDesc": "Choose your mural, enter your measurements and pay. We ship across the country.",
+      "quoteTitle": "Request a quote",
+      "quoteDesc": "A special wall or a large project? We quote it to measure.",
+      "custom": "Bespoke project",
+      "customDesc": "We design unique murals for your space, your brand or your work."
+    },
+    "closing": {
+      "quote": "The path is doing what we love; everything else follows.",
+      "ctaShop": "Get a quote now",
+      "ctaCollections": "Explore collections"
+    }
   }
 }
