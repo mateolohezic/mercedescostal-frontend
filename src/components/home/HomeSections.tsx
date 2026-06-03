@@ -17,6 +17,13 @@ interface UniverseItem {
   key: 'cafe' | 'fragrances' | 'book' | 'landmark';
   href: string;
   image: Img;
+  // Permite ajustar el crop dentro del aspect-ratio fijo de la card —
+  // útil cuando la imagen tiene zonas vacías o tipográficas que no
+  // queremos mostrar (caso fragrances_1: cabecera con N°1 + texto).
+  objectPosition?: string;
+  // Aplica un zoom base a la imagen (combinable con objectPosition)
+  // para empujar más afuera del frame las zonas no deseadas.
+  zoom?: boolean;
 }
 
 interface Props {
@@ -50,24 +57,28 @@ const Reveal = ({
 );
 
 // Etiqueta de sección — usa opacity para heredar el color del texto
-// y verse bien sobre fondo claro u oscuro.
+// y verse bien sobre fondo claro u oscuro. La opacidad del kicker es
+// parametrizable (necesario p. ej. cuando va sobre una foto, donde un
+// 40 % queda lavado y "ensucia" la lectura).
 const SectionLabel = ({
   index,
   children,
   align = 'left',
+  strong = false,
 }: {
   index: string;
   children: React.ReactNode;
   align?: 'left' | 'center';
+  strong?: boolean;
 }) => (
   <div
     className={`flex items-center gap-3 text-xs uppercase tracking-[0.4em] ${
       align === 'center' ? 'justify-center' : ''
     }`}
   >
-    <span className="tabular-nums opacity-40">{index}</span>
-    <span className="h-px w-8 bg-current opacity-25" />
-    <span className="opacity-40">{children}</span>
+    <span className={`tabular-nums ${strong ? 'opacity-80' : 'opacity-40'}`}>{index}</span>
+    <span className={`h-px w-8 bg-current ${strong ? 'opacity-60' : 'opacity-25'}`} />
+    <span className={strong ? 'opacity-80' : 'opacity-40'}>{children}</span>
   </div>
 );
 
@@ -128,11 +139,16 @@ export const HomeSections = ({
             <SectionLabel index="02">{t('studio.kicker')}</SectionLabel>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-10 font-gillsans font-light text-3xl lg:text-4xl leading-snug tracking-tight">
+            <p className="mt-10 font-gillsans font-light text-xl lg:text-2xl leading-snug tracking-tight">
               {t('studio.body')}
             </p>
           </Reveal>
-          <Reveal delay={0.2}>
+          <Reveal delay={0.16}>
+            <p className="mt-6 font-gillsans font-light text-base lg:text-lg text-black/65 leading-relaxed">
+              {t('studio.body2')}
+            </p>
+          </Reveal>
+          <Reveal delay={0.24}>
             <figure className="mt-14 border-t border-black/15 pt-10">
               <blockquote className="font-gillsans font-light italic text-lg lg:text-xl text-black/70 leading-relaxed">
                 &ldquo;{t('studio.quote')}&rdquo;
@@ -162,10 +178,13 @@ export const HomeSections = ({
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60" />
           <div className="absolute inset-x-0 bottom-10 lg:bottom-16 px-6 lg:px-12 flex flex-col items-center text-center">
             <Reveal>
-              <SectionLabel index="03" align="center">{t('process.kicker')}</SectionLabel>
+              <SectionLabel index="03" align="center" strong>{t('process.kicker')}</SectionLabel>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="mt-6 font-gillsans font-light text-3xl sm:text-4xl lg:text-5xl tracking-tight max-w-3xl">
+              {/* whitespace-pre-line respeta el \n del copy en mobile;
+                  en >= sm volvemos a comportamiento normal y el \n se
+                  convierte en espacio: una sola línea en tablet+. */}
+              <h2 className="mt-6 font-gillsans font-light uppercase text-3xl sm:text-4xl lg:text-5xl tracking-tight max-w-3xl whitespace-pre-line sm:whitespace-normal">
                 {t('process.title')}
               </h2>
             </Reveal>
@@ -176,13 +195,8 @@ export const HomeSections = ({
             {PROCESS_STEPS.map((key, i) => (
               <Reveal key={key} delay={i * 0.12}>
                 <div className="flex flex-col">
-                  <div className="flex items-baseline gap-4">
-                    <span className="font-gillsans font-light text-5xl lg:text-6xl text-black/25 tabular-nums">
-                      0{i + 1}
-                    </span>
-                    <span className="flex-1 h-px bg-black/20 self-center" />
-                  </div>
-                  <h3 className="mt-6 font-gillsans text-xl lg:text-2xl uppercase tracking-[0.15em]">
+                  <span className="h-px w-12 bg-black/20" />
+                  <h3 className="mt-6 font-gillsans font-light text-2xl lg:text-3xl tracking-tight">
                     {t(`process.${key}`)}
                   </h3>
                   <p className="mt-3 font-gillsans font-light text-sm lg:text-base text-black/55 leading-relaxed">
@@ -218,7 +232,10 @@ export const HomeSections = ({
                       alt={t(`universe.${item.key}`)}
                       fill
                       sizes="(max-width: 1024px) 50vw, 25vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                      className={`object-cover transition-transform duration-700 ease-out ${
+                        item.zoom ? 'scale-110 group-hover:scale-[1.18]' : 'group-hover:scale-105'
+                      }`}
+                      style={item.objectPosition ? { objectPosition: item.objectPosition } : undefined}
                     />
                   </div>
                   <div className="mt-3 flex items-baseline justify-between gap-3">
@@ -246,7 +263,7 @@ export const HomeSections = ({
             <div>
               <Reveal><SectionLabel index="05">{t('collections.kicker')}</SectionLabel></Reveal>
               <Reveal delay={0.08}>
-                <h2 className="mt-5 font-gillsans font-light text-2xl lg:text-3xl tracking-tight">{t('collections.title')}</h2>
+                <h2 className="mt-5 font-gillsans font-light uppercase text-2xl lg:text-3xl tracking-tight">{t('collections.title')}</h2>
               </Reveal>
             </div>
             <Reveal delay={0.15}>
@@ -267,7 +284,7 @@ export const HomeSections = ({
                     <div className="col-span-3 relative aspect-[16/10] overflow-hidden">
                       <Image src={col.portrait} alt={col.title} fill sizes="(max-width: 1024px) 25vw, 180px" className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"/>
                     </div>
-                    <h3 className="col-span-6 font-gillsans text-lg lg:text-2xl font-light uppercase tracking-tight">
+                    <h3 className="col-span-6 font-gillsans text-lg lg:text-2xl font-light tracking-tight">
                       {col.title}
                     </h3>
                     <span className="col-span-2 justify-self-end inline-flex items-center gap-2 text-[10px] lg:text-xs uppercase tracking-[0.3em] text-black/50 group-hover:text-black transition-colors">

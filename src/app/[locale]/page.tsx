@@ -9,9 +9,12 @@ import studioImage from "@/assets/meet-the-makers/portada.webp";
 // y acuarela botánica en curso. Síntesis visual del "cada mural, una historia".
 import processHero from "@/assets/home/proceso_hero.webp";
 
-import cafeImg from "@/assets/mc-universe/cafe/portada.webp";
-import fragrancesImg from "@/assets/mc-universe/fragrances/portada.webp";
-import bookImg from "@/assets/mc-universe/book/portada.webp";
+import cafeImg from "@/assets/mc-universe/cafe/cafe_2.webp";
+// fragrances_1 tiene un bloque blanco arriba con N°1 y descripción.
+// La card del universo crop con object-position bottom para mostrar solo
+// la botella (igual que en la página de fragrances).
+import fragrancesImg from "@/assets/mc-universe/fragrances/fragrances_1.webp";
+import bookImg from "@/assets/mc-universe/book/book_2.webp";
 import landmarkImg from "@/assets/mc-universe/landmark/portada.webp";
 
 export function generateStaticParams() {
@@ -27,7 +30,10 @@ export default function HomePage() {
 
   const universeItems = [
     { key: 'cafe' as const, href: '/mc-universe/costal-coffee', image: cafeImg },
-    { key: 'fragrances' as const, href: '/mc-universe/fragrances', image: fragrancesImg },
+    // La parte interesante de fragrances_1 está en la mitad-baja
+    // (la botella). Desplazamos el crop para que el header de la foto
+    // (bloque blanco con "N°1") quede fuera de la card.
+    { key: 'fragrances' as const, href: '/mc-universe/fragrances', image: fragrancesImg, objectPosition: 'center 75%', zoom: true },
     { key: 'book' as const, href: '/mc-universe/the-book', image: bookImg },
     { key: 'landmark' as const, href: '/mc-universe/landmark', image: landmarkImg },
   ];
