@@ -392,7 +392,6 @@
       "kicker": "The studio",
       "body": "A creative studio formed by a team of professionals — illustrators, architects and designers.",
       "body2": "The team creates illustrations through different manual and digital techniques, which are then printed onto paper substrate to produce the wallpapers we ship in Argentina and worldwide.",
-      "meta": "Since 2016 · Yerba Buena, Tucumán · Studio, gallery and café",
       "quote": "Drawing things makes them more real."
     },
     "process": {
@@ -424,10 +423,8 @@
     },
     "howWeWork": {
       "kicker": "How we work",
-      "buy": "Buy online",
-      "buyDesc": "Choose your mural, enter your measurements and pay. We ship across the country.",
       "quoteTitle": "Request a quote",
-      "quoteDesc": "A special wall or a large project? We quote it to measure.",
+      "quoteDesc": "A special wall or a large project? We’ll prepare a tailored quote.",
       "custom": "Bespoke project",
       "customDesc": "We design unique murals for your space, your brand or your work."
     },
