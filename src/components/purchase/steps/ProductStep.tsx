@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { collections } from '@/data/collections';
+import { ChevronDownIcon } from '@/icons';
 import { WallInput } from '../WallInput';
 import { OrderSummary } from '../OrderSummary';
 import type { PurchaseFormData } from '../PurchaseFlow';
@@ -91,31 +92,24 @@ export const ProductStep = ({
         <p className="text-sm text-black/40 mt-1">{t('subtitle')}</p>
       </div>
 
-      {/* Collection — pill chips horizontales */}
-      <div className="space-y-3">
-        <label className="text-xs text-black/50 uppercase tracking-wider">
+      {/* Collection — select desplegable */}
+      <div className="space-y-1.5">
+        <label htmlFor="collection-select" className="text-xs text-black/50 uppercase tracking-wider">
           {t('collection')}
         </label>
-        <div className="-mx-4 px-4 overflow-x-auto scrollbar-hide">
-          <div className="flex gap-2 min-w-min">
-            {collections.map(c => {
-              const isSelected = c.id === selectedCollectionId;
-              return (
-                <button
-                  key={c.id}
-                  type="button"
-                  onClick={() => handleSelectCollection(c.id)}
-                  className={`shrink-0 px-4 h-10 font-gillsans text-sm uppercase tracking-wider border transition-all duration-150 ${
-                    isSelected
-                      ? 'bg-black text-white border-black'
-                      : 'bg-white text-black/70 border-black/15 hover:border-black/40 hover:text-black'
-                  }`}
-                >
-                  {c.title}
-                </button>
-              );
-            })}
-          </div>
+        <div className="relative">
+          <select
+            id="collection-select"
+            value={selectedCollectionId}
+            onChange={e => handleSelectCollection(e.target.value)}
+            className="w-full h-12 px-4 pr-10 bg-white border border-black/20 appearance-none font-gillsans focus:border-black focus:outline-none transition-colors cursor-pointer"
+          >
+            <option value="">{t('selectCollection')}</option>
+            {collections.map(c => (
+              <option key={c.id} value={c.id}>{c.title}</option>
+            ))}
+          </select>
+          <ChevronDownIcon className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-black/30 pointer-events-none" />
         </div>
         {errors.collectionId && !selectedCollectionId && (
           <p className="text-xs text-red-600/80">{t('selectCollection')}</p>
@@ -163,7 +157,7 @@ export const ProductStep = ({
                     aria-pressed={isSelected}
                   >
                     <Image
-                      src={baseV.montaje}
+                      src={baseV.mural}
                       alt={m.title}
                       fill
                       sizes="(max-width: 768px) 50vw, 240px"

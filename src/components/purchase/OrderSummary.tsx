@@ -53,7 +53,7 @@ export const OrderSummary = ({
         <span>{formatPrice(displayTotal)}</span>
       </div>
 
-      <p className="text-[11px] text-black/30">{t('ivaIncluded')}</p>
+      <p className="text-xs text-black/50 italic">{t('ivaIncluded')}</p>
     </div>
   );
 };

@@ -91,6 +91,7 @@
     "shipping": "Shipping (Andreani)",
     "total": "Total",
     "ivaIncluded": "21% VAT included in all prices",
+    "ivaShort": "VAT incl.",
     "typeMural": "Mural",
     "typePattern": "Pattern",
     "printAreaSuffix": "m² of print"
@@ -209,6 +210,18 @@
         "description": "There was an incident. We're handling it."
       }
     }
+  },
+  "cart": {
+    "eyebrow": "Your pending purchase",
+    "title": "Pick up where you left off?",
+    "description": "You have an unfinished purchase. You can continue or discard it.",
+    "continue": "Continue purchase",
+    "later": "Later",
+    "discard": "Discard",
+    "justNow": "Just saved",
+    "hoursAgo": "Saved {n}h ago",
+    "yesterday": "Saved yesterday",
+    "daysAgo": "Saved {n} days ago"
   },
   "errors": {
     "selectCollection": "Select a collection",

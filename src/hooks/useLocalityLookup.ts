@@ -21,6 +21,10 @@ export function useLocalityLookup() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const cacheRef = useRef<Map<string, LocalityOption[]>>(new Map());
+  // El CP "vigente" — si el user tipea CP1 y CP2 dentro del debounce window y
+  // ambos fetchs están en vuelo, solo el último request escribe el state.
+  // Sin esto, una respuesta lenta sobreescribe una rápida posterior.
+  const latestRequestedCpRef = useRef<string>('');
 
   const lookup = useCallback(async (postalCode: string) => {
     if (!/^\d{4}$/.test(postalCode)) {
@@ -29,10 +33,14 @@ export function useLocalityLookup() {
       return [];
     }
 
+    latestRequestedCpRef.current = postalCode;
+
     const cached = cacheRef.current.get(postalCode);
     if (cached) {
-      setOptions(cached);
-      setError(null);
+      if (latestRequestedCpRef.current === postalCode) {
+        setOptions(cached);
+        setError(null);
+      }
       return cached;
     }
 
@@ -42,15 +50,24 @@ export function useLocalityLookup() {
       const data = await apiGet<Response>(`/api/shipping/locality?postalCode=${postalCode}`);
       const opts = data.options || [];
       cacheRef.current.set(postalCode, opts);
-      setOptions(opts);
+      // Solo aplicamos al state si seguimos en el CP que pidió esta llamada.
+      if (latestRequestedCpRef.current === postalCode) {
+        setOptions(opts);
+      }
       return opts;
     } catch (err) {
       const msg = err instanceof Error ? err.message : 'No se pudo validar el código postal';
-      setError(msg);
-      setOptions([]);
+      if (latestRequestedCpRef.current === postalCode) {
+        setError(msg);
+        setOptions([]);
+      }
       return [];
     } finally {
-      setLoading(false);
+      // Solo apagamos loading si seguimos en este CP — sino el spinner se queda
+      // hasta que termine el lookup correcto.
+      if (latestRequestedCpRef.current === postalCode) {
+        setLoading(false);
+      }
     }
   }, []);
 

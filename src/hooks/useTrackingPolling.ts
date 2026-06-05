@@ -85,6 +85,9 @@ export function useTrackingPolling(magicToken: string | null) {
 
   const schedule = useCallback((status: FulfillmentStatus) => {
     if (TERMINAL.includes(status)) return;
+    // Clear timer previo antes de programar uno nuevo — sino quedaban timers en paralelo
+    // multiplicando la frecuencia de polling en cada cambio de status.
+    if (timerRef.current) clearTimeout(timerRef.current);
     const interval = ACTIVE.includes(status) ? POLL_INTERVAL_ACTIVE_MS : POLL_INTERVAL_LONG_MS;
     timerRef.current = setTimeout(async () => {
       const next = await fetchOnce();

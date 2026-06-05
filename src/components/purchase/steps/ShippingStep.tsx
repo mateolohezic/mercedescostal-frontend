@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { UseFormReturn } from 'react-hook-form';
 import { useTranslations } from 'next-intl';
 import { FormErrorMessage } from '@/components';
@@ -50,11 +50,20 @@ export const ShippingStep = ({
   const debounceRef = useRef<NodeJS.Timeout | null>(null);
 
   const { options: localityOptions, loading: localityLoading, lookup: lookupLocality } = useLocalityLookup();
+  const cityValue = watch('city');
+  const provinceValue = watch('province');
+  // Marca true después del primer lookup completado para este CP — evita que los
+  // inputs manuales aparezcan brevemente durante los 500ms del debounce inicial.
+  const [lookupAttempted, setLookupAttempted] = useState(false);
 
   // Cuando el CP es válido: 1) lookup de localidad/provincia, 2) cotización de envío.
   // Ambos se debouncean a 500ms juntos para no martillar el back.
   useEffect(() => {
-    if (!isPostalCodeValid) return;
+    if (!isPostalCodeValid) {
+      setLookupAttempted(false);
+      return;
+    }
+    setLookupAttempted(false);
     if (debounceRef.current) clearTimeout(debounceRef.current);
     debounceRef.current = setTimeout(async () => {
       const opts = await lookupLocality(postalCode);
@@ -63,6 +72,7 @@ export const ShippingStep = ({
         setValue('city', opts[0].city, { shouldValidate: true });
         setValue('province', opts[0].province, { shouldValidate: true });
       }
+      setLookupAttempted(true);
       onFetchShipping();
     }, 500);
     return () => {
@@ -71,7 +81,10 @@ export const ShippingStep = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [postalCode, isPostalCodeValid]);
 
+  const hasSingleLocality = localityOptions.length === 1;
   const hasMultipleLocalities = localityOptions.length > 1;
+  // Fallback manual: CP válido, ya hicimos lookup y no encontramos nada (404 o error).
+  const needsManualEntry = isPostalCodeValid && lookupAttempted && !localityLoading && localityOptions.length === 0;
 
   return (
     <div className="space-y-8">
@@ -141,32 +154,54 @@ export const ShippingStep = ({
           <FormErrorMessage condition={errors.postalCode} message={errors.postalCode?.message} />
         </div>
 
-        {/* City + Province (auto-completados desde Andreani) */}
-        <div className="flex gap-3">
-          <div className="flex-1 space-y-1.5">
+        {/* Localidad detectada / selector / fallback manual */}
+        {hasSingleLocality && cityValue && provinceValue && (
+          <div className="flex items-center gap-2 text-sm text-black/70 bg-black/[0.03] border border-black/5 px-3 py-2">
+            <span className="text-black/40 text-xs uppercase tracking-wider">{t('city')}:</span>
+            <span className="font-medium">{cityValue}</span>
+            <span className="text-black/20">·</span>
+            <span className="text-black/40 text-xs uppercase tracking-wider">{t('province')}:</span>
+            <span className="font-medium">{provinceValue}</span>
+          </div>
+        )}
+
+        {hasMultipleLocalities && (
+          <div className="space-y-1.5">
             <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="city">{t('city')}</label>
-            {hasMultipleLocalities ? (
-              <div className="relative">
-                <select
-                  id="city"
-                  className="w-full h-12 px-4 pr-10 bg-white border border-black/20 appearance-none font-gillsans focus:border-black focus:outline-none transition-colors cursor-pointer"
-                  value={watch('city')}
-                  onChange={e => {
-                    const opt = localityOptions.find(o => o.city === e.target.value);
-                    if (opt) {
-                      setValue('city', opt.city, { shouldValidate: true });
-                      setValue('province', opt.province, { shouldValidate: true });
-                    }
-                  }}
-                >
-                  <option value="">{t('selectLocality')}</option>
-                  {localityOptions.map(o => (
-                    <option key={o.id} value={o.city}>{o.city}</option>
-                  ))}
-                </select>
-                <ChevronDownIcon className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-black/30 pointer-events-none" />
-              </div>
-            ) : (
+            <div className="relative">
+              <select
+                id="city"
+                className="w-full h-12 px-4 pr-10 bg-white border border-black/20 appearance-none font-gillsans focus:border-black focus:outline-none transition-colors cursor-pointer"
+                value={cityValue}
+                onChange={e => {
+                  const opt = localityOptions.find(o => o.city === e.target.value);
+                  if (opt) {
+                    setValue('city', opt.city, { shouldValidate: true });
+                    setValue('province', opt.province, { shouldValidate: true });
+                  }
+                }}
+              >
+                <option value="">{t('selectLocality')}</option>
+                {localityOptions.map(o => (
+                  <option key={o.id} value={o.city}>{o.city}</option>
+                ))}
+              </select>
+              <ChevronDownIcon className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-black/30 pointer-events-none" />
+            </div>
+            {cityValue && provinceValue && (
+              <p className="text-xs text-black/40 pt-0.5">
+                <span className="uppercase tracking-wider">{t('province')}:</span>{' '}
+                <span className="text-black/60 font-medium">{provinceValue}</span>
+              </p>
+            )}
+            <FormErrorMessage condition={errors.city} message={errors.city?.message} />
+          </div>
+        )}
+
+        {needsManualEntry && (
+          <div className="flex gap-3">
+            <div className="flex-1 space-y-1.5">
+              <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="city">{t('city')}</label>
               <input
                 id="city"
                 type="text"
@@ -174,27 +209,27 @@ export const ShippingStep = ({
                 className="w-full h-12 px-4 bg-white border border-black/20 font-gillsans focus:border-black focus:outline-none transition-colors"
                 {...register('city')}
               />
-            )}
-            <FormErrorMessage condition={errors.city} message={errors.city?.message} />
-          </div>
-          <div className="flex-1 space-y-1.5">
-            <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="province">{t('province')}</label>
-            <div className="relative">
-              <select
-                id="province"
-                className="w-full h-12 px-4 pr-10 bg-white border border-black/20 appearance-none font-gillsans focus:border-black focus:outline-none transition-colors cursor-pointer"
-                {...register('province')}
-              >
-                <option value="">{t('selectProvince')}</option>
-                {PROVINCES.map(p => (
-                  <option key={p} value={p}>{p}</option>
-                ))}
-              </select>
-              <ChevronDownIcon className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-black/30 pointer-events-none" />
+              <FormErrorMessage condition={errors.city} message={errors.city?.message} />
             </div>
-            <FormErrorMessage condition={errors.province} message={errors.province?.message} />
+            <div className="flex-1 space-y-1.5">
+              <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="province">{t('province')}</label>
+              <div className="relative">
+                <select
+                  id="province"
+                  className="w-full h-12 px-4 pr-10 bg-white border border-black/20 appearance-none font-gillsans focus:border-black focus:outline-none transition-colors cursor-pointer"
+                  {...register('province')}
+                >
+                  <option value="">{t('selectProvince')}</option>
+                  {PROVINCES.map(p => (
+                    <option key={p} value={p}>{p}</option>
+                  ))}
+                </select>
+                <ChevronDownIcon className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-black/30 pointer-events-none" />
+              </div>
+              <FormErrorMessage condition={errors.province} message={errors.province?.message} />
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Street + Number */}
         <div className="flex gap-3">

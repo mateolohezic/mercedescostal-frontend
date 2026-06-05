@@ -19,7 +19,7 @@ export default async function BuyPage({ searchParams }: Props) {
 
   return (
     <main className="min-h-screen bg-white">
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 py-24 lg:py-48">
         <h1 className="font-gillsans text-3xl md:text-4xl font-medium uppercase tracking-wider text-center mb-2">
           {t('title')}
         </h1>

@@ -15,6 +15,8 @@ const USER_FACING_PREFIXES = [
   'El monto total', 'Seleccioná', 'Ingresá', 'Tipo de producto',
   'No se pudo cotizar', 'Envío no disponible', 'DNI inválido',
   'El peso del paquete', 'La altura máxima de pared',
+  'El nombre', 'La calle', 'El número', 'La ciudad', 'Tu nombre',
+  'El piso', 'El depto', 'Teléfono', 'El email',
 ];
 
 function sanitizeErrorMessage(message: string | undefined, fallback: string): string {

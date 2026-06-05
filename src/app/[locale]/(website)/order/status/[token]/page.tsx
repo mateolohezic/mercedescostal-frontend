@@ -18,7 +18,7 @@ export default async function OrderStatusPage({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-white">
-      <div className="max-w-lg mx-auto px-4 py-12">
+      <div className="max-w-lg mx-auto px-4 py-24 lg:py-48">
         <OrderStatusView token={token} />
       </div>
     </main>

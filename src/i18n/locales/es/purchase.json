@@ -91,6 +91,7 @@
     "shipping": "Envío (Andreani)",
     "total": "Total",
     "ivaIncluded": "IVA 21% incluido en todos los precios",
+    "ivaShort": "IVA incl.",
     "typeMural": "Mural",
     "typePattern": "Patrón",
     "printAreaSuffix": "m² de impresión"
@@ -209,6 +210,18 @@
         "description": "Hubo un incidente. Estamos gestionándolo."
       }
     }
+  },
+  "cart": {
+    "eyebrow": "Tu compra en curso",
+    "title": "¿Continuamos?",
+    "description": "Tenés una compra empezada. Podés retomarla desde donde la dejaste o descartarla.",
+    "continue": "Continuar compra",
+    "later": "Después",
+    "discard": "Descartar",
+    "justNow": "Recién la guardaste",
+    "hoursAgo": "Guardada hace {n}h",
+    "yesterday": "Guardada ayer",
+    "daysAgo": "Guardada hace {n} días"
   },
   "errors": {
     "selectCollection": "Seleccioná una colección",

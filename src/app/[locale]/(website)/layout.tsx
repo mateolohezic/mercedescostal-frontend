@@ -1,4 +1,5 @@
 import { Footer, WhatsApp } from "@/components";
+import { CartResumeModal } from "@/components/cart/CartResumeModal";
 import { Fragment } from "react";
 
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
@@ -7,6 +8,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
       {children}
       <Footer/>
       <WhatsApp/>
-    </Fragment>    
+      <CartResumeModal/>
+    </Fragment>
   );
 }

@@ -33,6 +33,7 @@ interface Props {
 export const WallInput = ({ index, register, errors, onRemove, canRemove, calculated, formatPrice }: Props) => {
   const t = useTranslations('purchase.product');
   const tWall = useTranslations('purchase.wall');
+  const tSummary = useTranslations('purchase.summary');
   const wallErrors = (errors.walls as any)?.[index];
   const hasData = calculated && calculated.panels > 0;
 
@@ -100,6 +101,7 @@ export const WallInput = ({ index, register, errors, onRemove, canRemove, calcul
           {hasData && (
             <div className="pb-1 text-right shrink-0">
               <p className="font-gillsans font-medium text-sm">{formatPrice(calculated.priceARS)}</p>
+              <p className="text-[10px] text-black/35 leading-none mt-0.5">{tSummary('ivaShort')}</p>
             </div>
           )}
         </div>

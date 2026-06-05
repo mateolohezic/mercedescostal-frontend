@@ -13,6 +13,7 @@ import { CheckIcon } from '@/icons';
 import { usePurchasePricing } from '@/hooks/usePurchasePricing';
 import { useShippingQuote } from '@/hooks/useShippingQuote';
 import { useCreateOrder, resetIdempotencyKey } from '@/hooks/useCreateOrder';
+import { getCart, saveCart, clearCart, type CartData } from '@/hooks/useCart';
 import { ProductStep } from './steps/ProductStep';
 import { ShippingStep } from './steps/ShippingStep';
 import { ReviewStep } from './steps/ReviewStep';
@@ -52,7 +53,9 @@ export type PurchaseFormData = z.infer<typeof schema>;
 
 // Whitelist de hosts válidos para el initPoint que devuelve MP. Si el back devuelve
 // algo distinto (URL maliciosa, javascript:, etc.) lo rechazamos antes del redirect.
-const MP_VALID_HOSTS = ['mercadopago.com.ar', 'mercadopago.com', 'mercadolibre.com.ar', 'mercadolibre.com'];
+// Solo dominios de Mercado Pago — sacamos mercadolibre.com.* porque MP no redirige por ahí
+// y abre vector de ataque (ej. evil.mercadolibre.com.ar sería válido con endsWith).
+const MP_VALID_HOSTS = ['mercadopago.com.ar', 'mercadopago.com'];
 function isValidMpInitPoint(url: string): boolean {
   try {
     const u = new URL(url);
@@ -109,19 +112,67 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
     name: 'walls',
   });
 
-  // Al montar el flujo: limpiamos cualquier idempotency key vieja de una compra previa
-  // (si el usuario terminó una compra anterior y vuelve a /buy, queremos una key nueva).
-  // Y limpiamos también los tokens stale que podrían confundir a OrderSuccessClient.
+  // Al montar el flujo: limpiamos idempotency keys / tokens stale, y restauramos
+  // el carrito guardado en localStorage si hay alguno.
+  // - Si hay carrito → validamos que el mural/variante todavía existan en `collections`
+  //   y restauramos. Si el mural fue removido (cambio de catálogo), descartamos cart.
+  // - Si no hay carrito pero llegamos con ?mural=X → preselect ese mural (existing).
+  const [restoredFromCart, setRestoredFromCart] = useState(false);
+  // Cuando otra pestaña paga (clearCart), no queremos que esta pestaña re-guarde el
+  // form viejo y resucite el carrito ya pagado. Si el `storage` event nos avisa que
+  // el cart fue eliminado externamente, freezamos el auto-save.
+  const [cartFinalizedExternally, setCartFinalizedExternally] = useState(false);
   useEffect(() => {
     resetIdempotencyKey();
     if (typeof window !== 'undefined') {
       sessionStorage.removeItem('mc_magic_token');
       sessionStorage.removeItem('mc_order_number');
     }
+
+    const cart = getCart();
+    if (cart && cart.formData && Object.keys(cart.formData).length > 0) {
+      // Validamos que el mural y variante restaurados sigan existiendo en el catálogo.
+      // Si el cliente cambió de mural ID o sacó una variante, descartamos cart entero
+      // para no dejar al user con un form roto sin sidebar/preview.
+      const cartMuralId = (cart.formData as any).muralId;
+      const cartVariantName = (cart.formData as any).variantColorName;
+      const restoredMural = cartMuralId
+        ? collections.flatMap(c => c.murales).find(m => m.id === cartMuralId)
+        : null;
+      const restoredVariant = restoredMural && cartVariantName
+        ? restoredMural.variants.find(v => v.colorName === cartVariantName)
+        : null;
+
+      if (cartMuralId && !restoredMural) {
+        // El mural ya no existe — descartamos cart entero.
+        clearCart();
+      } else {
+        const formDataToRestore = { ...cart.formData } as PurchaseFormData;
+        // Si el mural existe pero la variante elegida desapareció, fallback a la primera.
+        if (restoredMural && cartVariantName && !restoredVariant) {
+          formDataToRestore.variantColorName = restoredMural.variants[0]?.colorName || '';
+        }
+        form.reset(formDataToRestore);
+        if (cart.step && cart.step >= 1 && cart.step <= 3) setStep(cart.step);
+        setRestoredFromCart(true);
+      }
+    }
+
+    // Listen storage event: si OTRA pestaña limpia el carrito (típicamente la que pagó),
+    // congelamos el auto-save acá para no resucitarlo.
+    const onStorage = (e: StorageEvent) => {
+      if (e.key === 'mc_cart_draft' && e.newValue === null) {
+        setCartFinalizedExternally(true);
+      }
+    };
+    window.addEventListener('storage', onStorage);
+    return () => window.removeEventListener('storage', onStorage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Preselect mural from query param
+  // Preselect mural from query param (solo si NO hubo restore desde carrito)
   useEffect(() => {
+    if (restoredFromCart) return;
     if (!preselectedMuralId) return;
     const mural = collections.flatMap(c => c.murales).find(m => m.id === preselectedMuralId);
     if (mural) {
@@ -133,7 +184,7 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
         }
       }, 0);
     }
-  }, [preselectedMuralId, form]);
+  }, [preselectedMuralId, form, restoredFromCart]);
 
   // Determine product type
   const watchedMuralId = form.watch('muralId');
@@ -169,6 +220,34 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [wallsKey, productType, calculateWalls]
   );
+
+  // Auto-save del carrito en localStorage cada vez que cambia el form (debounce 600ms).
+  // Una sola subscripción a TODOS los valores via form.watch() — la JSON-stringified key
+  // dispara el effect solo cuando algo realmente cambió (evita el "deps explosion" de
+  // crear 11 watch() subscripciones nuevas en cada render).
+  const allFormValues = form.watch();
+  const formValuesKey = JSON.stringify(allFormValues);
+  useEffect(() => {
+    if (cartFinalizedExternally) return;     // otra pestaña ya pagó — no resucitar
+    if (!watchedMuralId) return;             // sin mural seleccionado no tiene sentido
+    const handle = setTimeout(() => {
+      // currentVariant.mural puede ser un StaticImageData (import) o un string;
+      // para localStorage necesitamos un string serializable.
+      const muralImageRaw = currentVariant?.mural;
+      const muralImage = typeof muralImageRaw === 'string'
+        ? muralImageRaw
+        : (muralImageRaw as { src?: string } | undefined)?.src;
+      const summary: CartData['productSummary'] = {
+        muralTitle: currentMural?.title || '',
+        variantColorName: currentVariant?.colorName || '',
+        collectionTitle: collections.find(c => c.id === allFormValues.collectionId)?.title,
+        muralImage,
+      };
+      saveCart({ formData: allFormValues, productSummary: summary, step });
+    }, 600);
+    return () => clearTimeout(handle);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [formValuesKey, step, cartFinalizedExternally]);
 
 
   // Step navigation
@@ -245,6 +324,9 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
     // Validamos que el initPoint sea una URL https de un host conocido de Mercado Pago
     // antes de redirigir. Defensa contra response manipulado (ej. javascript: URL).
     if (result?.initPoint && isValidMpInitPoint(result.initPoint)) {
+      // Carrito ya cumplió su rol — el user pasa al checkout MP. Si vuelve a /buy
+      // queremos que arranque limpio (sea que pague o no, el flow es nuevo).
+      clearCart();
       window.location.href = result.initPoint;
     } else {
       setSubmitted(false);
@@ -401,7 +483,7 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
                 <p className="text-sm text-black/50">{currentVariant.colorName}</p>
                 {pricePerM2 > 0 && (
                   <p className="text-sm text-black/50 mt-1">
-                    {formatPrice(pricePerM2)}/m²
+                    {formatPrice(pricePerM2)}/m² <span className="text-xs text-black/35">({t('summary.ivaShort')})</span>
                   </p>
                 )}
               </div>

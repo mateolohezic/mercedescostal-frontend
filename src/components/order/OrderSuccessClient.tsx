@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { usePaymentPolling } from '@/hooks/usePaymentPolling';
+import { clearCart } from '@/hooks/useCart';
 import { CheckIcon, CloseIcon, ClockIcon } from '@/icons';
 
 interface Props {
@@ -18,14 +19,24 @@ export const OrderSuccessClient = ({ token }: Props) => {
 
   const [magicToken, setMagicToken] = useState<string | null>(token || null);
   const [orderNumber, setOrderNumber] = useState<string | null>(null);
+  // window.location.origin solo en cliente (después de mount). Renderizamos string
+  // vacío en server para evitar hydration mismatch.
+  const [origin, setOrigin] = useState<string>('');
 
-  // Read sessionStorage only on client after mount (avoids SSR hydration mismatch)
+  // Read sessionStorage only on client after mount (avoids SSR hydration mismatch).
+  // También limpiamos cualquier carrito persistido — esta página significa que el
+  // user ya volvió de MP, así que la "compra en curso" no aplica más.
+  // Mount-only: no dep en magicToken para evitar que se re-ejecute clearCart() y
+  // setOrigin() cada vez que cambia el token (lo que era una llamada de más, no bug).
   useEffect(() => {
     if (!magicToken) {
       setMagicToken(sessionStorage.getItem('mc_magic_token'));
     }
     setOrderNumber(sessionStorage.getItem('mc_order_number'));
-  }, [magicToken]);
+    setOrigin(window.location.origin);
+    clearCart();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const { status, loading, exhausted, startPolling } = usePaymentPolling(magicToken);
 
@@ -81,7 +92,7 @@ export const OrderSuccessClient = ({ token }: Props) => {
         <p className="text-[11px] text-black/25 mt-6 break-all leading-relaxed">
           {t('saveLink')}
           <br />
-          <span className="text-black/40">{typeof window !== 'undefined' ? window.location.origin : ''}{statusLink}</span>
+          <span className="text-black/40">{origin}{statusLink}</span>
         </p>
       </div>
     );
@@ -143,7 +154,7 @@ export const OrderSuccessClient = ({ token }: Props) => {
         <p className="text-[11px] text-black/25 break-all leading-relaxed">
           {t('trackingLink')}
           <br />
-          <span className="text-black/40">{typeof window !== 'undefined' ? window.location.origin : ''}{statusLink}</span>
+          <span className="text-black/40">{origin}{statusLink}</span>
         </p>
       </div>
     </div>
