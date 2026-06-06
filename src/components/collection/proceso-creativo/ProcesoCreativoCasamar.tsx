@@ -32,12 +32,12 @@ export const ProcesoCreativoCasamar = () => {
             <div className="w-full max-w-4xl flex flex-col lg:flex-row gap-8">
                 <div className="w-full lg:w-[55%] flex flex-col">
                     <p className="text-lg text-justify">{t('p1')}</p>
-                    <Image src={casamar_proceso_1} alt="Casamar Mercedes Costal" className="mt-8 lg:mt-48 w-full object-contain"/>
+                    <Image src={casamar_proceso_1} alt="Casamar Mercedes Costal" sizes="(max-width: 1024px) 100vw, 560px" className="mt-8 lg:mt-48 w-full object-contain"/>
                     <p className="mt-4 text-lg underline">{t('p2')}</p>
                 </div>
                 <div className="mt-12 lg:mt-0 grow flex flex-col">
-                    <Image src={casamar_proceso_2} alt="Casamar Mercedes Costal" className="w-full object-contain"/>
-                    <Image src={casamar_proceso_3} alt="Casamar Mercedes Costal" className="mt-4 lg:mt-24 w-full object-contain"/>
+                    <Image src={casamar_proceso_2} alt="Casamar Mercedes Costal" sizes="(max-width: 1024px) 100vw, 460px" className="w-full object-contain"/>
+                    <Image src={casamar_proceso_3} alt="Casamar Mercedes Costal" sizes="(max-width: 1024px) 100vw, 460px" className="mt-4 lg:mt-24 w-full object-contain"/>
                     <p className="mt-4 text-lg underline">{t('p3')}</p>
                 </div>
             </div>
@@ -47,21 +47,21 @@ export const ProcesoCreativoCasamar = () => {
             </div>
             <div className="mt-24 lg:mt-12 w-full max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="w-full flex flex-col justify-between items-center gap-8 lg:gap-24">
-                    <Image src={casamar_proceso_4} alt="Casamar Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={casamar_proceso_4} alt="Casamar Mercedes Costal" sizes="(max-width: 1024px) 100vw, 448px" className="w-full object-contain"/>
                     <Image src={casamar_proceso_5} alt="Casamar Mercedes Costal" className="w-64 object-contain"/>
                 </div>
                 <div className="w-full flex flex-col">
-                    <Image src={casamar_proceso_6} alt="Casamar Mercedes Costal" className="my-24 lg:my-36 px-12 w-full object-contain"/>
-                    <Image src={casamar_proceso_7} alt="Casamar Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={casamar_proceso_6} alt="Casamar Mercedes Costal" sizes="(max-width: 1024px) 100vw, 448px" className="my-24 lg:my-36 px-12 w-full object-contain"/>
+                    <Image src={casamar_proceso_7} alt="Casamar Mercedes Costal" sizes="(max-width: 1024px) 100vw, 448px" className="w-full object-contain"/>
                 </div>
             </div>
             <div className="mt-24 w-full max-w-xl">
-                <Image src={casamar_proceso_8} alt="Casamar Mercedes Costal" className="w-full object-contain"/>
+                <Image src={casamar_proceso_8} alt="Casamar Mercedes Costal" sizes="(max-width: 768px) 100vw, 576px" className="w-full object-contain"/>
                 <p className="mt-4 lg:mt-8 text-lg text-center">{t('p4')}</p>
             </div>
             <div className="mt-12 w-full max-w-3xl">
                 <div className="w-full grid grid-cols-2 lg:grid-cols-2 gap-2 lg:gap-8">
-                    <Image src={casamar_proceso_9} alt="Casamar Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={casamar_proceso_9} alt="Casamar Mercedes Costal" sizes="(max-width: 768px) 50vw, 384px" className="w-full object-contain"/>
                     <Video video={"/assets/proceso_creativo/casamar/casamar_proceso_1.mp4"}/>
                 </div>
                 <p className="mt-8 text-lg text-justify"><b className="underline uppercase">{t('p5Title')}</b> {t('p5')}</p>
@@ -69,7 +69,7 @@ export const ProcesoCreativoCasamar = () => {
             <PhotoSelector images={[casamar_proceso_11, casamar_proceso_12, casamar_proceso_13, casamar_proceso_14, casamar_proceso_15, casamar_proceso_16, casamar_proceso_17, casamar_proceso_18, casamar_proceso_19, casamar_proceso_20]} photoClassName="w-full lg:w-1/2 object-contain" className="mt-12 lg:mt-24 w-full max-w-3xl flex flex-col-reverse justify-center items-start gap-4" gridClassName="w-full grid grid-cols-5 gap-1 lg:gap-4" />
             <div className="mt-4 lg:-mt-12 w-full max-w-3xl grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div className="hidden lg:block"></div>
-                <Image src={casamar_proceso_10} alt="Casamar Mercedes Costal" className="w-full object-contain"/>
+                <Image src={casamar_proceso_10} alt="Casamar Mercedes Costal" sizes="(max-width: 1024px) 100vw, 384px" className="w-full object-contain"/>
             </div>
             <div className="mt-48 w-full flex justify-center">
                 <Video video={"/assets/proceso_creativo/casamar/casamar_proceso_2.mp4"} className="max-w-md" buttonClassName="w-full justify-center bottom-4"/>

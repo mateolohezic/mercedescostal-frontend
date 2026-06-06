@@ -66,7 +66,7 @@ export default async function LondonDesignFestivalPage({ params }: { params: Pro
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     {t('sectionTitle')}
                 </h1>
-                <Image src={london_festival_1} priority alt="London Design Festival Mercedes Costal" className="w-full object-contain"/>
+                <Image src={london_festival_1} priority alt="London Design Festival Mercedes Costal" sizes="100vw" className="w-full object-contain"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h2 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
@@ -78,16 +78,16 @@ export default async function LondonDesignFestivalPage({ params }: { params: Pro
                 </div>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
-                <Image src={london_festival_2} alt="London Design Festival Mercedes Costal" className="w-full object-contain"/>
+                <Image src={london_festival_2} alt="London Design Festival Mercedes Costal" sizes="(max-width: 1280px) 100vw, 1280px" className="w-full object-contain"/>
             </section>
             <section className="mt-4 lg:mt-12 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 grid grid-cols-2 gap-4">
                 <div className="w-full flex flex-col gap-4 lg:gap-12">
-                    <Image src={london_festival_13} alt="London Design Festival Mercedes Costal" className="w-full object-contain"/>
-                    <Image src={london_festival_4} alt="London Design Festival Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={london_festival_13} alt="London Design Festival Mercedes Costal" sizes="(max-width: 1280px) 50vw, 640px" className="w-full object-contain"/>
+                    <Image src={london_festival_4} alt="London Design Festival Mercedes Costal" sizes="(max-width: 1280px) 50vw, 640px" className="w-full object-contain"/>
                 </div>
                 <div className="w-full flex flex-col justify-between gap-4 lg:gap-12">
-                    <Image src={london_festival_3} alt="London Design Festival Mercedes Costal" className="w-full object-contain"/>
-                    <Image src={london_festival_14} alt="London Design Festival Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={london_festival_3} alt="London Design Festival Mercedes Costal" sizes="(max-width: 1280px) 50vw, 640px" className="w-full object-contain"/>
+                    <Image src={london_festival_14} alt="London Design Festival Mercedes Costal" sizes="(max-width: 1280px) 50vw, 640px" className="w-full object-contain"/>
                 </div>
             </section>
             <section className="mt-24 lg:mt-12 w-full max-w-5xl 2xl:max-w-7xl flex justify-center px-4 xl:px-0 overflow-x-hidden">

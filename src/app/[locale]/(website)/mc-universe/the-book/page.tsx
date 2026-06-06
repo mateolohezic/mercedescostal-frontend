@@ -59,7 +59,7 @@ export default async function TheBookPage({ params }: { params: Promise<{ locale
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     {t('sectionTitle')}
                 </h1>
-                <Image src={portada} priority alt="Portada Meet the makers Mercedes Costal" className="w-full aspect-video object-cover"/>
+                <Image src={portada} priority alt="Portada Meet the makers Mercedes Costal" sizes="100vw" className="w-full aspect-video object-cover"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h2 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
@@ -76,18 +76,18 @@ export default async function TheBookPage({ params }: { params: Promise<{ locale
                 <Video video={"/assets/mc-universe/book_video.mp4"} buttonClassName="w-full absolute bottom-4 left-0 justify-center"/>
             </section>
             <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
-                <Image src={book_1} alt="Meet the Makers Mercedes Costal" className="w-full max-w-3xl object-contain"/>
+                <Image src={book_1} alt="Meet the Makers Mercedes Costal" sizes="(max-width: 1024px) 100vw, 768px" className="w-full max-w-3xl object-contain"/>
             </section>
             <section className="lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl flex flex-col lg:flex-row gap-4 lg:gap-12 px-4 xl:px-0">
                 <div className="grow flex items-center">
-                    <Image src={book_6} alt="Meet the Makers Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={book_6} alt="Meet the Makers Mercedes Costal" sizes="(max-width: 1024px) 100vw, 50vw" className="w-full object-contain"/>
                 </div>
-                <Image src={book_2} alt="Meet the Makers Mercedes Costal" className="w-full max-w-3xl shrink-0 object-contain"/>
+                <Image src={book_2} alt="Meet the Makers Mercedes Costal" sizes="(max-width: 1024px) 100vw, 768px" className="w-full max-w-3xl shrink-0 object-contain"/>
             </section>
             <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 grid grid-cols-2 gap-1 lg:gap-4">
-                <Image src={book_3} alt="Meet the Makers Mercedes Costal" className="w-full object-contain"/>
-                <Image src={book_4} alt="Meet the Makers Mercedes Costal" className="w-full object-contain"/>
-                <Image src={book_5} alt="Meet the Makers Mercedes Costal" className="w-full object-contain col-span-2"/>
+                <Image src={book_3} alt="Meet the Makers Mercedes Costal" sizes="(max-width: 1280px) 50vw, 640px" className="w-full object-contain"/>
+                <Image src={book_4} alt="Meet the Makers Mercedes Costal" sizes="(max-width: 1280px) 50vw, 640px" className="w-full object-contain"/>
+                <Image src={book_5} alt="Meet the Makers Mercedes Costal" sizes="(max-width: 1280px) 100vw, 1280px" className="w-full object-contain col-span-2"/>
             </section>
         </main>
     );

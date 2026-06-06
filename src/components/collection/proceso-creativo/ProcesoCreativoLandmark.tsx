@@ -24,7 +24,7 @@ export const ProcesoCreativoLandmark = () => {
                         <p className="text-lg text-justify lg:text-left">{t('p3')}</p>
                     </div>
                 </div>
-                <Image src={landmark_proceso_1} alt="Landmark Mercedes Costal" className="w-full lg:w-1/2 shrink-0 object-contain relative left-8"/>
+                <Image src={landmark_proceso_1} alt="Landmark Mercedes Costal" sizes="(max-width: 1024px) 100vw, 50vw" className="w-full lg:w-1/2 shrink-0 object-contain relative left-8"/>
             </div>
             <div className="mt-12 lg:mt-12 w-full max-w-4xl flex justify-center">
                 <Video video={"/assets/proceso_creativo/landmark/landmark_proceso_3.mp4"} className="w-full max-w-md"/>
@@ -32,12 +32,12 @@ export const ProcesoCreativoLandmark = () => {
             <div className="mt-48 w-full max-w-4xl flex flex-col gap-12">
                 <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-3">
                     <Video video={"/assets/proceso_creativo/landmark/landmark_proceso_4.mp4"} className="w-full"/>
-                    <Image src={landmark_proceso_2} alt="Landmark Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={landmark_proceso_2} alt="Landmark Mercedes Costal" sizes="(max-width: 1024px) 100vw, 448px" className="w-full object-contain"/>
                 </div>
                 <p className="text-lg text-justify">{t('p4')}</p>
             </div>
             <div className="mt-12 w-full max-w-4xl flex flex-col gap-4">
-                <Image src={landmark_proceso_3} alt="Landmark Mercedes Costal" className="w-full object-contain"/>
+                <Image src={landmark_proceso_3} alt="Landmark Mercedes Costal" sizes="(max-width: 1024px) 100vw, 896px" className="w-full object-contain"/>
                 <p className="text-lg text-justify">{t('p5')}</p>
             </div>
             <div className="mt-12 w-full max-w-4xl">

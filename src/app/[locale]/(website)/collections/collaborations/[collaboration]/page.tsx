@@ -87,7 +87,7 @@ export default async function CollaborationPage({ params }: Props) {
                     {found.video ? (
                         <CollectionVideo video={found.video} />
                     ) : (
-                        <Image priority src={found.portrait} alt={`Portada ${found.title}`} className="w-full aspect-video object-cover"/>
+                        <Image priority src={found.portrait} alt={`Portada ${found.title}`} sizes="100vw" className="w-full aspect-video object-cover"/>
                     )}
                 </div>
                 <div className="w-full flex flex-col justify-start items-start gap-1">

@@ -29,7 +29,7 @@ export const Footer = () => {
                 </div>
             </div>
             <div className="mt-24 lg:mt-4 pb-8 w-full flex justify-center">
-                <Image src={firma} alt="Firma" className="w-48 lg:w-full max-w-sm" />
+                <Image src={firma} alt="Firma" sizes="(max-width: 1024px) 192px, 384px" className="w-48 lg:w-full max-w-sm" />
             </div>
             <div className="w-full text-sm px-4 py-2 grid grid-cols-3">
                 <div></div>

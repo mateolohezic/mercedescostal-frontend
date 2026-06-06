@@ -23,7 +23,7 @@ export const ParallaxImage = ({ src, alt, speed = 0.1 }: ParallaxImageProps) => 
   return (
     <div ref={ref} className="relative h-svh overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0 -top-[10%] -bottom-[10%]">
-        <Image src={src} alt={alt} className="size-full object-cover" priority/>
+        <Image src={src} alt={alt} sizes="100vw" className="size-full object-cover" priority/>
       </motion.div>
       <div className="absolute inset-0 shadow-[inset_0_0_80px_rgba(0,0,0,0.08)] pointer-events-none"/>
     </div>

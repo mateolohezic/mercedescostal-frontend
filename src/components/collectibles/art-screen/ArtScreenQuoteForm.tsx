@@ -191,6 +191,7 @@ export const ArtScreenQuoteForm = ({ preselectedMuralId = "" }: Props) => {
                         alt={`${selectedMural.title} Art Screen`}
                         width={1500}
                         height={1500}
+                        sizes="(max-width: 1024px) 100vw, 768px"
                         className="w-full object-contain"
                     />
                     <div className="mt-2 w-full text-sm text-black/60 font-gillsans">

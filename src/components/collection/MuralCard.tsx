@@ -42,7 +42,7 @@ export const MuralCard = ({mural, showCollection}:Props) => {
                 className="w-full mural-hero"
                 style={{ ['--mural-vt-name' as string]: `mural-${mural.id}` }}
             >
-                <Image src={baseVariant.montaje} alt={`${mural.title} Montaje`} width={1280} height={1280} className="w-full object-contain"/>
+                <Image src={baseVariant.montaje} alt={`${mural.title} Montaje`} width={1280} height={1280} sizes="(max-width: 1024px) 100vw, 50vw" className="w-full object-contain"/>
             </motion.div>
             <div className='w-full flex justify-center lg:justify-between items-center lg:items-start flex-wrap gap-4'>
                 <motion.div
@@ -52,7 +52,7 @@ export const MuralCard = ({mural, showCollection}:Props) => {
                     viewport={{ once: true }}
                     className="grow"
                     >
-                    <Image src={baseVariant.mural} alt={`${mural.title} Mural`} width={1024} height={1024} className={`lg:h-72 w-full lg:w-auto object-contain`}/>
+                    <Image src={baseVariant.mural} alt={`${mural.title} Mural`} width={1024} height={1024} sizes="(max-width: 1024px) 100vw, 400px" className={`lg:h-72 w-full lg:w-auto object-contain`}/>
                 </motion.div>
                 <Link href={`/quote?mural=${mural.id}`} className='text-xl border-b border-b-black hover:opacity-75 transition-150'>{t('quote')}</Link>
             </div>

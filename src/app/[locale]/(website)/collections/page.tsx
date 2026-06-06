@@ -61,7 +61,7 @@ export default async function CollectionsPage({ params }: { params: Promise<{ lo
                                 <CollectionVideo video={collections[0].video} />
                             </div>
                         :
-                            <Image priority src={collections[0].portrait} alt={`Portada de colección ${collections[0].title}`} className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
+                            <Image priority src={collections[0].portrait} alt={`Portada de colección ${collections[0].title}`} sizes="100vw" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
                         }
                         <div className="size-full bg-black/20 absolute top-0 left-0 z-10 transition-150" />
                         <div className="size-full flex flex-col justify-center items-center relative z-20">
@@ -78,6 +78,7 @@ export default async function CollectionsPage({ params }: { params: Promise<{ lo
                             priority
                             src={collection.portrait}
                             alt={`Portada de colección ${collection.title}`}
+                            sizes="(max-width: 1024px) 50vw, 50vw"
                             className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"
                         />
                         <div className="size-full bg-black/20 absolute top-0 left-0 z-10 transition-150" />
@@ -90,7 +91,7 @@ export default async function CollectionsPage({ params }: { params: Promise<{ lo
                     </Link>
                 ))}
                 <Link href="/collections/collaborations" className="w-full block aspect-video overflow-hidden relative group">
-                    <Image src={collaborations_portrait} alt="Colaboraciones Mercedes Costal" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
+                    <Image src={collaborations_portrait} alt="Colaboraciones Mercedes Costal" sizes="(max-width: 1024px) 50vw, 50vw" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
                     <div className="size-full bg-black/20 absolute top-0 left-0 z-10 transition-150" />
                     <div className="size-full flex flex-col justify-center items-center relative z-20">
                         <h3 className="font-gillsans font-light text-white text-center text-sm lg:text-3xl uppercase">

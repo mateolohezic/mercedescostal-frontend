@@ -68,21 +68,21 @@ export default async function FeriaHabitatValenciaPage({ params }: { params: Pro
                     <p>{tf('paragraph1')}</p>
                 </div>
             </section>
-            <Image src={habitat_1} alt="Feria Hábitat Valencia Mercedes Costal" className="mt-12 lg:mt-24 w-full max-w-2xl object-contain"/>
+            <Image src={habitat_1} alt="Feria Hábitat Valencia Mercedes Costal" sizes="(max-width: 768px) 100vw, 672px" className="mt-12 lg:mt-24 w-full max-w-2xl object-contain"/>
             <section className="mt-4 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl flex justify-end px-4 md:px-0">
-                <Image src={habitat_5} alt="Feria Hábitat Valencia Mercedes Costal" className="w-full max-w-2xl h-auto object-contain"/>
+                <Image src={habitat_5} alt="Feria Hábitat Valencia Mercedes Costal" sizes="(max-width: 768px) 100vw, 672px" className="w-full max-w-2xl h-auto object-contain"/>
             </section>
             <section className="mt-4 lg:mt-12 w-full lg:max-w-4xl grid grid-cols-2 gap-4 lg:gap-12 px-4 md:px-0">
                 <div className="w-full flex flex-col gap-4 lg:gap-12">
-                    <Image src={habitat_2} alt="Feria Hábitat Valencia Mercedes Costal" className="w-full object-contain"/>
-                    <Image src={habitat_6} alt="Feria Hábitat Valencia Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={habitat_2} alt="Feria Hábitat Valencia Mercedes Costal" sizes="(max-width: 1024px) 50vw, 480px" className="w-full object-contain"/>
+                    <Image src={habitat_6} alt="Feria Hábitat Valencia Mercedes Costal" sizes="(max-width: 1024px) 50vw, 480px" className="w-full object-contain"/>
                 </div>
                 <div className="w-full flex items-center">
-                    <Image src={habitat_3} alt="Feria Hábitat Valencia Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={habitat_3} alt="Feria Hábitat Valencia Mercedes Costal" sizes="(max-width: 1024px) 50vw, 480px" className="w-full object-contain"/>
                 </div>
             </section>
             <section className="mt-4 lg:mt-24 w-full flex justify-center px-4">
-                <Image src={habitat_4} alt="Feria Hábitat Valencia Mercedes Costal" className="w-full max-w-md object-contain"/>
+                <Image src={habitat_4} alt="Feria Hábitat Valencia Mercedes Costal" sizes="(max-width: 768px) 100vw, 448px" className="w-full max-w-md object-contain"/>
             </section>
         </main>
     );

@@ -63,7 +63,7 @@ export default async function ArtScreenPage({ params }: Props) {
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     {t('heading')}
                 </h1>
-                <Image src={portada} priority alt="Art Screen - Mercedes Costal" className="w-full aspect-video object-cover object-center"/>
+                <Image src={portada} priority alt="Art Screen - Mercedes Costal" sizes="100vw" className="w-full aspect-video object-cover object-center"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-start gap-8 lg:gap-4">
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
@@ -75,10 +75,10 @@ export default async function ArtScreenPage({ params }: Props) {
                 </div>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex justify-end">
-                <Image src={art_screen_1} alt="Art Screen Mercedes Costal" className="w-full lg:w-1/2 object-contain"/>
+                <Image src={art_screen_1} alt="Art Screen Mercedes Costal" sizes="(max-width: 1024px) 100vw, 640px" className="w-full lg:w-1/2 object-contain"/>
             </section>
             <section className="mt-4 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-between items-center lg:items-start gap-8 lg:gap-12">
-                <Image src={art_screen_2} alt="Art Screen Mercedes Costal" className="w-full lg:w-2/5 object-contain"/>
+                <Image src={art_screen_2} alt="Art Screen Mercedes Costal" sizes="(max-width: 1024px) 100vw, 512px" className="w-full lg:w-2/5 object-contain"/>
                 <div className="w-full lg:w-1/2 lg:text-xl text-center lg:text-start">
                     <p>{t('block2p1')}</p>
                     <p className="mt-8">{t('block2p2')}</p>
@@ -86,7 +86,7 @@ export default async function ArtScreenPage({ params }: Props) {
             </section>
             <section className="mt-12 lg:mt-48 w-full h-auto lg:h-screen flex flex-col lg:flex-row">
                 <div className="w-full lg:w-1/2 h-[60vh] lg:h-screen relative lg:sticky lg:top-0">
-                    <Image src={art_screen_3} alt="Art Screen Mercedes Costal" className="size-full object-cover"/>
+                    <Image src={art_screen_3} alt="Art Screen Mercedes Costal" sizes="(max-width: 1024px) 100vw, 50vw" className="size-full object-cover"/>
                 </div>
                 <div className="w-full lg:w-1/2 flex flex-col">
                     <div className="grow flex flex-col items-center justify-center px-6 lg:px-12 py-12 lg:py-0 text-center">
@@ -109,18 +109,18 @@ export default async function ArtScreenPage({ params }: Props) {
                 </div>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex justify-center">
-                <Image src={art_screen_4} alt="Art Screen Mercedes Costal" className="w-full max-w-2xl object-contain"/>
+                <Image src={art_screen_4} alt="Art Screen Mercedes Costal" sizes="(max-width: 768px) 100vw, 672px" className="w-full max-w-2xl object-contain"/>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
-                <Image src={art_screen_5} alt="Art Screen Mercedes Costal" className="w-full lg:w-3/5 object-contain"/>
+                <Image src={art_screen_5} alt="Art Screen Mercedes Costal" sizes="(max-width: 1024px) 100vw, 768px" className="w-full lg:w-3/5 object-contain"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-3xl px-4 xl:px-0 text-center lg:text-xl">
                 <p>{t('block3p1')}</p>
                 <p className="mt-8">{t('block3p2')}</p>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-end items-end gap-4 lg:gap-8">
-                <Image src={art_screen_6} alt="Art Screen Mercedes Costal" className="w-full lg:w-2/5 object-contain"/>
-                <Image src={art_screen_7} alt="Art Screen Mercedes Costal" className="w-full lg:w-1/4 object-contain"/>
+                <Image src={art_screen_6} alt="Art Screen Mercedes Costal" sizes="(max-width: 1024px) 100vw, 512px" className="w-full lg:w-2/5 object-contain"/>
+                <Image src={art_screen_7} alt="Art Screen Mercedes Costal" sizes="(max-width: 1024px) 100vw, 320px" className="w-full lg:w-1/4 object-contain"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0">
                 <div className="w-full border-t border-black/20 pt-12 lg:pt-24 flex flex-col lg:flex-row justify-end items-start lg:items-end text-start lg:text-end">

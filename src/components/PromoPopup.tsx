@@ -32,6 +32,7 @@ export const PromoPopup = () => {
             <Image
                 src={promoImage}
                 alt="Preventa Art Screen - 15% OFF Lanzamiento"
+                sizes="(max-width: 1024px) 100vw, 768px"
                 className="w-full h-auto"
                 priority
             />
