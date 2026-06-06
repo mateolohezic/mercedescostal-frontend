@@ -89,7 +89,7 @@ export default async function CollectionPage({ params }: Props) {
                     {foundCollection.video ? (
                         <CollectionVideo video={foundCollection.video}/>
                     ) : (
-                        <Image priority src={foundCollection.portrait} alt={`${t('collection')} ${foundCollection.title}`} className="w-full aspect-video object-cover"/>
+                        <Image priority src={foundCollection.portrait} alt={`${t('collection')} ${foundCollection.title}`} sizes="100vw" className="w-full aspect-video object-cover"/>
                     )}
                 </div>
                 {

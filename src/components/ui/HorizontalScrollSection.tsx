@@ -53,6 +53,7 @@ export const HorizontalScrollSection = ({
               <Image
                 src={src}
                 alt={`${alt} ${index + 1}`}
+                sizes="100vw"
                 className="size-full object-cover"
                 priority={index === 0}
               />

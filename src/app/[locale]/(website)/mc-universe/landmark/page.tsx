@@ -62,7 +62,7 @@ export default async function LandmarkPage({ params }: { params: Promise<{ local
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     {t('sectionTitle')}
                 </h1>
-                <Image src={portada} priority alt="Landmark Tucumán" className="w-full aspect-video object-cover"/>
+                <Image src={portada} priority alt="Landmark Tucumán" sizes="100vw" className="w-full aspect-video object-cover"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h2 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
@@ -90,14 +90,14 @@ export default async function LandmarkPage({ params }: { params: Promise<{ local
                 </div>
             </section>
             <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex justify-center">
-                <Image src={landmark_7} alt="Landmark Tucumán - Mural Mercedes Costal" className="w-full max-w-3xl object-contain"/>
+                <Image src={landmark_7} alt="Landmark Tucumán - Mural Mercedes Costal" sizes="(max-width: 1024px) 100vw, 768px" className="w-full max-w-3xl object-contain"/>
             </section>
             <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 grid grid-cols-2 gap-1 lg:gap-4">
-                <Image src={landmark_3} alt="Landmark Tucumán" className="w-full object-cover aspect-[3/4]"/>
-                <Image src={landmark_4} alt="Landmark Tucumán" className="w-full object-cover aspect-[3/4]"/>
+                <Image src={landmark_3} alt="Landmark Tucumán" sizes="(max-width: 1280px) 50vw, 640px" className="w-full object-cover aspect-[3/4]"/>
+                <Image src={landmark_4} alt="Landmark Tucumán" sizes="(max-width: 1280px) 50vw, 640px" className="w-full object-cover aspect-[3/4]"/>
             </section>
             <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex justify-center">
-                <Image src={landmark_8} alt="Landmark Tucumán" className="w-full max-w-xl object-contain"/>
+                <Image src={landmark_8} alt="Landmark Tucumán" sizes="(max-width: 768px) 100vw, 576px" className="w-full max-w-xl object-contain"/>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex justify-center">
                 <p className="w-full max-w-2xl lg:text-xl text-center">
@@ -105,8 +105,8 @@ export default async function LandmarkPage({ params }: { params: Promise<{ local
                 </p>
             </section>
             <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 grid grid-cols-2 gap-1 lg:gap-4">
-                <Image src={landmark_1} alt="Landmark Tucumán" className="w-full object-cover aspect-[3/4]"/>
-                <Image src={landmark_5} alt="Landmark Tucumán - Mercedes Costal" className="w-full object-cover aspect-[3/4]"/>
+                <Image src={landmark_1} alt="Landmark Tucumán" sizes="(max-width: 1280px) 50vw, 640px" className="w-full object-cover aspect-[3/4]"/>
+                <Image src={landmark_5} alt="Landmark Tucumán - Mercedes Costal" sizes="(max-width: 1280px) 50vw, 640px" className="w-full object-cover aspect-[3/4]"/>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-7xl px-4 xl:px-0 flex justify-center">
                 <p className="w-full lg:text-xl text-center">
@@ -114,14 +114,14 @@ export default async function LandmarkPage({ params }: { params: Promise<{ local
                 </p>
             </section>
             <section className="mt-1 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 grid grid-cols-2 gap-1 lg:gap-4">
-                <Image src={landmark_2} alt="Landmark Tucumán" className="w-full object-cover aspect-[3/4]"/>
-                <Image src={landmark_9} alt="Landmark 1920" className="w-full object-cover aspect-[3/4]"/>
+                <Image src={landmark_2} alt="Landmark Tucumán" sizes="(max-width: 1280px) 50vw, 640px" className="w-full object-cover aspect-[3/4]"/>
+                <Image src={landmark_9} alt="Landmark 1920" sizes="(max-width: 1280px) 50vw, 640px" className="w-full object-cover aspect-[3/4]"/>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row items-center gap-8 lg:gap-4">
                 <p className="w-full lg:w-1/2 lg:text-xl text-center lg:text-start lg:pr-8">
                     {tl('block4')}
                 </p>
-                <Image src={landmark_6} alt="Landmark Tucumán - Mercedes Costal" className="w-full lg:w-1/2 object-contain"/>
+                <Image src={landmark_6} alt="Landmark Tucumán - Mercedes Costal" sizes="(max-width: 1024px) 100vw, 640px" className="w-full lg:w-1/2 object-contain"/>
             </section>
             {/* CTAs finales */}
             <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col sm:flex-row gap-4 justify-center items-center">

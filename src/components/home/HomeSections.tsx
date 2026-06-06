@@ -138,7 +138,7 @@ export const HomeSections = ({
                 &ldquo;{t('studio.quote')}&rdquo;
               </blockquote>
               <figcaption className="mt-6">
-                <Image src={signature} alt="Firma Mercedes Costal" className="w-56 lg:w-72 h-auto object-contain" />
+                <Image src={signature} alt="Firma Mercedes Costal" sizes="(max-width: 1024px) 224px, 288px" className="w-56 lg:w-72 h-auto object-contain" />
               </figcaption>
             </figure>
           </Reveal>

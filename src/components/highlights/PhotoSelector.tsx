@@ -16,11 +16,11 @@ export const PhotoSelector = ({ images, className, gridClassName, photoClassName
     if(images.length === 0) return null;
     return (
         <section className={className}>
-            <Image src={selectedImage} alt="Ateneo Splendid Mercedes Costal" className={photoClassName}/>
+            <Image src={selectedImage} alt="Ateneo Splendid Mercedes Costal" sizes="(max-width: 1024px) 100vw, 1024px" className={photoClassName}/>
             <div className={gridClassName}>
                 {images.map((image,i) => (
                     <button type="button" onClick={() => setSelectedImage(image)} className="hover:opacity-75 transition-200" key={i}>
-                        <Image src={image} alt={`Mercedes Costal ${i}`} className="w-full aspect-[3/4] object-cover"/>
+                        <Image src={image} alt={`Mercedes Costal ${i}`} sizes="(max-width: 768px) 25vw, 150px" className="w-full aspect-[3/4] object-cover"/>
                     </button>
                 ))}
             </div>

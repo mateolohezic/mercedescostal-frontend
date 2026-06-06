@@ -59,7 +59,7 @@ export default async function ManantialesPopupPage({ params }: { params: Promise
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     {t('sectionTitle')}
                 </h1>
-                <Image src={portada} priority alt="Manantiales Popup Mercedes Costal" className="w-full object-contain"/>
+                <Image src={portada} priority alt="Manantiales Popup Mercedes Costal" sizes="100vw" className="w-full object-contain"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h2 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
@@ -71,26 +71,26 @@ export default async function ManantialesPopupPage({ params }: { params: Promise
                 </div>
             </section>
             <section className="mt-12 lg:mt-24 w-full flex justify-center">
-                <Image src={manantiales_1} alt="Manantiales Pop Up Mercedes Costal" className="w-full max-w-2xl object-contain"/>
+                <Image src={manantiales_1} alt="Manantiales Pop Up Mercedes Costal" sizes="(max-width: 768px) 100vw, 672px" className="w-full max-w-2xl object-contain"/>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-4xl flex flex-col-reverse items-center lg:grid lg:grid-cols-2 gap-8 px-4 lg:px-0">
-                <Image src={manantiales_4} alt="Manantiales Pop Up Mercedes Costal" className="w-72 lg:w-full object-contain"/>
+                <Image src={manantiales_4} alt="Manantiales Pop Up Mercedes Costal" sizes="(max-width: 1024px) 288px, 448px" className="w-72 lg:w-full object-contain"/>
                 <div className="w-full lg:text-lg">
                     <p>{tm('description1')}</p>
                     <p className="mt-[1lh]">{tm('description2')}</p>
                 </div>
             </section>
             <div className="w-full max-w-4xl px-4 lg:px-0 flex flex-col items-center lg:items-end gap-8 text-center lg:text-end">
-                <Image src={manantiales_3} alt="Manantiales Pop Up Mercedes Costal" className="w-full object-contain"/>
+                <Image src={manantiales_3} alt="Manantiales Pop Up Mercedes Costal" sizes="(max-width: 1024px) 100vw, 896px" className="w-full object-contain"/>
                 <Link href="/collections/casamar" className='lg:text-xl uppercase border-b border-b-black hover:opacity-75 transition-150'>{tm('collectionLink')}</Link>
             </div>
             <section className="mt-8 w-full lg:max-w-4xl grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-12 px-4 md:px-0">
                 <div className="w-full flex items-center">
-                    <Image src={manantiales_6} alt="Manantiales Popup Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={manantiales_6} alt="Manantiales Popup Mercedes Costal" sizes="(max-width: 1024px) 100vw, 448px" className="w-full object-contain"/>
                 </div>
                 <div className="w-full flex flex-col gap-4 lg:gap-72">
-                    <Image src={manantiales_5} alt="Manantiales Popup Mercedes Costal" className="w-full object-contain"/>
-                    <Image src={manantiales_2} alt="Manantiales Pop Up Mercedes Costal" className="w-full max-w-2xl h-auto object-contain"/>
+                    <Image src={manantiales_5} alt="Manantiales Popup Mercedes Costal" sizes="(max-width: 1024px) 100vw, 448px" className="w-full object-contain"/>
+                    <Image src={manantiales_2} alt="Manantiales Pop Up Mercedes Costal" sizes="(max-width: 1024px) 100vw, 448px" className="w-full max-w-2xl h-auto object-contain"/>
                 </div>
             </section>
         </main>

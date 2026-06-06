@@ -97,7 +97,7 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
                     className="w-full lg:w-1/2 h-[60vh] lg:h-screen relative lg:sticky lg:top-0 mural-hero"
                     style={{ ['--mural-vt-name' as string]: `mural-${mural.id}` }}
                 >
-                    <Image src={images[selectedImageIndex]} alt={`${mural.title} ${currentVariant.colorName}`} className="size-full object-cover" priority/>
+                    <Image src={images[selectedImageIndex]} alt={`${mural.title} ${currentVariant.colorName}`} sizes="(max-width: 1024px) 100vw, 50vw" className="size-full object-cover" priority/>
                     <p className="absolute bottom-4 left-4 text-xs text-white/80">
                         {selectedImageIndex + 1} / {images.length}
                     </p>
@@ -172,7 +172,7 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
                             return (
                                 <Link key={relatedMural.id} href={`/collections/${collection.id}/${relatedMural.id}`} className="group">
                                     <div className="w-full aspect-video relative overflow-hidden">
-                                        <Image src={relatedBaseVariant.montaje} alt={relatedMural.title} className="size-full object-cover group-hover:scale-105 transition-transform duration-300"/>
+                                        <Image src={relatedBaseVariant.montaje} alt={relatedMural.title} sizes="(max-width: 768px) 50vw, 25vw" className="size-full object-cover group-hover:scale-105 transition-transform duration-300"/>
                                     </div>
                                     <p className="mt-2 text-sm uppercase">
                                         {relatedIsPattern ? 'Pattern' : 'Mural'} {relatedMural.title}

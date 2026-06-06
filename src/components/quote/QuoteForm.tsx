@@ -201,7 +201,7 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                         <span className="text-black/75">{t('preview')}</span>{" "}
                         <b className="font-medium">{selectedMural.title}</b>
                     </h2>
-                    <Image src={selectedMural.variants[0].mural} alt={`${selectedMural.title} Mural`} width={1500} height={1500} className="w-full object-contain" />
+                    <Image src={selectedMural.variants[0].mural} alt={`${selectedMural.title} Mural`} width={1500} height={1500} sizes="(max-width: 1024px) 100vw, 768px" className="w-full object-contain" />
                 </div>
             )}
         </form>

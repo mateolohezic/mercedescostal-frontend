@@ -61,7 +61,7 @@ export default async function AteneoSplendidPage({ params }: { params: Promise<{
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     {t('sectionTitle')}
                 </h1>
-                <Image src={portada} priority alt="Ateneo Splendid Mercedes Costal" className="w-full aspect-[3] object-cover object-[50%_30%]"/>
+                <Image src={portada} priority alt="Ateneo Splendid Mercedes Costal" sizes="100vw" className="w-full aspect-[3] object-cover object-[50%_30%]"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col lg:flex-row justify-center lg:justify-between items-center lg:items-stretch gap-8 lg:gap-4">
                 <h2 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
@@ -72,7 +72,7 @@ export default async function AteneoSplendidPage({ params }: { params: Promise<{
                     <p className="mt-8">{ta('paragraph2')}</p>
                 </div>
             </section>
-            <Image src={ateneo_splendid_0} priority alt="Ateneo Splendid Mercedes Costal" className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl object-contain"/>
+            <Image src={ateneo_splendid_0} priority alt="Ateneo Splendid Mercedes Costal" sizes="(max-width: 1280px) 100vw, 1280px" className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl object-contain"/>
             <section className="mt-12 lg:mt-24 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col items-center gap-12 lg:gap-24">
                 <div className="w-full max-w-3xl aspect-square relative rounded-full overflow-hidden">
                     <Video video={"/assets/highlights/splendid/splendid_video_1.mp4"} className="size-full absolute top-0 left-0 scale-[1.05]"/>

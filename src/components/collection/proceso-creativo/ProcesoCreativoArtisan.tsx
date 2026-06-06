@@ -15,7 +15,7 @@ export const ProcesoCreativoArtisan = () => {
 
     return (
         <section className="my-24 lg:my-48 w-full grow flex flex-col items-center font-truetypewritter">
-            <Image src={artisan_proceso_1} alt="Artisan Mercedes Costal" className="w-full object-contain"/>
+            <Image src={artisan_proceso_1} alt="Artisan Mercedes Costal" sizes="100vw" className="w-full object-contain"/>
             <div className="mt-24 w-full max-w-3xl px-4 flex flex-col lg:flex-row items-start gap-12">
                 <div className="w-full lg:w-1/2 flex flex-col justify-start gap-12 lg:gap-24">
                     <Video video={"/assets/proceso_creativo/artisan/artisan_proceso_1.mp4"}/>
@@ -32,11 +32,11 @@ export const ProcesoCreativoArtisan = () => {
                 </div>
             </div>
             <div className="mt-12 lg:mt-24 w-full max-w-5xl">
-                <Image src={artisan_proceso_2} alt="Artisan Mercedes Costal" className="w-full object-contain"/>
+                <Image src={artisan_proceso_2} alt="Artisan Mercedes Costal" sizes="(max-width: 1024px) 100vw, 1024px" className="w-full object-contain"/>
             </div>
             <div className="mt-1 lg:mt-24 w-full max-w-3xl flex flex-col lg:flex-row gap-12">
                 <div className="w-full lg:w-1/2 flex flex-col justify-start gap-12 lg:gap-24">
-                    <Image src={artisan_proceso_3} alt="Artisan Mercedes Costal" className="w-full object-contain"/>
+                    <Image src={artisan_proceso_3} alt="Artisan Mercedes Costal" sizes="(max-width: 1024px) 100vw, 384px" className="w-full object-contain"/>
                     <div className="text-lg text-center lg:text-end px-4">
                         <p>{t('p4')}</p>
                         <p className="mt-[1lh]">{t('p5')}</p>
@@ -49,14 +49,14 @@ export const ProcesoCreativoArtisan = () => {
                 </div>
             </div>
             <div className="mt-4 lg:mt-24 w-full max-w-3xl">
-                <Image src={artisan_proceso_4} alt="Artisan Mercedes Costal" className="w-full object-contain"/>
+                <Image src={artisan_proceso_4} alt="Artisan Mercedes Costal" sizes="(max-width: 1024px) 100vw, 768px" className="w-full object-contain"/>
             </div>
             <div className="mt-12 lg:mt-48 w-full max-w-4xl flex flex-col gap-12">
-                <Image src={artisan_proceso_5} alt="Artisan Mercedes Costal" className="w-full object-contain"/>
+                <Image src={artisan_proceso_5} alt="Artisan Mercedes Costal" sizes="(max-width: 1024px) 100vw, 896px" className="w-full object-contain"/>
                 <p className="text-lg text-center">{t('p8')}</p>
             </div>
             <div className="mt-12 lg:mt-24 w-full flex justify-end overflow-x-hidden">
-                <Image src={artisan_proceso_6} alt="Artisan Mercedes Costal" className="w-full lg:w-2/3 object-contain relative left-4"/>
+                <Image src={artisan_proceso_6} alt="Artisan Mercedes Costal" sizes="(max-width: 1024px) 100vw, 66vw" className="w-full lg:w-2/3 object-contain relative left-4"/>
             </div>
         </section>
     )

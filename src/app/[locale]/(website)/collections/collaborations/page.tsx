@@ -60,7 +60,7 @@ export default async function CollaborationsPage({ params }: { params: Promise<{
                                 <CollectionVideo video={collab.video} />
                             </div>
                         :
-                            <Image priority={index < 3} src={collab.portrait} alt={`Portada de colaboración ${collab.title}`} className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
+                            <Image priority={index < 3} src={collab.portrait} alt={`Portada de colaboración ${collab.title}`} sizes="(max-width: 1024px) 50vw, 50vw" className="size-full object-cover group-hover:scale-[1.025] absolute top-0 left-0 z-0 transition-all duration-300"/>
                         }
                         <div className="size-full bg-black/20 group-hover:bg-black/30 absolute top-0 left-0 z-10 transition-all duration-300" />
                         <div className="size-full flex flex-col justify-center items-center relative z-20">

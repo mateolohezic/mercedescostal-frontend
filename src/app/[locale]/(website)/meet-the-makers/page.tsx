@@ -57,10 +57,10 @@ export default async function MeetTheMakersPage({ params }: { params: Promise<{ 
                 <h1 className="font-gillsans text-xl text-center lg:text-start tracking-[0.5rem] uppercase">
                     {t('title')}
                 </h1>
-                <Image src={portada} priority alt="Portada Meet the makers Mercedes Costal" className="w-full aspect-video object-cover"/>
+                <Image src={portada} priority alt="Portada Meet the makers Mercedes Costal" sizes="100vw" className="w-full aspect-video object-cover"/>
             </section>
             <section className="mt-24 lg:mt-48 w-full max-w-5xl 2xl:max-w-7xl px-4 xl:px-0 flex flex-col items-center gap-24">
-                <Image src={meet_the_makers_1} alt="Meet the Makers Mercedes Costal" className="w-full max-w-md object-contain grayscale"/>
+                <Image src={meet_the_makers_1} alt="Meet the Makers Mercedes Costal" sizes="(max-width: 768px) 100vw, 448px" className="w-full max-w-md object-contain grayscale"/>
                 <p className="w-full max-w-4xl text-center lg:text-xl">{t('intro')}</p>
             </section>
             <section className="mt-12 lg:mt-24 w-full max-w-xl flex flex-col justify-center items-center px-4 xl:px-0">
@@ -72,12 +72,12 @@ export default async function MeetTheMakersPage({ params }: { params: Promise<{ 
                     <p>{t('quote2')}</p>
                     <p>{t('quote3')}&rdquo;</p>
                 </div>
-                <Image src={meet_the_makers_2} alt="Meet the Makers Mercedes Costal" className="w-full max-w-md object-cover"/>
+                <Image src={meet_the_makers_2} alt="Meet the Makers Mercedes Costal" sizes="(max-width: 768px) 100vw, 448px" className="w-full max-w-md object-cover"/>
             </section>
             <section className="w-full max-w-5xl 2xl:max-w-7xl grid grid-cols-2 gap-4 px-4 xl:px-0">
-                <Image src={meet_the_makers_3} alt="Meet the Makers Mercedes Costal" className="w-full h-auto object-contain col-span-2"/>
-                <Image src={meet_the_makers_4} alt="Meet the Makers Mercedes Costal" className="w-full aspect-[9/16] object-cover"/>
-                <Image src={meet_the_makers_5} alt="Meet the Makers Mercedes Costal" className="w-full lg:aspect-[9/16] object-cover"/>
+                <Image src={meet_the_makers_3} alt="Meet the Makers Mercedes Costal" sizes="(max-width: 1280px) 100vw, 1280px" className="w-full h-auto object-contain col-span-2"/>
+                <Image src={meet_the_makers_4} alt="Meet the Makers Mercedes Costal" sizes="(max-width: 1280px) 50vw, 640px" className="w-full aspect-[9/16] object-cover"/>
+                <Image src={meet_the_makers_5} alt="Meet the Makers Mercedes Costal" sizes="(max-width: 1280px) 50vw, 640px" className="w-full lg:aspect-[9/16] object-cover"/>
             </section>
         </main>
     );
