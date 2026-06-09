@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import * as z from "zod";
@@ -12,8 +12,6 @@ import { collections } from "@/data/collections";
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp"];
-const POLL_INTERVAL = 3000;
-const MAX_POLL_ATTEMPTS = 60;
 
 const schema = z.object({
     collection: z.string().nonempty("Selecciona una colección"),
@@ -30,7 +28,8 @@ interface Props {
 type GenerationStatus = "idle" | "processing" | "completed" | "error" | "limit_reached";
 
 interface HistoryEntry {
-    taskId: string;
+    visualizationId: string;
+    imageUrl: string;
     muralTitle: string;
     colorName: string;
     collectionTitle: string;
@@ -55,13 +54,14 @@ function addToHistory(entry: HistoryEntry) {
     localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
 }
 
-function getCookie(name: string): string | null {
-    const match = document.cookie.match(new RegExp(`(^| )${name}=([^;]+)`));
-    return match ? decodeURIComponent(match[2]) : null;
-}
-
-function deleteCookie(name: string) {
-    document.cookie = `${name}=; path=/; max-age=0`;
+// Fuerza la descarga con un nombre lindo. En URLs de Cloudinary usa fl_attachment
+// (el atributo download no funciona cross-origin); en data URIs alcanza el download.
+function buildDownloadUrl(url: string, filename: string): string {
+    const safe = filename.replace(/[^a-zA-Z0-9_-]+/g, "_").replace(/^_+|_+$/g, "") || "montaje-mercedes-costal";
+    if (url.includes("res.cloudinary.com") && url.includes("/upload/")) {
+        return url.replace("/upload/", `/upload/fl_attachment:${safe}/`);
+    }
+    return url;
 }
 
 export const VisualizerForm = ({ preselectedMuralId }: Props) => {
@@ -74,7 +74,6 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const [generationsRemaining, setGenerationsRemaining] = useState<number | null>(null);
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const pollingRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
     const [history, setHistory] = useState<HistoryEntry[]>([]);
     const [selectedHistoryEntry, setSelectedHistoryEntry] = useState<HistoryEntry | null>(null);
@@ -84,7 +83,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
     const [leadLoading, setLeadLoading] = useState(false);
     const [feedback, setFeedback] = useState<"up" | "down" | null>(null);
     const [showFeedbackModal, setShowFeedbackModal] = useState(false);
-    const [currentTaskId, setCurrentTaskId] = useState<string | null>(null);
+    const [currentVisualizationId, setCurrentVisualizationId] = useState<string | null>(null);
     const [showCompare, setShowCompare] = useState(false);
 
     const { register, handleSubmit, watch, setValue, formState: { errors } } = useForm<Schema>({ resolver: zodResolver(schema), defaultValues: { collection: "", mural: "", variant: "" } });
@@ -97,78 +96,10 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
     const selectedMural = selectedCollection?.murales.find(m => m.id === selectedMuralId) || collections.flatMap(col => col.murales).find(m => m.id === preselectedMuralId);
     const selectedVariant = selectedMural?.variants[parseInt(selectedVariantIndex || "0")] || selectedMural?.variants[0];
 
-    const stopPolling = useCallback(() => {
-        if (pollingRef.current) {
-            clearInterval(pollingRef.current);
-            pollingRef.current = null;
-        }
-    }, []);
-
-    const startPolling = useCallback((taskId: string, muralTitle?: string, colorName?: string, collectionTitle?: string) => {
-        stopPolling();
-        let attempts = 0;
-
-        pollingRef.current = setInterval(async () => {
-            attempts++;
-
-            if (attempts > MAX_POLL_ATTEMPTS) {
-                stopPolling();
-                deleteCookie("mc_pending_task");
-                setStatus("error");
-                setErrorMessage("La generación tardó demasiado. Intentá nuevamente.");
-                return;
-            }
-
-            try {
-                const res = await fetch(`/api/visualizer/${taskId}`);
-                const data = await res.json();
-
-                if (data.status === "COMPLETED" && data.imageUrl) {
-                    stopPolling();
-                    localStorage.removeItem("mc_pending_task_meta");
-                    const downloadName = encodeURIComponent(`Montaje ${muralTitle || "Mural"} Coleccion ${collectionTitle || ""}`.trim());
-                    setResultImage(`/api/visualizer/image/${taskId}?filename=${downloadName}`);
-                    setStatus("completed");
-                    const entry: HistoryEntry = {
-                        taskId,
-                        muralTitle: muralTitle || "Mural",
-                        colorName: colorName || "",
-                        collectionTitle: collectionTitle || "",
-                        createdAt: new Date().toISOString(),
-                    };
-                    addToHistory(entry);
-                    setHistory(getHistory());
-                } else if (data.status === "FAILED") {
-                    stopPolling();
-                    localStorage.removeItem("mc_pending_task_meta");
-                    setStatus("error");
-                    setErrorMessage("La generación falló. Intentá nuevamente.");
-                }
-            } catch (err) {
-                console.warn("[Polling] Error transitorio, reintentando:", err);
-            }
-        }, POLL_INTERVAL);
-    }, [stopPolling]);
-
-    // Recover pending task and load history on mount
+    // Load history on mount
     useEffect(() => {
         setHistory(getHistory());
-        const pendingTaskId = getCookie("mc_pending_task");
-        if (pendingTaskId) {
-            setStatus("processing");
-            try {
-                const meta = JSON.parse(localStorage.getItem("mc_pending_task_meta") || "{}");
-                startPolling(pendingTaskId, meta.muralTitle, meta.colorName, meta.collectionTitle);
-            } catch {
-                startPolling(pendingTaskId);
-            }
-        }
-    }, [startPolling]);
-
-    // Cleanup on unmount
-    useEffect(() => {
-        return () => stopPolling();
-    }, [stopPolling]);
+    }, []);
 
     useEffect(() => {
         if (preselectedMuralId) {
@@ -280,7 +211,6 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
             return;
         }
 
-        stopPolling();
         setStatus("processing");
         setErrorMessage(null);
         setResultImage(null);
@@ -289,16 +219,20 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
 
         try {
             const isPattern = selectedMural?.keywords.some(k => ['patrón', 'patron', 'pattern'].includes(k.toLowerCase())) || false;
+            const muralTitle = selectedMural?.title || "";
+            const colorName = selectedVariant?.colorName || "";
+            const collectionTitle = selectedCollection?.title || "";
+
             const formData = new FormData();
             formData.append("userDescription", userDescription);
             formData.append("roomImage", roomImage);
             formData.append("muralImageUrl", muralUrl);
             formData.append("isPattern", isPattern.toString());
             formData.append("muralId", selectedMural?.id || "");
-            formData.append("muralTitle", selectedMural?.title || "");
+            formData.append("muralTitle", muralTitle);
             formData.append("collectionId", selectedCollection?.id || "");
-            formData.append("collectionTitle", selectedCollection?.title || "");
-            formData.append("colorName", selectedVariant?.colorName || "");
+            formData.append("collectionTitle", collectionTitle);
+            formData.append("colorName", colorName);
 
             const response = await fetch("/api/visualizer", {
                 method: "POST",
@@ -320,19 +254,25 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                 throw new Error(data.error || "Error al procesar la imagen");
             }
 
-            if (data.taskId) {
-                setCurrentTaskId(data.taskId);
+            if (data.imageUrl) {
+                setCurrentVisualizationId(data.visualizationId || null);
                 setGenerationsRemaining(data.generationsRemaining);
-                localStorage.setItem("mc_pending_task_meta", JSON.stringify({
-                    muralTitle: selectedMural?.title || "",
-                    colorName: selectedVariant?.colorName || "",
-                    collectionTitle: selectedCollection?.title || "",
-                }));
-                startPolling(data.taskId, selectedMural?.title, selectedVariant?.colorName, selectedCollection?.title);
+                setResultImage(data.imageUrl);
+                setStatus("completed");
+                const entry: HistoryEntry = {
+                    visualizationId: data.visualizationId || "",
+                    imageUrl: data.imageUrl,
+                    muralTitle: muralTitle || "Mural",
+                    colorName,
+                    collectionTitle,
+                    createdAt: new Date().toISOString(),
+                };
+                addToHistory(entry);
+                setHistory(getHistory());
             } else {
-                console.error("[Visualizer] Respuesta sin taskId:", data);
+                console.error("[Visualizer] Respuesta sin imagen:", data);
                 setStatus("error");
-                setErrorMessage("No se recibió ID de tarea");
+                setErrorMessage("No pudimos generar la visualización. Por favor, intentá de nuevo.");
             }
 
         } catch (error) {
@@ -438,7 +378,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                         <div className="w-full h-64 border border-black/20 flex flex-col items-center justify-center gap-4">
                             <div className="w-10 h-10 border-2 border-black/20 border-t-black rounded-full animate-spin"></div>
                             <p className="text-black/60">Generando visualización...</p>
-                            <p className="text-sm text-black/40">Esto puede tomar hasta 2 minutos</p>
+                            <p className="text-sm text-black/40">Esto puede tomar unos segundos</p>
                         </div>
                     )}
                     {status === "completed" && resultImage && (
@@ -473,7 +413,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                                     <span className="text-sm text-black/50">¿Te resultó útil?</span>
                                     <button
                                         type="button"
-                                        onClick={() => { setFeedback("up"); if (currentTaskId) fetch("/api/visualizer/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ taskId: currentTaskId, feedback: "up" }) }).catch(() => {}); }}
+                                        onClick={() => { setFeedback("up"); if (currentVisualizationId) fetch("/api/visualizer/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ taskId: currentVisualizationId, feedback: "up" }) }).catch(() => {}); }}
                                         className={`p-1.5 border transition-colors ${feedback === "up" ? "bg-black text-white border-black" : "border-black/20 text-black/40 hover:border-black hover:text-black"}`}
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -482,7 +422,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                                     </button>
                                     <button
                                         type="button"
-                                        onClick={() => { setFeedback("down"); setShowFeedbackModal(true); if (currentTaskId) fetch("/api/visualizer/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ taskId: currentTaskId, feedback: "down" }) }).catch(() => {}); }}
+                                        onClick={() => { setFeedback("down"); setShowFeedbackModal(true); if (currentVisualizationId) fetch("/api/visualizer/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ taskId: currentVisualizationId, feedback: "down" }) }).catch(() => {}); }}
                                         className={`p-1.5 border transition-colors ${feedback === "down" ? "bg-black text-white border-black" : "border-black/20 text-black/40 hover:border-black hover:text-black"}`}
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -492,7 +432,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                                     {feedback === "up" && <span className="text-xs text-black/40">¡Gracias!</span>}
                                 </div>
                                 <a
-                                    href={resultImage}
+                                    href={buildDownloadUrl(resultImage, `Montaje ${selectedMural?.title || "Mural"} ${selectedCollection?.title || ""}`)}
                                     download={`Montaje ${selectedMural?.title || "Mural"} Coleccion ${selectedCollection?.title || ""}.jpg`.trim()}
                                     className="px-4 py-2 border border-black font-gillsans text-sm uppercase hover:bg-black hover:text-white transition-colors"
                                 >
@@ -556,13 +496,13 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-3">
                                 {history.map((entry) => (
                                     <button
-                                        key={entry.taskId}
+                                        key={entry.visualizationId || entry.imageUrl}
                                         type="button"
                                         onClick={() => setSelectedHistoryEntry(entry)}
-                                        className={`group flex flex-col gap-1 text-left ${selectedHistoryEntry?.taskId === entry.taskId ? "opacity-50" : ""}`}
+                                        className={`group flex flex-col gap-1 text-left ${selectedHistoryEntry?.imageUrl === entry.imageUrl ? "opacity-50" : ""}`}
                                     >
                                         <img
-                                            src={`/api/visualizer/image/${entry.taskId}`}
+                                            src={entry.imageUrl}
                                             alt={`${entry.muralTitle} - ${entry.colorName}`}
                                             className="w-full aspect-video object-cover border border-black/20 group-hover:border-black transition-colors"
                                         />
@@ -578,12 +518,12 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                                     <b className="font-medium">{selectedHistoryEntry.muralTitle}{selectedHistoryEntry.colorName ? ` - ${selectedHistoryEntry.colorName}` : ""}</b>
                                 </h3>
                                 <img
-                                    src={`/api/visualizer/image/${selectedHistoryEntry.taskId}`}
+                                    src={selectedHistoryEntry.imageUrl}
                                     alt={`${selectedHistoryEntry.muralTitle} - ${selectedHistoryEntry.colorName}`}
                                     className="w-full object-contain"
                                 />
                                 <a
-                                    href={`/api/visualizer/image/${selectedHistoryEntry.taskId}?filename=${encodeURIComponent(`Montaje ${selectedHistoryEntry.muralTitle} ${selectedHistoryEntry.collectionTitle || ""}`.trim())}`}
+                                    href={buildDownloadUrl(selectedHistoryEntry.imageUrl, `Montaje ${selectedHistoryEntry.muralTitle} ${selectedHistoryEntry.collectionTitle || ""}`)}
                                     download={`Montaje ${selectedHistoryEntry.muralTitle} Coleccion ${selectedHistoryEntry.collectionTitle || ""}.jpg`.trim()}
                                     className="mt-2 self-end px-4 py-2 border border-black font-gillsans text-sm uppercase hover:bg-black hover:text-white transition-colors"
                                 >

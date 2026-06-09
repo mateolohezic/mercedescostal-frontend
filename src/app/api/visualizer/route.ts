@@ -1,14 +1,22 @@
 import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
-import OpenAI from "openai";
+import { randomUUID } from "node:crypto";
+import { GoogleGenAI } from "@google/genai";
+import { v2 as cloudinary } from "cloudinary";
 import sharp from "sharp";
 import { connectDB } from "@/lib/db";
 import { Visualization } from "@/models/Visualization";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY! });
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
 
-const FREEPIK_API_KEY = process.env.FREEPIK_API_KEY;
-const FREEPIK_API_URL = "https://api.freepik.com/v1/ai/text-to-image/seedream-v4-5-edit";
+// Nano Banana Pro
+const IMAGE_MODEL = "gemini-3-pro-image";
+
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const MAX_FREE_GENERATIONS = 3;
@@ -44,7 +52,6 @@ async function processImage(buffer: Buffer): Promise<ProcessedImage> {
     finalWidth = newMeta.width || width;
     finalHeight = newMeta.height || height;
   } else {
-    // Convert to PNG at max quality without resizing
     processedBuffer = await sharp(buffer).png({ quality: 100 }).toBuffer();
   }
 
@@ -55,108 +62,54 @@ async function processImage(buffer: Buffer): Promise<ProcessedImage> {
   };
 }
 
+// Mapea el ratio de la foto al aspect ratio soportado más cercano de Gemini 3 Pro Image.
+const GEMINI_ASPECT_RATIOS: Array<{ label: string; ratio: number }> = [
+  { label: "21:9", ratio: 21 / 9 },
+  { label: "16:9", ratio: 16 / 9 },
+  { label: "3:2", ratio: 3 / 2 },
+  { label: "4:3", ratio: 4 / 3 },
+  { label: "5:4", ratio: 5 / 4 },
+  { label: "1:1", ratio: 1 },
+  { label: "4:5", ratio: 4 / 5 },
+  { label: "3:4", ratio: 3 / 4 },
+  { label: "2:3", ratio: 2 / 3 },
+];
+
 function detectAspectRatio(width: number, height: number): string {
   const ratio = width / height;
-  // Map to Freepik's supported aspect ratios
-  if (ratio >= 2.2) return "cinematic_21_9";
-  if (ratio >= 1.7) return "widescreen_16_9";
-  if (ratio >= 1.4) return "standard_3_2";
-  if (ratio >= 1.2) return "classic_4_3";
-  if (ratio >= 0.9) return "square_1_1";
-  if (ratio >= 0.7) return "traditional_3_4";
-  if (ratio >= 0.6) return "portrait_2_3";
-  return "social_story_9_16";
+  let closest = GEMINI_ASPECT_RATIOS[0];
+  let minDiff = Infinity;
+  for (const candidate of GEMINI_ASPECT_RATIOS) {
+    const diff = Math.abs(candidate.ratio - ratio);
+    if (diff < minDiff) {
+      minDiff = diff;
+      closest = candidate;
+    }
+  }
+  return closest.label;
 }
 
-async function generateOptimizedPrompt(
-  roomImageBase64: string,
-  userDescription: string,
-  isPattern: boolean
-): Promise<string> {
-  const response = await openai.chat.completions.create({
-    model: "gpt-4o-mini",
-    max_tokens: 1500,
-    messages: [
-      {
-        role: "system",
-        content: `You are a senior prompt engineer specializing in AI image editing for interior design visualization. Your job is to write EXHAUSTIVE, HIGHLY DETAILED prompts that will be sent to Freepik's Seedream image editing model to apply a wallpaper/mural onto a wall in a room photo.
+function buildInstruction(userDescription: string, isPattern: boolean): string {
+  const where = userDescription?.trim()
+    ? `The user indicates where to apply it: "${userDescription.trim()}".`
+    : "Apply it to the main / largest visible wall in the room.";
 
-The model will receive TWO reference images:
-- Reference image 1: The room photo (the one you are analyzing now)
-- Reference image 2: The mural/wallpaper design (you do NOT see this — do NOT describe it)
+  const designKind = isPattern
+    ? "The second image is a REPEATING PATTERN: it must tile seamlessly at a consistent small scale (about a 30-40cm repeat) across the entire wall, like real wallpaper."
+    : "The second image is a SINGLE MURAL: it is one continuous design that stretches to cover the entire wall, preserving its original composition and proportions.";
 
-YOUR PROMPT MUST INCLUDE ALL OF THE FOLLOWING SECTIONS:
-
-1. **ROOM ANALYSIS** — Describe in detail what you see:
-   - Type of room (bedroom, living room, bathroom, office, etc.)
-   - Camera angle and perspective (straight-on, angled left/right, from above/below)
-   - Lighting conditions (natural light from window, artificial warm/cool light, shadows direction, intensity)
-   - Wall surface material and current color/texture of the TARGET wall
-   - Exact boundaries of the target wall (what's to the left, right, top, bottom — doors, windows, corners, ceiling, floor)
-
-2. **TARGET WALL SPECIFICATION** — Be surgically precise:
-   - Which wall exactly (use spatial references: "the wall behind the bed", "the wall to the left of the window")
-   - What objects are IN FRONT of the wall (furniture, fixtures) that must remain visible
-   - What objects are ON the wall (shelves, frames, switches, outlets) — these should remain on top of the wallpaper
-   - Do NOT guess or invent specific measurements (feet, meters, cm). Only describe relative size and proportions
-
-3. **APPLICATION INSTRUCTIONS** — How the wallpaper must be applied:
-   - The wallpaper must cover the ENTIRE wall surface from floor to ceiling, edge to edge
-   - It must look like professionally installed wallpaper — flush against the wall, not floating
-   - Perspective must match the camera angle and wall geometry exactly
-   - Lighting and shadows from the room must naturally affect the wallpaper surface (shadows from furniture, light gradients from windows)
-   - The wallpaper must wrap correctly into corners if the wall meets another surface
-   - ALL objects in front of the wall (furniture, plants, fixtures) must remain EXACTLY as they are — unchanged, not covered
-   - The rest of the room (floor, ceiling, other walls, furniture) must remain COMPLETELY UNCHANGED
-
-4. **MURAL FIDELITY** — CRITICAL, emphasize this strongly in your prompt:
-   - The design from reference image 2 must be reproduced with ABSOLUTE FIDELITY — no reinterpretation, no artistic liberty, no color shifts
-   - Do NOT alter, modify, simplify, add to, or remove ANY element from the mural/pattern design
-   - Colors must match EXACTLY — no saturation changes, no hue shifts, no warming/cooling
-   - If it's a pattern, the repeat scale, spacing, and alignment must be consistent and uniform
-   - If it's a mural, the composition and proportions must be preserved exactly as in the original
-   - The design should look like a HIGH-RESOLUTION PRINT on the wall, not a digital overlay or projection
-
-5. **LIGHTING AND PHOTOREALISM** — CRITICAL:
-   - DO NOT add, modify, or enhance the lighting in any way. The lighting must remain IDENTICAL to the original photo
-   - Do NOT add light sources, glows, spotlights, warm spots, reflections, or any illumination that does not exist in the original
-   - Do NOT make the image brighter, warmer, cooler, or more dramatic than the original
-   - The wallpaper surface should simply inherit the EXISTING light and shadow conditions visible in the photo — nothing more
-   - Match the image grain, noise, color temperature, and exposure of the original photo EXACTLY
-   - The final image must be photorealistic — it should look like a real photograph, not a render
-   - No artificial glow, no unrealistic sharpness, no HDR look, no vignette, no added contrast
-
-DO NOT describe the mural/wallpaper design itself — it is provided as a separate reference image.
-Write the prompt in English.
-Respond ONLY with the prompt. No explanations, no headers, no bullet points — just a flowing, detailed paragraph prompt.`,
-      },
-      {
-        role: "user",
-        content: [
-          {
-            type: "image_url",
-            image_url: { url: `data:image/jpeg;base64,${roomImageBase64}`, detail: "high" },
-          },
-          {
-            type: "text",
-            text: `TYPE: ${isPattern ? "REPEATING PATTERN — the design must tile seamlessly and repeat at a consistent small scale (approximately 30-40cm repeat) across the entire wall surface, like real wallpaper." : "SINGLE MURAL — the design is one continuous image that stretches to cover the entire wall, maintaining its original proportions and composition."}
-
-USER'S INDICATION OF WHERE TO APPLY: "${userDescription || "On the main/largest visible wall in the room"}"
-
-Write the complete, detailed prompt now:`,
-          },
-        ],
-      },
-    ],
-  });
-
-  const generatedPrompt = response.choices[0]?.message?.content;
-
-  if (!generatedPrompt) {
-    throw new Error("OpenAI no generó prompt");
-  }
-
-  return generatedPrompt;
+  return [
+    "You are editing a real interior photograph to preview a wall covering.",
+    "The FIRST image is the room photo. The SECOND image is the mural/wallpaper design to apply.",
+    designKind,
+    where,
+    "The design must cover the ENTIRE target wall from floor to ceiling and edge to edge, like professionally installed wallpaper flush against the wall — not a framed poster or floating overlay.",
+    "Match the wall's perspective and geometry so it looks naturally integrated, wrapping into corners where the wall meets another surface.",
+    "Reproduce the design from the second image with ABSOLUTE FIDELITY: exact colors, shapes and composition. Do NOT reinterpret, recolor, simplify, add or remove any element.",
+    "CRITICAL — preserve everything else PIXEL-PERFECT identical to the first image: furniture, plants, fixtures, objects on or in front of the wall, the floor, ceiling, other walls, and the camera framing must stay completely unchanged.",
+    "CRITICAL — do NOT alter the lighting in any way. Keep the original exposure, color temperature, shadows and light gradients exactly as in the photo. Do NOT add light sources, glows, reflections, HDR, vignette or extra contrast. The wallpaper should simply inherit the room's existing light and shadows.",
+    "The result must look like a real photograph of that same room, not a render.",
+  ].join(" ");
 }
 
 // Rate limiter por IP en memoria (emergencia, anti cookie-delete)
@@ -178,6 +131,20 @@ function checkIpRateLimit(ip: string): boolean {
 
   entry.count++;
   return true;
+}
+
+async function uploadToCloudinary(dataUri: string, publicId: string): Promise<string | null> {
+  try {
+    const result = await cloudinary.uploader.upload(dataUri, {
+      folder: "mercedescostal/visualizations",
+      public_id: publicId,
+      overwrite: true,
+    });
+    return result.secure_url;
+  } catch (error) {
+    console.error("[Visualizer] Error subiendo a Cloudinary:", error);
+    return null;
+  }
 }
 
 export async function POST(req: NextRequest) {
@@ -246,45 +213,46 @@ export async function POST(req: NextRequest) {
     const muralProcessed = await processImage(muralBuffer);
 
     const aspectRatio = detectAspectRatio(roomProcessed.width, roomProcessed.height);
+    const instruction = buildInstruction(userDescription, isPattern);
 
-    let prompt: string;
-    try {
-      prompt = await generateOptimizedPrompt(roomProcessed.base64, userDescription, isPattern);
-    } catch (error) {
-      console.warn("[Visualizer] OpenAI falló, usando prompt estático:", error instanceof Error ? error.message : error);
-      const locationHint = userDescription || "Apply to the main/largest wall in the room.";
-      prompt = isPattern
-        ? `Apply the repeating pattern from the second reference image as seamless wallpaper covering the ENTIRE main wall of the room shown in the first reference image. The pattern must tile continuously from floor to ceiling and edge to edge at a consistent small scale. Preserve the pattern's original colors, shapes, and design EXACTLY without any modification. Adjust perspective to match the wall's geometry. Keep all existing furniture, decorations, lighting, and architectural features completely unchanged. ${locationHint}`
-        : `Apply the mural from the second reference image onto the main wall of the room shown in the first reference image. The mural must cover the ENTIRE wall surface from floor to ceiling, edge to edge, like professionally installed wallpaper. Maintain the mural's original colors, proportions, and design elements EXACTLY as they are. Adjust only the perspective to match the wall's geometry so it looks naturally integrated. Keep all existing furniture, decorations, lighting, and architectural features completely unchanged. ${locationHint}`;
-    }
-
-    // Envolver el prompt con instrucciones fijas para Freepik
-    const finalPrompt = `STRICT RULE: Do NOT alter the lighting, exposure, color temperature, or shadows of the original photo in ANY way. The ONLY change allowed is applying the wallpaper/mural from reference image 2 onto the specified wall. Everything else — light, shadows, colors, objects, furniture — must remain PIXEL-PERFECT identical to reference image 1. Do NOT add light sources, glows, warm spots, or any illumination effect.\n\n${prompt}\n\nREMINDER: Preserve the EXACT lighting from the original photo. Zero modifications to light, exposure, or atmosphere.`;
-
-    const response = await fetch(FREEPIK_API_URL, {
-      method: "POST",
-      headers: {
-        "x-freepik-api-key": FREEPIK_API_KEY!,
-        "Content-Type": "application/json",
+    // Nano Banana Pro: edición sincrónica con 2 imágenes de referencia (foto + mural)
+    const generated = await ai.models.generateContent({
+      model: IMAGE_MODEL,
+      contents: [
+        { text: instruction },
+        { inlineData: { mimeType: "image/png", data: roomProcessed.base64 } },
+        { inlineData: { mimeType: "image/png", data: muralProcessed.base64 } },
+      ],
+      config: {
+        responseModalities: ["TEXT", "IMAGE"],
+        imageConfig: {
+          aspectRatio,
+          imageSize: "2K",
+        },
       },
-      body: JSON.stringify({
-        prompt: finalPrompt,
-        reference_images: [roomProcessed.base64, muralProcessed.base64],
-        aspect_ratio: aspectRatio,
-      }),
+    }).catch((error: unknown) => {
+      console.error("[Visualizer] Error de Gemini:", error);
+      return null;
     });
 
-    const data = await response.json();
-
-    if (!response.ok) {
-      console.error("[Visualizer] Freepik error:", data);
+    if (!generated) {
       return NextResponse.json({ success: false, error: "No pudimos generar la visualización en este momento. Por favor, intentá de nuevo en unos minutos." }, { status: 502 });
     }
 
-    if (!data?.data?.task_id) {
-      console.error("[Visualizer] Freepik response missing task_id:", data);
-      return NextResponse.json({ success: false, error: "No pudimos iniciar la generación. Por favor, intentá de nuevo." }, { status: 502 });
+    const parts = generated.candidates?.[0]?.content?.parts || [];
+    const imagePart = parts.find((p) => p.inlineData?.data);
+    const imageBase64 = imagePart?.inlineData?.data;
+    const imageMime = imagePart?.inlineData?.mimeType || "image/png";
+
+    if (!imageBase64) {
+      console.error("[Visualizer] Gemini no devolvió imagen. Parts:", JSON.stringify(parts).slice(0, 500));
+      return NextResponse.json({ success: false, error: "No pudimos generar la visualización. Probá con otra foto o una descripción más detallada del espacio." }, { status: 502 });
     }
+
+    const visualizationId = randomUUID();
+    const dataUri = `data:${imageMime};base64,${imageBase64}`;
+    const cloudinaryUrl = await uploadToCloudinary(dataUri, visualizationId);
+    const imageUrl = cloudinaryUrl || dataUri;
 
     const newCount = generationCount + 1;
     const remaining = maxAllowed - newCount;
@@ -293,8 +261,8 @@ export async function POST(req: NextRequest) {
     try {
       await connectDB();
       await Visualization.create({
-        taskId: data.data.task_id,
-        status: data.data.status,
+        taskId: visualizationId,
+        status: "COMPLETED",
         muralId,
         muralTitle,
         collectionId,
@@ -302,7 +270,9 @@ export async function POST(req: NextRequest) {
         colorName,
         isPattern,
         userDescription,
-        prompt,
+        prompt: instruction,
+        imageUrl: cloudinaryUrl,
+        completedAt: new Date(),
         ip,
       });
     } catch (dbError) {
@@ -311,8 +281,8 @@ export async function POST(req: NextRequest) {
 
     const res = NextResponse.json({
       success: true,
-      taskId: data.data.task_id,
-      status: data.data.status,
+      visualizationId,
+      imageUrl,
       generationsRemaining: remaining,
     });
 
@@ -321,13 +291,6 @@ export async function POST(req: NextRequest) {
       secure: process.env.NODE_ENV === "production",
       sameSite: "strict",
       maxAge: 60 * 60 * 24 * 30,
-    });
-
-    res.cookies.set("mc_pending_task", data.data.task_id, {
-      httpOnly: false,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
-      maxAge: 60 * 5,
     });
 
     return res;
