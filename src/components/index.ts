@@ -35,6 +35,9 @@ export { ArtScreenQuoteForm } from "./collectibles/art-screen/ArtScreenQuoteForm
 
 export { QuoteForm } from "./quote/QuoteForm";
 
+export { VisualizerForm } from "./visualizer/VisualizerForm";
+export { ImageCompare } from "./visualizer/ImageCompare";
+
 export { SubmitButtonLoading } from "./ui/SubmitButtonLoading";
 export { FormErrorMessage } from "./ui/FormErrorMessage";
 export { Modal } from "./ui/Modal";
