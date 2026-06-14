@@ -1,13 +1,27 @@
 'use client'
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { SoundOnIcon, SoundOffIcon, PlayIcon, PauseIcon } from "@/icons";
 import { useLazyVideo } from "@/hooks/useLazyVideo";
 
+const DESKTOP_SRC = "/assets/portada_video.mp4";
+const MOBILE_SRC = "/assets/portada_video_mobile.mp4";
+
 export const VideoIntro = () => {
     const { videoRef, containerRef, shouldLoad, isMuted, isPlaying, toggleMute, togglePlayPause } = useLazyVideo({ eager: true });
+    const [videoSrc, setVideoSrc] = useState<string | null>(null);
 
-    const videoSrc = "/assets/portada_video.mp4";
+    useEffect(() => {
+        const mq = window.matchMedia('(max-width: 768px)');
+        setVideoSrc(mq.matches ? MOBILE_SRC : DESKTOP_SRC);
+    }, []);
+
+    useEffect(() => {
+        if (videoSrc && videoRef.current) {
+            videoRef.current.load();
+        }
+    }, [videoSrc, videoRef]);
 
     return (
         <div ref={containerRef} className="size-full bg-black absolute top-0 left-0 z-0">
@@ -49,7 +63,7 @@ export const VideoIntro = () => {
                     preload="none"
                     className="size-full object-cover object-left-bottom pointer-events-none select-none relative z-10"
                 >
-                    { shouldLoad && <source src={videoSrc} type="video/mp4" /> }
+                    { shouldLoad && videoSrc && <source src={videoSrc} type="video/mp4" /> }
                     Tu navegador no soporta este video.
                 </video>
             </div>
