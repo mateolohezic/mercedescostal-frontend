@@ -6,6 +6,7 @@ export { Video } from "./Video";
 export { CTA } from "./CTA";
 export { WhatsApp } from "./WhatsApp";
 export { ClarityTracker } from "./ClarityTracker";
+export { MetaPixel } from "./MetaPixel";
 export { ViewTransitionsRouter } from "./ViewTransitionsRouter";
 
 export { PhotoSelector } from "./highlights/PhotoSelector";

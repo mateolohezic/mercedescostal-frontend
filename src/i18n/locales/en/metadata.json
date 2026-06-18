@@ -78,5 +78,9 @@
   "quoteArtScreen": {
     "title": "Quote Art Screen",
     "description": "Get a quote for your Mercedes Costal Art Screen."
+  },
+  "quoteThankYou": {
+    "title": "Thank you for your quote",
+    "description": "We received your Mercedes Costal mural quote request."
   }
 }

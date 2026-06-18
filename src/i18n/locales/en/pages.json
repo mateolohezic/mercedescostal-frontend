@@ -433,5 +433,11 @@
       "ctaShop": "Get a quote now",
       "ctaCollections": "Explore collections"
     }
+  },
+  "quoteThankYou": {
+    "title": "Thank you!",
+    "subtitle": "We received your quote request. We'll get back to you shortly.",
+    "ctaHome": "Back to home",
+    "ctaCollections": "Explore collections"
   }
 }

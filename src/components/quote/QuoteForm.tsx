@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -17,6 +18,7 @@ interface Props {
 export const QuoteForm = ({ preselectedMuralId }: Props) => {
     const t = useTranslations('forms.quote');
     const tv = useTranslations('forms.validation');
+    const router = useRouter();
 
     const spaceSchema = z.object({
         largo: z.number({ invalid_type_error: tv('invalidNumber') }).min(0.01, tv('widthRequired')),
@@ -83,6 +85,10 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
         const whatsappNumber = "5491160208460";
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
         window.open(whatsappUrl, "_blank");
+
+        // Redirige al thank-you para registrar la conversión en Meta (PageView
+        // sobre /quote/thank-you -> custom conversion en Events Manager).
+        router.push("/quote/thank-you");
     };
 
     return (

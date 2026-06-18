@@ -433,5 +433,11 @@
       "ctaShop": "Cotizar ahora",
       "ctaCollections": "Explorar colecciones"
     }
+  },
+  "quoteThankYou": {
+    "title": "¡Gracias!",
+    "subtitle": "Recibimos tu cotización. Te responderemos a la brevedad.",
+    "ctaHome": "Volver al inicio",
+    "ctaCollections": "Explorar colecciones"
   }
 }

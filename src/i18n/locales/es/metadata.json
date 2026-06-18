@@ -78,5 +78,9 @@
   "quoteArtScreen": {
     "title": "Cotizar Art Screen",
     "description": "Cotiza tu biombo Art Screen Mercedes Costal."
+  },
+  "quoteThankYou": {
+    "title": "Gracias por tu cotización",
+    "description": "Recibimos tu cotización de mural Mercedes Costal."
   }
 }
