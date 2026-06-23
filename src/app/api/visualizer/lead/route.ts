@@ -7,6 +7,7 @@ const ENTRY_EMAIL = "entry.1847391216";
 export async function POST(req: NextRequest) {
   try {
     const { nombre, email } = await req.json();
+    console.log("[Visualizer:lead] ▶ recibido:", { nombre, email });
     if (!nombre || typeof nombre !== "string" || nombre.length > 200) {
       return NextResponse.json({ success: false, error: "Por favor, ingresá tu nombre." }, { status: 400 });
     }
@@ -14,6 +15,7 @@ export async function POST(req: NextRequest) {
     if (!email || typeof email !== "string" || !emailRegex.test(email)) {
       return NextResponse.json({ success: false, error: "Por favor, ingresá un correo electrónico válido." }, { status: 400 });
     }
+    console.log("[Visualizer:lead] enviando al Google Form...");
 
     const formData = new URLSearchParams();
     formData.append(ENTRY_NOMBRE, nombre);
@@ -27,6 +29,7 @@ export async function POST(req: NextRequest) {
       },
     });
 
+    console.log("[Visualizer:lead] ✓ lead capturado, cookies seteadas (lead + reset generaciones)");
     const res = NextResponse.json({ success: true });
 
     res.cookies.set("mc_lead_captured", "true", {

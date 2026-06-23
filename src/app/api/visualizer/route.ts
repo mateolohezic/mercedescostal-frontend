@@ -23,7 +23,15 @@ const MAX_FREE_GENERATIONS = 3;
 const MAX_BONUS_GENERATIONS = 3;
 const MAX_DIMENSION = 2048;
 
+// Logger de debug con prefijo. Activado siempre en dev; en prod podés silenciarlo
+// poniendo VISUALIZER_DEBUG=false en el entorno.
+const DEBUG = process.env.VISUALIZER_DEBUG !== "false";
+function dlog(...args: unknown[]) {
+  if (DEBUG) console.log("[Visualizer]", ...args);
+}
+
 async function getImageBuffer(url: string): Promise<Buffer> {
+  dlog("⬇ descargando mural desde:", url);
   const response = await fetch(url);
   if (!response.ok) throw new Error("No se pudo descargar la imagen");
   return Buffer.from(await response.arrayBuffer());
@@ -51,6 +59,7 @@ async function processImage(buffer: Buffer): Promise<ProcessedImage> {
     const newMeta = await sharp(processedBuffer).metadata();
     finalWidth = newMeta.width || width;
     finalHeight = newMeta.height || height;
+    dlog(`  ↳ redimensionada de ${width}x${height} a ${finalWidth}x${finalHeight}`);
   } else {
     processedBuffer = await sharp(buffer).png({ quality: 100 }).toBuffer();
   }
@@ -135,27 +144,32 @@ function checkIpRateLimit(ip: string): boolean {
 
 async function uploadToCloudinary(dataUri: string, publicId: string): Promise<string | null> {
   try {
+    dlog("⬆ subiendo resultado a Cloudinary, public_id:", publicId);
     const result = await cloudinary.uploader.upload(dataUri, {
       folder: "mercedescostal/visualizations",
       public_id: publicId,
       overwrite: true,
     });
+    dlog("  ↳ Cloudinary OK:", result.secure_url);
     return result.secure_url;
   } catch (error) {
-    console.error("[Visualizer] Error subiendo a Cloudinary:", error);
+    console.error("[Visualizer] ❌ Error subiendo a Cloudinary:", error);
     return null;
   }
 }
 
 export async function POST(req: NextRequest) {
+  const reqStart = Date.now();
   try {
     // Rate limit por IP (anti cookie-delete)
     const ip = req.headers.get("x-forwarded-for")?.split(",")[0]?.trim()
       || req.headers.get("x-real-ip")
       || "unknown";
 
+    dlog(`▶ POST /api/visualizer recibido | ip=${ip} | NODE_ENV=${process.env.NODE_ENV}`);
+
     if (process.env.NODE_ENV === "production" && !checkIpRateLimit(ip)) {
-      console.warn("[Visualizer] IP hard limit alcanzado:", ip);
+      console.warn("[Visualizer] ⛔ IP hard limit alcanzado:", ip);
       return NextResponse.json({ success: false, error: "LIMIT_REACHED", message: "Has alcanzado el límite de visualizaciones" }, { status: 429 });
     }
 
@@ -164,12 +178,15 @@ export async function POST(req: NextRequest) {
     const leadCaptured = cookieStore.get("mc_lead_captured")?.value === "true";
 
     const maxAllowed = leadCaptured ? MAX_FREE_GENERATIONS + MAX_BONUS_GENERATIONS : MAX_FREE_GENERATIONS;
+    dlog(`cuota: usadas=${generationCount} | leadCaptured=${leadCaptured} | maxAllowed=${maxAllowed}`);
 
     if (generationCount >= MAX_FREE_GENERATIONS && !leadCaptured) {
+      dlog("⛔ LEAD_REQUIRED (sin lead y agotó las gratis)");
       return NextResponse.json({ success: false, error: "LEAD_REQUIRED", message: "Dejá tus datos para continuar" }, { status: 403 });
     }
 
     if (generationCount >= maxAllowed) {
+      dlog("⛔ LIMIT_REACHED");
       return NextResponse.json({ success: false, error: "LIMIT_REACHED", message: "Has alcanzado el límite de visualizaciones" }, { status: 429 });
     }
 
@@ -184,38 +201,62 @@ export async function POST(req: NextRequest) {
     const collectionTitle = (formData.get("collectionTitle") as string) || "";
     const colorName = (formData.get("colorName") as string) || "";
 
+    dlog("formData:", {
+      roomImage: roomImage ? `${roomImage.name} (${(roomImage.size / 1024).toFixed(0)}KB, ${roomImage.type})` : null,
+      muralImageUrl,
+      isPattern,
+      muralId,
+      muralTitle,
+      collectionId,
+      collectionTitle,
+      colorName,
+      userDescription: userDescription || "(vacío)",
+    });
+
     if (!roomImage || !muralImageUrl) {
+      dlog("⛔ falta roomImage o muralImageUrl");
       return NextResponse.json({ success: false, error: "Necesitamos la foto de tu espacio y un mural seleccionado para generar la visualización." }, { status: 400 });
     }
 
     if (roomImage.size > MAX_FILE_SIZE) {
+      dlog("⛔ imagen demasiado grande:", roomImage.size);
       return NextResponse.json({ success: false, error: "La imagen es demasiado grande. Por favor, subí una foto de hasta 5MB." }, { status: 400 });
     }
 
     const allowedTypes = ["image/jpeg", "image/png", "image/webp"];
     if (!allowedTypes.includes(roomImage.type)) {
+      dlog("⛔ formato no permitido:", roomImage.type);
       return NextResponse.json({ success: false, error: "El formato de imagen no es compatible. Usá una foto en JPG, PNG o WebP." }, { status: 400 });
     }
 
     try {
       const parsedUrl = new URL(muralImageUrl);
       if (!["http:", "https:"].includes(parsedUrl.protocol)) {
+        dlog("⛔ protocolo de muralImageUrl inválido:", parsedUrl.protocol);
         return NextResponse.json({ success: false, error: "No pudimos cargar el mural seleccionado." }, { status: 400 });
       }
     } catch {
+      dlog("⛔ muralImageUrl no es una URL válida");
       return NextResponse.json({ success: false, error: "No pudimos cargar el mural seleccionado." }, { status: 400 });
     }
 
+    dlog("procesando imágenes con sharp...");
     const roomBuffer = Buffer.from(await roomImage.arrayBuffer());
     const roomProcessed = await processImage(roomBuffer);
+    dlog(`  ↳ room: ${roomProcessed.width}x${roomProcessed.height} | base64=${(roomProcessed.base64.length / 1024).toFixed(0)}KB`);
 
     const muralBuffer = await getImageBuffer(muralImageUrl);
     const muralProcessed = await processImage(muralBuffer);
+    dlog(`  ↳ mural: ${muralProcessed.width}x${muralProcessed.height} | base64=${(muralProcessed.base64.length / 1024).toFixed(0)}KB`);
 
     const aspectRatio = detectAspectRatio(roomProcessed.width, roomProcessed.height);
     const instruction = buildInstruction(userDescription, isPattern);
+    dlog(`aspectRatio detectado: ${aspectRatio} | modelo: ${IMAGE_MODEL} | imageSize: 2K`);
+    dlog("instrucción enviada al modelo:\n" + instruction);
 
     // Nano Banana Pro: edición sincrónica con 2 imágenes de referencia (foto + mural)
+    dlog("⏳ llamando a Gemini...");
+    const genStart = Date.now();
     const generated = await ai.models.generateContent({
       model: IMAGE_MODEL,
       contents: [
@@ -231,28 +272,40 @@ export async function POST(req: NextRequest) {
         },
       },
     }).catch((error: unknown) => {
-      console.error("[Visualizer] Error de Gemini:", error);
+      console.error("[Visualizer] ❌ Error de Gemini:", error);
       return null;
     });
+    dlog(`Gemini respondió en ${Date.now() - genStart}ms`);
 
     if (!generated) {
+      dlog("⛔ Gemini devolvió null (ver error arriba) → 502");
       return NextResponse.json({ success: false, error: "No pudimos generar la visualización en este momento. Por favor, intentá de nuevo en unos minutos." }, { status: 502 });
     }
 
     const parts = generated.candidates?.[0]?.content?.parts || [];
+    const finishReason = generated.candidates?.[0]?.finishReason;
+    dlog(`respuesta: candidates=${generated.candidates?.length || 0} | parts=${parts.length} | finishReason=${finishReason}`);
+
+    // Si el modelo devuelve texto (típico en rechazos/safety), lo logueamos: clave para debug.
+    const textParts = parts.map((p) => p.text).filter(Boolean);
+    if (textParts.length) dlog("⚠ texto devuelto por el modelo:", textParts.join(" | "));
+
     const imagePart = parts.find((p) => p.inlineData?.data);
     const imageBase64 = imagePart?.inlineData?.data;
     const imageMime = imagePart?.inlineData?.mimeType || "image/png";
+    dlog(`imagen en respuesta: ${imageBase64 ? "SÍ" : "NO"} | mime=${imageMime} | base64=${imageBase64 ? (imageBase64.length / 1024).toFixed(0) + "KB" : "N/A"}`);
 
     if (!imageBase64) {
-      console.error("[Visualizer] Gemini no devolvió imagen. Parts:", JSON.stringify(parts).slice(0, 500));
+      console.error("[Visualizer] ⛔ Gemini no devolvió imagen. finishReason:", finishReason, "| parts:", JSON.stringify(parts).slice(0, 500));
       return NextResponse.json({ success: false, error: "No pudimos generar la visualización. Probá con otra foto o una descripción más detallada del espacio." }, { status: 502 });
     }
 
     const visualizationId = randomUUID();
+    dlog("visualizationId generado:", visualizationId);
     const dataUri = `data:${imageMime};base64,${imageBase64}`;
     const cloudinaryUrl = await uploadToCloudinary(dataUri, visualizationId);
     const imageUrl = cloudinaryUrl || dataUri;
+    if (!cloudinaryUrl) dlog("⚠ Cloudinary falló, devuelvo data URI inline (no se persiste)");
 
     const newCount = generationCount + 1;
     const remaining = maxAllowed - newCount;
@@ -275,8 +328,9 @@ export async function POST(req: NextRequest) {
         completedAt: new Date(),
         ip,
       });
+      dlog("💾 guardado en DB (taskId =", visualizationId + ")");
     } catch (dbError) {
-      console.error("[Visualizer] Error guardando en DB (no bloquea):", dbError);
+      console.error("[Visualizer] ❌ Error guardando en DB (no bloquea):", dbError);
     }
 
     const res = NextResponse.json({
@@ -293,10 +347,11 @@ export async function POST(req: NextRequest) {
       maxAge: 60 * 60 * 24 * 30,
     });
 
+    dlog(`✓ OK en ${Date.now() - reqStart}ms | restantes=${remaining} | imageUrl=${imageUrl.slice(0, 80)}...`);
     return res;
 
   } catch (error) {
-    console.error("[Visualizer] Error:", error);
+    console.error(`[Visualizer] ❌ Error inesperado (tras ${Date.now() - reqStart}ms):`, error);
     return NextResponse.json({ success: false, error: "Algo salió mal al generar la visualización. Por favor, intentá de nuevo." }, { status: 500 });
   }
 }

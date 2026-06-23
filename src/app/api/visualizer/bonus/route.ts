@@ -9,13 +9,16 @@ export async function POST(_req: NextRequest) {
     const cookieStore = await cookies();
 
     const bonusClaimed = cookieStore.get("mc_bonus_claimed")?.value === "true";
+    console.log("[Visualizer:bonus] ▶ recibido | bonusClaimed:", bonusClaimed);
     if (bonusClaimed) {
+      console.log("[Visualizer:bonus] ⛔ ya reclamado");
       return NextResponse.json({ success: false, error: "Ya recibiste visualizaciones adicionales." }, { status: 400 });
     }
 
     const currentCount = parseInt(cookieStore.get("mc_generations")?.value || "0", 10);
     const newCount = Math.max(0, currentCount - 3);
     const maxAllowed = MAX_FREE_GENERATIONS + MAX_BONUS_GENERATIONS;
+    console.log(`[Visualizer:bonus] ✓ otorgado | generaciones: ${currentCount} -> ${newCount} | restantes: ${maxAllowed - newCount}`);
 
     const res = NextResponse.json({ success: true, generationsRemaining: maxAllowed - newCount });
 

@@ -13,6 +13,8 @@ import { collections } from "@/data/collections";
 const MAX_FILE_SIZE = 5 * 1024 * 1024;
 const ACCEPTED_IMAGE_TYPES = ["image/jpeg", "image/png", "image/webp"];
 
+const clog = (...args: unknown[]) => console.log("[Visualizer:client]", ...args);
+
 const schema = z.object({
     collection: z.string().nonempty("Selecciona una colección"),
     mural: z.string().nonempty("Selecciona un mural"),
@@ -98,13 +100,16 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
 
     // Load history on mount
     useEffect(() => {
-        setHistory(getHistory());
-    }, []);
+        const h = getHistory();
+        clog(`montado | historial: ${h.length} entradas | preselectedMuralId: ${preselectedMuralId || "(ninguno)"}`);
+        setHistory(h);
+    }, [preselectedMuralId]);
 
     useEffect(() => {
         if (preselectedMuralId) {
             const mural = collections.flatMap(col => col.murales).find(m => m.id === preselectedMuralId);
             if (mural) {
+                clog("preseleccionando colección del mural:", mural.collectionId);
                 setValue("collection", mural.collectionId);
                 setIsRendered(true);
             }
@@ -141,13 +146,16 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
         setErrorMessage(null);
         if (!file) return;
         if (!ACCEPTED_IMAGE_TYPES.includes(file.type)) {
+            clog("⛔ formato de archivo no aceptado:", file.type);
             setErrorMessage("El formato de imagen no es compatible. Usá una foto en JPG, PNG o WebP.");
             return;
         }
         if (file.size > MAX_FILE_SIZE) {
+            clog("⛔ archivo demasiado grande:", file.size);
             setErrorMessage("La imagen es demasiado grande. Por favor, subí una foto de hasta 5MB.");
             return;
         }
+        clog(`foto seleccionada: ${file.name} (${(file.size / 1024).toFixed(0)}KB, ${file.type})`);
         if (roomImagePreview) URL.revokeObjectURL(roomImagePreview);
         setRoomImage(file);
         setRoomImagePreview(URL.createObjectURL(file));
@@ -156,6 +164,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
     };
 
     const clearRoomImage = () => {
+        clog("limpiando foto del espacio");
         if (roomImagePreview) URL.revokeObjectURL(roomImagePreview);
         setRoomImage(null);
         setRoomImagePreview(null);
@@ -179,6 +188,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
 
     const submitLead = async () => {
         if (!leadForm.nombre || !leadForm.email) return;
+        clog("▶ enviando lead:", leadForm.email);
         setLeadLoading(true);
         try {
             const response = await fetch("/api/visualizer/lead", {
@@ -186,27 +196,32 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(leadForm),
             });
+            clog(`respuesta lead: HTTP ${response.status}`);
             if (response.ok) {
+                clog("✓ lead guardado, reintentando generación");
                 setShowLeadModal(false);
                 setGenerationsRemaining(3);
                 setLeadForm({ nombre: "", email: "" });
                 handleSubmit(onSubmit)();
             }
         } catch (error) {
-            console.error("Error enviando lead:", error);
+            clog("❌ error enviando lead:", error);
         } finally {
             setLeadLoading(false);
         }
     };
 
     const onSubmit = async () => {
+        clog("▶ onSubmit | status actual:", status);
         if (status === "processing") return;
         if (!roomImage) {
+            clog("⛔ falta la foto del espacio");
             setErrorMessage("Subí una foto de tu espacio para poder generar la visualización.");
             return;
         }
         const muralUrl = getMuralImageUrl();
         if (!muralUrl) {
+            clog("⛔ no se pudo resolver la URL del mural");
             setErrorMessage("Seleccioná un mural para poder generar la visualización.");
             return;
         }
@@ -234,20 +249,25 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
             formData.append("collectionTitle", collectionTitle);
             formData.append("colorName", colorName);
 
+            clog("⏳ enviando a /api/visualizer:", { muralId: selectedMural?.id, muralTitle, colorName, collectionTitle, isPattern, muralUrl, userDescription: userDescription || "(vacío)" });
+            const fetchStart = Date.now();
             const response = await fetch("/api/visualizer", {
                 method: "POST",
                 body: formData,
             });
 
             const data = await response.json();
+            clog(`respuesta HTTP ${response.status} en ${Date.now() - fetchStart}ms:`, data);
 
             if (!response.ok) {
                 if (data.error === "LEAD_REQUIRED") {
+                    clog("→ LEAD_REQUIRED, abriendo modal de lead");
                     setStatus("idle");
                     setShowLeadModal(true);
                     return;
                 }
                 if (data.error === "LIMIT_REACHED") {
+                    clog("→ LIMIT_REACHED");
                     setStatus("limit_reached");
                     return;
                 }
@@ -255,6 +275,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
             }
 
             if (data.imageUrl) {
+                clog("✓ imagen recibida | visualizationId:", data.visualizationId, "| restantes:", data.generationsRemaining);
                 setCurrentVisualizationId(data.visualizationId || null);
                 setGenerationsRemaining(data.generationsRemaining);
                 setResultImage(data.imageUrl);
@@ -270,13 +291,13 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                 addToHistory(entry);
                 setHistory(getHistory());
             } else {
-                console.error("[Visualizer] Respuesta sin imagen:", data);
+                clog("⛔ respuesta OK pero sin imageUrl:", data);
                 setStatus("error");
                 setErrorMessage("No pudimos generar la visualización. Por favor, intentá de nuevo.");
             }
 
         } catch (error) {
-            console.error("[Visualizer] Error:", error);
+            clog("❌ error en onSubmit:", error);
             setStatus("error");
             setErrorMessage("Algo salió mal al generar la visualización. Por favor, intentá de nuevo.");
         }
@@ -413,7 +434,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                                     <span className="text-sm text-black/50">¿Te resultó útil?</span>
                                     <button
                                         type="button"
-                                        onClick={() => { setFeedback("up"); if (currentVisualizationId) fetch("/api/visualizer/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ taskId: currentVisualizationId, feedback: "up" }) }).catch(() => {}); }}
+                                        onClick={() => { clog("feedback 👍", currentVisualizationId); setFeedback("up"); if (currentVisualizationId) fetch("/api/visualizer/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ taskId: currentVisualizationId, feedback: "up" }) }).catch(() => {}); }}
                                         className={`p-1.5 border transition-colors ${feedback === "up" ? "bg-black text-white border-black" : "border-black/20 text-black/40 hover:border-black hover:text-black"}`}
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -422,7 +443,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                                     </button>
                                     <button
                                         type="button"
-                                        onClick={() => { setFeedback("down"); setShowFeedbackModal(true); if (currentVisualizationId) fetch("/api/visualizer/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ taskId: currentVisualizationId, feedback: "down" }) }).catch(() => {}); }}
+                                        onClick={() => { clog("feedback 👎", currentVisualizationId); setFeedback("down"); setShowFeedbackModal(true); if (currentVisualizationId) fetch("/api/visualizer/feedback", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ taskId: currentVisualizationId, feedback: "down" }) }).catch(() => {}); }}
                                         className={`p-1.5 border transition-colors ${feedback === "down" ? "bg-black text-white border-black" : "border-black/20 text-black/40 hover:border-black hover:text-black"}`}
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -442,6 +463,7 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                             {selectedMural && (
                                 <Link
                                     href={`/buy?mural=${selectedMural.id}`}
+                                    onClick={() => clog("→ Comprar este mural:", selectedMural.id)}
                                     className="mt-3 block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150"
                                 >
                                     Comprar este mural
@@ -577,13 +599,15 @@ export const VisualizerForm = ({ preselectedMuralId }: Props) => {
                 <button
                     type="button"
                     onClick={async () => {
+                        clog("▶ pidiendo bonus de visualizaciones");
                         try {
                             const res = await fetch("/api/visualizer/bonus", { method: "POST" });
                             const data = await res.json();
+                            clog("respuesta bonus:", data);
                             if (data.success) {
                                 setGenerationsRemaining(data.generationsRemaining);
                             }
-                        } catch {}
+                        } catch (e) { clog("❌ error en bonus:", e); }
                         setShowFeedbackModal(false);
                     }}
                     className="w-full px-4 py-2 bg-black text-white font-gillsans font-medium text-lg uppercase"
