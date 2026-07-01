@@ -20,10 +20,21 @@
     "variant": "Color / Variant",
     "wall": "Wall",
     "wallMeasures": "Your wall measurements",
+    "excessHint": "Enter your walls' real measurements — we handle the technical overrun (10 cm height and minimum 10 cm width).",
     "addWall": "+ Add another wall",
+    "continuousQuestion": "Do your walls connect to each other?",
+    "continuousNo": "They're separate",
+    "continuousNoHint": "e.g. opposing walls (facing each other) or walls in different rooms.",
+    "continuousYes": "They form a corner or enclosed room",
+    "continuousYesHint": "e.g. 2 walls in an L, 3 walls in a U, or the 4 walls of a room. The paper can continue from one to the next.",
+    "continuousYesSaving": "You save on overrun with this option",
+    "groupTotal": "Group total",
+    "panel": "panel",
+    "panels": "panels",
     "width": "Width (cm)",
     "height": "Height (cm)",
-    "continueShipping": "Continue to shipping"
+    "continueShipping": "Continue to shipping",
+    "minAreaError": "Minimum order is {min} m². Your order totals {current} m² — add more meters to continue."
   },
   "wall": {
     "remove": "Remove wall",
@@ -54,12 +65,25 @@
     "shippingCost": "Shipping",
     "shippingByAndreani": "Shipping by Andreani",
     "freeShipping": "Free shipping",
+    "freeShippingHint": "+20 m²",
     "estimatedDays": "Estimated delivery",
     "reviewOrder": "Review order",
     "selectLocality": "Select locality",
     "selectProvince": "Select",
     "shippingProblems": "Shipping problems?",
-    "contactWhatsApp": "Contact us via WhatsApp"
+    "contactWhatsApp": "Contact us via WhatsApp",
+    "methodQuestion": "How do you want to receive your order?",
+    "methodDelivery": "Home delivery (Andreani)",
+    "methodDeliveryHint": "We ship it to your door. Cost quoted by postal code.",
+    "methodPickup": "Pickup at store (Yerba Buena, Tucumán)",
+    "methodPickupHint": "Pick it up at Av. Perón 2400. No shipping cost.",
+    "pickupAddress": "Store address",
+    "pickupCoordination": "We'll coordinate with you via WhatsApp when your order is ready for pickup.",
+    "pickupRecipientName": "Who picks it up",
+    "postalCodeHint": "required to continue",
+    "lockedHint": "Enter your postal code to unlock the address fields.",
+    "argOnlyNote": "We only ship within Argentina.",
+    "argOnlyContact": "Outside Argentina? Message us on WhatsApp."
   },
   "review": {
     "subtitle": "Verify your order details before continuing",
@@ -69,6 +93,9 @@
     "panels": "panels",
     "panelOf": "of 0.50m",
     "shippingAddress": "Shipping address",
+    "pickupHeader": "Store pickup",
+    "pickupCoordinationShort": "We'll coordinate via WhatsApp when it's ready.",
+    "pickupBy": "Pickup by",
     "yourData": "Your details",
     "name": "Name",
     "email": "Email",
@@ -89,9 +116,12 @@
   "summary": {
     "subtotalProduct": "Product subtotal",
     "shipping": "Shipping (Andreani)",
+    "shippingLabel": "Shipping",
+    "pickupInSummary": "Store pickup",
     "total": "Total",
     "ivaIncluded": "21% VAT included in all prices",
     "ivaShort": "VAT incl.",
+    "freeShipping": "Free shipping",
     "typeMural": "Mural",
     "typePattern": "Pattern",
     "printAreaSuffix": "m² of print"
@@ -135,6 +165,8 @@
     "order": "Order",
     "emailSent": "You received a confirmation email with all the details.",
     "willNotify": "We will notify you when your order is shipped.",
+    "nextStep": "Next step",
+    "commercialContact": "Our sales team will contact you within the next 24 business hours to coordinate the preview of your design.",
     "viewStatus": "View order status",
     "saveLink": "Save this link to check the status anytime:",
     "trackingLink": "Your tracking link:",
@@ -243,6 +275,7 @@
     "postalCode4": "Postal code: 4 digits",
     "enterCustomerName": "Enter your name",
     "invalidEmail": "Invalid email",
-    "invalidPhone": "Invalid phone"
+    "invalidPhone": "Invalid phone",
+    "mustAcceptTerms": "You must accept the terms to continue"
   }
 }

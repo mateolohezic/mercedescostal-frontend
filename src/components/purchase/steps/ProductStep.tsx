@@ -19,11 +19,17 @@ interface Props {
   removeWall: (index: number) => void;
   calculatedWalls: WallCalculation[];
   subtotal: number;
+  subtotalBeforeDiscount?: number;
+  discountAmount?: number;
+  promoLabel?: string;
+  promoDiscountPct?: number;
   totalArea: number;
   pricePerM2: number;
   productType: string;
   formatPrice: (n: number) => string;
   onNext: () => void;
+  minAreaError?: boolean;
+  minAreaM2?: number;
 }
 
 export const ProductStep = ({
@@ -33,11 +39,17 @@ export const ProductStep = ({
   removeWall,
   calculatedWalls,
   subtotal,
+  subtotalBeforeDiscount,
+  discountAmount,
+  promoLabel,
+  promoDiscountPct,
   totalArea,
   pricePerM2,
   productType,
   formatPrice,
   onNext,
+  minAreaError,
+  minAreaM2 = 4,
 }: Props) => {
   const t = useTranslations('purchase.product');
   const { register, watch, setValue, formState: { errors } } = form;
@@ -45,6 +57,7 @@ export const ProductStep = ({
   const selectedCollectionId = watch('collectionId');
   const selectedMuralId = watch('muralId');
   const selectedVariant = watch('variantColorName');
+  const wallsAreContinuous = watch('wallsAreContinuous');
   const selectedCollection = collections.find(c => c.id === selectedCollectionId);
   const selectedMural = selectedCollection?.murales.find(m => m.id === selectedMuralId);
   const currentVariant = selectedMural?.variants.find(v => v.colorName === selectedVariant);
@@ -234,9 +247,14 @@ export const ProductStep = ({
 
       {/* Walls */}
       <div className="space-y-3">
-        <label className="text-xs text-black/50 uppercase tracking-wider">
-          {t('wallMeasures')}
-        </label>
+        <div className="space-y-1">
+          <label className="text-xs text-black/50 uppercase tracking-wider">
+            {t('wallMeasures')}
+          </label>
+          <p className="text-[11px] text-black/40 leading-relaxed">
+            {t('excessHint')}
+          </p>
+        </div>
         {wallFields.map((field, index) => (
           <WallInput
             key={field.id}
@@ -247,8 +265,30 @@ export const ProductStep = ({
             canRemove={wallFields.length > 1}
             calculated={calculatedWalls[index]}
             formatPrice={formatPrice}
+            hidePanelsBreakdown={wallsAreContinuous && wallFields.length >= 2}
           />
         ))}
+
+        {/* Total del grupo cuando las paredes son contiguas — reemplaza al panel-per-wall.
+            Los paneles reales se calculan sobre el ancho total sumado, así que mostrar
+            paneles por pared en modo continuo sería inexacto. */}
+        {wallsAreContinuous && wallFields.length >= 2 && calculatedWalls.length > 0 && (() => {
+          const totalPanels = calculatedWalls.reduce((s, w) => s + w.panels, 0);
+          const totalArea = calculatedWalls.reduce((s, w) => s + w.printAreaM2, 0);
+          if (totalPanels === 0) return null;
+          return (
+            <div className="border border-black/10 bg-black/[0.02] px-4 py-3 flex items-center justify-between">
+              <span className="text-[11px] uppercase tracking-widest text-black/40">
+                {t('groupTotal')}
+              </span>
+              <span className="text-xs text-black/60">
+                {totalPanels} {totalPanels === 1 ? t('panel') : t('panels')} de 50cm
+                <span className="text-black/15 mx-1.5">·</span>
+                {totalArea.toFixed(2)} m²
+              </span>
+            </div>
+          );
+        })()}
 
         {wallFields.length < 10 && (
           <button
@@ -259,17 +299,71 @@ export const ProductStep = ({
             {t('addWall')}
           </button>
         )}
+
+        {/* Toggle "paredes contiguas" — solo tiene sentido cuando hay 2+ paredes.
+            El backend valida esto también (con 1 pared el flag se ignora). */}
+        {wallFields.length >= 2 && (
+          <div className="mt-4 border border-black/10 p-4 space-y-3">
+            <p className="text-xs text-black/50 uppercase tracking-wider">
+              {t('continuousQuestion')}
+            </p>
+            <div className="space-y-2">
+              <label className="flex items-start gap-3 cursor-pointer group">
+                <input
+                  type="radio"
+                  name="wallsAreContinuous"
+                  checked={watch('wallsAreContinuous') === false}
+                  onChange={() => setValue('wallsAreContinuous', false, { shouldValidate: true })}
+                  className="mt-0.5 accent-black cursor-pointer"
+                />
+                <span className="text-sm leading-relaxed text-black/75">
+                  <strong className="font-medium">{t('continuousNo')}</strong>
+                  <span className="block text-[11px] text-black/40 mt-0.5">{t('continuousNoHint')}</span>
+                </span>
+              </label>
+              <label className="flex items-start gap-3 cursor-pointer group">
+                <input
+                  type="radio"
+                  name="wallsAreContinuous"
+                  checked={watch('wallsAreContinuous') === true}
+                  onChange={() => setValue('wallsAreContinuous', true, { shouldValidate: true })}
+                  className="mt-0.5 accent-black cursor-pointer"
+                />
+                <span className="text-sm leading-relaxed text-black/75">
+                  <strong className="font-medium">{t('continuousYes')}</strong>
+                  <span className="block text-[11px] text-black/40 mt-0.5">{t('continuousYesHint')}</span>
+                  <span className="inline-block mt-1 text-[10px] font-medium uppercase tracking-wider text-green-700">
+                    {t('continuousYesSaving')}
+                  </span>
+                </span>
+              </label>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Summary */}
       {subtotal > 0 && (
         <OrderSummary
           subtotal={subtotal}
+          subtotalBeforeDiscount={subtotalBeforeDiscount}
+          discountAmount={discountAmount}
+          promoLabel={promoLabel}
+          promoDiscountPct={promoDiscountPct}
           totalArea={totalArea}
           pricePerM2={pricePerM2}
           productType={productType}
           formatPrice={formatPrice}
         />
+      )}
+
+      {/* Error de compra mínima — solo aparece al intentar continuar con menos m². */}
+      {minAreaError && (
+        <div className="border border-red-200 bg-red-50/50 px-4 py-3">
+          <p className="text-sm text-red-800">
+            {t('minAreaError', { min: minAreaM2, current: totalArea.toFixed(2) })}
+          </p>
+        </div>
       )}
 
       <button

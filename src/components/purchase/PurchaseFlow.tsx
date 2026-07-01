@@ -14,6 +14,8 @@ import { usePurchasePricing } from '@/hooks/usePurchasePricing';
 import { useShippingQuote } from '@/hooks/useShippingQuote';
 import { useCreateOrder, resetIdempotencyKey } from '@/hooks/useCreateOrder';
 import { getCart, saveCart, clearCart, type CartData } from '@/hooks/useCart';
+import { useLegalConfig } from '@/hooks/useLegalConfig';
+import { usePromoConfig } from '@/hooks/usePromoConfig';
 import { ProductStep } from './steps/ProductStep';
 import { ShippingStep } from './steps/ShippingStep';
 import { ReviewStep } from './steps/ReviewStep';
@@ -37,16 +39,43 @@ const schema = z.object({
   })).min(1, 'errors.atLeastOneWall').max(10, 'errors.maxTenWalls'),
   recipientName: z.string().min(2, 'errors.enterRecipientName'),
   recipientDni: z.string().regex(/^[\d.\-\s]{7,15}$/, 'errors.invalidDni'),
-  street: z.string().min(2, 'errors.enterStreet'),
-  streetNumber: z.string().min(1, 'errors.enterStreetNumber'),
+  // Los campos de dirección se validan condicionalmente vía superRefine abajo:
+  // requeridos solo si shippingMethod === 'delivery'.
+  street: z.string().optional().default(''),
+  streetNumber: z.string().optional().default(''),
   floor: z.string().optional(),
   apartment: z.string().optional(),
-  city: z.string().min(2, 'errors.enterCity'),
-  province: z.string().min(1, 'errors.selectProvince'),
-  postalCode: z.string().regex(/^\d{4}$/, 'errors.postalCode4'),
+  city: z.string().optional().default(''),
+  province: z.string().optional().default(''),
+  postalCode: z.string().optional().default(''),
   customerName: z.string().min(2, 'errors.enterCustomerName'),
   customerEmail: z.string().email('errors.invalidEmail'),
   customerPhone: z.string().min(6, 'errors.invalidPhone'),
+  // Método de envío: 'delivery' (Andreani a domicilio) o 'pickup' (retiro en local).
+  shippingMethod: z.enum(['delivery', 'pickup']).default('delivery'),
+  // Paredes contiguas (esquina/L/U/cuarto). Default false = calcula cada pared independiente.
+  wallsAreContinuous: z.boolean().default(false),
+  // Aceptación legal — debe ser true para que el form sea válido.
+  // El backend además valida que la versión que mandamos coincida con la vigente.
+  termsAccepted: z.boolean().refine(v => v === true, 'errors.mustAcceptTerms'),
+}).superRefine((data, ctx) => {
+  // Validación condicional: si es delivery, los campos de dirección son obligatorios.
+  if (data.shippingMethod !== 'delivery') return;
+  if (!data.street || data.street.length < 2) {
+    ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['street'], message: 'errors.enterStreet' });
+  }
+  if (!data.streetNumber || data.streetNumber.length < 1) {
+    ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['streetNumber'], message: 'errors.enterStreetNumber' });
+  }
+  if (!data.city || data.city.length < 2) {
+    ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['city'], message: 'errors.enterCity' });
+  }
+  if (!data.province || data.province.length < 1) {
+    ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['province'], message: 'errors.selectProvince' });
+  }
+  if (!data.postalCode || !/^\d{4}$/.test(data.postalCode)) {
+    ctx.addIssue({ code: z.ZodIssueCode.custom, path: ['postalCode'], message: 'errors.postalCode4' });
+  }
 });
 
 export type PurchaseFormData = z.infer<typeof schema>;
@@ -68,9 +97,12 @@ function isValidMpInitPoint(url: string): boolean {
 
 interface Props {
   preselectedMuralId?: string;
+  // Nombre de la variante elegida en la página del mural (ej. "Verde profundo").
+  // Si no matchea con ninguna variante del mural, usamos la primera como fallback.
+  preselectedVariantName?: string;
 }
 
-export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
+export const PurchaseFlow = ({ preselectedMuralId, preselectedVariantName }: Props) => {
   const routeParams = useParams();
   const locale = (routeParams?.locale as string) || 'es';
   const t = useTranslations('purchase');
@@ -82,6 +114,9 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
   const { loading: pricingLoading, calculateWalls, formatPrice, getPricePerM2 } = usePurchasePricing();
   const { quote, loading: shippingLoading, error: shippingError, fetchQuote, reset: resetShipping } = useShippingQuote();
   const { createOrder, loading: orderLoading, error: orderError } = useCreateOrder();
+  const { data: legalConfig } = useLegalConfig();
+  const promoConfig = usePromoConfig();
+  const promoDiscountPct = promoConfig?.active && promoConfig.promo ? promoConfig.promo.discountPct : 0;
 
   const form = useForm<PurchaseFormData>({
     resolver: zodResolver(schema),
@@ -102,6 +137,9 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
       customerName: '',
       customerEmail: '',
       customerPhone: '',
+      shippingMethod: 'delivery',
+      wallsAreContinuous: false,
+      termsAccepted: false,
     },
     mode: 'onSubmit',
     reValidateMode: 'onChange',
@@ -170,7 +208,9 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  // Preselect mural from query param (solo si NO hubo restore desde carrito)
+  // Preselect mural + variante desde el query param (solo si NO hubo restore desde carrito).
+  // La variante viene desde el detalle del mural — si el usuario eligió una en la página
+  // del mural, la respetamos. Si no matchea o no viene, fallback a la primera del mural.
   useEffect(() => {
     if (restoredFromCart) return;
     if (!preselectedMuralId) return;
@@ -179,12 +219,16 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
       form.setValue('collectionId', mural.collectionId);
       setTimeout(() => {
         form.setValue('muralId', mural.id);
-        if (mural.variants[0]) {
-          form.setValue('variantColorName', mural.variants[0].colorName);
+        const matchedVariant = preselectedVariantName
+          ? mural.variants.find(v => v.colorName === preselectedVariantName)
+          : null;
+        const variantToSet = matchedVariant || mural.variants[0];
+        if (variantToSet) {
+          form.setValue('variantColorName', variantToSet.colorName);
         }
       }, 0);
     }
-  }, [preselectedMuralId, form, restoredFromCart]);
+  }, [preselectedMuralId, preselectedVariantName, form, restoredFromCart]);
 
   // Determine product type
   const watchedMuralId = form.watch('muralId');
@@ -210,15 +254,25 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
 
   // Calculate walls pricing
   const watchedWalls = form.watch('walls');
+  const watchedIsContinuous = form.watch('wallsAreContinuous');
+  const watchedShippingMethod = form.watch('shippingMethod');
+
+  // Cuando el usuario alterna delivery↔pickup, el quote viejo queda "stale" (mostraba
+  // el costo del CP anterior). Lo reseteamos para que el summary no muestre datos
+  // fantasma de Andreani cuando estamos en pickup.
+  useEffect(() => {
+    resetShipping();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [watchedShippingMethod]);
   const wallsInCm = (watchedWalls || []).map(w => ({
     widthCm: Math.round(w.widthCm || 0),
     heightCm: Math.round(w.heightCm || 0),
   }));
   const wallsKey = JSON.stringify(wallsInCm);
-  const { walls: calculatedWalls, totalArea, subtotal } = useMemo(
-    () => calculateWalls(wallsInCm, productType),
+  const { walls: calculatedWalls, totalArea, subtotal, subtotalBeforeDiscount, discountAmount } = useMemo(
+    () => calculateWalls(wallsInCm, productType, watchedIsContinuous, promoDiscountPct),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [wallsKey, productType, calculateWalls]
+    [wallsKey, productType, watchedIsContinuous, promoDiscountPct, calculateWalls]
   );
 
   // Auto-save del carrito en localStorage cada vez que cambia el form (debounce 600ms).
@@ -257,20 +311,32 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [step]);
 
+  // Compra mínima: 4 m² de impresión total (validado también en el backend).
+  // El error se muestra solo cuando el user aprieta "Continuar" para no molestar mientras carga.
+  const MIN_ORDER_AREA_M2 = 4;
+  const [minAreaError, setMinAreaError] = useState(false);
   const goToStep2 = async () => {
     const valid = await form.trigger(['collectionId', 'muralId', 'variantColorName', 'walls']);
-    if (valid && subtotal > 0) {
-      resetShipping();
-      goToStep(2);
+    if (!valid || subtotal <= 0) return;
+    if (totalArea < MIN_ORDER_AREA_M2) {
+      setMinAreaError(true);
+      return;
     }
+    setMinAreaError(false);
+    resetShipping();
+    goToStep(2);
   };
 
   const goToStep3 = async () => {
-    const valid = await form.trigger([
-      'recipientName', 'recipientDni', 'street', 'streetNumber',
-      'city', 'province', 'postalCode',
-    ]);
-    if (valid && quote) {
+    const method = form.getValues('shippingMethod');
+    // Con pickup solo pedimos nombre + DNI; con delivery, dirección completa + cotización.
+    const fieldsToValidate: Array<Parameters<typeof form.trigger>[0]> = method === 'pickup'
+      ? ['recipientName', 'recipientDni']
+      : ['recipientName', 'recipientDni', 'street', 'streetNumber', 'city', 'province', 'postalCode'];
+    const valid = await form.trigger(fieldsToValidate as any);
+    // Delivery: además requiere que ya haya cotización válida. Pickup: no cotiza.
+    const shippingReady = method === 'pickup' || !!quote;
+    if (valid && shippingReady) {
       goToStep(3);
     }
   };
@@ -292,6 +358,12 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
     const mural = collections.flatMap(c => c.murales).find(m => m.id === data.muralId);
     const collection = collections.find(c => c.id === data.collectionId);
 
+    // Total esperado en pantalla al momento del submit — anti-mid-flight-promo. Si el
+    // back calcula > $50 de diferencia (típicamente porque la promo venció mientras el
+    // usuario completaba el flujo), aborta con 409 y le pedimos que refresque.
+    const shippingForTotal = data.shippingMethod === 'pickup' ? 0 : (quote?.costARS ?? 0);
+    const clientExpectedTotalARS = Math.round((subtotal + shippingForTotal) * 100) / 100;
+
     const result = await createOrder({
       customer: {
         name: data.customerName,
@@ -307,7 +379,9 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
         productType,
       },
       walls: wallsInCm,
+      wallsAreContinuous: data.wallsAreContinuous,
       shipping: {
+        method: data.shippingMethod,
         recipientName: data.recipientName,
         recipientDni: data.recipientDni,
         street: data.street,
@@ -319,6 +393,11 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
         province: data.province,
       },
       locale,
+      // Aceptación legal: el checkbox del ReviewStep marcó esto en true. El back valida
+      // que también venga la versión, y que coincida con la vigente del backend.
+      termsAccepted: data.termsAccepted,
+      termsVersion: legalConfig?.termsVersion || '',
+      clientExpectedTotalARS,
     });
 
     // Validamos que el initPoint sea una URL https de un host conocido de Mercado Pago
@@ -417,11 +496,17 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
                     removeWall={removeWall}
                     calculatedWalls={calculatedWalls}
                     subtotal={subtotal}
+                    subtotalBeforeDiscount={subtotalBeforeDiscount}
+                    discountAmount={discountAmount}
+                    promoLabel={promoConfig?.promo?.label}
+                    promoDiscountPct={promoConfig?.promo?.discountPct}
                     totalArea={totalArea}
                     pricePerM2={pricePerM2}
                     productType={productType}
                     formatPrice={formatPrice}
                     onNext={goToStep2}
+                    minAreaError={minAreaError}
+                    minAreaM2={MIN_ORDER_AREA_M2}
                   />
                 )}
 
@@ -429,7 +514,13 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
                   <ShippingStep
                     form={form}
                     subtotal={subtotal}
+                    subtotalBeforeDiscount={subtotalBeforeDiscount}
+                    discountAmount={discountAmount}
+                    promoLabel={promoConfig?.promo?.label}
+                    promoDiscountPct={promoConfig?.promo?.discountPct}
                     shippingCost={quote?.costARS ?? null}
+                    shippingOriginalCost={quote?.originalCostARS}
+                    shippingIsFree={quote?.isFreeShipping}
                     shippingLoading={shippingLoading}
                     shippingError={shippingError}
                     shippingEstimatedDays={quote?.estimatedDays ?? undefined}
@@ -440,15 +531,22 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
                   />
                 )}
 
-                {step === 3 && quote && (
+                {/* Step 3: delivery necesita quote válido; pickup no cotiza, se renderiza siempre. */}
+                {step === 3 && (watchedShippingMethod === 'pickup' || quote) && (
                   <ReviewStep
                     form={form}
                     calculatedWalls={calculatedWalls}
                     subtotal={subtotal}
+                    subtotalBeforeDiscount={subtotalBeforeDiscount}
+                    discountAmount={discountAmount}
+                    promoLabel={promoConfig?.promo?.label}
+                    promoDiscountPct={promoConfig?.promo?.discountPct}
                     totalArea={totalArea}
                     pricePerM2={pricePerM2}
                     productType={productType}
-                    shippingCost={quote.costARS}
+                    shippingCost={quote?.costARS ?? 0}
+                    shippingOriginalCost={quote?.originalCostARS}
+                    shippingIsFree={quote?.isFreeShipping}
                     formatPrice={formatPrice}
                     onSubmit={handleSubmit}
                     submitting={orderLoading || submitted}
@@ -463,28 +561,46 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
           </form>
         </div>
 
-        {/* Mural preview sidebar */}
+        {/* Mural preview sidebar — muestra el mural del variant elegido (no el montaje)
+            así el cliente ve exactamente qué diseño está comprando, no una foto contextual. */}
         {currentVariant && (
-          <div className="hidden lg:block w-72 xl:w-80 shrink-0">
+          <div className="hidden lg:block w-80 xl:w-96 shrink-0">
             <div className="sticky top-24 space-y-3">
-              <div className="relative aspect-[3/4] w-full overflow-hidden bg-gray-50">
+              <div className="relative aspect-square w-full overflow-hidden bg-gray-50">
                 <Image
-                  src={currentVariant.montaje}
+                  src={currentVariant.mural}
                   alt={`${currentMural?.title} — ${currentVariant.colorName}`}
                   fill
                   className="object-cover"
-                  sizes="320px"
+                  sizes="(min-width: 1280px) 384px, 320px"
                 />
               </div>
               <div>
-                <p className="font-gillsans font-medium text-sm uppercase tracking-wider">
+                <p className="font-gillsans font-medium text-base uppercase tracking-wider">
                   {currentMural?.title}
                 </p>
-                <p className="text-sm text-black/50">{currentVariant.colorName}</p>
-                {pricePerM2 > 0 && (
-                  <p className="text-sm text-black/50 mt-1">
-                    {formatPrice(pricePerM2)}/m² <span className="text-xs text-black/35">({t('summary.ivaShort')})</span>
+                {currentMural && currentMural.variants.length > 1 && (
+                  <p className="text-xs text-black/35 uppercase tracking-wider mt-1">
+                    Variante: <span className="text-black/60 normal-case tracking-normal">{currentVariant.colorName}</span>
                   </p>
+                )}
+                {pricePerM2 > 0 && (
+                  promoConfig.isLoading ? (
+                    <p className="mt-2">
+                      <span className="inline-block h-4 w-24 bg-black/5 animate-pulse align-middle" />
+                    </p>
+                  ) : promoDiscountPct > 0 ? (
+                    <p className="text-sm text-black/50 mt-2 flex items-baseline gap-2 flex-wrap">
+                      <span className="text-black/35 line-through">{formatPrice(pricePerM2)}</span>
+                      <span className="text-black font-medium">{formatPrice(pricePerM2 * (1 - promoDiscountPct / 100))}</span>
+                      <span>/m²</span>
+                      <span className="text-xs text-black/35">({t('summary.ivaShort')})</span>
+                    </p>
+                  ) : (
+                    <p className="text-sm text-black/50 mt-2">
+                      {formatPrice(pricePerM2)}/m² <span className="text-xs text-black/35">({t('summary.ivaShort')})</span>
+                    </p>
+                  )
                 )}
               </div>
             </div>
@@ -495,12 +611,12 @@ export const PurchaseFlow = ({ preselectedMuralId }: Props) => {
       {/* Disclaimers footer */}
       <PurchaseDisclaimers />
 
-      {/* Mobile mural preview (compact bar) */}
+      {/* Mobile mural preview (compact bar) — usa el mural del variant elegido. */}
       {currentVariant && (
         <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-black/10 px-4 py-2 flex items-center gap-3 z-40">
           <div className="relative w-12 h-12 shrink-0 overflow-hidden bg-gray-50">
             <Image
-              src={currentVariant.montaje}
+              src={currentVariant.mural}
               alt={currentMural?.title || ''}
               fill
               className="object-cover"

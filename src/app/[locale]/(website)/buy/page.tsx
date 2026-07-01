@@ -9,12 +9,13 @@ export const metadata: Metadata = {
 };
 
 interface Props {
-  searchParams: Promise<{ mural?: string }>;
+  searchParams: Promise<{ mural?: string; variant?: string }>;
 }
 
 export default async function BuyPage({ searchParams }: Props) {
   const params = await searchParams;
   const preselectedMuralId = params.mural || '';
+  const preselectedVariantName = params.variant || '';
   const t = await getTranslations('purchase');
 
   return (
@@ -25,7 +26,10 @@ export default async function BuyPage({ searchParams }: Props) {
         </h1>
         <p className="text-center text-sm text-black/40 mb-10">{t('subtitle')}</p>
 
-        <PurchaseFlow preselectedMuralId={preselectedMuralId} />
+        <PurchaseFlow
+          preselectedMuralId={preselectedMuralId}
+          preselectedVariantName={preselectedVariantName}
+        />
       </div>
     </main>
   );

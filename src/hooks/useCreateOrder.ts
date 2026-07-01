@@ -18,18 +18,26 @@ interface CreateOrderData {
     productType: string;
   };
   walls: Array<{ widthCm: number; heightCm: number }>;
+  wallsAreContinuous: boolean;
   shipping: {
+    method: 'delivery' | 'pickup';
     recipientName: string;
     recipientDni: string;
-    street: string;
-    number: string;
+    street?: string;
+    number?: string;
     floor?: string;
     apartment?: string;
-    postalCode: string;
-    city: string;
-    province: string;
+    postalCode?: string;
+    city?: string;
+    province?: string;
   };
   locale?: string;
+  // Aceptación legal. El back valida que ambos vengan y que la versión coincida con la vigente.
+  termsAccepted: boolean;
+  termsVersion: string;
+  // Total que el cliente VE en pantalla al hacer submit — anti-mid-flight-promo.
+  // Si el back calcula > $50 de diferencia (redondeos aparte), aborta con 409 PRICE_CHANGED.
+  clientExpectedTotalARS?: number;
 }
 
 interface CreateOrderResult {

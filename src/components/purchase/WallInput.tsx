@@ -27,15 +27,18 @@ interface Props {
     horizontalExcessCm: number;
     verticalExcessCm: number;
   };
-  formatPrice: (n: number) => string;
+  formatPrice?: (n: number) => string;
+  // Cuando las paredes son contiguas, escondemos los paneles individuales — se muestra
+  // solo el total del grupo (más honesto, porque los paneles se calculan sobre el total).
+  hidePanelsBreakdown?: boolean;
 }
 
-export const WallInput = ({ index, register, errors, onRemove, canRemove, calculated, formatPrice }: Props) => {
+export const WallInput = ({ index, register, errors, onRemove, canRemove, calculated, hidePanelsBreakdown }: Props) => {
   const t = useTranslations('purchase.product');
   const tWall = useTranslations('purchase.wall');
-  const tSummary = useTranslations('purchase.summary');
   const wallErrors = (errors.walls as any)?.[index];
-  const hasData = calculated && calculated.panels > 0;
+  // Mostramos "X paneles" solo cuando hay medidas cargadas Y tenemos el cálculo Y no estamos en modo grupo.
+  const showPanels = !hidePanelsBreakdown && calculated && calculated.panels > 0 && calculated.widthCm > 0;
 
   const widthError = wallErrors?.widthCm;
   const heightError = wallErrors?.heightCm;
@@ -97,44 +100,20 @@ export const WallInput = ({ index, register, errors, onRemove, canRemove, calcul
             <FormErrorMessage condition={heightError && !isHeightTooLarge} message={heightError?.message} />
           </div>
 
-          {/* Price */}
-          {hasData && (
-            <div className="pb-1 text-right shrink-0">
-              <p className="font-gillsans font-medium text-sm">{formatPrice(calculated.priceARS)}</p>
-              <p className="text-[10px] text-black/35 leading-none mt-0.5">{tSummary('ivaShort')}</p>
-            </div>
-          )}
+          {/* Info calculada de la pared en la columna derecha — más limpio en el summary.
+              El "X paneles" se muestra DEBAJO, más abajo. */}
         </div>
 
-        {/* Panel + excess breakdown */}
-        {hasData && (
-          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-black/40">
-            <span>
-              {calculated.panels} {calculated.panels === 1 ? tWall('panel') : tWall('panels')} {tWall('panelOf')}
-            </span>
-            <span className="hidden sm:block w-px h-3 bg-black/10" />
-            <span>{calculated.printAreaM2.toFixed(2)} m²</span>
-            <span className="hidden sm:block w-px h-3 bg-black/10" />
-            <span className="text-black/50">
-              {tWall('excessHeight', { v: calculated.verticalExcessCm })}
-              {calculated.horizontalExcessCm > 0 && (
-                <> · {tWall('excessWidth', { h: calculated.horizontalExcessCm })}</>
-              )}
-            </span>
-          </div>
-        )}
-
-        {/* Visual panel strip */}
-        {hasData && (
-          <div className="mt-2 flex gap-px h-1.5" aria-hidden="true">
-            {Array.from({ length: Math.min(calculated.panels, 60) }).map((_, i) => (
-              <div
-                key={i}
-                className="flex-1 bg-black/8 group-hover:bg-black/12 transition-colors"
-                style={{ maxWidth: `${100 / Math.min(calculated.panels, 60)}%` }}
-              />
-            ))}
-          </div>
+        {/* Paneles calculados — debajo del row de inputs.
+            Cuando la pared forma parte de un grupo contiguo, el "panels" que llega es
+            una distribución proporcional (no coincide con paneles reales) — mostramos
+            un placeholder distinto en ese caso vía prop de arriba. */}
+        {showPanels && (
+          <p className="mt-2 text-[11px] text-black/40">
+            {calculated!.panels} {calculated!.panels === 1 ? tWall('panel') : tWall('panels')} {tWall('panelOf')}
+            <span className="text-black/15 mx-1.5">·</span>
+            {calculated!.printAreaM2.toFixed(2)} m²
+          </p>
         )}
 
         {/* Contact banner for walls > 50m */}

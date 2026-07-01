@@ -76,11 +76,22 @@ export const OrderSuccessClient = ({ token }: Props) => {
           <p className="font-trueTypewriter text-sm text-black/40 mb-6">{t('order')} {orderNumber}</p>
         )}
 
-        <p className="text-sm text-black/50 mb-10 leading-relaxed">
+        <p className="text-sm text-black/50 mb-6 leading-relaxed">
           {t('emailSent')}
           <br />
           {t('willNotify')}
         </p>
+
+        <div className="mb-8 px-4">
+          {/* Línea vertical que conecta visualmente con el texto de arriba */}
+          <div className="w-px h-10 bg-black/15 mx-auto mb-5" aria-hidden="true" />
+          <p className="text-[10px] uppercase tracking-[0.22em] text-black/40 mb-2 font-medium">
+            {t('nextStep')}
+          </p>
+          <p className="text-sm text-black/60 leading-relaxed max-w-sm mx-auto">
+            {t('commercialContact')}
+          </p>
+        </div>
 
         <Link
           href={statusLink}

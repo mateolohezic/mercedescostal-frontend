@@ -4,7 +4,9 @@ import { useState, useCallback } from 'react';
 import { apiGet } from '@/helpers/api';
 
 interface ShippingQuote {
-  costARS: number;
+  costARS: number;                  // 0 si es free shipping, sino el precio Andreani
+  originalCostARS?: number;         // precio Andreani real — para mostrar tachado cuando es free
+  isFreeShipping?: boolean;
   estimatedDays?: string | null;
 }
 

@@ -75,6 +75,20 @@ function formatPrice(amount: number, locale: string): string {
   }).format(amount);
 }
 
+// Andreani a veces devuelve estados/eventos en CamelCase pegado ("OrdenDeEnvioCreada")
+// y otras veces bien separados ("Pendiente de ingreso"). Insertamos espacios y dejamos
+// el resultado tal cual — el CSS lo pinta uppercase. Sin bajar a minúsculas evitamos
+// perder tildes que Andreani a veces no manda.
+function humanizeEventName(name: string | undefined | null): string {
+  if (!name) return '';
+  const trimmed = name.trim();
+  if (!trimmed) return '';
+  if (/[\s_-]/.test(trimmed)) return trimmed;
+  return trimmed
+    .replace(/([a-záéíóúñ])([A-ZÁÉÍÓÚÑ])/g, '$1 $2')
+    .replace(/([A-ZÁÉÍÓÚÑ])([A-ZÁÉÍÓÚÑ][a-záéíóúñ])/g, '$1 $2');
+}
+
 function findMilestoneIndex(status: FulfillmentStatus): number {
   return MILESTONES.findIndex(m => m.matches.includes(status));
 }
@@ -297,12 +311,12 @@ export const OrderStatusView = ({ token }: Props) => {
             {events.map((ev: TrackingEvent, i: number) => (
               <li key={`${ev.fecha}-${i}`} className="px-4 py-3 text-sm">
                 <div className="flex justify-between gap-3">
-                  <span className="font-medium">{ev.estado || ev.evento}</span>
+                  <span className="font-medium uppercase tracking-wider text-xs">{humanizeEventName(ev.estado || ev.evento)}</span>
                   <span className="text-xs text-black/40 shrink-0">{formatEventDate(ev.fecha)}</span>
                 </div>
                 {(ev.motivo || ev.submotivo) && (
                   <p className="text-xs text-black/50 mt-1">
-                    {[ev.motivo, ev.submotivo].filter(Boolean).join(' · ')}
+                    {[ev.motivo, ev.submotivo].filter(Boolean).map(humanizeEventName).join(' · ')}
                   </p>
                 )}
                 {ev.sucursal && (

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { useLocale, useTranslations } from "next-intl";
+import { usePromoConfig } from "@/hooks/usePromoConfig";
 import { IoChevronBack, IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { usePricing } from "@/hooks/usePricing";
 import { MuralVariant, Mural, Collection } from "@/interfaces";
@@ -67,6 +68,10 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
     const tc = useTranslations('common');
     const { getPrice, formatPrice, getCurrencyByLocale } = usePricing();
     const currency = getCurrencyByLocale(locale);
+    // Promo vigente (solo para AR = pesos). En currency USD no aplicamos descuento.
+    const promo = usePromoConfig();
+    const promoLoading = promo.isLoading && locale === 'es' && currency === 'ARS';
+    const showPromo = locale === 'es' && promo?.active && promo.promo && currency === 'ARS';
 
     const [selectedVariant, setSelectedVariant] = useState<MuralVariant | null>(null);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
@@ -122,9 +127,36 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
                     </div>
                     <div className="px-6 lg:px-12 pb-8 lg:pb-12 flex flex-col gap-6">
                         {price && (
-                            <div className="flex items-baseline gap-3">
-                                <span className="text-2xl font-medium">{formatPrice(price, currency, locale)}</span>
-                                <span className="text-sm text-black/50">/ m²</span>
+                            <div className="flex flex-col gap-1.5">
+                                {promoLoading ? (
+                                    <div className="flex items-baseline gap-3">
+                                        <span className="inline-block h-7 w-32 bg-black/5 animate-pulse" />
+                                        <span className="text-sm text-black/30">/ m²</span>
+                                    </div>
+                                ) : showPromo ? (
+                                    <>
+                                        <div className="flex items-baseline gap-3 flex-wrap">
+                                            <span className="text-lg text-black/40 line-through">
+                                                {formatPrice(price, currency, locale)}
+                                            </span>
+                                            <span className="text-2xl font-medium">
+                                                {formatPrice(price * (1 - promo!.promo!.discountPct / 100), currency, locale)}
+                                            </span>
+                                            <span className="text-sm text-black/50">/ m²</span>
+                                            <span className="inline-flex items-center px-2 py-0.5 bg-black text-white text-[10px] font-medium uppercase tracking-widest">
+                                                -{promo!.promo!.discountPct}% {promo!.promo!.label}
+                                            </span>
+                                        </div>
+                                        <p className="text-[11px] text-black/45">
+                                            Válido hasta el {new Date(promo!.promo!.untilISO).toLocaleDateString('es-AR', { day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' })} hs
+                                        </p>
+                                    </>
+                                ) : (
+                                    <div className="flex items-baseline gap-3">
+                                        <span className="text-2xl font-medium">{formatPrice(price, currency, locale)}</span>
+                                        <span className="text-sm text-black/50">/ m²</span>
+                                    </div>
+                                )}
                             </div>
                         )}
                         {hasMultipleVariants && (
@@ -149,9 +181,20 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
                             </div>
                         )}
                         {locale === 'es' ? (
-                            <Link href={`/buy?mural=${mural.id}`} className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150">
-                                Comprar
-                            </Link>
+                            <>
+                                <Link
+                                    href={`/buy?mural=${mural.id}&variant=${encodeURIComponent(currentVariant.colorName)}`}
+                                    className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150"
+                                >
+                                    Comprar
+                                </Link>
+                                <p className="font-sans text-[11px] text-black/40 leading-relaxed text-center">
+                                    Compra online solo con envío dentro de Argentina.{' '}
+                                    <Link href={`/quote?mural=${mural.id}`} className="underline text-black/60 hover:text-black transition-colors">
+                                        ¿Estás en el exterior? Cotizá acá.
+                                    </Link>
+                                </p>
+                            </>
                         ) : (
                             <a href="https://wa.me/5491160208460" target="_blank" rel="noopener noreferrer" className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150">
                                 Contact Us

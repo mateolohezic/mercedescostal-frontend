@@ -12,7 +12,13 @@ import type { PurchaseFormData } from '../PurchaseFlow';
 interface Props {
   form: UseFormReturn<PurchaseFormData>;
   subtotal: number;
+  subtotalBeforeDiscount?: number;
+  discountAmount?: number;
+  promoLabel?: string;
+  promoDiscountPct?: number;
   shippingCost: number | null;
+  shippingOriginalCost?: number;        // precio Andreani sin descuento (para tachar)
+  shippingIsFree?: boolean;             // true cuando el envío fue bonificado
   shippingLoading: boolean;
   shippingError: string | null;
   shippingEstimatedDays: string | undefined;
@@ -33,7 +39,13 @@ const PROVINCES = [
 export const ShippingStep = ({
   form,
   subtotal,
+  subtotalBeforeDiscount,
+  discountAmount,
+  promoLabel,
+  promoDiscountPct,
   shippingCost,
+  shippingOriginalCost,
+  shippingIsFree,
   shippingLoading,
   shippingError,
   shippingEstimatedDays,
@@ -52,13 +64,20 @@ export const ShippingStep = ({
   const { options: localityOptions, loading: localityLoading, lookup: lookupLocality } = useLocalityLookup();
   const cityValue = watch('city');
   const provinceValue = watch('province');
-  // Marca true después del primer lookup completado para este CP — evita que los
-  // inputs manuales aparezcan brevemente durante los 500ms del debounce inicial.
+  const shippingMethod = watch('shippingMethod');
+  const isPickup = shippingMethod === 'pickup';
+  const isDelivery = shippingMethod === 'delivery';
+  // Habilitamos los inputs de dirección solo una vez que hay CP válido Y ya se hizo
+  // la cotización. Antes de eso quedan disabled para forzar al user a poner el CP
+  // primero (es el driver de todo — sin CP no hay dónde entregar ni cuánto cuesta).
   const [lookupAttempted, setLookupAttempted] = useState(false);
+  const addressUnlocked = isPostalCodeValid && lookupAttempted && !localityLoading;
 
   // Cuando el CP es válido: 1) lookup de localidad/provincia, 2) cotización de envío.
   // Ambos se debouncean a 500ms juntos para no martillar el back.
+  // Solo aplica en modo delivery — en pickup ni siquiera vemos CP.
   useEffect(() => {
+    if (!isDelivery) return;
     if (!isPostalCodeValid) {
       setLookupAttempted(false);
       return;
@@ -79,7 +98,7 @@ export const ShippingStep = ({
       if (debounceRef.current) clearTimeout(debounceRef.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [postalCode, isPostalCodeValid]);
+  }, [postalCode, isPostalCodeValid, isDelivery]);
 
   const hasSingleLocality = localityOptions.length === 1;
   const hasMultipleLocalities = localityOptions.length > 1;
@@ -96,11 +115,70 @@ export const ShippingStep = ({
       </div>
 
       <div className="space-y-5">
+        {/* Método de envío: delivery vs pickup en local */}
+        <div className="border border-black/10 p-4 space-y-3">
+          <p className="text-xs text-black/50 uppercase tracking-wider">
+            {t('methodQuestion')}
+          </p>
+          <div className="space-y-2">
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input
+                type="radio"
+                name="shippingMethod"
+                checked={shippingMethod === 'delivery'}
+                onChange={() => setValue('shippingMethod', 'delivery', { shouldValidate: true })}
+                className="mt-0.5 accent-black cursor-pointer"
+              />
+              <span className="text-sm leading-relaxed text-black/75">
+                <strong className="font-medium">{t('methodDelivery')}</strong>
+                <span className="block text-[11px] text-black/40 mt-0.5">{t('methodDeliveryHint')}</span>
+              </span>
+            </label>
+            <label className="flex items-start gap-3 cursor-pointer">
+              <input
+                type="radio"
+                name="shippingMethod"
+                checked={shippingMethod === 'pickup'}
+                onChange={() => setValue('shippingMethod', 'pickup', { shouldValidate: true })}
+                className="mt-0.5 accent-black cursor-pointer"
+              />
+              <span className="text-sm leading-relaxed text-black/75">
+                <strong className="font-medium">{t('methodPickup')}</strong>
+                <span className="block text-[11px] text-black/40 mt-0.5">{t('methodPickupHint')}</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        {isPickup && (
+          <div className="border border-black/10 bg-black/[0.02] p-5 space-y-2">
+            <p className="text-xs text-black/50 uppercase tracking-wider">{t('pickupAddress')}</p>
+            <p className="font-gillsans text-lg font-medium">Av. Perón 2400</p>
+            <p className="text-sm text-black/60">Yerba Buena, Tucumán</p>
+            <p className="text-xs text-black/40 pt-2">{t('pickupCoordination')}</p>
+          </div>
+        )}
+
+        {/* Nota: la compra online es solo Argentina. Desde el exterior redirigimos al cotizador. */}
+        {isDelivery && (
+          <p className="text-[11px] text-black/45 leading-relaxed">
+            {t('argOnlyNote')}{' '}
+            <a
+              href="https://wa.me/5491160208460"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline text-black/70 hover:text-black transition-colors"
+            >
+              {t('argOnlyContact')}
+            </a>
+          </p>
+        )}
+
         {/* Recipient + DNI */}
         <div className="flex gap-3">
           <div className="flex-[2] space-y-1.5">
             <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="recipient-name">
-              {t('recipientName')}
+              {isPickup ? t('pickupRecipientName') : t('recipientName')}
             </label>
             <input
               id="recipient-name"
@@ -128,34 +206,36 @@ export const ShippingStep = ({
           </div>
         </div>
 
-        {/* Postal Code (primero — autocompleta ciudad/provincia) */}
-        <div className="space-y-1.5">
-          <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="postal-code">
-            {t('postalCode')}
-          </label>
-          <div className="flex items-center gap-3">
-            <input
-              id="postal-code"
-              type="text"
-              inputMode="numeric"
-              maxLength={4}
-              placeholder="1425"
-              autoComplete="postal-code"
-              className="w-28 h-12 px-4 bg-white border border-black/20 text-center text-lg font-gillsans tracking-widest focus:border-black focus:outline-none transition-colors"
-              {...register('postalCode')}
-            />
-            {(localityLoading || shippingLoading) && (
-              <div className="flex items-center gap-2 text-sm text-black/40">
-                <div className="w-4 h-4 border-2 border-black/10 border-t-black/40 rounded-full animate-spin" />
-                <span>{localityLoading ? t('validatingPostal') : t('quoting')}</span>
-              </div>
-            )}
+        {/* Postal Code — obligatorio antes del resto de la dirección. */}
+        {isDelivery && (
+          <div className="space-y-1.5">
+            <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="postal-code">
+              {t('postalCode')} <span className="text-black/30 normal-case tracking-normal">— {t('postalCodeHint')}</span>
+            </label>
+            <div className="flex items-center gap-3">
+              <input
+                id="postal-code"
+                type="text"
+                inputMode="numeric"
+                maxLength={4}
+                placeholder="1425"
+                autoComplete="postal-code"
+                className="w-28 h-12 px-4 bg-white border border-black/20 text-center text-lg font-gillsans tracking-widest focus:border-black focus:outline-none transition-colors"
+                {...register('postalCode')}
+              />
+              {(localityLoading || shippingLoading) && (
+                <div className="flex items-center gap-2 text-sm text-black/40">
+                  <div className="w-4 h-4 border-2 border-black/10 border-t-black/40 rounded-full animate-spin" />
+                  <span>{localityLoading ? t('validatingPostal') : t('quoting')}</span>
+                </div>
+              )}
+            </div>
+            <FormErrorMessage condition={errors.postalCode} message={errors.postalCode?.message} />
           </div>
-          <FormErrorMessage condition={errors.postalCode} message={errors.postalCode?.message} />
-        </div>
+        )}
 
-        {/* Localidad detectada / selector / fallback manual */}
-        {hasSingleLocality && cityValue && provinceValue && (
+        {/* Localidad detectada / selector / fallback manual — solo en delivery */}
+        {isDelivery && hasSingleLocality && cityValue && provinceValue && (
           <div className="flex items-center gap-2 text-sm text-black/70 bg-black/[0.03] border border-black/5 px-3 py-2">
             <span className="text-black/40 text-xs uppercase tracking-wider">{t('city')}:</span>
             <span className="font-medium">{cityValue}</span>
@@ -165,7 +245,7 @@ export const ShippingStep = ({
           </div>
         )}
 
-        {hasMultipleLocalities && (
+        {isDelivery && hasMultipleLocalities && (
           <div className="space-y-1.5">
             <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="city">{t('city')}</label>
             <div className="relative">
@@ -198,7 +278,7 @@ export const ShippingStep = ({
           </div>
         )}
 
-        {needsManualEntry && (
+        {isDelivery && needsManualEntry && (
           <div className="flex gap-3">
             <div className="flex-1 space-y-1.5">
               <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="city">{t('city')}</label>
@@ -206,7 +286,8 @@ export const ShippingStep = ({
                 id="city"
                 type="text"
                 autoComplete="address-level2"
-                className="w-full h-12 px-4 bg-white border border-black/20 font-gillsans focus:border-black focus:outline-none transition-colors"
+                disabled={!addressUnlocked}
+                className="w-full h-12 px-4 bg-white border border-black/20 font-gillsans focus:border-black focus:outline-none transition-colors disabled:bg-black/[0.03] disabled:text-black/30 disabled:cursor-not-allowed"
                 {...register('city')}
               />
               <FormErrorMessage condition={errors.city} message={errors.city?.message} />
@@ -216,7 +297,8 @@ export const ShippingStep = ({
               <div className="relative">
                 <select
                   id="province"
-                  className="w-full h-12 px-4 pr-10 bg-white border border-black/20 appearance-none font-gillsans focus:border-black focus:outline-none transition-colors cursor-pointer"
+                  disabled={!addressUnlocked}
+                  className="w-full h-12 px-4 pr-10 bg-white border border-black/20 appearance-none font-gillsans focus:border-black focus:outline-none transition-colors cursor-pointer disabled:bg-black/[0.03] disabled:text-black/30 disabled:cursor-not-allowed"
                   {...register('province')}
                 >
                   <option value="">{t('selectProvince')}</option>
@@ -231,59 +313,73 @@ export const ShippingStep = ({
           </div>
         )}
 
-        {/* Street + Number */}
-        <div className="flex gap-3">
-          <div className="flex-[3] space-y-1.5">
-            <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="street">{t('street')}</label>
-            <input
-              id="street"
-              type="text"
-              autoComplete="address-line1"
-              className="w-full h-12 px-4 bg-white border border-black/20 font-gillsans focus:border-black focus:outline-none transition-colors"
-              {...register('street')}
-            />
-            <FormErrorMessage condition={errors.street} message={errors.street?.message} />
+        {/* Street + Number (delivery only, bloqueado hasta CP cotizado) */}
+        {isDelivery && (
+          <div className="flex gap-3">
+            <div className="flex-[3] space-y-1.5">
+              <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="street">{t('street')}</label>
+              <input
+                id="street"
+                type="text"
+                autoComplete="address-line1"
+                disabled={!addressUnlocked}
+                className="w-full h-12 px-4 bg-white border border-black/20 font-gillsans focus:border-black focus:outline-none transition-colors disabled:bg-black/[0.03] disabled:text-black/30 disabled:cursor-not-allowed"
+                {...register('street')}
+              />
+              <FormErrorMessage condition={errors.street} message={errors.street?.message} />
+            </div>
+            <div className="flex-1 space-y-1.5">
+              <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="street-number">{t('number')}</label>
+              <input
+                id="street-number"
+                type="text"
+                disabled={!addressUnlocked}
+                className="w-full h-12 px-4 bg-white border border-black/20 font-gillsans focus:border-black focus:outline-none transition-colors disabled:bg-black/[0.03] disabled:text-black/30 disabled:cursor-not-allowed"
+                {...register('streetNumber')}
+              />
+              <FormErrorMessage condition={errors.streetNumber} message={errors.streetNumber?.message} />
+            </div>
           </div>
-          <div className="flex-1 space-y-1.5">
-            <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="street-number">{t('number')}</label>
-            <input
-              id="street-number"
-              type="text"
-              className="w-full h-12 px-4 bg-white border border-black/20 font-gillsans focus:border-black focus:outline-none transition-colors"
-              {...register('streetNumber')}
-            />
-            <FormErrorMessage condition={errors.streetNumber} message={errors.streetNumber?.message} />
-          </div>
-        </div>
+        )}
 
-        {/* Floor + Apartment */}
-        <div className="flex gap-3">
-          <div className="flex-1 space-y-1.5">
-            <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="floor">
-              {t('floor')}
-            </label>
-            <input
-              id="floor"
-              type="text"
-              className="w-full h-12 px-4 bg-white border border-black/20 font-gillsans focus:border-black focus:outline-none transition-colors"
-              {...register('floor')}
-            />
+        {/* Floor + Apartment (delivery only) */}
+        {isDelivery && (
+          <div className="flex gap-3">
+            <div className="flex-1 space-y-1.5">
+              <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="floor">
+                {t('floor')}
+              </label>
+              <input
+                id="floor"
+                type="text"
+                disabled={!addressUnlocked}
+                className="w-full h-12 px-4 bg-white border border-black/20 font-gillsans focus:border-black focus:outline-none transition-colors disabled:bg-black/[0.03] disabled:text-black/30 disabled:cursor-not-allowed"
+                {...register('floor')}
+              />
+            </div>
+            <div className="flex-1 space-y-1.5">
+              <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="apartment">
+                {t('apartment')}
+              </label>
+              <input
+                id="apartment"
+                type="text"
+                disabled={!addressUnlocked}
+                className="w-full h-12 px-4 bg-white border border-black/20 font-gillsans focus:border-black focus:outline-none transition-colors disabled:bg-black/[0.03] disabled:text-black/30 disabled:cursor-not-allowed"
+                {...register('apartment')}
+              />
+            </div>
           </div>
-          <div className="flex-1 space-y-1.5">
-            <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="apartment">
-              {t('apartment')}
-            </label>
-            <input
-              id="apartment"
-              type="text"
-              className="w-full h-12 px-4 bg-white border border-black/20 font-gillsans focus:border-black focus:outline-none transition-colors"
-              {...register('apartment')}
-            />
-          </div>
-        </div>
+        )}
 
-        {/* Shipping result */}
-        {shippingError && (
+        {isDelivery && !addressUnlocked && (
+          <p className="text-[11px] text-black/40 italic">
+            {t('lockedHint')}
+          </p>
+        )}
+
+        {/* Shipping result — solo si es delivery */}
+        {isDelivery && shippingError && (
           <div className="border border-red-200/50 bg-red-50/50 p-4 space-y-2">
             <p className="text-sm text-red-700/80">{shippingError}</p>
             <p className="text-xs text-black/40">
@@ -300,17 +396,24 @@ export const ShippingStep = ({
           </div>
         )}
 
-        {shippingCost !== null && !shippingLoading && (
+        {isDelivery && shippingCost !== null && !shippingLoading && (
           <div className="border border-black/10 p-4 space-y-1">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-3">
               <span className="text-sm text-black/60">{t('shippingByAndreani')}</span>
-              {shippingCost === 0 ? (
+              {shippingIsFree && shippingOriginalCost && shippingOriginalCost > 0 ? (
+                <span className="flex items-baseline gap-2">
+                  <span className="text-sm text-black/35 line-through">{formatPrice(shippingOriginalCost)}</span>
+                  <span className="font-gillsans font-medium text-green-700">
+                    {t('freeShipping')} <span className="text-[11px] font-normal text-green-700/60">({t('freeShippingHint')})</span>
+                  </span>
+                </span>
+              ) : shippingCost === 0 ? (
                 <span className="font-gillsans font-medium text-green-700">{t('freeShipping')}</span>
               ) : (
                 <span className="font-gillsans font-medium">{formatPrice(shippingCost)}</span>
               )}
             </div>
-            {shippingEstimatedDays && shippingCost > 0 && (
+            {shippingEstimatedDays && !shippingIsFree && shippingCost > 0 && (
               <p className="text-xs text-black/30">{t('estimatedDays')}: {shippingEstimatedDays}</p>
             )}
           </div>
@@ -320,7 +423,14 @@ export const ShippingStep = ({
       {/* Summary */}
       <OrderSummary
         subtotal={subtotal}
+        subtotalBeforeDiscount={subtotalBeforeDiscount}
+        discountAmount={discountAmount}
+        promoLabel={promoLabel}
+        promoDiscountPct={promoDiscountPct}
         shippingCost={shippingCost ?? undefined}
+        shippingOriginalCost={shippingOriginalCost}
+        shippingIsFree={shippingIsFree}
+        shippingMethod={shippingMethod}
         formatPrice={formatPrice}
         compact
       />
@@ -337,7 +447,8 @@ export const ShippingStep = ({
         <button
           type="button"
           onClick={onNext}
-          disabled={shippingCost === null}
+          // Pickup: no requiere cotización. Delivery: sí necesita quote válido.
+          disabled={isDelivery && shippingCost === null}
           className="flex-[2] py-4 bg-black text-white font-gillsans font-medium uppercase tracking-wider hover:bg-black/85 transition-colors disabled:bg-black/15 disabled:text-black/30 disabled:cursor-not-allowed"
         >
           {t('reviewOrder')}
