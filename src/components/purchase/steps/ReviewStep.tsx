@@ -168,7 +168,7 @@ export const ReviewStep = ({
         {watch('shippingMethod') === 'pickup' ? (
           <div className="text-sm leading-relaxed text-black/70">
             <p className="font-medium text-black">
-              Av. Perón 2400 — Yerba Buena, Tucumán
+              Av. Perón 2300 — Yerba Buena, Tucumán
             </p>
             <p className="text-xs text-black/40 mt-1">
               {t('pickupCoordinationShort')}

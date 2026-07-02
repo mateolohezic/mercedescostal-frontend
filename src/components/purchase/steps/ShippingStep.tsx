@@ -153,7 +153,7 @@ export const ShippingStep = ({
         {isPickup && (
           <div className="border border-black/10 bg-black/[0.02] p-5 space-y-2">
             <p className="text-xs text-black/50 uppercase tracking-wider">{t('pickupAddress')}</p>
-            <p className="font-gillsans text-lg font-medium">Av. Perón 2400</p>
+            <p className="font-gillsans text-lg font-medium">Av. Perón 2300</p>
             <p className="text-sm text-black/60">Yerba Buena, Tucumán</p>
             <p className="text-xs text-black/40 pt-2">{t('pickupCoordination')}</p>
           </div>
