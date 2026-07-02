@@ -414,9 +414,10 @@ export const PurchaseFlow = ({ preselectedMuralId, preselectedVariantName }: Pro
     // Validamos que el initPoint sea una URL https de un host conocido de Mercado Pago
     // antes de redirigir. Defensa contra response manipulado (ej. javascript: URL).
     if (result?.initPoint && isValidMpInitPoint(result.initPoint)) {
-      // Carrito ya cumplió su rol — el user pasa al checkout MP. Si vuelve a /buy
-      // queremos que arranque limpio (sea que pague o no, el flow es nuevo).
-      clearCart();
+      // NO limpiamos el cart antes de mandar a MP — si el pago se rechaza / cancela,
+      // el usuario vuelve a /buy y podemos precargar todo desde localStorage para
+      // que reintente sin rehacer nada. El cart se limpia solo en OrderSuccessClient
+      // cuando el status del pago vuelve como 'approved'.
       window.location.href = result.initPoint;
     } else {
       setSubmitted(false);

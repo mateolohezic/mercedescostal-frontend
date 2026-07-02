@@ -28,14 +28,6 @@ interface Props {
   onBack: () => void;
 }
 
-const PROVINCES = [
-  'Buenos Aires', 'CABA', 'Catamarca', 'Chaco', 'Chubut', 'Córdoba',
-  'Corrientes', 'Entre Ríos', 'Formosa', 'Jujuy', 'La Pampa', 'La Rioja',
-  'Mendoza', 'Misiones', 'Neuquén', 'Río Negro', 'Salta', 'San Juan',
-  'San Luis', 'Santa Cruz', 'Santa Fe', 'Santiago del Estero',
-  'Tierra del Fuego', 'Tucumán',
-];
-
 export const ShippingStep = ({
   form,
   subtotal,
@@ -102,8 +94,10 @@ export const ShippingStep = ({
 
   const hasSingleLocality = localityOptions.length === 1;
   const hasMultipleLocalities = localityOptions.length > 1;
-  // Fallback manual: CP válido, ya hicimos lookup y no encontramos nada (404 o error).
-  const needsManualEntry = isPostalCodeValid && lookupAttempted && !localityLoading && localityOptions.length === 0;
+  // CP válido en formato pero Andreani no encuentra localidad: NO abrimos manual entry.
+  // Rechazamos ese CP con mensaje claro para evitar que un CP inventado o de otro país
+  // pase por la validación (Zod solo pide 4 dígitos, cualquiera colaría).
+  const cpNotFound = isPostalCodeValid && lookupAttempted && !localityLoading && localityOptions.length === 0;
 
   return (
     <div className="space-y-8">
@@ -278,38 +272,21 @@ export const ShippingStep = ({
           </div>
         )}
 
-        {isDelivery && needsManualEntry && (
-          <div className="flex gap-3">
-            <div className="flex-1 space-y-1.5">
-              <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="city">{t('city')}</label>
-              <input
-                id="city"
-                type="text"
-                autoComplete="address-level2"
-                disabled={!addressUnlocked}
-                className="w-full h-12 px-4 bg-white border border-black/20 font-gillsans focus:border-black focus:outline-none transition-colors disabled:bg-black/[0.03] disabled:text-black/30 disabled:cursor-not-allowed"
-                {...register('city')}
-              />
-              <FormErrorMessage condition={errors.city} message={errors.city?.message} />
-            </div>
-            <div className="flex-1 space-y-1.5">
-              <label className="text-xs text-black/50 uppercase tracking-wider" htmlFor="province">{t('province')}</label>
-              <div className="relative">
-                <select
-                  id="province"
-                  disabled={!addressUnlocked}
-                  className="w-full h-12 px-4 pr-10 bg-white border border-black/20 appearance-none font-gillsans focus:border-black focus:outline-none transition-colors cursor-pointer disabled:bg-black/[0.03] disabled:text-black/30 disabled:cursor-not-allowed"
-                  {...register('province')}
-                >
-                  <option value="">{t('selectProvince')}</option>
-                  {PROVINCES.map(p => (
-                    <option key={p} value={p}>{p}</option>
-                  ))}
-                </select>
-                <ChevronDownIcon className="absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-black/30 pointer-events-none" />
-              </div>
-              <FormErrorMessage condition={errors.province} message={errors.province?.message} />
-            </div>
+        {isDelivery && cpNotFound && (
+          <div className="border border-red-300/50 bg-red-50/40 p-4 text-sm text-red-800 space-y-2">
+            <p className="font-medium">Código postal no encontrado</p>
+            <p className="text-red-700/80 text-[13px] leading-relaxed">
+              No pudimos verificar ese código postal con Andreani. Revisá que sea un CP argentino
+              de 4 dígitos válido, o elegí <strong>Retiro en el local</strong> arriba.
+            </p>
+            <a
+              href="https://wa.me/5491160208460"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-[12px] text-red-800 underline hover:text-red-900 mt-1"
+            >
+              ¿Estás fuera de Argentina? Escribinos por WhatsApp
+            </a>
           </div>
         )}
 

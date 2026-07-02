@@ -24,17 +24,15 @@ export const OrderSuccessClient = ({ token }: Props) => {
   const [origin, setOrigin] = useState<string>('');
 
   // Read sessionStorage only on client after mount (avoids SSR hydration mismatch).
-  // También limpiamos cualquier carrito persistido — esta página significa que el
-  // user ya volvió de MP, así que la "compra en curso" no aplica más.
-  // Mount-only: no dep en magicToken para evitar que se re-ejecute clearCart() y
-  // setOrigin() cada vez que cambia el token (lo que era una llamada de más, no bug).
+  // NOTA: NO limpiamos el carrito acá. Si el pago fue aprobado limpiamos abajo (dep del
+  // status del polling). Si fue rechazado/cancelado mantenemos el cart así el user
+  // puede reintentar con todos los datos precargados.
   useEffect(() => {
     if (!magicToken) {
       setMagicToken(sessionStorage.getItem('mc_magic_token'));
     }
     setOrderNumber(sessionStorage.getItem('mc_order_number'));
     setOrigin(window.location.origin);
-    clearCart();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -45,6 +43,14 @@ export const OrderSuccessClient = ({ token }: Props) => {
       startPolling();
     }
   }, [magicToken, startPolling]);
+
+  // Limpiamos el carrito SOLO cuando el pago fue aprobado — no lo tocamos si fue
+  // rechazado/cancelado (para permitir retry con datos precargados).
+  useEffect(() => {
+    if (status === 'approved') {
+      clearCart();
+    }
+  }, [status]);
 
   const statusLink = magicToken ? `/${locale}/order/status/${magicToken}` : '#';
   const buyLink = `/${locale}/buy`;
