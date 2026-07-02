@@ -103,7 +103,12 @@ export const OrderSuccessClient = ({ token }: Props) => {
         <p className="text-[11px] text-black/25 mt-6 break-all leading-relaxed">
           {t('saveLink')}
           <br />
-          <span className="text-black/40">{origin}{statusLink}</span>
+          <Link
+            href={statusLink}
+            className="text-black/60 hover:text-black underline underline-offset-2 transition-colors"
+          >
+            {origin}{statusLink}
+          </Link>
         </p>
       </div>
     );
