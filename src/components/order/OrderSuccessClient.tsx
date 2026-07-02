@@ -10,9 +10,12 @@ import { CheckIcon, CloseIcon, ClockIcon } from '@/icons';
 
 interface Props {
   token: string;
+  // El usuario apretó "Volver al sitio" en MP sin completar el pago. Detectado en la
+  // page server-side desde los query params de MP (status="null", payment_id="null").
+  cancelledPreCheckout?: boolean;
 }
 
-export const OrderSuccessClient = ({ token }: Props) => {
+export const OrderSuccessClient = ({ token, cancelledPreCheckout = false }: Props) => {
   const params = useParams();
   const locale = (params?.locale as string) || 'es';
   const t = useTranslations('purchase.success');
@@ -38,11 +41,13 @@ export const OrderSuccessClient = ({ token }: Props) => {
 
   const { status, loading, exhausted, startPolling } = usePaymentPolling(magicToken);
 
+  // Si canceló pre-checkout NO polleamos — la orden va a estar pending y el back
+  // no tiene nada nuevo que reportar (no llegará webhook porque no hubo pago).
   useEffect(() => {
-    if (magicToken) {
+    if (magicToken && !cancelledPreCheckout) {
       startPolling();
     }
-  }, [magicToken, startPolling]);
+  }, [magicToken, startPolling, cancelledPreCheckout]);
 
   // Limpiamos el carrito SOLO cuando el pago fue aprobado — no lo tocamos si fue
   // rechazado/cancelado (para permitir retry con datos precargados).
@@ -62,6 +67,46 @@ export const OrderSuccessClient = ({ token }: Props) => {
           {t('processed')}
         </h1>
         <p className="text-black/50">{t('checkEmail')}</p>
+      </div>
+    );
+  }
+
+  // Cancelación pre-checkout: usuario apretó "Volver al sitio" en MP sin pagar.
+  // Es distinto de rechazado (que sí intentó pagar). Sin este check, la UI queda
+  // polleando el estado y muestra "Verificando pago..." eternamente.
+  if (cancelledPreCheckout && status !== 'approved') {
+    return (
+      <div className="text-center py-12 max-w-md mx-auto">
+        <div className="w-16 h-16 mx-auto mb-8 rounded-full border-2 border-black/20 flex items-center justify-center text-black/40">
+          <CloseIcon className="w-7 h-7" />
+        </div>
+
+        <h1 className="font-gillsans text-2xl font-medium uppercase tracking-wider mb-4">
+          Compra sin completar
+        </h1>
+
+        {orderNumber && (
+          <p className="font-trueTypewriter text-sm text-black/40 mb-6">{t('order')} {orderNumber}</p>
+        )}
+
+        <p className="text-sm text-black/50 mb-10 leading-relaxed">
+          No completaste el pago en Mercado Pago. Los datos de tu pedido siguen guardados —
+          podés reintentar cuando quieras.
+        </p>
+
+        <Link
+          href={buyLink}
+          className="block w-full py-4 bg-black text-white font-gillsans font-medium uppercase tracking-wider hover:bg-black/85 transition-colors text-center"
+        >
+          Reintentar compra
+        </Link>
+
+        <Link
+          href={`/${locale}/collections`}
+          className="block w-full py-3 mt-3 text-xs uppercase tracking-widest text-black/40 hover:text-black transition-colors text-center"
+        >
+          Volver a las colecciones
+        </Link>
       </div>
     );
   }
