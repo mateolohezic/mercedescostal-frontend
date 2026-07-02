@@ -191,7 +191,14 @@ export const PurchaseFlow = ({ preselectedMuralId, preselectedVariantName }: Pro
           formDataToRestore.variantColorName = restoredMural.variants[0]?.colorName || '';
         }
         form.reset(formDataToRestore);
-        if (cart.step && cart.step >= 1 && cart.step <= 3) setStep(cart.step);
+        // Downgrade step 3 → 2 si es delivery: la cotización de envío NO se
+        // persiste (quote es state en memoria), así que sin re-cotizar el
+        // ReviewStep no renderiza y el user queda mirando solo el sidebar.
+        // El auto-fetchQuote del ShippingStep va a cotizar solo apenas el
+        // form watch detecte el CP restaurado.
+        const targetStep = cart.step && cart.step >= 1 && cart.step <= 3 ? cart.step : 1;
+        const isDelivery = (formDataToRestore.shippingMethod || 'delivery') === 'delivery';
+        setStep(targetStep === 3 && isDelivery ? 2 : targetStep);
         setRestoredFromCart(true);
       }
     }
