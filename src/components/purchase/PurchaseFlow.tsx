@@ -349,9 +349,20 @@ export const PurchaseFlow = ({ preselectedMuralId, preselectedVariantName }: Pro
   }, [form, totalArea, fetchQuote]);
 
   const handleSubmit = async () => {
-    if (submitted) return;
+    if (submitted) {
+      console.warn('[Submit] Ya se disparó — bloqueando duplicado.');
+      return;
+    }
     const valid = await form.trigger();
-    if (!valid || !quote) return;
+    if (!valid) {
+      console.warn('[Submit] Form validation falló:', form.formState.errors);
+      return;
+    }
+    const currentMethod = form.getValues('shippingMethod');
+    if (currentMethod === 'delivery' && !quote) {
+      console.warn('[Submit] Delivery sin quote — no se puede continuar sin cotización de envío.');
+      return;
+    }
 
     setSubmitted(true);
     const data = form.getValues();
