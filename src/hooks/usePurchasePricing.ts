@@ -24,6 +24,13 @@ interface PricingConfig {
 }
 
 export function calculateWall(widthCm: number, heightCm: number, pricePerM2: number): WallCalculation {
+  // Sin medidas válidas (vacío, 0, negativo, o abajo del mínimo Zod de 30cm) devolvemos
+  // ceros. Sin esto un input vacío daba $4635 fantasma por el excedente técnico + panel
+  // mínimo — confundía al usuario haciéndolo creer que ya había un cargo.
+  if (widthCm < 30 || heightCm < 30 || !isFinite(widthCm) || !isFinite(heightCm)) {
+    return { widthCm, heightCm, panels: 0, printAreaM2: 0, priceARS: 0, horizontalExcessCm: 0, verticalExcessCm: 0 };
+  }
+
   let panels = Math.ceil(widthCm / PANEL_WIDTH);
   const excess = panels * PANEL_WIDTH - widthCm;
   if (excess < MIN_HORIZONTAL_EXCESS) {
@@ -48,6 +55,20 @@ export function calculateWallsContinuous(
   pricePerM2: number,
 ): WallCalculation[] {
   if (walls.length === 0) return [];
+
+  // Si alguna pared no tiene medidas válidas todavía (< 30cm, vacío, negativo o NaN),
+  // devolvemos ceros — coherente con calculateWall single. Sin esto un 0 falsea el
+  // ancho total del grupo y termina cobrando panel mínimo × excedente vertical.
+  const invalid = walls.some(w =>
+    w.widthCm < 30 || w.heightCm < 30 || !isFinite(w.widthCm) || !isFinite(w.heightCm),
+  );
+  if (invalid) {
+    return walls.map(w => ({
+      widthCm: w.widthCm, heightCm: w.heightCm,
+      panels: 0, printAreaM2: 0, priceARS: 0,
+      horizontalExcessCm: 0, verticalExcessCm: 0,
+    }));
+  }
 
   const totalWidthCm = walls.reduce((s, w) => s + w.widthCm, 0);
   const maxHeightCm = Math.max(...walls.map(w => w.heightCm));

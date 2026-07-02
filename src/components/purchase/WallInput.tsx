@@ -8,8 +8,12 @@ import { CrossIcon } from '@/icons';
 const WA_LINK = 'https://wa.me/5491160208460';
 
 const parseNum = (v: any) => {
+  // Vacío → NaN (mejor que 0, así el cálculo no dispara precios fantasma con "0").
+  // Negativos → los tomamos como NaN también. El schema Zod valida mínimo 30cm en submit.
+  if (v === '' || v === null || v === undefined) return NaN;
   const n = parseFloat(v);
-  return isNaN(n) ? 0 : n;
+  if (isNaN(n) || n < 0) return NaN;
+  return n;
 };
 
 interface Props {
@@ -72,8 +76,10 @@ export const WallInput = ({ index, register, errors, onRemove, canRemove, calcul
             <label className="text-xs text-black/50 uppercase tracking-wider">{t('width')}</label>
             <input
               type="number"
+              min={1}
               step="1"
               inputMode="numeric"
+              onKeyDown={(e) => { if (e.key === '-' || e.key === 'e' || e.key === 'E' || e.key === '+') e.preventDefault(); }}
               placeholder="340"
               className={`w-full h-10 px-3 bg-transparent border-b text-center text-lg focus:outline-none transition-colors ${
                 widthError && !isWidthTooLarge ? 'border-red-400' : 'border-black/20 focus:border-black'
@@ -89,8 +95,10 @@ export const WallInput = ({ index, register, errors, onRemove, canRemove, calcul
             <label className="text-xs text-black/50 uppercase tracking-wider">{t('height')}</label>
             <input
               type="number"
+              min={1}
               step="1"
               inputMode="numeric"
+              onKeyDown={(e) => { if (e.key === '-' || e.key === 'e' || e.key === 'E' || e.key === '+') e.preventDefault(); }}
               placeholder="250"
               className={`w-full h-10 px-3 bg-transparent border-b text-center text-lg focus:outline-none transition-colors ${
                 heightError && !isHeightTooLarge ? 'border-red-400' : 'border-black/20 focus:border-black'
