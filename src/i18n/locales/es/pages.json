@@ -423,6 +423,8 @@
     },
     "howWeWork": {
       "kicker": "Cómo trabajamos",
+      "buy": "Comprar online",
+      "buyDesc": "Elegí tu mural, ingresá las medidas y pagá. Lo enviamos a todo el país.",
       "quoteTitle": "Pedir cotización",
       "quoteDesc": "¿Una pared distinta o un proyecto grande? Te cotizamos a medida.",
       "custom": "Proyecto a medida",

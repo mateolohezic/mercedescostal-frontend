@@ -423,6 +423,8 @@
     },
     "howWeWork": {
       "kicker": "How we work",
+      "buy": "Buy online",
+      "buyDesc": "Choose your mural, enter your measurements and pay. We ship across the country.",
       "quoteTitle": "Request a quote",
       "quoteDesc": "A special wall or a large project? We’ll prepare a tailored quote.",
       "custom": "Bespoke project",

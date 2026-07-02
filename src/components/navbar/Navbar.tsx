@@ -138,7 +138,8 @@ export const Navbar = () => {
     }
 
     return (
-        <nav className={`hidden w-full px-12 h-24 xl:h-32 lg:flex justify-center items-center fixed top-0 left-0 right-0 z-50 content-visibility-hidden lg:content-visibility-visible bg-transparent`}>
+        <nav className={`hidden w-full px-12 h-24 xl:h-32 lg:flex justify-center items-center fixed top-0 left-0 right-0 z-50 content-visibility-hidden lg:content-visibility-visible ${ onDark ? 'bg-transparent' : 'bg-white' } transition-colors duration-300 ease-out`}>
+
             <div className="w-full flex justify-between relative">
                 <Link className="w-full lg:max-w-72 xl:max-w-sm 2xl:max-w-lg flex items-end" href={'/'} aria-label="Inicio">
                     <MCLogo className={`${ onDark ? 'fill-white' : 'fill-black' } w-full transition-colors duration-300 ease-out`}/>

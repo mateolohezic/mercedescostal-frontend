@@ -1,0 +1,281 @@
+{
+  "title": "Comprar empapelado",
+  "subtitle": "Seleccioná tu mural, ingresá las medidas de tus paredes y pagá online.",
+  "back": "Volver",
+  "steps": {
+    "product": "Producto",
+    "shipping": "Envío",
+    "payment": "Pago",
+    "review": "Revisar y pagar"
+  },
+  "product": {
+    "title": "Producto y medidas",
+    "subtitle": "Elegí tu empapelado e ingresá las medidas de tus paredes",
+    "collection": "Colección",
+    "selectCollection": "Seleccionar colección",
+    "mural": "Mural",
+    "selectMural": "Seleccionar mural",
+    "chooseCollectionFirst": "Elegí primero una colección para ver sus murales",
+    "muralsCount": "{count, plural, =1 {1 mural} other {# murales}}",
+    "variant": "Color / Variante",
+    "wall": "Pared",
+    "wallMeasures": "Medidas de tus paredes",
+    "excessHint": "Ingresá las medidas reales de tus paredes — el excedente técnico lo calculamos nosotros (10 cm de alto y mínimo 10 cm de ancho).",
+    "addWall": "+ Agregar otra pared",
+    "continuousQuestion": "¿Tus paredes se conectan entre sí?",
+    "continuousNo": "Están separadas",
+    "continuousNoHint": "Ej.: paredes opuestas (una frente a la otra), o paredes de habitaciones distintas.",
+    "continuousYes": "Forman esquina o cuarto cerrado",
+    "continuousYesHint": "Ej.: 2 paredes en L, 3 paredes en U, las 4 paredes de un cuarto. El papel puede seguir de una a la otra.",
+    "continuousYesSaving": "Con esta opción ahorrás en excedente",
+    "groupTotal": "Total grupo",
+    "panel": "panel",
+    "panels": "paneles",
+    "width": "Ancho (cm)",
+    "height": "Alto (cm)",
+    "continueShipping": "Continuar al envío",
+    "minAreaError": "La compra mínima es {min} m². Tu pedido suma {current} m² — agregá más metros para continuar."
+  },
+  "wall": {
+    "remove": "Quitar pared",
+    "panel": "panel",
+    "panels": "paneles",
+    "panelOf": "de 50cm",
+    "excessHeight": "+{v} cm de alto",
+    "excessWidth": "+{h} cm de ancho",
+    "largeMeasureTitle": "Medida mayor a 50 m",
+    "largeMeasureDesc": "Para paredes de este tamaño te asesoramos de forma personalizada para asegurar el mejor resultado.",
+    "largeMeasureCta": "Contactar por WhatsApp"
+  },
+  "shipping": {
+    "subtitle": "Ingresá la dirección donde querés recibir tu pedido",
+    "recipientName": "Nombre del destinatario",
+    "recipientDni": "DNI",
+    "recipientDniHint": "Lo necesita Andreani para entregar el paquete",
+    "street": "Calle",
+    "number": "Número",
+    "floor": "Piso (opcional)",
+    "apartment": "Depto (opcional)",
+    "city": "Ciudad",
+    "province": "Provincia",
+    "postalCode": "Código Postal",
+    "validatingPostal": "Validando...",
+    "quoteShipping": "Cotizar envío",
+    "quoting": "Cotizando envío...",
+    "shippingCost": "Envío",
+    "shippingByAndreani": "Envío por Andreani",
+    "freeShipping": "Envío gratis",
+    "freeShippingHint": "+20 m²",
+    "estimatedDays": "Plazo estimado",
+    "reviewOrder": "Revisar pedido",
+    "selectLocality": "Seleccionar localidad",
+    "selectProvince": "Seleccionar",
+    "shippingProblems": "¿Problemas con el envío?",
+    "contactWhatsApp": "Contactanos por WhatsApp",
+    "methodQuestion": "¿Cómo querés recibir tu pedido?",
+    "methodDelivery": "Envío a domicilio (Andreani)",
+    "methodDeliveryHint": "Te lo llevamos hasta la puerta. Cotizamos el costo según el código postal.",
+    "methodPickup": "Retiro en el local (Yerba Buena, Tucumán)",
+    "methodPickupHint": "Lo retirás en Av. Perón 2300. Sin costo de envío.",
+    "pickupAddress": "Dirección del local",
+    "pickupCoordination": "Coordinaremos con vos por WhatsApp cuando el pedido esté listo para retirar.",
+    "pickupRecipientName": "Nombre de quien retira",
+    "postalCodeHint": "es necesario para poder continuar",
+    "lockedHint": "Ingresá el código postal para completar el resto de la dirección.",
+    "argOnlyNote": "Solo enviamos dentro de Argentina.",
+    "argOnlyContact": "¿Estás en el exterior? Escribinos por WhatsApp."
+  },
+  "review": {
+    "subtitle": "Verificá los datos de tu pedido antes de continuar",
+    "product": "Producto",
+    "walls": "Paredes",
+    "panel": "panel",
+    "panels": "paneles",
+    "panelOf": "de 0.50m",
+    "shippingAddress": "Dirección de envío",
+    "pickupHeader": "Retiro en el local",
+    "pickupCoordinationShort": "Coordinaremos por WhatsApp cuando esté listo.",
+    "pickupBy": "Retira",
+    "yourData": "Tus datos",
+    "name": "Nombre",
+    "email": "Email",
+    "phone": "Teléfono",
+    "emailHint": "Te enviaremos el comprobante de pago y las actualizaciones de tu pedido a este email.",
+    "dni": "DNI",
+    "floorLabel": "Piso",
+    "aptLabel": "Depto",
+    "postalCodeLabel": "CP",
+    "subtotal": "Subtotal producto",
+    "shipping": "Envío (Andreani)",
+    "total": "Total",
+    "ivaIncluded": "IVA 21% incluido",
+    "payWithMP": "Pagar con Mercado Pago",
+    "processing": "Procesando...",
+    "productionTime": "Tiempo estimado de producción: 20 días hábiles aprox. desde el pago."
+  },
+  "summary": {
+    "subtotalProduct": "Subtotal producto",
+    "shipping": "Envío (Andreani)",
+    "shippingLabel": "Envío",
+    "pickupInSummary": "Retiro en el local",
+    "total": "Total",
+    "ivaIncluded": "IVA 21% incluido en todos los precios",
+    "ivaShort": "IVA incl.",
+    "freeShipping": "Envío gratis",
+    "typeMural": "Mural",
+    "typePattern": "Patrón",
+    "printAreaSuffix": "m² de impresión"
+  },
+  "simpleWalls": {
+    "title": "Compra online",
+    "description": "Esta compra es para <strong>paredes rectangulares simples</strong>, sin aberturas complicadas ni techos inclinados. Ejemplos:",
+    "typeSimple": "Pared simple",
+    "typeWithDoor": "Pared con puerta",
+    "typeWithWindow": "Pared con ventana",
+    "complexWalls": "¿Tenés paredes con formas complejas, arcos o muchas aberturas?",
+    "contactSales": "Contactá a un vendedor"
+  },
+  "disclaimers": {
+    "title": "Términos y condiciones",
+    "general": {
+      "title": "Condiciones generales",
+      "items": "El presupuesto se calcula a partir de las medidas reales de la pared, contemplando un excedente técnico de 10 cm en el alto y la cantidad de paños necesarios según el ancho.\nPara coordinar el envío o retiro del pedido, el saldo deberá encontrarse cancelado.\nPlazo de entrega: 20 días hábiles desde la confirmación del pedido, salvo acuerdos especiales previamente informados.\nEl presupuesto no incluye servicio de colocación.\nLos tonos pueden presentar leves variaciones respecto de la muestra digital debido a los procesos de impresión y a la configuración de cada pantalla. No trabajamos con referencia de tonos de otros materiales (pintura, melamina, cerámicos).\nNuestros productos poseen un proceso artesanal y cada pieza es refilada a mano. Esto puede generar mínimas variaciones, propias de un producto hecho con dedicación y cuidado por el detalle.\nNo brindamos ni coordinamos el servicio de instalación. Con gusto podemos sugerir profesionales especializados; sin embargo, su contratación y ejecución son ajenas a Mercedes Costal.\nCualquier discrepancia en el pedido (errores de impresión o problemas de unión) debe verificarse antes de iniciar la colocación y reportarse a Mercedes Costal. Una vez instalado el empapelado, no se aceptarán reclamos relacionados."
+    },
+    "returns": {
+      "title": "Política de devolución / reclamos",
+      "items": "Los reclamos podrán realizarse dentro de los 15 días posteriores a la recepción del producto.\nEs indispensable verificar el material antes de su colocación. Una vez instalado, no podremos procesar reclamos.\nMercedes Costal no se responsabiliza por costos o inconvenientes derivados de la instalación.\nEn caso de devoluciones aprobadas, el importe no será reintegrado en efectivo; se otorgará un crédito equivalente en m² para utilizar en una futura compra."
+    },
+    "intellectualProperty": {
+      "title": "Propiedad intelectual",
+      "items": "Los diseños son propiedad de Mercedes Costal y están destinados exclusivamente a uso decorativo. Queda prohibida su reproducción o utilización para otros fines sin autorización escrita."
+    },
+    "shipping": {
+      "title": "Envío",
+      "items": "Los envíos son responsabilidad exclusiva del cliente y del servicio de transporte contratado."
+    },
+    "simpleWalls": {
+      "title": "Compra online — Paredes simples",
+      "items": "Esta compra es para paredes rectangulares simples, sin aberturas complicadas ni techos inclinados. Si tenés paredes con formas complejas, arcos o muchas aberturas, contactá a un vendedor."
+    }
+  },
+  "success": {
+    "processed": "Pago procesado",
+    "checkEmail": "Revisá tu email para el estado de tu pedido.",
+    "confirmed": "Pago confirmado",
+    "order": "Pedido",
+    "emailSent": "Recibiste un email de confirmación con todos los detalles.",
+    "willNotify": "Te notificaremos cuando tu pedido sea despachado.",
+    "nextStep": "Próximo paso",
+    "commercialContact": "Nuestro equipo comercial se va a poner en contacto con vos dentro de las próximas 24 horas hábiles para coordinar la vista previa de tu diseño.",
+    "viewStatus": "Ver estado del pedido",
+    "saveLink": "Guardá este link para consultar el estado en cualquier momento:",
+    "trackingLink": "Tu link de seguimiento:",
+    "verifying": "Verificando pago...",
+    "verifyingHint": "Estamos verificando tu pago con Mercado Pago. Esto puede tardar unos segundos.",
+    "inVerification": "Pago en verificación",
+    "beingVerified": "Tu pago está siendo procesado. Recibirás un email de confirmación cuando se apruebe.",
+    "notApproved": "Pago no aprobado",
+    "wasRejected": "Tu pago fue rechazado. No se realizó ningún cobro.",
+    "wasCancelled": "Tu pago fue cancelado. No se realizó ningún cobro.",
+    "retryPurchase": "Reintentar compra"
+  },
+  "failure": {
+    "title": "Error en el pago",
+    "description": "Hubo un problema al procesar tu pago. No se realizó ningún cobro.",
+    "retry": "Reintentar compra",
+    "contact": "Contactar soporte"
+  },
+  "status": {
+    "title": "Estado del pedido",
+    "order": "Pedido",
+    "paymentStatus": "Estado del pago",
+    "shippingStatus": "Estado del envío",
+    "trackingNumber": "Código de seguimiento",
+    "trackOnAndreani": "Rastrear en andreani.com",
+    "movements": "Detalle de movimientos",
+    "branch": "Sucursal",
+    "estimatedDelivery": "Entrega estimada",
+    "lastChecked": "Última consulta a Andreani",
+    "refresh": "Actualizar",
+    "notFound": "Orden no encontrada",
+    "invalidLink": "El link puede haber expirado o ser inválido.",
+    "loadError": "Error al cargar la orden",
+    "helpQuestion": "¿Necesitás ayuda?",
+    "justNow": "Hace instantes",
+    "minAgo": "Hace {n} min",
+    "hourAgo": "Hace {n}h",
+    "dayAgo": "Hace {n} día(s)",
+    "paymentLabels": {
+      "pending": "Pendiente",
+      "approved": "Aprobado",
+      "rejected": "Rechazado",
+      "cancelled": "Cancelado",
+      "in_process": "En proceso",
+      "refunded": "Reembolsado"
+    },
+    "milestones": {
+      "paid": "Pago confirmado",
+      "preparing": "En producción",
+      "admitted": "Recibido en Andreani",
+      "in_transit": "En camino",
+      "delivered": "Entregado"
+    },
+    "negative": {
+      "shipment_rejected": {
+        "label": "Pre-envío rechazado por Andreani",
+        "description": "Estamos revisando los datos del envío. Te contactaremos en breve."
+      },
+      "cancelled": {
+        "label": "Envío cancelado",
+        "description": "El envío fue cancelado. Si esperabas tu pedido, contactanos."
+      },
+      "delivery_failed": {
+        "label": "No se pudo entregar",
+        "description": "Andreani no pudo entregar el envío. Revisá el detalle de eventos."
+      },
+      "returned": {
+        "label": "En devolución",
+        "description": "El envío vuelve al remitente. Vamos a contactarte."
+      },
+      "incident": {
+        "label": "Incidente con el envío",
+        "description": "Hubo un incidente. Estamos gestionándolo."
+      }
+    }
+  },
+  "cart": {
+    "eyebrow": "Tu compra en curso",
+    "title": "¿Continuamos?",
+    "description": "Tenés una compra empezada. Podés retomarla desde donde la dejaste o descartarla.",
+    "continue": "Continuar compra",
+    "later": "Después",
+    "discard": "Descartar",
+    "justNow": "Recién la guardaste",
+    "hoursAgo": "Guardada hace {n}h",
+    "yesterday": "Guardada ayer",
+    "daysAgo": "Guardada hace {n} días"
+  },
+  "errors": {
+    "selectCollection": "Seleccioná una colección",
+    "selectMural": "Seleccioná un mural",
+    "selectVariant": "Seleccioná una variante",
+    "enterNumber": "Ingresá un número",
+    "widthMin": "Mínimo 30 cm",
+    "widthMax": "Medida muy grande para compra online",
+    "heightMin": "Mínimo 30 cm",
+    "heightMax": "Medida muy grande para compra online",
+    "atLeastOneWall": "Agregá al menos una pared",
+    "maxTenWalls": "Máximo 10 paredes",
+    "enterRecipientName": "Ingresá el nombre del destinatario",
+    "invalidDni": "DNI inválido (7 a 9 dígitos)",
+    "enterStreet": "Ingresá la calle",
+    "enterStreetNumber": "Ingresá el número",
+    "enterCity": "Ingresá la ciudad",
+    "selectProvince": "Seleccioná la provincia",
+    "postalCode4": "Código postal: 4 dígitos",
+    "enterCustomerName": "Ingresá tu nombre",
+    "invalidEmail": "Email inválido",
+    "invalidPhone": "Teléfono inválido",
+    "mustAcceptTerms": "Tenés que aceptar los términos para continuar"
+  }
+}

@@ -1,0 +1,25 @@
+import type { Metadata } from 'next';
+import { OrderSuccessClient } from '@/components/order/OrderSuccessClient';
+
+// Página post-pago con magicToken en URL — privada, no debe indexarse.
+export const metadata: Metadata = {
+  robots: { index: false, follow: false, googleBot: { index: false, follow: false } },
+  referrer: 'no-referrer',
+};
+
+interface Props {
+  searchParams: Promise<{ token?: string }>;
+}
+
+export default async function OrderSuccessPage({ searchParams }: Props) {
+  const params = await searchParams;
+  const token = params.token || '';
+
+  return (
+    <main className="min-h-screen bg-white">
+      <div className="max-w-lg mx-auto px-4 py-24 lg:py-48">
+        <OrderSuccessClient token={token} />
+      </div>
+    </main>
+  );
+}
