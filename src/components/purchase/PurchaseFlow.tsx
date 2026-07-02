@@ -13,6 +13,7 @@ import { CheckIcon } from '@/icons';
 import { usePurchasePricing } from '@/hooks/usePurchasePricing';
 import { useShippingQuote } from '@/hooks/useShippingQuote';
 import { useCreateOrder, resetIdempotencyKey } from '@/hooks/useCreateOrder';
+import { trackAddToCart, trackAddShippingInfo, trackBeginCheckout } from '@/lib/analytics';
 import { getCart, saveCart, clearCart, type CartData } from '@/hooks/useCart';
 import { useLegalConfig } from '@/hooks/useLegalConfig';
 import { usePromoConfig } from '@/hooks/usePromoConfig';
@@ -331,6 +332,19 @@ export const PurchaseFlow = ({ preselectedMuralId, preselectedVariantName }: Pro
     }
     setMinAreaError(false);
     resetShipping();
+    // Funnel: paso 1 → 2 (add_to_cart en GA4 + Meta AddToCart)
+    trackAddToCart({
+      value: subtotal,
+      currency: 'ARS',
+      items: currentMural ? [{
+        item_id: currentMural.id,
+        item_name: currentMural.title,
+        item_category: currentMural.collectionId,
+        item_variant: form.getValues('variantColorName'),
+        quantity: 1,
+        price: subtotal,
+      }] : undefined,
+    });
     goToStep(2);
   };
 
@@ -344,6 +358,18 @@ export const PurchaseFlow = ({ preselectedMuralId, preselectedVariantName }: Pro
     // Delivery: además requiere que ya haya cotización válida. Pickup: no cotiza.
     const shippingReady = method === 'pickup' || !!quote;
     if (valid && shippingReady) {
+      // Funnel: paso 2 → 3 (add_shipping_info)
+      trackAddShippingInfo({
+        value: subtotal + (method === 'pickup' ? 0 : (quote?.costARS ?? 0)),
+        currency: 'ARS',
+        shipping_tier: method,
+        items: currentMural ? [{
+          item_id: currentMural.id,
+          item_name: currentMural.title,
+          quantity: 1,
+          price: subtotal,
+        }] : undefined,
+      });
       goToStep(3);
     }
   };
@@ -421,6 +447,21 @@ export const PurchaseFlow = ({ preselectedMuralId, preselectedVariantName }: Pro
     // Validamos que el initPoint sea una URL https de un host conocido de Mercado Pago
     // antes de redirigir. Defensa contra response manipulado (ej. javascript: URL).
     if (result?.initPoint && isValidMpInitPoint(result.initPoint)) {
+      // Funnel: begin_checkout (GA4) + InitiateCheckout (Meta) — evento MÁS importante
+      // antes del pago porque es el "último clic" que registramos antes de perderlo en MP.
+      trackBeginCheckout({
+        value: clientExpectedTotalARS,
+        currency: 'ARS',
+        coupon: promoConfig?.active && promoConfig.promo ? promoConfig.promo.label : undefined,
+        shipping_tier: data.shippingMethod,
+        items: currentMural ? [{
+          item_id: currentMural.id,
+          item_name: currentMural.title,
+          item_variant: data.variantColorName,
+          quantity: 1,
+          price: subtotal,
+        }] : undefined,
+      });
       // NO limpiamos el cart antes de mandar a MP — si el pago se rechaza / cancela,
       // el usuario vuelve a /buy y podemos precargar todo desde localStorage para
       // que reintente sin rehacer nada. El cart se limpia solo en OrderSuccessClient

@@ -1,11 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { usePaymentPolling } from '@/hooks/usePaymentPolling';
 import { clearCart } from '@/hooks/useCart';
+import { apiGet } from '@/helpers/api';
+import { trackPurchase, trackPaymentRejected, trackPaymentCancelledPrecheckout } from '@/lib/analytics';
 import { CheckIcon, CloseIcon, ClockIcon } from '@/icons';
 
 interface Props {
@@ -56,6 +58,64 @@ export const OrderSuccessClient = ({ token, cancelledPreCheckout = false }: Prop
       clearCart();
     }
   }, [status]);
+
+  // Tracking del resultado del pago — fire-once. Refs para dedup porque el polling
+  // puede llamar 2-3 veces con el mismo status antes de que el user vea el update.
+  const trackedApproved = useRef(false);
+  const trackedRejected = useRef(false);
+  const trackedCancelled = useRef(false);
+
+  // Cancelación pre-checkout: fire una vez al mount cuando llega el flag.
+  useEffect(() => {
+    if (cancelledPreCheckout && !trackedCancelled.current) {
+      trackedCancelled.current = true;
+      trackPaymentCancelledPrecheckout({ transaction_id: orderNumber ?? undefined });
+    }
+  }, [cancelledPreCheckout, orderNumber]);
+
+  // Pago rechazado o cancelado por MP.
+  useEffect(() => {
+    if ((status === 'rejected' || status === 'cancelled') && !trackedRejected.current) {
+      trackedRejected.current = true;
+      trackPaymentRejected({ transaction_id: orderNumber ?? magicToken ?? 'unknown' });
+    }
+  }, [status, orderNumber, magicToken]);
+
+  // Pago aprobado: fetch de la orden para tener value + items reales.
+  useEffect(() => {
+    if (status !== 'approved' || trackedApproved.current || !magicToken) return;
+    trackedApproved.current = true;
+    // Traemos la orden para armar el purchase event con datos reales (no confiamos
+    // en sessionStorage que puede estar stale). apiGet ya inyecta API_KEY via BFF.
+    apiGet<{
+      orderNumber: string;
+      product: { muralId?: string; muralTitle: string; variantColorName: string; collectionTitle: string };
+      subtotalProductARS: number;
+      shipping: { method?: 'delivery' | 'pickup'; costARS: number; province?: string };
+      totalARS: number;
+      promo?: { label: string };
+    }>(`/api/orders/${magicToken}`)
+      .then((order) => {
+        trackPurchase({
+          transaction_id: order.orderNumber,
+          value: order.totalARS,
+          shipping: order.shipping?.costARS ?? 0,
+          currency: 'ARS',
+          coupon: order.promo?.label,
+          shipping_tier: order.shipping?.method,
+          province: order.shipping?.province,
+          items: order.product?.muralId ? [{
+            item_id: order.product.muralId,
+            item_name: order.product.muralTitle,
+            item_category: order.product.collectionTitle,
+            item_variant: order.product.variantColorName,
+            quantity: 1,
+            price: order.subtotalProductARS,
+          }] : undefined,
+        });
+      })
+      .catch(() => { /* silent — el pago se aprobó igual */ });
+  }, [status, magicToken]);
 
   const statusLink = magicToken ? `/${locale}/order/status/${magicToken}` : '#';
   const buyLink = `/${locale}/buy`;
