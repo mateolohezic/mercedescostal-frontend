@@ -245,8 +245,7 @@ export const ReviewStep = ({
       </section>
 
       {/* Factura A — aviso al cliente */}
-      <section className="border border-black/10 bg-white p-4 flex items-start gap-3">
-        <span className="text-base shrink-0">🧾</span>
+      <section className="border border-black/10 bg-white p-4">
         <div className="text-sm leading-relaxed text-black/70 space-y-1">
           <p className="font-medium text-black">¿Necesitás factura A?</p>
           <p>
