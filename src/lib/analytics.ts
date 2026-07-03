@@ -72,7 +72,34 @@ export function trackViewItem(item: CartItem): void {
   } catch { /* silent */ }
 }
 
-// Usuario apretó "Continuar a envío" (paso 1 → 2). GA4 add_to_cart + Meta AddToCart.
+// Usuario apretó "Comprar" en el detalle del mural — señal más fuerte de intención
+// antes de entrar al flow. Meta AddToCart (evento estrella para optimizar ads de
+// conversión) + GA4 select_item (evento estándar de e-commerce enhanced).
+export function trackClickBuy(item: CartItem): void {
+  if (typeof window === 'undefined') return;
+  try {
+    // GA4: select_item es el evento correcto para "selected/intent" (add_to_cart lo
+    // dejamos para cuando ya cargó medidas).
+    window.gtag?.('event', 'select_item', {
+      item_list_name: 'mural_detail_page',
+      items: [item],
+    });
+    // Meta: AddToCart es la conversión más útil para optimizar ads. Se dispara acá
+    // porque es el momento donde el user muestra intención clara — no en el step 1
+    // del flow para evitar doble conteo.
+    window.fbq?.('track', 'AddToCart', {
+      content_ids: [item.item_id],
+      content_type: 'product',
+      content_name: item.item_name,
+      value: item.price,
+      currency: 'ARS',
+    });
+    log('click_buy', item);
+  } catch { /* silent */ }
+}
+
+// Usuario apretó "Continuar a envío" (paso 1 → 2). Solo GA4 — Meta AddToCart ya se
+// disparó al click "Comprar" del detalle.
 export function trackAddToCart(params: CheckoutParams): void {
   if (typeof window === 'undefined') return;
   try {
@@ -80,12 +107,6 @@ export function trackAddToCart(params: CheckoutParams): void {
       currency: 'ARS',
       value: params.value,
       items: params.items,
-    });
-    window.fbq?.('track', 'AddToCart', {
-      content_ids: params.items?.map(i => i.item_id),
-      content_type: 'product',
-      value: params.value,
-      currency: 'ARS',
     });
     log('add_to_cart', params);
   } catch { /* silent */ }

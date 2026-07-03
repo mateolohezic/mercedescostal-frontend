@@ -8,6 +8,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { usePromoConfig } from "@/hooks/usePromoConfig";
 import { IoChevronBack, IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { usePricing } from "@/hooks/usePricing";
+import { trackClickBuy } from "@/lib/analytics";
 import { MuralVariant, Mural, Collection } from "@/interfaces";
 
 const VariantButton = ({ variant, isSelected, onClick }: {
@@ -184,6 +185,18 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
                             <>
                                 <Link
                                     href={`/buy?mural=${mural.id}&variant=${encodeURIComponent(currentVariant.colorName)}`}
+                                    onClick={() => trackClickBuy({
+                                        item_id: mural.id,
+                                        item_name: mural.title,
+                                        item_category: collection.title,
+                                        item_variant: currentVariant.colorName,
+                                        quantity: 1,
+                                        price: price
+                                            ? (showPromo
+                                                ? Math.round(price * (1 - promo!.promo!.discountPct / 100))
+                                                : price)
+                                            : undefined,
+                                    })}
                                     className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150"
                                 >
                                     Comprar
