@@ -1,10 +1,16 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react';
-import { Modal } from '@/components/ui/Modal';
+import Link from 'next/link';
 import Image from 'next/image';
-import promoImage from '@/assets/preventa_art_screen.webp';
+import { Modal } from '@/components/ui/Modal';
 
+const PROMO_SRC = '/assets/promo_popup.jpg';
+
+// Popup de bienvenida con la promo -15% de lanzamiento. Aparece a los 4s de estar
+// explorando el sitio (una vez por sesión — sessionStorage lo recuerda).
+// La imagen ya lleva todo el mensaje (título, %, vigencia). El CTA de abajo lleva
+// a las colecciones para que arranquen a mirar productos.
 export const PromoPopup = () => {
     const [show, setShow] = useState(false);
     const wasShown = useRef(false);
@@ -28,14 +34,25 @@ export const PromoPopup = () => {
     }, [show]);
 
     return (
-        <Modal showModal={show} setShowModal={setShow} className="max-w-3xl">
-            <Image
-                src={promoImage}
-                alt="Preventa Art Screen - 15% OFF Lanzamiento"
-                sizes="(max-width: 1024px) 100vw, 768px"
-                className="w-full h-auto"
-                priority
-            />
+        <Modal showModal={show} setShowModal={setShow} className="max-w-md">
+            <div className="flex flex-col">
+                <Image
+                    src={PROMO_SRC}
+                    alt="Mercedes Costal — 15% OFF Lanzamiento hasta el 5 de julio"
+                    width={1080}
+                    height={1920}
+                    sizes="(max-width: 640px) 100vw, 448px"
+                    className="w-full h-auto"
+                    priority
+                />
+                <Link
+                    href="/collections"
+                    onClick={() => setShow(false)}
+                    className="block w-full text-center py-4 bg-black text-white font-gillsans font-medium uppercase tracking-wider hover:bg-black/85 transition-colors"
+                >
+                    Ver colecciones
+                </Link>
+            </div>
         </Modal>
     );
 };
