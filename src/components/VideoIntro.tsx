@@ -4,9 +4,8 @@
 // El nombre del archivo/export se mantiene ("VideoIntro") para no romper imports.
 
 import Image from "next/image";
-
-const DESKTOP_SRC = "/assets/hero_desktop.jpg";
-const MOBILE_SRC = "/assets/hero_mobile.jpg";
+import heroDesktop from "@/assets/home/hero_desktop.webp";
+import heroMobile from "@/assets/home/hero_mobile.webp";
 
 export const VideoIntro = () => {
     return (
@@ -14,21 +13,23 @@ export const VideoIntro = () => {
             <div className="size-full relative">
                 {/* Mobile: imagen vertical */}
                 <Image
-                    src={MOBILE_SRC}
+                    src={heroMobile}
                     alt="Mercedes Costal — 15% OFF de lanzamiento"
                     fill
                     priority
                     sizes="100vw"
                     className="object-cover object-center pointer-events-none select-none lg:hidden"
                 />
-                {/* Desktop: imagen apaisada */}
+                {/* Desktop: imagen apaisada. object-right para que el texto de la
+                    derecha (15% OFF + fecha) SIEMPRE quede visible aunque el viewport
+                    se angoste (tablets, ventanas chicas). Se recorta por la izquierda. */}
                 <Image
-                    src={DESKTOP_SRC}
+                    src={heroDesktop}
                     alt="Mercedes Costal — 15% OFF de lanzamiento"
                     fill
                     priority
                     sizes="100vw"
-                    className="object-cover object-center pointer-events-none select-none hidden lg:block"
+                    className="object-cover object-right pointer-events-none select-none hidden lg:block"
                 />
             </div>
         </div>

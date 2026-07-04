@@ -4,8 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Modal } from '@/components/ui/Modal';
-
-const PROMO_SRC = '/assets/promo_popup.jpg';
+import promoImage from '@/assets/home/promo_popup.webp';
 
 // Popup de bienvenida con la promo -15% de lanzamiento. Aparece a los 4s de estar
 // explorando el sitio (una vez por sesión — sessionStorage lo recuerda).
@@ -37,10 +36,8 @@ export const PromoPopup = () => {
         <Modal showModal={show} setShowModal={setShow} className="max-w-md">
             <div className="flex flex-col">
                 <Image
-                    src={PROMO_SRC}
+                    src={promoImage}
                     alt="Mercedes Costal — 15% OFF Lanzamiento hasta el 5 de julio"
-                    width={1080}
-                    height={1920}
                     sizes="(max-width: 640px) 100vw, 448px"
                     className="w-full h-auto"
                     priority
