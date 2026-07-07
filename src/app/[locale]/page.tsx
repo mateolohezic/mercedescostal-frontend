@@ -41,10 +41,7 @@ export default function HomePage() {
   return (
     <main className="w-full grow flex flex-col items-center">
       <h1 className="sr-only">Mercedes Costal — Wallpapers de autor, hechos a medida en Argentina</h1>
-      {/* Mobile: aspect 9:16 (ratio real de hero_mobile.webp) para mostrar la imagen
-          completa sin crop — el usuario scrollea si su viewport es más alto que 9:16.
-          Desktop: min-h-svh para que el hero ocupe toda la pantalla como antes. */}
-      <section className="w-full relative bg-black aspect-[9/16] lg:aspect-auto lg:min-h-svh">
+      <section className="w-full min-h-svh relative bg-black">
         <VideoIntro/>
       </section>
       <HomeSections
