@@ -182,7 +182,17 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
                             </div>
                         )}
                         {locale === 'es' ? (
-                            <>
+                            <div className="flex flex-col gap-3">
+                                {/* Cotizar es el CTA principal — la mayoría de los clientes
+                                    prefieren consultar antes de comprar directo por el ticket alto.
+                                    Comprar online queda visible como opción secundaria para los
+                                    decididos, sin generar fricción al que solo quiere info. */}
+                                <Link
+                                    href={`/quote?mural=${mural.id}`}
+                                    className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150"
+                                >
+                                    Cotizar
+                                </Link>
                                 <Link
                                     href={`/buy?mural=${mural.id}&variant=${encodeURIComponent(currentVariant.colorName)}`}
                                     onClick={() => trackClickBuy({
@@ -197,17 +207,14 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
                                                 : price)
                                             : undefined,
                                     })}
-                                    className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150"
+                                    className="block w-full text-center px-6 py-3.5 border border-black/25 font-gillsans font-medium text-black/70 text-base uppercase tracking-wide hover:border-black hover:text-black transition-150"
                                 >
-                                    Comprar
+                                    Comprar online
                                 </Link>
-                                <p className="font-sans text-[11px] text-black/40 leading-relaxed text-center">
-                                    Compra online solo con envío dentro de Argentina.{' '}
-                                    <Link href={`/quote?mural=${mural.id}`} className="underline text-black/60 hover:text-black transition-colors">
-                                        ¿Estás en el exterior? Cotizá acá.
-                                    </Link>
+                                <p className="font-sans text-[11px] text-black/40 leading-relaxed text-center pt-1">
+                                    Compra online: solo Argentina. Envíos al exterior por cotización.
                                 </p>
-                            </>
+                            </div>
                         ) : (
                             <a href="https://wa.me/5491160208460" target="_blank" rel="noopener noreferrer" className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150">
                                 Contact Us
