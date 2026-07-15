@@ -8,7 +8,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { usePromoConfig } from "@/hooks/usePromoConfig";
 import { IoChevronBack, IoChevronDown, IoChevronUp } from "react-icons/io5";
 import { usePricing } from "@/hooks/usePricing";
-import { trackClickBuy } from "@/lib/analytics";
+import { trackClickBuy, trackClickQuote } from "@/lib/analytics";
 import { MuralVariant, Mural, Collection } from "@/interfaces";
 
 const VariantButton = ({ variant, isSelected, onClick }: {
@@ -189,6 +189,12 @@ export const MuralDetailContent = ({ mural, collection }: Props) => {
                                     decididos, sin generar fricción al que solo quiere info. */}
                                 <Link
                                     href={`/quote?mural=${mural.id}`}
+                                    onClick={() => trackClickQuote({
+                                        item_id: mural.id,
+                                        item_name: mural.title,
+                                        item_category: collection.title,
+                                        item_variant: currentVariant.colorName,
+                                    })}
                                     className="block w-full text-center px-6 py-4 bg-black font-gillsans font-medium text-white text-lg uppercase hover:bg-black/80 transition-150"
                                 >
                                     Cotizar

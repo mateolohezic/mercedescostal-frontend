@@ -72,6 +72,25 @@ export function trackViewItem(item: CartItem): void {
   } catch { /* silent */ }
 }
 
+// Usuario apretó "Cotizar" en el detalle del mural — CTA primario. Su clic señala
+// intención de LEAD (no compra directa). Meta lo trackea como `ViewContent` (no
+// disparamos Lead acá porque el Lead real se firma cuando envían el form de /quote).
+export function trackClickQuote(item: Pick<CartItem, 'item_id' | 'item_name' | 'item_category' | 'item_variant'>): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.gtag?.('event', 'click_quote', {
+      item_list_name: 'mural_detail_page',
+      items: [item],
+    });
+    window.fbq?.('track', 'ViewContent', {
+      content_ids: [item.item_id],
+      content_type: 'product',
+      content_name: item.item_name,
+    });
+    log('click_quote', item);
+  } catch { /* silent */ }
+}
+
 // Usuario apretó "Comprar" en el detalle del mural — señal más fuerte de intención
 // antes de entrar al flow. Meta AddToCart (evento estrella para optimizar ads de
 // conversión) + GA4 select_item (evento estándar de e-commerce enhanced).
@@ -198,4 +217,30 @@ export function trackPaymentCancelledPrecheckout(params: { transaction_id?: stri
   trackEvent('payment_cancelled_precheckout', {
     transaction_id: params.transaction_id,
   });
+}
+
+// Cotización enviada desde el /quote — el usuario completó el form y va a WhatsApp.
+// GA4 generate_lead + Meta Lead — evento estándar para optimizar campañas de leads.
+export function trackLead(params: {
+  content_name?: string;        // muralTitle
+  content_category?: string;    // collectionTitle
+  content_id?: string;           // muralId
+  value?: number;                // estimado en m² * pricePerM2 si lo tuviéramos
+}): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.gtag?.('event', 'generate_lead', {
+      content_name: params.content_name,
+      content_category: params.content_category,
+      content_id: params.content_id,
+    });
+    window.fbq?.('track', 'Lead', {
+      content_name: params.content_name,
+      content_category: params.content_category,
+      content_ids: params.content_id ? [params.content_id] : undefined,
+      value: params.value,
+      currency: 'ARS',
+    });
+    log('lead', params);
+  } catch { /* silent */ }
 }

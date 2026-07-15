@@ -10,6 +10,8 @@ import { useTranslations } from 'next-intl';
 import { FormErrorMessage } from "@/components";
 import { collections } from "@/data/collections";
 import { CrossIcon } from "@/icons";
+import { apiPost } from "@/helpers/api";
+import { trackLead } from "@/lib/analytics";
 
 interface Props {
     preselectedMuralId: string;
@@ -37,7 +39,7 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
     type Schema = z.infer<typeof schema>;
 
     const [isRendered, setIsRendered] = useState<boolean>(false);
-    const { register, control, handleSubmit, watch, setValue, formState: { errors }, } = useForm<Schema>({ resolver: zodResolver(schema), defaultValues: { spaces: [{ largo: 0, alto: 0 }]}});
+    const { register, control, handleSubmit, watch, setValue, formState: { errors, isSubmitting }, } = useForm<Schema>({ resolver: zodResolver(schema), defaultValues: { spaces: [{ largo: 0, alto: 0 }]}});
 
     const { fields, append, remove } = useFieldArray({ control, name: "spaces" });
 
@@ -64,7 +66,7 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
         }
     }, [preselectedMuralId, setValue, isRendered]);
 
-    const onSubmit = (data: Schema) => {
+    const onSubmit = async (data: Schema) => {
         const { name, email, phone, collection, mural, spaces } = data;
 
         const collectionName = collections.find(c => c.id === collection)?.title || "";
@@ -73,6 +75,34 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
         const muralName = muralSelected.title;
         const isPattern = muralSelected.keywords.some(k => ['patrón', 'patron', 'pattern'].includes(k.toLowerCase())) || false;
 
+        // 1) Persistir el lead en la DB (fire-and-forget: si el back falla, igual
+        //    seguimos con WhatsApp — no queremos bloquear al usuario por un problema
+        //    de infra nuestro).
+        const source: 'quote_page' | 'mural_detail' = preselectedMuralId ? 'mural_detail' : 'quote_page';
+        apiPost('/api/quotes', {
+            name,
+            email,
+            phone,
+            collectionId: collection,
+            collectionTitle: collectionName,
+            muralId: mural,
+            muralTitle: muralName,
+            isPattern,
+            spaces: spaces.map(s => ({ widthM: s.largo, heightM: s.alto })),
+            locale: 'es',
+            source,
+        }).catch(err => {
+            console.warn('[QuoteForm] No se pudo persistir la cotizacion:', err?.message || err);
+        });
+
+        // 2) Tracking Lead — GA4 + Meta (útil para optimizar campañas de leads).
+        trackLead({
+            content_name: muralName,
+            content_category: collectionName,
+            content_id: mural,
+        });
+
+        // 3) Abrir WhatsApp con el mensaje pre-armado (comportamiento original).
         let message = isPattern ? t('whatsappGreetingPattern', { name, mural: muralName, collection: collectionName }) : t('whatsappGreetingMural', { name, mural: muralName, collection: collectionName }) + '%0A%0A';
         message += t('whatsappEmail', { email }) + '%0A';
         message += t('whatsappPhone', { phone }) + '%0A%0A';
@@ -84,10 +114,16 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
 
         const whatsappNumber = "5491160208460";
         const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
-        window.open(whatsappUrl, "_blank");
+        // Fallback: si el popup blocker (típico iOS Safari) rechaza el window.open,
+        // navegamos en la misma pestaña para no dejar al user sin llegar a WhatsApp.
+        const opened = window.open(whatsappUrl, "_blank");
+        if (!opened || opened.closed) {
+            window.location.href = whatsappUrl;
+            return;
+        }
 
-        // Redirige al thank-you para registrar la conversión en Meta (PageView
-        // sobre /quote/thank-you -> custom conversion en Events Manager).
+        // 4) Redirige al thank-you para registrar la conversión en Meta (PageView
+        //    sobre /quote/thank-you -> custom conversion en Events Manager).
         router.push("/quote/thank-you");
     };
 
@@ -196,7 +232,11 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                     </div>
                 </div>
                 <div className="mt-4 lg:mt-0 w-full text-xl lg:text-base flex justify-center lg:justify-end items-center lg:items-end">
-                    <button type="submit" className="mt-4 px-4 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase">
+                    <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="mt-4 px-4 py-2 bg-black font-gillsans font-medium text-white text-lg uppercase transition-opacity disabled:opacity-60 disabled:cursor-not-allowed"
+                    >
                         {t('submit')}
                     </button>
                 </div>
