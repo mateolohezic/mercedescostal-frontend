@@ -205,11 +205,11 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                     <div className="w-[calc(100%+1rem)] max-h-48 pr-4 flex flex-col gap-2 overflow-y-auto">
                         {fields.map((field, index) => (
                             <div key={field.id} className="flex gap-2 items-center">
-                                <label className="sr-only" htmlFor={`spaces.${index}.largo`}>Largo</label>
+                                <label className="sr-only" htmlFor={`spaces.${index}.largo`}>Ancho</label>
                                 <input
                                     type="number"
                                     step="0.01"
-                                    placeholder="Largo"
+                                    placeholder="Ancho"
                                     className="w-full h-10 px-2 border border-black bg-white"
                                     {...register(`spaces.${index}.largo`, { valueAsNumber: true })}
                                 />

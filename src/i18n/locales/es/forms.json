@@ -8,7 +8,7 @@
     "selectCollection": "Selecciona una colección",
     "selectMural": "Selecciona un mural",
     "spaces": "Espacios a cubrir",
-    "width": "Largo (m)",
+    "width": "Ancho (m)",
     "height": "Alto (m)",
     "addWall": "Agregar muro",
     "preview": "Previsualización",
@@ -58,7 +58,7 @@
     "collectionRequired": "Selecciona una colección",
     "muralRequired": "Selecciona un mural",
     "spacesMin": "Agrega al menos un muro",
-    "widthRequired": "Largo requerido",
+    "widthRequired": "Ancho requerido",
     "heightRequired": "Alto requerido",
     "invalidNumber": "Debe ser un número",
     "messageRequired": "Mensaje requerido"

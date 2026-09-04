@@ -2106,8 +2106,8 @@ export const collections: Array<Collection> = [
                 collectionTitle: "Casamar",
                 collectionId: "casamar",
                 icons: [rainbow_icon_1],
-                keywords: [],
-                keywordsEn: [],
+                keywords: ["pattern", "patron", "patrón", "geometrico", "abstracto"],
+                keywordsEn: ["pattern", "geometric", "abstract"],
                 variants: [
                     {
                         colorName: "Artful Green",
