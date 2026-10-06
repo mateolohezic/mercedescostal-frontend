@@ -5,16 +5,22 @@ import Link from "next/link";
 import { SoundOnIcon, SoundOffIcon, PlayIcon, PauseIcon } from "@/icons";
 import { useLazyVideo } from "@/hooks/useLazyVideo";
 
-const DESKTOP_SRC = "/assets/portada_video.mp4";
-const MOBILE_SRC = "/assets/portada_video_mobile.mp4";
+// Casa FOA 2026 (Palacio Molina). El horizontal es 16:9 y el mobile es el
+// master vertical 9:16, no un recorte del horizontal.
+const DESKTOP_SRC = "/assets/portada_foa.mp4";
+const MOBILE_SRC = "/assets/portada_foa_mobile.mp4";
+const DESKTOP_POSTER = "/assets/portada_foa_poster.webp";
+const MOBILE_POSTER = "/assets/portada_foa_poster_mobile.webp";
 
 export const VideoIntro = () => {
     const { videoRef, containerRef, shouldLoad, isMuted, isPlaying, toggleMute, togglePlayPause } = useLazyVideo({ eager: true });
     const [videoSrc, setVideoSrc] = useState<string | null>(null);
+    const [posterSrc, setPosterSrc] = useState<string | undefined>(undefined);
 
     useEffect(() => {
         const mq = window.matchMedia('(max-width: 768px)');
         setVideoSrc(mq.matches ? MOBILE_SRC : DESKTOP_SRC);
+        setPosterSrc(mq.matches ? MOBILE_POSTER : DESKTOP_POSTER);
     }, []);
 
     useEffect(() => {
@@ -61,7 +67,8 @@ export const VideoIntro = () => {
                     muted
                     loop
                     preload="none"
-                    className="size-full object-cover object-left-bottom pointer-events-none select-none relative z-10"
+                    poster={posterSrc}
+                    className="size-full object-cover object-bottom pointer-events-none select-none relative z-10"
                 >
                     { shouldLoad && videoSrc && <source src={videoSrc} type="video/mp4" /> }
                     Tu navegador no soporta este video.
