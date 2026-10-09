@@ -18,7 +18,8 @@
     "whatsappEmail": "Email: {email}",
     "whatsappPhone": "Teléfono: {phone}",
     "whatsappWalls": "Muros a cubrir:",
-    "whatsappWall": "Muro {number}: {width}m x {height}m"
+    "whatsappWall": "Muro {number}: {width} m de ancho x {height} m de alto",
+    "whatsappSource": "Consulta enviada desde la web."
   },
   "workWithUs": {
     "fullName": "Nombre completo",

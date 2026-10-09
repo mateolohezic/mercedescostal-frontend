@@ -23,6 +23,7 @@ const ALLOWED_PATH_PREFIXES = [
   'orders',          // POST /orders, GET /orders/:token, /payment-status, /tracking
   'shipping',        // GET /shipping/quote, /shipping/locality
   'config',          // GET /config/pricing
+  'quotes',          // POST /quotes (lead del form de cotización)
   'health',          // GET /health (debug)
 ];
 
@@ -55,6 +56,21 @@ async function proxy(req: NextRequest, params: { path: string[] }): Promise<Resp
   };
   const contentType = req.headers.get('content-type');
   if (contentType) headers['Content-Type'] = contentType;
+
+  // Reenviamos la IP real y el user-agent: el backend tiene `trust proxy` y los usa
+  // para el rate limit por IP y para el registro del lead. Sin esto, todos los
+  // usuarios comparten la IP de este server y un solo visitante agota el límite.
+  // Solo el primer segmento: el backend usa `trust proxy` y toma el elemento más a la
+  // izquierda, así que reenviar la cadena entera le daría el valor que eligió el cliente.
+  // Preferimos el header de Vercel, que el edge sobrescribe con la IP real.
+  const rawIp = req.headers.get('x-vercel-forwarded-for')
+    || req.headers.get('x-real-ip')
+    || req.headers.get('x-forwarded-for')
+    || '';
+  const clientIp = rawIp.split(',')[0].trim();
+  if (/^[0-9a-fA-F:.]{3,45}$/.test(clientIp)) headers['x-forwarded-for'] = clientIp;
+  const userAgent = req.headers.get('user-agent');
+  if (userAgent) headers['user-agent'] = userAgent;
 
   let body: string | undefined;
   if (req.method !== 'GET' && req.method !== 'HEAD') {

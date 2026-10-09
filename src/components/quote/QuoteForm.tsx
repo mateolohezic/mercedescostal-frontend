@@ -6,12 +6,13 @@ import { useRouter } from "next/navigation";
 import { useFieldArray, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { FormErrorMessage } from "@/components";
 import { collections } from "@/data/collections";
 import { CrossIcon } from "@/icons";
 import { apiPost } from "@/helpers/api";
 import { trackLead } from "@/lib/analytics";
+import { buildWhatsAppUrl, formatMeters } from "@/helpers/whatsapp";
 
 interface Props {
     preselectedMuralId: string;
@@ -21,6 +22,7 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
     const t = useTranslations('forms.quote');
     const tv = useTranslations('forms.validation');
     const router = useRouter();
+    const locale = useLocale();
 
     const spaceSchema = z.object({
         largo: z.number({ invalid_type_error: tv('invalidNumber') }).min(0.01, tv('widthRequired')),
@@ -89,7 +91,7 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
             muralTitle: muralName,
             isPattern,
             spaces: spaces.map(s => ({ widthM: s.largo, heightM: s.alto })),
-            locale: 'es',
+            locale,
             source,
         }).catch(err => {
             console.warn('[QuoteForm] No se pudo persistir la cotizacion:', err?.message || err);
@@ -103,17 +105,22 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
         });
 
         // 3) Abrir WhatsApp con el mensaje pre-armado (comportamiento original).
-        let message = isPattern ? t('whatsappGreetingPattern', { name, mural: muralName, collection: collectionName }) : t('whatsappGreetingMural', { name, mural: muralName, collection: collectionName }) + '%0A%0A';
-        message += t('whatsappEmail', { email }) + '%0A';
-        message += t('whatsappPhone', { phone }) + '%0A%0A';
-
-        message += t('whatsappWalls') + '%0A';
-        spaces.forEach((space, i) => {
-            message += `• ${t('whatsappWall', { number: i + 1, width: space.largo, height: space.alto })}%0A`;
-        });
-
-        const whatsappNumber = "5491160208460";
-        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+        // Texto en líneas planas (se codifica una sola vez en buildWhatsAppUrl). Medidas con coma decimal.
+        const greeting = isPattern
+            ? t('whatsappGreetingPattern', { name, mural: muralName, collection: collectionName })
+            : t('whatsappGreetingMural', { name, mural: muralName, collection: collectionName });
+        const lines = [
+            greeting,
+            '',
+            t('whatsappEmail', { email }),
+            t('whatsappPhone', { phone }),
+            '',
+            t('whatsappWalls'),
+            ...spaces.map((space, i) => `• ${t('whatsappWall', { number: i + 1, width: formatMeters(space.largo, locale), height: formatMeters(space.alto, locale) })}`),
+            '',
+            t('whatsappSource'),
+        ];
+        const whatsappUrl = buildWhatsAppUrl(lines);
         // Fallback: si el popup blocker (típico iOS Safari) rechaza el window.open,
         // navegamos en la misma pestaña para no dejar al user sin llegar a WhatsApp.
         const opened = window.open(whatsappUrl, "_blank");
@@ -213,11 +220,11 @@ export const QuoteForm = ({ preselectedMuralId }: Props) => {
                                     className="w-full h-10 px-2 border border-black bg-white"
                                     {...register(`spaces.${index}.largo`, { valueAsNumber: true })}
                                 />
-                                <label className="sr-only" htmlFor={`spaces.${index}.alto`}>Alto</label>
+                                <label className="sr-only" htmlFor={`spaces.${index}.alto`}>{t('height')}</label>
                                 <input
                                     type="number"
                                     step="0.01"
-                                    placeholder="Alto"
+                                    placeholder={t('height')}
                                     className="w-full h-10 px-2 border border-black bg-white"
                                     {...register(`spaces.${index}.alto`, { valueAsNumber: true })}
                                 />
