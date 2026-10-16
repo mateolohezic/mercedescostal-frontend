@@ -4153,7 +4153,7 @@ export const collections: Array<Collection> = [
                         mural: japonica_mural_gris,
                     }
                 ],
-                href: "/collections/collaborations/mesopotamia/japonica",
+                href: "/collections/mesopotamia/japonica",
             },
             {
                 id: "espigas",
@@ -4202,7 +4202,7 @@ export const collections: Array<Collection> = [
                         mural: espigas_mural_405,
                     },
                 ],
-                href: "/collections/collaborations/mesopotamia/espigas",
+                href: "/collections/mesopotamia/espigas",
             },
             {
                 id: "mesopotamia-mural",
@@ -4269,7 +4269,7 @@ export const collections: Array<Collection> = [
                         mural: mesopotamia_mural_208,
                     },
                 ],
-                href: "/collections/collaborations/mesopotamia/mesopotamia-mural",
+                href: "/collections/mesopotamia/mesopotamia-mural",
             },
             {
                 id: "rio",
@@ -4312,7 +4312,7 @@ export const collections: Array<Collection> = [
                         mural: rio_mural_304,
                     },
                 ],
-                href: "/collections/collaborations/mesopotamia/rio",
+                href: "/collections/mesopotamia/rio",
             },
         ],
         collaboration: true,
@@ -4342,7 +4342,7 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "/collections/collaborations/tienda-marlo/zorro",
+                href: "/collections/tienda-marlo/zorro",
             },
             {
                 id: "hornero",
@@ -4373,7 +4373,7 @@ export const collections: Array<Collection> = [
                         mural: hornero_mural_menta,
                     },
                 ],
-                href: "/collections/collaborations/tienda-marlo/hornero",
+                href: "/collections/tienda-marlo/hornero",
             },
             {
                 id: "pinguinos",
@@ -4392,7 +4392,7 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "/collections/collaborations/tienda-marlo/pinguinos",
+                href: "/collections/tienda-marlo/pinguinos",
             },
             {
                 id: "caballo",
@@ -4411,7 +4411,7 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "/collections/collaborations/tienda-marlo/caballo",
+                href: "/collections/tienda-marlo/caballo",
             },
             {
                 id: "venado",
@@ -4436,7 +4436,7 @@ export const collections: Array<Collection> = [
                         mural: venado_mural_ocre,
                     },
                 ],
-                href: "/collections/collaborations/tienda-marlo/venado",
+                href: "/collections/tienda-marlo/venado",
             },
         ],
         collaboration: true,
@@ -4466,7 +4466,7 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "/collections/collaborations/apatheia/little-stars",
+                href: "/collections/apatheia/little-stars",
             },
         ],
         collaboration: true,
@@ -4496,7 +4496,7 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "/collections/collaborations/carina-michelli/blackthorn",
+                href: "/collections/carina-michelli/blackthorn",
             },
             {
                 id: "bluetapestry",
@@ -4515,7 +4515,7 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "/collections/collaborations/carina-michelli/bluetapestry",
+                href: "/collections/carina-michelli/bluetapestry",
             },
             {
                 id: "greenthorn",
@@ -4534,7 +4534,7 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "/collections/collaborations/carina-michelli/greenthorn",
+                href: "/collections/carina-michelli/greenthorn",
             },
             {
                 id: "rita",
@@ -4553,7 +4553,7 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "/collections/collaborations/carina-michelli/rita",
+                href: "/collections/carina-michelli/rita",
             },
         ],
         collaboration: true,
@@ -4583,7 +4583,7 @@ export const collections: Array<Collection> = [
                         base: true,
                     }
                 ],
-                href: "/collections/collaborations/casa-foa/vergel",
+                href: "/collections/casa-foa/vergel",
             },
             {
                 id: "cuesta-del-aconquija",
@@ -4620,7 +4620,7 @@ export const collections: Array<Collection> = [
                         mural: cuesta_mural_verde,
                     },
                 ],
-                href: "/collections/collaborations/casa-foa/cuesta-del-aconquija",
+                href: "/collections/casa-foa/cuesta-del-aconquija",
             },
         ],
         collaboration: true,
