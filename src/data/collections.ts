@@ -762,6 +762,15 @@ import greenthorn_mural from "@/assets/collections/collaborations/carina_michell
 import rita_montaje from "@/assets/collections/collaborations/carina_michelli/rita/rita_montaje.webp";
 import rita_mural from "@/assets/collections/collaborations/carina_michelli/rita/rita_mural.webp";
 
+import vergel_montaje from "@/assets/collections/collaborations/casa_foa/vergel/vergel_montaje.webp";
+import vergel_mural from "@/assets/collections/collaborations/casa_foa/vergel/vergel_mural.webp";
+
+import cuesta_montaje from "@/assets/collections/collaborations/casa_foa/cuesta_del_aconquija/cuesta_del_aconquija_montaje.webp";
+import cuesta_mural_original from "@/assets/collections/collaborations/casa_foa/cuesta_del_aconquija/cuesta_del_aconquija_mural_original.webp";
+import cuesta_mural_beige from "@/assets/collections/collaborations/casa_foa/cuesta_del_aconquija/cuesta_del_aconquija_mural_beige.webp";
+import cuesta_mural_casis from "@/assets/collections/collaborations/casa_foa/cuesta_del_aconquija/cuesta_del_aconquija_mural_casis.webp";
+import cuesta_mural_verde from "@/assets/collections/collaborations/casa_foa/cuesta_del_aconquija/cuesta_del_aconquija_mural_verde.webp";
+
 export const collections: Array<Collection> = [
     {
         id: "artisan",
@@ -4545,6 +4554,73 @@ export const collections: Array<Collection> = [
                     }
                 ],
                 href: "/collections/collaborations/carina-michelli/rita",
+            },
+        ],
+        collaboration: true,
+    },
+    {
+        id: "casa-foa",
+        title: "Casa FOA",
+        portrait: cuesta_montaje,
+        date: "2026",
+        technique: "Pintado a mano.",
+        description: "Descripción.",
+        murales: [
+            {
+                id: "vergel",
+                title: "Vergel",
+                collectionId: "casa-foa",
+                collectionTitle: "Casa FOA",
+                icons: [],
+                keywords: ["vergel", "jardín", "jardin", "árboles", "arboles", "frutales", "naranjos", "palmeras", "cipreses", "pájaros", "pajaros", "azulejos", "botánico", "botanico", "casa foa", "foa", "colaboracion"],
+                keywordsEn: ["orchard", "garden", "trees", "fruit trees", "orange trees", "palm trees", "cypress", "birds", "tiles", "botanical", "casa foa", "foa", "collaboration"],
+                variants: [
+                    {
+                        colorName: "Natural",
+                        color: "#D9CDB4",
+                        montaje: vergel_montaje,
+                        mural: vergel_mural,
+                        base: true,
+                    }
+                ],
+                href: "/collections/collaborations/casa-foa/vergel",
+            },
+            {
+                id: "cuesta-del-aconquija",
+                title: "Cuesta del Aconquija",
+                collectionId: "casa-foa",
+                collectionTitle: "Casa FOA",
+                icons: [],
+                keywords: ["cuesta del aconquija", "aconquija", "montañas", "montanas", "paisaje", "selva", "yungas", "bosque", "niebla", "tucumán", "tucuman", "camino", "azul", "casa foa", "foa", "colaboracion"],
+                keywordsEn: ["cuesta del aconquija", "aconquija", "mountains", "landscape", "jungle", "yungas", "forest", "mist", "tucuman", "road", "blue", "casa foa", "foa", "collaboration"],
+                variants: [
+                    {
+                        colorName: "Original",
+                        color: "#5B7580",
+                        montaje: cuesta_montaje,
+                        mural: cuesta_mural_original,
+                        base: true,
+                    },
+                    {
+                        colorName: "Beige",
+                        color: "#D8C9A8",
+                        montaje: cuesta_montaje,
+                        mural: cuesta_mural_beige,
+                    },
+                    {
+                        colorName: "Casis",
+                        color: "#5A2A44",
+                        montaje: cuesta_montaje,
+                        mural: cuesta_mural_casis,
+                    },
+                    {
+                        colorName: "Verde",
+                        color: "#4F6B52",
+                        montaje: cuesta_montaje,
+                        mural: cuesta_mural_verde,
+                    },
+                ],
+                href: "/collections/collaborations/casa-foa/cuesta-del-aconquija",
             },
         ],
         collaboration: true,
